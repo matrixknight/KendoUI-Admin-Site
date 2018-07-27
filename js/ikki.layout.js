@@ -9,10 +9,9 @@
 // 配置路径
 var path = $('base').attr('href'),
     webType = $('base').attr('type'),
-    navUrl = '/json/nav.json',
-    menuUrl = '/json/menu.json',
     tokenUrl = 'json/logout.json',
-    logoutUrl = 'json/response.json';
+    navUrl = '/json/nav.json',
+    menuUrl = '/json/menu.json';
 
 /* 初始化 ****************************************************************************/
 $(function() {
@@ -245,22 +244,6 @@ function changeLang(lang) {
 
 // 退出登录
 function logout() {
-    $.ajax({
-        type: 'get',
-        // type: 'post',
-        data: {
-            userid: sessionStorage.getItem('userid')
-        },
-        url: logoutUrl,
-        dataType: 'json',
-        success: function(res) {
-            if (res.result === 'y') {
-                // 清除登录状态
-                sessionStorage.clear();
-                location.href = path + webType + '/login.html';
-            } else {
-                noticeMsg(res.msg, 'error', 'center', noFunc);
-            }
-        }
-    });
+    sessionStorage.clear();
+    location.href = path + webType + '/login.html';
 }

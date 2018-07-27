@@ -67,11 +67,12 @@ function noFunc() {}
 
 // 提示框
 function tipMsg(dom, msg, position) {
-    $(dom).kendoTooltip({
+    var tips = $(dom).kendoTooltip({
         animation: {open: {effects: 'fade:in'}, close: {effects: 'fade:out'}},
         position: position,
         content: msg
-    });
+    }).data('kendoTooltip');
+    tips.show();
 }
 
 // 通知框
