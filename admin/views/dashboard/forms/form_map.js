@@ -484,6 +484,25 @@ $(function() {
                             {
                                 type: 'shape',
                                 minZoom: 6
+                            },
+                            {
+                                type: 'marker',
+                                dataSource: {
+                                    transport: {
+                                        dataType: 'json',
+                                        read: path + 'json/geo/capital.json'
+                                    }
+                                },
+                                // tooltip: {
+                                //     content: function(e) {
+                                //         return e.sender.marker.dataItem.name;
+                                //     }
+                                // },
+                                locationField: 'latlng',
+                                titleField: 'pcp',
+                                valueField: 'id',
+                                minZoom: 4,
+                                maxZoom: 5
                             }
                         ],
                         shapeFeatureCreated: function(e) {

@@ -203,7 +203,7 @@ $(function() {
                     $('[name=photoUrl]').val('').parent().find('img').attr('src', 'img/avatar.png');
                 }
             } else {
-                $(".k-upload-files").remove();
+                $('.k-upload-files').remove();
                 alertMsg(e.response.msg, 'error');
             }
         }
