@@ -94,6 +94,10 @@
     content: '\e81e';
 }
 
+.multiColumnComboBoxIcon:after {
+    content: '\e90b';
+}
+
 .multiselectIcon:after {
     content: '\e821';
 }
@@ -211,6 +215,10 @@
 
 .gaugeRadialIcon:after {
     content: '\e82d';
+}
+
+.gaugeArcIcon:after {
+    content: '\e90c';
 }
 
 /* Barcodes */
@@ -380,4 +388,12 @@
 
 .ziplibraryIcon:after {
     content: '\e900';
+}
+
+.dateRangePickerIcon:after {
+    content: '\e909';
+}
+
+.multiViewCalendarIcon:after {
+    content: '\e90a';
 }

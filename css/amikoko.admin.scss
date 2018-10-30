@@ -1055,6 +1055,10 @@ h1 {
 
 /* Bootstrap 细节完善 ------------------------------ */
 
+.hide {
+    display: none;
+}
+
 /* 尺寸 */
 .w-10 {
     width: 10% !important;
@@ -1187,6 +1191,7 @@ h1 {
 /* 按钮 */
 .k-button-lg {
     padding: 8px 30px;
+    height: 36px;
 }
 
 /* 表单 */
@@ -1218,7 +1223,7 @@ form {
         font-size: $font-size-s;
         .k-icon {
             margin-right: 0;
-            line-height: .9;
+            line-height: .9em;
         }
     }
     .k-editor-toolbar {
@@ -1242,11 +1247,11 @@ form {
     .k-switch-off {
         &:hover {
             .k-switch-container {
-                border-color: #ccc;
+                border-color: $line-color;
             }
             .k-switch-handle {
                 background-color: #eee;
-                border-color: #ccc;
+                border-color: $line-color;
             }
         }
     }

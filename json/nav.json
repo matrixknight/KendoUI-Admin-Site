@@ -306,6 +306,12 @@
                     "url": "javascript:linkTo(\"/forms/\", \"combobox\");"
                 },
                 {
+                    "text": "<i class='multiColumnComboBoxIcon'></i>表格下拉框<small>MultiColumnComboBox</small>",
+                    "encoded": false,
+                    "cssClass": "links-multicolumncombobox",
+                    "url": "javascript:linkTo(\"/forms/\", \"multicolumncombobox\");"
+                },
+                {
                     "text": "<i class='multiselectIcon'></i>多选下拉框<small>MultiSelect</small>",
                     "encoded": false,
                     "cssClass": "links-multiselect",
@@ -608,6 +614,12 @@
                             "encoded": false,
                             "cssClass": "links-radial_gauge",
                             "url": "javascript:linkTo(\"/charts/gauges/\", \"radial_gauge\");"
+                        },
+                        {
+                            "text": "<i class='gaugeArcIcon'></i>弧形计<small>Arc Gauge</small>",
+                            "encoded": false,
+                            "cssClass": "links-arc_gauge",
+                            "url": "javascript:linkTo(\"/charts/gauges/\", \"arc_gauge\");"
                         }
                     ]
                 },

@@ -89,7 +89,7 @@
                 // 滑块验证
                 $('#verify').slideVerify({
                     success: function(obj) {
-                        $('.btn-primary').prop('disabled', false).click(function() {
+                        $('.btn-primary').prop('disabled', false).unbind('click').click(function() {
                             // 表单验证成功
                             if (validator.validate()) {
                                 $('#loading').show();
