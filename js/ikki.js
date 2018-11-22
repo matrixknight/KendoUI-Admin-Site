@@ -430,9 +430,8 @@ function dateRange(rangeStart, rangeEnd, type) {
         } else if (endDate) {
             start.max(new Date(endDate));
         } else {
-            endDate = new Date();
-            start.max(endDate);
-            end.min(endDate);
+            start.max(new Date('2100'));
+            end.min(new Date('1900'));
         }
     }
     function endChange(){
@@ -445,9 +444,8 @@ function dateRange(rangeStart, rangeEnd, type) {
         } else if (startDate) {
             end.min(new Date(startDate));
         } else {
-            endDate = new Date();
-            start.max(endDate);
-            end.min(endDate);
+            start.max(new Date('2100'));
+            end.min(new Date('1900'));
         }
     }
 }
@@ -512,9 +510,8 @@ function dateInputRange(rangeStart, rangeEnd, type) {
         } else if (endDate) {
             start.max(new Date(endDate));
         } else {
-            endDate = new Date();
-            start.max(endDate);
-            end.min(endDate);
+            start.max(new Date('2100'));
+            end.min(new Date('1900'));
         }
     }
     function endChange() {
@@ -527,9 +524,8 @@ function dateInputRange(rangeStart, rangeEnd, type) {
         } else if (startDate){
             end.min(new Date(startDate));
         } else {
-            endDate = new Date();
-            start.max(endDate);
-            end.min(endDate);
+            start.max(new Date('2100'));
+            end.min(new Date('1900'));
         }
     }
 }
