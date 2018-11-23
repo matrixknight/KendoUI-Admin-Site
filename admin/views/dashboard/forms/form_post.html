@@ -5,15 +5,15 @@
                 <div class="form-row">
                     <div class="form-group col-sm-6 col-md-4 col-lg-3 col-xl-2" tabindex="-1">
                         <label class="d-block"><strong class="k-required">*</strong>姓名：</label>
-                        <input class="k-textbox w-100" name="realName" type="text" placeholder="文本框" required data-required-msg="请输入姓名！" pattern="[\u4E00-\u9FA5]{2,10}" validationMessage="请输入2-10个汉字！">
+                        <input class="k-textbox w-100" name="realName" type="text" placeholder="文本框" required data-required-msg="请输入姓名！" pattern="[\u4E00-\u9FA5]{2,10}" data-pattern-msg="请输入2-10个汉字！">
                     </div>
                     <div class="form-group col-sm-6 col-md-4 col-lg-3 col-xl-2" tabindex="-1">
                         <label class="d-block">昵称：</label>
-                        <input class="k-textbox w-100" name="nickName" type="text" placeholder="文本框" pattern="[A-Za-z0-9_\-\u4E00-\u9FA5]{2,20}" validationMessage="请输入2-20个大小写字母、数字、下划线及汉字！">
+                        <input class="k-textbox w-100" name="nickName" type="text" placeholder="文本框" pattern="[A-Za-z0-9_\-\u4E00-\u9FA5]{2,20}" data-pattern-msg="请输入2-20个大小写字母、数字、下划线及汉字！">
                     </div>
                     <div class="form-group col-sm-6 col-md-4 col-lg-3 col-xl-2" tabindex="-1">
                         <label class="d-block"><strong class="k-required">*</strong>密码：</label>
-                        <input class="k-textbox w-100" name="password" type="password" placeholder="密码框" required data-required-msg="请输入密码！" pattern="[A-Za-z0-9]{6,20}" validationMessage="请输入6-20个大小写字母及数字！">
+                        <input class="k-textbox w-100" name="password" type="password" placeholder="密码框" required data-required-msg="请输入密码！" pattern="[A-Za-z0-9]{6,20}" data-pattern-msg="请输入6-20个大小写字母及数字！">
                     </div>
                     <div class="form-group col-sm-6 col-md-4 col-lg-3 col-xl-2" tabindex="-1">
                         <label class="d-block"><strong class="k-required">*</strong>确认密码：</label>
@@ -59,7 +59,7 @@
                     </div>
                     <div class="form-group col-sm-6 col-md-4 col-lg-3 col-xl-2" tabindex="-1">
                         <label class="d-block"><strong class="k-required">*</strong>银行卡：</label>
-                        <input class="w-100" id="creditCard" name="creditCard" type="text" placeholder="掩码框" required data-required-msg="请输入银行卡！" pattern="[\d\s]{19}" validationMessage="请补足位数！">
+                        <input class="w-100" id="creditCard" name="creditCard" type="text" placeholder="掩码框" required data-required-msg="请输入银行卡！" pattern="[\d\s]{19}" data-pattern-msg="请补足位数！">
                         <span class="k-invalid-msg" data-for="creditCard"></span>
                     </div>
                     <div class="form-group col-sm-6 col-md-4 col-lg-3 col-xl-2" tabindex="-1">
@@ -121,7 +121,7 @@
                     </div>
                     <div class="form-group col-sm-6 col-md-4 col-lg-3 col-xl-2" tabindex="-1">
                         <label class="d-block"><strong class="k-required">*</strong>手机：</label>
-                        <input class="k-textbox w-100" name="telephone" type="tel" placeholder="手机框" required data-required-msg="请输入手机！" pattern="^1([38][0-9]|5[0-35-9]|7[0135-8]|4[579]|9[89]|66)[0-9]{8}$" validationMessage="手机格式不正确！">
+                        <input class="k-textbox w-100" name="telephone" type="tel" placeholder="手机框" required data-required-msg="请输入手机！" pattern="^1([38][0-9]|5[0-35-9]|7[0135-8]|4[579]|6[6]|8[0-9]|9[89])[0-9]{8}$" data-pattern-msg="手机格式不正确！">
                     </div>
                     <div class="form-group col-sm-6 col-md-4 col-lg-3 col-xl-2" tabindex="-1">
                         <label class="d-block"><strong class="k-required">*</strong>电子邮件：</label>
@@ -184,7 +184,7 @@
                         <span class="k-invalid-msg" data-for="sign"></span>
                     </div>
                     <div class="form-group col-12" tabindex="-1">
-                        <input id="agree" name="agree" type="checkbox" required validationMessage="必须同意条款才能提交！"><label for="agree">我同意</label>
+                        <input id="agree" name="agree" type="checkbox" required data-required-msg="必须同意条款才能提交！"><label for="agree">我同意</label>
                         <span class="k-invalid-msg" data-for="agree"></span>
                     </div>
                 </div>

@@ -6,7 +6,7 @@
                 <div class="form-group row justify-content-lg-center" tabindex="-1">
                     <label class="col-form-label text-lg-right col-lg-2"><strong class="k-required">*</strong>姓名：</label>
                     <div class="col-lg-6">
-                        <input class="k-textbox w-100" name="realName" type="text" placeholder="文本框" required data-required-msg="请输入姓名！" pattern="[\u4E00-\u9FA5]{2,10}" validationMessage="请输入2-10个汉字！" value="沙加">
+                        <input class="k-textbox w-100" name="realName" type="text" placeholder="文本框" required data-required-msg="请输入姓名！" pattern="[\u4E00-\u9FA5]{2,10}" data-pattern-msg="请输入2-10个汉字！" value="沙加">
                         <small class="form-text text-muted">请输入2-10个汉字！</small>
                     </div>
                 </div>
@@ -20,7 +20,7 @@
                 <div class="form-group row justify-content-lg-center" tabindex="-1">
                     <label class="col-form-label text-lg-right col-lg-2"><strong class="k-required">*</strong>密码：</label>
                     <div class="col-lg-6">
-                        <input class="k-textbox w-100" name="password" type="password" placeholder="密码框" required data-required-msg="请输入密码！" pattern="[A-Za-z0-9]{6,20}" validationMessage="请输入6-20个大小写字母及数字！" value="060606060606">
+                        <input class="k-textbox w-100" name="password" type="password" placeholder="密码框" required data-required-msg="请输入密码！" pattern="[A-Za-z0-9]{6,20}" data-pattern-msg="请输入6-20个大小写字母及数字！" value="060606060606">
                     </div>
                 </div>
                 <div class="form-group row justify-content-lg-center" tabindex="-1">
@@ -82,7 +82,7 @@
                 <div class="form-group row justify-content-lg-center" tabindex="-1">
                     <label class="col-form-label text-lg-right col-lg-2"><strong class="k-required">*</strong>银行卡：</label>
                     <div class="col-lg-6">
-                        <input class="w-100" id="creditCard" name="creditCard" type="text" placeholder="掩码框" required data-required-msg="请输入银行卡！" pattern="[\d\s]{19}" validationMessage="请补足位数！" value="6225 0000 0000 0006">
+                        <input class="w-100" id="creditCard" name="creditCard" type="text" placeholder="掩码框" required data-required-msg="请输入银行卡！" pattern="[\d\s]{19}" data-pattern-msg="请补足位数！" value="6225 0000 0000 0006">
                         <span class="k-invalid-msg" data-for="creditCard"></span>
                     </div>
                 </div>
@@ -162,7 +162,7 @@
                 <div class="form-group row justify-content-lg-center" tabindex="-1">
                     <label class="col-form-label text-lg-right col-lg-2"><strong class="k-required">*</strong>手机：</label>
                     <div class="col-lg-6">
-                        <input class="k-textbox w-100" name="telephone" type="tel" placeholder="手机框" required data-required-msg="请输入手机！" pattern="^1([38][0-9]|5[0-35-9]|7[0135-8]|4[579]|9[89]|66)[0-9]{8}$" validationMessage="手机格式不正确！" value="13800138666">
+                        <input class="k-textbox w-100" name="telephone" type="tel" placeholder="手机框" required data-required-msg="请输入手机！" pattern="^1([38][0-9]|5[0-35-9]|7[0135-8]|4[579]|9[89]|66)[0-9]{8}$" data-pattern-msg="手机格式不正确！" value="13800138666">
                     </div>
                 </div>
                 <div class="form-group row justify-content-lg-center" tabindex="-1">
@@ -250,7 +250,7 @@
                 <div class="form-group row justify-content-lg-center" tabindex="-1">
                     <label class="col-form-label col-lg-2 d-none d-lg-block">&nbsp;</label>
                     <div class="col-lg-6">
-                        <input id="agree" name="agree" type="checkbox" required validationMessage="必须同意条款才能提交！"><label for="agree">我同意</label>
+                        <input id="agree" name="agree" type="checkbox" required data-required-msg="必须同意条款才能提交！"><label for="agree">我同意</label>
                         <span class="k-invalid-msg" data-for="agree"></span>
                     </div>
                 </div>
