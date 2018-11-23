@@ -336,8 +336,8 @@ function numericRange(rangeStart, rangeEnd, format, decimals, step, min, max) {
         } else if (endNumeric) {
             start.max(endNumeric);
         } else {
-            start.max(endNumeric);
-            end.min(endNumeric);
+            start.max(max);
+            end.min(min);
         }
     }
     function endChange() {
@@ -348,8 +348,8 @@ function numericRange(rangeStart, rangeEnd, format, decimals, step, min, max) {
         } else if (startNumeric) {
             end.min(startNumeric);
         } else {
-            start.max(endNumeric);
-            end.min(endNumeric);
+            start.max(max);
+            end.min(min);
         }
     }
 }
