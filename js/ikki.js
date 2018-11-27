@@ -332,9 +332,11 @@ function numericRange(rangeStart, rangeEnd, format, decimals, step, min, max) {
         var startNumeric = start.value(),
             endNumeric = end.value();
         if (startNumeric) {
+            start.max(max);
             end.min(startNumeric);
         } else if (endNumeric) {
             start.max(endNumeric);
+            end.min(min);
         } else {
             start.max(max);
             end.min(min);
@@ -345,7 +347,9 @@ function numericRange(rangeStart, rangeEnd, format, decimals, step, min, max) {
             startNumeric = start.value();
         if (endNumeric) {
             start.max(endNumeric);
+            end.min(min);
         } else if (startNumeric) {
+            start.max(max);
             end.min(startNumeric);
         } else {
             start.max(max);
@@ -429,6 +433,7 @@ function dateRange(rangeStart, rangeEnd, type) {
             end.min(startDate);
         } else if (endDate) {
             start.max(new Date(endDate));
+            end.min(new Date('1900'));
         } else {
             start.max(new Date('2100'));
             end.min(new Date('1900'));
@@ -443,9 +448,10 @@ function dateRange(rangeStart, rangeEnd, type) {
             start.max(endDate);
         } else if (startDate) {
             end.min(new Date(startDate));
-        } else {
             start.max(new Date('2100'));
+        } else {
             end.min(new Date('1900'));
+            start.max(new Date('2100'));
         }
     }
 }
@@ -509,6 +515,7 @@ function dateInputRange(rangeStart, rangeEnd, type) {
             end.min(startDate);
         } else if (endDate) {
             start.max(new Date(endDate));
+            end.min(new Date('1900'));
         } else {
             start.max(new Date('2100'));
             end.min(new Date('1900'));
@@ -523,9 +530,10 @@ function dateInputRange(rangeStart, rangeEnd, type) {
             start.max(endDate);
         } else if (startDate){
             end.min(new Date(startDate));
-        } else {
             start.max(new Date('2100'));
+        } else {
             end.min(new Date('1900'));
+            start.max(new Date('2100'));
         }
     }
 }
