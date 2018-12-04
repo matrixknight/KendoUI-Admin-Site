@@ -498,7 +498,7 @@
                 {
                     "text": "<i class='fas fa-sign-out-alt'></i>退出登录",
                     "encoded": false,
-                    "url": "javascript:confirmMsg(\"退出登录\", \"你确定要退出登录吗？\", \"question\", logout, \"\", \"\", \"\", noFunc, noFunc, false);"
+                    "url": "javascript:confirmMsg(\"退出登录\", \"你确定要退出登录吗？\", \"question\", logout);"
                 }
             ]
         }

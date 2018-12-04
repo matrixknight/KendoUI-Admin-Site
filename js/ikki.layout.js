@@ -10,8 +10,8 @@
 var path = $('base').attr('href'),
     webType = $('base').attr('type'),
     tokenUrl = 'json/logout.json',
-    navUrl = '/json/nav.json',
-    menuUrl = '/json/menu.json';
+    navUrl = 'json/nav.json',
+    menuUrl = 'json/menu.json';
 
 /* 初始化 ****************************************************************************/
 $(function() {
@@ -27,9 +27,34 @@ $(function() {
     // 语言
     kendo.culture('zh-CN');
     // 左侧导航数据获取
-    ajaxPost('get', '', path + navUrl, showNav, noFunc, false);
+    $.fn.ajaxPost({
+        ajaxUrl: navUrl,
+        succeed: function(res) {
+            $('#navPanelBar').kendoPanelBar({
+                dataSource: res.data
+            });
+            $('#navMenu').kendoMenu({
+                orientation: 'vertical',
+                dataSource: res.data
+            });
+        }
+    });
     // 顶部菜单数据获取
-    ajaxPost('get', '', path + menuUrl, showMenu, noFunc, false);
+    $.fn.ajaxPost({
+        ajaxUrl: menuUrl,
+        succeed: function(res) {
+            if (/Android|iPhone|iPad|iPod|Windows Phone|webOS|SymbianOS|BlackBerry/i.test(navigator.userAgent)) {
+                $('#menuV').kendoMenu({
+                    orientation: 'vertical',
+                    dataSource: res.data
+                });
+            } else {
+                $('#menuH').kendoMenu({
+                    dataSource: res.data
+                });
+            }
+        }
+    });
     // 全屏
     $('#header').on('click', '.fullscreen', function() {
         var fullscreenEnabled = document.fullscreenEnabled       ||
@@ -49,7 +74,7 @@ $(function() {
                 $(this).find('.fa-expand').addClass('fa-compress').removeClass('fa-expand');
             }
         } else {
-            alertMsg('当前浏览器不支持全屏！');
+            alertMsg('当前浏览器不支持全屏！', 'error');
         }
     });
     // 回车解锁
@@ -62,54 +87,20 @@ $(function() {
 
 // 发送 Token 验证
 function tokenAuth() {
-    $.ajax({
-        headers: {
-            'Authorization': sessionStorage.getItem('token'),
-        },
-        async: false,
-        type: 'get',
-        // type: 'post',
-        data: {
+    $.fn.ajaxPost({
+        ajaxData: {
             userid: sessionStorage.getItem('userid')
         },
-        url: tokenUrl,
-        dataType: 'json',
-        success: function(res) {
-            if (res.result === 'y') {
-                if (sessionStorage.getItem('locked')) {
-                    lockScreen();
-                }
-            } else {
-                sessionStorage.clear();
-                location.href = path + webType + '/login.html';
+        ajaxUrl: tokenUrl,
+        succeed: function(res) {
+            if (sessionStorage.getItem('locked')) {
+                lockScreen();
             }
+        },
+        failed: function(res) {
+            logout();
         }
     });
-}
-
-// 左侧导航显示
-function showNav(res) {
-    $('#navPanelBar').kendoPanelBar({
-        dataSource: res.data
-    });
-    $('#navMenu').kendoMenu({
-        orientation: 'vertical',
-        dataSource: res.data
-    });
-}
-
-// 顶部菜单显示
-function showMenu(res) {
-    if (/Android|iPhone|iPad|iPod|Windows Phone|webOS|SymbianOS|BlackBerry/i.test(navigator.userAgent)) {
-        $('#menuV').kendoMenu({
-            orientation: 'vertical',
-            dataSource: res.data
-        });
-    } else {
-        $('#menuH').kendoMenu({
-            dataSource: res.data
-        });
-    }
 }
 
 // 面包屑导航
@@ -221,7 +212,7 @@ function unlockScreen() {
             return true;
         };
     } else {
-        noticeMsg('密码错误！请重新输入~', 'error', 'top', noFunc);
+        noticeMsg('密码错误！请重新输入~', 'error', 'top', 3000, noFunc);
     }
 }
 

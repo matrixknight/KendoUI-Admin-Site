@@ -15,12 +15,21 @@ var _hmt = _hmt || [];
     s.parentNode.insertBefore(hm, s);
 })();
 
+// 配置接口路径
+var apiPath = 'https://ikki2000.github.io/KendoUI-Admin-Site/';
+
 /* 初始化 ****************************************************************************/
 $(function() {
     // 移动端
     if (/Android|iPhone|iPad|iPod|Windows Phone|webOS|SymbianOS|BlackBerry/i.test(navigator.userAgent)) {
 
     }
+    // 回车搜索
+    $('#section').on('keyup', '#searchKeywords', function(event) {
+        if (event.keyCode === 13) {
+            conditionSearch();
+        }
+    });
     // 回到顶部
     $('#section').append('<button class="k-button k-state-selected" id="goTop"><i class="fas fa-angle-up"></i></button>').scroll(function() {
         if ($(this).scrollTop() > 800) {
@@ -35,30 +44,66 @@ $(function() {
 });
 
 /* Ajax 提交 ****************************************************************************/
-function ajaxPost(type, data, url, succeed, failed, isMsg) {
-    if (type === 'get') {
-        $.ajaxSetup({
-            cache: false
-        });
-    }
-    $.ajax({
-        type: type,
-        data: data,
-        url: url,
-        dataType: 'json',
-        success: function(res) {
-            if (res.result === 'y') {
-                succeed(res);
-                if (isMsg) {
-                    alertMsgNoBtn(res.msg, 'success');
-                }
-            } else {
-                failed();
-                alertMsg(res.msg, 'error');
-            }
+(function($) {
+    $.fn.ajaxPost = function(options) {
+        var opts = $.extend({}, $.fn.ajaxPost.defaults, options),
+            urls = '';
+        if (opts.ajaxType === 'get') {
+            $.ajaxSetup({
+                cache: false
+            });
         }
-    });
-}
+        if (opts.urlType === 'api') {
+            urls = apiPath + opts.ajaxUrl;
+        } else if (opts.urlType === 'static') {
+            urls = opts.ajaxUrl;
+        }
+        $.ajax({
+            headers: {
+                'Authorization': sessionStorage.getItem('token'),
+            },
+            type: opts.ajaxType,
+            data: JSON.stringify(opts.ajaxData), // 标准表单提交请去除：JSON.stringify
+            url: urls,
+            contentType: opts.ajaxContentType,
+            dataType: 'json',
+            success: function(res, status, xhr) {
+                if (res.result !== 'denied') {
+                    if (opts.urlType === 'api') {
+                        sessionStorage.setItem('token', xhr.getResponseHeader('Authorization'));
+                    }
+                    opts.finished(res);
+                    if (res.result === 'y') {
+                        opts.succeed(res);
+                        if (opts.isMsg && res.msg.length > 0) {
+                            alertMsgNoBtn(res.msg, 'success');
+                        }
+                    } else if (res.result === 'n') {
+                        opts.failed(res);
+                        alertMsg(res.msg, 'error');
+                    }
+                } else {
+                    logout();
+                }
+            },
+            error: function(xhr, status, thrown) {
+                alertMsg(thrown, 'error');
+            }
+        });
+    };
+    // 参数默认值
+    $.fn.ajaxPost.defaults = {
+        ajaxType: 'get', // GitHub Pages 演示只支持 get 请求，正常使用请改回 post 请求
+        ajaxData: '',
+        urlType: 'static', // GitHub Pages 演示接口为静态 json 文件，正常使用请改回 api 类型
+        ajaxUrl: 'json/response.json', // GitHub Pages 模拟返回的 json 文件，正常使用请改回空字符串
+        ajaxContentType: 'application/json; charset=UTF-8', // 标准表单提交请使用：application/x-www-form-urlencoded
+        finished: noFunc,
+        succeed: noFunc,
+        failed: noFunc,
+        isMsg: false
+    };
+})(jQuery);
 
 // 空方法
 function noFunc() {}
@@ -76,7 +121,7 @@ function tipMsg(dom, msg, position) {
 }
 
 // 通知框
-function noticeMsg(msg, type, position, finished) {
+function noticeMsg(msg, type, position, time, finished) {
     var notification = $('<div class="notice-box"></div>').kendoNotification({
         animation: {open: {effects: 'fade:in'}, close: {effects: 'fade:out'}},
         position: {
@@ -106,7 +151,7 @@ function noticeMsg(msg, type, position, finished) {
                 el.css({right: 10, bottom: 10});
             }
         },
-        autoHideAfter: 3000,
+        autoHideAfter: time,
         hide: function() {
             finished();
         }
@@ -137,7 +182,7 @@ function alertMsg(msg, type) {
         animation: {open: {effects: 'fade:in'}, close: {effects: 'fade:out'}},
         closable: false,
         maxWidth: '30%',
-        maxHeight: '30%',
+        maxHeight: '15%',
         minWidth: 320,
         minHeight: 196,
         title: '信息',
@@ -164,7 +209,7 @@ function alertMsgBtn(msg, type) {
         actions: [],
         animation: {open: {effects: 'fade:in'}, close: {effects: 'fade:out'}},
         maxWidth: '30%',
-        maxHeight: '30%',
+        maxHeight: '15%',
         minWidth: 320,
         minHeight: 196,
         title: '信息',
@@ -186,7 +231,7 @@ function alertMsgNoBtn(msg, type) {
     var alertDialog = $('<div class="dialog-box"></div>').kendoDialog({
         animation: {open: {effects: 'fade:in'}, close: {effects: 'fade:out'}},
         maxWidth: '30%',
-        maxHeight: '30%',
+        maxHeight: '15%',
         minWidth: 320,
         minHeight: 160,
         title: '信息',
@@ -204,12 +249,12 @@ function alertMsgNoBtn(msg, type) {
 }
 
 // 确认框
-function confirmMsg(title, msg, type, func, postType, postData, postUrl, succeed, failed, isMsg) {
+function confirmMsg(title, msg, type, confirmed) {
     var confirmDialog = $('<div class="dialog-box"></div>').kendoDialog({
         animation: {open: {effects: 'fade:in'}, close: {effects: 'fade:out'}},
         closable: false,
         maxWidth: '30%',
-        maxHeight: '30%',
+        maxHeight: '15%',
         minWidth: 320,
         minHeight: 196,
         title: title,
@@ -219,11 +264,7 @@ function confirmMsg(title, msg, type, func, postType, postData, postUrl, succeed
                 text: '确定',
                 primary: true,
                 action: function(e) {
-                    if (func === ajaxPost) {
-                        func(postType, postData, postUrl, succeed, failed, isMsg);
-                    } else {
-                        func();
-                    }
+                    confirmed();
                 }
             },
             {
@@ -241,12 +282,12 @@ function confirmMsg(title, msg, type, func, postType, postData, postUrl, succeed
 }
 
 // 确认框小按钮
-function confirmMsgBtn(title, msg, type, func, postType, postData, postUrl, succeed, failed, isMsg) {
+function confirmMsgBtn(title, msg, type, confirmed) {
     var confirmWindow = $('<div class="dialog-box"></div>').kendoWindow({
         actions: [],
         animation: {open: {effects: 'fade:in'}, close: {effects: 'fade:out'}},
         maxWidth: '30%',
-        maxHeight: '30%',
+        maxHeight: '15%',
         minWidth: 320,
         minHeight: 196,
         title: title,
@@ -259,11 +300,7 @@ function confirmMsgBtn(title, msg, type, func, postType, postData, postUrl, succ
     }).data('kendoWindow');
     confirmWindow.content(checkInfoType(type) + msg + '<div class="k-window-buttongroup"><button class="k-button k-button-lg k-state-selected" type="button">确 定</button><button class="k-button k-button-lg" type="button">取 消</button></div>').center().open();
     $('.dialog-box .k-window-buttongroup .k-state-selected').click(function() {
-        if (func === ajaxPost) {
-            func(postType, postData, postUrl, succeed, failed, isMsg);
-        } else {
-            func();
-        }
+        confirmed();
     });
     $('.dialog-box .k-window-buttongroup .k-button').click(function() {
         confirmWindow.close();
@@ -306,7 +343,44 @@ function iframeWindow(title, width, height, url) {
     iframeWindow.center().open();
 }
 
+// 大图预览
+function showBigPic(url) {
+    var picWindow = $('<div class="pic-box"></div>').kendoWindow({
+        animation: {open: {effects: 'fade:in'}, close: {effects: 'fade:out'}},
+        title: '图片预览',
+        modal: true,
+        pinned: true,
+        resizable: false,
+        close: function() {
+            picWindow.destroy();
+        }
+    }).data('kendoWindow');
+    picWindow.content('<img src="'+ url +'">').center().open().maximize();
+}
+
 /* 表单操作 ****************************************************************************/
+
+// 高级搜索
+function advSearch(dom) {
+    if ($('.adv-search-area:visible').length > 0) {
+        $('form.condition').get(0).reset();
+    }
+    $('#searchBtn').fadeToggle();
+    $(dom).find('i').toggleClass('fa-angle-double-up');
+    $('.adv-search-area').slideToggle();
+}
+
+// 条件搜索
+function conditionSearch() {
+    if ($('#grid').length > 0) {
+        $('#grid').data('kendoGrid').dataSource.read();
+        $('#grid').find('.k-pager-first').click();
+    }
+    if ($('#listView').length > 0) {
+        $('#listView').data('kendoListView').dataSource.read();
+        $('#listView').find('.k-pager-first').click();
+    }
+}
 
 // 数字型范围
 function numericRange(rangeStart, rangeEnd, format, decimals, step, min, max) {
@@ -557,3 +631,103 @@ $.fn.serializeObject = function() {
     $.each(this.serializeArray(), extend);
     return result;
 };
+
+/* 表格操作 ****************************************************************************/
+
+// 增
+function createGrid(options, url, succeedGrid) {
+    cudGrid(options, options.data, url, succeedGrid);
+}
+
+// 删
+function destroyGrid(options, url, succeedGrid) {
+    cudGrid(options, $.extend({}, {'id': options.data.id}, $('.condition').serializeObject()), url, succeedGrid);
+}
+
+// 改
+function updateGrid(options, url, succeedGrid) {
+    cudGrid(options, options.data, url, succeedGrid);
+}
+
+// 增删改
+function cudGrid(options, data, url, succeedGrid) {
+    $('#loading').show();
+    $.fn.ajaxPost({
+        ajaxData: data,
+        ajaxUrl: url,
+        finished: function() {
+            $('#loading').hide();
+        },
+        succeed: function(res) {
+            options.success(res);
+            refreshGrid();
+            if (succeedGrid) {
+                succeedGrid(res);
+            }
+        },
+        failed: function(res) {
+            options.error(res);
+        },
+        isMsg: true
+    });
+}
+
+// 查
+function readGrid(options, url, succeedGrid) {
+    $.fn.ajaxPost({
+        ajaxData: $.extend({}, {'id': options.data.id}, $('.condition').serializeObject()),
+        ajaxUrl: url,
+        succeed: function(res) {
+            options.success(res);
+            if (succeedGrid) {
+                succeedGrid(res);
+            }
+        },
+        failed: function(res) {
+            options.error(res);
+        }
+    });
+}
+
+// 刷新
+function refreshGrid() {
+    $('#grid').data('kendoGrid').dataSource.read();
+}
+
+// 批量操作
+function batchOperate(url, succeedBatch) {
+    if (sessionStorage.getItem('gridSelected') !== '') {
+        $('#loading').show();
+        $.fn.ajaxPost({
+            ajaxData: {'id': sessionStorage.getItem('gridSelected')},
+            ajaxUrl: url,
+            finished: function() {
+                $('#loading').hide();
+            },
+            succeed: function(res) {
+                refreshGrid();
+                if (succeedBatch) {
+                    succeedBatch(res);
+                }
+            },
+            isMsg: true
+        });
+    } else {
+        alertMsg('请先选择对象！', 'warning');
+    }
+}
+
+// 查看详情
+function btnDetails(e) {
+    e.preventDefault();
+    divWindow('详情', '80%', '40%', kendo.template($('#detailsTemplate').html())(this.dataItem($(e.target).closest('tr'))));
+}
+
+// 链接详情
+function linkDetails(dataItem) {
+    $('.k-grid-content').on('click', 'a[data-uid='+ dataItem.uid +']', function() {
+        if ($('body > .k-overlay').length === 0) {
+            divWindow('详情', '80%', '40%', kendo.template($('#detailsTemplate').html())(dataItem));
+        }
+    });
+}

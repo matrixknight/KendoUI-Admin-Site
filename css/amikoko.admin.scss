@@ -77,7 +77,7 @@ $border-radius-round: 50%;
     width: 10px;
     height: 10px;
     text-indent: -9999px;
-    background: #ff8300;
+    background: #f35800;
 }
 
 @mixin nav-menu-img {
@@ -1137,6 +1137,7 @@ h1 {
 /* 通知框 */
 .k-notification-wrap {
     font-size: $font-size-m;
+    line-height: 2.4em;
 }
 
 /* 对话框 */
@@ -1205,7 +1206,36 @@ form {
         }
     }
     .col-form-label {
-        line-height: 1.2;
+        line-height: 1.2em;
+    }
+    .k-label-lg {
+        font-size: 16px;
+        line-height: 1.5em;
+    }
+    .k-space-left .k-icon {
+        margin-left: 3px;
+    }
+    .k-space-right .k-icon {
+        margin-right: 3px;
+    }
+    .k-textbox-lg {
+        height: 36px;
+        &.k-space-left {
+            padding-left: 3em;
+            .k-icon {
+                margin-left: 10px;
+            }
+        }
+        &.k-space-right {
+            padding-right: 3em;
+            .k-icon {
+                margin-right: 10px;
+            }
+        }
+        .k-icon {
+            margin-top: -10px;
+            font-size: 20px;
+        }
     }
     .ajax-loading {
         display: none;
@@ -1255,17 +1285,41 @@ form {
             }
         }
     }
+    .adv-search-area,
+    .searchBtn.row {
+        display: none;
+    }
 }
 
 /* 下拉分组 */
 .k-popup .k-list .k-item > .k-group {
     font-size: $font-size-s;
     line-height: 20px;
+    &:before {
+        left: -20px;
+        border-width: 10px;
+    }
 }
 
-.k-popup .k-list .k-item > .k-group::before {
-    left: -20px;
-    border-width: 10px;
+/* 高级搜索 */
+.adv-search-btn {
+    position: relative;
+    top: -1px;
+    margin-bottom: 15px;
+    text-align: center;
+    .k-button {
+        border-color: rgba(0, 0, 0, .125);
+        border-top-color: #fff;
+        border-radius: 0 0 $border-radius $border-radius;
+        color: $line-color;
+        background-color: #fff;
+        &:active {
+            box-shadow: none;
+        }
+        i {
+            margin-right: 8px;
+        }
+    }
 }
 
 /* 自定义细节 ------------------------------ */

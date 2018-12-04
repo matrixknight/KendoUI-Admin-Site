@@ -9,10 +9,9 @@
 // 配置路径
 var path = $('base').attr('href'),
     webType = $('base').attr('type'),
-    loginMenuUrl = '/json/site_login.json',
-    logoutMenuUrl = '/json/site_logout.json',
     tokenUrl = 'json/logout.json',
-    logoutUrl = 'json/response.json';
+    loginMenuUrl = 'json/site_login.json',
+    logoutMenuUrl = 'json/site_logout.json';
 
 /* 初始化 ****************************************************************************/
 $(function() {
@@ -22,27 +21,22 @@ $(function() {
 
 // 发送 Token 验证
 function tokenAuth() {
-    $.ajax({
-        headers: {
-            'Authorization': sessionStorage.getItem('token'),
-        },
-        async: false,
-        type: 'get',
-        // type: 'post',
-        data: {
+    $.fn.ajaxPost({
+        ajaxData: {
             userid: sessionStorage.getItem('userid')
         },
-        url: tokenUrl,
-        dataType: 'json',
-        success: function(res) {
-            if (res.result === 'y') {
-                // 已登录导航数据获取
-                ajaxPost('get', '', path + loginMenuUrl, showNav, noFunc, false);
-            } else {
-                sessionStorage.clear();
-                // 未登录导航数据获取
-                ajaxPost('get', '', path + logoutMenuUrl, showNav, noFunc, false);
-            }
+        ajaxUrl: tokenUrl,
+        succeed: function(res) {
+            // 已登录导航数据获取
+            $.fn.ajaxPost({
+                ajaxUrl: loginMenuUrl,
+                succeed: function(res) {
+                    showNav(res);
+                }
+            });
+        },
+        failed: function(res) {
+            logout();
         }
     });
 }
@@ -88,22 +82,12 @@ function changeLang(lang) {
 
 // 退出登录
 function logout() {
-    $.ajax({
-        type: 'get',
-        // type: 'post',
-        data: {
-            userid: sessionStorage.getItem('userid')
-        },
-        url: logoutUrl,
-        dataType: 'json',
-        success: function(res) {
-            if (res.result === 'y') {
-                // 清除登录状态
-                sessionStorage.clear();
-                ajaxPost('get', '', path + logoutMenuUrl, showNav, noFunc, false);
-            } else {
-                noticeMsg(res.msg, 'error', 'center', noFunc);
-            }
+    sessionStorage.clear();
+    // 未登录导航数据获取
+    $.fn.ajaxPost({
+        ajaxUrl: logoutMenuUrl,
+        succeed: function(res) {
+            showNav(res);
         }
     });
 }
