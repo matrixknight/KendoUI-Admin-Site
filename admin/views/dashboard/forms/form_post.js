@@ -116,6 +116,31 @@ $(function() {
         dataTextField: 'nationName',
         suggest: true
     });
+    // 生肖
+    $('#zodiac').kendoMultiColumnComboBox({
+        dataSource: {
+            transport: {
+                read: {
+                    url: 'json/zodiac.json',
+                    dataType: 'json'
+                }
+            }
+        },
+        dataValueField: 'zodiac',
+        dataTextField: 'zodiacName',
+        columns: [
+            { field: 'zodiacName', title: '生肖', width: '56px' },
+            { field: 'zodiacValue1', title: '年份', width: '60px' },
+            { field: 'zodiacValue2', title: '年份', width: '60px' },
+            { field: 'zodiacValue3', title: '年份', width: '60px' },
+            { field: 'zodiacValue4', title: '年份', width: '60px' },
+            { field: 'zodiacValue5', title: '年份', width: '60px' }
+        ],
+        filter: 'contains',
+        filterFields: ['zodiacValue1', 'zodiacValue2', 'zodiacValue3', 'zodiacValue4', 'zodiacValue5'],
+        minLength: 4,
+        suggest: true
+    });
     // 语言
     $('#language').kendoAutoComplete({
         dataSource: {
@@ -268,6 +293,13 @@ $(function() {
                 }
                 return input.val() === '' || input.val().match(/^[\u4E00-\u9FA5]+$/) !== null;
             },
+            // 生肖
+            zodiac: function(input) {
+                if (!input.is('[name=zodiac_input]')) {
+                    return true;
+                }
+                return input.val() === '' || input.val().match(/^[鼠|牛|虎|兔|龙|蛇|马|羊|猴|鸡|狗|猪]{1}$/) !== null;
+            },
             // 教育程度
             education: function(input) {
                 if (!input.is('[name=education]')) {
@@ -317,6 +349,7 @@ $(function() {
             birthday: '日期格式不正确！',
             mateBirthday: '日期格式不正确！',
             nation: '请输入汉字！',
+            zodiac: '请输入生肖！',
             education: '请选择教育程度！',
             graduation: '年份格式不正确！',
             firstJob: '月份格式不正确！',
@@ -326,22 +359,17 @@ $(function() {
         }
     }).data('kendoValidator');
     // 表单提交
-    $('#submitBtn').click(function() {
+    $('#submitBtn').unbind('click').click(function() {
         if (validator.validate()) {
             $(this).removeClass('k-state-selected').addClass('k-state-disabled').prop('disabled', true);
-            noticeMsg('开始提交表单……', 'success', 'center', formSubmit);
+            noticeMsg('开始提交表单……', 'success', 'center', 500, function() {
+                $('form').submit();
+            });
         } else {
-            noticeMsg('表单中有选项未填写正确！请检查……', 'error', 'center', focusError);
+            noticeMsg('表单中有选项未填写正确！请检查……', 'error', 'center', 2000, function() {
+                // 出错定位
+                $('.k-invalid-msg:visible').first().parents('.form-group').focus();
+            });
         }
     });
 });
-
-// 出错定位
-function focusError() {
-    $('.k-invalid-msg:visible').first().parents('.form-group').focus();
-}
-
-// 提交
-function formSubmit() {
-    $('form').submit();
-}
