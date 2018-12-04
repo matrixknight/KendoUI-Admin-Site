@@ -66,6 +66,11 @@
             "encoded": false,
             "items": [
                 {
+                    "text": "<i class='fab fa-github'></i>Github",
+                    "encoded": false,
+                    "url": "https://github.com/IKKI2000/"
+                },
+                {
                     "text": "<i class='fas fa-cog'></i>后台管理",
                     "encoded": false,
                     "url": "admin/index.html"
