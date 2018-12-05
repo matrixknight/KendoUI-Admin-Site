@@ -116,6 +116,31 @@ $(function() {
         dataTextField: 'nationName',
         suggest: true
     });
+    // 生肖
+    $('#zodiac').kendoMultiColumnComboBox({
+        dataSource: {
+            transport: {
+                read: {
+                    url: 'json/zodiac.json',
+                    dataType: 'json'
+                }
+            }
+        },
+        dataValueField: 'zodiac',
+        dataTextField: 'zodiacName',
+        columns: [
+            { field: 'zodiacName', title: '生肖', width: '56px' },
+            { field: 'zodiacValue1', title: '年份', width: '60px' },
+            { field: 'zodiacValue2', title: '年份', width: '60px' },
+            { field: 'zodiacValue3', title: '年份', width: '60px' },
+            { field: 'zodiacValue4', title: '年份', width: '60px' },
+            { field: 'zodiacValue5', title: '年份', width: '60px' }
+        ],
+        filter: 'contains',
+        filterFields: ['zodiacValue1', 'zodiacValue2', 'zodiacValue3', 'zodiacValue4', 'zodiacValue5'],
+        minLength: 4,
+        suggest: true
+    });
     // 语言
     $('#language').kendoAutoComplete({
         dataSource: {
@@ -187,7 +212,7 @@ $(function() {
                 name: 'Virgo.png',
                 size: 34011,
                 extension: '.png'
-            },
+            }
         ],
         validation: {
             allowedExtensions: ['.jpg', '.png', '.gif', '.bmp'],
@@ -268,11 +293,10 @@ $(function() {
                 $.ajax({
                     async: false,
                     type: 'get',
-                    // type: 'post',
                     data: {
                         'nickName': input.val()
                     },
-                    url: 'json/nick_name.json',
+                    url: 'json/response.json',
                     dataType: 'json',
                     success: function(res) {
                         input.next().hide();
@@ -319,6 +343,13 @@ $(function() {
                     return true;
                 }
                 return input.val() === '' || input.val().match(/^[\u4E00-\u9FA5]+$/) !== null;
+            },
+            // 生肖
+            zodiac: function(input) {
+                if (!input.is('[name=zodiac_input]')) {
+                    return true;
+                }
+                return input.val() === '' || input.val().match(/^[鼠|牛|虎|兔|龙|蛇|马|羊|猴|鸡|狗|猪]{1}$/) !== null;
             },
             // 教育程度
             education: function(input) {
@@ -370,6 +401,7 @@ $(function() {
             birthday: '日期格式不正确！',
             mateBirthday: '日期格式不正确！',
             nation: '请输入汉字！',
+            zodiac: '请输入生肖！',
             education: '请选择教育程度！',
             graduation: '年份格式不正确！',
             firstJob: '月份格式不正确！',
@@ -379,35 +411,27 @@ $(function() {
         }
     }).data('kendoValidator');
     // 表单提交
-    $('#submitBtn').click(function() {
+    $('#submitBtn').unbind('click').click(function() {
         if (validator.validate()) {
-            $(this).addClass('k-state-disabled').removeClass('k-state-selected').prop('disabled', true).next().remove();
-            noticeMsg('表单校验中，准备提交……', 'success', 'center', formSubmit);
+            $(this).removeClass('k-state-selected').addClass('k-state-disabled').prop('disabled', true);
+            noticeMsg('开始提交表单……', 'success', 'center', 500, function() {
+                $('#loading').show();
+                $.fn.ajaxPost({
+                    ajaxData: $('form').serialize(),
+                    finished: function(res) {
+                        $('#loading').hide();
+                    },
+                    failed: function(res) {
+                        $('#submitBtn').removeClass('k-state-disabled').addClass('k-state-selected').prop('disabled', false);
+                    },
+                    isMsg: true
+                });
+            });
         } else {
-            noticeMsg('表单中有选项未填写正确！请检查……', 'error', 'center', focusError);
+            noticeMsg('表单中有选项未填写正确！请检查……', 'error', 'center', 2000, function() {
+                // 出错定位
+                $('.k-invalid-msg:visible').first().parents('.form-group').focus();
+            });
         }
     });
 });
-
-// 出错定位
-function focusError() {
-    $('.k-invalid-msg:visible').first().parents('.form-group').focus();
-}
-
-// 提交
-function formSubmit() {
-    $('#loading').show();
-    ajaxPost('get', $('form').serialize(), 'json/response.json', ajaxSucceed, ajaxFailed, true);
-    // ajaxPost('post', $('form').serialize(), 'json/response.json', ajaxSucceed, ajaxFailed, true);
-}
-
-// 提交成功
-function ajaxSucceed() {
-    $('#loading').hide();
-}
-
-// 提交失败
-function ajaxFailed() {
-    $('#loading').hide();
-    $('#submitBtn').addClass('k-state-selected').removeClass('k-state-disabled').prop('disabled', false);
-}

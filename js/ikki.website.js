@@ -22,6 +22,7 @@ $(function() {
 // 发送 Token 验证
 function tokenAuth() {
     $.fn.ajaxPost({
+        ajaxAsync: false,
         ajaxData: {
             userid: sessionStorage.getItem('userid')
         },

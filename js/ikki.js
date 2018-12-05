@@ -62,6 +62,7 @@ $(function() {
             headers: {
                 'Authorization': sessionStorage.getItem('token'),
             },
+            async: opts.ajaxAsync,
             type: opts.ajaxType,
             data: JSON.stringify(opts.ajaxData), // 标准表单提交请去除：JSON.stringify
             url: urls,
@@ -93,6 +94,7 @@ $(function() {
     };
     // 参数默认值
     $.fn.ajaxPost.defaults = {
+        ajaxAsync: true,
         ajaxType: 'get', // GitHub Pages 演示只支持 get 请求，正常使用请改回 post 请求
         ajaxData: '',
         urlType: 'static', // GitHub Pages 演示接口为静态 json 文件，正常使用请改回 api 类型
