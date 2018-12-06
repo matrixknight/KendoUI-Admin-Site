@@ -21,7 +21,7 @@ $(function() {
                         shape: {
                             style: {
                                 fill: {
-                                    color: '#69c0ff',
+                                    color: minorColor,
                                     opacity: .8
                                 },
                                 stroke: {
@@ -56,7 +56,7 @@ $(function() {
                     shapeFeatureCreated: function(e) {
                         if ($('#inputBoxMap').val() === e.dataItem.properties.name) {
                             $.each(e.group.children, function(i, items) {
-                                items.options.set('fill.color', '#1890ff');
+                                items.options.set('fill.color', accentColor);
                             });
                         }
                         e.group.options.tooltip = {
@@ -105,7 +105,7 @@ $(function() {
                         shape: {
                             style: {
                                 fill: {
-                                    color: '#69c0ff',
+                                    color: minorColor,
                                     opacity: .8
                                 },
                                 stroke: {
@@ -155,7 +155,7 @@ $(function() {
                         $.each($('#textBoxMap').val().split(','), function(i, contents) {
                             if (contents === e.dataItem.properties.name + '[' + e.dataItem.properties.id + ']' || contents === e.dataItem.properties.name + '[' + e.dataItem.id + ']') {
                                 $.each(e.group.children, function(k, items) {
-                                    items.options.set('fill.color', '#1890ff');
+                                    items.options.set('fill.color', accentColor);
                                 });
                             }
                         });
@@ -183,7 +183,7 @@ $(function() {
                                         text: '选择当前层级',
                                         primary: true,
                                         action: function() {
-                                            e.shape.options.set('fill.color', '#1890ff');
+                                            e.shape.options.set('fill.color', accentColor);
                                             var str = e.shape.dataItem.properties.name + '[' + e.shape.dataItem.properties.id + ']',
                                                 none = true;
                                             if ($('#textBoxMap').val() === '') {
@@ -222,7 +222,7 @@ $(function() {
                             }).data('kendoDialog');
                             confirmDialog.open();
                         } else {
-                            e.shape.options.set('fill.color', '#1890ff');
+                            e.shape.options.set('fill.color', accentColor);
                             var str = e.shape.dataItem.properties.name + '[' + e.shape.dataItem.id + ']',
                                 none = true;
                             if ($('#textBoxMap').val() === '') {
@@ -293,7 +293,7 @@ $(function() {
                             shape: {
                                 style: {
                                     fill: {
-                                        color: '#69c0ff',
+                                        color: minorColor,
                                         opacity: .8
                                     },
                                     stroke: {
@@ -342,7 +342,7 @@ $(function() {
                         shapeFeatureCreated: function(e) {
                             if (comboMap.value() === e.dataItem.properties.id || comboMap.value() === e.dataItem.id) {
                                 $.each(e.group.children, function(i, items) {
-                                    items.options.set('fill.color', '#1890ff');
+                                    items.options.set('fill.color', accentColor);
                                 });
                             }
                             e.group.options.tooltip = {
@@ -464,7 +464,7 @@ $(function() {
                             shape: {
                                 style: {
                                     fill: {
-                                        color: '#69c0ff',
+                                        color: minorColor,
                                         opacity: .8
                                     },
                                     stroke: {
@@ -534,7 +534,7 @@ $(function() {
                             $.each(treeMap.value(), function(i, contents) {
                                 if (contents === e.dataItem.properties.id || contents === e.dataItem.id) {
                                     $.each(e.group.children, function(k, items) {
-                                        items.options.set('fill.color', '#1890ff');
+                                        items.options.set('fill.color', accentColor);
                                     });
                                 }
                             });
@@ -564,7 +564,7 @@ $(function() {
                                             text: '选择当前层级',
                                             primary: true,
                                             action: function() {
-                                                e.shape.options.set('fill.color', '#1890ff');
+                                                e.shape.options.set('fill.color', accentColor);
                                                 $.each(treeMap.value(), function(i, items) {
                                                     if (items === e.shape.dataItem.properties.id) {
                                                         none = false;
@@ -598,7 +598,7 @@ $(function() {
                                 }).data('kendoDialog');
                                 confirmDialog.open();
                             } else {
-                                e.shape.options.set('fill.color', '#1890ff');
+                                e.shape.options.set('fill.color', accentColor);
                                 $.each(treeMap.value(), function(i, items) {
                                     if (items === e.shape.dataItem.id) {
                                         none = false;

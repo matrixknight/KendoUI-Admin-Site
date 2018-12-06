@@ -9,6 +9,8 @@
 // 配置路径
 var path = $('base').attr('href'),
     webType = $('base').attr('type'),
+    accentColor,
+    minorColor,
     tokenUrl = 'json/logout.json',
     navUrl = 'json/nav.json',
     menuUrl = 'json/menu.json';
@@ -24,6 +26,16 @@ $(function() {
             return false;
         }
     };
+    // 颜色
+    if (localStorage.hasOwnProperty('colorName')) {
+        accentColor = localStorage.getItem('accentColor');
+        minorColor = localStorage.getItem('minorColor');
+        changeColor(localStorage.getItem('colorName'), accentColor, minorColor);
+    } else {
+        accentColor = '#1890ff';
+        minorColor = '#69c0ff';
+        changeColor('default', accentColor, minorColor);
+    }
     // 语言
     kendo.culture('zh-CN');
     // 左侧导航数据获取
@@ -218,17 +230,24 @@ function unlockScreen() {
 }
 
 // 配色
-function changeColor(color) {
-    $('#Amikoko').attr('href', path + '/css/themes/theme_' + color + '.css');
-    setTimeout(function() {
-        kendo.dataviz.autoTheme(true);
-        refresh();
-    }, 100);
+function changeColor(color, accent, minor) {
+    $('#Amikoko').attr('href', 'css/themes/theme_' + color + '.css');
+    if ($('#hasChart').length > 0) {
+        setTimeout(function() {
+            kendo.dataviz.autoTheme(true);
+            refresh();
+        }, 100);
+    }
+    localStorage.setItem('colorName', color);
+    localStorage.setItem('accentColor', accent);
+    accentColor = accent;
+    localStorage.setItem('minorColor', minor);
+    minorColor = minor;
 }
 
 // 语言
 function changeLang(lang) {
-    $.getScript(path + '/js/global/kendo.' + lang + '.js', function() {
+    $.getScript('js/global/kendo.' + lang + '.js', function() {
         kendo.culture(lang);
         refresh();
     });
