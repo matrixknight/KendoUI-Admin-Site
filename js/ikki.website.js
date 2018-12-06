@@ -78,7 +78,7 @@ function showPath(hash) {
 
 // 配色
 function changeColor(color, accent, minor) {
-    $('#Amikoko').attr('href', 'css/themes/theme_' + color + '.css');
+    $('#Amikoko').attr('href', 'css/themes/theme_' + color + '.min.css');
     if ($('#hasChart').length > 0) {
         setTimeout(function() {
             kendo.dataviz.autoTheme(true);
