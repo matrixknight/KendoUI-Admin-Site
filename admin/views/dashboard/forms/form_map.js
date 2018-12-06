@@ -1,6 +1,6 @@
 $(function() {
     // 提示
-    noticeMsg('地理数据量大~ 载入中……', 'info', 'center', noFunc);
+    noticeMsg('地理数据量大~ 请耐心等候~ 载入中……', 'info', 'center', 10000, noFunc);
     // 地图点选
     $('#inputBoxMapBtn').click(function() {
         var divWindow = $('<div class="window-map"></div>').kendoWindow({
@@ -37,7 +37,7 @@ $(function() {
                             dataSource: {
                                 type: 'geojson',
                                 transport: {
-                                    read: path + 'json/geo/world.json'
+                                    read: 'json/geo/world.json'
                                 }
                             },
                             maxZoom: 4
@@ -47,7 +47,7 @@ $(function() {
                             dataSource: {
                                 type: 'geojson',
                                 transport: {
-                                    read: path + 'json/geo/china.json'
+                                    read: 'json/geo/china.json'
                                 }
                             },
                             minZoom: 5
@@ -75,7 +75,7 @@ $(function() {
                         e.layer.reset();
                         setTimeout(function(){
                             divWindow.close();
-                        }, 1000);
+                        }, 500);
                     }
                 });
             },
@@ -129,7 +129,7 @@ $(function() {
                             dataSource: {
                                 type: 'geojson',
                                 transport: {
-                                    read: path + 'json/geo/china.json'
+                                    read: 'json/geo/china.json'
                                 }
                             },
                             minZoom: 4,
@@ -140,7 +140,7 @@ $(function() {
                             dataSource: {
                                 type: 'geojson',
                                 transport: {
-                                    read: path + 'json/geo/province.json'
+                                    read: 'json/geo/province.json'
                                 }
                             },
                             minZoom: 6,
@@ -206,7 +206,7 @@ $(function() {
                                             tMap.layers[3].setDataSource({
                                                 type: 'geojson',
                                                 transport: {
-                                                    read: path + 'json/geo/' + e.shape.dataItem.properties.id + '.json'
+                                                    read: 'json/geo/' + e.shape.dataItem.properties.id + '.json'
                                                 }
                                             });
                                             tMap.setOptions({
@@ -251,10 +251,20 @@ $(function() {
     var comboMap = $('#comboBoxMap').kendoComboBox({
         dataSource: {
             transport: {
-                read: {
-                    url: 'json/select_data.json',
-                    dataType: 'json'
+                read: function(options) {
+                    $.fn.ajaxPost({
+                        ajaxUrl: 'json/select_data.json',
+                        succeed: function(res) {
+                            options.success(res);
+                        },
+                        failed: function(res) {
+                            options.error(res);
+                        }
+                    });
                 }
+            },
+            schema: {
+                data: 'data'
             }
         },
         placeholder: '-= 请点击右侧按钮打开地图 =-',
@@ -307,7 +317,7 @@ $(function() {
                                 dataSource: {
                                     type: 'geojson',
                                     transport: {
-                                        read: path + 'json/geo/china.json'
+                                        read: 'json/geo/china.json'
                                     }
                                 },
                                 minZoom: 4,
@@ -318,7 +328,7 @@ $(function() {
                                 dataSource: {
                                     type: 'geojson',
                                     transport: {
-                                        read: path + 'json/geo/province.json'
+                                        read: 'json/geo/province.json'
                                     }
                                 },
                                 minZoom: 6,
@@ -361,6 +371,9 @@ $(function() {
                                             action: function() {
                                                 comboMap.value(e.shape.dataItem.properties.id);
                                                 e.layer.reset();
+                                                setTimeout(function(){
+                                                    divWindow.close();
+                                                }, 500);
                                             }
                                         },
                                         {
@@ -369,7 +382,7 @@ $(function() {
                                                 sMap.layers[3].setDataSource({
                                                     type: 'geojson',
                                                     transport: {
-                                                        read: path + 'json/geo/' + e.shape.dataItem.properties.id + '.json'
+                                                        read: 'json/geo/' + e.shape.dataItem.properties.id + '.json'
                                                     }
                                                 });
                                                 sMap.setOptions({
@@ -387,6 +400,9 @@ $(function() {
                             } else {
                                 comboMap.value(e.shape.dataItem.id);
                                 e.layer.reset();
+                                setTimeout(function(){
+                                    divWindow.close();
+                                }, 500);
                             }
                         }
                     }).data('kendoMap');
@@ -402,12 +418,20 @@ $(function() {
     var treeMap = $('#dropDownTreeMap').kendoDropDownTree({
         dataSource: {
             transport: {
-                read: {
-                    url: 'json/select_hierarchical_data.json',
-                    dataType: 'json'
+                read: function(options) {
+                    $.fn.ajaxPost({
+                        ajaxUrl: 'json/select_hierarchical_data.json',
+                        succeed: function(res) {
+                            options.success(res);
+                        },
+                        failed: function(res) {
+                            options.error(res);
+                        }
+                    });
                 }
             },
             schema: {
+                data: 'data',
                 model: {
                     children: 'items'
                 }
@@ -464,7 +488,7 @@ $(function() {
                                 dataSource: {
                                     type: 'geojson',
                                     transport: {
-                                        read: path + 'json/geo/china.json'
+                                        read: 'json/geo/china.json'
                                     }
                                 },
                                 minZoom: 4,
@@ -475,7 +499,7 @@ $(function() {
                                 dataSource: {
                                     type: 'geojson',
                                     transport: {
-                                        read: path + 'json/geo/province.json'
+                                        read: 'json/geo/province.json'
                                     }
                                 },
                                 minZoom: 6,
@@ -490,9 +514,10 @@ $(function() {
                                 dataSource: {
                                     transport: {
                                         dataType: 'json',
-                                        read: path + 'json/geo/capital.json'
+                                        read: 'json/geo/capital.json'
                                     }
                                 },
+                                // 标记点也显示省名称
                                 // tooltip: {
                                 //     content: function(e) {
                                 //         return e.sender.marker.dataItem.name;
@@ -557,7 +582,7 @@ $(function() {
                                                 mMap.layers[3].setDataSource({
                                                     type: 'geojson',
                                                     transport: {
-                                                        read: path + 'json/geo/' + e.shape.dataItem.properties.id + '.json'
+                                                        read: 'json/geo/' + e.shape.dataItem.properties.id + '.json'
                                                     }
                                                 });
                                                 mMap.setOptions({
