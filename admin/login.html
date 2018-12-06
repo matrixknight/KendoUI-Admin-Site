@@ -112,15 +112,15 @@
                                             localStorage.removeItem('remember');
                                         }
                                         // 存储登录状态
-                                        sessionStorage.setItem('token', res.token);
-                                        sessionStorage.setItem('userid', res.userid);
-                                        sessionStorage.setItem('avatar', res.avatar);
+                                        sessionStorage.setItem('token', res.data.token);
+                                        sessionStorage.setItem('userid', res.data.userid);
+                                        sessionStorage.setItem('avatar', res.data.avatar);
                                         sessionStorage.setItem('username', $('input[name="username"]').val());
                                         sessionStorage.setItem('password', $('input[name="password"]').val());
                                         sessionStorage.setItem('logged', true);
                                         sessionStorage.removeItem('locked');
                                         // 头像动画及页面跳转
-                                        $('#avatar').attr({'src': res.avatar, 'alt': res.username}).addClass('user-avatar').next().text(res.username);
+                                        $('#avatar').attr({'src': res.data.avatar, 'alt': res.data.username}).addClass('user-avatar').next().text(res.data.username);
                                         $('.form-group, .btn-primary').slideUp(800, function() {
                                             location.href = $('base').attr('href') + $('base').attr('type');
                                         });

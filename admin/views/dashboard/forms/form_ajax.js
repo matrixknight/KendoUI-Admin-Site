@@ -43,10 +43,20 @@ $(function() {
     $('#province').kendoDropDownList({
         dataSource: {
             transport: {
-                read: {
-                    url: 'json/province.json',
-                    dataType: 'json'
+                read: function(options) {
+                    $.fn.ajaxPost({
+                        ajaxUrl: 'json/province.json',
+                        succeed: function(res) {
+                            options.success(res);
+                        },
+                        failed: function(res) {
+                            options.error(res);
+                        }
+                    });
                 }
+            },
+            schema: {
+                data: 'data'
             }
         },
         optionLabel: '-= 省份 =-',
@@ -56,10 +66,20 @@ $(function() {
     $('#city').kendoDropDownList({
         dataSource: {
             transport: {
-                read: {
-                    url: 'json/city.json',
-                    dataType: 'json'
+                read: function(options) {
+                    $.fn.ajaxPost({
+                        ajaxUrl: 'json/city.json',
+                        succeed: function(res) {
+                            options.success(res);
+                        },
+                        failed: function(res) {
+                            options.error(res);
+                        }
+                    });
                 }
+            },
+            schema: {
+                data: 'data'
             }
         },
         autoBind: false,
@@ -71,10 +91,20 @@ $(function() {
     $('#area').kendoDropDownList({
         dataSource: {
             transport: {
-                read: {
-                    url: 'json/area.json',
-                    dataType: 'json'
+                read: function(options) {
+                    $.fn.ajaxPost({
+                        ajaxUrl: 'json/area.json',
+                        succeed: function(res) {
+                            options.success(res);
+                        },
+                        failed: function(res) {
+                            options.error(res);
+                        }
+                    });
                 }
+            },
+            schema: {
+                data: 'data'
             }
         },
         autoBind: false,
@@ -87,12 +117,20 @@ $(function() {
     $('#domicile').kendoDropDownTree({
         dataSource: {
             transport: {
-                read: {
-                    url: 'json/select_hierarchical_data.json',
-                    dataType: 'json'
+                read: function(options) {
+                    $.fn.ajaxPost({
+                        ajaxUrl: 'json/select_hierarchical_data.json',
+                        succeed: function(res) {
+                            options.success(res);
+                        },
+                        failed: function(res) {
+                            options.error(res);
+                        }
+                    });
                 }
             },
             schema: {
+                data: 'data',
                 model: {
                     children: 'items'
                 }
@@ -106,10 +144,20 @@ $(function() {
     $('#nation').kendoComboBox({
         dataSource: {
             transport: {
-                read: {
-                    url: 'json/nation.json',
-                    dataType: 'json'
+                read: function(options) {
+                    $.fn.ajaxPost({
+                        ajaxUrl: 'json/nation.json',
+                        succeed: function(res) {
+                            options.success(res);
+                        },
+                        failed: function(res) {
+                            options.error(res);
+                        }
+                    });
                 }
+            },
+            schema: {
+                data: 'data'
             }
         },
         dataValueField: 'nation',
@@ -120,21 +168,31 @@ $(function() {
     $('#zodiac').kendoMultiColumnComboBox({
         dataSource: {
             transport: {
-                read: {
-                    url: 'json/zodiac.json',
-                    dataType: 'json'
+                read: function(options) {
+                    $.fn.ajaxPost({
+                        ajaxUrl: 'json/zodiac.json',
+                        succeed: function(res) {
+                            options.success(res);
+                        },
+                        failed: function(res) {
+                            options.error(res);
+                        }
+                    });
                 }
+            },
+            schema: {
+                data: 'data'
             }
         },
         dataValueField: 'zodiac',
         dataTextField: 'zodiacName',
         columns: [
-            { field: 'zodiacName', title: '生肖', width: '56px' },
-            { field: 'zodiacValue1', title: '年份', width: '60px' },
-            { field: 'zodiacValue2', title: '年份', width: '60px' },
-            { field: 'zodiacValue3', title: '年份', width: '60px' },
-            { field: 'zodiacValue4', title: '年份', width: '60px' },
-            { field: 'zodiacValue5', title: '年份', width: '60px' }
+            { field: 'zodiacName', title: '生肖' },
+            { field: 'zodiacValue1', title: '年份' },
+            { field: 'zodiacValue2', title: '年份' },
+            { field: 'zodiacValue3', title: '年份' },
+            { field: 'zodiacValue4', title: '年份' },
+            { field: 'zodiacValue5', title: '年份' }
         ],
         filter: 'contains',
         filterFields: ['zodiacValue1', 'zodiacValue2', 'zodiacValue3', 'zodiacValue4', 'zodiacValue5'],
@@ -145,10 +203,20 @@ $(function() {
     $('#language').kendoAutoComplete({
         dataSource: {
             transport: {
-                read: {
-                    url: 'json/language.json',
-                    dataType: 'json'
+                read: function(options) {
+                    $.fn.ajaxPost({
+                        ajaxUrl: 'json/language.json',
+                        succeed: function(res) {
+                            options.success(res);
+                        },
+                        failed: function(res) {
+                            options.error(res);
+                        }
+                    });
                 }
+            },
+            schema: {
+                data: 'data'
             }
         },
         dataTextField: 'language',
@@ -221,7 +289,7 @@ $(function() {
         success: function(e) {
             if (e.response.result === 'y') {
                 if (e.operation === 'upload') {
-                    $('[name=photoUrl]').val(e.response.photoUrl).parent().find('img').attr('src', e.response.photoUrl);
+                    $('[name=photoUrl]').val(e.response.data.photoUrl).parent().find('img').attr('src', e.response.data.photoUrl);
                     alertMsg(e.response.msg, 'success');
                 }
                 if (e.operation === 'remove') {

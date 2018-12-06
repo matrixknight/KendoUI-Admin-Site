@@ -1,5 +1,6 @@
 {
     "result": "y",
+    "msg": "",
     "data": [
         {
             "text": "<i class='fas fa-list-ol'></i><abbr>一级菜单</abbr>",

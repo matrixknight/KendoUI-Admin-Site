@@ -1,5 +1,6 @@
 {
     "result": "y",
+    "msg": "",
     "data": [
         {
             "text": "<i class='fas fa-object-group'></i><sup></sup><abbr>综合<small>Dashboard</small><sub class='theme-l'>Hot</sub></abbr>",
@@ -46,10 +47,10 @@
                     "encoded": false,
                     "items": [
                         {
-                            "text": "<i class='fas fa-genderless'></i>敬请期待……",
+                            "text": "<i class='fas fa-genderless'></i>全功能查询及自定义编辑<sub class='theme-l'>New</sub>",
                             "encoded": false,
-                            "cssClass": "",
-                            "url": "javascript:;"
+                            "cssClass": "links-grid_custom",
+                            "url": "javascript:linkTo(\"/dashboard/grids/\", \"grid_custom\");"
                         }
                     ]
                 },

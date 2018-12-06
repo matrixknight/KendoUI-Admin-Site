@@ -47,6 +47,9 @@ $(function() {
                     url: 'json/province.json',
                     dataType: 'json'
                 }
+            },
+            schema: {
+                data: 'data'
             }
         },
         optionLabel: '-= 省份 =-',
@@ -60,6 +63,9 @@ $(function() {
                     url: 'json/city.json',
                     dataType: 'json'
                 }
+            },
+            schema: {
+                data: 'data'
             }
         },
         autoBind: false,
@@ -75,6 +81,9 @@ $(function() {
                     url: 'json/area.json',
                     dataType: 'json'
                 }
+            },
+            schema: {
+                data: 'data'
             }
         },
         autoBind: false,
@@ -93,6 +102,7 @@ $(function() {
                 }
             },
             schema: {
+                data: 'data',
                 model: {
                     children: 'items'
                 }
@@ -110,6 +120,9 @@ $(function() {
                     url: 'json/nation.json',
                     dataType: 'json'
                 }
+            },
+            schema: {
+                data: 'data'
             }
         },
         dataValueField: 'nation',
@@ -124,6 +137,9 @@ $(function() {
                     url: 'json/zodiac.json',
                     dataType: 'json'
                 }
+            },
+            schema: {
+                data: 'data'
             }
         },
         dataValueField: 'zodiac',
@@ -149,6 +165,9 @@ $(function() {
                     url: 'json/language.json',
                     dataType: 'json'
                 }
+            },
+            schema: {
+                data: 'data'
             }
         },
         dataTextField: 'language',
