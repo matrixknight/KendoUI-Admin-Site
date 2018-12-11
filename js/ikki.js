@@ -185,7 +185,7 @@ function alertMsg(msg, type) {
         animation: {open: {effects: 'fade:in'}, close: {effects: 'fade:out'}},
         closable: false,
         maxWidth: '30%',
-        maxHeight: '15%',
+        maxHeight: '30%',
         minWidth: 320,
         minHeight: 196,
         title: '信息',
@@ -212,7 +212,7 @@ function alertMsgBtn(msg, type) {
         actions: [],
         animation: {open: {effects: 'fade:in'}, close: {effects: 'fade:out'}},
         maxWidth: '30%',
-        maxHeight: '15%',
+        maxHeight: '30%',
         minWidth: 320,
         minHeight: 196,
         title: '信息',
@@ -234,7 +234,7 @@ function alertMsgNoBtn(msg, type) {
     var alertDialog = $('<div class="dialog-box"></div>').kendoDialog({
         animation: {open: {effects: 'fade:in'}, close: {effects: 'fade:out'}},
         maxWidth: '30%',
-        maxHeight: '15%',
+        maxHeight: '30%',
         minWidth: 320,
         minHeight: 160,
         title: '信息',
@@ -257,7 +257,7 @@ function confirmMsg(title, msg, type, confirmed) {
         animation: {open: {effects: 'fade:in'}, close: {effects: 'fade:out'}},
         closable: false,
         maxWidth: '30%',
-        maxHeight: '15%',
+        maxHeight: '30%',
         minWidth: 320,
         minHeight: 196,
         title: title,
@@ -290,7 +290,7 @@ function confirmMsgBtn(title, msg, type, confirmed) {
         actions: [],
         animation: {open: {effects: 'fade:in'}, close: {effects: 'fade:out'}},
         maxWidth: '30%',
-        maxHeight: '15%',
+        maxHeight: '30%',
         minWidth: 320,
         minHeight: 196,
         title: title,
@@ -678,7 +678,7 @@ function cudGrid(options, data, url, succeedGrid) {
 // 查
 function readGrid(options, url, succeedGrid) {
     $.fn.ajaxPost({
-        ajaxData: $.extend({}, {'id': options.data.id}, $('.condition').serializeObject()),
+        ajaxData: $.extend({}, options.data, $('.condition').serializeObject()),
         ajaxUrl: url,
         succeed: function(res) {
             options.success(res);
@@ -702,7 +702,7 @@ function batchOperate(url, succeedBatch) {
     if (sessionStorage.getItem('gridSelected') !== '') {
         $('#loading').show();
         $.fn.ajaxPost({
-            ajaxData: {'id': sessionStorage.getItem('gridSelected')},
+            ajaxData: {'ids': sessionStorage.getItem('gridSelected')},
             ajaxUrl: url,
             finished: function() {
                 $('#loading').hide();
