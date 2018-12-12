@@ -263,7 +263,7 @@ $(function() {
         opacity: true,
         buttons: false
     });
-    // 感兴趣的星座
+    // 相配的星座
     $('#constellation').kendoMultiSelect({
         placeholder: '多选下拉框',
         autoClose: false
