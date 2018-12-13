@@ -3,39 +3,39 @@
     "msg": "操作成功！",
     "data": [
         {
-            "nation": "1",
+            "nation": "01",
             "nationName": "阿昌族"
         },
         {
-            "nation": "2",
+            "nation": "02",
             "nationName": "白族"
         },
         {
-            "nation": "3",
+            "nation": "03",
             "nationName": "保安族"
         },
         {
-            "nation": "4",
+            "nation": "04",
             "nationName": "布朗族"
         },
         {
-            "nation": "5",
+            "nation": "05",
             "nationName": "布依族"
         },
         {
-            "nation": "6",
+            "nation": "06",
             "nationName": "朝鲜族"
         },
         {
-            "nation": "7",
+            "nation": "07",
             "nationName": "达斡尔族"
         },
         {
-            "nation": "8",
+            "nation": "08",
             "nationName": "傣族"
         },
         {
-            "nation": "9",
+            "nation": "09",
             "nationName": "德昂族"
         },
         {
