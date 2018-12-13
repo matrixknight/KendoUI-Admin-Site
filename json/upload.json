@@ -2,9 +2,9 @@
 	"result": "y",
 	"msg": "上传成功！",
 	"data": {
-		"photoUrl": "img/IKKI.png",
-		"photoName": "IKKI.png",
-		"photoSize": "11.6 KB",
-		"photoExt": ".png"
+		"url": "img/IKKI.png",
+		"name": "IKKI",
+		"extension": ".png",
+		"size": 29399
 	}
 }

@@ -289,7 +289,7 @@ $(function() {
         success: function(e) {
             if (e.response.result === 'y') {
                 if (e.operation === 'upload') {
-                    $('[name=photoUrl]').val(e.response.data.photoUrl).parent().find('img').attr('src', e.response.data.photoUrl);
+                    $('[name=photoUrl]').val(e.response.data.url).parent().find('img').attr('src', e.response.data.url);
                     alertMsg(e.response.msg, 'success');
                 }
                 if (e.operation === 'remove') {
