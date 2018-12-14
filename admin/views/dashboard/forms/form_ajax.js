@@ -385,11 +385,11 @@ $(function() {
                 return (input.val() === $('[name=password]').val());
             },
             // 性别
-            sex: function(input) {
-                if (!input.is('[name=sex]')) {
+            gender: function(input) {
+                if (!input.is('[name=gender]')) {
                     return true;
                 }
-                return $('[name=sex]').is(':checked');
+                return $('[name=gender]').is(':checked');
             },
             // 生日
             birthday: function(input) {
@@ -465,7 +465,7 @@ $(function() {
         messages: {
             nickName: "此昵称已存在，请重新输入！",
             matchPassword: '两次输入的密码不一致！',
-            sex: '请选择性别！',
+            gender: '请选择性别！',
             birthday: '日期格式不正确！',
             mateBirthday: '日期格式不正确！',
             nation: '请输入汉字！',
