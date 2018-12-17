@@ -704,7 +704,9 @@ function batchOperate(url, succeedBatch) {
     if ($('#grid').data('kendoGrid').selectedKeyNames().length > 0) {
         $('#loading').show();
         $.fn.ajaxPost({
-            ajaxData: {'ids': $('#grid').data('kendoGrid').selectedKeyNames()},
+            ajaxData: {
+                'ids': $('#grid').data('kendoGrid').selectedKeyNames()
+            },
             ajaxUrl: url,
             finished: function() {
                 $('#loading').hide();
