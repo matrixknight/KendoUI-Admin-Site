@@ -699,10 +699,10 @@ function refreshGrid() {
 
 // 批量操作
 function batchOperate(url, succeedBatch) {
-    if (sessionStorage.getItem('gridSelected') !== '') {
+    if ($('#grid').data('kendoGrid').selectedKeyNames().length > 0) {
         $('#loading').show();
         $.fn.ajaxPost({
-            ajaxData: {'ids': sessionStorage.getItem('gridSelected')},
+            ajaxData: {'ids': $('#grid').data('kendoGrid').selectedKeyNames()},
             ajaxUrl: url,
             finished: function() {
                 $('#loading').hide();
