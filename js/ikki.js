@@ -82,7 +82,9 @@ $(function() {
                         }
                     } else if (res.result === 'n') {
                         opts.failed(res);
-                        alertMsg(res.msg, 'error');
+                        if (res.msg.length > 0) {
+                            alertMsg(res.msg, 'error');
+                        }
                     }
                 } else {
                     logout();
