@@ -974,7 +974,7 @@ $(function() {
                 template: '<a href="javascript:showBigPic(\'#= photo.url #\');"><img class="w-25 rounded-circle" src="#= photo.url #" alt="#= photo.name ##= photo.extension #"></a><small class="ml-2 text-muted">[#= kendo.toString(photo.size/1000, "0.00") # KB]</small>',
                 editor: function(container, options) {
                     $('<div class="media">' +
-                            '<img class="w-25 mr-2" id="photoShow" src="'+ options.model.photo.url +'" alt="'+ options.model.photo.name + options.model.photo.extension +'" title="'+ kendo.toString(options.model.photo.size/1000, "0.00") +' KB">' +
+                            '<img class="img-thumbnail w-25 mr-2" id="photoShow" src="'+ options.model.photo.url +'" alt="'+ options.model.photo.name + options.model.photo.extension +'" title="'+ kendo.toString(options.model.photo.size/1000, "0.00") +' KB">' +
                             '<div class="media-body">' +
                                 '<input id="photoEdit" type="file">' +
                             '</div>' +
