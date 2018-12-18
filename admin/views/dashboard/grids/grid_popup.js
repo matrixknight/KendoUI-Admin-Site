@@ -1034,10 +1034,6 @@ $(function() {
                                 'italic',
                                 'underline',
                                 'strikethrough',
-                                'superscript',
-                                'subscript',
-                                'fontName',
-                                'fontSize',
                                 'foreColor',
                                 'backColor',
                                 'justifyLeft',
@@ -1048,24 +1044,7 @@ $(function() {
                                 'insertOrderedList',
                                 'indent',
                                 'outdent',
-                                'createLink',
-                                'unlink',
-                                'insertImage',
-                                'insertFile',
-                                'tableWizard',
-                                'createTable',
-                                'addColumnLeft',
-                                'addColumnRight',
-                                'addRowAbove',
-                                'addRowBelow',
-                                'deleteRow',
-                                'deleteColumn',
-                                'formatting',
-                                'cleanFormatting',
-                                'insertHtml',
-                                'viewHtml',
-                                'print',
-                                'pdf'
+                                'viewHtml'
                             ]
                         });
                 }
