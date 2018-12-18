@@ -1276,30 +1276,6 @@ form {
             border-left: none;
         }
     }
-    .k-switch {
-        margin-right: .5em;
-        width: 3em;
-    }
-    .k-switch-container {
-        padding: 0;
-        line-height: normal;
-    }
-    .k-switch-handle {
-        margin: -3px 5px 0 3px;
-        width: 1em;
-        height: 1em;
-    }
-    .k-switch-off {
-        &:hover {
-            .k-switch-container {
-                border-color: $line-color;
-            }
-            .k-switch-handle {
-                background-color: #eee;
-                border-color: $line-color;
-            }
-        }
-    }
     .adv-search-area,
     .searchBtn.row {
         display: none;
@@ -1313,6 +1289,32 @@ form {
     &:before {
         left: -20px;
         border-width: 10px;
+    }
+}
+
+/* 转换器 */
+.k-switch {
+    margin-right: .5em;
+    width: 3em;
+}
+.k-switch-container {
+    padding: 0;
+    line-height: normal;
+}
+.k-switch-handle {
+    margin: -3px 5px 0 3px;
+    width: 1em;
+    height: 1em;
+}
+.k-switch-off {
+    &:hover {
+        .k-switch-container {
+            border-color: $line-color;
+        }
+        .k-switch-handle {
+            background-color: #eee;
+            border-color: $line-color;
+        }
     }
 }
 
@@ -1339,6 +1341,34 @@ form {
 
 /* 表格 */
 .k-edit-form-container {
+    width: 600px;
+    .k-edit-label {
+        width: 20%;
+        font-weight: bold;
+    }
+    .k-edit-field {
+        padding-right: 5%;
+        width: 75%;
+        .k-switch {
+            width: 3em;
+            .k-switch-handle {
+                margin-top: -4px;
+            }
+        }
+        .k-switch,
+        .k-radio-label,
+        .k-checkbox-label {
+            margin-top: 6px;
+        }
+        .k-multiselect {
+            li.k-button {
+                margin-top: 2px;
+            }
+        }
+        .k-textarea {
+            width: 100%;
+        }
+    }
     .k-edit-buttons {
         text-align: center;
     }

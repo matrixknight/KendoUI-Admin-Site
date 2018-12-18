@@ -1039,21 +1039,6 @@ form .k-tooltip-validation {
     line-height: .9em; }
 form .k-editor-toolbar .k-tool-group {
   border-left: none; }
-form .k-switch {
-  margin-right: .5em;
-  width: 3em; }
-form .k-switch-container {
-  padding: 0;
-  line-height: normal; }
-form .k-switch-handle {
-  margin: -3px 5px 0 3px;
-  width: 1em;
-  height: 1em; }
-form .k-switch-off:hover .k-switch-container {
-  border-color: #ccc; }
-form .k-switch-off:hover .k-switch-handle {
-  background-color: #eee;
-  border-color: #ccc; }
 form .adv-search-area,
 form .searchBtn.row {
   display: none; }
@@ -1065,6 +1050,26 @@ form .searchBtn.row {
   .k-popup .k-list .k-item > .k-group:before {
     left: -20px;
     border-width: 10px; }
+
+/* 转换器 */
+.k-switch {
+  margin-right: .5em;
+  width: 3em; }
+
+.k-switch-container {
+  padding: 0;
+  line-height: normal; }
+
+.k-switch-handle {
+  margin: -3px 5px 0 3px;
+  width: 1em;
+  height: 1em; }
+
+.k-switch-off:hover .k-switch-container {
+  border-color: #ccc; }
+.k-switch-off:hover .k-switch-handle {
+  background-color: #eee;
+  border-color: #ccc; }
 
 /* 高级搜索 */
 .adv-search-btn {
@@ -1084,8 +1089,28 @@ form .searchBtn.row {
       margin-right: 8px; }
 
 /* 表格 */
-.k-edit-form-container .k-edit-buttons {
-  text-align: center; }
+.k-edit-form-container {
+  width: 600px; }
+  .k-edit-form-container .k-edit-label {
+    width: 20%;
+    font-weight: bold; }
+  .k-edit-form-container .k-edit-field {
+    padding-right: 5%;
+    width: 75%; }
+    .k-edit-form-container .k-edit-field .k-switch {
+      width: 3em; }
+      .k-edit-form-container .k-edit-field .k-switch .k-switch-handle {
+        margin-top: -4px; }
+    .k-edit-form-container .k-edit-field .k-switch,
+    .k-edit-form-container .k-edit-field .k-radio-label,
+    .k-edit-form-container .k-edit-field .k-checkbox-label {
+      margin-top: 6px; }
+    .k-edit-form-container .k-edit-field .k-multiselect li.k-button {
+      margin-top: 2px; }
+    .k-edit-form-container .k-edit-field .k-textarea {
+      width: 100%; }
+  .k-edit-form-container .k-edit-buttons {
+    text-align: center; }
 
 /* 自定义细节 ------------------------------ */
 .w-9 {

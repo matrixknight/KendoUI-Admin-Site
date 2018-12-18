@@ -244,11 +244,6 @@ $(function() {
                 destroy: function(options) { destroyGrid(options, 'json/response.json') },
                 update: function(options) { updateGrid(options, 'json/response.json') },
                 read: function(options) { readGrid(options, 'json/grid.json') }
-                // parameterMap: function(data, type) {
-                //     if (type !== 'read' && data.models) {
-                //         return kendo.stringify(data);
-                //     }
-                // }
             },
             schema: {
                 total: 'total',
@@ -484,7 +479,7 @@ $(function() {
             },
             { field: 'birthday', title: '生日', width: '110px' },
             { field: 'mateBirthday', title: '配偶生日', width: '130px' },
-            { field: 'creditCard', title: '银行卡', width: '160px',
+            { field: 'creditCard', title: '银行卡', width: '150px',
                 template: function(dataItem) {
                     return dataItem.creditCard.replace(dataItem.creditCard.substr(2, 12), '** **** **** **');
                 }
@@ -586,7 +581,7 @@ $(function() {
             },
             { field: 'summary', title: '自我介绍', width: '290px' },
             { field: 'photo', title: '头像', width: '120px',
-                template: '<a href="javascript:showBigPic(\'#= photo.url #\');"><img class="w-25 rounded-circle" src="#= photo.url #" alt="#= nickName #" title="#= photo.name ##= photo.extension #"></a><small class="ml-2 text-muted">[#= kendo.toString(photo.size/1000, "0.00") # KB]</small>'
+                template: '<a href="javascript:showBigPic(\'#= photo.url #\');"><img class="w-25 rounded-circle" src="#= photo.url #" alt="#= photo.name ##= photo.extension #"></a><small class="ml-2 text-muted">[#= kendo.toString(photo.size/1000, "0.00") # KB]</small>'
             },
             { field: 'sign', title: '签名', width: '290px',
                 template: '#= sign #'
@@ -610,12 +605,6 @@ $(function() {
         reorderable: true,
         resizable: true,
         navigatable: true,
-        // dataBound: function(e) {
-        //     sessionStorage.setItem('gridSelected', '');
-        // },
-        // change: function(e) {
-        //     sessionStorage.setItem('gridSelected', this.selectedKeyNames());
-        // },
         persistSelection: true,
         editable: {
             mode: 'popup',
