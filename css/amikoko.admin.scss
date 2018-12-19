@@ -1360,6 +1360,17 @@ form {
         .k-checkbox-label {
             margin-top: 6px;
         }
+        .k-slider {
+            .k-tick {
+                margin-top: 2px;
+            }
+        }
+        .k-colorpicker {
+            width: 100%;
+            .k-selected-color {
+                width: calc(100% - 8px - 1.42857em);
+            }
+        }
         .k-multiselect {
             li.k-button {
                 margin-top: 2px;
@@ -1368,9 +1379,60 @@ form {
         .k-textarea {
             width: 100%;
         }
+        .k-editor {
+            .k-tool-group {
+                border-width: 0;
+            }
+        }
     }
     .k-edit-buttons {
         text-align: center;
+    }
+}
+
+.k-grid-edit-row {
+    .k-switch {
+        .k-switch-handle {
+            margin-top: -4px;
+        }
+    }
+    .k-radio-label,
+    .k-checkbox-label {
+        margin-top: 4px;
+        margin-right: 12px;
+    }
+    .k-slider {
+        .k-button-increase,
+        .k-button-decrease {
+            margin-top: -6px;
+        }
+        .k-tick,
+        .k-last {
+            background-position-y: -97px;
+        }
+    }
+    .k-colorpicker {
+        .k-selected-color {
+            width: calc(100% - 8px - 1.42857em);
+        }
+    }
+    .k-textarea {
+        width: 100%;
+    }
+    .k-editor {
+        border: 1px solid #ccc;
+        .k-editor-toolbar-wrap {
+            border-bottom-width: 1px;
+            padding: 0;
+            .k-tool-group {
+                border-width: 0;
+            }
+        }
+        tr {
+            &:hover {
+                background-color: #fff;
+            }
+        }
     }
 }
 

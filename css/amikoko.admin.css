@@ -1105,12 +1105,46 @@ form .searchBtn.row {
     .k-edit-form-container .k-edit-field .k-radio-label,
     .k-edit-form-container .k-edit-field .k-checkbox-label {
       margin-top: 6px; }
+    .k-edit-form-container .k-edit-field .k-slider .k-tick {
+      margin-top: 2px; }
+    .k-edit-form-container .k-edit-field .k-colorpicker {
+      width: 100%; }
+      .k-edit-form-container .k-edit-field .k-colorpicker .k-selected-color {
+        width: calc(100% - 8px - 1.42857em); }
     .k-edit-form-container .k-edit-field .k-multiselect li.k-button {
       margin-top: 2px; }
     .k-edit-form-container .k-edit-field .k-textarea {
       width: 100%; }
+    .k-edit-form-container .k-edit-field .k-editor .k-tool-group {
+      border-width: 0; }
   .k-edit-form-container .k-edit-buttons {
     text-align: center; }
+
+.k-grid-edit-row .k-switch .k-switch-handle {
+  margin-top: -4px; }
+.k-grid-edit-row .k-radio-label,
+.k-grid-edit-row .k-checkbox-label {
+  margin-top: 4px;
+  margin-right: 12px; }
+.k-grid-edit-row .k-slider .k-button-increase,
+.k-grid-edit-row .k-slider .k-button-decrease {
+  margin-top: -6px; }
+.k-grid-edit-row .k-slider .k-tick,
+.k-grid-edit-row .k-slider .k-last {
+  background-position-y: -97px; }
+.k-grid-edit-row .k-colorpicker .k-selected-color {
+  width: calc(100% - 8px - 1.42857em); }
+.k-grid-edit-row .k-textarea {
+  width: 100%; }
+.k-grid-edit-row .k-editor {
+  border: 1px solid #ccc; }
+  .k-grid-edit-row .k-editor .k-editor-toolbar-wrap {
+    border-bottom-width: 1px;
+    padding: 0; }
+    .k-grid-edit-row .k-editor .k-editor-toolbar-wrap .k-tool-group {
+      border-width: 0; }
+  .k-grid-edit-row .k-editor tr:hover {
+    background-color: #fff; }
 
 /* 自定义细节 ------------------------------ */
 .w-9 {
