@@ -447,7 +447,11 @@ $(function() {
                 }
             },
             { field: 'nickName', title: '昵称', width: '110px' },
-            { hidden: true, field: 'password', title: '密码', width: '130px' },
+            { hidden: true, field: 'password', title: '密码', width: '100px',
+                template: function(dataItem) {
+                    return dataItem.password.replace(dataItem.password.substr(0), '******');
+                }
+            },
             { field: 'online', title: '状态', width: '100px',
                 template:
                     '# if (online) { #' +

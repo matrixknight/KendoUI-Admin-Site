@@ -391,10 +391,14 @@ $(function() {
             pageSize: 10
         },
         toolbar: [
-            { name: 'create', text: '新增' }
+            { name: 'create', text: '新增' },
+            { name: 'save', text: '保存变更' },
+            { name: 'cancel', text: '取消变更' },
+            { template: '<a href="javascript:batchOperate(\'json/response.json\');" class="k-button k-button-icontext"><span class="k-icon k-i-x"></span>批量删除</a>' }
         ],
         columns: [
-            { title: '操作', width: '230px',
+            { locked: true, selectable: true, width: '40px' },
+            { locked: true, title: '操作', width: '90px',
                 command: [
                     { name: 'detail', text: '详情',
                         iconClass: 'k-icon k-i-txt',
@@ -402,19 +406,6 @@ $(function() {
                             e.preventDefault();
                             divWindow('详情', 'auto', '40%', kendo.template($('#detailsTemplate').html())(this.dataItem($(e.target).closest('tr'))));
                         }
-                    },
-                    { name: 'edit',
-                        iconClass: {
-                            edit: 'k-icon k-i-edit',
-                            update: 'k-icon k-i-check',
-                            cancel: 'k-icon k-i-cancel'
-                        },
-                        text: {
-                            update: '保存'
-                        }
-                    },
-                    { name: 'destroy',
-                        iconClass: 'k-icon k-i-x'
                     }
                 ]
             },
@@ -423,7 +414,11 @@ $(function() {
             { field: 'nickName', title: '昵称', width: '110px' },
             { field: 'password', title: '密码', width: '100px',
                 template: function(dataItem) {
-                    return dataItem.password.replace(dataItem.password.substr(0), '******');
+                    if (dataItem.password) {
+                        return dataItem.password.replace(dataItem.password.substr(0), '******');
+                    } else {
+                        return '';
+                    }
                 },
                 editor: function(container, options) {
                     $('<input class="k-textbox" type="password" data-bind="value: '+ options.field +'">')
@@ -458,7 +453,13 @@ $(function() {
                 }
             },
             { field: 'age', title: '年龄', width: '80px',
-                template: '#= age # 岁',
+                template: function(dataItem) {
+                    if (dataItem.age) {
+                        return dataItem.age + ' 岁';
+                    } else {
+                        return '';
+                    }
+                },
                 editor: function(container, options) {
                     $('<input type="number" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
@@ -471,7 +472,13 @@ $(function() {
                 }
             },
             { field: 'height', title: '身高', width: '100px',
-                template: '#= kendo.toString(height, "0.00") # m',
+                template: function(dataItem) {
+                    if (dataItem.height) {
+                        return kendo.toString(dataItem.height, '0.00') + ' m';
+                    } else {
+                        return '';
+                    }
+                },
                 editor: function(container, options) {
                     $('<input type="number" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
@@ -536,7 +543,11 @@ $(function() {
             },
             { field: 'creditCard', title: '银行卡', width: '170px',
                 template: function(dataItem) {
-                    return dataItem.creditCard.replace(dataItem.creditCard.substr(2, 12), '** **** **** **');
+                    if (dataItem.creditCard) {
+                        return dataItem.creditCard.replace(dataItem.creditCard.substr(2, 12), '** **** **** **');
+                    } else {
+                        return '';
+                    }
                 },
                 editor: function(container, options) {
                     $('<input data-bind="value: '+ options.field +'">')
@@ -559,7 +570,13 @@ $(function() {
                 }
             },
             { field: 'nativePlace', title: '籍贯', width: '250px',
-                template: '#= nativePlace.provinceName # - #= nativePlace.cityName # - #= nativePlace.areaName #',
+                template: function(dataItem) {
+                    if (dataItem.nativePlace.provinceName && dataItem.nativePlace.cityName && dataItem.nativePlace.areaName) {
+                        return dataItem.nativePlace.provinceName + ' - ' + dataItem.nativePlace.cityName + ' - ' + dataItem.nativePlace.areaName;
+                    } else {
+                        return '';
+                    }
+                },
                 editor: function(container, options) {
                     $('<select class="mb-2" id="provinceEdit" data-bind="value: '+ options.field +'"></select>')
                         .appendTo(container)
@@ -1049,8 +1066,7 @@ $(function() {
                                 'insertUnorderedList',
                                 'insertOrderedList',
                                 'indent',
-                                'outdent',
-                                'viewHtml'
+                                'outdent'
                             ]
                         });
                 }
@@ -1067,11 +1083,9 @@ $(function() {
         },
         reorderable: true,
         resizable: true,
+        persistSelection: true,
         editable: {
-            mode: 'inline'
-        },
-        edit: function(e) {
-            e.container.find('.k-grid-update', '.k-grid-cancel').attr('href', 'javascript:;');
+            mode: 'incell'
         }
     });
 });
