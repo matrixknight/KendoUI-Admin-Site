@@ -408,6 +408,9 @@ $(function() {
                             edit: 'k-icon k-i-edit',
                             update: 'k-icon k-i-check',
                             cancel: 'k-icon k-i-cancel'
+                        },
+                        text: {
+                            update: '保存'
                         }
                     },
                     { name: 'destroy',
