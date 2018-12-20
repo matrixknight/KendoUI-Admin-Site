@@ -421,7 +421,7 @@ $(function() {
             { field: 'userName', title: '用户名', width: '80px' },
             { field: 'realName', title: '姓名', width: '100px' },
             { field: 'nickName', title: '昵称', width: '110px' },
-            { hidden: true, field: 'password', title: '密码', width: '100px',
+            { hidden: true, field: 'password', title: '密码', width: '70px',
                 template: function(dataItem) {
                     return dataItem.password.replace(dataItem.password.substr(0), '******');
                 },
