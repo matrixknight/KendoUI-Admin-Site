@@ -1436,6 +1436,20 @@ form {
     }
 }
 
+.k-filter-row {
+    .k-filtercell {
+        .k-autocomplete {
+            border-left-width: 1px;
+        }
+        .k-autocomplete,
+        .k-combobox,
+        .k-numerictextbox,
+        .k-datepicker {
+            width: auto;
+        }
+    }
+}
+
 /* 自定义细节 ------------------------------ */
 .w-9 {
     width: 9% !important;

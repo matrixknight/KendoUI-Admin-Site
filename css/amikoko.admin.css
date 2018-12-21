@@ -1146,6 +1146,14 @@ form .searchBtn.row {
   .k-grid-edit-row .k-editor tr:hover {
     background-color: #fff; }
 
+.k-filter-row .k-filtercell .k-autocomplete {
+  border-left-width: 1px; }
+.k-filter-row .k-filtercell .k-autocomplete,
+.k-filter-row .k-filtercell .k-combobox,
+.k-filter-row .k-filtercell .k-numerictextbox,
+.k-filter-row .k-filtercell .k-datepicker {
+  width: auto; }
+
 /* 自定义细节 ------------------------------ */
 .w-9 {
   width: 9% !important; }
