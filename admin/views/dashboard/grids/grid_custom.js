@@ -592,7 +592,7 @@ $(function() {
             }
         ],
         noRecords: {
-            template: '无相关数据'
+            template: '<div class="text-center p-4">无相关数据</div>'
         },
         pageable: {
             buttonCount: 5,
