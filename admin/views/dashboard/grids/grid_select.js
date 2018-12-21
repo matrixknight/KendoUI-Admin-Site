@@ -81,7 +81,8 @@ $(function() {
             { template: '<a href="javascript:batchOperate(\'json/response.json\');" class="k-button k-button-icontext"><span class="k-icon k-i-check"></span>提交</a>' }
         ],
         columns: [
-            { field: 'id', title: '<input class=\'k-checkbox ids\' id=\'selectAll\' type=\'checkbox\' title=\'全选\'><label class=\'k-checkbox-label\' for=\'selectAll\'></label>', width: '40px',
+            { field: 'id', width: '40px',
+                headerTemplate: '<input class="k-checkbox ids" id="selectAll" type="checkbox" title="全选"><label class="k-checkbox-label" for="selectAll"></label>',
                 template: '<input class="k-checkbox ids" id="#= id #Ids" type="checkbox" value="#= id #"><label class="k-checkbox-label" for="#= id #Ids"></label>'
             },
             { field: 'userName', title: '用户名', width: '80px' },
