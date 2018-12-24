@@ -510,6 +510,15 @@ $(function() {
                                 name: 'avatar',
                                 extension: '.png',
                                 size: 53284
+                            },
+                            validation: {
+                                photo: function(input) {
+                                    if (!input.is('#editForm [name=photo]')) {
+                                        return true;
+                                    }
+                                    input.attr('data-photo-msg', '请上传头像！');
+                                    return $('#photoShow').attr('alt') !== 'avatar.png' && $('#photoShow').attr('title') !== '53.28 KB';
+                                }
                             }
                         },
                         sign: { type: 'string' }
@@ -1053,7 +1062,11 @@ $(function() {
                             e.model.set('photo.name', res.response.data.name);
                             e.model.set('photo.extension', res.response.data.extension);
                             e.model.set('photo.size', res.response.data.size);
-                            $('#editForm #photoShow').attr('src', res.response.data.url);
+                            $('#editForm #photoShow').attr({
+                                'src': res.response.data.url,
+                                'alt': res.response.data.name + res.response.data.extension,
+                                'title': kendo.toString(res.response.data.size/1000, '0.00') + ' KB'
+                            });
                             alertMsg(res.response.msg, 'success');
                         }
                         if (res.operation === 'remove') {
@@ -1061,7 +1074,11 @@ $(function() {
                             e.model.set('photo.name', 'avatar');
                             e.model.set('photo.extension', '.png');
                             e.model.set('photo.size', 53284);
-                            $('#editForm #photoShow').attr('src', 'img/avatar.png');
+                            $('#editForm #photoShow').attr({
+                                'src': 'img/avatar.png',
+                                'alt': 'avatar.png',
+                                'title': '53.28 KB'
+                            });
                         }
                     } else {
                         $('.k-upload-files').remove();
