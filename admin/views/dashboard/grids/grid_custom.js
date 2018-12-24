@@ -253,11 +253,58 @@ $(function() {
                     fields: {
                         userName: { type: 'string' },
                         realName: { type: 'string' },
-                        nickName: { type: 'string' },
+                        nickName: { type: 'string',
+                            validation: {
+                                nickName: function(input) {
+                                    if (!input.is('#editForm [name=nickName]')) {
+                                        return true;
+                                    }
+                                    input.next().show();
+                                    var unique = true;
+                                    $.fn.ajaxPost({
+                                        ajaxAsync: false,
+                                        ajaxData: {
+                                            'nickName': input.val()
+                                        },
+                                        finished: function() {
+                                            input.next().hide();
+                                        },
+                                        succeed: function() {
+                                            unique = true;
+                                        },
+                                        failed: function() {
+                                            unique = false;
+                                        }
+                                    });
+                                    input.attr('data-nickName-msg', '此昵称已存在，请重新输入！');
+                                    return unique;
+                                }
+                            }
+                        },
                         password: { type: 'string' },
-                        confirmPassword: { type: 'string' },
+                        confirmPassword: { type: 'string',
+                            validation: {
+                                matchPassword: function(input) {
+                                    if (!input.is('#editForm [name=confirmPassword]')) {
+                                        return true;
+                                    }
+                                    input.attr('data-matchPassword-msg', '两次输入的密码不一致！');
+                                    return (input.val() === $('#editForm [name=password]').val());
+                                }
+                            }
+                        },
                         online: { type: 'boolean' },
-                        gender: { type: 'string' },
+                        gender: { type: 'string',
+                            validation: {
+                                gender: function(input) {
+                                    if (!input.is('#editForm [name=gender]')) {
+                                        return true;
+                                    }
+                                    input.attr('data-gender-msg', '请选择性别！');
+                                    return $('#editForm [name=gender]').is(':checked');
+                                }
+                            }
+                        },
                         age: { type: 'number',
                             defaultValue: null
                         },
@@ -269,12 +316,30 @@ $(function() {
                             defaultValue: null,
                             parse: function(e) {
                                 return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd');
+                            },
+                            validation: {
+                                birthday: function(input) {
+                                    if (!input.is('#editForm [name=birthday]')) {
+                                        return true;
+                                    }
+                                    input.attr('data-birthday-msg', '日期格式不正确！');
+                                    return kendo.parseDate(input.val(), 'yyyy-MM-dd') instanceof Date;
+                                }
                             }
                         },
                         mateBirthday: { type: 'date',
                             defaultValue: null,
                             parse: function(e) {
                                 return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd');
+                            },
+                            validation: {
+                                mateBirthday: function(input) {
+                                    if (!input.is('#editForm [name=mateBirthday]')) {
+                                        return true;
+                                    }
+                                    input.attr('data-mateBirthday-msg', '日期格式不正确！');
+                                    return kendo.parseDate(input.val(), 'yyyy-MM-dd') instanceof Date;
+                                }
                             }
                         },
                         creditCard: { type: 'string',
@@ -314,6 +379,15 @@ $(function() {
                             defaultValue: {
                                 nation: '',
                                 nationName: ''
+                            },
+                            validation: {
+                                nation: function(input) {
+                                    if (!input.is('#editForm [name=nation_input]')) {
+                                        return true;
+                                    }
+                                    input.attr('data-nation-msg', '请输入汉字！');
+                                    return input.val() === '' || input.val().match(/^[\u4E00-\u9FA5]+$/) !== null;
+                                }
                             }
                         },
                         zodiac: { type: 'object',
@@ -328,6 +402,15 @@ $(function() {
                                 delete e.zodiacValue4;
                                 delete e.zodiacValue5;
                                 return e;
+                            },
+                            validation: {
+                                zodiac: function(input) {
+                                    if (!input.is('#editForm [name=zodiac_input]')) {
+                                        return true;
+                                    }
+                                    input.attr('data-zodiac-msg', '请输入生肖！');
+                                    return input.val() === '' || input.val().match(/^[鼠|牛|虎|兔|龙|蛇|马|羊|猴|鸡|狗|猪]{1}$/) !== null;
+                                }
                             }
                         },
                         language: { type: 'string',
@@ -336,18 +419,45 @@ $(function() {
                             }
                         },
                         education: { type: 'object',
-                            defaultValue: []
+                            defaultValue: [],
+                            validation: {
+                                education: function(input) {
+                                    if (!input.is('#editForm [name=education]')) {
+                                        return true;
+                                    }
+                                    input.attr('data-education-msg', '请选择教育程度！');
+                                    return $('#editForm [name=education]').is(':checked');
+                                }
+                            }
                         },
                         graduation: { type: 'date',
                             defaultValue: null,
                             parse: function(e) {
                                 return kendo.toString(new Date(e), 'yyyy');
+                            },
+                            validation: {
+                                graduation: function(input) {
+                                    if (!input.is('#editForm [name=graduation]')) {
+                                        return true;
+                                    }
+                                    input.attr('data-graduation-msg', '年份格式不正确！');
+                                    return kendo.parseDate(input.val(), 'yyyy') instanceof Date;
+                                }
                             }
                         },
                         firstJob: { type: 'date',
                             defaultValue: null,
                             parse: function(e) {
                                 return kendo.toString(new Date(e), 'yyyy-MM');
+                            },
+                            validation: {
+                                firstJob: function(input) {
+                                    if (!input.is('#editForm [name=firstJob]')) {
+                                        return true;
+                                    }
+                                    input.attr('data-firstJob-msg', '月份格式不正确！');
+                                    return kendo.parseDate(input.val(), 'yyyy-MM') instanceof Date;
+                                }
                             }
                         },
                         mobile: { type: 'string' },
@@ -357,12 +467,30 @@ $(function() {
                             defaultValue: null,
                             parse: function(e) {
                                 return kendo.toString(kendo.parseDate(e), 'HH:mm');
+                            },
+                            validation: {
+                                getUp: function(input) {
+                                    if (!input.is('#editForm [name=getUp]')) {
+                                        return true;
+                                    }
+                                    input.attr('data-getUp-msg', '时间格式不正确！');
+                                    return kendo.parseDate(input.val(), 'HH:mm') instanceof Date;
+                                }
                             }
                         },
                         importantMoment: { type: 'date',
                             defaultValue: null,
                             parse: function(e) {
                                 return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd HH:mm');
+                            },
+                            validation: {
+                                importantMoment: function(input) {
+                                    if (!input.is('#editForm [name=importantMoment]')) {
+                                        return true;
+                                    }
+                                    input.attr('data-importantMoment-msg', '日期时间格式不正确！');
+                                    return kendo.parseDate(input.val(), 'yyyy-MM-dd HH:mm') instanceof Date;
+                                }
                             }
                         },
                         character: { type: 'number' },

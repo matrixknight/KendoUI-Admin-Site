@@ -1119,6 +1119,10 @@ form .searchBtn.row {
       border-width: 0; }
   .k-edit-form-container .k-edit-buttons {
     text-align: center; }
+  .k-edit-form-container div.k-tooltip-validation {
+    margin: 0.5em 0 0 0 !important; }
+    .k-edit-form-container div.k-tooltip-validation .k-icon {
+      margin-right: 4px; }
 
 .k-grid-edit-row .k-switch .k-switch-handle {
   margin-top: -4px; }
