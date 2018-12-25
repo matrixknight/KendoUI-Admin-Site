@@ -1094,6 +1094,11 @@ form .searchBtn.row {
   .k-edit-form-container .k-edit-label {
     width: 20%;
     font-weight: bold; }
+    .k-edit-form-container .k-edit-label .k-required {
+      margin-right: .2em;
+      font-size: 20px;
+      line-height: 12px;
+      vertical-align: -50%; }
   .k-edit-form-container .k-edit-field {
     padding-right: 5%;
     width: 75%; }

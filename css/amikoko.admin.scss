@@ -1345,6 +1345,12 @@ form {
     .k-edit-label {
         width: 20%;
         font-weight: bold;
+        .k-required {
+            margin-right: .2em;
+            font-size: $font-size-xxl;
+            line-height: $font-size-s;
+            vertical-align: -50%;
+        }
     }
     .k-edit-field {
         padding-right: 5%;
