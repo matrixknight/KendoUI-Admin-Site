@@ -1120,6 +1120,7 @@ form .searchBtn.row {
   .k-edit-form-container .k-edit-buttons {
     text-align: center; }
   .k-edit-form-container div.k-tooltip-validation {
+    flex-direction: row;
     margin: 0.5em 0 0 0 !important; }
     .k-edit-form-container div.k-tooltip-validation .k-icon {
       margin-right: 4px; }

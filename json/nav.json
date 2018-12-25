@@ -53,7 +53,7 @@
                             "url": "javascript:linkTo(\"/dashboard/grids/\", \"grid_custom\");"
                         },
                         {
-                            "text": "<i class='fas fa-genderless'></i>弹出框编辑",
+                            "text": "<i class='fas fa-genderless'></i>弹出框编辑<sub class='theme-l'>Update</sub>",
                             "encoded": false,
                             "cssClass": "links-grid_popup",
                             "url": "javascript:linkTo(\"/dashboard/grids/\", \"grid_popup\");"
