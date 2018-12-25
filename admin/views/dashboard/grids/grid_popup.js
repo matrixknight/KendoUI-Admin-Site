@@ -858,17 +858,37 @@ $(function() {
                     }
                 ]
             },
-            { field: 'userName', title: '用户名', width: '80px' },
-            { field: 'realName', title: '姓名', width: '100px' },
-            { field: 'nickName', title: '昵称', width: '110px' },
+            { field: 'userName', title: '用户名', width: '80px',
+                editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
+                    $('<input class="k-textbox" name="userName" data-bind="value: '+ options.field +'">')
+                        .appendTo(container);
+                }
+            },
+            { field: 'realName', title: '姓名', width: '100px',
+                editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
+                    $('<input class="k-textbox" name="realName" data-bind="value: '+ options.field +'">')
+                        .appendTo(container);
+                }
+            },
+            { field: 'nickName', title: '昵称', width: '110px',
+                editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
+                    $('<input class="k-textbox" name="nickName" data-bind="value: '+ options.field +'">')
+                        .appendTo(container);
+                }
+            },
             { hidden: true, field: 'password', title: '密码',
                 editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
                     $('<input class="k-textbox" name="password" type="password" data-bind="value: '+ options.field +'">')
                         .appendTo(container);
                 }
             },
             { hidden: true, field: 'confirmPassword', title: '确认密码',
                 editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
                     $('<input class="k-textbox" name="confirmPassword" type="password" data-bind="value: '+ options.field +'">')
                         .appendTo(container);
                 }
@@ -895,6 +915,7 @@ $(function() {
                     { text: '女', value: '2' }
                 ],
                 editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
                     $('<input class="k-radio" id="genderEdit1" name="gender" type="radio" value="1" data-bind="checked: '+ options.field +'"><label class="k-radio-label" for="genderEdit1">男</label>' +
                         '<input class="k-radio" id="genderEdit2" name="gender" type="radio" value="2" data-bind="checked: '+ options.field +'"><label class="k-radio-label" for="genderEdit2">女</label>' +
                         '<span class="k-invalid-msg" data-for="gender"></span>')
@@ -904,6 +925,7 @@ $(function() {
             { field: 'age', title: '年龄', width: '70px',
                 template: '#= age # 岁',
                 editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
                     $('<input name="age" type="number" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoNumericTextBox({
@@ -919,6 +941,7 @@ $(function() {
             { field: 'height', title: '身高', width: '80px',
                 template: '#= kendo.toString(height, "0.00") # m',
                 editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
                     $('<input name="height" type="number" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoNumericTextBox({
@@ -941,6 +964,7 @@ $(function() {
                     { text: '其他', value: '5' }
                 ],
                 editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
                     $('<select name="bloodType" data-bind="value: '+ options.field +'"></select>')
                         .appendTo(container)
                         .kendoDropDownList({
@@ -963,6 +987,7 @@ $(function() {
             },
             { field: 'birthday', title: '生日', width: '110px',
                 editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
                     $('<input name="birthday" type="date" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoDatePicker({
@@ -977,6 +1002,7 @@ $(function() {
             },
             { field: 'mateBirthday', title: '配偶生日', width: '110px',
                 editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
                     $('<input name="mateBirthday" type="date" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoDateInput({
@@ -993,6 +1019,7 @@ $(function() {
                     return dataItem.creditCard.replace(dataItem.creditCard.substr(2, 12), '** **** **** **');
                 },
                 editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
                     $('<input name="creditCard" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoMaskedTextBox({
@@ -1005,6 +1032,7 @@ $(function() {
             { field: 'asset', title: '资产', width: '140px',
                 format: '{0:c}',
                 editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
                     $('<input name="asset" type="number" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoNumericTextBox({
@@ -1019,6 +1047,7 @@ $(function() {
             { field: 'nativePlace', title: '籍贯', width: '250px',
                 template: '#= nativePlace.provinceName # - #= nativePlace.cityName # - #= nativePlace.areaName #',
                 editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
                     $('<select class="mb-2" id="provinceEdit" name="nativePlace" data-bind="value: '+ options.field +'"></select>')
                         .appendTo(container)
                         .kendoDropDownList({
@@ -1105,6 +1134,7 @@ $(function() {
             { field: 'domicile', title: '居住地', width: '100px',
                 template: '#= domicile.name #',
                 editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
                     $('<input name="domicile" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoDropDownTree({
@@ -1140,6 +1170,7 @@ $(function() {
             { field: 'nation', title: '民族', width: '100px',
                 template: '#= nation.nationName #',
                 editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
                     $('<input name="nation" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoComboBox({
@@ -1172,6 +1203,7 @@ $(function() {
             { field: 'zodiac', title: '生肖', width: '60px',
                 template: '#= zodiac.zodiacName #',
                 editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
                     $('<input name="zodiac" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoMultiColumnComboBox({
@@ -1214,6 +1246,7 @@ $(function() {
             },
             { field: 'language', title: '语言', width: '210px',
                 editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
                     $('<input name="language" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoAutoComplete({
@@ -1267,6 +1300,7 @@ $(function() {
                         '# } #' +
                     '# } #',
                 editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
                     $('<input class="k-checkbox" id="educationEdit1" name="education" type="checkbox" value="1" data-bind="checked: '+ options.field +'"><label class="k-checkbox-label" for="educationEdit1">小学</label>' +
                         '<input class="k-checkbox" id="educationEdit2" name="education" type="checkbox" value="2" data-bind="checked: '+ options.field +'"><label class="k-checkbox-label" for="educationEdit2">初中</label>' +
                         '<input class="k-checkbox" id="educationEdit3" name="education" type="checkbox" value="3" data-bind="checked: '+ options.field +'"><label class="k-checkbox-label" for="educationEdit3">高中</label>' +
@@ -1282,6 +1316,7 @@ $(function() {
             },
             { field: 'graduation', title: '毕业年份', width: '90px',
                 editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
                     $('<input name="graduation" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoDatePicker({
@@ -1296,6 +1331,7 @@ $(function() {
             },
             { field: 'firstJob', title: '参加工作年月', width: '110px',
                 editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
                     $('<input name="firstJob" type="month" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoDatePicker({
@@ -1310,24 +1346,28 @@ $(function() {
             },
             { field: 'mobile', title: '手机', width: '120px',
                 editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
                     $('<input class="k-textbox" name="mobile" type="tel" data-bind="value: '+ options.field +'">')
                         .appendTo(container);
                 }
             },
             { field: 'email', title: '电子邮件', width: '180px',
                 editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
                     $('<input class="k-textbox" name="email" type="email" data-bind="value: '+ options.field +'" data-email-msg="电子邮件格式不正确！">')
                         .appendTo(container);
                 }
             },
             { field: 'homepage', title: '个人主页', width: '190px',
                 editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
                     $('<input class="k-textbox" name="homepage" type="url" data-bind="value: '+ options.field +'" data-url-msg="网址格式不正确！">')
                         .appendTo(container);
                 }
             },
             { field: 'getUp', title: '起床时间', width: '90px',
                 editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
                     $('<input name="getUp" type="time" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoTimePicker({
@@ -1339,6 +1379,7 @@ $(function() {
             },
             { field: 'importantMoment', title: '最有意义的时刻', width: '150px',
                 editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
                     $('<input name="importantMoment" type="datetime" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoDateTimePicker({
@@ -1364,6 +1405,7 @@ $(function() {
                     { text: '超级内向', value: -10 }
                 ],
                 editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
                     $('<input name="character" type="range" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoSlider({
@@ -1384,6 +1426,7 @@ $(function() {
             { field: 'color', title: '颜色喜好', width: '90px',
                 template: '<span style="display: inline-block; width: 100%; height: 24px; background: #= color #; border: 1px solid \\#c5c5c5; border-radius: 4px; vertical-align: middle;"></span>',
                 editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
                     $('<input name="color" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoColorPicker({
@@ -1424,6 +1467,7 @@ $(function() {
                         '# } #' +
                     '# } #',
                 editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
                     $('<select name="constellation" multiple data-bind="value: '+ options.field +'"></select>')
                         .appendTo(container)
                         .kendoMultiSelect({
@@ -1455,6 +1499,7 @@ $(function() {
             },
             { field: 'summary', title: '自我介绍', width: '290px',
                 editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
                     $('<textarea class="k-textarea" name="summary" data-bind="value: '+ options.field +'"></textarea>')
                         .appendTo(container);
                 }
@@ -1462,6 +1507,7 @@ $(function() {
             { field: 'photo', title: '头像', width: '120px',
                 template: '<a href="javascript:showBigPic(\'#= photo.url #\');"><img class="w-25 rounded-circle" src="#= photo.url #" alt="#= photo.name ##= photo.extension #"></a><small class="ml-2 text-muted">[#= kendo.toString(photo.size/1000, "0.00") # KB]</small>',
                 editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
                     $('<div class="media">' +
                             '<img class="img-thumbnail w-25 mr-2" id="photoShow" src="'+ options.model.photo.url +'" alt="'+ options.model.photo.name + options.model.photo.extension +'" title="'+ kendo.toString(options.model.photo.size/1000, "0.00") +' KB">' +
                             '<div class="media-body">' +
@@ -1524,6 +1570,7 @@ $(function() {
             { field: 'sign', title: '签名', width: '290px',
                 template: '#= sign #',
                 editor: function(container, options) {
+                    $('<strong class="k-required">*</strong>').appendTo(container);
                     $('<textarea name="sign" data-bind="value: '+ options.field +'"></textarea>')
                         .appendTo(container)
                         .kendoEditor({
@@ -1574,6 +1621,9 @@ $(function() {
             } else {
                 e.container.kendoWindow('title', '编辑');
             }
+            $('.k-edit-form-container .k-edit-field strong.k-required').each(function(i, items) {
+                $(items).prependTo($(items).parent().prev().find('label'));
+            })
         }
     });
 });
