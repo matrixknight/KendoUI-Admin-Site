@@ -300,8 +300,8 @@ $(function() {
                                     if (!input.is('.k-grid-edit-row [name=nickName]')) {
                                         return true;
                                     }
-                                    input.attr('data-nickNamePattern-msg', '请输入2-20个大小写字母、数字、下划线及汉字！');
-                                    return input.val().match(/^[A-Za-z0-9_\-\u4E00-\u9FA5]{2,20}$/) !== null;
+                                    input.attr('data-nickNamePattern-msg', '请输入2-20个大小写字母、数字、空格、下划线、中划线及汉字！');
+                                    return input.val().match(/^[A-Za-z0-9\s_\-\u4E00-\u9FA5]{2,20}$/) !== null;
                                 },
                                 nickNameUnique: function(input) {
                                     if (!input.is('.k-grid-edit-row [name=nickName]')) {
