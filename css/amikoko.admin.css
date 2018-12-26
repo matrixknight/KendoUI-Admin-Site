@@ -1176,6 +1176,9 @@ form .searchBtn.row {
     margin-right: 4px; }
   .k-grid-edit-row div.k-tooltip-validation .k-callout-n {
     left: 16px; }
+.k-grid-edit-row .k-edit-cell {
+  padding-top: 10px;
+  padding-bottom: 15px; }
 
 .k-filter-row .k-filtercell .k-autocomplete {
   border-left-width: 1px; }
