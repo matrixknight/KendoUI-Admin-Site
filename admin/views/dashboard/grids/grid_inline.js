@@ -114,7 +114,8 @@ $(function() {
         },
         placeholder: '树形下拉框',
         dataValueField: 'code',
-        dataTextField: 'name'
+        dataTextField: 'name',
+        loadOnDemand: true
     });
     // 民族
     $('#nation').kendoComboBox({
