@@ -707,13 +707,42 @@ function refreshGrid() {
     $('#grid').data('kendoGrid').dataSource.read();
 }
 
-// 批量操作
+// 批量操作ID
 function batchOperate(url, succeedBatch) {
     if ($('#grid').data('kendoGrid').selectedKeyNames().length > 0) {
         $('#loading').show();
         $.fn.ajaxPost({
             ajaxData: {
                 'ids': $('#grid').data('kendoGrid').selectedKeyNames()
+            },
+            ajaxUrl: url,
+            finished: function() {
+                $('#loading').hide();
+            },
+            succeed: function(res) {
+                refreshGrid();
+                if (succeedBatch) {
+                    succeedBatch(res);
+                }
+            },
+            isMsg: true
+        });
+    } else {
+        alertMsg('请先选择对象！', 'warning');
+    }
+}
+
+// 批量提交数据
+function batchSubmit(url, succeedBatch) {
+    if ($('#grid').data('kendoGrid').selectedKeyNames().length > 0) {
+        $('#loading').show();
+        var models = [];
+        $.each($('#grid').data('kendoGrid').selectedKeyNames(), function(i, items) {
+            models.push($('#grid').data('kendoGrid').dataSource.get(items));
+        });
+        $.fn.ajaxPost({
+            ajaxData: {
+                'models': models
             },
             ajaxUrl: url,
             finished: function() {
