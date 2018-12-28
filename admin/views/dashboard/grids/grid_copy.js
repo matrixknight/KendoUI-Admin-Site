@@ -231,7 +231,7 @@ $(function() {
                             format: 'n0',
                             decimals: 0,
                             min: 1,
-                            max: 100
+                            max: 120
                         });
                 }
             },

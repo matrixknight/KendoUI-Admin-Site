@@ -1,7 +1,7 @@
 $.getScript(path + 'js/jszip.min.js');
 $(function() {
     // 年龄
-    numericRange($('#ageStart'), $('#ageEnd'), 'n0', 0, 1, 1, 100);
+    numericRange($('#ageStart'), $('#ageEnd'), 'n0', 0, 1, 1, 120);
     // 身高
     numericRange($('#heightStart'), $('#heightEnd'), '0.00 m', 2, 0.01, 0.30, 3.00);
     // 血型
@@ -773,7 +773,7 @@ $(function() {
                 format: 'n0',
                 decimals: 0,
                 min: 1,
-                max: 100
+                max: 120
             });
             // 身高
             $('#heightEdit').kendoNumericTextBox({
