@@ -212,8 +212,9 @@ $(function() {
     });
     // 颜色喜好
     $('#color').kendoColorPicker({
-        opacity: true,
-        buttons: false
+        palette: ['#c39b8f', '#d770ad', '#da4453', '#ff9800', '#f6bb42', '#8cc152', '#37bc9b', '#3bafda', '#4a89dc', '#967adc', '#434a54', '#aab2bd'],
+        columns: 6,
+        tileSize: 32
     });
     // 相配的星座
     $('#constellation').kendoMultiSelect({
