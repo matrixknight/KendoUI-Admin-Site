@@ -207,12 +207,35 @@ $(function() {
         smallStep: 2,
         largeStep: 1,
         tooltip: {
-            template: '# if(value==10){ #超级开朗# }else if(value==8){ #非常开朗# }else if(value==6){ #很开朗# }else if(value==4){ #比较开朗# }else if(value==2){ #有点开朗# }else if(value==-2){ #有点内向# }else if(value==-4){ #比较内向# }else if(value==-6){ #很内向# }else if(value==-8){ #非常内向# }else if(value==-10){ #超级内向# }else{ #普通# } #'
+            template:
+                '# if (value === 10) { #' +
+                    '超级开朗' +
+                '# } else if (value === 8) { #' +
+                    '非常开朗' +
+                '# } else if (value === 6) { #' +
+                    '很开朗' +
+                '# } else if (value === 4) { #' +
+                    '比较开朗' +
+                '# } else if (value === 2) { #' +
+                    '有点开朗' +
+                '# } else if (value === 0) { #' +
+                    '普通' +
+                '# } else if (value === -2) { #' +
+                    '有点内向' +
+                '# } else if (value === -4) { #' +
+                    '比较内向' +
+                '# } else if (value === -6) { #' +
+                    '很内向' +
+                '# } else if (value === -8) { #' +
+                    '非常内向' +
+                '# } else if (value === -10) { #' +
+                    '超级内向' +
+                '# } #'
         }
     });
     // 颜色喜好
     $('#color').kendoColorPicker({
-        palette: ['#c39b8f', '#d770ad', '#da4453', '#ff9800', '#f6bb42', '#8cc152', '#37bc9b', '#3bafda', '#4a89dc', '#967adc', '#434a54', '#aab2bd'],
+        palette: ['#c39b8f', '#d770ad', '#da4453', '#ff9800', '#f6bb42', '#aab2bd', '#8cc152', '#37bc9b', '#3bafda', '#4a89dc', '#967adc', '#434a54'],
         columns: 6,
         tileSize: 32
     });

@@ -217,7 +217,30 @@ $(function() {
         smallStep: 2,
         largeStep: 1,
         tooltip: {
-            template: '# if(value==10){ #超级开朗# }else if(value==8){ #非常开朗# }else if(value==6){ #很开朗# }else if(value==4){ #比较开朗# }else if(value==2){ #有点开朗# }else if(value==-2){ #有点内向# }else if(value==-4){ #比较内向# }else if(value==-6){ #很内向# }else if(value==-8){ #非常内向# }else if(value==-10){ #超级内向# }else{ #普通# } #'
+            template:
+                '# if (value === 10) { #' +
+                    '超级开朗' +
+                '# } else if (value === 8) { #' +
+                    '非常开朗' +
+                '# } else if (value === 6) { #' +
+                    '很开朗' +
+                '# } else if (value === 4) { #' +
+                    '比较开朗' +
+                '# } else if (value === 2) { #' +
+                    '有点开朗' +
+                '# } else if (value === 0) { #' +
+                    '普通' +
+                '# } else if (value === -2) { #' +
+                    '有点内向' +
+                '# } else if (value === -4) { #' +
+                    '比较内向' +
+                '# } else if (value === -6) { #' +
+                    '很内向' +
+                '# } else if (value === -8) { #' +
+                    '非常内向' +
+                '# } else if (value === -10) { #' +
+                    '超级内向' +
+                '# } #'
         }
     });
     // 颜色喜好
@@ -1424,7 +1447,30 @@ $(function() {
                             smallStep: 2,
                             largeStep: 1,
                             tooltip: {
-                                template: '# if(value==10){ #超级开朗# }else if(value==8){ #非常开朗# }else if(value==6){ #很开朗# }else if(value==4){ #比较开朗# }else if(value==2){ #有点开朗# }else if(value==-2){ #有点内向# }else if(value==-4){ #比较内向# }else if(value==-6){ #很内向# }else if(value==-8){ #非常内向# }else if(value==-10){ #超级内向# }else{ #普通# } #'
+                                template:
+                                    '# if (value === 10) { #' +
+                                        '超级开朗' +
+                                    '# } else if (value === 8) { #' +
+                                        '非常开朗' +
+                                    '# } else if (value === 6) { #' +
+                                        '很开朗' +
+                                    '# } else if (value === 4) { #' +
+                                        '比较开朗' +
+                                    '# } else if (value === 2) { #' +
+                                        '有点开朗' +
+                                    '# } else if (value === 0) { #' +
+                                        '普通' +
+                                    '# } else if (value === -2) { #' +
+                                        '有点内向' +
+                                    '# } else if (value === -4) { #' +
+                                        '比较内向' +
+                                    '# } else if (value === -6) { #' +
+                                        '很内向' +
+                                    '# } else if (value === -8) { #' +
+                                        '非常内向' +
+                                    '# } else if (value === -10) { #' +
+                                        '超级内向' +
+                                    '# } #'
                             }
                         });
                     $('<span class="k-invalid-msg" data-for="character"></span>')
