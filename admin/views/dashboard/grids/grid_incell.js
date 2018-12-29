@@ -811,7 +811,7 @@ $(function() {
                                         return true;
                                     }
                                     input.attr('data-photoRequired-msg', '请上传头像！');
-                                    return $('#photoShow').attr('alt') !== 'avatar.png' && $('#photoShow').attr('title') !== '53.28 KB';
+                                    return $('#photoShow').attr('alt') !== 'avatar.png' && $('#photoShow').attr('title') !== '52.04 KB';
                                 }
                             }
                         },
@@ -1534,11 +1534,11 @@ $(function() {
                 }
             },
             { field: 'photo', title: '头像', width: '320px',
-                template: '<a href="javascript:showBigPic(\'#= photo.url #\');"><img class="w-10 rounded-circle" src="#= photo.url #" alt="#= photo.name ##= photo.extension #"></a><small class="ml-2 text-muted">[#= kendo.toString(photo.size/1000, "0.00") # KB]</small>',
+                template: '<a href="javascript:showBigPic(\'#= photo.url #\');"><img class="w-10 rounded-circle" src="#= photo.url #" alt="#= photo.name ##= photo.extension #"></a><small class="ml-2 text-muted">[#= kendo.toString(photo.size/1024, "0.00") # KB]</small>',
                 editor: function(container, options) {
                     $('<strong class="k-required d-block">*<small>必填</small></strong>').appendTo(container);
                     $('<div class="media">' +
-                            '<img class="img-thumbnail w-15 mr-2" id="photoShow" src="'+ options.model.photo.url +'" alt="'+ options.model.photo.name + options.model.photo.extension +'" title="'+ kendo.toString(options.model.photo.size/1000, "0.00") +' KB">' +
+                            '<img class="img-thumbnail w-15 mr-2" id="photoShow" src="'+ options.model.photo.url +'" alt="'+ options.model.photo.name + options.model.photo.extension +'" title="'+ kendo.toString(options.model.photo.size/1024, "0.00") +' KB">' +
                             '<div class="media-body">' +
                                 '<input id="photoEdit" name="photo" type="file">' +
                                 '<span class="k-invalid-msg" data-for="photo"></span>' +
@@ -1561,7 +1561,7 @@ $(function() {
                             ],
                             validation: {
                                 allowedExtensions: ['.jpg', '.png', '.gif', '.bmp'],
-                                maxFileSize: 10000000
+                                maxFileSize: 10240000
                             },
                             success: function(res) {
                                 if (res.response.result === 'y') {
@@ -1573,7 +1573,7 @@ $(function() {
                                         $('#photoShow').attr({
                                             'src': res.response.data.url,
                                             'alt': res.response.data.name + res.response.data.extension,
-                                            'title': kendo.toString(res.response.data.size/1000, '0.00') + ' KB'
+                                            'title': kendo.toString(res.response.data.size/1024, '0.00') + ' KB'
                                         });
                                         alertMsg(res.response.msg, 'success');
                                     }
@@ -1585,7 +1585,7 @@ $(function() {
                                         $('#photoShow').attr({
                                             'src': 'img/avatar.png',
                                             'alt': 'avatar.png',
-                                            'title': '53.28 KB'
+                                            'title': '52.04 KB'
                                         });
                                     }
                                 } else {

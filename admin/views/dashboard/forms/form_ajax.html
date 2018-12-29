@@ -2,7 +2,7 @@
     <div class="card mb-3">
         <div class="card-body">
             <form>
-                <input name="id" type="hidden" value="006">
+                <input name="id" type="hidden" value="uid006">
                 <div class="form-group row justify-content-lg-center" tabindex="-1">
                     <label class="col-form-label text-lg-right col-lg-2"><strong class="k-required">*</strong>姓名：</label>
                     <div class="col-lg-6">
@@ -241,10 +241,14 @@
                 <div class="form-group row justify-content-lg-center" tabindex="-1">
                     <label class="col-form-label text-lg-right col-lg-2"><strong class="k-required">*</strong>头像：</label>
                     <div class="col-lg-6">
-                        <img class="img-thumbnail w-20 mb-2" src="img/temp/Virgo.png" alt="沙加">
-                        <input class="w-100" id="photo" name="photo" type="file">
-                        <input name="photoUrl" type="hidden" value="img/temp/Virgo.png">
-                        <span class="k-invalid-msg" data-for="photo"></span>
+                        <div class="media">
+                            <img class="img-thumbnail w-20 mr-2" src="img/temp/Virgo.png" alt="Virgo.png" title="33.21 KB">
+                            <div class="media-body">
+                                <input class="w-100" id="photo" name="photo" type="file">
+                                <input name="photoUrl" type="hidden" value="img/temp/Virgo.png">
+                                <span class="k-invalid-msg" data-for="photo"></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="form-group row justify-content-lg-center" tabindex="-1">

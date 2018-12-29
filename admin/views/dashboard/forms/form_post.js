@@ -225,7 +225,7 @@ $(function() {
         multiple: false,
         validation: {
             allowedExtensions: ['.jpg', '.png', '.gif', '.bmp'],
-            maxFileSize: 10000000
+            maxFileSize: 10240000
         }
     });
     // 签名

@@ -518,7 +518,7 @@ $(function() {
                                         return true;
                                     }
                                     input.attr('data-photo-msg', '请上传头像！');
-                                    return $('#photoShow').attr('alt') !== 'avatar.png' && $('#photoShow').attr('title') !== '53.28 KB';
+                                    return $('#photoShow').attr('alt') !== 'avatar.png' && $('#photoShow').attr('title') !== '52.04 KB';
                                 }
                             }
                         },
@@ -723,7 +723,7 @@ $(function() {
             },
             { field: 'summary', title: '自我介绍', width: '290px' },
             { field: 'photo', title: '头像', width: '120px',
-                template: '<a href="javascript:showBigPic(\'#= photo.url #\');"><img class="w-25 rounded-circle" src="#= photo.url #" alt="#= photo.name ##= photo.extension #"></a><small class="ml-2 text-muted">[#= kendo.toString(photo.size/1000, "0.00") # KB]</small>'
+                template: '<a href="javascript:showBigPic(\'#= photo.url #\');"><img class="w-25 rounded-circle" src="#= photo.url #" alt="#= photo.name ##= photo.extension #"></a><small class="ml-2 text-muted">[#= kendo.toString(photo.size/1024, "0.00") # KB]</small>'
             },
             { field: 'sign', title: '签名', width: '290px',
                 template: '#= sign #'
@@ -1054,7 +1054,7 @@ $(function() {
                 ],
                 validation: {
                     allowedExtensions: ['.jpg', '.png', '.gif', '.bmp'],
-                    maxFileSize: 10000000
+                    maxFileSize: 10240000
                 },
                 success: function(res) {
                     if (res.response.result === 'y') {
@@ -1066,7 +1066,7 @@ $(function() {
                             $('#editForm #photoShow').attr({
                                 'src': res.response.data.url,
                                 'alt': res.response.data.name + res.response.data.extension,
-                                'title': kendo.toString(res.response.data.size/1000, '0.00') + ' KB'
+                                'title': kendo.toString(res.response.data.size/1024, '0.00') + ' KB'
                             });
                             alertMsg(res.response.msg, 'success');
                         }
@@ -1078,7 +1078,7 @@ $(function() {
                             $('#editForm #photoShow').attr({
                                 'src': 'img/avatar.png',
                                 'alt': 'avatar.png',
-                                'title': '53.28 KB'
+                                'title': '52.04 KB'
                             });
                         }
                     } else {

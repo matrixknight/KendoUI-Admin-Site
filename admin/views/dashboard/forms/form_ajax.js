@@ -284,16 +284,24 @@ $(function() {
         ],
         validation: {
             allowedExtensions: ['.jpg', '.png', '.gif', '.bmp'],
-            maxFileSize: 10000000
+            maxFileSize: 10240000
         },
         success: function(e) {
             if (e.response.result === 'y') {
                 if (e.operation === 'upload') {
-                    $('[name=photoUrl]').val(e.response.data.url).parent().find('img').attr('src', e.response.data.url);
+                    $('[name=photoUrl]').val(e.response.data.url).parent().find('img').attr({
+                        'src': e.response.data.url,
+                        'alt': e.response.data.name + e.response.data.extension,
+                        'title': kendo.toString(e.response.data.size/1024, '0.00') + ' KB'
+                    });
                     alertMsg(e.response.msg, 'success');
                 }
                 if (e.operation === 'remove') {
-                    $('[name=photoUrl]').val('').parent().find('img').attr('src', 'img/avatar.png');
+                    $('[name=photoUrl]').val('').parent().find('img').attr({
+                        'src': 'img/avatar.png',
+                        'alt': 'avatar.png',
+                        'title': '52.04 KB'
+                    });
                 }
             } else {
                 $('.k-upload-files').remove();
@@ -358,21 +366,19 @@ $(function() {
                 }
                 input.next().show();
                 var unique = true;
-                $.ajax({
-                    async: false,
-                    type: 'get',
-                    data: {
+                $.fn.ajaxPost({
+                    ajaxAsync: false,
+                    ajaxData: {
                         'nickName': input.val()
                     },
-                    url: 'json/response.json',
-                    dataType: 'json',
-                    success: function(res) {
+                    finished: function() {
                         input.next().hide();
-                        if (res.result === 'y') {
-                            unique = true;
-                        } else {
-                            unique = false;
-                        }
+                    },
+                    succeed: function() {
+                        unique = true;
+                    },
+                    failed: function() {
+                        unique = false;
                     }
                 });
                 return unique;
@@ -485,7 +491,7 @@ $(function() {
             noticeMsg('开始提交表单……', 'success', 'center', 500, function() {
                 $('#loading').show();
                 $.fn.ajaxPost({
-                    ajaxData: $('form').serialize(),
+                    ajaxData: $('form').serializeObject(),
                     finished: function(res) {
                         $('#loading').hide();
                     },
