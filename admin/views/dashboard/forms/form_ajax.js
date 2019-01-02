@@ -136,7 +136,7 @@ $(function() {
                 }
             }
         },
-        placeholder: '树形下拉框',
+        placeholder: '树形下拉单选框',
         dataValueField: 'code',
         dataTextField: 'name'
     });
@@ -291,6 +291,42 @@ $(function() {
         placeholder: '多选下拉框',
         autoClose: false
     });
+    // 旅游足迹
+    $('#tourism').kendoDropDownTree({
+        dataSource: {
+            transport: {
+                read: {
+                    url: 'json/select_hierarchical_data.json',
+                    dataType: 'json'
+                }
+            },
+            schema: {
+                data: 'data',
+                model: {
+                    children: 'items'
+                }
+            }
+        },
+        placeholder: '树形下拉多选框',
+        dataValueField: 'code',
+        dataTextField: 'name',
+        valuePrimitive: true,
+        checkboxes: true,
+        autoClose: false,
+        change: function() {
+            var that = this;
+            if (that.value().length > 0) {
+                $(that.element).prop('required', false);
+            } else {
+                $(that.element).prop('required', true);
+            }
+            $(that.element).parent().find('[type=hidden]').remove();
+            $.each(that.value(), function(i, items) {
+                $(that.element).parent().append('<input name="tourism" type="hidden" value="' + items + '">');
+            });
+        },
+        value: ['2101', '4301', '4302']
+    });
     // 头像
     $('#photo').kendoUpload({
         async: {
@@ -312,7 +348,7 @@ $(function() {
         success: function(e) {
             if (e.response.result === 'y') {
                 if (e.operation === 'upload') {
-                    $('[name=photoUrl]').val(e.response.data.url).parent().find('img').attr({
+                    $('#photoUrl').val(e.response.data.url).parent().prev().attr({
                         'src': e.response.data.url,
                         'alt': e.response.data.name + e.response.data.extension,
                         'title': kendo.toString(e.response.data.size/1024, '0.00') + ' KB'
@@ -320,7 +356,7 @@ $(function() {
                     alertMsg(e.response.msg, 'success');
                 }
                 if (e.operation === 'remove') {
-                    $('[name=photoUrl]').val('').parent().find('img').attr({
+                    $('#photoUrl').val('').parent().prev().attr({
                         'src': 'img/avatar.png',
                         'alt': 'avatar.png',
                         'title': '52.04 KB'
@@ -485,10 +521,10 @@ $(function() {
             },
             // 头像
             photo: function(input) {
-                if (!input.is('[name=photoUrl]')) {
+                if (!input.is('#photoUrl')) {
                     return true;
                 }
-                return $('[name=photoUrl]').val() !== '';
+                return $('#photoUrl').val() !== '';
             }
         },
         messages: {

@@ -17,7 +17,7 @@
                             "url": "javascript:linkTo(\"/dashboard/forms/\", \"form_post\");"
                         },
                         {
-                            "text": "<i class='fas fa-genderless'></i>表单 Ajax 提交",
+                            "text": "<i class='fas fa-genderless'></i>表单 Ajax 提交<sub class='theme-l'>Update</sub>",
                             "encoded": false,
                             "cssClass": "links-form_ajax",
                             "url": "javascript:linkTo(\"/dashboard/forms/\", \"form_ajax\");"
