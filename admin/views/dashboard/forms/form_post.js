@@ -108,7 +108,7 @@ $(function() {
                 }
             }
         },
-        placeholder: '树形下拉框',
+        placeholder: '树形下拉单选框',
         dataValueField: 'code',
         dataTextField: 'name',
         loadOnDemand: true
@@ -243,6 +243,42 @@ $(function() {
     $('#constellation').kendoMultiSelect({
         placeholder: '多选下拉框',
         autoClose: false
+    });
+    // 旅游足迹
+    $('#tourism').kendoDropDownTree({
+        dataSource: {
+            transport: {
+                read: {
+                    url: 'json/select_hierarchical_data.json',
+                    dataType: 'json'
+                }
+            },
+            schema: {
+                data: 'data',
+                model: {
+                    children: 'items'
+                }
+            }
+        },
+        placeholder: '树形下拉多选框',
+        dataValueField: 'code',
+        dataTextField: 'name',
+        valuePrimitive: true,
+        loadOnDemand: true,
+        checkboxes: true,
+        autoClose: false,
+        change: function() {
+            var that = this;
+            if (that.value().length > 0) {
+                $(that.element).prop('required', false);
+            } else {
+                $(that.element).prop('required', true);
+            }
+            $(that.element).parent().find('[type=hidden]').remove();
+            $.each(that.value(), function(i, items) {
+                $(that.element).parent().append('<input name="tourism" type="hidden" value="' + items + '">');
+            });
+        }
     });
     // 头像
     $('#photo').kendoUpload({

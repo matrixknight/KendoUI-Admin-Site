@@ -7,11 +7,11 @@
             "encoded": false,
             "items": [
                 {
-                    "text": "<i class='fas fa-tasks'></i>表单<small>Forms</small>",
+                    "text": "<i class='fas fa-tasks'></i>表单<small>Forms</small><sub class='theme-l'>ing</sub>",
                     "encoded": false,
                     "items": [
                         {
-                            "text": "<i class='fas fa-genderless'></i>表单 Post 提交",
+                            "text": "<i class='fas fa-genderless'></i>表单 Post 提交<sub class='theme-l'>Update</sub>",
                             "encoded": false,
                             "cssClass": "links-form_post",
                             "url": "javascript:linkTo(\"/dashboard/forms/\", \"form_post\");"
@@ -53,19 +53,19 @@
                             "url": "javascript:linkTo(\"/dashboard/grids/\", \"grid_custom\");"
                         },
                         {
-                            "text": "<i class='fas fa-genderless'></i>弹出框编辑<sub class='theme-l'>Update</sub>",
+                            "text": "<i class='fas fa-genderless'></i>弹出框编辑",
                             "encoded": false,
                             "cssClass": "links-grid_popup",
                             "url": "javascript:linkTo(\"/dashboard/grids/\", \"grid_popup\");"
                         },
                         {
-                            "text": "<i class='fas fa-genderless'></i>行内编辑<sub class='theme-l'>Update</sub>",
+                            "text": "<i class='fas fa-genderless'></i>行内编辑",
                             "encoded": false,
                             "cssClass": "links-grid_inline",
                             "url": "javascript:linkTo(\"/dashboard/grids/\", \"grid_inline\");"
                         },
                         {
-                            "text": "<i class='fas fa-genderless'></i>单元格编辑<sub class='theme-l'>Update</sub>",
+                            "text": "<i class='fas fa-genderless'></i>单元格编辑",
                             "encoded": false,
                             "cssClass": "links-grid_incell",
                             "url": "javascript:linkTo(\"/dashboard/grids/\", \"grid_incell\");"
@@ -83,7 +83,7 @@
                             "url": "javascript:linkTo(\"/dashboard/grids/\", \"grid_select\");"
                         },
                         {
-                            "text": "<i class='fas fa-genderless'></i>分组合计排序筛选<sub class='theme-l'>Update</sub>",
+                            "text": "<i class='fas fa-genderless'></i>分组合计排序筛选",
                             "encoded": false,
                             "cssClass": "links-grid_group",
                             "url": "javascript:linkTo(\"/dashboard/grids/\", \"grid_group\");"
