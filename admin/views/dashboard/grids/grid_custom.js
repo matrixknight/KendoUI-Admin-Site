@@ -38,7 +38,8 @@ $(function() {
         },
         optionLabel: '-= 省份 =-',
         dataValueField: 'province',
-        dataTextField: 'provinceName'
+        dataTextField: 'provinceName',
+        filter: 'contains'
     });
     $('#city').kendoDropDownList({
         dataSource: {
@@ -63,7 +64,8 @@ $(function() {
         cascadeFrom: 'province',
         optionLabel: '-= 城市 =-',
         dataValueField: 'city',
-        dataTextField: 'cityName'
+        dataTextField: 'cityName',
+        filter: 'contains'
     });
     $('#area').kendoDropDownList({
         dataSource: {
@@ -88,7 +90,8 @@ $(function() {
         cascadeFrom: 'city',
         optionLabel: '-= 区县 =-',
         dataValueField: 'area',
-        dataTextField: 'areaName'
+        dataTextField: 'areaName',
+        filter: 'contains'
     });
     // 居住地
     $('#domicile').kendoDropDownTree({
@@ -113,10 +116,11 @@ $(function() {
                 }
             }
         },
-        placeholder: '树形下拉框',
+        placeholder: '树形下拉单选框',
         dataValueField: 'code',
         dataTextField: 'name',
-        loadOnDemand: true
+        loadOnDemand: true,
+        filter: 'contains'
     });
     // 民族
     $('#nation').kendoComboBox({
@@ -253,6 +257,38 @@ $(function() {
     $('#constellation').kendoMultiSelect({
         placeholder: '多选下拉框',
         autoClose: false
+    });
+    // 旅游足迹
+    $('#tourism').kendoDropDownTree({
+        dataSource: {
+            transport: {
+                read: {
+                    url: 'json/select_hierarchical_data.json',
+                    dataType: 'json'
+                }
+            },
+            schema: {
+                data: 'data',
+                model: {
+                    children: 'items'
+                }
+            }
+        },
+        placeholder: '树形下拉多选框',
+        dataValueField: 'code',
+        dataTextField: 'name',
+        valuePrimitive: true,
+        loadOnDemand: true,
+        filter: 'contains',
+        checkboxes: true,
+        autoClose: false,
+        change: function() {
+            var that = this;
+            $(that.element).parent().find('[type=hidden]').remove();
+            $.each(that.value(), function(i, items) {
+                $(that.element).parent().append('<input name="tourism" type="hidden" value="' + items + '">');
+            });
+        }
     });
     // 是否在线
     $('#online').kendoMobileSwitch({
