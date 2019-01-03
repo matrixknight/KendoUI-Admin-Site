@@ -584,13 +584,10 @@ $(function() {
                                 name: ''
                             },
                             parse: function(e) {
-                                delete e.expanded;
-                                delete e.id;
-                                delete e.index;
-                                delete e.items;
-                                delete e.selected;
-                                delete e._level;
-                                return e;
+                                var obj = {};
+                                obj.code = e.code;
+                                obj.name = e.name;
+                                return obj;
                             },
                             validation: {
                                 domicileRequired: function(input) {
@@ -630,12 +627,10 @@ $(function() {
                                 zodiacName: ''
                             },
                             parse: function(e) {
-                                delete e.zodiacValue1;
-                                delete e.zodiacValue2;
-                                delete e.zodiacValue3;
-                                delete e.zodiacValue4;
-                                delete e.zodiacValue5;
-                                return e;
+                                var obj = {};
+                                obj.zodiac = e.zodiac;
+                                obj.zodiacName = e.zodiacName;
+                                return obj;
                             },
                             validation: {
                                 zodiacRequired: function(input) {
