@@ -1116,7 +1116,7 @@ form .searchBtn.row {
       width: 100%; }
       .k-edit-form-container .k-edit-field .k-colorpicker .k-selected-color {
         width: calc(100% - 8px - 1.42857em); }
-    .k-edit-form-container .k-edit-field .k-multiselect li.k-button {
+    .k-edit-form-container .k-edit-field .k-multiselect-wrap li.k-button {
       margin-top: 2px; }
     .k-edit-form-container .k-edit-field .k-textarea {
       width: 100%; }
