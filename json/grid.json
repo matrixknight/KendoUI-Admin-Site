@@ -51,6 +51,20 @@
 			"character": 0,
 			"color": "rgba(195, 155, 143, 1)",
 			"constellation": ["12", "1", "2"],
+            "tourism": [
+                {
+                    "code": "11",
+                    "name": "北京市"
+                },
+                {
+                    "code": "3501",
+                    "name": "福州市"
+                },
+                {
+                    "code": "3502",
+                    "name": "厦门市"
+                }
+            ],
 			"summary": "我叫穆！这里是我的自我介绍哦~",
 			"photo": {
                 "url": "img/temp/Aries.png",
@@ -108,6 +122,20 @@
 			"character": 2,
 			"color": "rgba(215, 112, 173, 1)",
 			"constellation": ["1", "2", "3"],
+            "tourism": [
+                {
+                    "code": "12",
+                    "name": "天津市"
+                },
+                {
+                    "code": "3601",
+                    "name": "南昌市"
+                },
+                {
+                    "code": "3602",
+                    "name": "景德镇市"
+                }
+            ],
 			"summary": "我叫阿鲁迪巴！这里是我的自我介绍哦~",
             "photo": {
                 "url": "img/temp/Taurus.png",
@@ -165,6 +193,20 @@
 			"character": 4,
 			"color": "rgba(218, 68, 83, 1)",
 			"constellation": ["2", "3", "4"],
+            "tourism": [
+                {
+                    "code": "1301",
+                    "name": "石家庄市"
+                },
+                {
+                    "code": "3701",
+                    "name": "济南市"
+                },
+                {
+                    "code": "3702",
+                    "name": "青岛市"
+                }
+            ],
 			"summary": "我叫撒加！这里是我的自我介绍哦~",
             "photo": {
                 "url": "img/temp/Gemini.png",
@@ -222,6 +264,20 @@
 			"character": 6,
 			"color": "rgba(255, 152, 0, 1)",
 			"constellation": ["3", "4", "5"],
+            "tourism": [
+                {
+                    "code": "1401",
+                    "name": "太原市"
+                },
+                {
+                    "code": "4101",
+                    "name": "郑州市"
+                },
+                {
+                    "code": "4102",
+                    "name": "开封市"
+                }
+            ],
 			"summary": "我叫迪斯马斯克！这里是我的自我介绍哦~",
             "photo": {
                 "url": "img/temp/Cancer.png",
@@ -279,6 +335,20 @@
 			"character": 8,
 			"color": "rgba(246, 187, 66, 1)",
 			"constellation": ["4", "5", "6"],
+            "tourism": [
+                {
+                    "code": "1501",
+                    "name": "呼和浩特市"
+                },
+                {
+                    "code": "4201",
+                    "name": "武汉市"
+                },
+                {
+                    "code": "4202",
+                    "name": "黄石市"
+                }
+            ],
 			"summary": "我叫艾欧里亚！这里是我的自我介绍哦~",
             "photo": {
                 "url": "img/temp/Leo.png",
@@ -336,6 +406,20 @@
 			"character": 10,
 			"color": "rgba(140, 193, 82, 1)",
 			"constellation": ["5", "6", "7"],
+			"tourism": [
+				{
+					"code": "2101",
+					"name": "沈阳市"
+				},
+				{
+					"code": "4301",
+					"name": "长沙市"
+				},
+				{
+					"code": "4302",
+					"name": "株洲市"
+				}
+			],
 			"summary": "我叫沙加！这里是我的自我介绍哦~",
             "photo": {
                 "url": "img/temp/Virgo.png",
@@ -393,6 +477,20 @@
 			"character": 0,
 			"color": "rgba(55, 188, 155, 1)",
 			"constellation": ["6", "7", "8"],
+            "tourism": [
+                {
+                    "code": "2201",
+                    "name": "长春市"
+                },
+                {
+                    "code": "4401",
+                    "name": "广州市"
+                },
+                {
+                    "code": "4402",
+                    "name": "韶关市"
+                }
+            ],
 			"summary": "我叫童虎！这里是我的自我介绍哦~",
 			"photo": {
                 "url": "img/temp/Libra.png",
@@ -450,6 +548,20 @@
 			"character": -2,
 			"color": "rgba(59, 175, 218, 1)",
 			"constellation": ["7", "8", "9"],
+            "tourism": [
+                {
+                    "code": "2301",
+                    "name": "哈尔滨市"
+                },
+                {
+                    "code": "4501",
+                    "name": "南宁市"
+                },
+                {
+                    "code": "4502",
+                    "name": "柳州市"
+                }
+            ],
 			"summary": "我叫米罗！这里是我的自我介绍哦~",
             "photo": {
                 "url": "img/temp/Scorpion.png",
@@ -507,6 +619,20 @@
 			"character": -4,
 			"color": "rgba(74, 137, 220, 1)",
 			"constellation": ["8", "9", "10"],
+            "tourism": [
+                {
+                    "code": "31",
+                    "name": "上海市"
+                },
+                {
+                    "code": "4601",
+                    "name": "海口市"
+                },
+                {
+                    "code": "4602",
+                    "name": "三亚市"
+                }
+            ],
 			"summary": "我叫艾俄洛斯！这里是我的自我介绍哦~",
 			"photo": {
                 "url": "img/temp/Sagittarius.png",
@@ -564,6 +690,20 @@
 			"character": -6,
 			"color": "rgba(150, 122, 220, 1)",
 			"constellation": ["9", "10", "11"],
+            "tourism": [
+                {
+                    "code": "3201",
+                    "name": "南京市"
+                },
+                {
+                    "code": "500101",
+                    "name": "万州区"
+                },
+                {
+                    "code": "500102",
+                    "name": "涪陵区"
+                }
+            ],
 			"summary": "我叫修罗！这里是我的自我介绍哦~",
 			"photo": {
                 "url": "img/temp/Capricorn.png",
@@ -621,6 +761,20 @@
 			"character": -8,
 			"color": "rgba(67, 74, 84, 1)",
 			"constellation": ["10", "11", "12"],
+            "tourism": [
+                {
+                    "code": "3301",
+                    "name": "杭州市"
+                },
+                {
+                    "code": "5101",
+                    "name": "成都市"
+                },
+                {
+                    "code": "5103",
+                    "name": "自贡市"
+                }
+            ],
 			"summary": "我叫卡妙！这里是我的自我介绍哦~",
 			"photo": {
                 "url": "img/temp/Aquarius.png",
@@ -678,6 +832,20 @@
 			"character": -10,
 			"color": "rgba(170, 178, 189, 1)",
 			"constellation": ["11", "12", "1"],
+            "tourism": [
+                {
+                    "code": "3401",
+                    "name": "合肥市"
+                },
+                {
+                    "code": "5201",
+                    "name": "贵阳市"
+                },
+                {
+                    "code": "5202",
+                    "name": "六盘水市"
+                }
+            ],
 			"summary": "我叫阿布罗狄！这里是我的自我介绍哦~",
 			"photo": {
                 "url": "img/temp/Picses.png",

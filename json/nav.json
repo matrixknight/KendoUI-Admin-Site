@@ -47,7 +47,7 @@
                     "encoded": false,
                     "items": [
                         {
-                            "text": "<i class='fas fa-genderless'></i>全功能搜索及自定义编辑",
+                            "text": "<i class='fas fa-genderless'></i>全功能搜索及自定义编辑<sub class='theme-l'>Update</sub>",
                             "encoded": false,
                             "cssClass": "links-grid_custom",
                             "url": "javascript:linkTo(\"/dashboard/grids/\", \"grid_custom\");"

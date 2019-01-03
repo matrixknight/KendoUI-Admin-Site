@@ -426,13 +426,10 @@ $(function() {
                                 name: ''
                             },
                             parse: function(e) {
-                                delete e.expanded;
-                                delete e.id;
-                                delete e.index;
-                                delete e.items;
-                                delete e.selected;
-                                delete e._level;
-                                return e;
+                                var obj = {};
+                                obj.code = e.code;
+                                obj.name = e.name;
+                                return obj;
                             }
                         },
                         nation: { type: 'object',
@@ -456,12 +453,10 @@ $(function() {
                                 zodiacName: ''
                             },
                             parse: function(e) {
-                                delete e.zodiacValue1;
-                                delete e.zodiacValue2;
-                                delete e.zodiacValue3;
-                                delete e.zodiacValue4;
-                                delete e.zodiacValue5;
-                                return e;
+                                var obj = {};
+                                obj.zodiac = e.zodiac;
+                                obj.zodiacName = e.zodiacName;
+                                return obj;
                             },
                             validation: {
                                 zodiac: function(input) {
@@ -562,6 +557,19 @@ $(function() {
                         },
                         constellation: { type: 'object',
                             defaultValue: []
+                        },
+                        tourism: { type: 'object',
+                            defaultValue: [],
+                            parse: function(e) {
+                                var arr = [];
+                                for (i = 0; i < e.length; i++) {
+                                    arr.push({
+                                        code: e[i].code,
+                                        name: e[i].name
+                                    });
+                                }
+                                return arr;
+                            }
                         },
                         summary: { type: 'string' },
                         photo: { type: 'object',
@@ -780,6 +788,12 @@ $(function() {
                         '# } #' +
                     '# } #'
             },
+            { field: 'tourism', title: '旅游足迹', width: '200px',
+                template:
+                    '# for (i = 0; i < tourism.length; i++) { #' +
+                        '#= tourism[i].name #&nbsp;' +
+                    '# } #'
+            },
             { field: 'summary', title: '自我介绍', width: '290px' },
             { field: 'photo', title: '头像', width: '120px',
                 template: '<a href="javascript:showBigPic(\'#= photo.url #\');"><img class="w-25 rounded-circle" src="#= photo.url #" alt="#= photo.name ##= photo.extension #"></a><small class="ml-2 text-muted">[#= kendo.toString(photo.size/1024, "0.00") # KB]</small>'
@@ -889,7 +903,8 @@ $(function() {
                 },
                 optionLabel: '-= 省份 =-',
                 dataValueField: 'province',
-                dataTextField: 'provinceName'
+                dataTextField: 'provinceName',
+                filter: 'contains'
             });
             $('#cityEdit').kendoDropDownList({
                 dataSource: {
@@ -914,7 +929,8 @@ $(function() {
                 cascadeFrom: 'provinceEdit',
                 optionLabel: '-= 城市 =-',
                 dataValueField: 'city',
-                dataTextField: 'cityName'
+                dataTextField: 'cityName',
+                filter: 'contains'
             });
             $('#areaEdit').kendoDropDownList({
                 dataSource: {
@@ -939,7 +955,8 @@ $(function() {
                 cascadeFrom: 'cityEdit',
                 optionLabel: '-= 区县 =-',
                 dataValueField: 'area',
-                dataTextField: 'areaName'
+                dataTextField: 'areaName',
+                filter: 'contains'
             });
             // 居住地
             $('#domicileEdit').kendoDropDownTree({
@@ -966,7 +983,8 @@ $(function() {
                 },
                 placeholder: '树形下拉框',
                 dataValueField: 'code',
-                dataTextField: 'name'
+                dataTextField: 'name',
+                filter: 'contains'
             });
             // 民族
             $('#nationEdit').kendoComboBox({
@@ -1119,6 +1137,44 @@ $(function() {
                 placeholder: '多选下拉框',
                 autoClose: false,
                 valuePrimitive: true
+            });
+            // 旅游足迹
+            $('#tourismEdit').kendoDropDownTree({
+                dataSource: {
+                    transport: {
+                        read: {
+                            url: 'json/select_hierarchical_data.json',
+                            dataType: 'json'
+                        }
+                    },
+                    schema: {
+                        data: 'data',
+                        model: {
+                            children: 'items'
+                        }
+                    }
+                },
+                placeholder: '树形下拉多选框',
+                dataValueField: 'code',
+                dataTextField: 'name',
+                filter: 'contains',
+                checkboxes: true,
+                autoClose: false,
+                dataBound: function() {
+                    if (e.model.tourism.length > 0) {
+                        $(this.element).prop('required', false);
+                    } else {
+                        $(this.element).prop('required', true);
+                    }
+                },
+                change: function() {
+                    if (this.value().length > 0) {
+                        $(this.element).prop('required', false);
+                    } else {
+                        $(this.element).prop('required', true);
+                    }
+                    e.model.set('tourism', this._allCheckedItems);
+                }
             });
             // 头像
             $('#photoEdit').kendoUpload({
