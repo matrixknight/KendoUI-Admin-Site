@@ -840,6 +840,28 @@ $(function() {
                                 }
                             }
                         },
+                        tourism: { type: 'object',
+                            defaultValue: [],
+                            parse: function(e) {
+                                var arr = [];
+                                for (i = 0; i < e.length; i++) {
+                                    arr.push({
+                                        code: e[i].code,
+                                        name: e[i].name
+                                    });
+                                }
+                                return arr;
+                            },
+                            validation: {
+                                tourismRequired: function(input) {
+                                    if (!input.is('.k-grid-edit-row [name=tourism]')) {
+                                        return true;
+                                    }
+                                    input.attr('data-tourismRequired-msg', '请选择旅游足迹！');
+                                    return input.prev().find('li.k-button').length > 0;
+                                }
+                            }
+                        },
                         summary: { type: 'string',
                             validation: {
                                 summaryRequired: function(input) {
@@ -1133,7 +1155,8 @@ $(function() {
                             },
                             optionLabel: '-= 省份 =-',
                             dataValueField: 'province',
-                            dataTextField: 'provinceName'
+                            dataTextField: 'provinceName',
+                            filter: 'contains'
                         });
                     $('<select class="mb-2" id="cityEdit" name="nativePlace" data-bind="value: '+ options.field +'"></select>')
                         .appendTo(container)
@@ -1160,7 +1183,8 @@ $(function() {
                             cascadeFrom: 'provinceEdit',
                             optionLabel: '-= 城市 =-',
                             dataValueField: 'city',
-                            dataTextField: 'cityName'
+                            dataTextField: 'cityName',
+                            filter: 'contains'
                         });
                     $('<select id="areaEdit" name="nativePlace" data-bind="value: '+ options.field +'"></select>')
                         .appendTo(container)
@@ -1187,7 +1211,8 @@ $(function() {
                             cascadeFrom: 'cityEdit',
                             optionLabel: '-= 区县 =-',
                             dataValueField: 'area',
-                            dataTextField: 'areaName'
+                            dataTextField: 'areaName',
+                            filter: 'contains'
                         });
                     $('<span class="k-invalid-msg" data-for="nativePlace"></span>')
                         .appendTo(container);
@@ -1223,7 +1248,8 @@ $(function() {
                             },
                             placeholder: '-= 请选择 =-',
                             dataValueField: 'code',
-                            dataTextField: 'name'
+                            dataTextField: 'name',
+                            filter: 'contains'
                         });
                     $('<span class="k-invalid-msg" data-for="domicile"></span>')
                         .appendTo(container);
@@ -1579,6 +1605,44 @@ $(function() {
                             valuePrimitive: true
                         });
                     $('<span class="k-invalid-msg" data-for="constellation"></span>')
+                        .appendTo(container);
+                }
+            },
+            { field: 'tourism', title: '旅游足迹', width: '270px',
+                template:
+                    '# for (i = 0; i < tourism.length; i++) { #' +
+                        '#= tourism[i].name #&nbsp;' +
+                    '# } #',
+                editor: function(container, options) {
+                    $('<strong class="k-required d-block">*<small>必填</small></strong>').appendTo(container);
+                    $('<select name="tourism" multiple data-bind="value: '+ options.field +'"></select>')
+                        .appendTo(container)
+                        .kendoDropDownTree({
+                            dataSource: {
+                                transport: {
+                                    read: {
+                                        url: 'json/select_hierarchical_data.json',
+                                        dataType: 'json'
+                                    }
+                                },
+                                schema: {
+                                    data: 'data',
+                                    model: {
+                                        children: 'items'
+                                    }
+                                }
+                            },
+                            placeholder: '-= 请选择 =-',
+                            dataValueField: 'code',
+                            dataTextField: 'name',
+                            filter: 'contains',
+                            checkboxes: true,
+                            autoClose: false,
+                            change: function() {
+                                options.model.set('tourism', this._allCheckedItems);
+                            }
+                        });
+                    $('<span class="k-invalid-msg" data-for="tourism"></span>')
                         .appendTo(container);
                 }
             },
