@@ -133,6 +133,19 @@ $(function() {
                         constellation: { type: 'object',
                             defaultValue: []
                         },
+                        tourism: { type: 'object',
+                            defaultValue: [],
+                            parse: function(e) {
+                                var arr = [];
+                                for (i = 0; i < e.length; i++) {
+                                    arr.push({
+                                        code: e[i].code,
+                                        name: e[i].name
+                                    });
+                                }
+                                return arr;
+                            }
+                        },
                         summary: { type: 'string' },
                         photo: { type: 'object',
                             defaultValue: {
@@ -180,7 +193,20 @@ $(function() {
                     }
                 },
                 editor: function(container, options) {
-                    $('<input class="k-textbox" type="password" data-bind="value: '+ options.field +'">')
+                    $('<input class="k-textbox" name="password" type="password" data-bind="value: '+ options.field +'">')
+                        .appendTo(container);
+                }
+            },
+            { field: 'confirmPassword', title: '确认密码', width: '100px',
+                template: function(dataItem) {
+                    if (dataItem.confirmPassword) {
+                        return dataItem.confirmPassword.replace(dataItem.confirmPassword.substr(0), '******');
+                    } else {
+                        return '';
+                    }
+                },
+                editor: function(container, options) {
+                    $('<input class="k-textbox" name="confirmPassword" type="password" data-bind="value: '+ options.field +'">')
                         .appendTo(container);
                 }
             },
@@ -192,7 +218,7 @@ $(function() {
                         '<span class="d-inline-block border border-danger rounded-circle k-notification-error" style="width: 10px; height: 10px;"></span><span class="k-notification-error bg-transparent ml-2">离线</span>' +
                     '# } #',
                 editor: function(container, options) {
-                    $('<input type="checkbox" data-bind="value: '+ options.field +'">')
+                    $('<input name="online" type="checkbox" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoMobileSwitch({
                             onLabel: '',
@@ -206,8 +232,8 @@ $(function() {
                     { text: '女', value: '2' }
                 ],
                 editor: function(container, options) {
-                    $('<input class="k-radio" id="genderEdit1" type="radio" value="1" data-bind="checked: '+ options.field +'"><label class="k-radio-label" for="genderEdit1">男</label>' +
-                        '<input class="k-radio" id="genderEdit2" type="radio" value="2" data-bind="checked: '+ options.field +'"><label class="k-radio-label" for="genderEdit2">女</label>')
+                    $('<input class="k-radio" id="genderEdit1" name="gender" type="radio" value="1" data-bind="checked: '+ options.field +'"><label class="k-radio-label" for="genderEdit1">男</label>' +
+                        '<input class="k-radio" id="genderEdit2" name="gender" type="radio" value="2" data-bind="checked: '+ options.field +'"><label class="k-radio-label" for="genderEdit2">女</label>')
                         .appendTo(container);
                 }
             },
@@ -220,7 +246,7 @@ $(function() {
                     }
                 },
                 editor: function(container, options) {
-                    $('<input type="number" data-bind="value: '+ options.field +'">')
+                    $('<input name="age" type="number" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoNumericTextBox({
                             format: 'n0',
@@ -239,7 +265,7 @@ $(function() {
                     }
                 },
                 editor: function(container, options) {
-                    $('<input type="number" data-bind="value: '+ options.field +'">')
+                    $('<input name="height" type="number" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoNumericTextBox({
                             format: '0.00 m',
@@ -250,7 +276,7 @@ $(function() {
                         });
                 }
             },
-            { field: 'bloodType', title: '血型', width: '110px',
+            { field: 'bloodType', title: '血型', width: '130px',
                 values: [
                     { text: 'A 型', value: '1' },
                     { text: 'B 型', value: '2' },
@@ -259,7 +285,7 @@ $(function() {
                     { text: '其他', value: '5' }
                 ],
                 editor: function(container, options) {
-                    $('<select data-bind="value: '+ options.field +'"></select>')
+                    $('<select name="bloodType" data-bind="value: '+ options.field +'"></select>')
                         .appendTo(container)
                         .kendoDropDownList({
                             dataSource: {
@@ -279,7 +305,7 @@ $(function() {
             },
             { field: 'birthday', title: '生日', width: '140px',
                 editor: function(container, options) {
-                    $('<input type="date" data-bind="value: '+ options.field +'">')
+                    $('<input name="birthday" type="date" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoDatePicker({
                             format: 'yyyy-MM-dd',
@@ -291,7 +317,7 @@ $(function() {
             },
             { field: 'mateBirthday', title: '配偶生日', width: '110px',
                 editor: function(container, options) {
-                    $('<input type="date" data-bind="value: '+ options.field +'">')
+                    $('<input name="mateBirthday" type="date" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoDateInput({
                             format: 'yyyy-MM-dd',
@@ -309,7 +335,7 @@ $(function() {
                     }
                 },
                 editor: function(container, options) {
-                    $('<input data-bind="value: '+ options.field +'">')
+                    $('<input name="creditCard" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoMaskedTextBox({
                             mask: '0000 0000 0000 0000'
@@ -319,7 +345,7 @@ $(function() {
             { field: 'asset', title: '资产', width: '170px',
                 format: '{0:c}',
                 editor: function(container, options) {
-                    $('<input type="number" data-bind="value: '+ options.field +'">')
+                    $('<input name="asset" type="number" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoNumericTextBox({
                             format: 'c',
@@ -337,7 +363,7 @@ $(function() {
                     }
                 },
                 editor: function(container, options) {
-                    $('<select class="mb-2" id="provinceEdit" data-bind="value: '+ options.field +'"></select>')
+                    $('<select class="mb-2" id="provinceEdit" name="nativePlace" data-bind="value: '+ options.field +'"></select>')
                         .appendTo(container)
                         .kendoDropDownList({
                             dataSource: {
@@ -363,7 +389,7 @@ $(function() {
                             dataTextField: 'provinceName',
                             filter: 'contains'
                         });
-                    $('<select class="mb-2" id="cityEdit" data-bind="value: '+ options.field +'"></select>')
+                    $('<select class="mb-2" id="cityEdit" name="nativePlace" data-bind="value: '+ options.field +'"></select>')
                         .appendTo(container)
                         .kendoDropDownList({
                             dataSource: {
@@ -391,7 +417,7 @@ $(function() {
                             dataTextField: 'cityName',
                             filter: 'contains'
                         });
-                    $('<select id="areaEdit" data-bind="value: '+ options.field +'"></select>')
+                    $('<select id="areaEdit" name="nativePlace" data-bind="value: '+ options.field +'"></select>')
                         .appendTo(container)
                         .kendoDropDownList({
                             dataSource: {
@@ -424,7 +450,7 @@ $(function() {
             { field: 'domicile', title: '居住地', width: '240px',
                 template: '#= domicile.name #',
                 editor: function(container, options) {
-                    $('<input data-bind="value: '+ options.field +'">')
+                    $('<input name="domicile" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoDropDownTree({
                             dataSource: {
@@ -458,7 +484,7 @@ $(function() {
             { field: 'nation', title: '民族', width: '140px',
                 template: '#= nation.nationName #',
                 editor: function(container, options) {
-                    $('<input data-bind="value: '+ options.field +'">')
+                    $('<input name="nation" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoComboBox({
                             dataSource: {
@@ -488,7 +514,7 @@ $(function() {
             { field: 'zodiac', title: '生肖', width: '90px',
                 template: '#= zodiac.zodiacName #',
                 editor: function(container, options) {
-                    $('<input data-bind="value: '+ options.field +'">')
+                    $('<input name="zodiac" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoMultiColumnComboBox({
                             dataSource: {
@@ -528,7 +554,7 @@ $(function() {
             },
             { field: 'language', title: '语言', width: '240px',
                 editor: function(container, options) {
-                    $('<input data-bind="value: '+ options.field +'">')
+                    $('<input name="language" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoAutoComplete({
                             dataSource: {
@@ -579,21 +605,21 @@ $(function() {
                         '# } #' +
                     '# } #',
                 editor: function(container, options) {
-                    $('<input class="k-checkbox" id="educationEdit1" type="checkbox" value="1" data-bind="checked: '+ options.field +'"><label class="k-checkbox-label" for="educationEdit1">小学</label>' +
-                        '<input class="k-checkbox" id="educationEdit2" type="checkbox" value="2" data-bind="checked: '+ options.field +'"><label class="k-checkbox-label" for="educationEdit2">初中</label>' +
-                        '<input class="k-checkbox" id="educationEdit3" type="checkbox" value="3" data-bind="checked: '+ options.field +'"><label class="k-checkbox-label" for="educationEdit3">高中</label>' +
-                        '<input class="k-checkbox" id="educationEdit4" type="checkbox" value="4" data-bind="checked: '+ options.field +'"><label class="k-checkbox-label" for="educationEdit4">中专</label>' +
-                        '<input class="k-checkbox" id="educationEdit5" type="checkbox" value="5" data-bind="checked: '+ options.field +'"><label class="k-checkbox-label" for="educationEdit5">大专</label>' +
-                        '<input class="k-checkbox" id="educationEdit6" type="checkbox" value="6" data-bind="checked: '+ options.field +'"><label class="k-checkbox-label" for="educationEdit6">本科</label>' +
-                        '<input class="k-checkbox" id="educationEdit7" type="checkbox" value="7" data-bind="checked: '+ options.field +'"><label class="k-checkbox-label" for="educationEdit7">硕士</label>' +
-                        '<input class="k-checkbox" id="educationEdit8" type="checkbox" value="8" data-bind="checked: '+ options.field +'"><label class="k-checkbox-label" for="educationEdit8">博士</label>' +
-                        '<input class="k-checkbox" id="educationEdit9" type="checkbox" value="9" data-bind="checked: '+ options.field +'"><label class="k-checkbox-label" for="educationEdit9">其他</label>')
+                    $('<input class="k-checkbox" id="educationEdit1" name="education" type="checkbox" value="1" data-bind="checked: '+ options.field +'"><label class="k-checkbox-label" for="educationEdit1">小学</label>' +
+                        '<input class="k-checkbox" id="educationEdit2" name="education" type="checkbox" value="2" data-bind="checked: '+ options.field +'"><label class="k-checkbox-label" for="educationEdit2">初中</label>' +
+                        '<input class="k-checkbox" id="educationEdit3" name="education" type="checkbox" value="3" data-bind="checked: '+ options.field +'"><label class="k-checkbox-label" for="educationEdit3">高中</label>' +
+                        '<input class="k-checkbox" id="educationEdit4" name="education" type="checkbox" value="4" data-bind="checked: '+ options.field +'"><label class="k-checkbox-label" for="educationEdit4">中专</label>' +
+                        '<input class="k-checkbox" id="educationEdit5" name="education" type="checkbox" value="5" data-bind="checked: '+ options.field +'"><label class="k-checkbox-label" for="educationEdit5">大专</label>' +
+                        '<input class="k-checkbox" id="educationEdit6" name="education" type="checkbox" value="6" data-bind="checked: '+ options.field +'"><label class="k-checkbox-label" for="educationEdit6">本科</label>' +
+                        '<input class="k-checkbox" id="educationEdit7" name="education" type="checkbox" value="7" data-bind="checked: '+ options.field +'"><label class="k-checkbox-label" for="educationEdit7">硕士</label>' +
+                        '<input class="k-checkbox" id="educationEdit8" name="education" type="checkbox" value="8" data-bind="checked: '+ options.field +'"><label class="k-checkbox-label" for="educationEdit8">博士</label>' +
+                        '<input class="k-checkbox" id="educationEdit9" name="education" type="checkbox" value="9" data-bind="checked: '+ options.field +'"><label class="k-checkbox-label" for="educationEdit9">其他</label>')
                         .appendTo(container);
                 }
             },
             { field: 'graduation', title: '毕业年份', width: '90px',
                 editor: function(container, options) {
-                    $('<input data-bind="value: '+ options.field +'">')
+                    $('<input name="graduation" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoDatePicker({
                             start: 'decade',
@@ -605,7 +631,7 @@ $(function() {
             },
             { field: 'firstJob', title: '参加工作年月', width: '110px',
                 editor: function(container, options) {
-                    $('<input type="month" data-bind="value: '+ options.field +'">')
+                    $('<input name="firstJob" type="month" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoDatePicker({
                             start: 'year',
@@ -617,25 +643,25 @@ $(function() {
             },
             { field: 'mobile', title: '手机', width: '120px',
                 editor: function(container, options) {
-                    $('<input class="k-textbox" type="tel" data-bind="value: '+ options.field +'">')
+                    $('<input class="k-textbox" name="mobile" type="tel" data-bind="value: '+ options.field +'">')
                         .appendTo(container);
                 }
             },
             { field: 'email', title: '电子邮件', width: '180px',
                 editor: function(container, options) {
-                    $('<input class="k-textbox" type="email" data-bind="value: '+ options.field +'">')
+                    $('<input class="k-textbox" name="email" type="email" data-bind="value: '+ options.field +'">')
                         .appendTo(container);
                 }
             },
             { field: 'homepage', title: '个人主页', width: '190px',
                 editor: function(container, options) {
-                    $('<input class="k-textbox" type="url" data-bind="value: '+ options.field +'">')
+                    $('<input class="k-textbox" name="homepage" type="url" data-bind="value: '+ options.field +'">')
                         .appendTo(container);
                 }
             },
             { field: 'getUp', title: '起床时间', width: '90px',
                 editor: function(container, options) {
-                    $('<input type="time" data-bind="value: '+ options.field +'">')
+                    $('<input name="getUp" type="time" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoTimePicker({
                             format: 'HH:mm'
@@ -644,7 +670,7 @@ $(function() {
             },
             { field: 'importantMoment', title: '最有意义的时刻', width: '200px',
                 editor: function(container, options) {
-                    $('<input type="datetime" data-bind="value: '+ options.field +'">')
+                    $('<input name="importantMoment" type="datetime" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoDateTimePicker({
                             format: 'yyyy-MM-dd HH:mm',
@@ -667,7 +693,7 @@ $(function() {
                     { text: '超级内向', value: -10 }
                 ],
                 editor: function(container, options) {
-                    $('<input type="range" data-bind="value: '+ options.field +'">')
+                    $('<input name="character" type="range" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoSlider({
                             decreaseButtonTitle: '内向',
@@ -708,7 +734,7 @@ $(function() {
             { field: 'color', title: '颜色喜好', width: '90px',
                 template: '<span style="display: inline-block; width: 100%; height: 24px; background: #= color #; border: 1px solid \\#c5c5c5; border-radius: 4px; vertical-align: middle;"></span>',
                 editor: function(container, options) {
-                    $('<input data-bind="value: '+ options.field +'">')
+                    $('<input name="color" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoColorPicker({
                             opacity: true,
@@ -746,7 +772,7 @@ $(function() {
                         '# } #' +
                     '# } #',
                 editor: function(container, options) {
-                    $('<select multiple data-bind="value: '+ options.field +'"></select>')
+                    $('<select name="constellation" multiple data-bind="value: '+ options.field +'"></select>')
                         .appendTo(container)
                         .kendoMultiSelect({
                             dataSource: {
@@ -773,9 +799,44 @@ $(function() {
                         });
                 }
             },
-            { field: 'summary', title: '自我介绍', width: '320px',
+            { field: 'tourism', title: '旅游足迹', width: '270px',
+                template:
+                    '# for (i = 0; i < tourism.length; i++) { #' +
+                        '#= tourism[i].name #&nbsp;' +
+                    '# } #',
                 editor: function(container, options) {
-                    $('<textarea class="k-textarea" data-bind="value: '+ options.field +'"></textarea>')
+                    $('<select name="tourism" multiple data-bind="value: '+ options.field +'"></select>')
+                        .appendTo(container)
+                        .kendoDropDownTree({
+                            dataSource: {
+                                transport: {
+                                    read: {
+                                        url: 'json/select_hierarchical_data.json',
+                                        dataType: 'json'
+                                    }
+                                },
+                                schema: {
+                                    data: 'data',
+                                    model: {
+                                        children: 'items'
+                                    }
+                                }
+                            },
+                            placeholder: '-= 请选择 =-',
+                            dataValueField: 'code',
+                            dataTextField: 'name',
+                            filter: 'contains',
+                            checkboxes: true,
+                            autoClose: false,
+                            change: function() {
+                                options.model.set('tourism', this._allCheckedItems);
+                            }
+                        });
+                }
+            },
+            { field: 'summary', title: '自我介绍', width: '300px',
+                editor: function(container, options) {
+                    $('<textarea class="k-textarea" name="summary" data-bind="value: '+ options.field +'"></textarea>')
                         .appendTo(container);
                 }
             },
@@ -785,7 +846,7 @@ $(function() {
                     $('<div class="media">' +
                             '<img class="img-thumbnail w-15 mr-2" id="photoShow" src="'+ options.model.photo.url +'" alt="'+ options.model.photo.name + options.model.photo.extension +'" title="'+ kendo.toString(options.model.photo.size/1024, "0.00") +' KB">' +
                             '<div class="media-body">' +
-                                '<input id="photoEdit" type="file">' +
+                                '<input id="photoEdit" name="photo" type="file">' +
                             '</div>' +
                         '</div>')
                         .appendTo(container);
@@ -843,7 +904,7 @@ $(function() {
             { field: 'sign', title: '签名', width: '600px',
                 template: '#= sign #',
                 editor: function(container, options) {
-                    $('<textarea data-bind="value: '+ options.field +'"></textarea>')
+                    $('<textarea name="sign" data-bind="value: '+ options.field +'"></textarea>')
                         .appendTo(container)
                         .kendoEditor({
                             tools: [
