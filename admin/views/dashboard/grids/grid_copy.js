@@ -360,7 +360,8 @@ $(function() {
                             },
                             optionLabel: '-= 省份 =-',
                             dataValueField: 'province',
-                            dataTextField: 'provinceName'
+                            dataTextField: 'provinceName',
+                            filter: 'contains'
                         });
                     $('<select class="mb-2" id="cityEdit" data-bind="value: '+ options.field +'"></select>')
                         .appendTo(container)
@@ -387,7 +388,8 @@ $(function() {
                             cascadeFrom: 'provinceEdit',
                             optionLabel: '-= 城市 =-',
                             dataValueField: 'city',
-                            dataTextField: 'cityName'
+                            dataTextField: 'cityName',
+                            filter: 'contains'
                         });
                     $('<select id="areaEdit" data-bind="value: '+ options.field +'"></select>')
                         .appendTo(container)
@@ -414,7 +416,8 @@ $(function() {
                             cascadeFrom: 'cityEdit',
                             optionLabel: '-= 区县 =-',
                             dataValueField: 'area',
-                            dataTextField: 'areaName'
+                            dataTextField: 'areaName',
+                            filter: 'contains'
                         });
                 }
             },
@@ -447,7 +450,8 @@ $(function() {
                             },
                             placeholder: '-= 请选择 =-',
                             dataValueField: 'code',
-                            dataTextField: 'name'
+                            dataTextField: 'name',
+                            filter: 'contains'
                         });
                 }
             },
