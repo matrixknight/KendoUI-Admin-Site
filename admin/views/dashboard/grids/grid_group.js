@@ -68,6 +68,7 @@ $(function() {
                         character: { type: 'number' },
                         color: { type: 'string' },
                         constellation: { type: 'object' },
+                        tourism: { type: 'object' },
                         summary: { type: 'string' },
                         photo: { type: 'object' },
                         sign: { type: 'string' }
@@ -303,6 +304,13 @@ $(function() {
                         '# } else if (constellation[i] === "12") { #' +
                             '双鱼座&nbsp;' +
                         '# } #' +
+                    '# } #',
+                filterable: false
+            },
+            { field: 'tourism', title: '旅游足迹', width: '200px',
+                template:
+                    '# for (i = 0; i < tourism.length; i++) { #' +
+                        '#= tourism[i].name #&nbsp;' +
                     '# } #',
                 filterable: false
             },
