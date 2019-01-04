@@ -1,6 +1,6 @@
 /*!
  * Kendo UI Admin v1.0.0 by IKKI & Amikoko - https://ikki2000.github.io/
- * Copyright 2018 IKKI Studio
+ * Copyright 2018-2019 IKKI Studio
  * Released under the MIT License - https://ikki2000.github.io/KendoUI-Admin-Site/LICENSE
  * Email: ikki2002@qq.com
  */
