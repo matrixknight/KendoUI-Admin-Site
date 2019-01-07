@@ -107,9 +107,30 @@ $(function() {
             filter: {
                 logic: 'or',
                 filters: [
-                    { field: 'age', operator: 'neq', value: 90 },
-                    { field: 'height', operator: 'gt', value: 2 },
-                    { field: 'height', operator: 'lt', value: 1.8 }
+                    { field: 'userName', operator: 'contains', value: '' },
+                    { field: 'realName', operator: 'contains', value: '' },
+                    { field: 'nickName', operator: 'contains', value: '' },
+                    { field: 'online', operator: 'eq', value: '' },
+                    { field: 'gender', operator: 'eq', value: '' },
+                    { field: 'age', operator: 'lt', value: '' },
+                    { field: 'height', operator: 'gt', value: '' },
+                    { field: 'bloodType', operator: 'neq', value: '' },
+                    { field: 'birthday', operator: 'lt', value: '' },
+                    { field: 'mateBirthday', operator: 'gt', value: '' },
+                    { field: 'creditCard', operator: 'contains', value: '' },
+                    { field: 'asset', operator: 'gte', value: '' },
+                    { field: 'language', operator: 'contains', value: '' },
+                    { field: 'graduation', operator: 'lte', value: '' },
+                    { field: 'firstJob', operator: 'gte', value: '' },
+                    { field: 'mobile', operator: 'contains', value: '' },
+                    { field: 'email', operator: 'contains', value: '' },
+                    { field: 'homepage', operator: 'contains', value: '' },
+                    { field: 'getUp', operator: 'lte', value: '' },
+                    { field: 'importantMoment', operator: 'eq', value: '' },
+                    { field: 'character', operator: 'eq', value: '' },
+                    { field: 'color', operator: 'eq', value: null },
+                    { field: 'summary', operator: 'contains', value: '' },
+                    { field: 'sign', operator: 'contains', value: '' }
                 ]
             },
             // serverGrouping: true,
@@ -125,7 +146,7 @@ $(function() {
                 footerTemplate: '总计：#= count # 人'
             },
             { field: 'nickName', title: '昵称', width: '210px' },
-            { hidden: true, field: 'password', title: '密码', width: '70px',
+            { hidden: true, field: 'password', title: '密码', width: '230px',
                 template: function(dataItem) {
                     return dataItem.password.replace(dataItem.password.substr(0), '******');
                 }
@@ -166,17 +187,38 @@ $(function() {
                     '# } #' +
                     '（合计：#= count # 人）'
             },
-            { field: 'age', title: '年龄', width: '180px',
+            { field: 'age', title: '年龄', width: '160px',
                 template: '#= age # 岁',
                 aggregates: ['min', 'max', 'average'],
                 groupHeaderColumnTemplate: '最小：#= min # 岁',
                 groupFooterTemplate: '最大：#= max # 岁',
-                footerTemplate: '平均：#= kendo.toString(average, "n0") # 岁'
+                footerTemplate: '平均：#= kendo.toString(average, "n0") # 岁',
+                filterable: {
+                    cell: {
+                        template: function(args) {
+                            args.element.kendoNumericTextBox({
+                                format: 'n0',
+                                decimals: 0
+                            });
+                        }
+                    }
+                }
             },
-            { field: 'height', title: '身高', width: '160px',
+            { field: 'height', title: '身高', width: '180px',
                 template: '#= kendo.toString(height, "0.00") # m',
                 aggregates: ['average'],
-                footerTemplate: '平均：#= kendo.toString(average, "0.00") # m'
+                footerTemplate: '平均：#= kendo.toString(average, "0.00") # m',
+                filterable: {
+                    cell: {
+                        template: function(args) {
+                            args.element.kendoNumericTextBox({
+                                format: '0.00 m',
+                                decimals: 2,
+                                step: 0.01
+                            });
+                        }
+                    }
+                }
             },
             { field: 'bloodType', title: '血型', width: '180px',
                 values: [
@@ -187,18 +229,51 @@ $(function() {
                     { text: '其他', value: '5' }
                 ]
             },
-            { field: 'birthday', title: '生日', width: '210px' },
-            { field: 'mateBirthday', title: '配偶生日', width: '210px' },
+            { field: 'birthday', title: '生日', width: '210px',
+                filterable: {
+                    cell: {
+                        template: function(args) {
+                            args.element.kendoDatePicker({
+                                format: 'yyyy-MM-dd',
+                                footer: '今天：#= kendo.toString(data, "yyyy年MM月dd日") #'
+                            });
+                        }
+                    }
+                }
+            },
+            { field: 'mateBirthday', title: '配偶生日', width: '210px',
+                filterable: {
+                    cell: {
+                        template: function(args) {
+                            args.element.kendoDatePicker({
+                                format: 'yyyy-MM-dd',
+                                footer: '今天：#= kendo.toString(data, "yyyy年MM月dd日") #'
+                            });
+                        }
+                    }
+                }
+            },
             { field: 'creditCard', title: '银行卡', width: '260px',
                 template: function(dataItem) {
                     return dataItem.creditCard.replace(dataItem.creditCard.substr(2, 12), '** **** **** **');
                 }
             },
-            { field: 'asset', title: '资产', width: '230px',
+            { field: 'asset', title: '资产', width: '240px',
                 format: '{0:c}',
                 aggregates: ['sum'],
                 groupFooterTemplate: '合计：#= kendo.toString(sum, "c") #',
-                footerTemplate: '总计：#= kendo.toString(sum, "c") #'
+                footerTemplate: '总计：#= kendo.toString(sum, "c") #',
+                filterable: {
+                    cell: {
+                        template: function(args) {
+                            args.element.kendoNumericTextBox({
+                                format: 'c',
+                                decimals: 2,
+                                step: 10000
+                            });
+                        }
+                    }
+                }
             },
             { field: 'nativePlace', title: '籍贯', width: '250px',
                 template: '#= nativePlace.provinceName # - #= nativePlace.cityName # - #= nativePlace.areaName #',
@@ -242,20 +317,59 @@ $(function() {
                     '# } #',
                 filterable: false
             },
-            { field: 'graduation', title: '毕业年份', width: '90px',
-                filterable: false
+            { field: 'graduation', title: '毕业年份', width: '160px',
+                filterable: {
+                    cell: {
+                        template: function(args) {
+                            args.element.kendoDatePicker({
+                                start: 'decade',
+                                depth: 'decade',
+                                format: 'yyyy',
+                                footer: '今年：#= kendo.toString(data, "yyyy年") #'
+                            });
+                        }
+                    }
+                }
             },
-            { field: 'firstJob', title: '参加工作年月', width: '110px',
-                filterable: false
+            { field: 'firstJob', title: '参加工作年月', width: '190px',
+                filterable: {
+                    cell: {
+                        template: function(args) {
+                            args.element.kendoDatePicker({
+                                start: 'year',
+                                depth: 'year',
+                                format: 'yyyy-MM',
+                                footer: '当月：#= kendo.toString(data, "yyyy年MM月") #'
+                            });
+                        }
+                    }
+                }
             },
             { field: 'mobile', title: '手机', width: '220px' },
             { field: 'email', title: '电子邮件', width: '280px' },
             { field: 'homepage', title: '个人主页', width: '290px' },
-            { field: 'getUp', title: '起床时间', width: '90px',
-                filterable: false
+            { field: 'getUp', title: '起床时间', width: '170px',
+                filterable: {
+                    cell: {
+                        template: function(args) {
+                            args.element.kendoTimePicker({
+                                format: 'HH:mm'
+                            });
+                        }
+                    }
+                }
             },
-            { field: 'importantMoment', title: '最有意义的时刻', width: '150px',
-                filterable: false
+            { field: 'importantMoment', title: '最有意义的时刻', width: '280px',
+                filterable: {
+                    cell: {
+                        template: function(args) {
+                            args.element.kendoDateTimePicker({
+                                format: 'yyyy-MM-dd HH:mm',
+                                footer: '现在：#= kendo.toString(data, "yyyy年MM月dd日 HH:mm") #'
+                            });
+                        }
+                    }
+                }
             },
             { field: 'character', title: '性格', width: '200px',
                 values: [
@@ -272,9 +386,18 @@ $(function() {
                     { text: '超级内向', value: -10 }
                 ]
             },
-            { field: 'color', title: '颜色喜好', width: '90px',
+            { field: 'color', title: '颜色喜好', width: '140px',
                 template: '<span style="display: inline-block; width: 100%; height: 24px; background: #= color #; border: 1px solid \\#c5c5c5; border-radius: 4px; vertical-align: middle;"></span>',
-                filterable: false
+                filterable: {
+                    cell: {
+                        template: function(args) {
+                            args.element.kendoColorPicker({
+                                opacity: true,
+                                buttons: false
+                            });
+                        }
+                    }
+                }
             },
             { field: 'constellation', title: '相配的星座', width: '170px',
                 template:
@@ -319,9 +442,8 @@ $(function() {
                 template: '<a href="javascript:showBigPic(\'#= photo.url #\');"><img class="w-25 rounded-circle" src="#= photo.url #" alt="#= photo.name ##= photo.extension #"></a><small class="ml-2 text-muted">[#= kendo.toString(photo.size/1024, "0.00") # KB]</small>',
                 filterable: false
             },
-            { field: 'sign', title: '签名', width: '290px',
-                template: '#= sign #',
-                filterable: false
+            { field: 'sign', title: '签名', width: '390px',
+                template: '#= sign #'
             }
         ],
         noRecords: {

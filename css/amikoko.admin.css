@@ -1185,8 +1185,12 @@ form .searchBtn.row {
 .k-filter-row .k-filtercell .k-autocomplete,
 .k-filter-row .k-filtercell .k-combobox,
 .k-filter-row .k-filtercell .k-numerictextbox,
-.k-filter-row .k-filtercell .k-datepicker {
+.k-filter-row .k-filtercell .k-datepicker,
+.k-filter-row .k-filtercell .k-timepicker,
+.k-filter-row .k-filtercell .k-datetimepicker {
   width: auto; }
+.k-filter-row .k-filtercell .k-colorpicker .k-selected-color {
+  width: calc(100% - 8px - 1.42857em); }
 
 /* 自定义细节 ------------------------------ */
 .w-9 {
