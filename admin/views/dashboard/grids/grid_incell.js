@@ -324,7 +324,7 @@ $(function() {
                                     if (!input.is('.k-grid-edit-row [name=userName]')) {
                                         return true;
                                     }
-                                    input.attr('data-userNamePattern-msg', '请输入4-16个大小写字母及数字！');
+                                    input.attr('data-userNamePattern-msg', '请输入4-16个大小写字母或数字！');
                                     return input.val().match(/^[A-Za-z0-9]{4,16}$/) !== null;
                                 }
                             }
@@ -360,7 +360,7 @@ $(function() {
                                     if (!input.is('.k-grid-edit-row [name=nickName]')) {
                                         return true;
                                     }
-                                    input.attr('data-nickNamePattern-msg', '请输入2-20个大小写字母、数字、空格、下划线、中划线及汉字！');
+                                    input.attr('data-nickNamePattern-msg', '请输入2-20个大小写字母、数字、空格、下划线、中划线或汉字！');
                                     return input.val().match(/^[A-Za-z0-9\s_\-\u4E00-\u9FA5]{2,20}$/) !== null;
                                 },
                                 nickNameUnique: function(input) {
@@ -398,7 +398,7 @@ $(function() {
                                     if (!input.is('.k-grid-edit-row [name=password]')) {
                                         return true;
                                     }
-                                    input.attr('data-passwordPattern-msg', '请输入6-20个大小写字母及数字！');
+                                    input.attr('data-passwordPattern-msg', '请输入6-20个大小写字母或数字！');
                                     return input.val().match(/^[A-Za-z0-9]{6,20}$/) !== null;
                                 }
                             }
