@@ -149,7 +149,7 @@ $(function() {
             { field: 'language', title: '语言', width: '210px' },
             { field: 'education', title: '教育程度', width: '130px',
                 template:
-                    '# for (i = 0; i < education.length; i++) { #' +
+                    '# for (var i = 0; i < education.length; i++) { #' +
                         '# if (education[i] === "1") { #' +
                             '小学&nbsp;' +
                         '# } else if (education[i] === "2") { #' +
@@ -198,7 +198,7 @@ $(function() {
             },
             { field: 'constellation', title: '相配的星座', width: '170px',
                 template:
-                    '# for (i = 0; i < constellation.length; i++) { #' +
+                    '# for (var i = 0; i < constellation.length; i++) { #' +
                         '# if (constellation[i] === "1") { #' +
                             '白羊座&nbsp;' +
                         '# } else if (constellation[i] === "2") { #' +
@@ -228,7 +228,7 @@ $(function() {
             },
             { field: 'tourism', title: '旅游足迹', width: '200px',
                 template:
-                    '# for (i = 0; i < tourism.length; i++) { #' +
+                    '# for (var i = 0; i < tourism.length; i++) { #' +
                         '#= tourism[i].name #&nbsp;' +
                     '# } #'
             },
