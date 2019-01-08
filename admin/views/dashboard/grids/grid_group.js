@@ -195,8 +195,8 @@ $(function() {
                 footerTemplate: '平均：#= kendo.toString(average, "n0") # 岁',
                 filterable: {
                     cell: {
-                        template: function(args) {
-                            args.element.kendoNumericTextBox({
+                        template: function(e) {
+                            e.element.kendoNumericTextBox({
                                 format: 'n0',
                                 decimals: 0
                             });
@@ -210,8 +210,8 @@ $(function() {
                 footerTemplate: '平均：#= kendo.toString(average, "0.00") # m',
                 filterable: {
                     cell: {
-                        template: function(args) {
-                            args.element.kendoNumericTextBox({
+                        template: function(e) {
+                            e.element.kendoNumericTextBox({
                                 format: '0.00 m',
                                 decimals: 2,
                                 step: 0.01
@@ -232,8 +232,8 @@ $(function() {
             { field: 'birthday', title: '生日', width: '210px',
                 filterable: {
                     cell: {
-                        template: function(args) {
-                            args.element.kendoDatePicker({
+                        template: function(e) {
+                            e.element.kendoDatePicker({
                                 format: 'yyyy-MM-dd',
                                 footer: '今天：#= kendo.toString(data, "yyyy年MM月dd日") #'
                             });
@@ -244,8 +244,8 @@ $(function() {
             { field: 'mateBirthday', title: '配偶生日', width: '210px',
                 filterable: {
                     cell: {
-                        template: function(args) {
-                            args.element.kendoDatePicker({
+                        template: function(e) {
+                            e.element.kendoDatePicker({
                                 format: 'yyyy-MM-dd',
                                 footer: '今天：#= kendo.toString(data, "yyyy年MM月dd日") #'
                             });
@@ -265,8 +265,8 @@ $(function() {
                 footerTemplate: '总计：#= kendo.toString(sum, "c") #',
                 filterable: {
                     cell: {
-                        template: function(args) {
-                            args.element.kendoNumericTextBox({
+                        template: function(e) {
+                            e.element.kendoNumericTextBox({
                                 format: 'c',
                                 decimals: 2,
                                 step: 10000
@@ -320,8 +320,8 @@ $(function() {
             { field: 'graduation', title: '毕业年份', width: '160px',
                 filterable: {
                     cell: {
-                        template: function(args) {
-                            args.element.kendoDatePicker({
+                        template: function(e) {
+                            e.element.kendoDatePicker({
                                 start: 'decade',
                                 depth: 'decade',
                                 format: 'yyyy',
@@ -334,8 +334,8 @@ $(function() {
             { field: 'firstJob', title: '参加工作年月', width: '190px',
                 filterable: {
                     cell: {
-                        template: function(args) {
-                            args.element.kendoDatePicker({
+                        template: function(e) {
+                            e.element.kendoDatePicker({
                                 start: 'year',
                                 depth: 'year',
                                 format: 'yyyy-MM',
@@ -351,8 +351,8 @@ $(function() {
             { field: 'getUp', title: '起床时间', width: '170px',
                 filterable: {
                     cell: {
-                        template: function(args) {
-                            args.element.kendoTimePicker({
+                        template: function(e) {
+                            e.element.kendoTimePicker({
                                 format: 'HH:mm'
                             });
                         }
@@ -362,8 +362,8 @@ $(function() {
             { field: 'importantMoment', title: '最有意义的时刻', width: '280px',
                 filterable: {
                     cell: {
-                        template: function(args) {
-                            args.element.kendoDateTimePicker({
+                        template: function(e) {
+                            e.element.kendoDateTimePicker({
                                 format: 'yyyy-MM-dd HH:mm',
                                 footer: '现在：#= kendo.toString(data, "yyyy年MM月dd日 HH:mm") #'
                             });
@@ -390,8 +390,8 @@ $(function() {
                 template: '<span style="display: inline-block; width: 100%; height: 24px; background: #= color #; border: 1px solid \\#c5c5c5; border-radius: 4px; vertical-align: middle;"></span>',
                 filterable: {
                     cell: {
-                        template: function(args) {
-                            args.element.kendoColorPicker({
+                        template: function(e) {
+                            e.element.kendoColorPicker({
                                 opacity: true,
                                 buttons: false
                             });
