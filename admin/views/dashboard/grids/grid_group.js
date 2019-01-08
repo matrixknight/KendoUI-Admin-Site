@@ -36,12 +36,94 @@ $(function() {
                         },
                         creditCard: { type: 'string' },
                         asset: { type: 'number' },
-                        nativePlace: { type: 'object' },
-                        domicile: { type: 'object' },
-                        nation: { type: 'object' },
-                        zodiac: { type: 'object' },
+                        nativePlace: { type: 'string',
+                            parse: function(e) {
+                                if (typeof e === 'object') {
+                                    if (typeof e.id === 'undefined') {
+                                        return e.provinceName + ' - ' + e.cityName + ' - ' + e.areaName;
+                                    } else {
+                                        return e.nativePlace;
+                                    }
+                                } else {
+                                    return e;
+                                }
+                            }
+                        },
+                        domicile: { type: 'string',
+                            parse: function(e) {
+                                if (typeof e === 'object') {
+                                    if (typeof e.id === 'undefined') {
+                                        return e.name;
+                                    } else {
+                                        return e.domicile;
+                                    }
+                                } else {
+                                    return e;
+                                }
+                            }
+                        },
+                        nation: { type: 'string',
+                            parse: function(e) {
+                                if (typeof e === 'object') {
+                                    if (typeof e.id === 'undefined') {
+                                        return e.nationName;
+                                    } else {
+                                        return e.nation;
+                                    }
+                                } else {
+                                    return e;
+                                }
+                            }
+                        },
+                        zodiac: { type: 'string',
+                            parse: function(e) {
+                                if (typeof e === 'object') {
+                                    if (typeof e.id === 'undefined') {
+                                        return e.zodiacName;
+                                    } else {
+                                        return e.zodiac;
+                                    }
+                                } else {
+                                    return e;
+                                }
+                            }
+                        },
                         language: { type: 'string' },
-                        education: { type: 'object' },
+                        education: { type: 'string',
+                            parse: function(e) {
+                                if (typeof e === 'object') {
+                                    if (typeof e.id === 'undefined') {
+                                        var str = '';
+                                        for (var i = 0; i < e.length; i++) {
+                                            if (e[i] === "1") {
+                                                str += '小学 ';
+                                            } else if (e[i] === "2") {
+                                                str += '初中 ';
+                                            } else if (e[i] === "3") {
+                                                str += '高中 ';
+                                            } else if (e[i] === "4") {
+                                                str += '中专 ';
+                                            } else if (e[i] === "5") {
+                                                str += '大专 ';
+                                            } else if (e[i] === "6") {
+                                                str += '本科 ';
+                                            } else if (e[i] === "7") {
+                                                str += '硕士 ';
+                                            } else if (e[i] === "8") {
+                                                str += '博士 ';
+                                            } else if (e[i] === "9") {
+                                                str += '其他 ';
+                                            }
+                                        }
+                                        return str;
+                                    } else {
+                                        return e.education;
+                                    }
+                                } else {
+                                    return e;
+                                }
+                            }
+                        },
                         graduation: { type: 'date',
                             parse: function(e) {
                                 return kendo.toString(new Date(e), 'yyyy');
@@ -67,8 +149,64 @@ $(function() {
                         },
                         character: { type: 'number' },
                         color: { type: 'string' },
-                        constellation: { type: 'object' },
-                        tourism: { type: 'object' },
+                        constellation: { type: 'string',
+                            parse: function(e) {
+                                if (typeof e === 'object') {
+                                    if (typeof e.id === 'undefined') {
+                                        var str = '';
+                                        for (var i = 0; i < e.length; i++) {
+                                            if (e[i] === "1") {
+                                                str += '白羊座 ';
+                                            } else if (e[i] === "2") {
+                                                str += '金牛座 ';
+                                            } else if (e[i] === "3") {
+                                                str += '双子座 ';
+                                            } else if (e[i] === "4") {
+                                                str += '巨蟹座 ';
+                                            } else if (e[i] === "5") {
+                                                str += '狮子座 ';
+                                            } else if (e[i] === "6") {
+                                                str += '处女座 ';
+                                            } else if (e[i] === "7") {
+                                                str += '天秤座 ';
+                                            } else if (e[i] === "8") {
+                                                str += '天蝎座 ';
+                                            } else if (e[i] === "9") {
+                                                str += '射手座 ';
+                                            } else if (e[i] === "10") {
+                                                str += '山羊座 ';
+                                            } else if (e[i] === "11") {
+                                                str += '水瓶座 ';
+                                            } else if (e[i] === "12") {
+                                                str += '双鱼座 ';
+                                            }
+                                        }
+                                        return str;
+                                    } else {
+                                        return e.constellation;
+                                    }
+                                } else {
+                                    return e;
+                                }
+                            }
+                        },
+                        tourism: { type: 'string',
+                            parse: function(e) {
+                                if (typeof e === 'object') {
+                                    if (typeof e.id === 'undefined') {
+                                        var str = '';
+                                        for (var i = 0; i < e.length; i++) {
+                                            str += e[i].name + ' ';
+                                        }
+                                        return str;
+                                    } else {
+                                        return e.tourism;
+                                    }
+                                } else {
+                                    return e;
+                                }
+                            }
+                        },
                         summary: { type: 'string' },
                         photo: { type: 'object' },
                         sign: { type: 'string' }
@@ -119,7 +257,12 @@ $(function() {
                     { field: 'mateBirthday', operator: 'gt', value: '' },
                     { field: 'creditCard', operator: 'contains', value: '' },
                     { field: 'asset', operator: 'gte', value: '' },
+                    { field: 'nativePlace', operator: 'contains', value: '' },
+                    { field: 'domicile', operator: 'contains', value: '' },
+                    { field: 'nation', operator: 'contains', value: '' },
+                    { field: 'zodiac', operator: 'contains', value: '' },
                     { field: 'language', operator: 'contains', value: '' },
+                    { field: 'education', operator: 'contains', value: '' },
                     { field: 'graduation', operator: 'lte', value: '' },
                     { field: 'firstJob', operator: 'gte', value: '' },
                     { field: 'mobile', operator: 'contains', value: '' },
@@ -129,6 +272,8 @@ $(function() {
                     { field: 'importantMoment', operator: 'eq', value: '' },
                     { field: 'character', operator: 'eq', value: '' },
                     { field: 'color', operator: 'eq', value: null },
+                    { field: 'constellation', operator: 'contains', value: '' },
+                    { field: 'tourism', operator: 'contains', value: '' },
                     { field: 'summary', operator: 'contains', value: '' },
                     { field: 'sign', operator: 'contains', value: '' }
                 ]
@@ -275,47 +420,66 @@ $(function() {
                     }
                 }
             },
-            { field: 'nativePlace', title: '籍贯', width: '250px',
-                template: '#= nativePlace.provinceName # - #= nativePlace.cityName # - #= nativePlace.areaName #',
-                filterable: false
+            { field: 'nativePlace', title: '籍贯', width: '350px',
+                filterable: {
+                    cell: {
+                        template: function(e) {
+                            e.element.kendoAutoComplete({
+                                dataSource: e.dataSource,
+                                dataTextField: 'nativePlace'
+                            });
+                        }
+                    }
+                }
             },
-            { field: 'domicile', title: '居住地', width: '100px',
-                template: '#= domicile.name #',
-                filterable: false
+            { field: 'domicile', title: '居住地', width: '200px',
+                filterable: {
+                    cell: {
+                        template: function(e) {
+                            e.element.kendoAutoComplete({
+                                dataSource: e.dataSource,
+                                dataTextField: 'domicile'
+                            });
+                        }
+                    }
+                }
             },
-            { field: 'nation', title: '民族', width: '100px',
-                template: '#= nation.nationName #',
-                filterable: false
+            { field: 'nation', title: '民族', width: '200px',
+                filterable: {
+                    cell: {
+                        template: function(e) {
+                            e.element.kendoAutoComplete({
+                                dataSource: e.dataSource,
+                                dataTextField: 'nation'
+                            });
+                        }
+                    }
+                }
             },
-            { field: 'zodiac', title: '生肖', width: '60px',
-                template: '#= zodiac.zodiacName #',
-                filterable: false
+            { field: 'zodiac', title: '生肖', width: '140px',
+                filterable: {
+                    cell: {
+                        template: function(e) {
+                            e.element.kendoAutoComplete({
+                                dataSource: e.dataSource,
+                                dataTextField: 'zodiac'
+                            });
+                        }
+                    }
+                }
             },
             { field: 'language', title: '语言', width: '310px' },
-            { field: 'education', title: '教育程度', width: '130px',
-                template:
-                    '# for (i = 0; i < education.length; i++) { #' +
-                        '# if (education[i] === "1") { #' +
-                            '小学&nbsp;' +
-                        '# } else if (education[i] === "2") { #' +
-                            '初中&nbsp;' +
-                        '# } else if (education[i] === "3") { #' +
-                            '高中&nbsp;' +
-                        '# } else if (education[i] === "4") { #' +
-                            '中专&nbsp;' +
-                        '# } else if (education[i] === "5") { #' +
-                            '大专&nbsp;' +
-                        '# } else if (education[i] === "6") { #' +
-                            '本科&nbsp;' +
-                        '# } else if (education[i] === "7") { #' +
-                            '硕士&nbsp;' +
-                        '# } else if (education[i] === "8") { #' +
-                            '博士&nbsp;' +
-                        '# } else if (education[i] === "9") { #' +
-                            '其他&nbsp;' +
-                        '# } #' +
-                    '# } #',
-                filterable: false
+            { field: 'education', title: '教育程度', width: '220px',
+                filterable: {
+                    cell: {
+                        template: function(e) {
+                            e.element.kendoAutoComplete({
+                                dataSource: e.dataSource,
+                                dataTextField: 'education'
+                            });
+                        }
+                    }
+                }
             },
             { field: 'graduation', title: '毕业年份', width: '160px',
                 filterable: {
@@ -399,43 +563,29 @@ $(function() {
                     }
                 }
             },
-            { field: 'constellation', title: '相配的星座', width: '170px',
-                template:
-                    '# for (i = 0; i < constellation.length; i++) { #' +
-                        '# if (constellation[i] === "1") { #' +
-                            '白羊座&nbsp;' +
-                        '# } else if (constellation[i] === "2") { #' +
-                            '金牛座&nbsp;' +
-                        '# } else if (constellation[i] === "3") { #' +
-                            '双子座&nbsp;' +
-                        '# } else if (constellation[i] === "4") { #' +
-                            '巨蟹座&nbsp;' +
-                        '# } else if (constellation[i] === "5") { #' +
-                            '狮子座&nbsp;' +
-                        '# } else if (constellation[i] === "6") { #' +
-                            '处女座&nbsp;' +
-                        '# } else if (constellation[i] === "7") { #' +
-                            '天秤座&nbsp;' +
-                        '# } else if (constellation[i] === "8") { #' +
-                            '天蝎座&nbsp;' +
-                        '# } else if (constellation[i] === "9") { #' +
-                            '射手座&nbsp;' +
-                        '# } else if (constellation[i] === "10") { #' +
-                            '山羊座&nbsp;' +
-                        '# } else if (constellation[i] === "11") { #' +
-                            '水瓶座&nbsp;' +
-                        '# } else if (constellation[i] === "12") { #' +
-                            '双鱼座&nbsp;' +
-                        '# } #' +
-                    '# } #',
-                filterable: false
+            { field: 'constellation', title: '相配的星座', width: '270px',
+                filterable: {
+                    cell: {
+                        template: function(e) {
+                            e.element.kendoAutoComplete({
+                                dataSource: e.dataSource,
+                                dataTextField: 'constellation'
+                            });
+                        }
+                    }
+                }
             },
-            { field: 'tourism', title: '旅游足迹', width: '200px',
-                template:
-                    '# for (i = 0; i < tourism.length; i++) { #' +
-                        '#= tourism[i].name #&nbsp;' +
-                    '# } #',
-                filterable: false
+            { field: 'tourism', title: '旅游足迹', width: '300px',
+                filterable: {
+                    cell: {
+                        template: function(e) {
+                            e.element.kendoAutoComplete({
+                                dataSource: e.dataSource,
+                                dataTextField: 'tourism'
+                            });
+                        }
+                    }
+                }
             },
             { field: 'summary', title: '自我介绍', width: '390px' },
             { field: 'photo', title: '头像', width: '120px',
