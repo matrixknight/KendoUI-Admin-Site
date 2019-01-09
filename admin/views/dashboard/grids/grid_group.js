@@ -208,8 +208,28 @@ $(function() {
                             }
                         },
                         summary: { type: 'string' },
-                        photo: { type: 'object' },
-                        sign: { type: 'string' }
+                        photo: { type: 'string',
+                            parse: function(e) {
+                                if (typeof e === 'object') {
+                                    if (typeof e.id === 'undefined') {
+                                        return '<a href="javascript:showBigPic(\'' + e.url + '\');"><img class="w-15 rounded-circle" src="' + e.url + '" alt="' + e.name + e.extension + '"></a><small class="ml-2 text-muted">[' + kendo.toString(e.size/1024, "0.00") + ' KB]</small>';
+                                    } else {
+                                        return e.photo;
+                                    }
+                                } else {
+                                    return e;
+                                }
+                            }
+                        },
+                        sign: { type: 'string',
+                            parse: function(e) {
+                                if (typeof e === 'object') {
+                                    return e.sign;
+                                } else {
+                                    return e;
+                                }
+                            }
+                        }
                     }
                 }
             },
@@ -275,6 +295,7 @@ $(function() {
                     { field: 'constellation', operator: 'contains', value: '' },
                     { field: 'tourism', operator: 'contains', value: '' },
                     { field: 'summary', operator: 'contains', value: '' },
+                    { field: 'photo', operator: 'contains', value: '' },
                     { field: 'sign', operator: 'contains', value: '' }
                 ]
             },
@@ -588,12 +609,37 @@ $(function() {
                 }
             },
             { field: 'summary', title: '自我介绍', width: '390px' },
-            { field: 'photo', title: '头像', width: '120px',
-                template: '<a href="javascript:showBigPic(\'#= photo.url #\');"><img class="w-25 rounded-circle" src="#= photo.url #" alt="#= photo.name ##= photo.extension #"></a><small class="ml-2 text-muted">[#= kendo.toString(photo.size/1024, "0.00") # KB]</small>',
-                filterable: false
+            { field: 'photo', title: '头像', width: '230px',
+                template: '#= photo #',
+                filterable: {
+                    cell: {
+                        template: function(e) {
+                            e.element.kendoAutoComplete({
+                                dataSource: e.dataSource,
+                                dataTextField: 'photo',
+                                template: function(dataItem) {
+                                    return '<img class="w-25 rounded-circle" src="' + dataItem.photo.split('<')[2].split('=')[2].split('"')[1] + '" alt="' + dataItem.photo.split('<')[2].split('=')[2].split('"')[1].split('/')[2] + '"><small class="ml-2 text-muted">' + dataItem.photo.split('<')[4].split('>')[1] + '</small>';
+                                }
+                            });
+                        }
+                    }
+                }
             },
             { field: 'sign', title: '签名', width: '390px',
-                template: '#= sign #'
+                template: '#= sign #',
+                filterable: {
+                    cell: {
+                        template: function(e) {
+                            e.element.kendoAutoComplete({
+                                dataSource: e.dataSource,
+                                dataTextField: 'sign',
+                                template: function(dataItem) {
+                                    return dataItem.sign;
+                                }
+                            });
+                        }
+                    }
+                }
             }
         ],
         noRecords: {
