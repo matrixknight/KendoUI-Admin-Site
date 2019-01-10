@@ -688,7 +688,7 @@ function cudGrid(options, data, url, succeedGrid) {
 // 查
 function readGrid(options, url, succeedGrid) {
     $.fn.ajaxPost({
-        ajaxData: $.extend({}, options.data, $('.condition').serializeObject()),
+        ajaxData: $('.condition').serializeObject(),
         ajaxUrl: url,
         succeed: function(res) {
             options.success(res);
