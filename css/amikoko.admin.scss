@@ -1286,6 +1286,16 @@ form {
     }
 }
 
+/* 下拉框 */
+.k-animation-container {
+    .k-list-container {
+        .k-list-optionlabel {
+            padding: 0 8px;
+            height: 20px;
+        }
+    }
+}
+
 /* 下拉分组 */
 .k-popup .k-list .k-item > .k-group {
     font-size: $font-size-s;
