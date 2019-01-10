@@ -53,19 +53,19 @@
                             "url": "javascript:linkTo(\"/dashboard/grids/\", \"grid_custom\");"
                         },
                         {
-                            "text": "<i class='fas fa-genderless'></i>弹出框编辑",
+                            "text": "<i class='fas fa-genderless'></i>弹出框带校验编辑",
                             "encoded": false,
                             "cssClass": "links-grid_popup",
                             "url": "javascript:linkTo(\"/dashboard/grids/\", \"grid_popup\");"
                         },
                         {
-                            "text": "<i class='fas fa-genderless'></i>行内编辑",
+                            "text": "<i class='fas fa-genderless'></i>行内带校验编辑",
                             "encoded": false,
                             "cssClass": "links-grid_inline",
                             "url": "javascript:linkTo(\"/dashboard/grids/\", \"grid_inline\");"
                         },
                         {
-                            "text": "<i class='fas fa-genderless'></i>单元格编辑",
+                            "text": "<i class='fas fa-genderless'></i>单元格带校验编辑",
                             "encoded": false,
                             "cssClass": "links-grid_incell",
                             "url": "javascript:linkTo(\"/dashboard/grids/\", \"grid_incell\");"
