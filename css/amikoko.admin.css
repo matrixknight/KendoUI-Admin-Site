@@ -1089,6 +1089,14 @@ form .searchBtn.row {
       margin-right: 8px; }
 
 /* 表格 */
+.k-grid .k-hierarchy-cell + td {
+  border-left-width: 1px; }
+.k-grid .k-detail-row {
+  outline: 1px solid #ccc;
+  background-color: rgba(0, 0, 0, 0.1) !important; }
+  .k-grid .k-detail-row .k-detail-cell {
+    padding: 1rem; }
+
 .k-edit-form-container {
   width: 600px; }
   .k-edit-form-container .k-edit-label {
