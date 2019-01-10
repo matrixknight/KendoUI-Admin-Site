@@ -4,7 +4,6 @@ $(function() {
         dataSource: {
             transport: {
                 create: function(options) { createGrid(options, 'json/response.json') },
-                destroy: function(options) { destroyGrid(options, 'json/response.json') },
                 update: function(options) { updateGrid(options, 'json/response.json') },
                 read: function(options) { readGrid(options, 'json/grid.json') }
             },
