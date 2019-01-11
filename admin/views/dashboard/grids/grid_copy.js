@@ -164,7 +164,8 @@ $(function() {
         toolbar: [
             { name: 'create', text: '新增' },
             { name: 'save', text: '保存变更' },
-            { name: 'cancel', text: '取消变更' }
+            { name: 'cancel', text: '取消变更' },
+            { template: '<span class="float-right py-1 theme-m">注：年龄和身高联动、生日和配偶生日联动</span>' }
         ],
         columns: [
             { locked: true, title: '操作', width: '90px',
@@ -251,7 +252,10 @@ $(function() {
                             format: 'n0',
                             decimals: 0,
                             min: 1,
-                            max: 120
+                            max: 120,
+                            change: function() {
+                                options.model.set('height', (1 + this.value() / 100).toFixed(2));
+                            }
                         });
                 }
             },
@@ -270,8 +274,11 @@ $(function() {
                             format: '0.00 m',
                             decimals: 2,
                             step: 0.01,
-                            min: 0.30,
-                            max: 3.00
+                            min: 1.01,
+                            max: 3.00,
+                            change: function() {
+                                options.model.set('age', ((this.value() - 1) * 100).toFixed(0));
+                            }
                         });
                 }
             },
@@ -310,7 +317,10 @@ $(function() {
                             format: 'yyyy-MM-dd',
                             footer: '今天：#= kendo.toString(data, "yyyy年MM月dd日") #',
                             min: new Date(1920, 0, 1),
-                            max: new Date()
+                            max: new Date(),
+                            change: function() {
+                                options.model.set('mateBirthday', this.value());
+                            }
                         });
                 }
             },
@@ -321,7 +331,10 @@ $(function() {
                         .kendoDateInput({
                             format: 'yyyy-MM-dd',
                             min: new Date(1920, 0, 1),
-                            max: new Date()
+                            max: new Date(),
+                            change: function() {
+                                options.model.set('birthday', this.value());
+                            }
                         });
                 }
             },

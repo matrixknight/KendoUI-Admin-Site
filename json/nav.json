@@ -71,7 +71,7 @@
                             "url": "javascript:linkTo(\"/dashboard/grids/\", \"grid_incell\");"
                         },
                         {
-                            "text": "<i class='fas fa-genderless'></i>复制新增编辑",
+                            "text": "<i class='fas fa-genderless'></i>复制新增及数据联动编辑<sub class='theme-l'>Update</sub>",
                             "encoded": false,
                             "cssClass": "links-grid_copy",
                             "url": "javascript:linkTo(\"/dashboard/grids/\", \"grid_copy\");"
