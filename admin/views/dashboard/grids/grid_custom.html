@@ -408,7 +408,7 @@
                 <div class="form-group col-lg-9 col-xl-6">
                     <label class="d-block"><strong class="k-required">*</strong>头像：</label>
                     <div class="media">
-                        <img class="img-thumbnail w-15 mr-2" id="photoShow" src="#= photo.url #" alt="#= photo.name ##= photo.extension #" title="#= kendo.toString(photo.size/1024, '0.00') # KB">
+                        <img class="img-thumbnail w-15 mr-2" id="photoShow" src="#= photo.url #" alt="#= photo.name ##= photo.extension #" title="#= kendo.toString(photo.size / 1024, '0.00') # KB">
                         <div class="media-body">
                             <input class="w-100" id="photoEdit" name="photo" type="file">
                             <span class="k-invalid-msg" data-for="photo"></span>
@@ -427,7 +427,7 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="card mb-3">
-                    <img class="card-img-top" src="#= photo.url #" alt="[#= kendo.toString(photo.size/1024, '0.00') # KB]" title="#= id #：#= photo.name ##= photo.extension #">
+                    <img class="card-img-top" src="#= photo.url #" alt="[#= kendo.toString(photo.size / 1024, '0.00') # KB]" title="#= id #：#= photo.name ##= photo.extension #">
                     <div class="card-body">
                         <h4 class="card-title">
                             # if (gender === '1') { #

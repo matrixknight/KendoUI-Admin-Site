@@ -11,7 +11,7 @@ $(function() {
         format: '0.00 m',
         decimals: 2,
         step: 0.01,
-        min: 0.30,
+        min: 1.01,
         max: 3.00
     });
     // 血型

@@ -2,7 +2,7 @@ $(function() {
     // 年龄
     numericRange($('#ageStart'), $('#ageEnd'), 'n0', 0, 1, 1, 120);
     // 身高
-    numericRange($('#heightStart'), $('#heightEnd'), '0.00 m', 2, 0.01, 0.30, 3.00);
+    numericRange($('#heightStart'), $('#heightEnd'), '0.00 m', 2, 0.01, 1.01, 3.00);
     // 血型
     $('#bloodType').kendoDropDownList();
     // 生日
@@ -1025,7 +1025,7 @@ $(function() {
                             format: '0.00 m',
                             decimals: 2,
                             step: 0.01,
-                            min: 0.30,
+                            min: 1.01,
                             max: 3.00
                         });
                     $('<span class="k-invalid-msg" data-for="height"></span>')
@@ -1647,11 +1647,11 @@ $(function() {
                 }
             },
             { field: 'photo', title: '头像', width: '120px',
-                template: '<a href="javascript:showBigPic(\'#= photo.url #\');"><img class="w-25 rounded-circle" src="#= photo.url #" alt="#= photo.name ##= photo.extension #"></a><small class="ml-2 text-muted">[#= kendo.toString(photo.size/1024, "0.00") # KB]</small>',
+                template: '<a href="javascript:showBigPic(\'#= photo.url #\');"><img class="w-25 rounded-circle" src="#= photo.url #" alt="#= photo.name ##= photo.extension #"></a><small class="ml-2 text-muted">[#= kendo.toString(photo.size / 1024, "0.00") # KB]</small>',
                 editor: function(container, options) {
                     $('<strong class="k-required">*</strong>').appendTo(container);
                     $('<div class="media">' +
-                            '<img class="img-thumbnail w-25 mr-2" id="photoShow" src="'+ options.model.photo.url +'" alt="'+ options.model.photo.name + options.model.photo.extension +'" title="'+ kendo.toString(options.model.photo.size/1024, "0.00") +' KB">' +
+                            '<img class="img-thumbnail w-25 mr-2" id="photoShow" src="'+ options.model.photo.url +'" alt="'+ options.model.photo.name + options.model.photo.extension +'" title="'+ kendo.toString(options.model.photo.size / 1024, "0.00") +' KB">' +
                             '<div class="media-body">' +
                                 '<input id="photoEdit" name="photo" type="file">' +
                                 '<span class="k-invalid-msg" data-for="photo"></span>' +
@@ -1686,7 +1686,7 @@ $(function() {
                                         $('#photoShow').attr({
                                             'src': res.response.data.url,
                                             'alt': res.response.data.name + res.response.data.extension,
-                                            'title': kendo.toString(res.response.data.size/1024, '0.00') + ' KB'
+                                            'title': kendo.toString(res.response.data.size / 1024, '0.00') + ' KB'
                                         });
                                         alertMsg(res.response.msg, 'success');
                                     }

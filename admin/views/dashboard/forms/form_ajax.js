@@ -11,7 +11,7 @@ $(function() {
         format: '0.00 m',
         decimals: 2,
         step: 0.01,
-        min: 0.30,
+        min: 1.01,
         max: 3.00
     });
     // 血型
@@ -351,7 +351,7 @@ $(function() {
                     $('#photoUrl').val(e.response.data.url).parent().prev().attr({
                         'src': e.response.data.url,
                         'alt': e.response.data.name + e.response.data.extension,
-                        'title': kendo.toString(e.response.data.size/1024, '0.00') + ' KB'
+                        'title': kendo.toString(e.response.data.size / 1024, '0.00') + ' KB'
                     });
                     alertMsg(e.response.msg, 'success');
                 }

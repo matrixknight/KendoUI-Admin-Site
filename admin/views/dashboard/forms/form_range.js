@@ -2,7 +2,7 @@ $(function() {
     // 数字范围
     numericRange($('#ageStart'), $('#ageEnd'), 'n0', 0, 1, 1, 100);
     // 小数单位数字范围
-    numericRange($('#heightStart'), $('#heightEnd'), '0.00 m', 2, 0.01, 0.30, 3.00);
+    numericRange($('#heightStart'), $('#heightEnd'), '0.00 m', 2, 0.01, 1.01, 3.00);
     // 金融数字范围
     numericRange($('#assetStart'), $('#assetEnd'), 'c', 2, 10000, 0, 10000000000);
     // 日期范围

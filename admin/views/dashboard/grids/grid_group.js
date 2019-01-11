@@ -209,7 +209,7 @@ $(function() {
                             parse: function(e) {
                                 if (typeof e === 'object') {
                                     if (typeof e.id === 'undefined') {
-                                        return '<a href="javascript:showBigPic(\'' + e.url + '\');"><img class="w-15 rounded-circle" src="' + e.url + '" alt="' + e.name + e.extension + '"></a><small class="ml-2 text-muted">[' + kendo.toString(e.size/1024, "0.00") + ' KB]</small>';
+                                        return '<a href="javascript:showBigPic(\'' + e.url + '\');"><img class="w-15 rounded-circle" src="' + e.url + '" alt="' + e.name + e.extension + '"></a><small class="ml-2 text-muted">[' + kendo.toString(e.size / 1024, "0.00") + ' KB]</small>';
                                     } else {
                                         return e.photo;
                                     }
