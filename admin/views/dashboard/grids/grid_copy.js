@@ -165,7 +165,7 @@ $(function() {
             { name: 'create', text: '新增' },
             { name: 'save', text: '保存变更' },
             { name: 'cancel', text: '取消变更' },
-            { template: '<span class="float-right py-1 theme-m">注：年龄和身高联动、生日和配偶生日联动</span>' }
+            { template: '<span class="float-right py-1 theme-m">注：年龄和身高联动、生日和配偶生日联动~</span>' }
         ],
         columns: [
             { locked: true, title: '操作', width: '90px',
