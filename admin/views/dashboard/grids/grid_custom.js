@@ -636,7 +636,7 @@ $(function() {
                             cancel: 'k-icon k-i-cancel'
                         },
                         visible: function(dataItem) {
-                            return dataItem.online
+                            return dataItem.online;
                         }
                     },
                     { name: 'destroy',

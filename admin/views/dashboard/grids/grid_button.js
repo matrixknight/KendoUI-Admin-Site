@@ -68,7 +68,9 @@ $(function() {
                         tourism: { type: 'object' },
                         summary: { type: 'string' },
                         photo: { type: 'object' },
-                        sign: { type: 'string' }
+                        sign: { type: 'string' },
+                        type: { type: 'string' },
+                        admin: { type: 'boolean' }
                     }
                 }
             },
@@ -77,10 +79,167 @@ $(function() {
         },
         toolbar: [
             { template: '<a href="javascript:batchOperate(\'json/response.json\');" class="k-button k-button-icontext theme-m-box"><span class="k-icon k-i-check"></span>批处理</a>' },
-            { template: '<a href="javascript:batchSubmit(\'json/response.json\');" class="k-button k-button-icontext theme-s-box"><span class="k-icon k-i-validation-data"></span>批提交</a>' }
+            { template: '<a href="javascript:batchSubmit(\'json/response.json\');" class="k-button k-button-icontext theme-m-box"><span class="k-icon k-i-validation-data"></span>批提交</a>' },
+            { template: '<a href="javascript:linkTo(\'/\', \'home\');" class="k-button k-button-icontext float-right"><span class="k-icon k-i-undo"></span>返回首页</a>' }
         ],
         columns: [
             { locked: true, selectable: true, width: '40px' },
+            { locked: true, title: '操作', width: '380px',
+                command: [
+                    { text: '设为管理员',
+                        iconClass: 'fa fa-user mr-1',
+                        visible: function(dataItem) {
+                            return !(dataItem.admin);
+                        },
+                        click: function(e) {
+                            e.preventDefault();
+                            var dataItem = this.dataItem($(e.target).closest('tr'));
+                            confirmMsg('管理员设置', '你确定要把<strong class="theme-m mx-1">' + dataItem.realName + '</strong>设置为管理员吗？', 'question', function() {
+                                $.fn.ajaxPost({
+                                    ajaxData: {
+                                        'id': dataItem.id,
+                                        'admin': true
+                                    },
+                                    succeed: function() {
+                                        dataItem.set('admin', true);
+                                    },
+                                    isMsg: true
+                                });
+                            });
+                        }
+                    },
+                    { text: '取消管理员',
+                        className: 'theme-s-box',
+                        iconClass: 'fa fa-user-tie mr-1',
+                        visible: function(dataItem) {
+                            return dataItem.admin;
+                        },
+                        click: function(e) {
+                            e.preventDefault();
+                            var dataItem = this.dataItem($(e.target).closest('tr'));
+                            confirmMsg('管理员设置', '你确定要取消<strong class="theme-m mx-1">' + dataItem.realName + '</strong>的管理员权限吗？', 'question', function() {
+                                $.fn.ajaxPost({
+                                    ajaxData: {
+                                        'id': dataItem.id,
+                                        'admin': false
+                                    },
+                                    succeed: function() {
+                                        dataItem.set('admin', false);
+                                    },
+                                    isMsg: true
+                                });
+                            });
+                        }
+                    },
+                    { text: '特殊修改',
+                        iconClass: 'fa fa-user-edit mr-1',
+                        click: function(e) {
+                            e.preventDefault();
+                            var dataItem = this.dataItem($(e.target).closest('tr')),
+                                divWindow = $('<div class="window-box" id="specialEdit"></div>').kendoWindow({
+                                    animation: {open: {effects: 'fade:in'}, close: {effects: 'fade:out'}},
+                                    title: '特殊修改',
+                                    width: '30%',
+                                    modal: true,
+                                    pinned: true,
+                                    resizable: false,
+                                    open: function() {
+                                        $('#onlineEdit').kendoMobileSwitch({
+                                            onLabel: '',
+                                            offLabel: ''
+                                        });
+                                        $('#specialEdit').kendoValidator({
+                                            rules: {
+                                                nickNameRequired: function(input) {
+                                                    if (!input.is('#specialEdit [name=nickName]')) {
+                                                        return true;
+                                                    }
+                                                    return input.val() !== '';
+                                                },
+                                                nickNamePattern: function(input) {
+                                                    if (!input.is('#specialEdit [name=nickName]')) {
+                                                        return true;
+                                                    }
+                                                    return input.val().match(/^[A-Za-z0-9\s_\-\u4E00-\u9FA5]{2,20}$/) !== null;
+                                                },
+                                                nickNameUnique: function(input) {
+                                                    if (!input.is('#specialEdit [name=nickName]')) {
+                                                        return true;
+                                                    }
+                                                    input.next().show();
+                                                    var unique = true;
+                                                    $.fn.ajaxPost({
+                                                        ajaxAsync: false,
+                                                        ajaxData: {
+                                                            'nickName': input.val()
+                                                        },
+                                                        finished: function() {
+                                                            input.next().hide();
+                                                        },
+                                                        succeed: function() {
+                                                            unique = true;
+                                                        },
+                                                        failed: function() {
+                                                            unique = false;
+                                                        }
+                                                    });
+                                                    return unique;
+                                                }
+                                            },
+                                            messages: {
+                                                nickNameRequired: "请输入昵称！",
+                                                nickNamePattern: "请输入2-20个大小写字母、数字、空格、下划线、中划线或汉字！",
+                                                nickNameUnique: "此昵称已存在，请重新输入！"
+                                            }
+                                        });
+                                        $('#specialEdit button.k-state-selected').unbind('click').click(function(){
+                                            if ($('#specialEdit').data('kendoValidator').validate()) {
+                                                $.fn.ajaxPost({
+                                                    ajaxData: {
+                                                        'id': dataItem.id,
+                                                        'nickName': $('#specialEdit [name=nickName]').val(),
+                                                        'online': $('#onlineEdit').data('kendoMobileSwitch').value()
+                                                    },
+                                                    succeed: function(res) {
+                                                        dataItem.set('nickName', $('#specialEdit [name=nickName]').val());
+                                                        dataItem.set('online', $('#onlineEdit').data('kendoMobileSwitch').value());
+                                                        divWindow.close();
+                                                    },
+                                                    isMsg: true
+                                                });
+                                            }
+                                        });
+                                    },
+                                    close: function() {
+                                        divWindow.destroy();
+                                    }
+                                }).data('kendoWindow'),
+                                content =
+                                    '<form class="form-row">' +
+                                        '<div class="form-group col-6">' +
+                                            '<label class="d-block">昵称：</label>' +
+                                            '<input class="k-textbox w-100" name="nickName" type="text" value="' + dataItem.nickName + '">' +
+                                            '<span class="theme-m ajax-loading"><span class="k-icon k-i-loading"></span>验证中……</span><span class="k-invalid-msg" data-for="nickName"></span>' +
+                                        '</div>' +
+                                        '<div class="form-group col-6">' +
+                                            '<label class="d-block">在线状态：</label>';
+                            if (dataItem.online) {
+                                content += '<input id="onlineEdit" name="online" type="checkbox" checked>';
+                            } else {
+                                content += '<input id="onlineEdit" name="online" type="checkbox">';
+                            }
+                                content +=
+                                        '</div>' +
+                                        '<div class="form-group col-12 row justify-content-center m-0">' +
+                                            '<button class="k-button k-button-lg k-state-selected mx-3" type="button">确 定</button>' +
+                                            '<button class="k-button k-button-lg mx-3" type="button" onclick="$(\'#specialEdit\').data(\'kendoWindow\').close();">取 消</button>' +
+                                        '</div>' +
+                                    '</form>';
+                            divWindow.content(content).center().open();
+                        }
+                    }
+                ]
+            },
             { locked: true, field: 'type', title: '类型', width: '260px',
                 template:
                     '# var type0 = \'<button class="k-button k-button-icontext k-notification-warning ml-1" onclick="setType(this, \\\'\' + id + \'\\\', \\\'0\\\', \\\'临时\\\', \\\'warning\\\');"><i class="k-icon k-i-warning"></i>临时</button>\'; #' +
