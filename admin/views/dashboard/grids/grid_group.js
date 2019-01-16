@@ -321,17 +321,17 @@ $(function() {
                 ],
                 template:
                     '# if (online) { #' +
-                        '<span class="d-inline-block border border-success rounded-circle k-notification-success" style="width: 10px; height: 10px;"></span><span class="k-notification-success bg-transparent ml-2">在线</span>' +
+                        '<span class="dot-color k-notification-success"></span><span class="k-notification-success bg-transparent ml-2">在线</span>' +
                     '# } else { #' +
-                        '<span class="d-inline-block border border-danger rounded-circle k-notification-error" style="width: 10px; height: 10px;"></span><span class="k-notification-error bg-transparent ml-2">离线</span>' +
+                        '<span class="dot-color k-notification-error"></span><span class="k-notification-error bg-transparent ml-2">离线</span>' +
                     '# } #',
                 aggregates: ['count'],
                 groupHeaderTemplate:
                     '状态：' +
                     '# if (value) { #' +
-                        '<span class="d-inline-block border border-success rounded-circle k-notification-success" style="width: 10px; height: 10px;"></span><span class="k-notification-success bg-transparent ml-2">在线</span>' +
+                        '<span class="dot-color k-notification-success"></span><span class="k-notification-success bg-transparent ml-2">在线</span>' +
                     '# } else { #' +
-                        '<span class="d-inline-block border border-danger rounded-circle k-notification-error" style="width: 10px; height: 10px;"></span><span class="k-notification-error bg-transparent ml-2">离线</span>' +
+                        '<span class="dot-color k-notification-error"></span><span class="k-notification-error bg-transparent ml-2">离线</span>' +
                     '# } #' +
                     '（合计：#= count # 人）'
             },
@@ -344,9 +344,9 @@ $(function() {
                 groupHeaderTemplate:
                     '性别：' +
                     '# if (value === "1") { #' +
-                        '男<i class="fas fa-mars ml-2" style="color: rgb(82, 177, 255);"></i>' +
+                        '男<i class="fas fa-mars mars ml-2"></i>' +
                     '# } else if (value === "2") { #' +
-                        '女<i class="fas fa-venus ml-2" style="color: rgb(255, 150, 192);"></i>' +
+                        '女<i class="fas fa-venus venus ml-2"></i>' +
                     '# } #' +
                     '（合计：#= count # 人）'
             },

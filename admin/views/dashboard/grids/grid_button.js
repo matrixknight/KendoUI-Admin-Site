@@ -240,20 +240,20 @@ $(function() {
                     }
                 ]
             },
-            { locked: true, field: 'type', title: '类型', width: '260px',
+            { locked: true, field: 'type', title: '类型', width: '280px',
                 template:
                     '# var type0 = \'<button class="k-button k-button-icontext k-notification-warning ml-1" onclick="setType(this, \\\'\' + id + \'\\\', \\\'0\\\', \\\'临时\\\', \\\'warning\\\');"><i class="k-icon k-i-warning"></i>临时</button>\'; #' +
                     '# var type1 = \'<button class="k-button k-button-icontext k-notification-info ml-1" onclick="setType(this, \\\'\' + id + \'\\\', \\\'1\\\', \\\'标记\\\', \\\'info\\\');"><i class="k-icon k-i-information"></i>标记</button>\'; #' +
                     '# var type2 = \'<button class="k-button k-button-icontext k-notification-success ml-1" onclick="setType(this, \\\'\' + id + \'\\\', \\\'2\\\', \\\'有效\\\', \\\'success\\\');"><i class="k-icon k-i-check-outline"></i>有效</button>\'; #' +
                     '# var type3 = \'<button class="k-button k-button-icontext k-notification-error ml-1" onclick="setType(this, \\\'\' + id + \'\\\', \\\'3\\\', \\\'无效\\\', \\\'error\\\');"><i class="k-icon k-i-close-outline"></i>无效</button>\'; #' +
                     '# if (type === "0") { #' +
-                        '<strong class="k-notification-warning bg-transparent mr-1">临时</strong>#= type1 ##= type2 ##= type3 #' +
+                        '<span class="dot-color k-notification-warning"></span><strong class="k-notification-warning bg-transparent mx-2">临时</strong>#= type1 ##= type2 ##= type3 #' +
                     '# } else if (type === "1") { #' +
-                        '<strong class="k-notification-info bg-transparent mr-1">标记</strong>#= type0 ##= type2 ##= type3 #' +
+                        '<span class="dot-color k-notification-info"></span><strong class="k-notification-info bg-transparent mx-2">标记</strong>#= type0 ##= type2 ##= type3 #' +
                     '# } else if (type === "2") { #' +
-                        '<strong class="k-notification-success bg-transparent mr-1">有效</strong>#= type0 ##= type1 ##= type3 #' +
+                        '<span class="dot-color k-notification-success"></span><strong class="k-notification-success bg-transparent mx-2">有效</strong>#= type0 ##= type1 ##= type3 #' +
                     '# } else if (type === "3") { #' +
-                        '<strong class="k-notification-error bg-transparent mr-1">无效</strong>#= type0 ##= type1 ##= type2 #' +
+                        '<span class="dot-color k-notification-error"></span><strong class="k-notification-error bg-transparent mx-2">无效</strong>#= type0 ##= type1 ##= type2 #' +
                     '# } #'
             },
             { field: 'userName', title: '用户名', width: '80px' },
@@ -267,9 +267,9 @@ $(function() {
             { field: 'online', title: '状态', width: '70px',
                 template:
                     '# if (online) { #' +
-                        '<span class="d-inline-block border border-success rounded-circle k-notification-success" style="width: 10px; height: 10px;"></span><span class="k-notification-success bg-transparent ml-2">在线</span>' +
+                        '<span class="dot-color k-notification-success"></span><span class="k-notification-success bg-transparent ml-2">在线</span>' +
                     '# } else { #' +
-                        '<span class="d-inline-block border border-danger rounded-circle k-notification-error" style="width: 10px; height: 10px;"></span><span class="k-notification-error bg-transparent ml-2">离线</span>' +
+                        '<span class="dot-color k-notification-error"></span><span class="k-notification-error bg-transparent ml-2">离线</span>' +
                     '# } #'
             },
             { field: 'gender', title: '性别', width: '60px',

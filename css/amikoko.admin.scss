@@ -1529,3 +1529,19 @@ form {
 .ml-p1 {
     margin-left: 1%;
 }
+
+.dot-color {
+    display: inline-block;
+    border: 1px solid;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+}
+
+.mars {
+    color: rgb(82, 177, 255);
+}
+
+.venus {
+    color: rgb(255, 150, 192);
+}

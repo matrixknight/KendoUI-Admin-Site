@@ -213,9 +213,9 @@ $(function() {
             { field: 'online', title: '状态', width: '70px',
                 template:
                     '# if (online) { #' +
-                        '<span class="d-inline-block border border-success rounded-circle k-notification-success" style="width: 10px; height: 10px;"></span><span class="k-notification-success bg-transparent ml-2">在线</span>' +
+                        '<span class="dot-color k-notification-success"></span><span class="k-notification-success bg-transparent ml-2">在线</span>' +
                     '# } else { #' +
-                        '<span class="d-inline-block border border-danger rounded-circle k-notification-error" style="width: 10px; height: 10px;"></span><span class="k-notification-error bg-transparent ml-2">离线</span>' +
+                        '<span class="dot-color k-notification-error"></span><span class="k-notification-error bg-transparent ml-2">离线</span>' +
                     '# } #',
                 editor: function(container, options) {
                     $('<input name="online" type="checkbox" data-bind="value: '+ options.field +'">')

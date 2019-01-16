@@ -431,9 +431,9 @@
                     <div class="card-body">
                         <h4 class="card-title">
                             # if (gender === '1') { #
-                                <i class="fas fa-mars" style="color: rgb(82, 177, 255);"></i>
+                                <i class="fas fa-mars mars"></i>
                             # } else if (gender === '2') { #
-                                <i class="fas fa-venus" style="color: rgb(255, 150, 192);"></i>
+                                <i class="fas fa-venus venus"></i>
                             # } #
                             <strong class="text-dark">#= realName #</strong>
                             <small class="text-black-50">[#= nickName #]</small>
@@ -441,9 +441,9 @@
                         <p class="card-text">
                             <span class="mr-2">#= userName #</span>
                             # if (online) { #
-                                <span class="d-inline-block border border-success rounded-circle k-notification-success" style="width: 10px; height: 10px;"></span><span class="k-notification-success bg-transparent ml-2">在线</span>
+                                <span class="dot-color k-notification-success"></span><span class="k-notification-success bg-transparent ml-2">在线</span>
                             # } else { #
-                                <span class="d-inline-block border border-danger rounded-circle k-notification-error" style="width: 10px; height: 10px;"></span><span class="k-notification-error bg-transparent ml-2">离线</span>
+                                <span class="dot-color k-notification-error"></span><span class="k-notification-error bg-transparent ml-2">离线</span>
                             # } #
                         </p>
                         <p class="card-text">#= sign #</p>

@@ -1212,4 +1212,17 @@ form .searchBtn.row {
 .ml-p1 {
   margin-left: 1%; }
 
+.dot-color {
+  display: inline-block;
+  border: 1px solid;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px; }
+
+.mars {
+  color: #52b1ff; }
+
+.venus {
+  color: #ff96c0; }
+
 /*# sourceMappingURL=amikoko.admin.css.map */
