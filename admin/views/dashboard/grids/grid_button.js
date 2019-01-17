@@ -78,8 +78,8 @@ $(function() {
             pageSize: 10
         },
         toolbar: [
-            { template: '<a href="javascript:batchOperate(\'json/response.json\');" class="k-button k-button-icontext theme-m-box"><span class="k-icon k-i-check"></span>批处理</a>' },
-            { template: '<a href="javascript:batchSubmit(\'json/response.json\');" class="k-button k-button-icontext theme-m-box"><span class="k-icon k-i-validation-data"></span>批提交</a>' },
+            { template: '<a href="javascript:sendEmail();" class="k-button k-button-icontext theme-s-box"><span class="fa fa-envelope mr-1"></span>邮件发送</a>' },
+            { template: '<a href="javascript:print();" class="k-button k-button-icontext"><span class="fa fa-print mr-1"></span>打印</a>' },
             { template: '<a href="javascript:linkTo(\'/\', \'home\');" class="k-button k-button-icontext float-right"><span class="k-icon k-i-undo"></span>返回首页</a>' }
         ],
         columns: [
@@ -109,7 +109,7 @@ $(function() {
                         }
                     },
                     { text: '取消管理员',
-                        className: 'theme-s-box',
+                        className: 'theme-m-box',
                         iconClass: 'fa fa-user-tie mr-1',
                         visible: function(dataItem) {
                             return dataItem.admin;
@@ -436,4 +436,19 @@ function setType(dom, id, type, msg, color) {
             isMsg: true
         });
     });
+}
+
+function sendEmail() {
+    if ($('#grid').data('kendoGrid').selectedKeyNames().length > 0) {
+        var emails = '';
+        $.each($('#grid').data('kendoGrid').selectedKeyNames(), function(i, items) {
+            emails += $('#grid').data('kendoGrid').dataSource.get(items).email + ';';
+        });
+        emails.substring(0, emails.length-1);
+        var subject = encodeURIComponent('欢迎Star：Kendo UI Admin and Site~'),
+            body = encodeURIComponent('<p><a href="https://ikki2000.github.io/KendoUI-Admin-Site/">https://ikki2000.github.io/KendoUI-Admin-Site/</a></p><p>Kendo UI Admin and Site base on Kendo UI for jQuery and Bootstrap 4.</p>');
+        location.href = 'mailto:' + emails + '?subject=' + subject + '&body=' + body;
+    } else {
+        alertMsg('请先选择对象！', 'warning');
+    }
 }
