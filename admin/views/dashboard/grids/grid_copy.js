@@ -170,7 +170,7 @@ $(function() {
         columns: [
             { locked: true, title: '操作', width: '90px',
                 command: [
-                    { text: '复制',
+                    { name: 'copy', text: '复制',
                         iconClass: 'k-icon k-i-copy',
                         click: function(e) {
                             e.preventDefault();

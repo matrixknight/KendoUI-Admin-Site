@@ -204,7 +204,7 @@ $(function() {
             { locked: true, selectable: true, width: '40px' },
             { locked: true, title: '操作', width: '380px',
                 command: [
-                    { text: '设为管理员',
+                    { name: 'set-admin', text: '设为管理员',
                         iconClass: 'fa fa-user mr-1',
                         visible: function(dataItem) {
                             return !(dataItem.admin);
@@ -226,7 +226,7 @@ $(function() {
                             });
                         }
                     },
-                    { text: '取消管理员',
+                    { name: 'cancel-admin', text: '取消管理员',
                         className: 'theme-m-box',
                         iconClass: 'fa fa-user-tie mr-1',
                         visible: function(dataItem) {
@@ -249,7 +249,7 @@ $(function() {
                             });
                         }
                     },
-                    { text: '特殊修改',
+                    { name: 'special', text: '特殊修改',
                         iconClass: 'fa fa-user-edit mr-1',
                         click: function(e) {
                             e.preventDefault();
@@ -491,6 +491,7 @@ function setType(dom, id, type, msg, color) {
     });
 }
 
+// 邮件发送
 function sendEmail() {
     if ($('#grid').data('kendoGrid').selectedKeyNames().length > 0) {
         var emails = '';
