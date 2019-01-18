@@ -1,3 +1,4 @@
+$.getScript(path + 'js/jszip.min.js');
 $(function() {
     // 获取数据源生成表格
     $('#grid').kendoGrid({
@@ -14,12 +15,28 @@ $(function() {
                         userName: { type: 'string' },
                         realName: { type: 'string' },
                         nickName: { type: 'string' },
-                        password: { type: 'string' },
-                        confirmPassword: { type: 'string' },
+                        password: { type: 'string',
+                            parse: function(e) {
+                                return e.replace(e.substr(0), '******');
+                            }
+                        },
+                        confirmPassword: { type: 'string',
+                            parse: function(e) {
+                                return e.replace(e.substr(0), '******');
+                            }
+                        },
                         online: { type: 'boolean' },
                         gender: { type: 'string' },
-                        age: { type: 'number' },
-                        height: { type: 'number' },
+                        age: { type: 'number',
+                            parse: function(e) {
+                                return e + ' 岁';
+                            }
+                        },
+                        height: { type: 'number',
+                            parse: function(e) {
+                                return kendo.toString(e, '0.00') + ' m';
+                            }
+                        },
                         bloodType: { type: 'string' },
                         birthday: { type: 'date',
                             parse: function(e) {
@@ -31,14 +48,64 @@ $(function() {
                                 return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd');
                             }
                         },
-                        creditCard: { type: 'string' },
-                        asset: { type: 'number' },
-                        nativePlace: { type: 'object' },
-                        domicile: { type: 'object' },
-                        nation: { type: 'object' },
-                        zodiac: { type: 'object' },
+                        creditCard: { type: 'string',
+                            parse: function(e) {
+                                return e.replace(e.substr(2, 12), '** **** **** **');
+                            }
+                        },
+                        asset: { type: 'number',
+                            parse: function(e) {
+                                return kendo.toString(e, 'c');
+                            }
+                        },
+                        nativePlace: { type: 'string',
+                            parse: function(e) {
+                                return e.provinceName + ' - ' + e.cityName + ' - ' + e.areaName;
+                            }
+                        },
+                        domicile: { type: 'string',
+                            parse: function(e) {
+                                return e.name;
+                            }
+                        },
+                        nation: { type: 'string',
+                            parse: function(e) {
+                                return e.nationName;
+                            }
+                        },
+                        zodiac: { type: 'string',
+                            parse: function(e) {
+                                return e.zodiacName;
+                            }
+                        },
                         language: { type: 'string' },
-                        education: { type: 'object' },
+                        education: { type: 'string',
+                            parse: function(e) {
+                                var str = '';
+                                for (var i = 0; i < e.length; i++) {
+                                    if (e[i] === '1') {
+                                        str += '小学 ';
+                                    } else if (e[i] === '2') {
+                                        str += '初中 ';
+                                    } else if (e[i] === '3') {
+                                        str += '高中 ';
+                                    } else if (e[i] === '4') {
+                                        str += '中专 ';
+                                    } else if (e[i] === '5') {
+                                        str += '大专 ';
+                                    } else if (e[i] === '6') {
+                                        str += '本科 ';
+                                    } else if (e[i] === '7') {
+                                        str += '硕士 ';
+                                    } else if (e[i] === '8') {
+                                        str += '博士 ';
+                                    } else if (e[i] === '9') {
+                                        str += '其他 ';
+                                    }
+                                }
+                                return str;
+                            }
+                        },
                         graduation: { type: 'date',
                             parse: function(e) {
                                 return kendo.toString(new Date(e), 'yyyy');
@@ -64,10 +131,54 @@ $(function() {
                         },
                         character: { type: 'number' },
                         color: { type: 'string' },
-                        constellation: { type: 'object' },
-                        tourism: { type: 'object' },
+                        constellation: { type: 'string',
+                            parse: function(e) {
+                                var str = '';
+                                for (var i = 0; i < e.length; i++) {
+                                    if (e[i] === '1') {
+                                        str += '白羊座 ';
+                                    } else if (e[i] === '2') {
+                                        str += '金牛座 ';
+                                    } else if (e[i] === '3') {
+                                        str += '双子座 ';
+                                    } else if (e[i] === '4') {
+                                        str += '巨蟹座 ';
+                                    } else if (e[i] === '5') {
+                                        str += '狮子座 ';
+                                    } else if (e[i] === '6') {
+                                        str += '处女座 ';
+                                    } else if (e[i] === '7') {
+                                        str += '天秤座 ';
+                                    } else if (e[i] === '8') {
+                                        str += '天蝎座 ';
+                                    } else if (e[i] === '9') {
+                                        str += '射手座 ';
+                                    } else if (e[i] === '10') {
+                                        str += '山羊座 ';
+                                    } else if (e[i] === '11') {
+                                        str += '水瓶座 ';
+                                    } else if (e[i] === '12') {
+                                        str += '双鱼座 ';
+                                    }
+                                }
+                                return str;
+                            }
+                        },
+                        tourism: { type: 'string',
+                            parse: function(e) {
+                                var str = '';
+                                for (var i = 0; i < e.length; i++) {
+                                    str += e[i].name + ' ';
+                                }
+                                return str;
+                            }
+                        },
                         summary: { type: 'string' },
-                        photo: { type: 'object' },
+                        photo: { type: 'string',
+                            parse: function(e) {
+                                return e.url + ':' + '[' + kendo.toString(e.size / 1024, '0.00') + ' KB]';
+                            }
+                        },
                         sign: { type: 'string' },
                         type: { type: 'string' },
                         admin: { type: 'boolean' }
@@ -78,10 +189,17 @@ $(function() {
             pageSize: 10
         },
         toolbar: [
+            { template: '<a href="resource/grid.xlsx" class="k-button k-button-icontext"><span class="fa fa-download mr-1"></span>模版下载</a>' },
+            { template: '<a href="javascript:;" class="k-button k-button-icontext k-grid-excel theme-m-box"><span class="fa fa-file-export mr-1"></span>客户端导出（全部项）</a>' },
+            { template: '<a href="javascript:batchOperate(\'json/response.json\');" class="k-button k-button-icontext"><span class="fa fa-upload mr-1"></span>服务端导出（选择项）</a>' },
             { template: '<a href="javascript:sendEmail();" class="k-button k-button-icontext theme-s-box"><span class="fa fa-envelope mr-1"></span>邮件发送</a>' },
             { template: '<a href="javascript:print();" class="k-button k-button-icontext"><span class="fa fa-print mr-1"></span>打印</a>' },
             { template: '<a href="javascript:linkTo(\'/\', \'home\');" class="k-button k-button-icontext float-right"><span class="k-icon k-i-undo"></span>返回首页</a>' }
         ],
+        excel: {
+            allPages: true,
+            fileName: 'grid.xlsx'
+        },
         columns: [
             { locked: true, selectable: true, width: '40px' },
             { locked: true, title: '操作', width: '380px',
@@ -241,6 +359,12 @@ $(function() {
                 ]
             },
             { locked: true, field: 'type', title: '类型', width: '280px',
+                values: [
+                    { text: '临时', value: '0' },
+                    { text: '标记', value: '1' },
+                    { text: '有效', value: '2' },
+                    { text: '无效', value: '3' }
+                ],
                 template:
                     '# var type0 = \'<button class="k-button k-button-icontext k-notification-warning ml-1" onclick="setType(this, \\\'\' + id + \'\\\', \\\'0\\\', \\\'临时\\\', \\\'warning\\\');"><i class="k-icon k-i-warning"></i>临时</button>\'; #' +
                     '# var type1 = \'<button class="k-button k-button-icontext k-notification-info ml-1" onclick="setType(this, \\\'\' + id + \'\\\', \\\'1\\\', \\\'标记\\\', \\\'info\\\');"><i class="k-icon k-i-information"></i>标记</button>\'; #' +
@@ -259,12 +383,12 @@ $(function() {
             { field: 'userName', title: '用户名', width: '80px' },
             { field: 'realName', title: '姓名', width: '100px' },
             { field: 'nickName', title: '昵称', width: '110px' },
-            { hidden: true, field: 'password', title: '密码', width: '70px',
-                template: function(dataItem) {
-                    return dataItem.password.replace(dataItem.password.substr(0), '******');
-                }
-            },
+            { hidden: true, field: 'password', title: '密码', width: '70px' },
             { field: 'online', title: '状态', width: '70px',
+                values: [
+                    { text: '在线', value: true },
+                    { text: '离线', value: false }
+                ],
                 template:
                     '# if (online) { #' +
                         '<span class="dot-color k-notification-success"></span><span class="k-notification-success bg-transparent ml-2">在线</span>' +
@@ -278,12 +402,8 @@ $(function() {
                     { text: '女', value: '2' }
                 ]
             },
-            { field: 'age', title: '年龄', width: '70px',
-                template: '#= age # 岁'
-            },
-            { field: 'height', title: '身高', width: '80px',
-                template: '#= kendo.toString(height, "0.00") # m'
-            },
+            { field: 'age', title: '年龄', width: '70px' },
+            { field: 'height', title: '身高', width: '80px' },
             { field: 'bloodType', title: '血型', width: '70px',
                 values: [
                     { text: 'A 型', value: '1' },
@@ -295,51 +415,14 @@ $(function() {
             },
             { field: 'birthday', title: '生日', width: '110px' },
             { field: 'mateBirthday', title: '配偶生日', width: '110px' },
-            { field: 'creditCard', title: '银行卡', width: '150px',
-                template: function(dataItem) {
-                    return dataItem.creditCard.replace(dataItem.creditCard.substr(2, 12), '** **** **** **');
-                }
-            },
-            { field: 'asset', title: '资产', width: '140px',
-                format: '{0:c}'
-            },
-            { field: 'nativePlace', title: '籍贯', width: '250px',
-                template: '#= nativePlace.provinceName # - #= nativePlace.cityName # - #= nativePlace.areaName #'
-            },
-            { field: 'domicile', title: '居住地', width: '100px',
-                template: '#= domicile.name #'
-            },
-            { field: 'nation', title: '民族', width: '100px',
-                template: '#= nation.nationName #'
-            },
-            { field: 'zodiac', title: '生肖', width: '60px',
-                template: '#= zodiac.zodiacName #'
-            },
+            { field: 'creditCard', title: '银行卡', width: '150px' },
+            { field: 'asset', title: '资产', width: '140px' },
+            { field: 'nativePlace', title: '籍贯', width: '250px' },
+            { field: 'domicile', title: '居住地', width: '100px' },
+            { field: 'nation', title: '民族', width: '100px' },
+            { field: 'zodiac', title: '生肖', width: '60px' },
             { field: 'language', title: '语言', width: '210px' },
-            { field: 'education', title: '教育程度', width: '130px',
-                template:
-                    '# for (var i = 0; i < education.length; i++) { #' +
-                        '# if (education[i] === "1") { #' +
-                            '小学&nbsp;' +
-                        '# } else if (education[i] === "2") { #' +
-                            '初中&nbsp;' +
-                        '# } else if (education[i] === "3") { #' +
-                            '高中&nbsp;' +
-                        '# } else if (education[i] === "4") { #' +
-                            '中专&nbsp;' +
-                        '# } else if (education[i] === "5") { #' +
-                            '大专&nbsp;' +
-                        '# } else if (education[i] === "6") { #' +
-                            '本科&nbsp;' +
-                        '# } else if (education[i] === "7") { #' +
-                            '硕士&nbsp;' +
-                        '# } else if (education[i] === "8") { #' +
-                            '博士&nbsp;' +
-                        '# } else if (education[i] === "9") { #' +
-                            '其他&nbsp;' +
-                        '# } #' +
-                    '# } #'
-            },
+            { field: 'education', title: '教育程度', width: '130px' },
             { field: 'graduation', title: '毕业年份', width: '90px' },
             { field: 'firstJob', title: '参加工作年月', width: '110px' },
             { field: 'mobile', title: '手机', width: '120px' },
@@ -365,45 +448,15 @@ $(function() {
             { field: 'color', title: '颜色喜好', width: '90px',
                 template: '<span style="display: inline-block; width: 100%; height: 24px; background: #= color #; border: 1px solid \\#c5c5c5; border-radius: 4px; vertical-align: middle;"></span>'
             },
-            { field: 'constellation', title: '相配的星座', width: '170px',
-                template:
-                    '# for (var i = 0; i < constellation.length; i++) { #' +
-                        '# if (constellation[i] === "1") { #' +
-                            '白羊座&nbsp;' +
-                        '# } else if (constellation[i] === "2") { #' +
-                            '金牛座&nbsp;' +
-                        '# } else if (constellation[i] === "3") { #' +
-                            '双子座&nbsp;' +
-                        '# } else if (constellation[i] === "4") { #' +
-                            '巨蟹座&nbsp;' +
-                        '# } else if (constellation[i] === "5") { #' +
-                            '狮子座&nbsp;' +
-                        '# } else if (constellation[i] === "6") { #' +
-                            '处女座&nbsp;' +
-                        '# } else if (constellation[i] === "7") { #' +
-                            '天秤座&nbsp;' +
-                        '# } else if (constellation[i] === "8") { #' +
-                            '天蝎座&nbsp;' +
-                        '# } else if (constellation[i] === "9") { #' +
-                            '射手座&nbsp;' +
-                        '# } else if (constellation[i] === "10") { #' +
-                            '山羊座&nbsp;' +
-                        '# } else if (constellation[i] === "11") { #' +
-                            '水瓶座&nbsp;' +
-                        '# } else if (constellation[i] === "12") { #' +
-                            '双鱼座&nbsp;' +
-                        '# } #' +
-                    '# } #'
-            },
-            { field: 'tourism', title: '旅游足迹', width: '200px',
-                template:
-                    '# for (var i = 0; i < tourism.length; i++) { #' +
-                        '#= tourism[i].name #&nbsp;' +
-                    '# } #'
-            },
+            { field: 'constellation', title: '相配的星座', width: '170px' },
+            { field: 'tourism', title: '旅游足迹', width: '200px' },
             { field: 'summary', title: '自我介绍', width: '290px' },
             { field: 'photo', title: '头像', width: '120px',
-                template: '<a href="javascript:showBigPic(\'#= photo.url #\');"><img class="w-25 rounded-circle" src="#= photo.url #" alt="#= photo.name ##= photo.extension #"></a><small class="ml-2 text-muted">[#= kendo.toString(photo.size / 1024, "0.00") # KB]</small>'
+                template:
+                    '# var photoUrl = photo.split(":")[0]; #' +
+                    '# var photoName = photo.split(":")[0].split("/")[photo.split(":")[0].split("/").length - 1]; #' +
+                    '# var photoSize = photo.split(":")[1]; #' +
+                    '<a href="javascript:showBigPic(\'#= photoUrl #\');"><img class="w-25 rounded-circle" src="#= photoUrl #" alt="#= photoName #"></a><small class="ml-2 text-muted">#= photoSize #</small>'
             },
             { field: 'sign', title: '签名', width: '290px',
                 template: '#= sign #'
@@ -447,7 +500,7 @@ function sendEmail() {
         emails.substring(0, emails.length-1);
         var subject = encodeURIComponent('欢迎Star：Kendo UI Admin and Site~'),
             body = encodeURIComponent('<p><a href="https://ikki2000.github.io/KendoUI-Admin-Site/">https://ikki2000.github.io/KendoUI-Admin-Site/</a></p><p>Kendo UI Admin and Site base on Kendo UI for jQuery and Bootstrap 4.</p>');
-        location.href = 'mailto:' + emails + '?subject=' + subject + '&body=' + body;
+        location.href = 'mailto:' + emails + '?cc=ikki2002@qq.com&subject=' + subject + '&body=' + body;
     } else {
         alertMsg('请先选择对象！', 'warning');
     }

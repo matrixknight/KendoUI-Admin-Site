@@ -92,23 +92,23 @@ $(function() {
                                     if (typeof e.id === 'undefined') {
                                         var str = '';
                                         for (var i = 0; i < e.length; i++) {
-                                            if (e[i] === "1") {
+                                            if (e[i] === '1') {
                                                 str += '小学 ';
-                                            } else if (e[i] === "2") {
+                                            } else if (e[i] === '2') {
                                                 str += '初中 ';
-                                            } else if (e[i] === "3") {
+                                            } else if (e[i] === '3') {
                                                 str += '高中 ';
-                                            } else if (e[i] === "4") {
+                                            } else if (e[i] === '4') {
                                                 str += '中专 ';
-                                            } else if (e[i] === "5") {
+                                            } else if (e[i] === '5') {
                                                 str += '大专 ';
-                                            } else if (e[i] === "6") {
+                                            } else if (e[i] === '6') {
                                                 str += '本科 ';
-                                            } else if (e[i] === "7") {
+                                            } else if (e[i] === '7') {
                                                 str += '硕士 ';
-                                            } else if (e[i] === "8") {
+                                            } else if (e[i] === '8') {
                                                 str += '博士 ';
-                                            } else if (e[i] === "9") {
+                                            } else if (e[i] === '9') {
                                                 str += '其他 ';
                                             }
                                         }
@@ -152,29 +152,29 @@ $(function() {
                                     if (typeof e.id === 'undefined') {
                                         var str = '';
                                         for (var i = 0; i < e.length; i++) {
-                                            if (e[i] === "1") {
+                                            if (e[i] === '1') {
                                                 str += '白羊座 ';
-                                            } else if (e[i] === "2") {
+                                            } else if (e[i] === '2') {
                                                 str += '金牛座 ';
-                                            } else if (e[i] === "3") {
+                                            } else if (e[i] === '3') {
                                                 str += '双子座 ';
-                                            } else if (e[i] === "4") {
+                                            } else if (e[i] === '4') {
                                                 str += '巨蟹座 ';
-                                            } else if (e[i] === "5") {
+                                            } else if (e[i] === '5') {
                                                 str += '狮子座 ';
-                                            } else if (e[i] === "6") {
+                                            } else if (e[i] === '6') {
                                                 str += '处女座 ';
-                                            } else if (e[i] === "7") {
+                                            } else if (e[i] === '7') {
                                                 str += '天秤座 ';
-                                            } else if (e[i] === "8") {
+                                            } else if (e[i] === '8') {
                                                 str += '天蝎座 ';
-                                            } else if (e[i] === "9") {
+                                            } else if (e[i] === '9') {
                                                 str += '射手座 ';
-                                            } else if (e[i] === "10") {
+                                            } else if (e[i] === '10') {
                                                 str += '山羊座 ';
-                                            } else if (e[i] === "11") {
+                                            } else if (e[i] === '11') {
                                                 str += '水瓶座 ';
-                                            } else if (e[i] === "12") {
+                                            } else if (e[i] === '12') {
                                                 str += '双鱼座 ';
                                             }
                                         }
@@ -209,7 +209,7 @@ $(function() {
                             parse: function(e) {
                                 if (typeof e === 'object') {
                                     if (typeof e.id === 'undefined') {
-                                        return '<a href="javascript:showBigPic(\'' + e.url + '\');"><img class="w-15 rounded-circle" src="' + e.url + '" alt="' + e.name + e.extension + '"></a><small class="ml-2 text-muted">[' + kendo.toString(e.size / 1024, "0.00") + ' KB]</small>';
+                                        return '<a href="javascript:showBigPic(\'' + e.url + '\');"><img class="w-15 rounded-circle" src="' + e.url + '" alt="' + e.name + e.extension + '"></a><small class="ml-2 text-muted">[' + kendo.toString(e.size / 1024, '0.00') + ' KB]</small>';
                                     } else {
                                         return e.photo;
                                     }
