@@ -343,7 +343,7 @@ $(function() {
         ],
         validation: {
             allowedExtensions: ['.jpg', '.png', '.gif', '.bmp'],
-            maxFileSize: 10240000
+            maxFileSize: 10485760
         },
         success: function(e) {
             if (e.response.result === 'y') {

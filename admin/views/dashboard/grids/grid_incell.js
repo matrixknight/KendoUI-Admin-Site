@@ -1701,7 +1701,7 @@ $(function() {
                             ],
                             validation: {
                                 allowedExtensions: ['.jpg', '.png', '.gif', '.bmp'],
-                                maxFileSize: 10240000
+                                maxFileSize: 10485760
                             },
                             success: function(res) {
                                 if (res.response.result === 'y') {
