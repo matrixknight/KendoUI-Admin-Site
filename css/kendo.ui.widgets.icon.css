@@ -45,10 +45,6 @@
     content: '\e853';
 }
 
-.mobileScrollViewIcon:after {
-    content: '\e831';
-}
-
 /* Editors */
 .autoCompleteIcon:after {
     content: '\e803';
@@ -68,6 +64,10 @@
 
 .datePickerIcon:after {
     content: '\e80e';
+}
+
+.dateRangePickerIcon:after {
+    content: '\e909';
 }
 
 .dateTimePickerIcon:after {
@@ -244,6 +244,10 @@
     content: '\e80b';
 }
 
+.multiViewCalendarIcon:after {
+    content: '\e90a';
+}
+
 .ganttIcon:after {
     content: '\e843';
 }
@@ -292,6 +296,10 @@
 /* Media */
 .mediaPlayerIcon:after {
     content: '\e858';
+}
+
+.mobileScrollViewIcon:after {
+    content: '\e831';
 }
 
 /* Layout */
@@ -388,12 +396,4 @@
 
 .ziplibraryIcon:after {
     content: '\e900';
-}
-
-.dateRangePickerIcon:after {
-    content: '\e909';
-}
-
-.multiViewCalendarIcon:after {
-    content: '\e90a';
 }

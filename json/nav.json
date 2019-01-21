@@ -376,118 +376,125 @@
                 },
                 {
                     "id": "0504",
+                    "text": "<i class='dateRangePickerIcon'></i>日期范围框<small>DateRangePicker</small>",
+                    "encoded": false,
+                    "cssClass": "links-daterangepicker",
+                    "url": "javascript:linkTo(\"/forms/\", \"daterangepicker\");"
+                },
+                {
+                    "id": "0505",
                     "text": "<i class='timePickerIcon'></i>时间框<small>TimePicker</small>",
                     "encoded": false,
                     "cssClass": "links-timepicker",
                     "url": "javascript:linkTo(\"/forms/\", \"timepicker\");"
                 },
                 {
-                    "id": "0505",
+                    "id": "0506",
                     "text": "<i class='dateTimePickerIcon'></i>时日框<small>DateTimePicker</small>",
                     "encoded": false,
                     "cssClass": "links-datetimepicker",
                     "url": "javascript:linkTo(\"/forms/\", \"datetimepicker\");"
                 },
                 {
-                    "id": "0506",
+                    "id": "0507",
                     "text": "<i class='dateInputIcon'></i>时日掩码框<small>DateInput</small>",
                     "encoded": false,
                     "cssClass": "links-dateinput",
                     "url": "javascript:linkTo(\"/forms/\", \"dateinput\");"
                 },
                 {
-                    "id": "0507",
+                    "id": "0508",
                     "text": "<i class='maskedtextboxIcon'></i>掩码框<small>MaskedTextBox</small>",
                     "encoded": false,
                     "cssClass": "links-maskedtextbox",
                     "url": "javascript:linkTo(\"/forms/\", \"maskedtextbox\");"
                 },
                 {
-                    "id": "0508",
+                    "id": "0509",
                     "text": "<i class='autoCompleteIcon'></i>自动完成框<small>AutoComplete</small>",
                     "encoded": false,
                     "cssClass": "links-autocomplete",
                     "url": "javascript:linkTo(\"/forms/\", \"autocomplete\");"
                 },
                 {
-                    "id": "0509",
+                    "id": "0510",
                     "text": "<i class='dropDownListIcon'></i>单选下拉框<small>DropDownList</small>",
                     "encoded": false,
                     "cssClass": "links-dropdownlist",
                     "url": "javascript:linkTo(\"/forms/\", \"dropdownlist\");"
                 },
                 {
-                    "id": "0510",
+                    "id": "0511",
                     "text": "<i class='comboBoxIcon'></i>输入下拉框<small>ComboBox</small>",
                     "encoded": false,
                     "cssClass": "links-combobox",
                     "url": "javascript:linkTo(\"/forms/\", \"combobox\");"
                 },
                 {
-                    "id": "0511",
+                    "id": "0512",
                     "text": "<i class='multiColumnComboBoxIcon'></i>表格下拉框<small>MultiColumnComboBox</small>",
                     "encoded": false,
                     "cssClass": "links-multicolumncombobox",
                     "url": "javascript:linkTo(\"/forms/\", \"multicolumncombobox\");"
                 },
                 {
-                    "id": "0512",
+                    "id": "0513",
                     "text": "<i class='multiselectIcon'></i>多选下拉框<small>MultiSelect</small>",
                     "encoded": false,
                     "cssClass": "links-multiselect",
                     "url": "javascript:linkTo(\"/forms/\", \"multiselect\");"
                 },
                 {
-                    "id": "0513",
+                    "id": "0514",
                     "text": "<i class='dropDownTreeIcon'></i>树形下拉框<small>DropDownTree</small>",
                     "encoded": false,
                     "cssClass": "links-dropdowntree",
                     "url": "javascript:linkTo(\"/forms/\", \"dropdowntree\");"
                 },
                 {
-                    "id": "0514",
+                    "id": "0515",
                     "text": "<i class='colorPickerIcon'></i>颜色框<small>ColorPicker</small>",
                     "encoded": false,
                     "cssClass": "links-colorpicker",
                     "url": "javascript:linkTo(\"/forms/\", \"colorpicker\");"
                 },
                 {
-                    "id": "0515",
+                    "id": "0516",
                     "text": "<i class='sliderIcon'></i>滑块框<small>Slider</small>",
                     "encoded": false,
                     "cssClass": "links-slider",
                     "url": "javascript:linkTo(\"/forms/\", \"slider\");"
                 },
                 {
-                    "id": "0516",
+                    "id": "0517",
                     "text": "<i class='progressBarIcon'></i>进度框<small>ProgressBar</small>",
                     "encoded": false,
                     "cssClass": "links-progressbar",
                     "url": "javascript:linkTo(\"/forms/\", \"progressbar\");"
                 },
                 {
-                    "id": "0517",
+                    "id": "0518",
                     "text": "<i class='listBoxIcon'></i>穿梭框<small>ListBox</small>",
                     "encoded": false,
                     "cssClass": "links-listbox",
                     "url": "javascript:linkTo(\"/forms/\", \"listbox\");"
                 },
                 {
-                    "id": "0518",
+                    "id": "0519",
                     "text": "<i class='editorIcon'></i>富文本框<small>Editor</small>",
                     "encoded": false,
                     "cssClass": "links-editor",
                     "url": "javascript:linkTo(\"/forms/\", \"editor\");"
                 },
                 {
-                    "id": "0519",
+                    "id": "0520",
                     "text": "<i class='uploadIcon'></i>上传框<small>Upload</small>",
                     "encoded": false,
                     "cssClass": "links-upload",
                     "url": "javascript:linkTo(\"/forms/\", \"upload\");"
                 },
                 {
-                    "id": "0520",
+                    "id": "0521",
                     "text": "<i class='validatorIcon'></i>验证<small>Validator</small>",
                     "encoded": false,
                     "cssClass": "links-validator",
@@ -534,13 +541,6 @@
                     "encoded": false,
                     "cssClass": "links-pivotgrid",
                     "url": "javascript:linkTo(\"/data/\", \"pivotgrid\");"
-                },
-                {
-                    "id": "0606",
-                    "text": "<i class='mobileScrollViewIcon'></i>滚动视图<small>ScrollView</small>",
-                    "encoded": false,
-                    "cssClass": "links-scrollview",
-                    "url": "javascript:linkTo(\"/data/\", \"scrollview\");"
                 }
             ]
         },
@@ -558,13 +558,20 @@
                 },
                 {
                     "id": "0702",
+                    "text": "<i class='multiViewCalendarIcon'></i>多重日历<small>MultiViewCalendar</small>",
+                    "encoded": false,
+                    "cssClass": "links-multiviewcalendar",
+                    "url": "javascript:linkTo(\"/scheduling/\", \"multiviewcalendar\");"
+                },
+                {
+                    "id": "0703",
                     "text": "<i class='schedulerIcon'></i>日程表<small>Scheduler</small>",
                     "encoded": false,
                     "cssClass": "links-scheduler",
                     "url": "javascript:linkTo(\"/scheduling/\", \"scheduler\");"
                 },
                 {
-                    "id": "0703",
+                    "id": "0704",
                     "text": "<i class='ganttIcon'></i>甘特图<small>Gantt</small>",
                     "encoded": false,
                     "cssClass": "links-gantt",
@@ -597,6 +604,13 @@
                     "encoded": false,
                     "cssClass": "links-mediaplayer",
                     "url": "javascript:linkTo(\"/media/\", \"mediaplayer\");"
+                },
+                {
+                    "id": "0902",
+                    "text": "<i class='mobileScrollViewIcon'></i>滚动视图<small>ScrollView</small>",
+                    "encoded": false,
+                    "cssClass": "links-scrollview",
+                    "url": "javascript:linkTo(\"/media/\", \"scrollview\");"
                 }
             ]
         },
@@ -632,6 +646,13 @@
                     "encoded": false,
                     "cssClass": "links-effects",
                     "url": "javascript:linkTo(\"/interactivity/\", \"effects\");"
+                },
+                {
+                    "id": "1005",
+                    "text": "<i class='stylingIcon'></i>波纹效果<small>Ripple Container</small>",
+                    "encoded": false,
+                    "cssClass": "links-ripple_container",
+                    "url": "javascript:linkTo(\"/interactivity/\", \"ripple_container\");"
                 }
             ]
         },
