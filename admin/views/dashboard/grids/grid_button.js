@@ -190,6 +190,7 @@ $(function() {
         },
         toolbar: [
             { template: '<a href="resource/grid.xlsx" class="k-button k-button-icontext"><span class="fa fa-download mr-1"></span>模版下载</a>' },
+            { template: '<a href="javascript:importTemp();" class="k-button k-button-icontext theme-m-box"><span class="fa fa-file-import mr-1"></span>文件导入</a>' },
             { template: '<a href="javascript:;" class="k-button k-button-icontext k-grid-excel theme-m-box"><span class="fa fa-file-export mr-1"></span>客户端导出（全部项）</a>' },
             { template: '<a href="javascript:batchOperate(\'json/response.json\');" class="k-button k-button-icontext"><span class="fa fa-upload mr-1"></span>服务端导出（选择项）</a>' },
             { template: '<a href="javascript:sendEmail();" class="k-button k-button-icontext theme-s-box"><span class="fa fa-envelope mr-1"></span>邮件发送</a>' },
@@ -476,19 +477,81 @@ $(function() {
     });
 });
 
-function setType(dom, id, type, msg, color) {
-    confirmMsgBtn('类型操作', '你确定要设置为<strong class="d-inline-block mx-1 px-2 py-1 k-notification-' + color + '">' + msg + '</strong>吗？', 'question', function() {
-        $.fn.ajaxPost({
-            ajaxData: {
-                'id': id,
-                'type': type
-            },
-            succeed: function() {
-                $('#grid').data('kendoGrid').dataItem($(dom).closest('tr')).set('type', type);
-            },
-            isMsg: true
-        });
-    });
+// 文件导入
+function importTemp() {
+    var divWindow = $('<div class="window-box" id="importEdit"></div>').kendoWindow({
+        animation: {open: {effects: 'fade:in'}, close: {effects: 'fade:out'}},
+        title: '文件导入',
+        width: '30%',
+        modal: true,
+        pinned: true,
+        resizable: false,
+        open: function() {
+            numericRange($('#importStart'), $('#importEnd'), 'n0', 0, 1, 1, 10000);
+            $('#importFile').kendoUpload({
+                multiple: false,
+                validation: {
+                    allowedExtensions: ['.xls', '.xlsx'],
+                    maxFileSize: 10485760
+                },
+                select: function(e) {
+                    setTimeout(function(){
+                        if ($(e.sender.wrapper[0]).find('.k-file-invalid-icon').length < 1) {
+                            $(e.sender.element[0]).prop('required', false);
+                        } else {
+                            $(e.sender.element[0]).prop('required', true);
+                        }
+                    }, 100);
+                },
+                remove: function(e) {
+                    $(e.sender.element[0]).prop('required', true);
+                }
+            });
+            $('#importForm').kendoValidator();
+            $('#importForm button.k-state-selected').unbind('click').click(function(){
+                if ($('#importForm').data('kendoValidator').validate()) {
+                    $('#importFile').prev().remove();
+                    $('#loading').show();
+                    $.fn.ajaxPostBlob({
+                        ajaxData: $('#importForm')[0],
+                        finished: function() {
+                            $('#loading').hide();
+                        },
+                        succeed: function(res) {
+                            divWindow.close();
+                        },
+                        isMsg: true
+                    });
+                }
+            });
+        },
+        close: function() {
+            divWindow.destroy();
+        }
+    }).data('kendoWindow'),
+    content =
+        '<form class="form-row" id="importForm">' +
+            '<div class="form-group col-6">' +
+                '<label class="d-block"><strong class="k-required">*</strong>起始行：</label>' +
+                '<input class="w-100" id="importStart" name="importStart" type="number" required data-required-msg="请输入起始行！">' +
+                '<span class="k-invalid-msg" data-for="importStart"></span>' +
+            '</div>' +
+            '<div class="form-group col-6">' +
+                '<label class="d-block"><strong class="k-required">*</strong>结束行：</label>' +
+                '<input class="w-100" id="importEnd" name="importEnd" type="number" required data-required-msg="请输入结束行！">' +
+                '<span class="k-invalid-msg" data-for="importEnd"></span>' +
+            '</div>' +
+            '<div class="form-group col-12">' +
+                '<label class="d-block"><strong class="k-required">*</strong>文件上传：</label>' +
+                '<input class="w-100" id="importFile" name="importFile" type="file" required data-required-msg="请上传文件！">' +
+                '<span class="k-invalid-msg" data-for="importFile"></span>' +
+            '</div>' +
+            '<div class="form-group col-12 row justify-content-center m-0">' +
+                '<button class="k-button k-button-lg k-state-selected mx-3" type="button">导 入</button>' +
+                '<button class="k-button k-button-lg mx-3" type="button" onclick="$(\'#importEdit\').data(\'kendoWindow\').close();">取 消</button>' +
+            '</div>' +
+        '</form>';
+    divWindow.content(content).center().open();
 }
 
 // 邮件发送
@@ -505,4 +568,20 @@ function sendEmail() {
     } else {
         alertMsg('请先选择对象！', 'warning');
     }
+}
+
+// 类型设置
+function setType(dom, id, type, msg, color) {
+    confirmMsgBtn('类型操作', '你确定要设置为<strong class="d-inline-block mx-1 px-2 py-1 k-notification-' + color + '">' + msg + '</strong>吗？', 'question', function() {
+        $.fn.ajaxPost({
+            ajaxData: {
+                'id': id,
+                'type': type
+            },
+            succeed: function() {
+                $('#grid').data('kendoGrid').dataItem($(dom).closest('tr')).set('type', type);
+            },
+            isMsg: true
+        });
+    });
 }

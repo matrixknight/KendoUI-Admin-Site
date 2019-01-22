@@ -110,6 +110,58 @@ $(function() {
     };
 })(jQuery);
 
+// 带二进制流的 Ajax 提交
+(function($) {
+    $.fn.ajaxPostBlob = function(options) {
+        var opts = $.extend({}, $.fn.ajaxPostBlob.defaults, options);
+        $.ajax({
+            headers: {
+                'Authorization': sessionStorage.getItem('token'),
+            },
+            async: opts.ajaxAsync,
+            type: opts.ajaxType,
+            data: new FormData(opts.ajaxData),
+            url: apiPath + opts.ajaxUrl,
+            processData: false,
+            contentType: false,
+            dataType: 'json',
+            success: function(res, status, xhr) {
+                if (res.result !== 'denied') {
+                    sessionStorage.setItem('token', xhr.getResponseHeader('Authorization'));
+                    opts.finished(res);
+                    if (res.result === 'y') {
+                        opts.succeed(res);
+                        if (opts.isMsg && res.msg.length > 0) {
+                            alertMsgNoBtn(res.msg, 'success');
+                        }
+                    } else if (res.result === 'n') {
+                        opts.failed(res);
+                        if (res.msg.length > 0) {
+                            alertMsg(res.msg, 'error');
+                        }
+                    }
+                } else {
+                    logout();
+                }
+            },
+            error: function(xhr, status, thrown) {
+                alertMsg(thrown, 'error');
+            }
+        });
+    };
+    // 参数默认值
+    $.fn.ajaxPostBlob.defaults = {
+        ajaxAsync: true,
+        ajaxType: 'get', // GitHub Pages 演示只支持 get 请求，正常使用请改回 post 请求
+        ajaxData: '',
+        ajaxUrl: 'json/response.json', // GitHub Pages 模拟返回的 json 文件，正常使用请改回空字符串
+        finished: noFunc,
+        succeed: noFunc,
+        failed: noFunc,
+        isMsg: false
+    };
+})(jQuery);
+
 // 空方法
 function noFunc() {}
 
