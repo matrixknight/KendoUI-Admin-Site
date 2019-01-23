@@ -76,8 +76,8 @@ $(function() {
             pageSize: 10
         },
         toolbar: [
-            { template: '<a href="javascript:batchOperate(\'json/response.json\');" class="k-button k-button-icontext"><span class="k-icon k-i-check"></span>提交ID</a>' },
-            { template: '<a href="javascript:batchSubmit(\'json/response.json\');" class="k-button k-button-icontext"><span class="k-icon k-i-validation-data"></span>提交数据</a>' }
+            { template: '<a class="k-button k-button-icontext" href="javascript:batchOperate(\'json/response.json\');"><span class="k-icon k-i-check"></span>提交ID</a>' },
+            { template: '<a class="k-button k-button-icontext" href="javascript:batchSubmit(\'json/response.json\');"><span class="k-icon k-i-validation-data"></span>提交数据</a>' }
         ],
         columns: [
             { field: 'id', width: '40px',

@@ -602,7 +602,7 @@ $(function() {
         },
         toolbar: [
             { name: 'create', text: '新增' },
-            { template: '<a href="javascript:batchOperate(\'json/response.json\');" class="k-button k-button-icontext"><span class="k-icon k-i-x"></span>批量删除</a>' },
+            { template: '<a class="k-button k-button-icontext" href="javascript:batchOperate(\'json/response.json\');"><span class="k-icon k-i-x"></span>批量删除</a>' },
             { name: 'excel', text: '导出 Excel' },
             { name: 'pdf', text: '导出 PDF' }
         ],
