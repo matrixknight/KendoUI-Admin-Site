@@ -158,7 +158,7 @@ $(function() {
         finished: noFunc,
         succeed: noFunc,
         failed: noFunc,
-        isMsg: false
+        isMsg: true
     };
 })(jQuery);
 
