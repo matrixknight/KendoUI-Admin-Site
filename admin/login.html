@@ -95,7 +95,7 @@
                                 $('#loading').show();
                                 $('.btn-primary').prop('disabled', true);
                                 $.fn.ajaxPost({
-                                    ajaxData: $('form').serialize(),
+                                    ajaxData: $('form').serializeObject(),
                                     ajaxUrl: 'json/login.json',
                                     finished: function(res) {
                                         $('#loading').hide();
