@@ -47,7 +47,19 @@ $(function() {
 /* Ajax 提交 ****************************************************************************/
 (function($) {
     $.fn.ajaxPost = function(options) {
-        var opts = $.extend({}, $.fn.ajaxPost.defaults, options),
+        var defaults = { // 参数默认值
+                ajaxAsync: true,
+                ajaxType: 'get', // GitHub Pages 演示只支持 get 请求，正常使用请改回 post 请求
+                ajaxData: '',
+                urlType: 'static', // GitHub Pages 演示接口为静态 json 文件，正常使用请改回 api 类型
+                ajaxUrl: 'json/response.json', // GitHub Pages 模拟返回的 json 文件，正常使用请改回空字符串
+                ajaxContentType: 'application/json; charset=UTF-8', // 标准表单提交请使用：application/x-www-form-urlencoded
+                finished: noFunc,
+                succeed: noFunc,
+                failed: noFunc,
+                isMsg: false
+            },
+            opts = $.extend({}, defaults, options),
             urls = '';
         if (opts.ajaxType === 'get') {
             $.ajaxSetup({
@@ -95,25 +107,22 @@ $(function() {
             }
         });
     };
-    // 参数默认值
-    $.fn.ajaxPost.defaults = {
-        ajaxAsync: true,
-        ajaxType: 'get', // GitHub Pages 演示只支持 get 请求，正常使用请改回 post 请求
-        ajaxData: '',
-        urlType: 'static', // GitHub Pages 演示接口为静态 json 文件，正常使用请改回 api 类型
-        ajaxUrl: 'json/response.json', // GitHub Pages 模拟返回的 json 文件，正常使用请改回空字符串
-        ajaxContentType: 'application/json; charset=UTF-8', // 标准表单提交请使用：application/x-www-form-urlencoded
-        finished: noFunc,
-        succeed: noFunc,
-        failed: noFunc,
-        isMsg: false
-    };
 })(jQuery);
 
 // 带二进制流的 Ajax 提交
 (function($) {
     $.fn.ajaxPostBlob = function(options) {
-        var opts = $.extend({}, $.fn.ajaxPostBlob.defaults, options);
+        var defaults = { // 参数默认值
+                ajaxAsync: true,
+                ajaxType: 'get', // GitHub Pages 演示只支持 get 请求，正常使用请改回 post 请求
+                ajaxData: '',
+                ajaxUrl: 'json/response.json', // GitHub Pages 模拟返回的 json 文件，正常使用请改回空字符串
+                finished: noFunc,
+                succeed: noFunc,
+                failed: noFunc,
+                isMsg: true
+            },
+            opts = $.extend({}, defaults, options);
         $.ajax({
             headers: {
                 'Authorization': sessionStorage.getItem('token'),
@@ -148,17 +157,6 @@ $(function() {
                 alertMsg(thrown, 'error');
             }
         });
-    };
-    // 参数默认值
-    $.fn.ajaxPostBlob.defaults = {
-        ajaxAsync: true,
-        ajaxType: 'get', // GitHub Pages 演示只支持 get 请求，正常使用请改回 post 请求
-        ajaxData: '',
-        ajaxUrl: 'json/response.json', // GitHub Pages 模拟返回的 json 文件，正常使用请改回空字符串
-        finished: noFunc,
-        succeed: noFunc,
-        failed: noFunc,
-        isMsg: true
     };
 })(jQuery);
 
