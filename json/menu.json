@@ -286,42 +286,42 @@
                         {
                             "text": "<i class='color' style='background-color: #f35800;'></i><i class='color' style='background-color: #f0713a;'></i>Default",
                             "encoded": false,
-                            "url": "javascript:;"
+                            "url": "javascript:changeColor(\"kendo_ui_default\", \"#f35800\", \"#f0713a\");"
                         },
                         {
                             "text": "<i class='color' style='background-color: #ff6358;'></i><i class='color' style='background-color: #eb5b51;'></i>Default v2",
                             "encoded": false,
-                            "url": "javascript:;"
+                            "url": "javascript:changeColor(\"kendo_ui_default_v2\", \"#ff6358\", \"#eb5b51\");"
                         },
                         {
                             "text": "<i class='color' style='background-color: #23bde0;'></i><i class='color' style='background-color: #21b0d0;'></i>Default Blue",
                             "encoded": false,
-                            "url": "javascript:;"
+                            "url": "javascript:changeColor(\"kendo_ui_default_blue\", \"#23bde0\", \"#21b0d0\");"
                         },
                         {
                             "text": "<i class='color' style='background-color: #53b827;'></i><i class='color' style='background-color: #4ca924;'></i>Default Green",
                             "encoded": false,
-                            "url": "javascript:;"
+                            "url": "javascript:changeColor(\"kendo_ui_default_green\", \"#53b827\", \"#4ca924\");"
                         },
                         {
                             "text": "<i class='color' style='background-color: #ff9411;'></i><i class='color' style='background-color: #eb8810;'></i>Default Orange",
                             "encoded": false,
-                            "url": "javascript:;"
+                            "url": "javascript:changeColor(\"kendo_ui_default_orange\", \"#ff9411\", \"#eb8810\");"
                         },
                         {
                             "text": "<i class='color' style='background-color: #bf70cc;'></i><i class='color' style='background-color: #b067bc;'></i>Default Purple",
                             "encoded": false,
-                            "url": "javascript:;"
+                            "url": "javascript:changeColor(\"kendo_ui_default_purple\", \"#bf70cc\", \"#b067bc\");"
                         },
                         {
                             "text": "<i class='color' style='background-color: #28bfba;'></i><i class='color' style='background-color: #25b0ab;'></i>Default Turquoise",
                             "encoded": false,
-                            "url": "javascript:;"
+                            "url": "javascript:changeColor(\"kendo_ui_default_turquoise\", \"#28bfba\", \"#25b0ab\");"
                         },
                         {
                             "text": "<i class='color' style='background-color: #007bff;'></i><i class='color' style='background-color: #52b1ff;'></i>Bootstrap v4",
                             "encoded": false,
-                            "url": "javascript:;"
+                            "url": "javascript:changeColor(\"kendo_ui_bootstrap_v4\", \"#007bff\", \"#52b1ff\");"
                         }
                     ]
                 },
