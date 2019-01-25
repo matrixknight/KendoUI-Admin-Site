@@ -82,7 +82,11 @@
             },
             "sign": "<strong><span style='color: rgb(0, 0, 0); background-color: rgb(217, 182, 172, .8);'>我叫穆！这里是我的自我介绍哦~</span></strong>",
             "type": "0",
-            "admin": true
+            "admin": true,
+            "group": [
+                "0103",
+                "0108"
+            ]
         },
         {
             "id": "uid002",
@@ -163,7 +167,11 @@
             },
             "sign": "<strong><span style='color: rgb(0, 0, 0); background-color: rgb(236, 135, 192, .8);'>我叫阿鲁迪巴！这里是我的自我介绍哦~</span></strong>",
             "type": "1",
-            "admin": false
+            "admin": false,
+            "group": [
+                "0103",
+                "0108"
+            ]
         },
         {
             "id": "uid003",
@@ -244,7 +252,11 @@
             },
             "sign": "<strong><span style='color: rgb(0, 0, 0); background-color: rgb(237, 85, 101, .8);'>我叫撒加！这里是我的自我介绍哦~</span></strong>",
             "type": "2",
-            "admin": false
+            "admin": false,
+            "group": [
+                "0103",
+                "0108"
+            ]
         },
         {
             "id": "uid004",
@@ -325,7 +337,11 @@
             },
             "sign": "<strong><span style='color: rgb(0, 0, 0); background-color: rgb(255, 183, 77, .8);'>我叫迪斯马斯克！这里是我的自我介绍哦~</span></strong>",
             "type": "3",
-            "admin": false
+            "admin": false,
+            "group": [
+                "0103",
+                "0108"
+            ]
         },
         {
             "id": "uid005",
@@ -406,7 +422,11 @@
             },
             "sign": "<strong><span style='color: rgb(0, 0, 0); background-color: rgb(255, 206, 84, .8);'>我叫艾欧里亚！这里是我的自我介绍哦~</span></strong>",
             "type": "0",
-            "admin": true
+            "admin": true,
+            "group": [
+                "0103",
+                "0108"
+            ]
         },
         {
             "id": "uid006",
@@ -487,7 +507,11 @@
             },
             "sign": "<strong><span style='color: rgb(0, 0, 0); background-color: rgb(160, 212, 104, .8);'>我叫沙加！这里是我的自我介绍哦~</span></strong>",
             "type": "1",
-            "admin": true
+            "admin": true,
+            "group": [
+                "0103",
+                "0108"
+            ]
         },
         {
             "id": "uid007",
@@ -568,7 +592,11 @@
             },
             "sign": "<strong><span style='color: rgb(0, 0, 0); background-color: rgb(72, 207, 173, .8);'>我叫童虎！这里是我的自我介绍哦~</span></strong>",
             "type": "2",
-            "admin": true
+            "admin": true,
+            "group": [
+                "0103",
+                "0108"
+            ]
         },
         {
             "id": "uid008",
@@ -649,7 +677,11 @@
             },
             "sign": "<strong><span style='color: rgb(0, 0, 0); background-color: rgb(79, 193, 233, .8);'>我叫米罗！这里是我的自我介绍哦~</span></strong>",
             "type": "3",
-            "admin": false
+            "admin": false,
+            "group": [
+                "0103",
+                "0108"
+            ]
         },
         {
             "id": "uid009",
@@ -730,7 +762,11 @@
             },
             "sign": "<strong><span style='color: rgb(0, 0, 0); background-color: rgb(93, 156, 236, .8);'>我叫艾俄洛斯！这里是我的自我介绍哦~</span></strong>",
             "type": "0",
-            "admin": true
+            "admin": true,
+            "group": [
+                "0103",
+                "0108"
+            ]
         },
         {
             "id": "uid010",
@@ -811,7 +847,11 @@
             },
             "sign": "<strong><span style='color: rgb(0, 0, 0); background-color: rgb(172, 146, 236, .8);'>我叫修罗！这里是我的自我介绍哦~</span></strong>",
             "type": "1",
-            "admin": false
+            "admin": false,
+            "group": [
+                "0103",
+                "0108"
+            ]
         },
         {
             "id": "uid011",
@@ -892,7 +932,11 @@
             },
             "sign": "<strong><span style='color: rgb(0, 0, 0); background-color: rgb(101, 109, 120, .8);'>我叫卡妙！这里是我的自我介绍哦~</span></strong>",
             "type": "2",
-            "admin": false
+            "admin": false,
+            "group": [
+                "0103",
+                "0108"
+            ]
         },
         {
             "id": "uid012",
@@ -973,7 +1017,11 @@
             },
             "sign": "<strong><span style='color: rgb(0, 0, 0); background-color: rgb(204, 209, 217, .8);'>我叫阿布罗狄！这里是我的自我介绍哦~</span></strong>",
             "type": "3",
-            "admin": false
+            "admin": false,
+            "group": [
+                "0103",
+                "0108"
+            ]
         }
     ]
 }

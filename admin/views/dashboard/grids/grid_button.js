@@ -356,6 +356,77 @@ $(function() {
                                     '</form>';
                             divWindow.content(content).center().open();
                         }
+                    },
+                    { name: 'group',
+                        template: '<a class="k-button k-button-icontext k-grid-group" href="javascript:;"><span class="fa fa-users mr-1"></span>分组</a>',
+                        click: function(e) {
+                            e.preventDefault();
+                            var dataItem = this.dataItem($(e.target).closest('tr'));
+                            $.fn.ajaxPost({
+                                ajaxUrl: 'json/group.json',
+                                succeed: function(res) {
+                                    var divWindow = $('<div class="window-box" id="groupEdit"></div>').kendoWindow({
+                                            animation: {open: {effects: 'fade:in'}, close: {effects: 'fade:out'}},
+                                            title: '分组',
+                                            width: '50%',
+                                            modal: true,
+                                            pinned: true,
+                                            resizable: false,
+                                            open: function() {
+                                                $('#groupTabStrip').kendoTabStrip({
+                                                    animation: false,
+                                                    select: function(e) {
+                                                        $(e.sender.wrapper[0]).parent().width('100%');
+                                                    }
+                                                }).data('kendoTabStrip').select(0);
+                                                $.each(dataItem.group, function(i, checked) {
+                                                    $('#group' + checked).prop('checked', true);
+                                                });
+                                                $('#groupEdit button.k-state-selected').unbind('click').click(function(){
+                                                    $.fn.ajaxPost({
+                                                        ajaxData: $('#groupEdit form').serializeObject(),
+                                                        succeed: function(res) {
+                                                            dataItem.set('group', $('#groupEdit [name=group]').serializeObject().group);
+                                                            divWindow.close();
+                                                        },
+                                                        isMsg: true
+                                                    });
+                                                });
+                                            },
+                                            close: function() {
+                                                divWindow.destroy();
+                                            }
+                                        }).data('kendoWindow'),
+                                        content =
+                                            '<form>' +
+                                                '<input name="id" type="hidden" value="' + dataItem.id + '">' +
+                                                '<div id="groupTabStrip">' +
+                                                    '<ul>';
+                                    $.each(res.data, function(i, groups) {
+                                        content +=      '<li>' + groups.text + '</li>';
+                                    });
+                                        content +=  '</ul>';
+                                    $.each(res.data, function(i, groups) {
+                                        content +=  '<div>' +
+                                                        '<div class="row m-0">';
+                                        $.each(groups.items, function(k, group) {
+                                        content +=          '<div class="col-sm-6 col-md-4 col-lg-3">' +
+                                                                '<input class="k-checkbox" id="group' + group.id + '" name="group" type="checkbox" value="' + group.id + '"><label class="k-checkbox-label" for="group' + group.id + '">' + group.text + '</label>' +
+                                                            '</div>';
+                                        });
+                                        content +=      '</div>' +
+                                                    '</div>';
+                                    });
+                                        content +='</div>' +
+                                                '<div class="form-group col-12 row justify-content-center mt-3 mx-0 mb-0">' +
+                                                    '<button class="k-button k-button-lg k-state-selected mx-3" type="button">确 定</button>' +
+                                                    '<button class="k-button k-button-lg mx-3" type="button" onclick="$(\'#groupEdit\').data(\'kendoWindow\').close();">取 消</button>' +
+                                                '</div>' +
+                                            '</form>';
+                                    divWindow.content(content).center().open();
+                                }
+                            });
+                        }
                     }
                 ]
             },
@@ -494,6 +565,9 @@ function importTemp() {
                     allowedExtensions: ['.xls', '.xlsx'],
                     maxFileSize: 10485760
                 },
+                localization: {
+                    select: '<span class="fa fa-upload mr-1"></span>选择导入文件'
+                },
                 select: function(e) {
                     setTimeout(function(){
                         if ($(e.sender.wrapper[0]).find('.k-file-invalid-icon').length < 1) {
@@ -510,17 +584,17 @@ function importTemp() {
             $('#importForm').kendoValidator();
             $('#importForm button.k-state-selected').unbind('click').click(function(){
                 if ($('#importForm').data('kendoValidator').validate()) {
-                    $('#importFile').prev().remove();
+                    $('#importFile').prop('disabled', true);
                     $('#loading').show();
                     $.fn.ajaxPostBlob({
                         ajaxData: $('#importForm')[0],
                         finished: function() {
                             $('#loading').hide();
+                            $('#importFile').prop('disabled', false);
                         },
                         succeed: function(res) {
                             divWindow.close();
-                        },
-                        isMsg: true
+                        }
                     });
                 }
             });
@@ -542,7 +616,7 @@ function importTemp() {
                 '<span class="k-invalid-msg" data-for="importEnd"></span>' +
             '</div>' +
             '<div class="form-group col-12">' +
-                '<label class="d-block"><strong class="k-required">*</strong>文件上传：</label>' +
+                '<label class="d-block"><strong class="k-required">*</strong>文件上传：<small class="text-muted">（请选择：<mark>.xls</mark>、<mark>.xlsx</mark>格式，小于等于<mark>10M</mark>的文件）</small></label>' +
                 '<input class="w-100" id="importFile" name="importFile" type="file" required data-required-msg="请上传文件！">' +
                 '<span class="k-invalid-msg" data-for="importFile"></span>' +
             '</div>' +
