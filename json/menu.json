@@ -332,52 +332,52 @@
                         {
                             "text": "<i class='color' style='background-color: #007bff;'></i><i class='color' style='background-color: #52b1ff;'></i>Bootstrap Blue",
                             "encoded": false,
-                            "url": "javascript:;"
+                            "url": "javascript:changeColor(\"bootstrap_blue\", \"#007bff\", \"#52b1ff\");"
                         },
                         {
                             "text": "<i class='color' style='background-color: #6610f2;'></i><i class='color' style='background-color: #a963ff;'></i>Bootstrap Indigo",
                             "encoded": false,
-                            "url": "javascript:;"
+                            "url": "javascript:changeColor(\"bootstrap_indigo\", \"#6610f2\", \"#a963ff\");"
                         },
                         {
                             "text": "<i class='color' style='background-color: #6f42c1;'></i><i class='color' style='background-color: #b091db;'></i>Bootstrap Purple",
                             "encoded": false,
-                            "url": "javascript:;"
+                            "url": "javascript:changeColor(\"bootstrap_purple\", \"#6f42c1\", \"#b091db\");"
                         },
                         {
                             "text": "<i class='color' style='background-color: #e83e8c;'></i><i class='color' style='background-color: #ff96c0;'></i>Bootstrap Pink",
                             "encoded": false,
-                            "url": "javascript:;"
+                            "url": "javascript:changeColor(\"bootstrap_pink\", \"#e83e8c\", \"#ff96c0\");"
                         },
                         {
                             "text": "<i class='color' style='background-color: #dc3545;'></i><i class='color' style='background-color: #f5898d;'></i>Bootstrap Red",
                             "encoded": false,
-                            "url": "javascript:;"
+                            "url": "javascript:changeColor(\"bootstrap_red\", \"#dc3545\", \"#f5898d\");"
                         },
                         {
                             "text": "<i class='color' style='background-color: #fd7e14;'></i><i class='color' style='background-color: #ffb566;'></i>Bootstrap Orange",
                             "encoded": false,
-                            "url": "javascript:;"
+                            "url": "javascript:changeColor(\"bootstrap_orange\", \"#fd7e14\", \"#ffb566\");"
                         },
                         {
                             "text": "<i class='color' style='background-color: #ffc107;'></i><i class='color' style='background-color: #ffe159;'></i>Bootstrap Yellow",
                             "encoded": false,
-                            "url": "javascript:;"
+                            "url": "javascript:changeColor(\"bootstrap_yellow\", \"#ffc107\", \"#ffe159\");"
                         },
                         {
                             "text": "<i class='color' style='background-color: #28a745;'></i><i class='color' style='background-color: #6bbf79;'></i>Bootstrap Green",
                             "encoded": false,
-                            "url": "javascript:;"
+                            "url": "javascript:changeColor(\"bootstrap_green\", \"#28a745\", \"#6bbf79\");"
                         },
                         {
                             "text": "<i class='color' style='background-color: #20c997;'></i><i class='color' style='background-color: #6de3b8;'></i>Bootstrap Teal",
                             "encoded": false,
-                            "url": "javascript:;"
+                            "url": "javascript:changeColor(\"bootstrap_teal\", \"#20c997\", \"#6de3b8\");"
                         },
                         {
                             "text": "<i class='color' style='background-color: #17a2b8;'></i><i class='color' style='background-color: #5cc9d1;'></i>Bootstrap Cyan",
                             "encoded": false,
-                            "url": "javascript:;"
+                            "url": "javascript:changeColor(\"bootstrap_cyan\", \"#17a2b8\", \"#5cc9d1\");"
                         }
                     ]
                 }
