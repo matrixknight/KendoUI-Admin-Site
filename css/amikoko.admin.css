@@ -1058,23 +1058,51 @@ form .searchBtn.row {
 
 /* 转换器 */
 .k-switch {
-  margin-right: .5em;
-  width: 3em; }
+  border-radius: 4em;
+  width: 4em; }
+  .k-switch:focus .k-switch-container {
+    box-shadow: none; }
 
-.k-switch-container {
-  padding: 0;
-  line-height: normal; }
+.k-switch-container,
+.k-switch-container:hover,
+.k-switch-container:focus {
+  border-radius: 4em;
+  box-shadow: none; }
 
 .k-switch-handle {
-  margin: -3px 5px 0 3px;
-  width: 1em;
-  height: 1em; }
+  margin: 2px 0;
+  border: none;
+  border-radius: 4em;
+  width: calc(2em - 4px);
+  height: calc(2em - 4px);
+  background: #fff; }
 
-.k-switch-off:hover .k-switch-container {
-  border-color: #ccc; }
-.k-switch-off:hover .k-switch-handle {
-  background-color: #eee;
-  border-color: #ccc; }
+.k-switch-on .k-switch-handle, .k-switch-on:hover .k-switch-handle, .k-switch-on:focus .k-switch-handle {
+  left: calc(100% - 2em + 1px);
+  background: #fff; }
+  .k-ie .k-switch-on .k-switch-handle, .k-edge .k-switch-on .k-switch-handle,
+  .k-ie .k-switch-on:hover .k-switch-handle, .k-edge .k-switch-on:hover .k-switch-handle,
+  .k-ie .k-switch-on:focus .k-switch-handle, .k-edge .k-switch-on:focus .k-switch-handle {
+    margin-left: -calc(100% - 2em); }
+
+.k-switch-off .k-switch-container,
+.k-switch-off:hover .k-switch-container,
+.k-switch-off:focus .k-switch-container {
+  background: #ccc; }
+.k-switch-off .k-switch-handle,
+.k-switch-off:hover .k-switch-handle,
+.k-switch-off:focus .k-switch-handle {
+  left: 3px;
+  background: #fff; }
+
+.k-switch-label-on,
+.k-switch-label-off {
+  width: calc(100% + calc( -2em + -10px));
+  line-height: calc(2em - 4px); }
+
+.k-rtl .k-switch.k-switch-off .k-switch-handle,
+.k-switch[dir="rtl"].k-switch-off .k-switch-handle {
+  left: calc(100% - 2em + 1px); }
 
 /* 高级搜索 */
 .adv-search-btn {
@@ -1115,10 +1143,6 @@ form .searchBtn.row {
   .k-edit-form-container .k-edit-field {
     padding-right: 5%;
     width: 75%; }
-    .k-edit-form-container .k-edit-field .k-switch {
-      width: 3em; }
-      .k-edit-form-container .k-edit-field .k-switch .k-switch-handle {
-        margin-top: -4px; }
     .k-edit-form-container .k-edit-field .k-switch,
     .k-edit-form-container .k-edit-field .k-radio-label,
     .k-edit-form-container .k-edit-field .k-checkbox-label {
@@ -1155,8 +1179,8 @@ form .searchBtn.row {
     font-size: 12px;
     font-weight: normal;
     vertical-align: 60%; }
-.k-grid-edit-row .k-switch .k-switch-handle {
-  margin-top: -4px; }
+.k-grid-edit-row .k-switch {
+  margin-top: 3px !important; }
 .k-grid-edit-row .k-radio-label,
 .k-grid-edit-row .k-checkbox-label {
   margin-top: 4px;

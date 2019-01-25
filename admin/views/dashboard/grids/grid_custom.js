@@ -291,9 +291,11 @@ $(function() {
         }
     });
     // 是否在线
-    $('#online').kendoMobileSwitch({
-        onLabel: '',
-        offLabel: '',
+    $('#online').kendoSwitch({
+        messages: {
+            checked: '',
+            unchecked: ''
+        },
         checked: true
     });
     // 获取数据源生成表格
@@ -837,9 +839,11 @@ $(function() {
             }
             e.container.find('.k-edit-form-container').width('100%');
             // 是否在线
-            $('#onlineEdit').kendoMobileSwitch({
-                onLabel: '',
-                offLabel: ''
+            $('#onlineEdit').kendoSwitch({
+                messages: {
+                    checked: '',
+                    unchecked: ''
+                }
             });
             // 年龄
             $('#ageEdit').kendoNumericTextBox({

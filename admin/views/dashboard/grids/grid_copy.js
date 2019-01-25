@@ -220,9 +220,11 @@ $(function() {
                 editor: function(container, options) {
                     $('<input name="online" type="checkbox" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
-                        .kendoMobileSwitch({
-                            onLabel: '',
-                            offLabel: ''
+                        .kendoSwitch({
+                            messages: {
+                                checked: '',
+                                unchecked: ''
+                            }
                         });
                 }
             },

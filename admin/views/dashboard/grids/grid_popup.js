@@ -290,9 +290,11 @@ $(function() {
         }
     });
     // 是否在线
-    $('#online').kendoMobileSwitch({
-        onLabel: '',
-        offLabel: '',
+    $('#online').kendoSwitch({
+        messages: {
+            checked: '',
+            unchecked: ''
+        },
         checked: true
     });
     // 获取数据源生成表格
@@ -980,9 +982,11 @@ $(function() {
                 editor: function(container, options) {
                     $('<input name="online" type="checkbox" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
-                        .kendoMobileSwitch({
-                            onLabel: '',
-                            offLabel: ''
+                        .kendoSwitch({
+                            messages: {
+                                checked: '',
+                                unchecked: ''
+                            }
                         });
                 }
             },

@@ -25,6 +25,8 @@ $font-size-xl: 18px;
 $font-size-xxl: 20px;
 $border-radius: 4px;
 $border-radius-round: 50%;
+$switch-size: 4em;
+$switch-handle-size: (.5 * $switch-size);
 
 @mixin nav-menu-ani {
     transition: all .3s;
@@ -1308,27 +1310,66 @@ form {
 
 /* 转换器 */
 .k-switch {
-    margin-right: .5em;
-    width: 3em;
-}
-.k-switch-container {
-    padding: 0;
-    line-height: normal;
-}
-.k-switch-handle {
-    margin: -3px 5px 0 3px;
-    width: 1em;
-    height: 1em;
-}
-.k-switch-off {
-    &:hover {
+    border-radius: $switch-size;
+    width: $switch-size;
+    &:focus {
         .k-switch-container {
-            border-color: $line-color;
+            box-shadow: none;
         }
-        .k-switch-handle {
-            background-color: #eee;
-            border-color: $line-color;
+    }
+}
+
+.k-switch-container,
+.k-switch-container:hover,
+.k-switch-container:focus {
+    border-radius: $switch-size;
+    box-shadow: none;
+}
+
+.k-switch-handle {
+    margin: 2px 0;
+    border: none;
+    border-radius: $switch-size;
+    width: calc(#{$switch-handle-size} - 4px);
+    height: calc(#{$switch-handle-size} - 4px);
+    background: #fff;
+}
+
+.k-switch-on,
+.k-switch-on:hover,
+.k-switch-on:focus {
+    .k-switch-handle {
+        left: calc(100% - #{$switch-handle-size} + 1px);
+        .k-ie &,
+        .k-edge & {
+            margin-left: -(calc(100% - #{$switch-handle-size}));
         }
+        background: #fff;
+    }
+}
+
+.k-switch-off,
+.k-switch-off:hover,
+.k-switch-off:focus {
+    .k-switch-container {
+        background: $line-color;
+    }
+    .k-switch-handle {
+        left: 3px;
+        background: #fff;
+    }
+}
+
+.k-switch-label-on,
+.k-switch-label-off {
+    width: calc(100% + calc( -#{$switch-handle-size} + -10px));
+    line-height: calc(#{$switch-handle-size} - 4px);
+}
+
+.k-rtl .k-switch,
+.k-switch[dir = "rtl"] {
+    &.k-switch-off .k-switch-handle {
+        left: calc(100% - #{$switch-handle-size} + 1px);
     }
 }
 
@@ -1379,12 +1420,6 @@ form {
     .k-edit-field {
         padding-right: 5%;
         width: 75%;
-        .k-switch {
-            width: 3em;
-            .k-switch-handle {
-                margin-top: -4px;
-            }
-        }
         .k-switch,
         .k-radio-label,
         .k-checkbox-label {
@@ -1440,9 +1475,7 @@ form {
         }
     }
     .k-switch {
-        .k-switch-handle {
-            margin-top: -4px;
-        }
+        margin-top: 3px !important;
     }
     .k-radio-label,
     .k-checkbox-label {

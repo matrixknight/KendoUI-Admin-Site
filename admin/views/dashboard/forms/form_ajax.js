@@ -410,9 +410,11 @@ $(function() {
         ]
     });
     // 同意条款
-    $('#agree').kendoMobileSwitch({
-        onLabel: '',
-        offLabel: '',
+    $('#agree').kendoSwitch({
+        messages: {
+            checked: '',
+            unchecked: ''
+        },
         checked: true
     });
     // 表单验证

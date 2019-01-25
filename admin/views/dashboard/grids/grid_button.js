@@ -263,9 +263,11 @@ $(function() {
                                     pinned: true,
                                     resizable: false,
                                     open: function() {
-                                        $('#onlineEdit').kendoMobileSwitch({
-                                            onLabel: '',
-                                            offLabel: ''
+                                        $('#onlineEdit').kendoSwitch({
+                                            messages: {
+                                                checked: '',
+                                                unchecked: ''
+                                            }
                                         });
                                         $('#specialEdit').kendoValidator({
                                             rules: {
@@ -317,11 +319,11 @@ $(function() {
                                                     ajaxData: {
                                                         'id': dataItem.id,
                                                         'nickName': $('#specialEdit [name=nickName]').val(),
-                                                        'online': $('#onlineEdit').data('kendoMobileSwitch').value()
+                                                        'online': $('#onlineEdit').data('kendoSwitch').value()
                                                     },
                                                     succeed: function(res) {
                                                         dataItem.set('nickName', $('#specialEdit [name=nickName]').val());
-                                                        dataItem.set('online', $('#onlineEdit').data('kendoMobileSwitch').value());
+                                                        dataItem.set('online', $('#onlineEdit').data('kendoSwitch').value());
                                                         divWindow.close();
                                                     },
                                                     isMsg: true
