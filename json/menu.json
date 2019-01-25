@@ -109,67 +109,67 @@
                         {
                             "text": "<i class='color' style='background-color: #1890ff;'></i><i class='color' style='background-color: #40a9ff;'></i>默认",
                             "encoded": false,
-                            "url": "javascript:;"
+                            "url": "javascript:changeColor(\"ant_default\", \"#1890ff\", \"#40a9ff\");"
                         },
                         {
                             "text": "<i class='color' style='background-color: #f5222d;'></i><i class='color' style='background-color: #ff7875;'></i>薄暮",
                             "encoded": false,
-                            "url": "javascript:;"
+                            "url": "javascript:changeColor(\"ant_red\", \"#f5222d\", \"#ff7875\");"
                         },
                         {
                             "text": "<i class='color' style='background-color: #fa541c;'></i><i class='color' style='background-color: #ff9c6e;'></i>火山",
                             "encoded": false,
-                            "url": "javascript:;"
+                            "url": "javascript:changeColor(\"ant_volcano\", \"#fa541c\", \"#ff9c6e\");"
                         },
                         {
                             "text": "<i class='color' style='background-color: #fa8c16;'></i><i class='color' style='background-color: #ffc069;'></i>日暮",
                             "encoded": false,
-                            "url": "javascript:;"
+                            "url": "javascript:changeColor(\"ant_orange\", \"#fa8c16\", \"#ffc069\");"
                         },
                         {
                             "text": "<i class='color' style='background-color: #faad14;'></i><i class='color' style='background-color: #ffd666;'></i>金盏花",
                             "encoded": false,
-                            "url": "javascript:;"
+                            "url": "javascript:changeColor(\"ant_gold\", \"#faad14\", \"#ffd666\");"
                         },
                         {
                             "text": "<i class='color' style='background-color: #fadb14;'></i><i class='color' style='background-color: #fff566;'></i>日出",
                             "encoded": false,
-                            "url": "javascript:;"
+                            "url": "javascript:changeColor(\"ant_yellow\", \"#fadb14\", \"#fff566\");"
                         },
                         {
                             "text": "<i class='color' style='background-color: #a0d911;'></i><i class='color' style='background-color: #d3f261;'></i>青柠",
                             "encoded": false,
-                            "url": "javascript:;"
+                            "url": "javascript:changeColor(\"ant_lime\", \"#a0d911\", \"#d3f261\");"
                         },
                         {
                             "text": "<i class='color' style='background-color: #52c41a;'></i><i class='color' style='background-color: #95de64;'></i>极光绿",
                             "encoded": false,
-                            "url": "javascript:;"
+                            "url": "javascript:changeColor(\"ant_green\", \"#52c41a\", \"#95de64\");"
                         },
                         {
                             "text": "<i class='color' style='background-color: #13c2c2;'></i><i class='color' style='background-color: #5cdbd3;'></i>明青",
                             "encoded": false,
-                            "url": "javascript:;"
+                            "url": "javascript:changeColor(\"ant_cyan\", \"#13c2c2\", \"#5cdbd3\");"
                         },
                         {
                             "text": "<i class='color' style='background-color: #1890ff;'></i><i class='color' style='background-color: #69c0ff;'></i>拂晓蓝",
                             "encoded": false,
-                            "url": "javascript:;"
+                            "url": "javascript:changeColor(\"ant_blue\", \"#1890ff\", \"#69c0ff\");"
                         },
                         {
                             "text": "<i class='color' style='background-color: #2f54eb;'></i><i class='color' style='background-color: #85a5ff;'></i>极客蓝",
                             "encoded": false,
-                            "url": "javascript:;"
+                            "url": "javascript:changeColor(\"ant_geekblue\", \"#2f54eb\", \"#85a5ff\");"
                         },
                         {
                             "text": "<i class='color' style='background-color: #722ed1;'></i><i class='color' style='background-color: #b37feb;'></i>酱紫",
                             "encoded": false,
-                            "url": "javascript:;"
+                            "url": "javascript:changeColor(\"ant_purple\", \"#722ed1\", \"#b37feb\");"
                         },
                         {
                             "text": "<i class='color' style='background-color: #eb2f96;'></i><i class='color' style='background-color: #ff85c0;'></i>法式洋红",
                             "encoded": false,
-                            "url": "javascript:;"
+                            "url": "javascript:changeColor(\"ant_magenta\", \"#eb2f96\", \"#ff85c0\");"
                         }
                     ]
                 },
