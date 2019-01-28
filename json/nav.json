@@ -860,6 +860,20 @@
             ]
         },
         {
+            "id": "12",
+            "text": "<i class='fas fa-mobile-alt'></i><abbr>移动端<small>Hybrid</small></abbr>",
+            "encoded": false,
+            "items": [
+                {
+                    "id": "1201",
+                    "text": "<i class='fas fa-genderless'></i>敬请期待……",
+                    "encoded": false,
+                    "cssClass": "",
+                    "url": "javascript:;"
+                }
+            ]
+        },
+        {
             "id": "99",
             "text": "<i class='fas fa-list-ol'></i><abbr>一级菜单</abbr>",
             "encoded": false,

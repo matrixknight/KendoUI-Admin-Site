@@ -181,7 +181,13 @@ $(function() {
                         },
                         sign: { type: 'string' },
                         type: { type: 'string' },
-                        admin: { type: 'boolean' }
+                        admin: { type: 'boolean' },
+                        group: { type: 'object',
+                            defaultValue: []
+                        },
+                        permission: { type: 'object',
+                            defaultValue: []
+                        }
                     }
                 }
             },
@@ -423,6 +429,71 @@ $(function() {
                                                 '<div class="form-group col-12 row justify-content-center mt-3 mx-0 mb-0">' +
                                                     '<button class="k-button k-button-lg k-state-selected mx-3" type="button">确 定</button>' +
                                                     '<button class="k-button k-button-lg mx-3" type="button" onclick="$(\'#groupEdit\').data(\'kendoWindow\').close();">取 消</button>' +
+                                                '</div>' +
+                                            '</form>';
+                                    divWindow.content(content).center().open();
+                                }
+                            });
+                        }
+                    },
+                    { name: 'permission', text: '权限',
+                        iconClass: 'fa fa-user-cog mr-1',
+                        visible: function(dataItem) {
+                            return dataItem.admin;
+                        },
+                        click: function(e) {
+                            e.preventDefault();
+                            var dataItem = this.dataItem($(e.target).closest('tr'));
+                            $.fn.ajaxPost({
+                                ajaxUrl: 'json/nav.json',
+                                succeed: function(res) {
+                                    var divWindow = $('<div class="window-box" id="permissionEdit"></div>').kendoWindow({
+                                            animation: {open: {effects: 'fade:in'}, close: {effects: 'fade:out'}},
+                                            title: '权限',
+                                            width: '30%',
+                                            height: '40%',
+                                            modal: true,
+                                            pinned: true,
+                                            resizable: false,
+                                            open: function() {
+                                                $('#permissionTreeView').kendoTreeView({
+                                                    dataSource: res.data,
+                                                    checkboxes: {
+                                                        checkChildren: true,
+                                                        template: '<input class="k-checkbox" id="permission#= item.id #" name="permission" type="checkbox" value="#= item.id #"><label class="k-checkbox-label" for="permission#= item.id #">#= item.text #</label>'
+                                                    },
+                                                    template: function() {
+                                                        return ''
+                                                    },
+                                                    dataBound: function() {
+                                                        $('#permissionTreeView').find('.k-in').remove();
+                                                    }
+                                                });
+                                                $.each(dataItem.permission, function(i, checked) {
+                                                    $('#permission' + checked).prop('checked', true);
+                                                });
+                                                $('#permissionEdit button.k-state-selected').unbind('click').click(function(){
+                                                    $.fn.ajaxPost({
+                                                        ajaxData: $('#permissionEdit form').serializeObject(),
+                                                        succeed: function(res) {
+                                                            dataItem.set('permission', $('#permissionEdit [name=permission]').serializeObject().permission);
+                                                            divWindow.close();
+                                                        },
+                                                        isMsg: true
+                                                    });
+                                                });
+                                            },
+                                            close: function() {
+                                                divWindow.destroy();
+                                            }
+                                        }).data('kendoWindow'),
+                                        content =
+                                            '<form>' +
+                                                '<input name="id" type="hidden" value="' + dataItem.id + '">' +
+                                                '<div id="permissionTreeView"></div>' +
+                                                '<div class="form-group col-12 row justify-content-center mt-3 mx-0 mb-0">' +
+                                                    '<button class="k-button k-button-lg k-state-selected mx-3" type="button">确 定</button>' +
+                                                    '<button class="k-button k-button-lg mx-3" type="button" onclick="$(\'#permissionEdit\').data(\'kendoWindow\').close();">取 消</button>' +
                                                 '</div>' +
                                             '</form>';
                                     divWindow.content(content).center().open();
