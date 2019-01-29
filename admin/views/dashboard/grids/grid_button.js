@@ -358,8 +358,8 @@ $(function() {
                                 content +=
                                         '</div>' +
                                         '<div class="form-group col-12 row justify-content-center m-0">' +
-                                            '<button class="k-button k-button-lg k-state-selected mx-3" type="button">确 定</button>' +
-                                            '<button class="k-button k-button-lg mx-3" type="button" onclick="$(\'#specialEdit\').data(\'kendoWindow\').close();">取 消</button>' +
+                                            '<button class="k-button k-button-lg k-state-selected mx-2" type="button">确 定</button>' +
+                                            '<button class="k-button k-button-lg mx-2" type="button" onclick="$(\'#specialEdit\').data(\'kendoWindow\').close();">取 消</button>' +
                                         '</div>' +
                                     '</form>';
                             divWindow.content(content).center().open();
@@ -400,6 +400,12 @@ $(function() {
                                                         isMsg: true
                                                     });
                                                 });
+                                                $('#groupEdit button.theme-m-box').unbind('click').click(function(){
+                                                    $('#groupEdit :checkbox').prop('checked', false);
+                                                    $.each(dataItem.group, function(i, checked) {
+                                                        $('#group' + checked).prop('checked', true);
+                                                    });
+                                                });
                                             },
                                             close: function() {
                                                 divWindow.destroy();
@@ -427,8 +433,9 @@ $(function() {
                                     });
                                         content +='</div>' +
                                                 '<div class="form-group col-12 row justify-content-center mt-3 mx-0 mb-0">' +
-                                                    '<button class="k-button k-button-lg k-state-selected mx-3" type="button">确 定</button>' +
-                                                    '<button class="k-button k-button-lg mx-3" type="button" onclick="$(\'#groupEdit\').data(\'kendoWindow\').close();">取 消</button>' +
+                                                    '<button class="k-button k-button-lg k-state-selected mx-2" type="button">确 定</button>' +
+                                                    '<button class="k-button k-button-lg theme-m-box mx-2" type="button">重 置</button>' +
+                                                    '<button class="k-button k-button-lg mx-2" type="button" onclick="$(\'#groupEdit\').data(\'kendoWindow\').close();">取 消</button>' +
                                                 '</div>' +
                                             '</form>';
                                     divWindow.content(content).center().open();
@@ -482,6 +489,12 @@ $(function() {
                                                         isMsg: true
                                                     });
                                                 });
+                                                $('#permissionEdit button.theme-m-box').unbind('click').click(function(){
+                                                    $('#permissionEdit :checkbox').prop('checked', false);
+                                                    $.each(dataItem.permission, function(i, checked) {
+                                                        $('#permission' + checked).prop('checked', true);
+                                                    });
+                                                });
                                             },
                                             close: function() {
                                                 divWindow.destroy();
@@ -492,8 +505,9 @@ $(function() {
                                                 '<input name="id" type="hidden" value="' + dataItem.id + '">' +
                                                 '<div id="permissionTreeView"></div>' +
                                                 '<div class="form-group col-12 row justify-content-center mt-3 mx-0 mb-0">' +
-                                                    '<button class="k-button k-button-lg k-state-selected mx-3" type="button">确 定</button>' +
-                                                    '<button class="k-button k-button-lg mx-3" type="button" onclick="$(\'#permissionEdit\').data(\'kendoWindow\').close();">取 消</button>' +
+                                                    '<button class="k-button k-button-lg k-state-selected mx-2" type="button">确 定</button>' +
+                                                    '<button class="k-button k-button-lg theme-m-box mx-2" type="button">重 置</button>' +
+                                                    '<button class="k-button k-button-lg mx-2" type="button" onclick="$(\'#permissionEdit\').data(\'kendoWindow\').close();">取 消</button>' +
                                                 '</div>' +
                                             '</form>';
                                     divWindow.content(content).center().open();
