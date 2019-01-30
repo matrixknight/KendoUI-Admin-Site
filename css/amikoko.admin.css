@@ -1025,9 +1025,9 @@ form .k-textbox-lg {
     font-size: 20px; }
 form .ajax-loading {
   display: none; }
-form .k-i-loading {
-  margin: 8px 5px 0 0;
-  vertical-align: -20%; }
+  form .ajax-loading .k-i-loading {
+    margin: 8px 5px 0 0;
+    vertical-align: -20%; }
 form .k-radio-label,
 form .k-checkbox-label {
   margin: 7px 12px 7px 0; }
