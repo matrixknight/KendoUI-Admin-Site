@@ -115,7 +115,7 @@
                         },
                         {
                             "id": "010209",
-                            "text": "<i class='fas fa-genderless'></i>子表详情及滚动翻页<sub class='theme-l'>New</sub>",
+                            "text": "<i class='fas fa-genderless'></i>子表详情及滚动翻页",
                             "encoded": false,
                             "cssClass": "links-grid_detail",
                             "url": "javascript:linkTo(\"/dashboard/grids/\", \"grid_detail\");"
