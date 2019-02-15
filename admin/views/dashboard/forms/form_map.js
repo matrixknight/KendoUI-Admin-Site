@@ -1,6 +1,6 @@
 $(function() {
     // 提示
-    noticeMsg('地理数据量大~ 请耐心等候~ 载入中……', 'info', 'center', 10000, noFunc);
+    noticeMsg('地理数据量大~ 请耐心等候~ 载入中……', 'info', 'center', 10000);
     // 地图点选
     $('#inputBoxMapBtn').click(function() {
         var divWindow = $('<div class="window-map"></div>').kendoWindow({

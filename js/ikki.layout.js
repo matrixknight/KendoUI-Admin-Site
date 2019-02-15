@@ -225,7 +225,7 @@ function unlockScreen() {
             return true;
         };
     } else {
-        noticeMsg('密码错误！请重新输入~', 'error', 'top', 3000, noFunc);
+        noticeMsg('密码错误！请重新输入~', 'error', 'top', 3000);
     }
 }
 

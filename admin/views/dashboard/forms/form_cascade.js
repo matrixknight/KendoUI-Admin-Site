@@ -1,6 +1,6 @@
 $(function() {
     // 提示
-    noticeMsg('省市区数据量大~ 请耐心等候~ 载入中……', 'info', 'center', 10000, noFunc);
+    noticeMsg('省市区数据量大~ 请耐心等候~ 载入中……', 'info', 'center', 10000);
     // 自动完成框分组
     $('#autoCompleteGroup').kendoAutoComplete({
         dataSource: {

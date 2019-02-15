@@ -208,7 +208,9 @@ function noticeMsg(msg, type, position, time, finished) {
         },
         autoHideAfter: time,
         hide: function() {
-            finished();
+            if (finished) {
+                finished();
+            }
         }
     }).data('kendoNotification');
     notification.showText(msg, type);
