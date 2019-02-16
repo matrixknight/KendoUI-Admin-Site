@@ -176,7 +176,7 @@ function tipMsg(dom, msg, position) {
 }
 
 // 通知框
-function noticeMsg(msg, type, position, time, finished) {
+function noticeMsg(msg, type, position, time, hided) {
     var notification = $('<div class="notice-box"></div>').kendoNotification({
         animation: {open: {effects: 'fade:in'}, close: {effects: 'fade:out'}},
         position: {
@@ -208,8 +208,8 @@ function noticeMsg(msg, type, position, time, finished) {
         },
         autoHideAfter: time,
         hide: function() {
-            if (finished) {
-                finished();
+            if (hided) {
+                hided();
             }
         }
     }).data('kendoNotification');
@@ -234,7 +234,7 @@ function checkInfoType(type) {
 }
 
 // 警告框
-function alertMsg(msg, type) {
+function alertMsg(msg, type, closed) {
     var alertDialog = $('<div class="dialog-box"></div>').kendoDialog({
         animation: {open: {effects: 'fade:in'}, close: {effects: 'fade:out'}},
         closable: false,
@@ -249,6 +249,9 @@ function alertMsg(msg, type) {
                 text: '确定',
                 primary: true,
                 action: function(e) {
+                    if (closed) {
+                        closed();
+                    }
                     alertDialog.close();
                 }
             }
@@ -261,7 +264,7 @@ function alertMsg(msg, type) {
 }
 
 // 警告框小按钮
-function alertMsgBtn(msg, type) {
+function alertMsgBtn(msg, type, closed) {
     var alertWindow = $('<div class="dialog-box"></div>').kendoWindow({
         actions: [],
         animation: {open: {effects: 'fade:in'}, close: {effects: 'fade:out'}},
@@ -279,12 +282,15 @@ function alertMsgBtn(msg, type) {
     }).data('kendoWindow');
     alertWindow.content(checkInfoType(type) + msg + '<div class="k-window-buttongroup"><button class="k-button k-button-lg k-state-selected" type="button">确 定</button></div>').center().open();
     $('.dialog-box .k-window-buttongroup .k-button').click(function() {
+        if (closed) {
+            closed();
+        }
         alertWindow.close();
     });
 }
 
 // 警告框无按钮
-function alertMsgNoBtn(msg, type) {
+function alertMsgNoBtn(msg, type, closed) {
     var alertDialog = $('<div class="dialog-box"></div>').kendoDialog({
         animation: {open: {effects: 'fade:in'}, close: {effects: 'fade:out'}},
         maxWidth: '30%',
@@ -294,6 +300,9 @@ function alertMsgNoBtn(msg, type) {
         title: '信息',
         content: checkInfoType(type) + msg,
         open: function() {
+            if (closed) {
+                closed();
+            }
             setTimeout(function(){
                 alertDialog.close();
             }, 2000);
