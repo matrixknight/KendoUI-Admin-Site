@@ -1,5 +1,72 @@
 <script id="homeTemp" type="text/x-kendo-template">
-    <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center">
-        <p class="lead">欢迎登录 Kendo UI Admin 后台管理系统 =^^=</p>
+    <div id="hasChart" class="row">
+        <div class="col-md-6 col-xl-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="d-flex h-100 display-4 justify-content-center align-items-center">
+                                <i class="fa fa-eye theme-m"></i>
+                            </div>
+                        </div>
+                        <div class="col-8 text-center">
+                            <h3 class="lead text-muted">浏览量（PV）</h3>
+                            <p class="display-4 mb-0 theme-m" id="pvCount">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="d-flex h-100 display-4 justify-content-center align-items-center">
+                                <i class="fa fa-globe-asia theme-m"></i>
+                            </div>
+                        </div>
+                        <div class="col-8 text-center">
+                            <h3 class="lead text-muted">访问次数</h3>
+                            <p class="display-4 mb-0 theme-m" id="visitCount">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="d-flex h-100 display-4 justify-content-center align-items-center">
+                                <i class="fa fa-user theme-m"></i>
+                            </div>
+                        </div>
+                        <div class="col-8 text-center">
+                            <h3 class="lead text-muted">访客数（UV）</h3>
+                            <p class="display-4 mb-0 theme-m" id="visitorCount">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="d-flex h-100 display-4 justify-content-center align-items-center">
+                                <i class="fa fa-hdd theme-m"></i>
+                            </div>
+                        </div>
+                        <div class="col-8 text-center">
+                            <h3 class="lead text-muted">IP 数</h3>
+                            <p class="display-4 mb-0 theme-m" id="ipCount">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </script>
