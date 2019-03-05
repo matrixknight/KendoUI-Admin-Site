@@ -6,5 +6,57 @@
         "visit_count": 1699,
         "visitor_count": 1245,
         "ip_count": 998
-    }
+    },
+    "area": [
+        {
+            "category": "2018-05",
+            "pv_count": 1191,
+            "visitor_count": 170
+        },
+        {
+            "category": "",
+            "pv_count": 973,
+            "visitor_count": 106
+        },
+        {
+            "category": "",
+            "pv_count": 583,
+            "visitor_count": 114
+        },
+        {
+            "category": "2018-08",
+            "pv_count": 522,
+            "visitor_count": 110
+        },
+        {
+            "category": "",
+            "pv_count": 370,
+            "visitor_count": 88
+        },
+        {
+            "category": "",
+            "pv_count": 665,
+            "visitor_count": 86
+        },
+        {
+            "category": "2018-11",
+            "pv_count": 769,
+            "visitor_count": 133
+        },
+        {
+            "category": "",
+            "pv_count": 2194,
+            "visitor_count": 255
+        },
+        {
+            "category": "",
+            "pv_count": 765,
+            "visitor_count": 113
+        },
+        {
+            "category": "2019-02",
+            "pv_count": 869,
+            "visitor_count": 70
+        }
+    ]
 }
