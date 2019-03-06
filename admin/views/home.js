@@ -4,7 +4,6 @@ $(function() {
     $.fn.ajaxPost({
         ajaxUrl: 'json/home.json',
         succeed: function(res) {
-            // 数字跳动
             // 浏览量
             new CountUp('pvCount', 0, res.count.pv_count).start();
             // 访问次数
@@ -16,6 +15,9 @@ $(function() {
             // 访客趋势图
             $('#trendMonth').kendoChart({
                 theme: 'sass',
+                chartArea: {
+                    height: 240
+                },
                 dataSource: {
                     data: res.area,
                     schema: {
@@ -63,6 +65,39 @@ $(function() {
                     template: '#= value #'
                 }
             });
+            // 新访客占比
+            $('#visitNew').kendoChart({
+                theme: 'sass',
+                chartArea: {
+                    height: 240
+                },
+                dataSource: {
+                    data: res.donut,
+                    schema: {
+                        model: {
+                            id: 'uid',
+                            fields: {
+                                category: { type: 'string' },
+                                value: { type: 'number' }
+                            }
+                        }
+                    }
+                },
+                legend: {
+                    visible: false
+                },
+                seriesDefaults: {
+                    type: 'donut',
+                    startAngle: 90,
+                    holeSize: 100
+                },
+                series: [
+                    {
+                        field: 'value'
+                    }
+                ]
+            });
+            $('#visitNewInnerContent').text(kendo.toString(res.donut[0].value, 'p1')).css('color', accentColor);
         }
     });
 });

@@ -58,5 +58,15 @@
             "pv_count": 869,
             "visitor_count": 70
         }
+    ],
+    "donut": [
+        {
+            "category": "新访客",
+            "value": 0.5579
+        },
+        {
+            "category": "老访客",
+            "value": 0.4421
+        }
     ]
 }
