@@ -98,6 +98,52 @@ $(function() {
                 ]
             });
             $('#visitNewInnerContent').text(kendo.toString(res.donut[0].value, 'p1')).css('color', accentColor);
+            // 客户端来源分析
+            $('#visitClient').kendoChart({
+                theme: 'sass',
+                chartArea: {
+                    height: 240
+                },
+                dataSource: {
+                    data: res.bar,
+                    schema: {
+                        model: {
+                            id: 'uid',
+                            fields: {
+                                category: { type: 'string' },
+                                pc: { type: 'number' },
+                                mobile: { type: 'number' }
+                            }
+                        }
+                    }
+                },
+                legend: {
+                    position: 'top'
+                },
+                seriesDefaults: {
+                    type: 'column'
+                },
+                series: [
+                    {
+                        field: 'pc',
+                        name: '电脑端'
+                    },
+                    {
+                        field: 'mobile',
+                        name: '移动端'
+                    }
+                ],
+                categoryAxis: {
+                    field: 'category',
+                    majorGridLines: {
+                        visible: false
+                    }
+                },
+                tooltip: {
+                    visible: true,
+                    template: '#= value #'
+                }
+            });
         }
     });
 });

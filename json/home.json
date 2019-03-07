@@ -68,5 +68,27 @@
             "category": "老访客",
             "value": 0.4421
         }
+    ],
+    "bar": [
+        {
+            "category": "浏览量",
+            "pc": 8608,
+            "mobile": 293
+        },
+        {
+            "category": "访问次数",
+            "pc": 1575,
+            "mobile": 124
+        },
+        {
+            "category": "访客数",
+            "pc": 1107,
+            "mobile": 119
+        },
+        {
+            "category": "IP 数",
+            "pc": 994,
+            "mobile": 118
+        }
     ]
 }
