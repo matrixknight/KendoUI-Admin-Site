@@ -90,5 +90,199 @@
             "pc": 994,
             "mobile": 118
         }
+    ],
+    "line": [
+        {
+            "category": "0点",
+            "pv_count": 22,
+            "visit_count": 12,
+            "visitor_count": 12,
+            "new_visitor_count": 6,
+            "ip_count": 12
+        },
+        {
+            "category": "",
+            "pv_count": 23,
+            "visit_count": 6,
+            "visitor_count": 6,
+            "new_visitor_count": 4,
+            "ip_count": 5
+        },
+        {
+            "category": "",
+            "pv_count": 27,
+            "visit_count": 8,
+            "visitor_count": 7,
+            "new_visitor_count": 4,
+            "ip_count": 7
+        },
+        {
+            "category": "3点",
+            "pv_count": 15,
+            "visit_count": 5,
+            "visitor_count": 5,
+            "new_visitor_count": 1,
+            "ip_count": 5
+        },
+        {
+            "category": "",
+            "pv_count": 5,
+            "visit_count": 3,
+            "visitor_count": 3,
+            "new_visitor_count": 3,
+            "ip_count": 3
+        },
+        {
+            "category": "",
+            "pv_count": 23,
+            "visit_count": 10,
+            "visitor_count": 9,
+            "new_visitor_count": 9,
+            "ip_count": 10
+        },
+        {
+            "category": "6点",
+            "pv_count": 6,
+            "visit_count": 4,
+            "visitor_count": 4,
+            "new_visitor_count": 4,
+            "ip_count": 3
+        },
+        {
+            "category": "",
+            "pv_count": 14,
+            "visit_count": 7,
+            "visitor_count": 7,
+            "new_visitor_count": 7,
+            "ip_count": 7
+        },
+        {
+            "category": "",
+            "pv_count": 201,
+            "visit_count": 108,
+            "visitor_count": 108,
+            "new_visitor_count": 15,
+            "ip_count": 91
+        },
+        {
+            "category": "9点",
+            "pv_count": 488,
+            "visit_count": 77,
+            "visitor_count": 63,
+            "new_visitor_count": 25,
+            "ip_count": 43
+        },
+        {
+            "category": "",
+            "pv_count": 444,
+            "visit_count": 60,
+            "visitor_count": 35,
+            "new_visitor_count": 12,
+            "ip_count": 23
+        },
+        {
+            "category": "",
+            "pv_count": 368,
+            "visit_count": 42,
+            "visitor_count": 30,
+            "new_visitor_count": 19,
+            "ip_count": 27
+        },
+        {
+            "category": "12点",
+            "pv_count": 88,
+            "visit_count": 29,
+            "visitor_count": 23,
+            "new_visitor_count": 19,
+            "ip_count": 21
+        },
+        {
+            "category": "",
+            "pv_count": 582,
+            "visit_count": 98,
+            "visitor_count": 50,
+            "new_visitor_count": 25,
+            "ip_count": 37
+        },
+        {
+            "category": "",
+            "pv_count": 548,
+            "visit_count": 91,
+            "visitor_count": 58,
+            "new_visitor_count": 44,
+            "ip_count": 51
+        },
+        {
+            "category": "15点",
+            "pv_count": 576,
+            "visit_count": 82,
+            "visitor_count": 47,
+            "new_visitor_count": 32,
+            "ip_count": 41
+        },
+        {
+            "category": "",
+            "pv_count": 638,
+            "visit_count": 72,
+            "visitor_count": 42,
+            "new_visitor_count": 27,
+            "ip_count": 35
+        },
+        {
+            "category": "",
+            "pv_count": 383,
+            "visit_count": 64,
+            "visitor_count": 43,
+            "new_visitor_count": 30,
+            "ip_count": 39
+        },
+        {
+            "category": "18点",
+            "pv_count": 201,
+            "visit_count": 31,
+            "visitor_count": 19,
+            "new_visitor_count": 11,
+            "ip_count": 14
+        },
+        {
+            "category": "",
+            "pv_count": 120,
+            "visit_count": 17,
+            "visitor_count": 13,
+            "new_visitor_count": 10,
+            "ip_count": 13
+        },
+        {
+            "category": "",
+            "pv_count": 81,
+            "visit_count": 19,
+            "visitor_count": 15,
+            "new_visitor_count": 11,
+            "ip_count": 13
+        },
+        {
+            "category": "21点",
+            "pv_count": 117,
+            "visit_count": 24,
+            "visitor_count": 16,
+            "new_visitor_count": 10,
+            "ip_count": 15
+        },
+        {
+            "category": "",
+            "pv_count": 142,
+            "visit_count": 23,
+            "visitor_count": 18,
+            "new_visitor_count": 13,
+            "ip_count": 18
+        },
+        {
+            "category": "",
+            "pv_count": 150,
+            "visit_count": 20,
+            "visitor_count": 18,
+            "new_visitor_count": 17,
+            "ip_count": 18
+        }
     ]
 }

@@ -144,6 +144,68 @@ $(function() {
                     template: '#= value #'
                 }
             });
+            // 访客分时趋势图
+            $('#trendHour').kendoChart({
+                theme: 'sass',
+                chartArea: {
+                    height: 240
+                },
+                dataSource: {
+                    data: res.line,
+                    schema: {
+                        model: {
+                            id: 'uid',
+                            fields: {
+                                category: { type: 'string' },
+                                pv_count: { type: 'number' },
+                                visit_count: { type: 'number' },
+                                visitor_count: { type: 'number' },
+                                new_visitor_count: { type: 'number' },
+                                ip_count: { type: 'number' }
+                            }
+                        }
+                    }
+                },
+                legend: {
+                    position: 'top'
+                },
+                seriesDefaults: {
+                    type: 'line',
+                    markers: {
+                        visible: true,
+                        size: 6
+                    }
+                },
+                series: [
+                    {
+                        field: 'pv_count',
+                        name: '浏览量（PV）'
+                    },
+                    {
+                        field: 'visit_count',
+                        name: '访问次数'
+                    },
+                    {
+                        field: 'visitor_count',
+                        name: '访客数（UV）'
+                    },
+                    {
+                        field: 'new_visitor_count',
+                        name: '新访客'
+                    },
+                    {
+                        field: 'ip_count',
+                        name: 'IP 数'
+                    }
+                ],
+                categoryAxis: {
+                    field: 'category'
+                },
+                tooltip: {
+                    visible: true,
+                    template: '#= value #'
+                }
+            });
         }
     });
 });
