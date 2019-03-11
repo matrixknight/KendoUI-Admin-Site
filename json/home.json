@@ -284,5 +284,37 @@
             "new_visitor_count": 17,
             "ip_count": 18
         }
+    ],
+    "radar": [
+        {
+            "category": "浏览量比率",
+            "through": 97.88,
+            "link": 2.12
+        },
+        {
+            "category": "访问次数比率",
+            "through": 97.7,
+            "link": 2.3
+        },
+        {
+            "category": "访客数比率",
+            "through": 97.35,
+            "link": 2.65
+        },
+        {
+            "category": "新访客比率",
+            "through": 55.61,
+            "link": 53.13
+        },
+        {
+            "category": "IP 数比率",
+            "through": 96.69,
+            "link": 3.31
+        },
+        {
+            "category": "跳出率",
+            "through": 42.11,
+            "link": 36.84
+        }
     ]
 }

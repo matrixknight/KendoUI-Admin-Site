@@ -206,6 +206,53 @@ $(function() {
                     template: '#= value #'
                 }
             });
+            // 访问来源分析
+            $('#visitSource').kendoChart({
+                theme: 'sass',
+                chartArea: {
+                    height: 360
+                },
+                dataSource: {
+                    data: res.radar,
+                    schema: {
+                        model: {
+                            id: 'uid',
+                            fields: {
+                                category: { type: 'string' },
+                                through: { type: 'number' },
+                                link: { type: 'number' }
+                            }
+                        }
+                    }
+                },
+                legend: {
+                    position: 'top'
+                },
+                seriesDefaults: {
+                    type: 'radarColumn'
+                },
+                series: [
+                    {
+                        categoryField: 'category',
+                        field: 'through',
+                        name: '直接访问'
+                    },
+                    {
+                        categoryField: 'category',
+                        field: 'link',
+                        name: '外部链接'
+                    }
+                ],
+                valueAxis: {
+                    labels: {
+                        visible: false
+                    }
+                },
+                tooltip: {
+                    visible: true,
+                    template: '#= kendo.toString(value / 100, "p") #'
+                }
+            });
         }
     });
 });
