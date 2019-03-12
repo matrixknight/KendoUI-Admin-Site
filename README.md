@@ -1,5 +1,6 @@
 <h1 align="center">🌸 Kendo UI Admin &amp; Site 🐱</h1>
 <p align="center">Kendo UI Admin &amp; Site base on Kendo UI for jQuery and Bootstrap 4.</p>
+<p align="center"><a href="https://ikki2000.github.io/KendoUI-Admin-Site/" target="_blank">https://ikki2000.github.io/KendoUI-Admin-Site/</a></p>
 
 ## 🌟 特点
 
