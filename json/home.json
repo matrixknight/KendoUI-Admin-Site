@@ -316,5 +316,216 @@
             "through": 42.11,
             "link": 36.84
         }
+    ],
+    "map": {
+        "China": [
+            {
+                "id": "31",
+                "name": "上海",
+                "pv_count": 5992,
+                "visit_count": 946,
+                "visitor_count": 601,
+                "ip_count": 394
+            },
+            {
+                "id": "37",
+                "name": "山东",
+                "pv_count": 786,
+                "visit_count": 82,
+                "visitor_count": 48,
+                "ip_count": 41
+            },
+            {
+                "id": "44",
+                "name": "广东",
+                "pv_count": 429,
+                "visit_count": 110,
+                "visitor_count": 99,
+                "ip_count": 89
+            },
+            {
+                "id": "51",
+                "name": "四川",
+                "pv_count": 322,
+                "visit_count": 59,
+                "visitor_count": 50,
+                "ip_count": 49
+            },
+            {
+                "id": "42",
+                "name": "湖北",
+                "pv_count": 104,
+                "visit_count": 28,
+                "visitor_count": 24,
+                "ip_count": 18
+            },
+            {
+                "id": "32",
+                "name": "江苏",
+                "pv_count": 85,
+                "visit_count": 26,
+                "visitor_count": 24,
+                "ip_count": 23
+            },
+            {
+                "id": "33",
+                "name": "浙江",
+                "pv_count": 68,
+                "visit_count": 28,
+                "visitor_count": 24,
+                "ip_count": 23
+            },
+            {
+                "id": "43",
+                "name": "湖南",
+                "pv_count": 62,
+                "visit_count": 26,
+                "visitor_count": 22,
+                "ip_count": 20
+            },
+            {
+                "id": "11",
+                "name": "北京",
+                "pv_count": 61,
+                "visit_count": 28,
+                "visitor_count": 28,
+                "ip_count": 25
+            },
+            {
+                "id": "13",
+                "name": "河北",
+                "pv_count": 56,
+                "visit_count": 10,
+                "visitor_count": 8,
+                "ip_count": 7
+            },
+            {
+                "id": "23",
+                "name": "黑龙江",
+                "pv_count": 51,
+                "visit_count": 19,
+                "visitor_count": 17,
+                "ip_count": 14
+            },
+            {
+                "id": "61",
+                "name": "陕西",
+                "pv_count": 48,
+                "visit_count": 13,
+                "visitor_count": 11,
+                "ip_count": 9
+            },
+            {
+                "id": "50",
+                "name": "重庆",
+                "pv_count": 41,
+                "visit_count": 12,
+                "visitor_count": 12,
+                "ip_count": 10
+            },
+            {
+                "id": "71",
+                "name": "台湾",
+                "pv_count": 39,
+                "visit_count": 11,
+                "visitor_count": 9,
+                "ip_count": 6
+            },
+            {
+                "id": "34",
+                "name": "安徽",
+                "pv_count": 33,
+                "visit_count": 10,
+                "visitor_count": 9,
+                "ip_count": 9
+            },
+            {
+                "id": "22",
+                "name": "吉林",
+                "pv_count": 27,
+                "visit_count": 8,
+                "visitor_count": 8,
+                "ip_count": 7
+            },
+            {
+                "id": "41",
+                "name": "河南",
+                "pv_count": 23,
+                "visit_count": 12,
+                "visitor_count": 11,
+                "ip_count": 11
+            },
+            {
+                "id": "81",
+                "name": "香港",
+                "pv_count": 20,
+                "visit_count": 8,
+                "visitor_count": 5,
+                "ip_count": 4
+            },
+            {
+                "id": "35",
+                "name": "福建",
+                "pv_count": 16,
+                "visit_count": 5,
+                "visitor_count": 5,
+                "ip_count": 5
+            },
+            {
+                "id": "36",
+                "name": "江西",
+                "pv_count": 11,
+                "visit_count": 4,
+                "visitor_count": 3,
+                "ip_count": 2
+            },
+            {
+                "id": "53",
+                "name": "云南",
+                "pv_count": 11,
+                "visit_count": 2,
+                "visitor_count": 2,
+                "ip_count": 2
+            },
+            {
+                "id": "21",
+                "name": "辽宁",
+                "pv_count": 7,
+                "visit_count": 3,
+                "visitor_count": 2,
+                "ip_count": 2
+            },
+            {
+                "id": "52",
+                "name": "贵州",
+                "pv_count": 6,
+                "visit_count": 1,
+                "visitor_count": 1,
+                "ip_count": 1
+            },
+            {
+                "id": "12",
+                "name": "天津",
+                "pv_count": 3,
+                "visit_count": 1,
+                "visitor_count": 1,
+                "ip_count": 1
+            },
+            {
+                "id": "0",
+                "name": "其他",
+                "pv_count": 2,
+                "visit_count": 1,
+                "visitor_count": 1,
+                "ip_count": 1
+            },
+            {
+                "id": "45",
+                "name": "广西",
+                "pv_count": 1,
+                "visit_count": 1,
+                "visitor_count": 1,
+                "ip_count": 1
+            }
     ]
 }

@@ -253,6 +253,62 @@ $(function() {
                     template: '#= kendo.toString(value / 100, "p") #'
                 }
             });
+            // 中国访客地域分布
+            $('#visitChina').kendoMap({
+                center: [36.320666, 103.815888],
+                controls: {
+                    attribution: false,
+                    navigator: false,
+                    zoom: false
+                },
+                pannable: false,
+                zoom: 3,
+                zoomable: false,
+                layerDefaults: {
+                    shape: {
+                        style: {
+                            fill: {
+                                color: minorColor,
+                                opacity: .8
+                            },
+                            stroke: {
+                                color: '#666666',
+                                dashType: 'dash'
+                            }
+                        }
+                    }
+                },
+                layers: [
+                    {
+                        type: 'shape',
+                        dataSource: {
+                            type: 'geojson',
+                            transport: {
+                                read: 'json/geo/china.json'
+                            }
+                        }
+                    }
+                ],
+                shapeFeatureCreated: function(e) {
+                    $.each(res.map.China, function(i, province) {
+                        if (province.id === e.dataItem.properties.id) {
+                            $.each(e.group.children, function(k, items) {
+                                items.options.set('fill.color', accentColor);
+                            });
+                            e.group.options.tooltip = {
+                                content: e.properties.name + '：<br><hr class="theme-m-txt my-2">浏览量：' + province.pv_count + '<br>访问次数：' + province.visit_count + '<br>访客数：' + province.visitor_count + '<br>IP 数：' + province.ip_count,
+                                position: 'cursor'
+                            };
+                        }
+                    });
+                },
+                shapeMouseEnter: function(e) {
+                    e.shape.options.set('fill.opacity', .5);
+                },
+                shapeMouseLeave: function(e) {
+                    e.shape.options.set('fill.opacity', .8);
+                }
+            });
         }
     });
 });
