@@ -309,6 +309,62 @@ $(function() {
                     e.shape.options.set('fill.opacity', .8);
                 }
             });
+            // 世界访客地域分布
+            $('#visitWorld').kendoMap({
+                center: [51.51515, -0.126500],
+                controls: {
+                    attribution: false,
+                    navigator: false,
+                    zoom: false
+                },
+                pannable: false,
+                zoom: 1,
+                zoomable: false,
+                layerDefaults: {
+                    shape: {
+                        style: {
+                            fill: {
+                                color: minorColor,
+                                opacity: .8
+                            },
+                            stroke: {
+                                color: '#666666',
+                                dashType: 'dash'
+                            }
+                        }
+                    }
+                },
+                layers: [
+                    {
+                        type: 'shape',
+                        dataSource: {
+                            type: 'geojson',
+                            transport: {
+                                read: 'json/geo/world.json'
+                            }
+                        }
+                    }
+                ],
+                shapeFeatureCreated: function(e) {
+                    $.each(res.map.world, function(i, country) {
+                        if (country.id === e.dataItem.properties.name) {
+                            $.each(e.group.children, function(k, items) {
+                                items.options.set('fill.color', accentColor);
+                            });
+                            e.group.options.tooltip = {
+                                content: '<i class="flag-icon flag-icon-' + country.code + ' mr-1"></i>' + country.name + ' (' + e.properties.name + ')：<br><hr class="theme-m-txt my-2">浏览量：' + country.pv_count + '<br>访问次数：' + country.visit_count + '<br>访客数：' + country.visitor_count + '<br>IP 数：' + country.ip_count,
+                                position: 'cursor'
+                            };
+                        }
+                    });
+                },
+                shapeMouseEnter: function(e) {
+                    e.shape.options.set('fill.opacity', .5);
+                },
+                shapeMouseLeave: function(e) {
+                    e.shape.options.set('fill.opacity', .8);
+                }
+            });
         }
     });
 });
