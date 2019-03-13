@@ -1,8 +1,8 @@
 <h1 align="center">🌸 Kendo UI Admin &amp; Site 🐱</h1>
 <p align="center">Kendo UI Admin &amp; Site base on Kendo UI for jQuery and Bootstrap 4.</p>
-<p align="center"><a href="https://ikki2000.github.io/KendoUI-Admin-Site/" target="_blank">https://ikki2000.github.io/KendoUI-Admin-Site/</a></p>
+<p align="center"><a href="https://ikki2000.github.io/KendoUI-Admin-Site/">https://ikki2000.github.io/KendoUI-Admin-Site/</a></p>
 
-## 🌟 特点
+## 🌟 特点 <small>Features</small>
 
 * 无工程化零配置
 * 下载无安装开箱即用
@@ -18,32 +18,188 @@
 * Sass 样式预处理
 * 5 套配色皮肤可选
 
-## 🌐 浏览器支持
+## 🌐 浏览器支持 <small>Browser Support</small>
 
 * 现代浏览器和 IE10 及以上
 
-| <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_32x32.png" alt="IE / Edge"><br>IE / Edge | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_32x32.png" alt="Firefox"><br>Firefox | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_32x32.png" alt="Chrome"><br>Chrome | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_32x32.png" alt="Safari"><br>Safari | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_32x32.png" alt="Opera"><br>Opera |
-| :----------: | :----------: | :----------: | :----------: | :----------: |
-| IE10, IE11, Edge | last 2 versions | last 2 versions | last 2 versions | last 2 versions |
+| <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_32x32.png" alt="IE"><br>IE | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_32x32.png" alt="Edge"><br>Edge | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_32x32.png" alt="Firefox"><br>Firefox | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_32x32.png" alt="Chrome"><br>Chrome | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_32x32.png" alt="Safari"><br>Safari | <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_32x32.png" alt="Opera"><br>Opera |
+| :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
+| 10, 11 | last 2 versions | last 2 versions | last 2 versions | last 2 versions | last 2 versions |
 
-## 📖 使用指南
+## 📖 初始化 <small>Initialization</small>
 
-1. [下载](https://github.com/IKKI2000/KendoUI-Admin-Site/archive/master.zip)并解压至项目根目录~
-2. 将 `index.html`、`admin/login.html`、`admin/index.html`、`site/login.html`、`site/index.html`
-    这 5 个文件头部 `<base>` 标签内的 `href` 修改为前端本地的开发根路径，形如：
-    `<base href="http://localhost:8888/YourProject/">`
-    > 注意：最后的 `/` 不要漏掉~
-3. 将 `js/ikki.js` 里的 `apiPath` 修改为后端服务器 API 接口根路径，形如：
-    `var apiPath = 'https://dev.YourDomain.com/api/';`
-    两处 `ajaxType: 'get'` 恢复为 `ajaxType: 'post'`
-    一处 `urlType: 'static'` 恢复为 `urlType: 'api'`
-4. 用编辑器（如：WebStorm）启动本地环境运行 `index.html` 即可~
+1. [下载](https://github.com/IKKI2000/KendoUI-Admin-Site/archive/master.zip)并解压至项目**根**目录~
+2. 将下列 **5** 个 HTML 文件的 `<base>` 修改为前端本地的开发**根**路径~
+    ```diff
+    diff index.html
+    --- <base href="https://ikki2000.github.io/KendoUI-Admin-Site/">
+    +++ <base href="http://localhost:8888/YourProject/">
+    diff admin/login.html
+    diff admin/index.html
+    --- <base href="https://ikki2000.github.io/KendoUI-Admin-Site/" type="admin">
+    +++ <base href="http://localhost:8888/YourProject/" type="admin">
+    diff site/login.html
+    diff site/index.html
+    --- <base href="https://ikki2000.github.io/KendoUI-Admin-Site/" type="site">
+    +++ <base href="http://localhost:8888/YourProject/" type="site">
+    ```
+    > <font color="red">注意：</font>最后的 `/` 不要漏掉~
+3. 将下列 JS 文件的 `apiPath` 修改为后端服务器的 API 接口**根**路径~ 并恢复 **3** 个默认参数~
+    ```diff
+    diff js/ikki.js
+        // 配置接口路径
+    --- var apiPath = 'https://ikki2000.github.io/KendoUI-Admin-Site/';
+    +++ var apiPath = 'https://dev.YourDomain.com/api/';
+        // Ajax 提交
+    --- ajaxType: 'get', // GitHub Pages 演示只支持 get 请求，正常使用请改回 post 请求
+    +++ ajaxType: 'post',
+    --- urlType: 'static', // GitHub Pages 演示接口为静态 json 文件，正常使用请改回 api 类型
+    +++ urlType: 'api',
+        // 带二进制流的 Ajax 提交
+    --- ajaxType: 'get', // GitHub Pages 演示只支持 get 请求，正常使用请改回 post 请求
+    +++ ajaxType: 'post',
+    ```
+4. 用 IDE 编辑器（如：WebStorm）打开 `index.html` 并选择浏览器启动本地服务即可~
+    ```text
+    http://localhost:8888/YourProject/index.html
+    ```
 
-> 另：在 `view` 目录下建立子页面时必须包含同名的 `xxx.html` 和 `xxx.js` 两个文件~ 并且 HTML 页面第一行的模版 ID 必须形如： `<script id="xxxTemp" type="text/x-kendo-template">`
+## 🔨 开发指南 <small>Developer's Guide</small>
 
-## 📜 目录结构
+* 所有的子页面模块均存放在 `views` 目录或其自定义的子目录下
+* 每一个子页面模块均由同名的 `xxx.html` 和 `xxx.js` 两个文件组成
+* 每一个子页面模块的 HTML 页面第一行的模版 ID 由文件名 `xxx` 和 `Temp` 组成
+    ```html
+    <script id="xxxTemp" type="text/x-kendo-template">
+    ```
+* 只应用于当前子页面模块的样式写在模块的 HTML 文件中
+    ```html
+    <style scoped>
+        ···
+    </style>
+    ```
+* 子页面模块的 HTML 文件基本结构如下：
+    ```html
+    <script id="xxxTemp" type="text/x-kendo-template">
+        <div>
+            ···
+        </div>
+        <script id="otherTemplate" type="text/x-kendo-template">
+            ···
+        </script>
+        <style scoped>
+            ···
+        </style>
+    </script>
+    ```
+* 顶部菜单本地 Mock 数据位于 `json/menu.json` 其数据结构同左侧导航
+* 左侧导航本地 Mock 数据位于 `json/nav.json` 其中 `text` 键值说明如下：
+    * `<i>` 为图标
+    * `<sup>` 为折叠后的角标
+    * `<abbr>` 包裹折叠后一级导航不显示的文字部分
+    * `<small>` 为可选次级文字
+    * `<sub>` 为角标
+* 左侧导航 `url` 键值包含的 `linkTo` 方法为路由函数<br>其中第一个参数为子页面模块相对于 `views` 目录所在的目录<br>第二个参数为子页面模块的名称<br>`cssClass` 键值为面包屑要用到的 DOM 定位，由 `links-模块名称` 组成
+* 顶部菜单及左侧导航的 API 接口地址位于 `ikki.layout.js` 文件内
+* `ikki.js` 文件内封装了一些公用方法，具体参数及说明如下：
+    | 方法 | 参数 | 类型 | 默认值 | 说明 |
+    | ----- | ----- | ----- | ----- | ----- |
+    | $.fn.ajaxPost | --- | --- | --- | 封装的带 **token** 的 ajax 提交 |
+    |  | ajaxAsync | boolean | true | ajax 的 async 属性 |
+    |  | ajaxType | string | 'post' | ajax 的 type 属性 |
+    |  | ajaxData | string | '' | 用 **JSON.stringify()** 封装的 ajax 的 data 属性 |
+    |  | urlType | string | 'api' | 读取本地 json 的时候换成 'static' |
+    |  | ajaxUrl | string | '' | ajax 的 url 属性 |
+    |  | ajaxContentType | string | 'application/json; charset=UTF-8' | ajax 的 contentType 属性 |
+    |  | finished | function | {} | ajax 请求完成时的回调 |
+    |  | succeed | function | {} | ajax 请求完成并且 result === 'y' 时的回调 |
+    |  | failed | function | {} | ajax 请求完成并且 result === 'n' 时的回调 |
+    |  | isMsg | boolean | false | result === 'y' 时是否需要消息提示 |
+    | $.fn.ajaxPostBlob | --- | --- | --- | 封装的带 **token** 的二进制流 ajax 提交 |
+    |  | ajaxAsync | boolean | true | ajax 的 async 属性 |
+    |  | ajaxType | string | 'post' | ajax 的 type 属性 |
+    |  | ajaxData | string | '' | 用 **new FormData()** 封装的 ajax 的 data 属性 |
+    |  | ajaxUrl | string | '' | ajax 的 url 属性 |
+    |  | finished | function | {} | ajax 请求完成时的回调 |
+    |  | succeed | function | {} | ajax 请求完成并且 result === 'y' 时的回调 |
+    |  | failed | function | {} | ajax 请求完成并且 result === 'n' 时的回调 |
+    |  | isMsg | boolean | true | result === 'y' 时是否需要消息提示 |
+    | tipMsg | --- | --- | --- | 提示框 |
+    |  | dom | object | --- | 触发提示框的 DOM 对象 |
+    |  | msg | string | --- | 提示框显示的内容 |
+    |  | position | string | --- | 提示框的位置：<br>'top'<br>'bottom'<br>'left'<br>'right'<br>'center' |
+    | noticeMsg | --- | --- | --- | 通知框 |
+    |  | msg | string | --- | 通知框显示的内容 |
+    |  | type | string | --- | 通知框的类型：<br>'info'<br>'success'<br>'warning'<br>'error' |
+    |  | position | string | --- | 通知框的位置：<br>'center'<br>'top'<br>'left'<br>'right'<br>'bottom'<br>'left top'<br>'right top'<br>'left bottom'<br>'right bottom' |
+    |  | time | number | --- | 自动消失的时间<br>单位：ms |
+    |  | hided | function | --- | 通知框消失后的回调 |
+    | alertMsg | --- | --- | --- | 警告框 |
+    | alertMsgBtn | --- | --- | --- | 警告框小按钮 |
+    | alertMsgNoBtn | --- | --- | --- | 警告框无按钮 |
+    |  | msg | string | --- | 警告框显示的内容 |
+    |  | type | string | --- | 警告框的类型：<br>'success'<br>'info'<br>'question'<br>'warning'<br>'error' |
+    |  | closed | function | --- | 警告框关闭后的回调 |
+    | confirmMsg | --- | --- | --- | 确认框 |
+    | confirmMsgBtn | --- | --- | --- | 确认框小按钮 |
+    |  | title | string | --- | 确认框显示的标题 |
+    |  | msg | string | --- | 确认框显示的内容 |
+    |  | type | string | --- | 确认框的类型：<br>'success'<br>'info'<br>'question'<br>'warning'<br>'error' |
+    |  | confirmed | function | --- | 确认框确认后的回调 |
+    | divWindow | --- | --- | --- | 弹出层 |
+    |  | title | string | --- | 弹出层显示的标题 |
+    |  | width | string | --- | 弹出层宽度<br>单位：px 或 % |
+    |  | height | string | --- | 弹出层高度<br>单位：px 或 % |
+    |  | content | object | --- | 弹出层显示的 DOM 对象 |
+    | iframeWindow | --- | --- | --- | 弹出页 |
+    |  | title | string | --- | 弹出页显示的标题 |
+    |  | width | string | --- | 弹出页宽度<br>单位：px 或 % |
+    |  | height | string | --- | 弹出页高度<br>单位：px 或 % |
+    |  | url | string | --- | 弹出页显示的 iFrame 链接地址 |
+    | showBigPic | --- | --- | --- | 大图预览 |
+    |  | url | string | --- | 大图的绝对路径 |
+    | numericRange | --- | --- | --- | 数字型范围 |
+    |  | rangeStart | object | --- | 开始的 DOM 对象 |
+    |  | rangeEnd | object | --- | 结束的 DOM 对象 |
+    |  | format | string | --- | 格式 |
+    |  | decimals | number | --- | 保留几位小数 |
+    |  | step | number | --- | 步进 |
+    |  | min | number | --- | 最小值 |
+    |  | max | number | --- | 最大值 |
+    | dateRange | --- | --- | --- | 日期型范围 |
+    | dateInputRange | --- | --- | --- | 日期输入型范围 |
+    |  | rangeStart | object | --- | 开始的 DOM 对象 |
+    |  | rangeEnd | object | --- | 结束的 DOM 对象 |
+    |  | type | string | --- | 日期的类型：<br>'Year'<br>'Month'<br>'Time'<br>'DateTime'<br>'Date' |
+    | serializeObject | --- | --- | --- | 表单序列化 json 对象 |
 
-### 完整版：
+#### 前后端交互规范：
+
+* 前后端交互全部采用 Ajax 方式提交
+* 前端提交给后端的数据格式分为标准的 `json` 格式和带二进制流的 `form data` 格式两种
+* 后端返回给前端的 `json` 格式标准如下：
+    ```json
+    {
+        "result": "y",
+        "msg": "操作成功！",
+        "data": []
+    }
+    ```
+* 所有日期 `date` 类型的数据全部转换成字符串 `string` 类型进行交互，即前端给到后端和后端给到前端的数据均为字符串
+    ```json
+    {
+        "year": "2019",
+        "month": "2019-02",
+        "date": "2019-02-03",
+        "time": "12:00", 
+        "datetime": "2019-02-03 12:00" 
+    }
+    ```
+* 所有组件交互的数据格式请参考前端 Mock 数据目录 `json/`
+
+## 📜 目录结构 <small>Directory Structure</small>
+
+#### 完整版：
 
 > 后台默认使用的是路由版~ 如需使用框架版、标签版和布局版，请直接将对应的 `index_xxx.html` 启动或直接改名为 `index.html` 即可~
 
@@ -121,9 +277,13 @@ ROOT/·····································�
 ├── LICENSE············································（MIT）
 └── README.md··········································（本说明文档）
 ```
-### 纯后台管理路由精简版：
+#### 纯后台管理路由精简版：
 
 > 如果只需要后台管理界面的路由版~ 可将原 `admin` 目录下的文件移动至根目录并按照如下目录结构删除多余的文件~ 且将 `login.html` 和 `index.html` 头部 `<base>` 标签内的 `type` 置空即可~
+
+```html
+    <base href="http://localhost:8888/YourProject/" type="">
+```
 
 ```text
 ROOT/··················································（项目根目录）
@@ -163,36 +323,36 @@ ROOT/·····································�
 └── login.html·········································（后台入口登录页）
 ```
 
-## 📁 功能列表
+## 📁 功能列表 <small>Function List</small>
 
-### 顶部菜单
+#### 顶部菜单 <small>[ Menu ]</small>
 
-* 导航折叠
-* 面包屑
-* 刷新
-* 全屏
-* 锁屏
-* 配色
-* 语言
-* 消息
-* 提醒
-* 用户名头像显示
-* 前台切换
-* 用户中心
-* 修改密码
-* 系统设置
-* 退出登录
+* 导航折叠 <small>[ Navigation Drawer ]</small>
+* 面包屑 <small>[ Breadcrumb ]</small>
+* 刷新 <small>[ Refresh ]</small>
+* 全屏 <small>[ Full Screen ]</small>
+* 锁屏 <small>[ Lock Screen ]</small>
+* 配色 <small>[ Theme ]</small>
+* 语言 <small>[ Localization ]</small>
+* 消息 <small>[ Message ]</small>
+* 提醒 <small>[ Notice ]</small>
+* 用户名头像显示 <small>[ User Name & Avatar ]</small>
+* 前台切换 <small>[ Goto Website ]</small>
+* 用户中心 <small>[ User Center ]</small>
+* 修改密码 <small>[ Change Password ]</small>
+* 系统设置 <small>[ Setting ]</small>
+* 退出登录 <small>[ Sign Out ]</small>
 
-### 左侧导航
+#### 左侧导航 <small>[ Navigation ]</small>
 
-* 综合 Dashboard
-    * 表单 Forms
+* 综合 <small>[ Dashboard ]</small>
+    * 表单 <small>[ Forms ]</small>
         * 表单 Post 提交
         * 表单 Ajax 提交
         * 范围选择
         * 下拉分组多选级联
         * 地图联动选择
-    * 表格 Grids
+    * 表格 <small>[ Grids ]</small>
         * 全功能搜索及自定义编辑
         * 弹出框带校验编辑
         * 行内带校验编辑
@@ -203,121 +363,121 @@ ROOT/·····································�
         * 分组合计排序筛选
         * 子表详情及滚动翻页
         * 合并表头及行内拆分
-    * 树形 Trees
+    * 树形 <small>[ Trees ]</small>
         * 敬请期待……
-    * 列表 Lists
+    * 列表 <small>[ Lists ]</small>
         * 敬请期待……
-    * 分配 Assigns
+    * 分配 <small>[ Assigns ]</small>
         * 敬请期待……
-* 框架 Framework
-    * 全球化 Globalization
-    * 视图模型 MVVM
-    * 数据源 DataSource
-    * 模版 Templates
-    * 绘图 Drawing
-    * 单页应用 SPA
-    * PDF导出 PDF Export
-    * 触摸事件 Touch Events
-    * 整合 Integration
-* 布局 Layout
-    * 页面布局 Splitter
-    * 响应面板 Responsive Panel
-    * 模态框 Window
-    * 对话框 Dialog
-    * 通知框 Notification
-    * 提示框 Tooltip
-* 导航 Navigation
-    * 菜单 Menu
-    * 折叠面板 PanelBar
-    * 选项卡 TabStrip
-    * 工具栏 ToolBar
-    * 树形视图 TreeView
-    * 按钮 Button
-    * 按钮组 ButtonGroup
-* 表单 Forms
-    * 转换框 Switch
-    * 数字框 NumericTextBox
-    * 日期框 DatePicker
-    * 日期范围框 DateRangePicker
-    * 时间框 TimePicker
-    * 时日框 DateTimePicker
-    * 时日掩码框 DateInput
-    * 掩码框 MaskedTextBox
-    * 自动完成框 AutoComplete
-    * 单选下拉框 DropDownList
-    * 输入下拉框 ComboBox
-    * 表格下拉框 MultiColumnComboBox
-    * 多选下拉框 MultiSelect
-    * 树形下拉框 DropDownTree
-    * 颜色框 ColorPicker
-    * 滑块框 Slider
-    * 进度框 ProgressBar
-    * 穿梭框 ListBox
-    * 富文本框 Editor
-    * 上传框 Upload
-    * 验证 Validator
-* 数据 Data
-    * 表格 Grid
-    * 树形列表 TreeList
-    * 列表视图 ListView
-    * 电子表格 Spreadsheet
-    * 透视表格 PivotGrid
-* 日程 Scheduling
-    * 日历 Calendar
-    * 多重日历 MultiViewCalendar
-    * 日程表 Scheduler
-    * 甘特图 Gantt
-* 会话 Conversational
-    * 聊天 Chat
-* 媒体 Media
-    * 媒体播放器 MediaPlayer
-    * 滚动视图 ScrollView
-* 交互 Interactivity
-    * 拖放 Drag and Drop
-    * 拖放排序 Sortable
-    * 样式 Styling
-    * 特效 Effects
-    * 波纹效果 Ripple Container
-* 图表 Charts
-    * 区域图 Area Charts
-    * 条形图 Bar Charts
-    * 箱线图 Box Plot Charts
-    * 气泡图 Bubble Charts
-    * 子弹图 Bullet Charts
-    * 环形图 Donut Charts
-    * 漏斗图 Funnel Charts
-    * 折线图 Line Charts
-    * 饼图 Pie Charts
-    * 极坐标图 Polar Charts
-    * 雷达图 Radar Charts
-    * 散点图 Scatter Charts
-    * 波形图 Sparklines
-    * 股票图 Stock Charts
-    * 树图 TreeMap
-    * 瀑布图 Waterfall Charts
-    * 范区域图 Range Area Charts
-    * 范条形图 Range Bar Charts
-    * 量规 Gauges
-        * 线性计 Linear Gauge
-        * 径向计 Radial Gauge
-        * 弧形计 Arc Gauge
-    * 条码 Barcodes
-        * 条形码 Barcode
-        * 二维码 QR Code
-    * 地图 Maps
-        * 架构图 Diagram
-        * 地图 Map
-* 移动端 Hybrid
+* 框架 <small>[ Framework ]</small>
+    * 全球化 <small>[ Globalization ]</small>
+    * 视图模型 <small>[ MVVM ]</small>
+    * 数据源 <small>[ DataSource ]</small>
+    * 模版 <small>[ Templates ]</small>
+    * 绘图 <small>[ Drawing ]</small>
+    * 单页应用 <small>[ SPA ]</small>
+    * PDF导出 <small>[ PDF Export ]</small>
+    * 触摸事件 <small>[ Touch Events ]</small>
+    * 整合 <small>[ Integration ]</small>
+* 布局 <small>[ Layout ]</small>
+    * 页面布局 <small>[ Splitter ]</small>
+    * 响应面板 <small>[ Responsive Panel ]</small>
+    * 模态框 <small>[ Window ]</small>
+    * 对话框 <small>[ Dialog ]</small>
+    * 通知框 <small>[ Notification ]</small>
+    * 提示框 <small>[ Tooltip ]</small>
+* 导航 <small>[ Navigation ]</small>
+    * 菜单 <small>[ Menu ]</small>
+    * 折叠面板 <small>[ PanelBar ]</small>
+    * 选项卡 <small>[ TabStrip ]</small>
+    * 工具栏 <small>[ ToolBar ]</small>
+    * 树形视图 <small>[ TreeView ]</small>
+    * 按钮 <small>[ Button ]</small>
+    * 按钮组 <small>[ ButtonGroup ]</small>
+* 表单 <small>[ Forms ]</small>
+    * 转换框 <small>[ Switch ]</small>
+    * 数字框 <small>[ NumericTextBox ]</small>
+    * 日期框 <small>[ DatePicker ]</small>
+    * 日期范围框 <small>[ DateRangePicker ]</small>
+    * 时间框 <small>[ TimePicker ]</small>
+    * 时日框 <small>[ DateTimePicker ]</small>
+    * 时日掩码框 <small>[ DateInput ]</small>
+    * 掩码框 <small>[ MaskedTextBox ]</small>
+    * 自动完成框 <small>[ AutoComplete ]</small>
+    * 单选下拉框 <small>[ DropDownList ]</small>
+    * 输入下拉框 <small>[ ComboBox ]</small>
+    * 表格下拉框 <small>[ MultiColumnComboBox ]</small>
+    * 多选下拉框 <small>[ MultiSelect ]</small>
+    * 树形下拉框 <small>[ DropDownTree ]</small>
+    * 颜色框 <small>[ ColorPicker ]</small>
+    * 滑块框 <small>[ Slider ]</small>
+    * 进度框 <small>[ ProgressBar ]</small>
+    * 穿梭框 <small>[ ListBox ]</small>
+    * 富文本框 <small>[ Editor ]</small>
+    * 上传框 <small>[ Upload ]</small>
+    * 验证 <small>[ Validator ]</small>
+* 数据 <small>[ Data ]</small>
+    * 表格 <small>[ Grid ]</small>
+    * 树形列表 <small>[ TreeList ]</small>
+    * 列表视图 <small>[ ListView ]</small>
+    * 电子表格 <small>[ Spreadsheet ]</small>
+    * 透视表格 <small>[ PivotGrid ]</small>
+* 日程 <small>[ Scheduling ]</small>
+    * 日历 <small>[ Calendar ]</small>
+    * 多重日历 <small>[ MultiViewCalendar ]</small>
+    * 日程表 <small>[ Scheduler ]</small>
+    * 甘特图 <small>[ Gantt ]</small>
+* 会话 <small>[ Conversational ]</small>
+    * 聊天 <small>[ Chat ]</small>
+* 媒体 <small>[ Media ]</small>
+    * 媒体播放器 <small>[ MediaPlayer ]</small>
+    * 滚动视图 <small>[ ScrollView ]</small>
+* 交互 <small>[ Interactivity ]</small>
+    * 拖放 <small>[ Drag and Drop ]</small>
+    * 拖放排序 <small>[ Sortable ]</small>
+    * 样式 <small>[ Styling ]</small>
+    * 特效 <small>[ Effects ]</small>
+    * 波纹效果 <small>[ Ripple Container ]</small>
+* 图表 <small>[ Charts ]</small>
+    * 区域图 <small>[ Area Charts ]</small>
+    * 条形图 <small>[ Bar Charts ]</small>
+    * 箱线图 <small>[ Box Plot Charts ]</small>
+    * 气泡图 <small>[ Bubble Charts ]</small>
+    * 子弹图 <small>[ Bullet Charts ]</small>
+    * 环形图 <small>[ Donut Charts ]</small>
+    * 漏斗图 <small>[ Funnel Charts ]</small>
+    * 折线图 <small>[ Line Charts ]</small>
+    * 饼图 <small>[ Pie Charts ]</small>
+    * 极坐标图 <small>[ Polar Charts ]</small>
+    * 雷达图 <small>[ Radar Charts ]</small>
+    * 散点图 <small>[ Scatter Charts ]</small>
+    * 波形图 <small>[ Sparklines ]</small>
+    * 股票图 <small>[ Stock Charts ]</small>
+    * 树图 <small>[ TreeMap ]</small>
+    * 瀑布图 <small>[ Waterfall Charts ]</small>
+    * 范区域图 <small>[ Range Area Charts ]</small>
+    * 范条形图 <small>[ Range Bar Charts ]</small>
+    * 量规 <small>[ Gauges ]</small>
+        * 线性计 <small>[ Linear Gauge ]</small>
+        * 径向计 <small>[ Radial Gauge ]</small>
+        * 弧形计 <small>[ Arc Gauge ]</small>
+    * 条码 <small>[ Barcodes ]</small>
+        * 条形码 <small>[ Barcode ]</small>
+        * 二维码 <small>[ QR Code ]</small>
+    * 地图 <small>[ Maps ]</small>
+        * 架构图 <small>[ Diagram ]</small>
+        * 地图 <small>[ Map ]</small>
+* 移动端 <small>[ Hybrid ]</small>
     * 敬请期待……
 
-## 🔗 相关链接
+## 🔗 相关链接 <small>Thanks for</small>
 
-* [jQuery](https://github.com/jquery/jquery) (v1.12.4)
-* [Kendo UI for jQuery 官网](https://www.telerik.com/kendo-jquery-ui) (v2019.1.115)
-* [Kendo UI themes](https://github.com/telerik/kendo-themes) (v3.3.1)
-* [Bootstrap](https://github.com/twbs/bootstrap) (v4.3.1)
-* [Font Awesome](https://github.com/FortAwesome/Font-Awesome) (v5.7.2)
-* [Flag Icon Css](https://github.com/lipis/flag-icon-css) (v3.3.0)
-* [Count Up](https://github.com/inorganik/countUp.js) (v1.9.3)
-* [Verify](https://github.com/Hibear/verify) (v0.1.0)
-* [Particleground](https://requestlab.fr/) (v1.1.0)
+* [jQuery](https://github.com/jquery/jquery) ( v1.12.4 )
+* [Kendo UI for jQuery 官网](https://www.telerik.com/kendo-jquery-ui) ( v2019.1.115 )
+* [Kendo UI themes](https://github.com/telerik/kendo-themes) ( v3.3.1 )
+* [Bootstrap](https://github.com/twbs/bootstrap) ( v4.3.1 )
+* [Font Awesome](https://github.com/FortAwesome/Font-Awesome) ( v5.7.2 )
+* [Flag Icon Css](https://github.com/lipis/flag-icon-css) ( v3.3.0 )
+* [Count Up](https://github.com/inorganik/countUp.js) ( v1.9.3 )
+* [Verify](https://github.com/Hibear/verify) ( v0.1.0 )
+* [Particleground](https://requestlab.fr/) ( v1.1.0 )
