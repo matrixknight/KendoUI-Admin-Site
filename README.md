@@ -26,36 +26,39 @@
 | :----------: | :----------: | :----------: | :----------: | :----------: | :----------: |
 | 10, 11 | last 2 versions | last 2 versions | last 2 versions | last 2 versions | last 2 versions |
 
-## 📖 初始化 <small>Initialization</small>
+## 📖 使用指南 <small>Initialization</small>
 
 1. [下载](https://github.com/IKKI2000/KendoUI-Admin-Site/archive/master.zip)并解压至项目**根**目录~
 2. 将下列 **5** 个 HTML 文件的 `<base>` 修改为前端本地的开发**根**路径~
     ```diff
-    diff index.html
+    index.html
     --- <base href="https://ikki2000.github.io/KendoUI-Admin-Site/">
     +++ <base href="http://localhost:8888/YourProject/">
-    diff admin/login.html
-    diff admin/index.html
+    
+    admin/login.html & admin/index.html
     --- <base href="https://ikki2000.github.io/KendoUI-Admin-Site/" type="admin">
     +++ <base href="http://localhost:8888/YourProject/" type="admin">
-    diff site/login.html
-    diff site/index.html
+    
+    site/login.html & site/index.html
     --- <base href="https://ikki2000.github.io/KendoUI-Admin-Site/" type="site">
     +++ <base href="http://localhost:8888/YourProject/" type="site">
     ```
-    > <font color="red">注意：</font>最后的 `/` 不要漏掉~
+    > 注意：最后的 `/` 不要漏掉~
 3. 将下列 JS 文件的 `apiPath` 修改为后端服务器的 API 接口**根**路径~ 并恢复 **3** 个默认参数~
     ```diff
-    diff js/ikki.js
-        // 配置接口路径
+    js/ikki.js
+    
+    // 配置接口路径
     --- var apiPath = 'https://ikki2000.github.io/KendoUI-Admin-Site/';
     +++ var apiPath = 'https://dev.YourDomain.com/api/';
-        // Ajax 提交
+    
+    // Ajax 提交
     --- ajaxType: 'get', // GitHub Pages 演示只支持 get 请求，正常使用请改回 post 请求
     +++ ajaxType: 'post',
     --- urlType: 'static', // GitHub Pages 演示接口为静态 json 文件，正常使用请改回 api 类型
     +++ urlType: 'api',
-        // 带二进制流的 Ajax 提交
+    
+    // 带二进制流的 Ajax 提交
     --- ajaxType: 'get', // GitHub Pages 演示只支持 get 请求，正常使用请改回 post 请求
     +++ ajaxType: 'post',
     ```
@@ -102,6 +105,7 @@
 * 左侧导航 `url` 键值包含的 `linkTo` 方法为路由函数<br>其中第一个参数为子页面模块相对于 `views` 目录所在的目录<br>第二个参数为子页面模块的名称<br>`cssClass` 键值为面包屑要用到的 DOM 定位，由 `links-模块名称` 组成
 * 顶部菜单及左侧导航的 API 接口地址位于 `ikki.layout.js` 文件内
 * `ikki.js` 文件内封装了一些公用方法，具体参数及说明如下：
+
     | 方法 | 参数 | 类型 | 默认值 | 说明 |
     | ----- | ----- | ----- | ----- | ----- |
     | $.fn.ajaxPost | --- | --- | --- | 封装的带 **token** 的 ajax 提交 |
