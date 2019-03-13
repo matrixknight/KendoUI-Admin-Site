@@ -108,74 +108,74 @@
 
     | 方法 | 参数 | 类型 | 默认值 | 说明 |
     | ----- | ----- | ----- | ----- | ----- |
-    | $.fn.ajaxPost | --- | --- | --- | 封装的带 **token** 的 ajax 提交 |
-    |  | ajaxAsync | boolean | true | ajax 的 async 属性 |
-    |  | ajaxType | string | 'post' | ajax 的 type 属性 |
-    |  | ajaxData | string | '' | 用 **JSON.stringify()** 封装的 ajax 的 data 属性 |
-    |  | urlType | string | 'api' | 读取本地 json 的时候换成 'static' |
-    |  | ajaxUrl | string | '' | ajax 的 url 属性 |
-    |  | ajaxContentType | string | 'application/json; charset=UTF-8' | ajax 的 contentType 属性 |
-    |  | finished | function | {} | ajax 请求完成时的回调 |
-    |  | succeed | function | {} | ajax 请求完成并且 result === 'y' 时的回调 |
-    |  | failed | function | {} | ajax 请求完成并且 result === 'n' 时的回调 |
-    |  | isMsg | boolean | false | result === 'y' 时是否需要消息提示 |
-    | $.fn.ajaxPostBlob | --- | --- | --- | 封装的带 **token** 的二进制流 ajax 提交 |
-    |  | ajaxAsync | boolean | true | ajax 的 async 属性 |
-    |  | ajaxType | string | 'post' | ajax 的 type 属性 |
-    |  | ajaxData | string | '' | 用 **new FormData()** 封装的 ajax 的 data 属性 |
-    |  | ajaxUrl | string | '' | ajax 的 url 属性 |
-    |  | finished | function | {} | ajax 请求完成时的回调 |
-    |  | succeed | function | {} | ajax 请求完成并且 result === 'y' 时的回调 |
-    |  | failed | function | {} | ajax 请求完成并且 result === 'n' 时的回调 |
-    |  | isMsg | boolean | true | result === 'y' 时是否需要消息提示 |
-    | tipMsg | --- | --- | --- | 提示框 |
-    |  | dom | object | --- | 触发提示框的 DOM 对象 |
-    |  | msg | string | --- | 提示框显示的内容 |
-    |  | position | string | --- | 提示框的位置：<br>'top'<br>'bottom'<br>'left'<br>'right'<br>'center' |
-    | noticeMsg | --- | --- | --- | 通知框 |
-    |  | msg | string | --- | 通知框显示的内容 |
-    |  | type | string | --- | 通知框的类型：<br>'info'<br>'success'<br>'warning'<br>'error' |
-    |  | position | string | --- | 通知框的位置：<br>'center'<br>'top'<br>'left'<br>'right'<br>'bottom'<br>'left top'<br>'right top'<br>'left bottom'<br>'right bottom' |
-    |  | time | number | --- | 自动消失的时间<br>单位：ms |
-    |  | hided | function | --- | 通知框消失后的回调 |
-    | alertMsg | --- | --- | --- | 警告框 |
-    | alertMsgBtn | --- | --- | --- | 警告框小按钮 |
-    | alertMsgNoBtn | --- | --- | --- | 警告框无按钮 |
-    |  | msg | string | --- | 警告框显示的内容 |
-    |  | type | string | --- | 警告框的类型：<br>'success'<br>'info'<br>'question'<br>'warning'<br>'error' |
-    |  | closed | function | --- | 警告框关闭后的回调 |
-    | confirmMsg | --- | --- | --- | 确认框 |
-    | confirmMsgBtn | --- | --- | --- | 确认框小按钮 |
-    |  | title | string | --- | 确认框显示的标题 |
-    |  | msg | string | --- | 确认框显示的内容 |
-    |  | type | string | --- | 确认框的类型：<br>'success'<br>'info'<br>'question'<br>'warning'<br>'error' |
-    |  | confirmed | function | --- | 确认框确认后的回调 |
-    | divWindow | --- | --- | --- | 弹出层 |
-    |  | title | string | --- | 弹出层显示的标题 |
-    |  | width | string | --- | 弹出层宽度<br>单位：px 或 % |
-    |  | height | string | --- | 弹出层高度<br>单位：px 或 % |
-    |  | content | object | --- | 弹出层显示的 DOM 对象 |
-    | iframeWindow | --- | --- | --- | 弹出页 |
-    |  | title | string | --- | 弹出页显示的标题 |
-    |  | width | string | --- | 弹出页宽度<br>单位：px 或 % |
-    |  | height | string | --- | 弹出页高度<br>单位：px 或 % |
-    |  | url | string | --- | 弹出页显示的 iFrame 链接地址 |
-    | showBigPic | --- | --- | --- | 大图预览 |
-    |  | url | string | --- | 大图的绝对路径 |
-    | numericRange | --- | --- | --- | 数字型范围 |
-    |  | rangeStart | object | --- | 开始的 DOM 对象 |
-    |  | rangeEnd | object | --- | 结束的 DOM 对象 |
-    |  | format | string | --- | 格式 |
-    |  | decimals | number | --- | 保留几位小数 |
-    |  | step | number | --- | 步进 |
-    |  | min | number | --- | 最小值 |
-    |  | max | number | --- | 最大值 |
-    | dateRange | --- | --- | --- | 日期型范围 |
-    | dateInputRange | --- | --- | --- | 日期输入型范围 |
-    |  | rangeStart | object | --- | 开始的 DOM 对象 |
-    |  | rangeEnd | object | --- | 结束的 DOM 对象 |
-    |  | type | string | --- | 日期的类型：<br>'Year'<br>'Month'<br>'Time'<br>'DateTime'<br>'Date' |
-    | serializeObject | --- | --- | --- | 表单序列化 json 对象 |
+    | **$.fn.ajaxPost** | --- | --- | --- | 封装的带 **token** 的 ajax 提交 |
+    |  | *ajaxAsync* | boolean | true | ajax 的 async 属性 |
+    |  | *ajaxType* | string | 'post' | ajax 的 type 属性 |
+    |  | *ajaxData* | string | '' | 用 **JSON.stringify()** 封装的 ajax 的 data 属性 |
+    |  | *urlType* | string | 'api' | 读取本地 json 的时候换成 'static' |
+    |  | *ajaxUrl* | string | '' | ajax 的 url 属性 |
+    |  | *ajaxContentType* | string | 'application/json; charset=UTF-8' | ajax 的 contentType 属性 |
+    |  | *finished* | function | {} | ajax 请求完成时的回调 |
+    |  | *succeed* | function | {} | ajax 请求完成并且 result === 'y' 时的回调 |
+    |  | *failed* | function | {} | ajax 请求完成并且 result === 'n' 时的回调 |
+    |  | *isMsg* | boolean | false | result === 'y' 时是否需要消息提示 |
+    | **$.fn.ajaxPostBlob** | --- | --- | --- | 封装的带 **token** 的二进制流 ajax 提交 |
+    |  | *ajaxAsync* | boolean | true | ajax 的 async 属性 |
+    |  | *ajaxType* | string | 'post' | ajax 的 type 属性 |
+    |  | *ajaxData* | string | '' | 用 **new FormData()** 封装的 ajax 的 data 属性 |
+    |  | *ajaxUrl* | string | '' | ajax 的 url 属性 |
+    |  | *finished* | function | {} | ajax 请求完成时的回调 |
+    |  | *succeed* | function | {} | ajax 请求完成并且 result === 'y' 时的回调 |
+    |  | *failed* | function | {} | ajax 请求完成并且 result === 'n' 时的回调 |
+    |  | *isMsg* | boolean | true | result === 'y' 时是否需要消息提示 |
+    | **tipMsg** | --- | --- | --- | 提示框 |
+    |  | *dom* | object | --- | 触发提示框的 DOM 对象 |
+    |  | *msg* | string | --- | 提示框显示的内容 |
+    |  | *position* | string | --- | 提示框的位置：<br>'top'<br>'bottom'<br>'left'<br>'right'<br>'center' |
+    | **noticeMsg** | --- | --- | --- | 通知框 |
+    |  | *msg* | string | --- | 通知框显示的内容 |
+    |  | *type* | string | --- | 通知框的类型：<br>'info'<br>'success'<br>'warning'<br>'error' |
+    |  | *position* | string | --- | 通知框的位置：<br>'center'<br>'top'<br>'left'<br>'right'<br>'bottom'<br>'left top'<br>'right top'<br>'left bottom'<br>'right bottom' |
+    |  | *time* | number | --- | 自动消失的时间<br>单位：ms |
+    |  | *hided* | function | --- | 通知框消失后的回调 |
+    | **alertMsg** | --- | --- | --- | 警告框 |
+    | **alertMsgBtn** | --- | --- | --- | 警告框小按钮 |
+    | **alertMsgNoBtn** | --- | --- | --- | 警告框无按钮 |
+    |  | *msg* | string | --- | 警告框显示的内容 |
+    |  | *type* | string | --- | 警告框的类型：<br>'success'<br>'info'<br>'question'<br>'warning'<br>'error' |
+    |  | *closed* | function | --- | 警告框关闭后的回调 |
+    | **confirmMsg** | --- | --- | --- | 确认框 |
+    | **confirmMsgBtn** | --- | --- | --- | 确认框小按钮 |
+    |  | *title* | string | --- | 确认框显示的标题 |
+    |  | *msg* | string | --- | 确认框显示的内容 |
+    |  | *type* | string | --- | 确认框的类型：<br>'success'<br>'info'<br>'question'<br>'warning'<br>'error' |
+    |  | *confirmed* | function | --- | 确认框确认后的回调 |
+    | **divWindow** | --- | --- | --- | 弹出层 |
+    |  | *title* | string | --- | 弹出层显示的标题 |
+    |  | *width* | string | --- | 弹出层宽度<br>单位：px 或 % |
+    |  | *height* | string | --- | 弹出层高度<br>单位：px 或 % |
+    |  | *content* | object | --- | 弹出层显示的 DOM 对象 |
+    | **iframeWindow** | --- | --- | --- | 弹出页 |
+    |  | *title* | string | --- | 弹出页显示的标题 |
+    |  | *width* | string | --- | 弹出页宽度<br>单位：px 或 % |
+    |  | *height* | string | --- | 弹出页高度<br>单位：px 或 % |
+    |  | *url* | string | --- | 弹出页显示的 iFrame 链接地址 |
+    | **showBigPic** | --- | --- | --- | 大图预览 |
+    |  | *url* | string | --- | 大图的绝对路径 |
+    | **numericRange** | --- | --- | --- | 数字型范围 |
+    |  | *rangeStart* | object | --- | 开始的 DOM 对象 |
+    |  | *rangeEnd* | object | --- | 结束的 DOM 对象 |
+    |  | *format* | string | --- | 格式 |
+    |  | *decimals* | number | --- | 保留几位小数 |
+    |  | *step* | number | --- | 步进 |
+    |  | *min* | number | --- | 最小值 |
+    |  | *max* | number | --- | 最大值 |
+    | **dateRange** | --- | --- | --- | 日期型范围 |
+    | **dateInputRange** | --- | --- | --- | 日期输入型范围 |
+    |  | *rangeStart* | object | --- | 开始的 DOM 对象 |
+    |  | *rangeEnd* | object | --- | 结束的 DOM 对象 |
+    |  | *type* | string | --- | 日期的类型：<br>'Year'<br>'Month'<br>'Time'<br>'DateTime'<br>'Date' |
+    | **serializeObject** | --- | --- | --- | 表单序列化 json 对象 |
 
 #### 前后端交互规范：
 
