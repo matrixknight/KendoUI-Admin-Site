@@ -2,6 +2,14 @@
 <p align="center">Kendo UI Admin &amp; Site base on Kendo UI for jQuery and Bootstrap 4.</p>
 <p align="center"><a href="https://ikki2000.github.io/KendoUI-Admin-Site/">https://ikki2000.github.io/KendoUI-Admin-Site/</a></p>
 
+![Home](https://raw.githubusercontent.com/IKKI2000/KendoUI-Admin-Site/master/img/screenshot/home_pc.png)
+
+![Forms](https://raw.githubusercontent.com/IKKI2000/KendoUI-Admin-Site/master/img/screenshot/forms.png)
+
+![Grid](https://raw.githubusercontent.com/IKKI2000/KendoUI-Admin-Site/master/img/screenshot/grid.png)
+
+![Themes](https://raw.githubusercontent.com/IKKI2000/KendoUI-Admin-Site/master/img/screenshot/themes.png)
+
 ## 🌟 特点 <small>Features</small>
 
 * 无工程化零配置
@@ -485,3 +493,17 @@ ROOT/·····································�
 * [Count Up](https://github.com/inorganik/countUp.js) ( v1.9.3 )
 * [Verify](https://github.com/Hibear/verify) ( v0.1.0 )
 * [Particleground](https://requestlab.fr/) ( v1.1.0 )
+
+## 📷 界面预览 <small>Screenshot</small>
+
+<h3 align="center">- PC -</h3>
+
+![PC](https://raw.githubusercontent.com/IKKI2000/KendoUI-Admin-Site/master/img/screenshot/home_pc.png)
+
+<h3 align="center">- PAD -</h3>
+
+![PAD](https://raw.githubusercontent.com/IKKI2000/KendoUI-Admin-Site/master/img/screenshot/home_pad.png)
+
+<h3 align="center">- PHONE -</h3>
+
+![PHONE](https://raw.githubusercontent.com/IKKI2000/KendoUI-Admin-Site/master/img/screenshot/home_phone.png)
