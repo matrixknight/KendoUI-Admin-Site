@@ -68,6 +68,69 @@
                 </div>
             </div>
         </div>
+        <div class="col-xl-5">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h3 class="lead text-center text-muted mb-4">仓库更新日志</h3>
+                    <ul id="updatedLog" class="k-timeaxis border-0"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5 col-xl-3">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h3 class="lead text-center text-muted mb-4">仓库数据统计</h3>
+                    <div class="row h1 mb-0">
+                        <div class="col-4 mb-3">
+                            <div class="d-flex h-100 justify-content-center align-items-center">
+                                <i class="fa fa-star theme-m"></i>
+                            </div>
+                        </div>
+                        <div class="col-8 mb-3">
+                            <div class="d-flex h-100 align-items-center">
+                                <span class="lead text-muted">Star：</span>
+                                <span class="theme-m" id="stars"></span>
+                            </div>
+                        </div>
+                        <div class="col-4 mb-3">
+                            <div class="d-flex h-100 justify-content-center align-items-center">
+                                <i class="fa fa-code-branch theme-m"></i>
+                            </div>
+                        </div>
+                        <div class="col-8 mb-3">
+                            <div class="d-flex h-100 align-items-center">
+                                <span class="lead text-muted">Fork：</span>
+                                <span class="theme-m" id="forks"></span>
+                            </div>
+                        </div>
+                        <div class="col-4 mb-3">
+                            <div class="d-flex h-100 justify-content-center align-items-center">
+                                <i class="fa fa-eye theme-m"></i>
+                            </div>
+                        </div>
+                        <div class="col-8 mb-3">
+                            <div class="d-flex h-100 align-items-center">
+                                <span class="lead text-muted">Watch：</span>
+                                <span class="theme-m" id="watchs"></span>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <div class="d-flex h-100 justify-content-center align-items-center">
+                                <div id="QRCode"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7 col-xl-4">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h3 class="lead text-center text-muted">仓库语言占比</h3>
+                    <div id="languages"></div>
+                </div>
+            </div>
+        </div>
         <div class="col-xl-9">
             <div class="card mb-3">
                 <div class="card-body">
@@ -129,6 +192,13 @@
         </div>
     </div>
     <style scoped>
+        #updatedLog {
+            height: 372px;
+        }
+        #updatedLog img {
+            width: 30px;
+            height: 30px;
+        }
         #visitNewInnerContent {
             top: 0;
             left: 0;

@@ -367,4 +367,107 @@ $(function() {
             });
         }
     });
+    // 仓库更新日志
+    $.ajax({
+        type: 'get',
+        url: 'https://api.github.com/repos/IKKI2000/KendoUI-Admin-Site/commits',
+        dataType: 'json',
+        success: function(res) {
+            $('#updatedLog').kendoListView({
+                dataSource: {
+                    data: res,
+                    schema: {
+                        model: {
+                            id: 'sha',
+                            fields: {
+                                commit: { type: 'object' },
+                                html_url: { type: 'string' },
+                                committer: { type: 'object' }
+                            }
+                        }
+                    },
+                    pageSize: 10
+                },
+                template: function(dataItem) {
+                    return '<li><a class="mr-3" href="' + dataItem.committer.html_url + '" target="_blank"><img class="rounded-lg" src="' + dataItem.committer.avatar_url + '" alt="' + dataItem.committer.login + '"></a><time>' + kendo.toString(kendo.parseDate(dataItem.commit.committer.date), "yyyy-MM-dd HH:mm:ss") + '</time><p><a href="' + dataItem.html_url + '" target="_blank">' + dataItem.commit.message + '</a></p></li>';
+                }
+            });
+        }
+    });
+    // 仓库数据统计
+    $.ajax({
+        type: 'get',
+        url: 'https://api.github.com/repos/IKKI2000/KendoUI-Admin-Site',
+        dataType: 'json',
+        success: function(res) {
+            $('#stars').text(res.stargazers_count);
+            $('#forks').text(res.forks_count);
+            $('#watchs').text(res.subscribers_count);
+            $('#QRCode').kendoQRCode({
+                value: 'https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/home',
+                size: 204,
+                color: accentColor,
+                border: {
+                    color: minorColor,
+                    width: 5
+                }
+            });
+        }
+    });
+    // 仓库语言占比
+    $.ajax({
+        type: 'get',
+        url: 'https://api.github.com/repos/IKKI2000/KendoUI-Admin-Site/languages',
+        dataType: 'json',
+        success: function(res) {
+            $('#languages').kendoChart({
+                theme: 'sass',
+                dataSource: {
+                    data: [
+                        {
+                            category: 'JavaScript',
+                            value: res.JavaScript / (res.HTML + res.CSS + res.JavaScript)
+                        },
+                        {
+                            category: 'HTML',
+                            value: res.HTML / (res.HTML + res.CSS + res.JavaScript)
+                        },
+                        {
+                            category: 'CSS',
+                            value: res.CSS / (res.HTML + res.CSS + res.JavaScript)
+                        }
+                    ],
+                    schema: {
+                        model: {
+                            id: 'uid',
+                            fields: {
+                                category: { type: 'string' },
+                                value: { type: 'number' }
+                            }
+                        }
+                    }
+                },
+                legend: {
+                    position: 'bottom'
+                },
+                seriesDefaults: {
+                    type: 'pie',
+                    labels: {
+                        visible: true,
+                        template: '#= category #\n#= kendo.toString(value, "p") #'
+                    }
+                },
+                series: [
+                    {
+                        categoryField: 'category',
+                        field: 'value'
+                    }
+                ],
+                tooltip: {
+                    visible: true,
+                    template: '#= category # - #= kendo.toString(value, "p") #'
+                }
+            });
+        }
+    });
 });
