@@ -1229,6 +1229,54 @@ form .searchBtn.row {
 .k-filter-row .k-filtercell .k-colorpicker .k-selected-color {
   width: calc(100% - 8px - 1.42857em); }
 
+/* 自定义 Kendo UI 组件 ------------------------------ */
+/* 时间轴 */
+.k-timeaxis {
+  position: relative;
+  list-style: none; }
+  .k-timeaxis:before, .k-timeaxis:after {
+    position: absolute;
+    left: 15px;
+    width: 0;
+    content: ''; }
+  .k-timeaxis:before {
+    bottom: -1rem;
+    z-index: 2;
+    border-left: 1px dashed #fff;
+    height: 2rem; }
+  .k-timeaxis:after {
+    top: 10px;
+    z-index: 1;
+    border-left: 1px solid #ccc;
+    height: 100%; }
+  .k-timeaxis > li {
+    position: relative; }
+    .k-timeaxis > li:before, .k-timeaxis > li:after {
+      position: absolute;
+      z-index: 10;
+      border-radius: 50%;
+      content: ''; }
+    .k-timeaxis > li:before {
+      top: 5px;
+      left: -30px;
+      width: 11px;
+      height: 11px; }
+    .k-timeaxis > li:after {
+      top: 7px;
+      left: -28px;
+      width: 7px;
+      height: 7px;
+      background: #fff; }
+    .k-timeaxis > li time {
+      margin-right: 10px; }
+    .k-timeaxis > li p {
+      display: inline-block; }
+      .k-timeaxis > li p small {
+        margin-left: 10px;
+        color: #999; }
+  .k-timeaxis > li.muted:before {
+    background: #999; }
+
 /* 自定义细节 ------------------------------ */
 .w-9 {
   width: 9% !important; }

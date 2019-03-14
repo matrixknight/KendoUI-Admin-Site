@@ -1554,6 +1554,71 @@ form {
     }
 }
 
+/* 自定义 Kendo UI 组件 ------------------------------ */
+
+/* 时间轴 */
+.k-timeaxis {
+    position: relative;
+    list-style: none;
+    &:before,
+    &:after {
+        position: absolute;
+        left: 15px;
+        width: 0;
+        content: '';
+    }
+    &:before {
+        bottom: -1rem;
+        z-index: 2;
+        border-left: 1px dashed #fff;
+        height: 2rem;
+    }
+    &:after {
+        top: 10px;
+        z-index: 1;
+        border-left: 1px solid #ccc;
+        height: 100%;
+    }
+    > li {
+        position: relative;
+        &:before,
+        &:after {
+            position: absolute;
+            z-index: 10;
+            border-radius: 50%;
+            content: '';
+        }
+        &:before {
+            top: 5px;
+            left: -30px;
+            width: 11px;
+            height: 11px;
+        }
+        &:after {
+            top: 7px;
+            left: -28px;
+            width: 7px;
+            height: 7px;
+            background: #fff;
+        }
+        time {
+            margin-right: 10px;
+        }
+        p {
+            display: inline-block;
+            small {
+                margin-left: 10px;
+                color: #999;
+            }
+        }
+    }
+    > li.muted {
+        &:before {
+            background: #999;
+        }
+    }
+}
+
 /* 自定义细节 ------------------------------ */
 .w-9 {
     width: 9% !important;
