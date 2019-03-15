@@ -1,6 +1,52 @@
-<h1 align="center">🌸 Kendo UI Admin &amp; Site 🐱</h1>
-<p align="center">Kendo UI Admin &amp; Site base on Kendo UI for jQuery and Bootstrap 4.</p>
-<p align="center"><a href="https://ikki2000.github.io/KendoUI-Admin-Site/">https://ikki2000.github.io/KendoUI-Admin-Site/</a></p>
+<div align="center">
+
+![LOGO](https://raw.githubusercontent.com/IKKI2000/KendoUI-Admin-Site/master/img/logo.png)
+
+# 🌸 Kendo UI Admin &amp; Site 🐱
+
+Kendo UI Admin &amp; Site base on Kendo UI for jQuery and Bootstrap 4.
+
+<a href="https://ikki2000.github.io/KendoUI-Admin-Site/">https://ikki2000.github.io/KendoUI-Admin-Site/</a>
+
+[![IKKI Studio](https://img.shields.io/badge/IKKI%20Studio-%20-fff.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAADv0lEQVRoge2Y0XHbVhBFz82kABRgwkAH/BY/rFRgugJTFTipQJMKbFUguYIoFZiaMfgbpgJyqAKiDm4+gAc8iAApcmwRmtHOYAA8PAD37t7dtwC82sDM9uC272+yzHYn3l+e2T9Hmqd9V14GAentIs2zrksvg4A9BrKuSy+DgDTuSQF+fV4kh1uR5pkgQd3XBx8BwbkNPQEYPgHgPaIvAMOW0CLNE+AcuzcCgyZgmGInkl4mAezLcgd9WTDYHFik+UxShgSYcr9tg4xAkeYJ9udwXklo2TV3kASwvwGJKq8bmGxWD11RGJyEilF2LWkMou5A7Xnf/MFEoEjzRHAtqeo8I91L6777BhGBRZqPsb/ZTE1ZdSSBQwXiru/ek0agGGWJpN+By3Ik7hla1Wfe94yTEFikeWaYAZ8MSTkqpPKLUKr0X4JfTjardd+zno1ABXqK/R44h7o8Vr42Tc5G+revdj33pxAoRlmCdA6MgXfYGZAFUK3WoAarCLPD+IOk22chsEjzse2PNfBICrUkDEReL60iU4OvErgkcnV2v374aQSKUZYhfRJMbWcBRfBwkEItCZfQRdPfKFqcmj8PwrAGvuzDcBSBYpRlki4pE7HWboSxlkZVSxqrJeNtKcWNv30x2eP9gwkUoywBPkualS+uAKo8ij3YWvZj7Vf/ekqMbsabBMDSn5P79fwpmLaai74fSIs0nwLXQFK3twFYuLcC8KgMRl6nCRctrcfRuJlsVhedYI/thYo0vwb+sp3UCdehXT16SThSJaU6Bx7fG5J9B/g+20ugAj9zpOmwNSAradSg2kRMnAeRbJrCD3BzdiD4vQQWaX6NPWslZPTPMpzHciqJ0hxX84K0akKNrB5AF5P79cHgYUcSF6NsBsxinbfKYa1ZtfLVqKX5OhKRx9XMm0u6ONvRKuyzziQuRlkG/IOUhKSrk+xRNLaSsyLYbhOal9kOq+vXs81qfhDYjiTujoB0KUi2KlJ03tZv4+UA2NV4WWKZA0ubu8n9emdrcKhtUfr+5m0i6T8/9nw0uY5EWHgafT9U36532GtgOblfd37LHgX2KRGQNHU0OS75DXCCVOZYd0hz28unrJw/2rYI2H4HFdhQv9XoXdIN8PfZZvVDpXCsdUVgHOvbodRJV9hf9nWHz23bEYBxXHEES8OHXV9Fp7SthSyUx6otuLX921DBQweBkMC2l4YntbSntK4IlGVP+mOyWQ0aPHQvZEvbPLUfP7V1ldE74N8TYDnKtiMg3WInJ8Dyaq92CvsfRr5b2fzO9C8AAAAASUVORK5CYII=&style=social)](https://ikki2000.github.io/)
+[![GitHub stars](https://img.shields.io/github/stars/IKKI2000/KendoUI-Admin-Site.svg?style=social)](https://github.com/IKKI2000/KendoUI-Admin-Site/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/IKKI2000/KendoUI-Admin-Site.svg?style=social)](https://github.com/IKKI2000/KendoUI-Admin-Site/network/members)
+[![GitHub watchers](https://img.shields.io/github/watchers/IKKI2000/KendoUI-Admin-Site.svg?style=social)](https://github.com/IKKI2000/KendoUI-Admin-Site/watchers)
+[![GitHub license](https://img.shields.io/github/license/IKKI2000/KendoUI-Admin-Site.svg)](https://github.com/IKKI2000/KendoUI-Admin-Site/blob/master/LICENSE)
+<br>
+[![jQuery](https://img.shields.io/badge/jQuery-1.12.4-0769ad.svg?logo=jQuery)](http://jquery.com/)
+[![Kendo UI](https://img.shields.io/badge/Kendo%20UI-2019.1.115-f35800.svg?logo=data:image/png;base64,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)](https://www.telerik.com/kendo-jquery-ui)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-4.3.1-563d7c.svg?logo=Bootstrap)](https://getbootstrap.com/)
+[![Font Awesome](https://img.shields.io/badge/Font%20Awesome-5.7.2-228ae7.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAMAAADQmBKKAAAABGdBTUEAALGPC/xhBQAAAwBQTFRFAQYKAgkPAwwUBBAbCR4xCCA2DzlhHFKDGl+gHGu1Lnm7IX/WI4XhNojQIYrnIYrnIYrnIYrnIYrnIYrnIYrnIYrnIYrnIYrnIYrnIYrnIYrnIornIornIornIornIornIornIornIornIornIornIornIornIornIornIornI4rnI4rnI4rnI4rnI4rnI4rnI4rnI4rnI4rnI4rnI4rnI4rnI4rnJIrnI4roJIroJInnJIrnI4vnPpjp/////////////////////////////////////////////////////v///v///v7//v7//v7//v7//v7//f7//f7//P7//P7//P3/+/3/+vz++fz++Pz+9/v+9vr+9fr+8/n+8fn+8Pj+8Pj+7/j+7vf+7fb96/X96fT86PP85/P85/P85/P85vL85fL85PH84/D84vD84O/84O783+783u383e382+z72ev71+r71en60uj6z+b6zOT6yuP5x+L5xeD5w9/4wd74vt34vNz3vNv3u9v3utv4utr3uNr4ttn3tNj3stb2sNX2rNP1qtL1p9D1pM70os30ncv0mMjzlMfzj8TzjcPyisHyiMDxh7/xhr/xhr/xhL7xgr3xgLzxfbrxe7nxernxebjxeLjxdrbwcrTvcLPvbLHuZ6/uY63tYKvtXKntWafsVKXsU6TsUKLsT6LsT6LrTKHrS6DrSp/rSZ/rSJ7rRp3qRJzqQpvqQZvqM5PoMpLoMJLoLpDnLZDnLJDnLpHnL5HnK4/nKo7nJoznKI3nKI3nJ4znJIznJYznJoznI4vnI4vnJIvnIornIYnnIInnIornIornHonnHonnH4rnH4rnH4rnH4rnH4rnH4rnH4rnIIrnIYrnIYrnIYrnIYrnIYrnIYrnIYrnIYrnIYrnIYrnIYrnIYrnIYrnIYrnIYrnIYrnIYrnIYrnIYrnIYrnIYrnIornIornIornIornIornH4jnH4jnHojnHojnHojnHojnHojnHojmHojm2rEPTwAAAD50Uk5TAQAACywBAnQFCsoVHOX+/v79/f38+/v6+fj39vTz8e/t6+nm5N7Z1M/LxcG8trKckIWCeW9gVk1GPDAlpv2s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)](https://fontawesome.com/)
+<br>
+![GitHub top language](https://img.shields.io/github/languages/top/IKKI2000/KendoUI-Admin-Site.svg?color=blue)
+![GitHub language count](https://img.shields.io/github/languages/count/IKKI2000/KendoUI-Admin-Site.svg)
+![GitHub HTML count](https://img.shields.io/badge/dynamic/json.svg?url=https://api.github.com/repos/IKKI2000/KendoUI-Admin-Site/languages&label=HTML&query=$.HTML&color=e54c21)
+![GitHub CSS count](https://img.shields.io/badge/dynamic/json.svg?url=https://api.github.com/repos/IKKI2000/KendoUI-Admin-Site/languages&label=CSS&query=$.CSS&color=167dbe)
+![GitHub JavaScript count](https://img.shields.io/badge/dynamic/json.svg?url=https://api.github.com/repos/IKKI2000/KendoUI-Admin-Site/languages&label=JavaScript&query=$.JavaScript&color=f0dc4e)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/IKKI2000/KendoUI-Admin-Site.svg)
+![GitHub repo size in bytes](https://img.shields.io/github/repo-size/IKKI2000/KendoUI-Admin-Site.svg)
+<br>
+![GitHub contributors](https://img.shields.io/github/contributors/IKKI2000/KendoUI-Admin-Site.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/IKKI2000/KendoUI-Admin-Site.svg)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/y/IKKI2000/KendoUI-Admin-Site.svg)
+<br>
+![Default](https://img.shields.io/badge/默认-1890ff.svg)
+![Brown](https://img.shields.io/badge/褐色-c39b8f.svg)
+![Pink](https://img.shields.io/badge/桃色-d770ad.svg)
+![Red](https://img.shields.io/badge/红色-da4453.svg)
+![Orange](https://img.shields.io/badge/橙色-ff9800.svg)
+![Yellow](https://img.shields.io/badge/黄色-f6bb42.svg)
+![White](https://img.shields.io/badge/白色-e6e9ed.svg)
+![Grass](https://img.shields.io/badge/翠色-8cc152.svg)
+![Green](https://img.shields.io/badge/绿色-37bc9b.svg)
+![Cyan](https://img.shields.io/badge/青色-3bafda.svg)
+![Blue](https://img.shields.io/badge/蓝色-4a89dc.svg)
+![Purple](https://img.shields.io/badge/紫色-967adc.svg)
+![Black](https://img.shields.io/badge/黑色-434a54.svg)
+![Gray](https://img.shields.io/badge/灰色-aab2bd.svg)
+
+</div>
 
 ![Home](https://raw.githubusercontent.com/IKKI2000/KendoUI-Admin-Site/master/img/screenshot/home_pc.png)
 
@@ -24,7 +70,7 @@
 * 配套前台网站和后台管理
 * 后台模式支持 6 种组合框架布局
 * Sass 样式预处理
-* 5 套配色皮肤可选
+* 5 套 65 种配色主题可选
 
 ## 🌐 浏览器支持 <small>Browser Support</small>
 
