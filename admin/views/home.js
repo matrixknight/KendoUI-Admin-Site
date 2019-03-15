@@ -403,15 +403,16 @@ $(function() {
             $('#stars').text(res.stargazers_count);
             $('#forks').text(res.forks_count);
             $('#watchs').text(res.subscribers_count);
-            $('#QRCode').kendoQRCode({
-                value: 'https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/home',
-                size: 204,
-                color: accentColor,
-                border: {
-                    color: minorColor,
-                    width: 5
-                }
-            });
+        }
+    });
+    // 仓库二维码
+    $('#QRCode').kendoQRCode({
+        value: 'https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/home',
+        size: 204,
+        color: accentColor,
+        border: {
+            color: minorColor,
+            width: 5
         }
     });
     // 仓库语言占比
