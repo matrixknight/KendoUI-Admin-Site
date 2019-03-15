@@ -65,19 +65,32 @@ Kendo UI Admin &amp; Site base on Kendo UI for jQuery and Bootstrap 4.
 
 ## 🌟 特点 <small>Features</small>
 
-* 无工程化零配置
-* 下载无安装开箱即用
+* 无工程化、零配置
+* 下载无需安装、开箱即用
 * 前后端分离
 * MVVM 视图模型（by Kendo UI for jQuery）
 * SPA 单页面应用（by Kendo UI for jQuery）
 * Router 页面路由（by Kendo UI for jQuery）
 * Templates 模版渲染（by Kendo UI for jQuery）
 * Data Source 统一数据源（by Kendo UI for jQuery）
-* PC 端移动端自适应（by Bootstrap 4）
-* 配套前台网站和后台管理
+* PC 端、移动端栅格系统响应式布局（by Bootstrap 4）
+* 无 CSS Sprites、矢量化图标字体（by Font Awesome）
+* 统一风格的前台网站和后台管理界面
 * 后台模式支持 6 种组合框架布局
+    * [路由版 <small>Router Edition</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/index_router.html)（推荐）
+    * [框架版 <small>iFrame Edition</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/index_iframe.html)
+    * [标签版 <small>Tabstrip Edition</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/index_tabstrip.html)
+    * [布局路由版 <small>Splitter Router Edition</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/index_splitter_router.html)
+    * [布局框架版 <small>Splitter iFrame Edition</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/index_splitter_iframe.html)
+    * [布局标签版 <small>Splitter Tabstrip Edition</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/index_splitter_tabstrip.html)
 * Sass 样式预处理
 * 5 套 65 种配色主题可选
+    * IKKI Amikoko（14 种）
+    * Ant Design（13 种）
+    * Material Design（20 种）
+    * Kendo UI（8 种）
+    * Bootstrap（10 种）
+* 菜单、导航同结构动态配置
 
 ## 🌐 浏览器支持 <small>Browser Support</small>
 
@@ -155,6 +168,10 @@ Kendo UI Admin &amp; Site base on Kendo UI for jQuery and Bootstrap 4.
             ···
         </style>
     </script>
+    ```
+* 只应用于当前子页面模块的 JS 插件通过模块的 JS 文件引入
+    ```js
+    $.getScript(path + 'js/plugin.min.js');
     ```
 * 顶部菜单本地 Mock 数据位于 `json/menu.json` 其数据结构同左侧导航
 * 左侧导航本地 Mock 数据位于 `json/nav.json` 其中 `text` 键值说明如下：
@@ -542,6 +559,8 @@ ROOT/·····································�
 * [Kendo UI themes](https://github.com/telerik/kendo-themes) ( v3.3.1 )
 * [Bootstrap](https://github.com/twbs/bootstrap) ( v4.3.1 )
 * [Font Awesome](https://github.com/FortAwesome/Font-Awesome) ( v5.7.2 )
+* [Ant Design](https://ant.design/docs/spec/colors-cn)
+* [Material Design](https://www.material.io/design/color/the-color-system.html#tools-for-picking-colors)
 * [Flag Icon Css](https://github.com/lipis/flag-icon-css) ( v3.3.0 )
 * [Count Up](https://github.com/inorganik/countUp.js) ( v1.9.3 )
 * [Verify](https://github.com/Hibear/verify) ( v0.1.0 )
