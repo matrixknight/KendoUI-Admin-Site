@@ -1,5 +1,5 @@
 $(function() {
-    // ·µ»ØÊ×Ò³
+    // è¿”å›žé¦–é¡µ
     var sec = 5,
         intervalID = setInterval(function() {
             if (sec > 1) {
