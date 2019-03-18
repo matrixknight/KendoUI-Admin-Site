@@ -1129,6 +1129,10 @@ form .searchBtn.row {
   background-color: rgba(0, 0, 0, 0.1) !important; }
   .k-grid .k-detail-row .k-detail-cell {
     padding: 1rem; }
+.k-grid td[rowspan] {
+  box-shadow: 1px 0 0 0 #ccc; }
+  .k-grid td[rowspan] + td {
+    border-left-width: 0; }
 
 .k-edit-form-container {
   width: 600px; }

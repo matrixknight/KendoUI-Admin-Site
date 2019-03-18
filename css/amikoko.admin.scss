@@ -1406,6 +1406,12 @@ form {
             padding: 1rem;
         }
     }
+    td[rowspan] {
+        box-shadow: 1px 0 0 0 #ccc;
+        & + td {
+            border-left-width: 0;
+        }
+    }
 }
 
 .k-edit-form-container {

@@ -76,6 +76,11 @@ $(function() {
             pageSize: 10
         },
         columns: [
+            { title: '级别', width: '100px',
+                headerAttributes: { 'class': 'align-middle' },
+                attributes: { 'class': 'merge-col' },
+                template: '黄金圣斗士'
+            },
             { field: 'userName', title: '用户名', width: '80px',
                 headerAttributes: { 'class': 'align-middle' }
             },
@@ -339,6 +344,9 @@ $(function() {
             refresh: true
         },
         reorderable: true,
-        resizable: true
+        resizable: true,
+        dataBound: function(e) {
+            $('td.merge-col').attr('rowspan', e.sender._data.length).not(':first').remove();
+        }
     });
 });
