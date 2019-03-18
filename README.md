@@ -2,7 +2,7 @@
 
 [![LOGO](https://raw.githubusercontent.com/IKKI2000/KendoUI-Admin-Site/master/img/logo.png)](https://www.telerik.com/kendo-ui)
 
-# 🌸 Kendo UI Admin &amp; Site 🐱
+# 🌸 Kendo UI Admin &amp; Site 🌌
 
 Kendo UI Admin &amp; Site base on Kendo UI for jQuery and Bootstrap 4.
 
