@@ -83,6 +83,7 @@ Kendo UI Admin &amp; Site base on Kendo UI for jQuery and Bootstrap 4.
     * [布局路由版 <small>Splitter Router Edition</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/index_splitter_router.html)
     * [布局框架版 <small>Splitter iFrame Edition</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/index_splitter_iframe.html)
     * [布局标签版 <small>Splitter Tabstrip Edition</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/index_splitter_tabstrip.html)
+* 菜单、导航同结构动态配置
 * Sass 样式预处理
 * 5 套 65 种配色主题可选
     * IKKI Amikoko（14 种）
@@ -90,7 +91,6 @@ Kendo UI Admin &amp; Site base on Kendo UI for jQuery and Bootstrap 4.
     * Material Design（20 种）
     * Kendo UI（8 种）
     * Bootstrap（10 种）
-* 菜单、导航同结构动态配置
 
 ## 🌐 浏览器支持 <small>Browser Support</small>
 
