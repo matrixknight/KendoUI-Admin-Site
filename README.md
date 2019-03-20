@@ -11,7 +11,6 @@ Kendo UI Admin &amp; Site base on Kendo UI for jQuery and Bootstrap 4.
 [![IKKI Studio](https://img.shields.io/badge/IKKI%20Studio-%20-fff.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAADv0lEQVRoge2Y0XHbVhBFz82kABRgwkAH/BY/rFRgugJTFTipQJMKbFUguYIoFZiaMfgbpgJyqAKiDm4+gAc8iAApcmwRmtHOYAA8PAD37t7dtwC82sDM9uC272+yzHYn3l+e2T9Hmqd9V14GAentIs2zrksvg4A9BrKuSy+DgDTuSQF+fV4kh1uR5pkgQd3XBx8BwbkNPQEYPgHgPaIvAMOW0CLNE+AcuzcCgyZgmGInkl4mAezLcgd9WTDYHFik+UxShgSYcr9tg4xAkeYJ9udwXklo2TV3kASwvwGJKq8bmGxWD11RGJyEilF2LWkMou5A7Xnf/MFEoEjzRHAtqeo8I91L6777BhGBRZqPsb/ZTE1ZdSSBQwXiru/ek0agGGWJpN+By3Ik7hla1Wfe94yTEFikeWaYAZ8MSTkqpPKLUKr0X4JfTjardd+zno1ABXqK/R44h7o8Vr42Tc5G+revdj33pxAoRlmCdA6MgXfYGZAFUK3WoAarCLPD+IOk22chsEjzse2PNfBICrUkDEReL60iU4OvErgkcnV2v374aQSKUZYhfRJMbWcBRfBwkEItCZfQRdPfKFqcmj8PwrAGvuzDcBSBYpRlki4pE7HWboSxlkZVSxqrJeNtKcWNv30x2eP9gwkUoywBPkualS+uAKo8ij3YWvZj7Vf/ekqMbsabBMDSn5P79fwpmLaai74fSIs0nwLXQFK3twFYuLcC8KgMRl6nCRctrcfRuJlsVhedYI/thYo0vwb+sp3UCdehXT16SThSJaU6Bx7fG5J9B/g+20ugAj9zpOmwNSAradSg2kRMnAeRbJrCD3BzdiD4vQQWaX6NPWslZPTPMpzHciqJ0hxX84K0akKNrB5AF5P79cHgYUcSF6NsBsxinbfKYa1ZtfLVqKX5OhKRx9XMm0u6ONvRKuyzziQuRlkG/IOUhKSrk+xRNLaSsyLYbhOal9kOq+vXs81qfhDYjiTujoB0KUi2KlJ03tZv4+UA2NV4WWKZA0ubu8n9emdrcKhtUfr+5m0i6T8/9nw0uY5EWHgafT9U36532GtgOblfd37LHgX2KRGQNHU0OS75DXCCVOZYd0hz28unrJw/2rYI2H4HFdhQv9XoXdIN8PfZZvVDpXCsdUVgHOvbodRJV9hf9nWHz23bEYBxXHEES8OHXV9Fp7SthSyUx6otuLX921DBQweBkMC2l4YntbSntK4IlGVP+mOyWQ0aPHQvZEvbPLUfP7V1ldE74N8TYDnKtiMg3WInJ8Dyaq92CvsfRr5b2fzO9C8AAAAASUVORK5CYII=&style=social)](https://ikki2000.github.io/)
 [![GitHub license](https://img.shields.io/github/license/IKKI2000/KendoUI-Admin-Site.svg)](https://github.com/IKKI2000/KendoUI-Admin-Site/blob/master/LICENSE)
 [![GitHub release](https://img.shields.io/github/release/IKKI2000/KendoUI-Admin-Site.svg)](https://github.com/IKKI2000/KendoUI-Admin-Site/releases)
-![GitHub All Releases](https://img.shields.io/github/downloads/IKKI2000/KendoUI-Admin-Site/total.svg)
 <br>
 [![GitHub Repo](https://img.shields.io/badge/GitHub%20Repo-%20-fff.svg?logo=GitHub&style=social)](https://github.com/IKKI2000/KendoUI-Admin-Site/)
 [![GitHub stars](https://img.shields.io/github/stars/IKKI2000/KendoUI-Admin-Site.svg?style=social)](https://github.com/IKKI2000/KendoUI-Admin-Site/stargazers)
@@ -74,7 +73,7 @@ Kendo UI Admin &amp; Site base on Kendo UI for jQuery and Bootstrap 4.
 
 ## 🌟 特点 <small>Features</small>
 
-* 无工程化、零配置
+* 无前端工程化、零配置
 * 下载无需安装、开箱即用
 * 前后端分离
 * MVVM 视图模型（by Kendo UI for jQuery）
@@ -100,6 +99,7 @@ Kendo UI Admin &amp; Site base on Kendo UI for jQuery and Bootstrap 4.
     * Material Design（20 种）
     * Kendo UI（8 种）
     * Bootstrap（10 种）
+* [Kendo UI 官方简体、繁体汉化提供者](https://github.com/telerik/kendo-ui-core/blob/master/src/messages/kendo.messages.zh-CN.js)
 
 ## 🌐 浏览器支持 <small>Browser Support</small>
 
