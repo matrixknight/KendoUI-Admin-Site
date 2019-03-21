@@ -181,6 +181,7 @@ iframe#section {
 }
 
 #footer {
+    padding-top: 12px;
     height: 4%;
     font-size: $font-size-s;
     line-height: $font-size-s;
@@ -1057,8 +1058,16 @@ h1 {
         }
     }
 
+    #footer {
+        padding-top: 6px;
+    }
+
     #locking {
         background-size: auto 100%;
+    }
+
+    #goTop {
+        right: 15px;
     }
 }
 

@@ -69,6 +69,7 @@ iframe#section {
   min-height: 96%; }
 
 #footer {
+  padding-top: 12px;
   height: 4%;
   font-size: 12px;
   line-height: 12px;
@@ -867,8 +868,14 @@ h1 {
     #navCkb:checked ~ #main #header .fa-bars {
       margin-left: 215px; }
 
+  #footer {
+    padding-top: 6px; }
+
   #locking {
-    background-size: auto 100%; } }
+    background-size: auto 100%; }
+
+  #goTop {
+    right: 15px; } }
 /* Bootstrap 细节完善 ------------------------------ */
 .hide {
   display: none; }
