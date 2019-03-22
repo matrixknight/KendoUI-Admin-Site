@@ -1569,6 +1569,37 @@ form {
     }
 }
 
+/* 树形 */
+.k-treeview {
+    .k-in {
+        .k-sprite {
+            font-size: inherit;
+            line-height: inherit;
+        }
+        .k-image {
+            width: 16px;
+            height: 16px;
+        }
+        .k-textbox {
+            width: 10em;
+        }
+        .k-button {
+            display: none;
+            margin-left: 5px;
+        }
+    }
+    .k-state-selected,
+    .k-state-focused,
+    .k-state-hover {
+        .k-required {
+            color: inherit;
+        }
+        .k-button {
+            display: inline-flex;
+        }
+    }
+}
+
 /* 自定义 Kendo UI 组件 ------------------------------ */
 
 /* 时间轴 */

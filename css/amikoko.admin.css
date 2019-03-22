@@ -1240,6 +1240,27 @@ form .searchBtn.row {
 .k-filter-row .k-filtercell .k-colorpicker .k-selected-color {
   width: calc(100% - 8px - 1.42857em); }
 
+/* 树形 */
+.k-treeview .k-in .k-sprite {
+  font-size: inherit;
+  line-height: inherit; }
+.k-treeview .k-in .k-image {
+  width: 16px;
+  height: 16px; }
+.k-treeview .k-in .k-textbox {
+  width: 10em; }
+.k-treeview .k-in .k-button {
+  display: none;
+  margin-left: 5px; }
+.k-treeview .k-state-selected .k-required,
+.k-treeview .k-state-focused .k-required,
+.k-treeview .k-state-hover .k-required {
+  color: inherit; }
+.k-treeview .k-state-selected .k-button,
+.k-treeview .k-state-focused .k-button,
+.k-treeview .k-state-hover .k-button {
+  display: inline-flex; }
+
 /* 自定义 Kendo UI 组件 ------------------------------ */
 /* 时间轴 */
 .k-timeaxis {

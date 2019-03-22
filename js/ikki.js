@@ -836,3 +836,26 @@ function linkDetails(dataItem) {
         }
     });
 }
+
+/* 树形操作 ****************************************************************************/
+
+// 查
+function readTree(options, url, succeedTree) {
+    $.fn.ajaxPost({
+        ajaxUrl: url,
+        succeed: function(res) {
+            options.success(res);
+            if (succeedTree) {
+                succeedTree(res);
+            }
+        },
+        failed: function(res) {
+            options.error(res);
+        }
+    });
+}
+
+// 刷新
+function refreshTree() {
+    $('#treeView').data('kendoTreeView').dataSource.read();
+}
