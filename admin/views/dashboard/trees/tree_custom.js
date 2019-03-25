@@ -25,6 +25,11 @@ $(function() {
             if ($(e.node).find('button').length > 0) {
                 $('#treeDetail').empty();
             }
+        },
+        dataBound: function() {
+            if ($('#treeView a.k-state-selected').length === 1) {
+                location.href = $('#treeView a.k-state-selected').attr('href');
+            }
         }
     }).data('kendoTreeView');
     // 关键字搜索
