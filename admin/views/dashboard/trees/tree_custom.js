@@ -21,6 +21,21 @@ $(function() {
                 '<button class="k-button k-button-icontext" onclick="updateTree(\'#= item.id #\', \'#= item.text #\', \'#= item.uid #\');"><span class="k-icon k-i-edit"></span>编辑</button>' +
                 '<button class="k-button k-button-icontext" onclick="destroyTree(\'#= item.id #\', \'#= item.text #\', this);"><span class="k-icon k-i-close"></span>删除</button>' +
             '# } #',
+        dragAndDrop: true,
+        drop: function(e) {
+            var source = treeView.dataItem(e.sourceNode),
+                destination = treeView.dataItem(e.destinationNode);
+            if (e.valid) {
+                $.fn.ajaxPost({
+                    ajaxData: {
+                        'sourceId': source.id,
+                        'destinationId': destination.id,
+                        'dropPosition': e.dropPosition
+                    },
+                    isMsg: true
+                });
+            }
+        },
         select: function(e) {
             if ($(e.node).find('button').length > 0) {
                 $('#treeDetail').empty();
@@ -44,7 +59,6 @@ $(function() {
             $('#treeView li').show();
         }
     });
-
 });
 
 // 增
