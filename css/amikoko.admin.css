@@ -1252,6 +1252,8 @@ form .searchBtn.row {
 .k-treeview .k-in .k-button {
   display: none;
   margin-left: 5px; }
+.k-treeview .k-i-drag-and-drop:before {
+  font-family: 'WebComponentsIcons'; }
 .k-treeview .k-state-selected .k-required,
 .k-treeview .k-state-focused .k-required,
 .k-treeview .k-state-hover .k-required {
@@ -1260,6 +1262,9 @@ form .searchBtn.row {
 .k-treeview .k-state-focused .k-button,
 .k-treeview .k-state-hover .k-button {
   display: inline-flex; }
+
+.k-drag-clue .k-button {
+  display: none; }
 
 /* 自定义 Kendo UI 组件 ------------------------------ */
 /* 时间轴 */

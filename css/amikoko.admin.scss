@@ -1588,6 +1588,9 @@ form {
             margin-left: 5px;
         }
     }
+    .k-i-drag-and-drop:before {
+        font-family: 'WebComponentsIcons';
+    }
     .k-state-selected,
     .k-state-focused,
     .k-state-hover {
@@ -1597,6 +1600,12 @@ form {
         .k-button {
             display: inline-flex;
         }
+    }
+}
+
+.k-drag-clue {
+    .k-button {
+        display: none;
     }
 }
 
