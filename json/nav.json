@@ -158,7 +158,7 @@
                         },
                         {
                             "id": "010304",
-                            "text": "<i class='fas fa-genderless'></i>复选框及半选提交<sub class='theme-l'>Wait</sub>",
+                            "text": "<i class='fas fa-genderless'></i>复选框及半选提交<sub class='theme-l'>New</sub>",
                             "encoded": false,
                             "cssClass": "links-tree_checkbox",
                             "url": "javascript:linkTo(\"/dashboard/trees/\", \"tree_checkbox\");"
