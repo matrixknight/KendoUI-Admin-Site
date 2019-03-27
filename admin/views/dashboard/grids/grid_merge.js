@@ -3,7 +3,7 @@ $(function() {
     $('#grid').kendoGrid({
         dataSource: {
             transport: {
-                read: function(options) { readGrid(options, 'json/grid.json') }
+                read: function(options) { readItem(options, 'json/grid.json') }
             },
             schema: {
                 total: 'total',

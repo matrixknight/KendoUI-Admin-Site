@@ -4,7 +4,7 @@ $(function() {
     treeView = $('#treeView').kendoTreeView({
         dataSource: {
             transport: {
-                read: function(options) { readTree(options, 'json/tree.json') }
+                read: function(options) { readNode(options, 'json/tree.json') }
             },
             schema: {
                 data: 'data',
@@ -61,60 +61,6 @@ function isSelectAll() {
                 $('#selectAll').prop('indeterminate', false).prop('checked', false);
             }
         });
-    }
-}
-
-// 提交 ID
-function submitIdTree() {
-    var ids = [];
-    $.each($('#treeView :checkbox'), function() {
-        if ($(this).prop('checked') || $(this).prop('indeterminate')) {
-            ids.push(treeView.dataItem($(this).closest('li')).id);
-        }
-    });
-    if (ids.length > 0) {
-        $('#loading').show();
-        $.fn.ajaxPost({
-            ajaxData: {
-                'ids': ids
-            },
-            finished: function() {
-                $('#loading').hide();
-            },
-            succeed: function() {
-                refreshTree();
-            },
-            isMsg: true
-        });
-    } else {
-        alertMsg('请先选择对象！', 'warning');
-    }
-}
-
-// 提交数据
-function submitDataTree() {
-    var models = [];
-    $.each($('#treeView :checkbox'), function() {
-        if ($(this).prop('checked') || $(this).prop('indeterminate')) {
-            models.push(treeView.dataItem($(this).closest('li')));
-        }
-    });
-    if (models.length > 0) {
-        $('#loading').show();
-        $.fn.ajaxPost({
-            ajaxData: {
-                'models': models
-            },
-            finished: function() {
-                $('#loading').hide();
-            },
-            succeed: function() {
-                refreshTree();
-            },
-            isMsg: true
-        });
-    } else {
-        alertMsg('请先选择对象！', 'warning');
     }
 }
 

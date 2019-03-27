@@ -3,7 +3,7 @@ $(function() {
     $('#grid').kendoGrid({
         dataSource: {
             transport: {
-                read: function(options) { readGrid(options, 'json/grid.json') }
+                read: function(options) { readItem(options, 'json/grid.json') }
             },
             schema: {
                 total: 'total',
@@ -76,8 +76,8 @@ $(function() {
             pageSize: 10
         },
         toolbar: [
-            { template: '<a class="k-button k-button-icontext" href="javascript:batchOperate(\'json/response.json\');"><span class="k-icon k-i-check"></span>提交ID</a>' },
-            { template: '<a class="k-button k-button-icontext" href="javascript:batchSubmit(\'json/response.json\');"><span class="k-icon k-i-validation-data"></span>提交数据</a>' }
+            { template: '<a class="k-button k-button-icontext" href="javascript:batchSubmitId(\'json/response.json\');"><span class="k-icon k-i-check"></span>提交ID</a>' },
+            { template: '<a class="k-button k-button-icontext" href="javascript:batchSubmitData(\'json/response.json\');"><span class="k-icon k-i-validation-data"></span>提交数据</a>' }
         ],
         columns: [
             { field: 'id', width: '40px',

@@ -3,7 +3,7 @@ $(function() {
     $('#treeView').kendoTreeView({
         dataSource: {
             transport: {
-                read: function(options) { readTree(options, 'json/tree.json') }
+                read: function(options) { readNode(options, 'json/tree.json') }
             },
             schema: {
                 data: 'data',

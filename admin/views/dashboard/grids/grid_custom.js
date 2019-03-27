@@ -302,10 +302,10 @@ $(function() {
     $('#grid').kendoGrid({
         dataSource: {
             transport: {
-                create: function(options) { createGrid(options, 'json/response.json') },
-                destroy: function(options) { destroyGrid(options, 'json/response.json') },
-                update: function(options) { updateGrid(options, 'json/response.json') },
-                read: function(options) { readGrid(options, 'json/grid.json') }
+                create: function(options) { createItem(options, 'json/response.json') },
+                destroy: function(options) { destroyItem(options, 'json/response.json') },
+                update: function(options) { updateItem(options, 'json/response.json') },
+                read: function(options) { readItem(options, 'json/grid.json') }
             },
             schema: {
                 total: 'total',
@@ -604,7 +604,7 @@ $(function() {
         },
         toolbar: [
             { name: 'create', text: '新增' },
-            { template: '<a class="k-button k-button-icontext" href="javascript:batchOperate(\'json/response.json\');"><span class="k-icon k-i-x"></span>批量删除</a>' },
+            { template: '<a class="k-button k-button-icontext" href="javascript:batchSubmitId(\'json/response.json\');"><span class="k-icon k-i-x"></span>批量删除</a>' },
             { name: 'excel', text: '导出 Excel' },
             { name: 'pdf', text: '导出 PDF' }
         ],

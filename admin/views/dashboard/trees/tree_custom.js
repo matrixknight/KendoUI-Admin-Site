@@ -4,7 +4,7 @@ $(function() {
     treeView = $('#treeView').kendoTreeView({
         dataSource: {
             transport: {
-                read: function(options) { readTree(options, 'json/tree.json') }
+                read: function(options) { readNode(options, 'json/tree.json') }
             },
             schema: {
                 data: 'data',
@@ -17,7 +17,7 @@ $(function() {
         template:
             '#= item.text #' +
             '# if (!item.url && item.spriteCssClass !== "fas fa-user k-sprite-edit") { #' +
-                '<button class="k-button k-button-icontext" onclick="createTree(\'#= item.id #\', \'#= item.uid #\');"><span class="k-icon k-i-plus"></span>新增</button>' +
+                '<button class="k-button k-button-icontext" onclick="createTree(\'#= item.id #\', \'#= item.uid #\');"><span class="k-icon k-i-add"></span>新增</button>' +
                 '<button class="k-button k-button-icontext" onclick="updateTree(\'#= item.id #\', \'#= item.text #\', \'#= item.uid #\');"><span class="k-icon k-i-edit"></span>编辑</button>' +
                 '<button class="k-button k-button-icontext" onclick="destroyTree(\'#= item.id #\', \'#= item.text #\', this);"><span class="k-icon k-i-close"></span>删除</button>' +
             '# } #',

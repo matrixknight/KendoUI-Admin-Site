@@ -301,10 +301,10 @@ $(function() {
     $('#grid').kendoGrid({
         dataSource: {
             transport: {
-                create: function(options) { createGrid(options, 'json/response.json') },
-                destroy: function(options) { destroyGrid(options, 'json/response.json') },
-                update: function(options) { updateGrid(options, 'json/response.json') },
-                read: function(options) { readGrid(options, 'json/grid.json') }
+                create: function(options) { createItem(options, 'json/response.json') },
+                destroy: function(options) { destroyItem(options, 'json/response.json') },
+                update: function(options) { updateItem(options, 'json/response.json') },
+                read: function(options) { readItem(options, 'json/grid.json') }
             },
             schema: {
                 total: 'total',

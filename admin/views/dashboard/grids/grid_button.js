@@ -4,7 +4,7 @@ $(function() {
     $('#grid').kendoGrid({
         dataSource: {
             transport: {
-                read: function(options) { readGrid(options, 'json/grid.json') }
+                read: function(options) { readItem(options, 'json/grid.json') }
             },
             schema: {
                 total: 'total',
@@ -198,7 +198,7 @@ $(function() {
             { template: '<a class="k-button k-button-icontext" href="resource/grid.xlsx"><span class="fa fa-download mr-1"></span>模版下载</a>' },
             { template: '<a class="k-button k-button-icontext theme-m-box" href="javascript:importTemp();"><span class="fa fa-file-import mr-1"></span>文件导入</a>' },
             { template: '<a class="k-button k-button-icontext k-grid-excel theme-m-box" href="javascript:;"><span class="fa fa-file-export mr-1"></span>客户端导出（全部项）</a>' },
-            { template: '<a class="k-button k-button-icontext" href="javascript:batchOperate(\'json/response.json\');"><span class="fa fa-upload mr-1"></span>服务端导出（选择项）</a>' },
+            { template: '<a class="k-button k-button-icontext" href="javascript:batchSubmitId(\'json/response.json\');"><span class="fa fa-upload mr-1"></span>服务端导出（选择项）</a>' },
             { template: '<a class="k-button k-button-icontext theme-s-box" href="javascript:sendEmail();"><span class="fa fa-envelope mr-1"></span>邮件发送</a>' },
             { template: '<a class="k-button k-button-icontext" href="javascript:print();"><span class="fa fa-print mr-1"></span>打印</a>' },
             { template: '<a class="k-button k-button-icontext float-right" href="javascript:linkTo(\'/\', \'home\');"><span class="k-icon k-i-undo"></span>返回首页</a>' }

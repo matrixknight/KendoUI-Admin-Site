@@ -706,25 +706,25 @@ $.fn.serializeObject = function() {
     return result;
 };
 
-/* 表格操作 ****************************************************************************/
+/* 数据操作 ****************************************************************************/
 
-// 增
-function createGrid(options, url, succeedGrid) {
-    cudGrid(options, options.data, url, succeedGrid);
+// 新增条目
+function createItem(options, url, succeed) {
+    cudItem(options, options.data, url, succeed);
 }
 
-// 删
-function destroyGrid(options, url, succeedGrid) {
-    cudGrid(options, $.extend({}, {'id': options.data.id}, $('.condition').serializeObject()), url, succeedGrid);
+// 删除条目
+function destroyItem(options, url, succeed) {
+    cudItem(options, $.extend({}, {'id': options.data.id}, $('.condition').serializeObject()), url, succeed);
 }
 
-// 改
-function updateGrid(options, url, succeedGrid) {
-    cudGrid(options, options.data, url, succeedGrid);
+// 编辑条目
+function updateItem(options, url, succeed) {
+    cudItem(options, options.data, url, succeed);
 }
 
-// 增删改
-function cudGrid(options, data, url, succeedGrid) {
+// 增删改条目
+function cudItem(options, data, url, succeed) {
     $('#loading').show();
     $.fn.ajaxPost({
         ajaxData: data,
@@ -734,9 +734,14 @@ function cudGrid(options, data, url, succeedGrid) {
         },
         succeed: function(res) {
             options.success(res);
-            refreshGrid();
-            if (succeedGrid) {
-                succeedGrid(res);
+            if ($('#grid').length > 0) {
+                refreshGrid();
+            }
+            if ($('#listView').length > 0) {
+                refreshList();
+            }
+            if (succeed) {
+                succeed(res);
             }
         },
         failed: function(res) {
@@ -746,15 +751,15 @@ function cudGrid(options, data, url, succeedGrid) {
     });
 }
 
-// 查
-function readGrid(options, url, succeedGrid) {
+// 读取条目
+function readItem(options, url, succeed) {
     $.fn.ajaxPost({
         ajaxData: $('.condition').serializeObject(),
         ajaxUrl: url,
         succeed: function(res) {
             options.success(res);
-            if (succeedGrid) {
-                succeedGrid(res);
+            if (succeed) {
+                succeed(res);
             }
         },
         failed: function(res) {
@@ -763,27 +768,72 @@ function readGrid(options, url, succeedGrid) {
     });
 }
 
-// 刷新
+// 读取节点
+function readNode(options, url, succeed) {
+    $.fn.ajaxPost({
+        ajaxUrl: url,
+        succeed: function(res) {
+            options.success(res);
+            if (succeed) {
+                succeed(res);
+            }
+        },
+        failed: function(res) {
+            options.error(res);
+        }
+    });
+}
+
+// 刷新表格
 function refreshGrid() {
     $('#grid').data('kendoGrid').dataSource.read();
 }
 
-// 批量操作ID
-function batchOperate(url, succeedBatch) {
-    if ($('#grid').data('kendoGrid').selectedKeyNames().length > 0) {
+// 刷新树形
+function refreshTree() {
+    $('#treeView').data('kendoTreeView').dataSource.read();
+}
+
+// 刷新列表
+function refreshList() {
+    $('#listView').data('kendoListView').dataSource.read();
+}
+
+// 批量提交ID
+function batchSubmitId(url, succeed) {
+    var ids = [];
+    if ($('#grid').length > 0) {
+        ids = $('#grid').data('kendoGrid').selectedKeyNames();
+    }
+    if ($('#treeView').length > 0) {
+        $.each($('#treeView :checkbox'), function() {
+            if ($(this).prop('checked') || $(this).prop('indeterminate')) {
+                ids.push($('#treeView').data('kendoTreeView').dataItem($(this).closest('li')).id);
+            }
+        });
+    }
+    if (ids.length > 0) {
         $('#loading').show();
         $.fn.ajaxPost({
             ajaxData: {
-                'ids': $('#grid').data('kendoGrid').selectedKeyNames()
+                'ids': ids
             },
             ajaxUrl: url,
             finished: function() {
                 $('#loading').hide();
             },
             succeed: function(res) {
-                refreshGrid();
-                if (succeedBatch) {
-                    succeedBatch(res);
+                if ($('#grid').length > 0) {
+                    refreshGrid();
+                }
+                if ($('#treeView').length > 0) {
+                    refreshTree();
+                }
+                if ($('#listView').length > 0) {
+                    refreshList();
+                }
+                if (succeed) {
+                    succeed(res);
                 }
             },
             isMsg: true
@@ -794,13 +844,22 @@ function batchOperate(url, succeedBatch) {
 }
 
 // 批量提交数据
-function batchSubmit(url, succeedBatch) {
-    if ($('#grid').data('kendoGrid').selectedKeyNames().length > 0) {
-        $('#loading').show();
-        var models = [];
-        $.each($('#grid').data('kendoGrid').selectedKeyNames(), function(i, items) {
-            models.push($('#grid').data('kendoGrid').dataSource.get(items));
+function batchSubmitData(url, succeed) {
+    var models = [];
+    if ($('#grid').length > 0) {
+        $.each($('#grid').data('kendoGrid').selectedKeyNames(), function() {
+            models.push($('#grid').data('kendoGrid').dataSource.get(this));
         });
+    }
+    if ($('#treeView').length > 0) {
+        $.each($('#treeView :checkbox'), function() {
+            if ($(this).prop('checked') || $(this).prop('indeterminate')) {
+                models.push($('#treeView').data('kendoTreeView').dataItem($(this).closest('li')));
+            }
+        });
+    }
+    if (models.length > 0) {
+        $('#loading').show();
         $.fn.ajaxPost({
             ajaxData: {
                 'models': models
@@ -810,9 +869,17 @@ function batchSubmit(url, succeedBatch) {
                 $('#loading').hide();
             },
             succeed: function(res) {
-                refreshGrid();
-                if (succeedBatch) {
-                    succeedBatch(res);
+                if ($('#grid').length > 0) {
+                    refreshGrid();
+                }
+                if ($('#treeView').length > 0) {
+                    refreshTree();
+                }
+                if ($('#listView').length > 0) {
+                    refreshList();
+                }
+                if (succeed) {
+                    succeed(res);
                 }
             },
             isMsg: true
@@ -822,7 +889,7 @@ function batchSubmit(url, succeedBatch) {
     }
 }
 
-// 查看详情
+// 按钮详情
 function btnDetails(e) {
     e.preventDefault();
     divWindow('详情', '80%', '40%', kendo.template($('#detailsTemplate').html())(this.dataItem($(e.target).closest('tr'))));
@@ -835,27 +902,4 @@ function linkDetails(dataItem) {
             divWindow('详情', '80%', '40%', kendo.template($('#detailsTemplate').html())(dataItem));
         }
     });
-}
-
-/* 树形操作 ****************************************************************************/
-
-// 查
-function readTree(options, url, succeedTree) {
-    $.fn.ajaxPost({
-        ajaxUrl: url,
-        succeed: function(res) {
-            options.success(res);
-            if (succeedTree) {
-                succeedTree(res);
-            }
-        },
-        failed: function(res) {
-            options.error(res);
-        }
-    });
-}
-
-// 刷新
-function refreshTree() {
-    $('#treeView').data('kendoTreeView').dataSource.read();
 }
