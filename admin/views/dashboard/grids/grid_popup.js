@@ -1643,7 +1643,7 @@ $(function() {
                         .appendTo(container);
                 }
             },
-            { field: 'summary', title: '自我介绍', width: '290px',
+            { field: 'summary', title: '自我介绍', width: '310px',
                 editor: function(container, options) {
                     $('<strong class="k-required">*</strong>').appendTo(container);
                     $('<textarea class="k-textarea" name="summary" data-bind="value: '+ options.field +'"></textarea>')
@@ -1713,7 +1713,7 @@ $(function() {
                         });
                 }
             },
-            { field: 'sign', title: '签名', width: '290px',
+            { field: 'sign', title: '签名', width: '310px',
                 template: '#= sign #',
                 editor: function(container, options) {
                     $('<strong class="k-required">*</strong>').appendTo(container);

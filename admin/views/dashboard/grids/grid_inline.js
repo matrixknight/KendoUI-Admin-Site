@@ -1650,7 +1650,7 @@ $(function() {
                         .appendTo(container);
                 }
             },
-            { field: 'summary', title: '自我介绍', width: '300px',
+            { field: 'summary', title: '自我介绍', width: '310px',
                 editor: function(container, options) {
                     $('<strong class="k-required d-block">*<small>必填</small></strong>').appendTo(container);
                     $('<textarea class="k-textarea" name="summary" data-bind="value: '+ options.field +'"></textarea>')

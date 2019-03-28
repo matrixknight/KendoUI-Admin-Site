@@ -796,11 +796,11 @@ $(function() {
                         '#= tourism[i].name #&nbsp;' +
                     '# } #'
             },
-            { field: 'summary', title: '自我介绍', width: '290px' },
+            { field: 'summary', title: '自我介绍', width: '310px' },
             { field: 'photo', title: '头像', width: '120px',
                 template: '<a href="javascript:showBigPic(\'#= photo.url #\');"><img class="w-25 rounded-circle" src="#= photo.url #" alt="#= photo.name ##= photo.extension #"></a><small class="ml-2 text-muted">[#= kendo.toString(photo.size / 1024, "0.00") # KB]</small>'
             },
-            { field: 'sign', title: '签名', width: '290px',
+            { field: 'sign', title: '签名', width: '310px',
                 template: '#= sign #'
             }
         ],

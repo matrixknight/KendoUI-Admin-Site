@@ -609,7 +609,7 @@ $(function() {
             },
             { field: 'constellation', title: '相配的星座', width: '170px' },
             { field: 'tourism', title: '旅游足迹', width: '200px' },
-            { field: 'summary', title: '自我介绍', width: '290px' },
+            { field: 'summary', title: '自我介绍', width: '310px' },
             { field: 'photo', title: '头像', width: '120px',
                 template:
                     '# var photoUrl = photo.split(":")[0]; #' +
@@ -617,7 +617,7 @@ $(function() {
                     '# var photoSize = photo.split(":")[1]; #' +
                     '<a href="javascript:showBigPic(\'#= photoUrl #\');"><img class="w-25 rounded-circle" src="#= photoUrl #" alt="#= photoName #"></a><small class="ml-2 text-muted">#= photoSize #</small>'
             },
-            { field: 'sign', title: '签名', width: '290px',
+            { field: 'sign', title: '签名', width: '310px',
                 template: '#= sign #'
             }
         ],

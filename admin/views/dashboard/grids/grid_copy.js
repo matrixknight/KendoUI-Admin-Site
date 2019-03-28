@@ -848,7 +848,7 @@ $(function() {
                         });
                 }
             },
-            { field: 'summary', title: '自我介绍', width: '300px',
+            { field: 'summary', title: '自我介绍', width: '310px',
                 editor: function(container, options) {
                     $('<textarea class="k-textarea" name="summary" data-bind="value: '+ options.field +'"></textarea>')
                         .appendTo(container);
