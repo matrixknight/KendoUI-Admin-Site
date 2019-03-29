@@ -1631,6 +1631,9 @@ form {
                 visibility: visible;
             }
         }
+        &.k-edit-item {
+            background: $alt-bg-color;
+        }
     }
 }
 

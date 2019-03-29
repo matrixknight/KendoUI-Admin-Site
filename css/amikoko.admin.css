@@ -1280,6 +1280,8 @@ form .searchBtn.row {
   .k-listview > div:hover .k-edit-button,
   .k-listview > div:hover .k-delete-button {
     visibility: visible; }
+  .k-listview > div.k-edit-item {
+    background: #f5f5f5; }
 
 /* 自定义 Kendo UI 组件 ------------------------------ */
 /* 时间轴 */
