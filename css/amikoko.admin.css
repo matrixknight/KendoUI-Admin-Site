@@ -1266,6 +1266,21 @@ form .searchBtn.row {
 .k-drag-clue .k-button {
   display: none; }
 
+/* 列表 */
+.k-listview > div {
+  border: 0;
+  border-top: 1px solid #ccc; }
+  .k-listview > div.k-state-focused {
+    box-shadow: none; }
+  .k-listview > div:first-child {
+    border-top: 0; }
+  .k-listview > div .k-edit-button,
+  .k-listview > div .k-delete-button {
+    visibility: hidden; }
+  .k-listview > div:hover .k-edit-button,
+  .k-listview > div:hover .k-delete-button {
+    visibility: visible; }
+
 /* 自定义 Kendo UI 组件 ------------------------------ */
 /* 时间轴 */
 .k-timeaxis {
