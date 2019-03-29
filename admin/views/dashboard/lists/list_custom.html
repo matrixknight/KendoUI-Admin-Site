@@ -216,7 +216,7 @@
         </div>
     </div>
     <script id="listTemplate" type="text/x-kendo-template">
-        <div class="card rounded-0">
+        <div class="listItem card rounded-0">
             <div class="row no-gutters">
                 <div class="col-md-2 col-xl-1 border-right d-none d-md-block">
                     <div class="card-body text-center p-2">
@@ -722,12 +722,20 @@
             </form>
         </div>
     </script>
+    <!-- 临时修复 Kendo UI 自定义列表复选框无法选中的 BUG -->
     <style scoped>
         @media only screen and (max-width: 767px) {
             #editForm .infoArea {
                 border-right: 0 !important;
                 border-bottom: 1px solid #dee2e6;
             }
+        }
+        .ids {
+            z-index: 1;
+            width: 16px;
+            height: 16px;
+            clip: auto;
+            pointer-events: auto;
         }
     </style>
 </script>

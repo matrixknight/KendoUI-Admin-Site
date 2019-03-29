@@ -303,7 +303,7 @@ $(function() {
         items: [
             { template: '<input class="k-checkbox" id="selectAll" type="checkbox" title="全选"><label class="k-checkbox-label" for="selectAll"></label>' },
             { template: '<a class="k-button k-button-icontext k-state-selected k-add-button" href="javascript:;"><span class="k-icon k-i-add"></span>新增</a>' },
-            { template: '<a class="k-button k-button-icontext" href="javascript:;"><span class="k-icon k-i-x"></span>批量删除</a>' },
+            { template: '<a class="k-button k-button-icontext" href="javascript:;" onclick="batchSubmitId(\'json/response.json\')"><span class="k-icon k-i-x"></span>批量删除</a>' },
             { template: '<a class="k-button k-button-icontext" href="javascript:;"><span class="k-icon k-i-sort-asc-sm"></span>升序</a><a class="k-button k-button-icontext hide" href="javascript:;"><span class="k-icon k-i-sort-desc-sm"></span>降序</a>' },
             { template: '<input class="k-textbox w-100" id="search" name="search" type="text" placeholder="搜索...">' },
             { template: '<select class="w-100" id="filter" name="filter"></select>' }
@@ -623,6 +623,10 @@ $(function() {
         dataSource: dataSource,
         template: kendo.template($('#listTemplate').html()),
         selectable: 'multiple',
+        change: function(e) {
+            $('.listItem .ids').prop('checked', false);
+            this.select().find('.ids').prop('checked', true);
+        },
         navigatable: true,
         editTemplate: kendo.template($('#editTemplate').html()),
         edit: function(e) {
@@ -1182,6 +1186,9 @@ $(function() {
                     importantMoment: '日期时间格式不正确！'
                 }
             });
+        },
+        dataBound: function() {
+            $('#selectAll').prop('checked', false);
         }
     });
     // 获取数据源并分页
@@ -1196,5 +1203,21 @@ $(function() {
     $('.k-add-button').click(function(e) {
         $('#listView').data('kendoListView').add();
         e.preventDefault();
+    });
+    // 全选
+    $('#selectAll').click(function() {
+        if ($(this).prop('checked')) {
+            $('#listView').data('kendoListView').select($('.listItem'));
+        } else {
+            $('#listView').data('kendoListView').clearSelection();
+        }
+    });
+    // 单选
+    $('.k-listview').on('click', '.ids', function() {
+        if ($(this).prop('checked')) {
+            $('#listView').data('kendoListView').select($(this).parents('.listItem'));
+        } else {
+            $(this).parents('.listItem').removeClass('k-state-selected').removeAttr('aria-selected');
+        }
     });
 });
