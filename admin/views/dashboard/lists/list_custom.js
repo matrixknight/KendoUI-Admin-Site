@@ -304,21 +304,29 @@ $(function() {
             { template: '<input class="k-checkbox" id="selectAll" type="checkbox" title="全选"><label class="k-checkbox-label" for="selectAll"></label>' },
             { template: '<a class="k-button k-button-icontext k-state-selected k-add-button" href="javascript:;"><span class="k-icon k-i-add"></span>新增</a>' },
             { template: '<a class="k-button k-button-icontext" href="javascript:;" onclick="batchSubmitId(\'json/response.json\')"><span class="k-icon k-i-x"></span>批量删除</a>' },
-            { template: '<a class="k-button k-button-icontext" href="javascript:;"><span class="k-icon k-i-sort-asc-sm"></span>升序</a><a class="k-button k-button-icontext hide" href="javascript:;"><span class="k-icon k-i-sort-desc-sm"></span>降序</a>' },
+            { template: '<a class="k-button k-button-icontext orderBtn" href="javascript:;" onclick="order(\'desc\');"><span class="k-icon k-i-sort-asc-sm"></span>升序</a><a class="k-button k-button-icontext orderBtn hide" href="javascript:;" onclick="order(\'asc\');"><span class="k-icon k-i-sort-desc-sm"></span>降序</a>' },
             { template: '<input class="k-textbox w-100" id="search" name="search" type="text" placeholder="搜索...">' },
             { template: '<select class="w-100" id="filter" name="filter"></select>' }
         ]
     });
+    // 筛选
     $('#filter').kendoDropDownList({
         dataSource: {
             data: [
-                { text: '在线', value: true },
-                { text: '离线', value: false }
+                { text: '男', value: '1' },
+                { text: '女', value: '2' }
             ]
         },
         optionLabel: "- 筛选 -",
         dataValueField: 'value',
-        dataTextField: 'text'
+        dataTextField: 'text',
+        change: function(e) {
+            $('#listView').data('kendoListView').dataSource.filter({
+                field: 'gender',
+                operator: 'contains',
+                value: this.value()
+            });
+        }
     });
     // 定义数据源
     var dataSource = new kendo.data.DataSource({
@@ -1199,11 +1207,6 @@ $(function() {
         pageSizes: [5, 10, 15, 20, 25, 30, 50, 100, 'all'],
         refresh: true
     });
-    // 新增列表
-    $('.k-add-button').click(function(e) {
-        $('#listView').data('kendoListView').add();
-        e.preventDefault();
-    });
     // 全选
     $('#selectAll').click(function() {
         if ($(this).prop('checked')) {
@@ -1220,4 +1223,38 @@ $(function() {
             $(this).parents('.listItem').removeClass('k-state-selected').removeAttr('aria-selected');
         }
     });
+    // 新增列表
+    $('.k-add-button').click(function(e) {
+        $('#listView').data('kendoListView').add();
+        e.preventDefault();
+    });
+    // 搜索
+    $('#search').keyup(function() {
+        $('#listView').data('kendoListView').dataSource.filter({
+            logic: 'or',
+            filters: [
+                { field: 'userName', operator: 'contains', value: $(this).val() },
+                { field: 'realName', operator: 'contains', value: $(this).val() },
+                { field: 'nickName', operator: 'contains', value: $(this).val() },
+                { field: 'age', operator: 'eq', value: $(this).val() },
+                { field: 'height', operator: 'eq', value: $(this).val() },
+                { field: 'birthday', operator: 'contains', value: $(this).val() },
+                { field: 'creditCard', operator: 'contains', value: $(this).val() },
+                { field: 'asset', operator: 'contains', value: $(this).val() },
+                { field: 'language', operator: 'contains', value: $(this).val() },
+                { field: 'mobile', operator: 'contains', value: $(this).val() },
+                { field: 'email', operator: 'contains', value: $(this).val() },
+                { field: 'homepage', operator: 'contains', value: $(this).val() }
+            ]
+        });
+    });
 });
+
+// 排序
+function order(dir) {
+    $('#listView').data('kendoListView').dataSource.sort({
+        field: 'id',
+        dir: dir
+    });
+    $('.orderBtn').toggle();
+}

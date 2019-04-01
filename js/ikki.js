@@ -812,6 +812,13 @@ function batchSubmitId(url, succeed) {
             }
         });
     }
+    if ($('#listView').length > 0) {
+        $.each($('#listView .ids'), function() {
+            if ($(this).prop('checked')) {
+                ids.push($(this).val());
+            }
+        });
+    }
     if (ids.length > 0) {
         $('#loading').show();
         $.fn.ajaxPost({
@@ -855,6 +862,13 @@ function batchSubmitData(url, succeed) {
         $.each($('#treeView :checkbox'), function() {
             if ($(this).prop('checked') || $(this).prop('indeterminate')) {
                 models.push($('#treeView').data('kendoTreeView').dataItem($(this).closest('li')));
+            }
+        });
+    }
+    if ($('#listView').length > 0) {
+        $.each($('#listView .ids'), function() {
+            if ($(this).prop('checked')) {
+                models.push($('#listView').data('kendoListView').dataItem($(this).closest('.listItem')));
             }
         });
     }
