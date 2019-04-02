@@ -1,6 +1,6 @@
 <script id="list_layoutTemp" type="text/x-kendo-template">
     <div class="row">
-        <div class="col-lg-9">
+        <div class="col-lg-9 mb-3 mb-lg-0">
             <div class="card">
                 <h5 class="card-header">条件搜索</h5>
                 <div class="card-body">
@@ -516,6 +516,7 @@
                 <span class="dot-color k-notification-error"></span><span class="k-notification-error bg-transparent ml-2">离线</span>
             # } #
             <a class="k-link font-weight-bold theme-m mx-2" href="javascript:;">#= realName #</a>
+            <div class="w-100 d-none d-lg-block d-xl-none"></div>
             <small class="text-black-50">[#= nickName #]</small>
             # if (gender === '1') { #
                 <i class="fas fa-mars mars ml-2"></i>
@@ -525,7 +526,7 @@
         </div>
     </script>
     <script id="pictureTemplate" type="text/x-kendo-template">
-        <figure class="col-md-4">
+        <figure class="col-4 col-md-3 col-lg-6 col-xl-4">
             <a href="javascript:;"><img class="img-thumbnail" src="#= photo.url #" alt="#= nickName #" title="#= realName #"></a>
         </figure>
     </script>
@@ -570,7 +571,7 @@
         </div>
     </script>
     <script id="blockTemplate" type="text/x-kendo-template">
-        <figure class="col-md-6 text-center">
+        <figure class="col-6 col-md-4 col-lg-12 col-xl-6 text-center">
             <a href="javascript:;"><img class="img-thumbnail" src="#= photo.url #" alt="#= nickName #" title="#= realName #"></a>
             <h5 class="my-2">
                 <a class="k-link font-weight-bold theme-m" href="javascript:;">#= realName #</a>
