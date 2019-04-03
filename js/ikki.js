@@ -243,7 +243,7 @@ function alertMsg(msg, type, closed) {
         minWidth: 320,
         minHeight: 196,
         title: '信息',
-        content: checkInfoType(type) + msg,
+        content: '<dl class="d-flex align-items-center m-0"><dt>' + checkInfoType(type) + '</dt><dd class="m-0">' + msg + '</dd></dl>',
         actions: [
             {
                 text: '确定',
@@ -280,7 +280,7 @@ function alertMsgBtn(msg, type, closed) {
             alertWindow.destroy();
         }
     }).data('kendoWindow');
-    alertWindow.content(checkInfoType(type) + msg + '<div class="k-window-buttongroup"><button class="k-button k-button-lg k-state-selected" type="button">确 定</button></div>').center().open();
+    alertWindow.content('<dl class="d-flex align-items-center m-0"><dt>' + checkInfoType(type) + '</dt><dd class="m-0">' + msg + '</dd></dl>' + '<div class="k-window-buttongroup"><button class="k-button k-button-lg k-state-selected" type="button">确 定</button></div>').center().open();
     $('.dialog-box .k-window-buttongroup .k-button').click(function() {
         if (closed) {
             closed();
@@ -298,7 +298,7 @@ function alertMsgNoBtn(msg, type, closed) {
         minWidth: 320,
         minHeight: 160,
         title: '信息',
-        content: checkInfoType(type) + msg,
+        content: '<dl class="d-flex align-items-center m-0"><dt>' + checkInfoType(type) + '</dt><dd class="m-0">' + msg + '</dd></dl>',
         open: function() {
             if (closed) {
                 closed();
@@ -324,7 +324,7 @@ function confirmMsg(title, msg, type, confirmed) {
         minWidth: 320,
         minHeight: 196,
         title: title,
-        content: checkInfoType(type) + msg,
+        content: '<dl class="d-flex align-items-center m-0"><dt>' + checkInfoType(type) + '</dt><dd class="m-0">' + msg + '</dd></dl>',
         actions: [
             {
                 text: '确定',
@@ -364,7 +364,7 @@ function confirmMsgBtn(title, msg, type, confirmed) {
             confirmWindow.destroy();
         }
     }).data('kendoWindow');
-    confirmWindow.content(checkInfoType(type) + msg + '<div class="k-window-buttongroup"><button class="k-button k-button-lg k-state-selected" type="button">确 定</button><button class="k-button k-button-lg" type="button">取 消</button></div>').center().open();
+    confirmWindow.content('<dl class="d-flex align-items-center m-0"><dt>' + checkInfoType(type) + '</dt><dd class="m-0">' + msg + '</dd></dl>' + '<div class="k-window-buttongroup"><button class="k-button k-button-lg k-state-selected" type="button">确 定</button><button class="k-button k-button-lg" type="button">取 消</button></div>').center().open();
     $('.dialog-box .k-window-buttongroup .k-state-selected').click(function() {
         confirmed();
     });
