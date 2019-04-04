@@ -1351,4 +1351,26 @@ form .searchBtn.row {
 .venus {
   color: #ff96c0; }
 
+/* IE10 兼容 ------------------------------ */
+#locking {
+  display: -ms-flexbox;
+  -ms-flex-direction: column;
+  -ms-flex-pack: center;
+  -ms-flex-align: center; }
+  #locking figure:hover:after {
+    display: -ms-flexbox;
+    -ms-flex-pack: center;
+    -ms-flex-align: center; }
+
+#login main {
+  display: -ms-flexbox;
+  -ms-flex-pack: center;
+  -ms-flex-align: center; }
+
+.k-edit-form-container div.k-tooltip-validation {
+  -ms-flex-direction: row; }
+
+.k-grid-edit-row div.k-tooltip-validation {
+  -ms-flex-direction: row; }
+
 /*# sourceMappingURL=amikoko.admin.css.map */
