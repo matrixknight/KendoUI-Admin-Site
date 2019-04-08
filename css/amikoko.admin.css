@@ -92,10 +92,14 @@ iframe#section {
   display: none; }
 
 #locking {
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -113,9 +117,12 @@ iframe#section {
     position: relative;
     margin-bottom: 0; }
     #locking figure:hover:after {
+      display: -ms-flexbox;
       display: flex;
-      justify-content: center;
-      align-items: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+      -ms-flex-align: center;
+          align-items: center;
       position: absolute;
       top: 0;
       left: 0;
@@ -728,9 +735,12 @@ h1 {
 
 /* 登录 */
 #login main {
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
   overflow: hidden;
   position: absolute;
   top: 0;
@@ -1173,7 +1183,8 @@ form .searchBtn.row {
   .k-edit-form-container .k-edit-buttons {
     text-align: center; }
   .k-edit-form-container div.k-tooltip-validation {
-    flex-direction: row;
+    -ms-flex-direction: row;
+        flex-direction: row;
     margin: 0.5em 0 0 0 !important; }
     .k-edit-form-container div.k-tooltip-validation .k-icon {
       margin-right: 4px; }
@@ -1217,7 +1228,8 @@ form .searchBtn.row {
   .k-grid-edit-row .k-editor tr:hover {
     background-color: #fff; }
 .k-grid-edit-row div.k-tooltip-validation {
-  flex-direction: row;
+  -ms-flex-direction: row;
+      flex-direction: row;
   margin: 1em 0 0 -9px !important;
   white-space: nowrap; }
   .k-grid-edit-row div.k-tooltip-validation .k-icon {
@@ -1261,6 +1273,7 @@ form .searchBtn.row {
 .k-treeview .k-state-selected .k-button,
 .k-treeview .k-state-focused .k-button,
 .k-treeview .k-state-hover .k-button {
+  display: -ms-inline-flexbox;
   display: inline-flex; }
 
 .k-drag-clue .k-button {
@@ -1350,27 +1363,5 @@ form .searchBtn.row {
 
 .venus {
   color: #ff96c0; }
-
-/* IE10 兼容 ------------------------------ */
-#locking {
-  display: -ms-flexbox;
-  -ms-flex-direction: column;
-  -ms-flex-pack: center;
-  -ms-flex-align: center; }
-  #locking figure:hover:after {
-    display: -ms-flexbox;
-    -ms-flex-pack: center;
-    -ms-flex-align: center; }
-
-#login main {
-  display: -ms-flexbox;
-  -ms-flex-pack: center;
-  -ms-flex-align: center; }
-
-.k-edit-form-container div.k-tooltip-validation {
-  -ms-flex-direction: row; }
-
-.k-grid-edit-row div.k-tooltip-validation {
-  -ms-flex-direction: row; }
 
 /*# sourceMappingURL=amikoko.admin.css.map */

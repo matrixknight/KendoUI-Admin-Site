@@ -407,9 +407,12 @@ h1 {
 
 /* 登录 */
 #login main {
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
   overflow: hidden;
   position: absolute;
   top: 0;

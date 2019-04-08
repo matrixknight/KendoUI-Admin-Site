@@ -180,7 +180,7 @@
                         },
                         {
                             "id": "010402",
-                            "text": "<i class='fas fa-genderless'></i>多模块自定义排版<sub class='theme-l'>Update</sub>",
+                            "text": "<i class='fas fa-genderless'></i>多模块自定义排版",
                             "encoded": false,
                             "cssClass": "links-list_layout",
                             "url": "javascript:linkTo(\"/dashboard/lists/\", \"list_layout\");"
