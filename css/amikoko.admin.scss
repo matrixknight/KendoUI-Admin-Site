@@ -1073,7 +1073,8 @@ h1 {
 }
 
 /* Bootstrap 细节完善 ------------------------------ */
-
+.k-ie10 .hide,
+.k-ie11 .hide,
 .hide {
     display: none;
 }

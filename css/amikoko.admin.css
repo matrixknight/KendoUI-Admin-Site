@@ -887,6 +887,8 @@ h1 {
   #goTop {
     right: 15px; } }
 /* Bootstrap 细节完善 ------------------------------ */
+.k-ie10 .hide,
+.k-ie11 .hide,
 .hide {
   display: none; }
 
