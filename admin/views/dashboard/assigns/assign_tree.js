@@ -101,7 +101,8 @@ $(function() {
         $.each($('#treeTo').find('.k-image'), function() {
             ids.push({
                 'id': treeTo.dataItem($(this).closest('.k-item')).id,
-                'parentId': treeTo.dataItem(treeTo.parent($(this).closest('.k-item'))).id
+                'parentId': treeTo.dataItem(treeTo.parent($(this).closest('.k-item'))).id,
+                'order': treeTo.dataItem($(this).closest('.k-item')).index
             });
         });
         if (ids.length > 0) {
