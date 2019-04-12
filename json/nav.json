@@ -237,7 +237,7 @@
                         },
                         {
                             "id": "010504",
-                            "text": "<i class='fas fa-genderless'></i>列表搜索双击选择<sub class='theme-l'>Wait</sub>",
+                            "text": "<i class='fas fa-genderless'></i>列表搜索双击选择<sub class='theme-l'>New</sub>",
                             "encoded": false,
                             "cssClass": "links-assign_list",
                             "url": "javascript:linkTo(\"/dashboard/assigns/\", \"assign_list\");"
