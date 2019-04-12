@@ -244,7 +244,7 @@
                         },
                         {
                             "id": "010505",
-                            "text": "<i class='fas fa-genderless'></i>穿梭框拖放<sub class='theme-l'>Wait</sub>",
+                            "text": "<i class='fas fa-genderless'></i>穿梭框拖放<sub class='theme-l'>New</sub>",
                             "encoded": false,
                             "cssClass": "links-assign_listbox",
                             "url": "javascript:linkTo(\"/dashboard/assigns/\", \"assign_listbox\");"
