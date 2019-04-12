@@ -172,7 +172,12 @@ function tipMsg(dom, msg, position) {
         position: position,
         content: msg
     }).data('kendoTooltip');
-    tips.show();
+    $(dom).on('mouseenter', function() {
+        tips.show();
+    });
+    $(dom).on('mouseleave', function() {
+        tips.hide();
+    });
 }
 
 // 通知框
