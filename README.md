@@ -192,7 +192,7 @@ Kendo UI Admin &amp; Site base on Kendo UI for jQuery and Bootstrap 4.
     * `<small>` 为可选次级文字
     * `<sub>` 为角标
 * 左侧导航 `url` 键值包含的 `linkTo` 方法为路由函数<br>其中第一个参数为子页面模块相对于 `views` 目录所在的目录<br>第二个参数为子页面模块的名称<br>`cssClass` 键值为面包屑要用到的 DOM 定位，由 `links-模块名称` 组成
-* 顶部菜单及左侧导航的 API 接口地址位于 `ikki.layout.js` 文件内
+* 顶部菜单、左侧导航及 Token 验证的 API 接口地址位于 `ikki.layout.js` 文件内
 * `ikki.js` 文件内封装了一些公用方法，具体参数及说明如下：
 
     | 方法 | 参数 | 类型 | 默认值 | 说明 |
@@ -277,6 +277,12 @@ Kendo UI Admin &amp; Site base on Kendo UI for jQuery and Bootstrap 4.
         "result": "y",
         "msg": "操作成功！",
         "data": []
+    }
+    ```
+* Token 验证不通过时返回：
+    ```json
+    {
+        "result": "denied"
     }
     ```
 * 所有日期 `date` 类型的数据全部转换成字符串 `string` 类型进行交互，即前端给到后端和后端给到前端的数据均为字符串
