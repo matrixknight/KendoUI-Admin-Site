@@ -118,7 +118,7 @@
                                         // 头像动画及页面跳转
                                         $('#avatar').attr({'src': res.data.avatar, 'alt': res.data.username}).addClass('user-avatar').next().text(res.data.username);
                                         $('.form-group, .btn-primary').slideUp(800, function() {
-                                            location.href = $('base').attr('href') + $('base').attr('type') + 'index_gitee.html';
+                                            location.href = $('base').attr('href') + $('base').attr('type') + '/index_gitee.html';
                                         });
                                     },
                                     failed: function(res) {
