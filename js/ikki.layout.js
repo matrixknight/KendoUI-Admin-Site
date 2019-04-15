@@ -43,7 +43,8 @@ $(function() {
         ajaxUrl: navUrl,
         succeed: function(res) {
             $('#navPanelBar').kendoPanelBar({
-                dataSource: res.data
+                dataSource: res.data,
+                loadOnDemand: false
             });
             $('#navMenu').kendoMenu({
                 orientation: 'vertical',
@@ -67,6 +68,10 @@ $(function() {
             }
         }
     });
+    // 面包屑导航
+    setTimeout(function() {
+        showPath(location.hash.split('#')[1].split('/')[location.hash.split('#')[1].split('/').length - 1]);
+    }, 10);
     // 全屏
     $('#header').on('click', '.fullscreen', function() {
         var fullscreenEnabled = document.fullscreenEnabled       ||
@@ -132,6 +137,10 @@ function showPath(hash) {
         homePath = webType + '/#/home';
     }
     $('#path').prepend('<a href="' + homePath + '"><i class="fas fa-home"></i>首页<span><small>Home</small></span></a>');
+    if ($('#navPanelBar').data('kendoPanelBar')) {
+        $('#navPanelBar').data('kendoPanelBar').expand($('.links-'+ hash).parents('.k-group').parent());
+        $('.links-'+ hash).find('a.k-link').addClass('k-state-selected');
+    }
 }
 
 // 进入全屏
