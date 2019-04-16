@@ -277,5 +277,9 @@ function changeLang(lang) {
 // 退出登录
 function logout() {
     sessionStorage.clear();
-    location.href = path + webType + '/login.html';
+    if (location.href.indexOf('gitee') !== -1) {
+        location.href = path + webType + '/login_gitee.html';
+    } else {
+        location.href = path + webType + '/login.html';
+    }
 }
