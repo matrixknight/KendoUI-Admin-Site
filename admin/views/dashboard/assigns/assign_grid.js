@@ -26,7 +26,7 @@ $(function() {
             }
         },
         toolbar: [
-            { template: '<span class="k-textbox k-space-left w-100"><input name="keywords" type="text" placeholder="关键字搜索"><a class="k-icon k-i-search ml-1" href="javascript:;"></a></span>' }
+            { template: '<span class="k-textbox k-space-left w-100"><input name="keywords" type="text" placeholder="关键字搜索"><a class="k-icon k-i-search k-required ml-1" href="javascript:;"></a></span>' }
         ],
         columns: [
             { selectable: true, width: '40px' },
@@ -86,7 +86,7 @@ $(function() {
             }
         },
         toolbar: [
-            { template: '<span class="k-textbox k-space-left w-100"><input name="keywords" type="text" placeholder="关键字搜索"><a class="k-icon k-i-search ml-1" href="javascript:;"></a></span>' }
+            { template: '<span class="k-textbox k-space-left w-100"><input name="keywords" type="text" placeholder="关键字搜索"><a class="k-icon k-i-search k-required ml-1" href="javascript:;"></a></span>' }
         ],
         columns: [
             { selectable: true, width: '40px' },

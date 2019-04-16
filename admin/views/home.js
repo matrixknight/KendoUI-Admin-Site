@@ -389,7 +389,7 @@ $(function() {
                     pageSize: 10
                 },
                 template: function(dataItem) {
-                    return '<li><a class="mr-3" href="' + dataItem.committer.html_url + '" target="_blank"><img class="rounded-lg" src="' + dataItem.committer.avatar_url + '" alt="' + dataItem.committer.login + '"></a><time>' + kendo.toString(kendo.parseDate(dataItem.commit.committer.date), "yyyy-MM-dd HH:mm:ss") + '</time><p><a href="' + dataItem.html_url + '" target="_blank">' + dataItem.commit.message + '</a></p></li>';
+                    return '<li><a class="mr-3" href="' + dataItem.committer.html_url + '" target="_blank"><img class="rounded-lg" src="' + dataItem.committer.avatar_url + '" alt="' + dataItem.committer.login + '"></a><time>' + kendo.toString(kendo.parseDate(dataItem.commit.committer.date), "yyyy-MM-dd HH:mm:ss") + '</time><p><a class="k-required" href="' + dataItem.html_url + '" target="_blank">' + dataItem.commit.message + '</a></p></li>';
                 }
             });
         }
