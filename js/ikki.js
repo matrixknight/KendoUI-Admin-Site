@@ -104,6 +104,32 @@ $(function() {
             },
             error: function(xhr, status, thrown) {
                 alertMsg(thrown, 'error');
+            },
+            statusCode: {
+                403: function() {
+                    alertMsg('服务器拒绝请求！', 'error');
+                },
+                404: function() {
+                    alertMsg('页面未找到！', 'error');
+                },
+                405: function() {
+                    alertMsg('请求方法被禁用！', 'error');
+                },
+                500: function() {
+                    alertMsg('服务器内部错误！', 'error');
+                },
+                502: function() {
+                    alertMsg('错误网关！', 'error');
+                },
+                503: function() {
+                    alertMsg('服务不可用！', 'error');
+                },
+                504: function() {
+                    alertMsg('网关超时！', 'error');
+                },
+                505: function() {
+                    alertMsg('HTTP 版本不受支持！', 'error');
+                }
             }
         });
     };
@@ -155,6 +181,32 @@ $(function() {
             },
             error: function(xhr, status, thrown) {
                 alertMsg(thrown, 'error');
+            },
+            statusCode: {
+                403: function() {
+                    alertMsg('服务器拒绝请求！', 'error');
+                },
+                404: function() {
+                    alertMsg('页面未找到！', 'error');
+                },
+                405: function() {
+                    alertMsg('请求方法被禁用！', 'error');
+                },
+                500: function() {
+                    alertMsg('服务器内部错误！', 'error');
+                },
+                502: function() {
+                    alertMsg('错误网关！', 'error');
+                },
+                503: function() {
+                    alertMsg('服务不可用！', 'error');
+                },
+                504: function() {
+                    alertMsg('网关超时！', 'error');
+                },
+                505: function() {
+                    alertMsg('HTTP 版本不受支持！', 'error');
+                }
             }
         });
     };
