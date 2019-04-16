@@ -56,22 +56,21 @@ $(function() {
     $.fn.ajaxPost({
         ajaxUrl: menuUrl,
         succeed: function(res) {
-            if (/Android|iPhone|iPad|iPod|Windows Phone|webOS|SymbianOS|BlackBerry/i.test(navigator.userAgent)) {
-                $('#menuV').kendoMenu({
-                    orientation: 'vertical',
-                    dataSource: res.data
-                });
-            } else {
-                $('#menuH').kendoMenu({
-                    dataSource: res.data
-                });
-            }
+            $('#menuV').kendoMenu({
+                orientation: 'vertical',
+                dataSource: res.data
+            });
+            $('#menuH').kendoMenu({
+                dataSource: res.data
+            });
         }
     });
     // 面包屑导航
     setTimeout(function() {
-        showPath(location.hash.split('#')[1].split('/')[location.hash.split('#')[1].split('/').length - 1]);
-    }, 10);
+        $(window).resize(function() {
+            showPath(location.hash.split('#')[1].split('/')[location.hash.split('#')[1].split('/').length - 1]);
+        }).resize();
+    }, 8);
     // 全屏
     $('#header').on('click', '.fullscreen', function() {
         var fullscreenEnabled = document.fullscreenEnabled       ||
@@ -137,9 +136,22 @@ function showPath(hash) {
         homePath = webType + '/#/home';
     }
     $('#path').prepend('<a href="' + homePath + '"><i class="fas fa-home"></i>首页<span><small>Home</small></span></a>');
+    // 展开导航并定位
     if ($('#navPanelBar').data('kendoPanelBar')) {
         $('#navPanelBar').data('kendoPanelBar').expand($('.links-'+ hash).parents('.k-group').parent());
         $('.links-'+ hash).find('a.k-link').addClass('k-state-selected');
+    }
+    // 判断面包屑长度
+    if ($(window).width() > 767) {
+        $('#menuH').show();
+        $('#header > label[for="menuCkb"], #menuV').hide();
+        if ($('#header > label[for="navCkb"]').width() + $('#path').width() + $('#menuH').width() > $('#header').width()) {
+            $('#header > label[for="menuCkb"], #menuV').show();
+            $('#menuH').hide();
+        }
+        if ($('#header > label[for="navCkb"]').width() + $('#path').width() > $('#header').width() - $('#header > label[for="menuCkb"]').width()) {
+            $('#path').html('<a href="' + homePath + '"><i class="fas fa-home"></i>首页<span><small>Home</small></span></a>');
+        }
     }
 }
 
