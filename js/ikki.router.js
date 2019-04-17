@@ -39,13 +39,6 @@ router.route('(/:lv1)(/:lv2)(/:lv3)(/:lv4)(/:lv5)', function(lv1, lv2, lv3, lv4,
         $('#template').html(temp);
         layout.showIn('#container', new kendo.View(routeFile + 'Temp', { wrap: false }));
         $.getScript(path + routePath + '.js', function() {
-            // 图表变色刷新
-            if ($('#hasChart').length > 0) {
-                setTimeout(function() {
-                    kendo.dataviz.autoTheme(true);
-                    refresh();
-                }, 300);
-            }
             $('#loading').hide();
         });
     }).fail(function() {

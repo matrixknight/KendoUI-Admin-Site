@@ -261,7 +261,7 @@ function changeColor(color, accent, minor) {
         setTimeout(function() {
             kendo.dataviz.autoTheme(true);
             refresh();
-        }, 100);
+        }, 300);
     }
     localStorage.setItem('colorName', color);
     localStorage.setItem('accentColor', accent);
