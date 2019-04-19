@@ -267,14 +267,14 @@
                 },
                 {
                     "id": "0202",
-                    "text": "<i class='mvvmIcon'></i>视图模型<small>MVVM</small><sub class='theme-l'>\uD83D\uDD28</sub>",
+                    "text": "<i class='mvvmIcon'></i>视图模型<small>MVVM</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
                     "encoded": false,
                     "cssClass": "links-mvvm",
                     "url": "javascript:linkTo(\"/framework/\", \"mvvm\");"
                 },
                 {
                     "id": "0203",
-                    "text": "<i class='dataSourceIcon'></i>数据源<small>DataSource</small>",
+                    "text": "<i class='dataSourceIcon'></i>数据源<small>DataSource</small><sub class='theme-l'>\uD83D\uDD28</sub>",
                     "encoded": false,
                     "cssClass": "links-datasource",
                     "url": "javascript:linkTo(\"/framework/\", \"datasource\");"
