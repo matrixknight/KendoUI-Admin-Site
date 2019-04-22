@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
     // 创建
     var viewModel = kendo.observable({
         // ID
@@ -32,17 +32,17 @@ $(function() {
         bloodType: '5',
         // 生日
         birthday: '2005-05-05',
-        birthdayParse: function() {
+        birthdayParse: function () {
             return kendo.toString(kendo.parseDate(this.get('birthday')), 'yyyy-MM-dd');
         },
         // 配偶生日
         mateBirthday: '2005-05-05',
-        mateBirthdayParse: function() {
+        mateBirthdayParse: function () {
             return kendo.toString(kendo.parseDate(this.get('mateBirthday')), 'yyyy-MM-dd');
         },
         // 银行卡
         creditCard: '6225000000000005',
-        creditCardParse: function() {
+        creditCardParse: function () {
             return this.get('creditCard').replace(/\s*/g, '');
         },
         // 资产
@@ -50,13 +50,13 @@ $(function() {
         // 籍贯
         provinceData: new kendo.data.DataSource({
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/province.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -71,13 +71,13 @@ $(function() {
         }),
         cityData: new kendo.data.DataSource({
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/city.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -92,13 +92,13 @@ $(function() {
         }),
         areaData: new kendo.data.DataSource({
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/area.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -119,25 +119,25 @@ $(function() {
             area: '150102',
             areaName: '新城区'
         },
-        provinceParse: function() {
+        provinceParse: function () {
             this.set('nativePlace.provinceName', this.provinceData.get(this.nativePlace.province).provinceName);
         },
-        cityParse: function() {
+        cityParse: function () {
             this.set('nativePlace.cityName', this.cityData.get(this.nativePlace.city).cityName);
         },
-        areaParse: function() {
+        areaParse: function () {
             this.set('nativePlace.areaName', this.areaData.get(this.nativePlace.area).areaName);
         },
         // 居住地
         domicileData: new kendo.data.HierarchicalDataSource({
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/select_hierarchical_data.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -154,7 +154,7 @@ $(function() {
             code: '1501',
             name: '呼和浩特市'
         },
-        domicileParse: function() {
+        domicileParse: function () {
             var obj = {};
             obj.code = this.get('domicile').code;
             obj.name = this.get('domicile').name;
@@ -167,13 +167,13 @@ $(function() {
         // 民族
         nationData: new kendo.data.DataSource({
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/nation.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -187,7 +187,7 @@ $(function() {
             nation: '20',
             nationName: '汉族'
         },
-        nationParse: function() {
+        nationParse: function () {
             return JSON.stringify(this.get('nation'))
                 .replace(/{/g, '{\n' + tab + tab)
                 .replace(/:/g, ':\u0020')
@@ -197,13 +197,13 @@ $(function() {
         // 生肖
         zodiacData: new kendo.data.DataSource({
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/zodiac.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -217,7 +217,7 @@ $(function() {
             zodiac: '05',
             zodiacName: '龙'
         },
-        zodiacParse: function() {
+        zodiacParse: function () {
             var obj = {};
             obj.zodiac = this.get('zodiac').zodiac;
             obj.zodiacName = this.get('zodiac').zodiacName;
@@ -230,13 +230,13 @@ $(function() {
         // 语言
         languageData: new kendo.data.DataSource({
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/language.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -247,7 +247,7 @@ $(function() {
             }
         }),
         language: '俄语 日语 朝鲜语',
-        languageParse: function() {
+        languageParse: function () {
             return $.trim(this.get('language'));
         },
         // 教育程度
@@ -256,7 +256,7 @@ $(function() {
             '6',
             '7'
         ],
-        educationParse: function() {
+        educationParse: function () {
             return JSON.stringify(this.get('education'))
                 .replace(/\[/g, '[\n' + tab + tab)
                 .replace(/,/g, ',\n' + tab + tab)
@@ -264,12 +264,12 @@ $(function() {
         },
         // 毕业年份
         graduation: '2005',
-        graduationParse: function() {
+        graduationParse: function () {
             return kendo.toString(new Date(this.get('graduation')), 'yyyy');
         },
         // 参加工作年月
         firstJob: '2005-05',
-        firstJobParse: function() {
+        firstJobParse: function () {
             return kendo.toString(new Date(this.get('firstJob')), 'yyyy-MM');
         },
         // 手机
@@ -280,12 +280,12 @@ $(function() {
         homepage: 'http://www.050505.com',
         // 起床时间
         getUp: '05:05',
-        getUpParse: function() {
+        getUpParse: function () {
             return kendo.toString(kendo.parseDate(this.get('getUp')), 'HH:mm');
         },
         // 最有意义的时刻
         importantMoment: '2005-05-05 05:05',
-        importantMomentParse: function() {
+        importantMomentParse: function () {
             return kendo.toString(kendo.parseDate(this.get('importantMoment')), 'yyyy-MM-dd HH:mm');
         },
         // 性格
@@ -312,7 +312,7 @@ $(function() {
             '5',
             '6'
         ],
-        constellationParse: function() {
+        constellationParse: function () {
             var arr = [];
             for (var i = 0; i < this.get('constellation').length; i++) {
                 if (this.get('constellation')[i].value) {
@@ -329,13 +329,13 @@ $(function() {
         // 旅游足迹
         tourismData: new kendo.data.HierarchicalDataSource({
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/select_hierarchical_data.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -362,7 +362,7 @@ $(function() {
                 name: '黄石市'
             }
         ],
-        tourismParse: function() {
+        tourismParse: function () {
             var arr = [];
             for (var i = 0; i < this.get('tourism').length; i++) {
                 arr.push({
@@ -382,18 +382,27 @@ $(function() {
         // 自我介绍
         summary: '\uD83C\uDF38我叫艾欧里亚！这里是我的自我介绍哦~',
         // 头像
-        photo: function(e) {
-            var obj = {};
-            if (e) {
-                obj.name = e.files[0].name;
-                obj.extension = e.files[0].extension;
-                obj.size = e.files[0].size;
-            } else {
-                obj.name = 'Leo.png';
-                obj.extension = '.png';
-                obj.size = 32804;
-            }
-            return JSON.stringify(obj)
+        photo: {
+            url: 'img/temp/Leo.png',
+            name: 'Leo',
+            extension: '.png',
+            size: 32804
+        },
+        photoData: function (e) {
+            this.set('photo.url', e.response.data.url);
+            this.set('photo.name', e.response.data.name);
+            this.set('photo.extension', e.response.data.extension);
+            this.set('photo.size', e.response.data.size);
+            this.set('photoParse', function () {
+                return JSON.stringify(this.get('photo'))
+                    .replace(/{/g, '{\n' + tab + tab)
+                    .replace(/:/g, ':\u0020')
+                    .replace(/,/g, ',\n' + tab + tab)
+                    .replace(/}/g, '\n' + tab + '}');
+            });
+        },
+        photoParse: function () {
+            return JSON.stringify(this.get('photo'))
                 .replace(/{/g, '{\n' + tab + tab)
                 .replace(/:/g, ':\u0020')
                 .replace(/,/g, ',\n' + tab + tab)

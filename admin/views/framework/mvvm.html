@@ -217,7 +217,12 @@
                         <div class="form-group row">
                             <label class="col-form-label text-lg-right col-lg-3 pr-lg-0">头像：</label>
                             <div class="col-lg-8">
-                                <input class="w-100" type="file" data-role="upload" data-bind="events: { select: photo }" data-async="{ saveUrl: 'json/upload.json', removeUrl: 'json/upload.json' }" data-multiple="false" data-files="[{ name: 'Leo.png', extension: '.png', size: 32804 }]" data-validation="{ allowedExtensions: ['.jpg', '.png', '.gif', '.bmp'], maxFileSize: 10485760 }">
+                                <div class="media">
+                                    <img class="img-thumbnail w-20 mr-2" data-bind="attr: { src: photo.url, alt: photo.name, title: photo.size }">
+                                    <div class="media-body">
+                                        <input class="w-100" type="file" data-role="upload" data-bind="events: { success: photoData }" data-async="{ saveUrl: 'json/upload.json', removeUrl: 'json/upload.json', autoUpload: true }" data-multiple="false" data-files="[{ name: 'Leo.png', extension: '.png', size: 32804 }]" data-validation="{ allowedExtensions: ['.jpg', '.png', '.gif', '.bmp'], maxFileSize: 10485760 }">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -276,7 +281,7 @@
     "constellation": <code class="theme-m" data-bind='text: constellationParse'></code>,
     "tourism": <code class="theme-m" data-bind='text: tourismParse'></code>,
     "summary": "<code class="theme-m" data-bind='text: summary'></code>",
-    "photo": <code class="theme-m" data-bind='text: photo'></code>,
+    "photo": <code class="theme-m" data-bind='text: photoParse'></code>,
     "sign": "<code class="theme-m" data-bind='text: sign'></code>"
 }                   </pre>
                 </div>
