@@ -77,7 +77,7 @@
         <footer>Powered by IKKI &amp; Amikoko &copy; 2018-2019 UED Center</footer>
         <script src="js/jquery.particleground.js"></script>
         <script>
-            $(function() {
+            $(function () {
                 // 动态背景
                 $('#login').particleground();
                 // Github 统计数据获取
@@ -85,7 +85,7 @@
                     type: 'get',
                     url: 'https://api.github.com/repos/IKKI2000/KendoUI-Admin-Site',
                     dataType: 'json',
-                    success: function(res) {
+                    success: function (res) {
                         $('#githubCreate').text(kendo.toString(kendo.parseDate(res.created_at), 'yyyy-MM-dd'));
                         $('#githubUpdate').text(kendo.toString(kendo.parseDate(res.updated_at), 'yyyy-MM-dd HH:mm:ss'));
                         $('#githubStar').text(res.stargazers_count);
@@ -98,7 +98,7 @@
                     type: 'get',
                     url: 'https://gitee.com/api/v5/repos/IKKI2000/KendoUI-Admin-Site',
                     dataType: 'json',
-                    success: function(res) {
+                    success: function (res) {
                         $('#giteeCreate').text(kendo.toString(kendo.parseDate(res.created_at), 'yyyy年MM月dd日'));
                         $('#giteeUpdate').text(kendo.toString(kendo.parseDate(res.updated_at), 'yyyy年MM月dd日 HH时mm分ss秒'));
                         $('#giteeStar').text(res.stargazers_count);

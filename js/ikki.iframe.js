@@ -7,7 +7,7 @@
 /* JS for iFrame | Written by IKKI | 2018-02-03 */
 
 // 框架面包屑首页
-$(function() {
+$(function () {
     tokenAuth();
     showPath();
 });

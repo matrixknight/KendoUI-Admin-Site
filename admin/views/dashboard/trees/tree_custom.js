@@ -1,10 +1,10 @@
 var treeView;
-$(function() {
+$(function () {
     // 获取数据源生成树形
     treeView = $('#treeView').kendoTreeView({
         dataSource: {
             transport: {
-                read: function(options) { readNode(options, 'json/tree.json') }
+                read: function (options) { readNode(options, 'json/tree.json') }
             },
             schema: {
                 data: 'data',
@@ -22,7 +22,7 @@ $(function() {
                 '<button class="k-button k-button-icontext" onclick="destroyTree(\'#= item.id #\', \'#= item.text #\', this);"><span class="k-icon k-i-close"></span>删除</button>' +
             '# } #',
         dragAndDrop: true,
-        drop: function(e) {
+        drop: function (e) {
             var source = treeView.dataItem(e.sourceNode),
                 destination = treeView.dataItem(e.destinationNode);
             if (e.valid) {
@@ -36,23 +36,23 @@ $(function() {
                 });
             }
         },
-        select: function(e) {
+        select: function (e) {
             if ($(e.node).find('button').length > 0) {
                 $('#treeDetail').empty();
             }
         },
-        dataBound: function() {
+        dataBound: function () {
             if ($('#treeView a.k-state-selected').length === 1) {
                 location.href = $('#treeView a.k-state-selected').attr('href');
             }
         }
     }).data('kendoTreeView');
     // 关键字搜索
-    $('#keywords').keyup(function() {
+    $('#keywords').keyup(function () {
         treeView.expand($('#treeView li'));
         if ($(this).val() !== '') {
             $('#treeView li').hide();
-            $('#treeView .k-in:contains(' + $(this).val() + ')').each(function() {
+            $('#treeView .k-in:contains(' + $(this).val() + ')').each(function () {
                 $(this).parents('li').show();
             });
         } else {
@@ -68,8 +68,8 @@ function createTree(id, uid) {
             '<button class="k-button k-button-icontext" onclick="saveCreateTree(\'' + id + '\', this);"><span class="k-icon k-i-check"></span>保存</button>' +
             '<button class="k-button k-button-icontext" onclick="cancelCreateTree(this);"><span class="k-icon k-i-cancel"></span>取消</button>',
         spriteCssClass: 'fas fa-user k-sprite-edit'
-    }, treeView.findByUid(uid), function(e) {
-        setTimeout(function(){
+    }, treeView.findByUid(uid), function (e) {
+        setTimeout(function (){
             treeView.select(e);
             e.find('.k-textbox').focus();
         }, 10);
@@ -86,7 +86,7 @@ function saveCreateTree(id, dom) {
                 'parentId': id,
                 'text': $(dom).prev().val()
             },
-            succeed: function() {
+            succeed: function () {
                 refreshTree();
             },
             isMsg: true
@@ -97,19 +97,19 @@ function saveCreateTree(id, dom) {
 // 增取消
 function cancelCreateTree(dom) {
     treeView.remove($(dom).closest('li'));
-    setTimeout(function(){
+    setTimeout(function (){
         $('#treeView').blur();
     }, 10);
 }
 
 // 删
 function destroyTree(id, text, dom) {
-    confirmMsg('删除确认', '你确定要删除<strong class="theme-m mx-1">' + text + '</strong>节点吗？', 'question', function() {
+    confirmMsg('删除确认', '你确定要删除<strong class="theme-m mx-1">' + text + '</strong>节点吗？', 'question', function () {
         $.fn.ajaxPost({
             ajaxData: {
                 'id': id
             },
-            succeed: function() {
+            succeed: function () {
                 treeView.remove($(dom).closest('li'));
             },
             isMsg: true
@@ -125,7 +125,7 @@ function updateTree(id, text, uid) {
             '<button class="k-button k-button-icontext" onclick="cancelUpdateTree(this);"><span class="k-icon k-i-cancel"></span>取消</button>',
         spriteCssClass: 'fas fa-user k-sprite-edit'
     }, treeView.findByUid(uid));
-    setTimeout(function(){
+    setTimeout(function (){
         treeView.select(treeView.findByUid(uid).prev());
         treeView.findByUid(uid).hide().prev().find('.k-textbox').focus();
     }, 10);
@@ -141,7 +141,7 @@ function saveUpdateTree(id, dom) {
                 'id': id,
                 'text': $(dom).prev().val()
             },
-            succeed: function() {
+            succeed: function () {
                 refreshTree();
             },
             isMsg: true
@@ -153,7 +153,7 @@ function saveUpdateTree(id, dom) {
 function cancelUpdateTree(dom) {
     $(dom).closest('li').next().show();
     treeView.remove($(dom).closest('li'));
-    setTimeout(function(){
+    setTimeout(function (){
         $('#treeView').blur();
     }, 10);
 }
@@ -162,13 +162,13 @@ function cancelUpdateTree(dom) {
 function viewDetails(id) {
     new kendo.data.DataSource({
         transport: {
-            read: function(options) {
+            read: function (options) {
                 $.fn.ajaxPost({
                     ajaxUrl: 'json/grid.json',
-                    succeed: function(res) {
+                    succeed: function (res) {
                         options.success(res);
                     },
-                    failed: function(res) {
+                    failed: function (res) {
                         options.error(res);
                     }
                 });
@@ -177,7 +177,7 @@ function viewDetails(id) {
         schema: {
             data: 'data'
         },
-        change: function() {
+        change: function () {
             $('#treeDetail').html(kendo.template($('#detailsTemplate').html())(this.get(id)));
         }
     }).read();

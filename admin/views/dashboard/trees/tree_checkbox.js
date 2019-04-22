@@ -1,10 +1,10 @@
 var treeView;
-$(function() {
+$(function () {
     // 获取数据源生成树形
     treeView = $('#treeView').kendoTreeView({
         dataSource: {
             transport: {
-                read: function(options) { readNode(options, 'json/tree.json') }
+                read: function (options) { readNode(options, 'json/tree.json') }
             },
             schema: {
                 data: 'data',
@@ -17,17 +17,17 @@ $(function() {
         checkboxes: {
             checkChildren: true
         },
-        check: function(e) {
+        check: function (e) {
             isSelectAll();
             treeView.expand(e.node);
             treeView.expand($(e.node).find('.k-item'));
         },
-        select: function(e) {
+        select: function (e) {
             if ($(e.node).find('a.k-link').length === 0) {
                 $('#treeDetail').empty();
             }
         },
-        dataBound: function() {
+        dataBound: function () {
             isSelectAll();
             if ($('#treeView a.k-state-selected').length === 1) {
                 location.href = $('#treeView a.k-state-selected').attr('href');
@@ -35,7 +35,7 @@ $(function() {
         }
     }).data('kendoTreeView');
     // 全选
-    $('#selectAll').click(function() {
+    $('#selectAll').click(function () {
         if ($(this).prop('checked')) {
             treeView.expand($('#treeView .k-item'));
             $('#selectAll, #treeView :checkbox').prop('indeterminate', false).prop('checked', true);
@@ -53,7 +53,7 @@ function isSelectAll() {
     if (ckb.length === ckbChecked.length) {
         $('#selectAll').prop('indeterminate', false).prop('checked', true);
     } else {
-        $.each(ckb, function() {
+        $.each(ckb, function () {
             if ($(this).prop('checked') || $(this).prop('indeterminate')) {
                 $('#selectAll').prop('checked', false).prop('indeterminate', true);
                 return false;
@@ -68,13 +68,13 @@ function isSelectAll() {
 function viewDetails(id) {
     new kendo.data.DataSource({
         transport: {
-            read: function(options) {
+            read: function (options) {
                 $.fn.ajaxPost({
                     ajaxUrl: 'json/grid.json',
-                    succeed: function(res) {
+                    succeed: function (res) {
                         options.success(res);
                     },
-                    failed: function(res) {
+                    failed: function (res) {
                         options.error(res);
                     }
                 });
@@ -83,7 +83,7 @@ function viewDetails(id) {
         schema: {
             data: 'data'
         },
-        change: function() {
+        change: function () {
             $('#treeDetail').html(kendo.template($('#detailsTemplate').html())(this.get(id)));
         }
     }).read();

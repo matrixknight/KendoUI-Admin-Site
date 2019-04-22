@@ -10,23 +10,23 @@
 var tabText = '',
     tabContent = '',
     router = new kendo.Router({
-        change: function(e) {
+        change: function (e) {
             tokenAuth();
             showPath(e.url.split('/')[e.url.split('/').length - 1]);
             $('#loading').show();
         },
-        routeMissing: function() {
+        routeMissing: function () {
             error404();
         }
     });
 
 // 路由路径
-router.route('(/:lv1)(/:lv2)(/:lv3)(/:lv4)(/:lv5)', function(lv1, lv2, lv3, lv4, lv5, params) {
+router.route('(/:lv1)(/:lv2)(/:lv3)(/:lv4)(/:lv5)', function (lv1, lv2, lv3, lv4, lv5, params) {
     var lvs = [lv1, lv2, lv3, lv4, lv5],
         routePath = webType + '/views',
         routeFile = '',
         tabStrip = $('#tab').data('kendoTabStrip');
-    $.each(lvs, function(i, lv) {
+    $.each(lvs, function (i, lv) {
         if (lv) {
             routePath += '/' + lv;
             routeFile = lv;
@@ -34,7 +34,7 @@ router.route('(/:lv1)(/:lv2)(/:lv3)(/:lv4)(/:lv5)', function(lv1, lv2, lv3, lv4,
     });
     if ($('#tab-' + routeFile).length < 1) {
         // 选项卡添加
-        $.get(path + routePath + '.html', function(temp) {
+        $.get(path + routePath + '.html', function (temp) {
             $('#template').html(temp);
             if (routeFile === 'home') {
                 tabText = '<span id="tab-' + routeFile + '"><i class="fas fa-home"></i>首页<small>Home</small></span>';
@@ -49,10 +49,10 @@ router.route('(/:lv1)(/:lv2)(/:lv3)(/:lv4)(/:lv5)', function(lv1, lv2, lv3, lv4,
                 content: tabContent,
                 encoded: false
             }).select(tabStrip.items().length - 1);
-            $.getScript(path + routePath + '.js', function() {
+            $.getScript(path + routePath + '.js', function () {
                 $('#loading').hide();
             });
-        }).fail(function() {
+        }).fail(function () {
             error404();
         });
     } else {
@@ -62,7 +62,7 @@ router.route('(/:lv1)(/:lv2)(/:lv3)(/:lv4)(/:lv5)', function(lv1, lv2, lv3, lv4,
 });
 
 // 路由根目录
-router.route('/', function() {
+router.route('/', function () {
     router.navigate('/home');
 });
 
@@ -77,11 +77,11 @@ function linkTo(dirs, links) {
 }
 
 // 初始化
-$(function() {
+$(function () {
     // 选项卡创建
     $('#tab').kendoTabStrip({
         animation: false,
-        select: function(e) {
+        select: function (e) {
             var selected = $(e.item).find('.k-link').children('span').attr('id').split('-')[1];
             if (selected === 'home') {
                 router.navigate('/home');
@@ -91,13 +91,13 @@ $(function() {
                 location.href = $('#navMenu, #menuH, #menuV').find('.links-'+ selected).children('.k-link').attr('href');
             }
         },
-        activate: function(e) {
+        activate: function (e) {
             $('#loading').hide();
         }
     });
     var tabStrip = $('#tab').data('kendoTabStrip');
     // 选项卡删除
-    tabStrip.tabGroup.on('click', '.fa-times-circle', function(e) {
+    tabStrip.tabGroup.on('click', '.fa-times-circle', function (e) {
         tabStrip.remove($(e.target).closest('.k-item'));
         router.navigate('/home');
     });
@@ -107,13 +107,13 @@ $(function() {
         filter: 'li.k-item',
         axis: 'x',
         cursor: 'move',
-        hint: function(e) {
+        hint: function (e) {
             return $('<div id="hint" class="k-widget k-header k-tabstrip"><ul class="k-tabstrip-items k-reset"><li class="k-item k-state-active k-tab-on-top">' + e.html() + '</li></ul></div>');
         },
-        start: function(e) {
+        start: function (e) {
             tabStrip.select(e.item);
         },
-        change: function(e) {
+        change: function (e) {
             var reference = tabStrip.tabGroup.children().eq(e.newIndex);
             if (e.oldIndex < e.newIndex) {
                 tabStrip.insertAfter(e.item, reference);
@@ -121,13 +121,13 @@ $(function() {
                 tabStrip.insertBefore(e.item, reference);
             }
         },
-        placeholder: function(e) {
+        placeholder: function (e) {
             return e.clone().css({
                 'opacity': .3,
                 'border': '1px dashed #666'
             });
         },
-        end: function(e) {
+        end: function (e) {
             tabStrip.activateTab(e.item);
         }
     });
@@ -168,7 +168,7 @@ function closeThis() {
 
 // 关闭其他页
 function closeOthers() {
-    $('#tab li.k-item').each(function() {
+    $('#tab li.k-item').each(function () {
         if ($(this).find('#tab-home').length < 1 && !($(this).hasClass('k-state-active'))) {
             $('#tab').data('kendoTabStrip').remove($(this));
         }
@@ -177,7 +177,7 @@ function closeOthers() {
 
 // 关闭所有页
 function closeAll() {
-    $('#tab li.k-item').each(function() {
+    $('#tab li.k-item').each(function () {
         if ($(this).find('#tab-home').length < 1) {
             $('#tab').data('kendoTabStrip').remove($(this));
         }
@@ -189,10 +189,10 @@ function closeAll() {
 function refresh() {
     $('#loading').show();
     tokenAuth();
-    $.get(path + webType + '/views' + location.hash.split('#')[1] + '.html', function(temp) {
+    $.get(path + webType + '/views' + location.hash.split('#')[1] + '.html', function (temp) {
         $('#template').html(temp);
         $('#tab div.k-state-active').html($(new kendo.View(location.hash.split('/')[location.hash.split('/').length - 1] + 'Temp', { wrap: false }).render()).parent().html());
-        $.getScript(path + webType + '/views' + location.hash.split('#')[1] + '.js', function() {
+        $.getScript(path + webType + '/views' + location.hash.split('#')[1] + '.js', function () {
             $('#loading').hide();
         });
     });

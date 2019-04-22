@@ -9,7 +9,7 @@
 
 // 百度统计
 var _hmt = _hmt || [];
-(function() {
+(function () {
     var hm = document.createElement('script');
     hm.src = 'https://hm.baidu.com/hm.js?19f119dc89e5fbc1a5a63448c2544768';
     var s = document.getElementsByTagName('script')[0];
@@ -20,33 +20,33 @@ var _hmt = _hmt || [];
 var apiPath = 'https://ikki2000.github.io/KendoUI-Admin-Site/';
 
 /* 初始化 ****************************************************************************/
-$(function() {
+$(function () {
     // 移动端
     if (/Android|iPhone|iPad|iPod|Windows Phone|webOS|SymbianOS|BlackBerry/i.test(navigator.userAgent)) {
 
     }
     // 回车搜索
-    $('#section').on('keyup', '#searchKeywords', function(event) {
+    $('#section').on('keyup', '#searchKeywords', function (event) {
         if (event.keyCode === 13) {
             conditionSearch();
         }
     });
     // 回到顶部
-    $('#section').append('<button class="k-button k-state-selected" id="goTop"><i class="fas fa-angle-up"></i></button>').scroll(function() {
+    $('#section').append('<button class="k-button k-state-selected" id="goTop"><i class="fas fa-angle-up"></i></button>').scroll(function () {
         if ($(this).scrollTop() > 800) {
             $('#goTop').fadeIn();
         } else {
             $('#goTop').fadeOut();
         }
     });
-    $('#goTop').click(function() {
+    $('#goTop').click(function () {
         $('#section').animate({ scrollTop: 0 }, 500);
     });
 });
 
 /* Ajax 提交 ****************************************************************************/
-(function($) {
-    $.fn.ajaxPost = function(options) {
+(function ($) {
+    $.fn.ajaxPost = function (options) {
         var defaults = { // 参数默认值
                 ajaxAsync: true,
                 ajaxType: 'get', // GitHub Pages 演示只支持 get 请求，正常使用请改回 post 请求
@@ -81,7 +81,7 @@ $(function() {
             url: urls,
             contentType: opts.ajaxContentType,
             dataType: 'json',
-            success: function(res, status, xhr) {
+            success: function (res, status, xhr) {
                 if (res.result !== 'denied') {
                     if (opts.urlType === 'api') {
                         sessionStorage.setItem('token', xhr.getResponseHeader('Authorization'));
@@ -102,32 +102,32 @@ $(function() {
                     logout();
                 }
             },
-            error: function(xhr, status, thrown) {
+            error: function (xhr, status, thrown) {
                 alertMsg(thrown, 'error');
             },
             statusCode: {
-                403: function() {
+                403: function () {
                     alertMsg('服务器拒绝请求！', 'error');
                 },
-                404: function() {
+                404: function () {
                     alertMsg('页面未找到！', 'error');
                 },
-                405: function() {
+                405: function () {
                     alertMsg('请求方法被禁用！', 'error');
                 },
-                500: function() {
+                500: function () {
                     alertMsg('服务器内部错误！', 'error');
                 },
-                502: function() {
+                502: function () {
                     alertMsg('错误网关！', 'error');
                 },
-                503: function() {
+                503: function () {
                     alertMsg('服务不可用！', 'error');
                 },
-                504: function() {
+                504: function () {
                     alertMsg('网关超时！', 'error');
                 },
-                505: function() {
+                505: function () {
                     alertMsg('HTTP 版本不受支持！', 'error');
                 }
             }
@@ -136,8 +136,8 @@ $(function() {
 })(jQuery);
 
 // 带二进制流的 Ajax 提交
-(function($) {
-    $.fn.ajaxPostBlob = function(options) {
+(function ($) {
+    $.fn.ajaxPostBlob = function (options) {
         var defaults = { // 参数默认值
                 ajaxAsync: true,
                 ajaxType: 'get', // GitHub Pages 演示只支持 get 请求，正常使用请改回 post 请求
@@ -160,7 +160,7 @@ $(function() {
             processData: false,
             contentType: false,
             dataType: 'json',
-            success: function(res, status, xhr) {
+            success: function (res, status, xhr) {
                 if (res.result !== 'denied') {
                     sessionStorage.setItem('token', xhr.getResponseHeader('Authorization'));
                     opts.finished(res);
@@ -179,32 +179,32 @@ $(function() {
                     logout();
                 }
             },
-            error: function(xhr, status, thrown) {
+            error: function (xhr, status, thrown) {
                 alertMsg(thrown, 'error');
             },
             statusCode: {
-                403: function() {
+                403: function () {
                     alertMsg('服务器拒绝请求！', 'error');
                 },
-                404: function() {
+                404: function () {
                     alertMsg('页面未找到！', 'error');
                 },
-                405: function() {
+                405: function () {
                     alertMsg('请求方法被禁用！', 'error');
                 },
-                500: function() {
+                500: function () {
                     alertMsg('服务器内部错误！', 'error');
                 },
-                502: function() {
+                502: function () {
                     alertMsg('错误网关！', 'error');
                 },
-                503: function() {
+                503: function () {
                     alertMsg('服务不可用！', 'error');
                 },
-                504: function() {
+                504: function () {
                     alertMsg('网关超时！', 'error');
                 },
-                505: function() {
+                505: function () {
                     alertMsg('HTTP 版本不受支持！', 'error');
                 }
             }
@@ -224,10 +224,10 @@ function tipMsg(dom, msg, position) {
         position: position,
         content: msg
     }).data('kendoTooltip');
-    $(dom).on('mouseenter', function() {
+    $(dom).on('mouseenter', function () {
         tips.show();
     });
-    $(dom).on('mouseleave', function() {
+    $(dom).on('mouseleave', function () {
         tips.hide();
     });
 }
@@ -239,7 +239,7 @@ function noticeMsg(msg, type, position, time, hided) {
         position: {
             pinned: false
         },
-        show: function(e) {
+        show: function (e) {
             var el = e.element.parent(),
                 cTop = Math.floor(($(window).height() - el.height()) / 2),
                 cLeft = Math.floor(($(window).width() - el.width()) / 2);
@@ -264,7 +264,7 @@ function noticeMsg(msg, type, position, time, hided) {
             }
         },
         autoHideAfter: time,
-        hide: function() {
+        hide: function () {
             if (hided) {
                 hided();
             }
@@ -305,7 +305,7 @@ function alertMsg(msg, type, closed) {
             {
                 text: '确定',
                 primary: true,
-                action: function(e) {
+                action: function (e) {
                     if (closed) {
                         closed();
                     }
@@ -313,7 +313,7 @@ function alertMsg(msg, type, closed) {
                 }
             }
         ],
-        close: function() {
+        close: function () {
             alertDialog.destroy();
         }
     }).data('kendoDialog');
@@ -333,12 +333,12 @@ function alertMsgBtn(msg, type, closed) {
         modal: true,
         pinned: true,
         resizable: false,
-        close: function() {
+        close: function () {
             alertWindow.destroy();
         }
     }).data('kendoWindow');
     alertWindow.content('<dl class="d-flex align-items-center m-0"><dt>' + checkInfoType(type) + '</dt><dd class="m-0">' + msg + '</dd></dl>' + '<div class="k-window-buttongroup"><button class="k-button k-button-lg k-state-selected" type="button">确 定</button></div>').center().open();
-    $('.dialog-box .k-window-buttongroup .k-button').click(function() {
+    $('.dialog-box .k-window-buttongroup .k-button').click(function () {
         if (closed) {
             closed();
         }
@@ -356,15 +356,15 @@ function alertMsgNoBtn(msg, type, closed) {
         minHeight: 160,
         title: '信息',
         content: '<dl class="d-flex align-items-center m-0"><dt>' + checkInfoType(type) + '</dt><dd class="m-0">' + msg + '</dd></dl>',
-        open: function() {
+        open: function () {
             if (closed) {
                 closed();
             }
-            setTimeout(function(){
+            setTimeout(function (){
                 alertDialog.close();
             }, 2000);
         },
-        close: function() {
+        close: function () {
             alertDialog.destroy();
         }
     }).data('kendoDialog');
@@ -386,18 +386,18 @@ function confirmMsg(title, msg, type, confirmed) {
             {
                 text: '确定',
                 primary: true,
-                action: function(e) {
+                action: function (e) {
                     confirmed();
                 }
             },
             {
                 text: '取消',
-                action: function(e) {
+                action: function (e) {
                     confirmDialog.close();
                 }
             }
         ],
-        close: function() {
+        close: function () {
             confirmDialog.destroy();
         }
     }).data('kendoDialog');
@@ -417,15 +417,15 @@ function confirmMsgBtn(title, msg, type, confirmed) {
         modal: true,
         pinned: true,
         resizable: false,
-        close: function() {
+        close: function () {
             confirmWindow.destroy();
         }
     }).data('kendoWindow');
     confirmWindow.content('<dl class="d-flex align-items-center m-0"><dt>' + checkInfoType(type) + '</dt><dd class="m-0">' + msg + '</dd></dl>' + '<div class="k-window-buttongroup"><button class="k-button k-button-lg k-state-selected" type="button">确 定</button><button class="k-button k-button-lg" type="button">取 消</button></div>').center().open();
-    $('.dialog-box .k-window-buttongroup .k-state-selected').click(function() {
+    $('.dialog-box .k-window-buttongroup .k-state-selected').click(function () {
         confirmed();
     });
-    $('.dialog-box .k-window-buttongroup .k-button').click(function() {
+    $('.dialog-box .k-window-buttongroup .k-button').click(function () {
         confirmWindow.close();
     });
 }
@@ -440,7 +440,7 @@ function divWindow(title, width, height, content) {
         modal: true,
         pinned: true,
         resizable: false,
-        close: function() {
+        close: function () {
             divWindow.destroy();
         }
     }).data('kendoWindow');
@@ -459,7 +459,7 @@ function iframeWindow(title, width, height, url) {
         pinned: true,
         iframe: true,
         content: url,
-        close: function() {
+        close: function () {
             iframeWindow.destroy();
         }
     }).data('kendoWindow');
@@ -474,7 +474,7 @@ function showBigPic(url) {
         modal: true,
         pinned: true,
         resizable: false,
-        close: function() {
+        close: function () {
             picWindow.destroy();
         }
     }).data('kendoWindow');
@@ -744,10 +744,10 @@ function dateInputRange(rangeStart, rangeEnd, type) {
 }
 
 // 表单序列化 Json 对象
-$.fn.serializeObject = function() {
+$.fn.serializeObject = function () {
     'use strict';
     var result = {};
-    var extend = function(i, element) {
+    var extend = function (i, element) {
         var node = result[element.name];
         if ('undefined' !== typeof node && node !== null) {
             if ($.isArray(node)) {
@@ -786,10 +786,10 @@ function cudItem(options, data, url, succeed) {
     $.fn.ajaxPost({
         ajaxData: data,
         ajaxUrl: url,
-        finished: function() {
+        finished: function () {
             $('#loading').hide();
         },
-        succeed: function(res) {
+        succeed: function (res) {
             options.success(res);
             if ($('#grid').length > 0) {
                 refreshGrid();
@@ -801,7 +801,7 @@ function cudItem(options, data, url, succeed) {
                 succeed(res);
             }
         },
-        failed: function(res) {
+        failed: function (res) {
             options.error(res);
         },
         isMsg: true
@@ -813,13 +813,13 @@ function readItem(options, url, succeed) {
     $.fn.ajaxPost({
         ajaxData: $('.condition').serializeObject(),
         ajaxUrl: url,
-        succeed: function(res) {
+        succeed: function (res) {
             options.success(res);
             if (succeed) {
                 succeed(res);
             }
         },
-        failed: function(res) {
+        failed: function (res) {
             options.error(res);
         }
     });
@@ -829,13 +829,13 @@ function readItem(options, url, succeed) {
 function readNode(options, url, succeed) {
     $.fn.ajaxPost({
         ajaxUrl: url,
-        succeed: function(res) {
+        succeed: function (res) {
             options.success(res);
             if (succeed) {
                 succeed(res);
             }
         },
-        failed: function(res) {
+        failed: function (res) {
             options.error(res);
         }
     });
@@ -863,14 +863,14 @@ function batchSubmitId(url, succeed) {
         ids = $('#grid').data('kendoGrid').selectedKeyNames();
     }
     if ($('#treeView').length > 0) {
-        $.each($('#treeView :checkbox'), function() {
+        $.each($('#treeView :checkbox'), function () {
             if ($(this).prop('checked') || $(this).prop('indeterminate')) {
                 ids.push($('#treeView').data('kendoTreeView').dataItem($(this).closest('li')).id);
             }
         });
     }
     if ($('#listView').length > 0) {
-        $.each($('#listView .ids'), function() {
+        $.each($('#listView .ids'), function () {
             if ($(this).prop('checked')) {
                 ids.push($(this).val());
             }
@@ -883,10 +883,10 @@ function batchSubmitId(url, succeed) {
                 'ids': ids
             },
             ajaxUrl: url,
-            finished: function() {
+            finished: function () {
                 $('#loading').hide();
             },
-            succeed: function(res) {
+            succeed: function (res) {
                 if ($('#grid').length > 0) {
                     refreshGrid();
                 }
@@ -911,19 +911,19 @@ function batchSubmitId(url, succeed) {
 function batchSubmitData(url, succeed) {
     var models = [];
     if ($('#grid').length > 0) {
-        $.each($('#grid').data('kendoGrid').selectedKeyNames(), function() {
+        $.each($('#grid').data('kendoGrid').selectedKeyNames(), function () {
             models.push($('#grid').data('kendoGrid').dataSource.get(this));
         });
     }
     if ($('#treeView').length > 0) {
-        $.each($('#treeView :checkbox'), function() {
+        $.each($('#treeView :checkbox'), function () {
             if ($(this).prop('checked') || $(this).prop('indeterminate')) {
                 models.push($('#treeView').data('kendoTreeView').dataItem($(this).closest('li')));
             }
         });
     }
     if ($('#listView').length > 0) {
-        $.each($('#listView .ids'), function() {
+        $.each($('#listView .ids'), function () {
             if ($(this).prop('checked')) {
                 models.push($('#listView').data('kendoListView').dataItem($(this).closest('.listItem')));
             }
@@ -936,10 +936,10 @@ function batchSubmitData(url, succeed) {
                 'models': models
             },
             ajaxUrl: url,
-            finished: function() {
+            finished: function () {
                 $('#loading').hide();
             },
-            succeed: function(res) {
+            succeed: function (res) {
                 if ($('#grid').length > 0) {
                     refreshGrid();
                 }
@@ -968,7 +968,7 @@ function btnDetails(e) {
 
 // 链接详情
 function linkDetails(dataItem) {
-    $('.k-grid-content').on('click', 'a[data-uid='+ dataItem.uid +']', function() {
+    $('.k-grid-content').on('click', 'a[data-uid='+ dataItem.uid +']', function () {
         if ($('body > .k-overlay').length === 0) {
             divWindow('详情', '80%', '40%', kendo.template($('#detailsTemplate').html())(dataItem));
         }

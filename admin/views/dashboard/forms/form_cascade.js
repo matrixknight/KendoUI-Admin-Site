@@ -1,17 +1,17 @@
-$(function() {
+$(function () {
     // 提示
     noticeMsg('省市区数据量大~ 请耐心等候~ 载入中……', 'info', 'center', 10000);
     // 自动完成框分组
     $('#autoCompleteGroup').kendoAutoComplete({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/cities.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -34,13 +34,13 @@ $(function() {
     $('#dropDownListGroup').kendoDropDownList({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/cities.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -62,13 +62,13 @@ $(function() {
     $('#comboBoxGroup').kendoComboBox({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/cities.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -91,13 +91,13 @@ $(function() {
     $('#multiColumnComboBoxGroup').kendoMultiColumnComboBox({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/cities.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -128,13 +128,13 @@ $(function() {
     $('#multiSelectGroup').kendoMultiSelect({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/cities.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -157,13 +157,13 @@ $(function() {
     $('#dropDownTreeMulti').kendoDropDownTree({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/select_hierarchical_data.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -192,13 +192,13 @@ $(function() {
     $('#province').kendoDropDownList({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/provinces.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -215,13 +215,13 @@ $(function() {
     $('#city').kendoDropDownList({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/cities.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -241,13 +241,13 @@ $(function() {
     $('#area').kendoDropDownList({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/areas.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -267,13 +267,13 @@ $(function() {
     // $('#street').kendoDropDownList({
     //     dataSource: {
     //         transport: {
-    //             read: function(options) {
+    //             read: function (options) {
     //                 $.fn.ajaxPost({
     //                     ajaxUrl: 'json/streets.json',
-    //                     succeed: function(res) {
+    //                     succeed: function (res) {
     //                         options.success(res);
     //                     },
-    //                     failed: function(res) {
+    //                     failed: function (res) {
     //                         options.error(res);
     //                     }
     //                 });
@@ -293,13 +293,13 @@ $(function() {
     // $('#village').kendoDropDownList({
     //     dataSource: {
     //         transport: {
-    //             read: function(options) {
+    //             read: function (options) {
     //                 $.fn.ajaxPost({
     //                     ajaxUrl: 'json/villages.json',
-    //                     succeed: function(res) {
+    //                     succeed: function (res) {
     //                         options.success(res);
     //                     },
-    //                     failed: function(res) {
+    //                     failed: function (res) {
     //                         options.error(res);
     //                     }
     //                 });
@@ -320,13 +320,13 @@ $(function() {
     $('#province2').kendoComboBox({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/provinces.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -344,13 +344,13 @@ $(function() {
     $('#city2').kendoComboBox({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/cities.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -371,13 +371,13 @@ $(function() {
     $('#area2').kendoComboBox({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/areas.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -399,13 +399,13 @@ $(function() {
     $('#province3').kendoMultiColumnComboBox({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/provinces.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -428,13 +428,13 @@ $(function() {
     $('#city3').kendoMultiColumnComboBox({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/cities.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });

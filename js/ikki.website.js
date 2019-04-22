@@ -16,7 +16,7 @@ var path = $('base').attr('href'),
     logoutMenuUrl = 'json/site_logout.json';
 
 /* 初始化 ****************************************************************************/
-$(function() {
+$(function () {
     // 颜色
     if (localStorage.hasOwnProperty('colorName')) {
         accentColor = localStorage.getItem('accentColor');
@@ -39,16 +39,16 @@ function tokenAuth() {
             userid: sessionStorage.getItem('userid')
         },
         ajaxUrl: tokenUrl,
-        succeed: function(res) {
+        succeed: function (res) {
             // 已登录导航数据获取
             $.fn.ajaxPost({
                 ajaxUrl: loginMenuUrl,
-                succeed: function(res) {
+                succeed: function (res) {
                     showNav(res);
                 }
             });
         },
-        failed: function(res) {
+        failed: function (res) {
             logout();
         }
     });
@@ -67,7 +67,7 @@ function showNav(res) {
 // 面包屑导航
 function showPath(hash) {
     $('#path').html('');
-    $.each($('#menuH').find('.links-'+ hash).children('.k-link').parents('.k-item'), function(i, doms) {
+    $.each($('#menuH').find('.links-'+ hash).children('.k-link').parents('.k-item'), function (i, doms) {
         $('#path').prepend('<span><i class="fas fa-angle-double-right"></i>' + $(doms).children('.k-link').html() + '</span>');
     });
     if (hash === '404') {
@@ -80,7 +80,7 @@ function showPath(hash) {
 function changeColor(color, accent, minor) {
     $('#Amikoko').attr('href', 'css/themes/theme_' + color + '.min.css');
     if ($('#hasChart').length > 0) {
-        setTimeout(function() {
+        setTimeout(function () {
             kendo.dataviz.autoTheme(true);
             refresh();
         }, 100);
@@ -94,7 +94,7 @@ function changeColor(color, accent, minor) {
 
 // 语言
 function changeLang(lang) {
-    $.getScript('js/global/kendo.' + lang + '.js', function() {
+    $.getScript('js/global/kendo.' + lang + '.js', function () {
         kendo.culture(lang);
         refresh();
     });
@@ -106,7 +106,7 @@ function logout() {
     // 未登录导航数据获取
     $.fn.ajaxPost({
         ajaxUrl: logoutMenuUrl,
-        succeed: function(res) {
+        succeed: function (res) {
             showNav(res);
         }
     });

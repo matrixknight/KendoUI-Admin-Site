@@ -16,9 +16,9 @@ var path = $('base').attr('href'),
     menuUrl = 'json/menu.json';
 
 /* 初始化 ****************************************************************************/
-$(function() {
+$(function () {
     // 刷新接管
-    document.onkeydown = function() {
+    document.onkeydown = function () {
         var e = window.event || arguments[0];
         // 屏蔽 F5 和 Ctrl + F5
         if (e.keyCode === 116 || ((e.ctrlKey) && (e.keyCode === 116))) {
@@ -41,7 +41,7 @@ $(function() {
     // 左侧导航数据获取
     $.fn.ajaxPost({
         ajaxUrl: navUrl,
-        succeed: function(res) {
+        succeed: function (res) {
             $('#navPanelBar').kendoPanelBar({
                 dataSource: res.data,
                 loadOnDemand: false
@@ -55,7 +55,7 @@ $(function() {
     // 顶部菜单数据获取
     $.fn.ajaxPost({
         ajaxUrl: menuUrl,
-        succeed: function(res) {
+        succeed: function (res) {
             $('#menuV').kendoMenu({
                 orientation: 'vertical',
                 dataSource: res.data
@@ -66,13 +66,13 @@ $(function() {
         }
     });
     // 面包屑导航
-    setTimeout(function() {
-        $(window).resize(function() {
+    setTimeout(function () {
+        $(window).resize(function () {
             showPath(location.hash.split('#')[1].split('/')[location.hash.split('#')[1].split('/').length - 1]);
         }).resize();
     }, 8);
     // 全屏
-    $('#header').on('click', '.fullscreen', function() {
+    $('#header').on('click', '.fullscreen', function () {
         var fullscreenEnabled = document.fullscreenEnabled       ||
                                 document.webkitFullscreenEnabled ||
                                 document.mozFullScreenEnabled    ||
@@ -94,7 +94,7 @@ $(function() {
         }
     });
     // 回车解锁
-    $('body').on('keyup', '#locking input', function(event) {
+    $('body').on('keyup', '#locking input', function (event) {
         if(event.keyCode === 13){
             unlockScreen();
         }
@@ -109,12 +109,12 @@ function tokenAuth() {
             userid: sessionStorage.getItem('userid')
         },
         ajaxUrl: tokenUrl,
-        succeed: function(res) {
+        succeed: function (res) {
             if (sessionStorage.getItem('locked')) {
                 lockScreen();
             }
         },
-        failed: function(res) {
+        failed: function (res) {
             logout();
         }
     });
@@ -123,7 +123,7 @@ function tokenAuth() {
 // 面包屑导航
 function showPath(hash) {
     $('#path').html('');
-    $.each($('#navMenu, #menuH, #menuV').find('.links-'+ hash).children('.k-link').parents('.k-item'), function(i, doms) {
+    $.each($('#navMenu, #menuH, #menuV').find('.links-'+ hash).children('.k-link').parents('.k-item'), function (i, doms) {
         $('#path').prepend('<span><i class="fas fa-angle-double-right"></i>' + $(doms).children('.k-link').html() + '</span>');
     });
     if (hash === '404') {
@@ -186,7 +186,7 @@ function exitFullscreen() {
 
 // 锁屏
 function lockScreen() {
-    document.onkeydown = function() {
+    document.onkeydown = function () {
         var e = window.event || arguments[0];
         // 屏蔽 F12
         if (e.keyCode === 123) {
@@ -200,7 +200,7 @@ function lockScreen() {
         }
     };
     // 屏蔽右键单击
-    document.oncontextmenu = function() {
+    document.oncontextmenu = function () {
         return false;
     };
     $('#locking').remove();
@@ -209,7 +209,7 @@ function lockScreen() {
     } else {
         $('body').append('<div id="locking"><figure onclick="logout();"><img src="img/avatar.png" alt="IKKI"></figure><h3>你没有正常登录哦~</h3></div>');
     }
-    setTimeout(function() {
+    setTimeout(function () {
         $('#locking').addClass('lock-ani');
     }, 200);
     sessionStorage.setItem('locked', true);
@@ -219,7 +219,7 @@ function lockScreen() {
 function lockInput(dom) {
     $(dom).find('img').unwrap();
     $('#locking').append('<div class="input-group"><input class="form-control form-control-lg" type="password" placeholder="请输入登录密码解锁"><div class="input-group-append" onclick="unlockScreen();"><span class="input-group-text"><i class="fas fa-key"></i></span></div></div>');
-    setTimeout(function() {
+    setTimeout(function () {
         $('#locking .input-group').addClass('lock-input-ani');
     }, 200);
     $('#locking input').focus();
@@ -228,11 +228,11 @@ function lockInput(dom) {
 // 解锁
 function unlockScreen() {
     if ($('#locking input').val() === sessionStorage.getItem('password')) {
-        $('#locking').fadeOut(300, function() {
+        $('#locking').fadeOut(300, function () {
             $('#locking').remove();
         });
         sessionStorage.removeItem('locked');
-        document.onkeydown = function() {
+        document.onkeydown = function () {
             var e = window.event || arguments[0];
             // 屏蔽 F12
             if (e.keyCode === 123) {
@@ -246,7 +246,7 @@ function unlockScreen() {
             }
         };
         // 屏蔽右键单击
-        document.oncontextmenu = function() {
+        document.oncontextmenu = function () {
             return true;
         };
     } else {
@@ -258,7 +258,7 @@ function unlockScreen() {
 function changeColor(color, accent, minor) {
     $('#Amikoko').attr('href', 'css/themes/theme_' + color + '.min.css');
     if ($('#hasChart').length > 0) {
-        setTimeout(function() {
+        setTimeout(function () {
             kendo.dataviz.autoTheme(true);
             refresh();
         }, 300);
@@ -272,7 +272,7 @@ function changeColor(color, accent, minor) {
 
 // 语言
 function changeLang(lang) {
-    $.getScript('js/global/kendo.' + lang + '.js', function() {
+    $.getScript('js/global/kendo.' + lang + '.js', function () {
         kendo.culture(lang);
         refresh();
     });

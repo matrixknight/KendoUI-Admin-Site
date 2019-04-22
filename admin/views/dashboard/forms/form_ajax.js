@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
     // 年龄
     $('#age').kendoNumericTextBox({
         format: 'n0',
@@ -43,13 +43,13 @@ $(function() {
     $('#province').kendoDropDownList({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/province.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -66,13 +66,13 @@ $(function() {
     $('#city').kendoDropDownList({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/city.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -91,13 +91,13 @@ $(function() {
     $('#area').kendoDropDownList({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/area.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -117,13 +117,13 @@ $(function() {
     $('#domicile').kendoDropDownTree({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/select_hierarchical_data.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -144,13 +144,13 @@ $(function() {
     $('#nation').kendoComboBox({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/nation.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -168,13 +168,13 @@ $(function() {
     $('#zodiac').kendoMultiColumnComboBox({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/zodiac.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -203,13 +203,13 @@ $(function() {
     $('#language').kendoAutoComplete({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/language.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -313,7 +313,7 @@ $(function() {
         valuePrimitive: true,
         checkboxes: true,
         autoClose: false,
-        change: function() {
+        change: function () {
             var that = this;
             if (that.value().length > 0) {
                 $(that.element).prop('required', false);
@@ -321,7 +321,7 @@ $(function() {
                 $(that.element).prop('required', true);
             }
             $(that.element).parent().find('[type=hidden]').remove();
-            $.each(that.value(), function(i, items) {
+            $.each(that.value(), function (i, items) {
                 $(that.element).parent().append('<input name="tourism" type="hidden" value="' + items + '">');
             });
         },
@@ -345,7 +345,7 @@ $(function() {
             allowedExtensions: ['.jpg', '.png', '.gif', '.bmp'],
             maxFileSize: 10485760
         },
-        success: function(e) {
+        success: function (e) {
             if (e.response.result === 'y') {
                 if (e.operation === 'upload') {
                     $('#photoUrl').val(e.response.data.url).parent().prev().attr({
@@ -421,7 +421,7 @@ $(function() {
     var validator = $('form').kendoValidator({
         rules: {
             // 昵称
-            nickName: function(input) {
+            nickName: function (input) {
                 if (!input.is('[name=nickName]')) {
                     return true;
                 }
@@ -432,97 +432,97 @@ $(function() {
                     ajaxData: {
                         'nickName': input.val()
                     },
-                    finished: function() {
+                    finished: function () {
                         input.next().hide();
                     },
-                    succeed: function() {
+                    succeed: function () {
                         unique = true;
                     },
-                    failed: function() {
+                    failed: function () {
                         unique = false;
                     }
                 });
                 return unique;
             },
             // 匹配密码
-            matchPassword: function(input) {
+            matchPassword: function (input) {
                 if (!input.is('[name=confirmPassword]')) {
                     return true;
                 }
                 return (input.val() === $('[name=password]').val());
             },
             // 性别
-            gender: function(input) {
+            gender: function (input) {
                 if (!input.is('[name=gender]')) {
                     return true;
                 }
                 return $('[name=gender]').is(':checked');
             },
             // 生日
-            birthday: function(input) {
+            birthday: function (input) {
                 if (!input.is('[name=birthday]')) {
                     return true;
                 }
                 return kendo.parseDate(input.val(), 'yyyy-MM-dd') instanceof Date;
             },
             // 配偶生日
-            mateBirthday: function(input) {
+            mateBirthday: function (input) {
                 if (!input.is('[name=mateBirthday]')) {
                     return true;
                 }
                 return kendo.parseDate(input.val(), 'yyyy-MM-dd') instanceof Date;
             },
             // 民族
-            nation: function(input) {
+            nation: function (input) {
                 if (!input.is('[name=nation_input]')) {
                     return true;
                 }
                 return input.val() === '' || input.val().match(/^[\u4E00-\u9FA5]+$/) !== null;
             },
             // 生肖
-            zodiac: function(input) {
+            zodiac: function (input) {
                 if (!input.is('[name=zodiac_input]')) {
                     return true;
                 }
                 return input.val() === '' || input.val().match(/^[鼠|牛|虎|兔|龙|蛇|马|羊|猴|鸡|狗|猪]{1}$/) !== null;
             },
             // 教育程度
-            education: function(input) {
+            education: function (input) {
                 if (!input.is('[name=education]')) {
                     return true;
                 }
                 return $('[name=education]').is(':checked');
             },
             // 毕业年份
-            graduation: function(input) {
+            graduation: function (input) {
                 if (!input.is('[name=graduation]')) {
                     return true;
                 }
                 return kendo.parseDate(input.val(), 'yyyy') instanceof Date;
             },
             // 参加工作年月
-            firstJob: function(input) {
+            firstJob: function (input) {
                 if (!input.is('[name=firstJob]')) {
                     return true;
                 }
                 return kendo.parseDate(input.val(), 'yyyy-MM') instanceof Date;
             },
             // 起床时间
-            getUp: function(input) {
+            getUp: function (input) {
                 if (!input.is('[name=getUp]')) {
                     return true;
                 }
                 return kendo.parseDate(input.val(), 'HH:mm') instanceof Date;
             },
             // 最有意义的时刻
-            importantMoment: function(input) {
+            importantMoment: function (input) {
                 if (!input.is('[name=importantMoment]')) {
                     return true;
                 }
                 return kendo.parseDate(input.val(), 'yyyy-MM-dd HH:mm') instanceof Date;
             },
             // 头像
-            photo: function(input) {
+            photo: function (input) {
                 if (!input.is('#photoUrl')) {
                     return true;
                 }
@@ -546,24 +546,24 @@ $(function() {
         }
     }).data('kendoValidator');
     // 表单提交
-    $('#submitBtn').unbind('click').click(function() {
+    $('#submitBtn').unbind('click').click(function () {
         if (validator.validate()) {
             $(this).removeClass('k-state-selected').addClass('k-state-disabled').prop('disabled', true);
-            noticeMsg('开始提交表单……', 'success', 'center', 500, function() {
+            noticeMsg('开始提交表单……', 'success', 'center', 500, function () {
                 $('#loading').show();
                 $.fn.ajaxPost({
                     ajaxData: $('form').serializeObject(),
-                    finished: function(res) {
+                    finished: function (res) {
                         $('#loading').hide();
                     },
-                    failed: function(res) {
+                    failed: function (res) {
                         $('#submitBtn').removeClass('k-state-disabled').addClass('k-state-selected').prop('disabled', false);
                     },
                     isMsg: true
                 });
             });
         } else {
-            noticeMsg('表单中有选项未填写正确！请检查……', 'error', 'center', 2000, function() {
+            noticeMsg('表单中有选项未填写正确！请检查……', 'error', 'center', 2000, function () {
                 // 出错定位
                 $('.k-invalid-msg:visible').first().parents('.form-group').focus();
             });

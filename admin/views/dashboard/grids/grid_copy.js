@@ -1,11 +1,11 @@
-$(function() {
+$(function () {
     // 获取数据源生成表格
     $('#grid').kendoGrid({
         dataSource: {
             transport: {
-                create: function(options) { createItem(options, 'json/response.json') },
-                update: function(options) { updateItem(options, 'json/response.json') },
-                read: function(options) { readItem(options, 'json/grid.json') }
+                create: function (options) { createItem(options, 'json/response.json') },
+                update: function (options) { updateItem(options, 'json/response.json') },
+                read: function (options) { readItem(options, 'json/grid.json') }
             },
             schema: {
                 total: 'total',
@@ -29,18 +29,18 @@ $(function() {
                         bloodType: { type: 'string' },
                         birthday: { type: 'date',
                             defaultValue: null,
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd');
                             }
                         },
                         mateBirthday: { type: 'date',
                             defaultValue: null,
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd');
                             }
                         },
                         creditCard: { type: 'string',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return e.replace(/\s*/g, '');
                             }
                         },
@@ -62,7 +62,7 @@ $(function() {
                                 code: '',
                                 name: ''
                             },
-                            parse: function(e) {
+                            parse: function (e) {
                                 var obj = {};
                                 obj.code = e.code;
                                 obj.name = e.name;
@@ -80,7 +80,7 @@ $(function() {
                                 zodiac: '',
                                 zodiacName: ''
                             },
-                            parse: function(e) {
+                            parse: function (e) {
                                 var obj = {};
                                 obj.zodiac = e.zodiac;
                                 obj.zodiacName = e.zodiacName;
@@ -88,7 +88,7 @@ $(function() {
                             }
                         },
                         language: { type: 'string',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return $.trim(e);
                             }
                         },
@@ -97,13 +97,13 @@ $(function() {
                         },
                         graduation: { type: 'date',
                             defaultValue: null,
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(new Date(e), 'yyyy');
                             }
                         },
                         firstJob: { type: 'date',
                             defaultValue: null,
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(new Date(e), 'yyyy-MM');
                             }
                         },
@@ -112,20 +112,20 @@ $(function() {
                         homepage: { type: 'string' },
                         getUp: { type: 'date',
                             defaultValue: null,
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(kendo.parseDate(e), 'HH:mm');
                             }
                         },
                         importantMoment: { type: 'date',
                             defaultValue: null,
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd HH:mm');
                             }
                         },
                         character: { type: 'number' },
                         color: {
                             defaultValue: 'rgba(0, 0, 0, 0)',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return 'rgba('+ kendo.parseColor(e).r +', '+ kendo.parseColor(e).g +', '+ kendo.parseColor(e).b +', '+ kendo.parseColor(e).a +')';
                             }
                         },
@@ -134,7 +134,7 @@ $(function() {
                         },
                         tourism: { type: 'object',
                             defaultValue: [],
-                            parse: function(e) {
+                            parse: function (e) {
                                 var arr = [];
                                 for (var i = 0; i < e.length; i++) {
                                     arr.push({
@@ -172,7 +172,7 @@ $(function() {
                 command: [
                     { name: 'copy', text: '复制',
                         iconClass: 'k-icon k-i-copy',
-                        click: function(e) {
+                        click: function (e) {
                             e.preventDefault();
                             var newJson = JSON.parse(JSON.stringify(this.dataItem($(e.target).closest('tr'))));
                             newJson.id = '';
@@ -185,27 +185,27 @@ $(function() {
             { field: 'realName', title: '姓名', width: '100px' },
             { field: 'nickName', title: '昵称', width: '110px' },
             { field: 'password', title: '密码', width: '100px',
-                template: function(dataItem) {
+                template: function (dataItem) {
                     if (dataItem.password) {
                         return dataItem.password.replace(dataItem.password.substr(0), '******');
                     } else {
                         return '';
                     }
                 },
-                editor: function(container, options) {
+                editor: function (container, options) {
                     $('<input class="k-textbox" name="password" type="password" data-bind="value: '+ options.field +'">')
                         .appendTo(container);
                 }
             },
             { field: 'confirmPassword', title: '确认密码', width: '100px',
-                template: function(dataItem) {
+                template: function (dataItem) {
                     if (dataItem.confirmPassword) {
                         return dataItem.confirmPassword.replace(dataItem.confirmPassword.substr(0), '******');
                     } else {
                         return '';
                     }
                 },
-                editor: function(container, options) {
+                editor: function (container, options) {
                     $('<input class="k-textbox" name="confirmPassword" type="password" data-bind="value: '+ options.field +'">')
                         .appendTo(container);
                 }
@@ -217,7 +217,7 @@ $(function() {
                     '# } else { #' +
                         '<span class="dot-color k-notification-error"></span><span class="k-notification-error bg-transparent ml-2">离线</span>' +
                     '# } #',
-                editor: function(container, options) {
+                editor: function (container, options) {
                     $('<input name="online" type="checkbox" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoSwitch({
@@ -233,21 +233,21 @@ $(function() {
                     { text: '男', value: '1' },
                     { text: '女', value: '2' }
                 ],
-                editor: function(container, options) {
+                editor: function (container, options) {
                     $('<input class="k-radio" id="genderEdit1" name="gender" type="radio" value="1" data-bind="checked: '+ options.field +'"><label class="k-radio-label" for="genderEdit1">男</label>' +
                         '<input class="k-radio" id="genderEdit2" name="gender" type="radio" value="2" data-bind="checked: '+ options.field +'"><label class="k-radio-label" for="genderEdit2">女</label>')
                         .appendTo(container);
                 }
             },
             { field: 'age', title: '年龄', width: '80px',
-                template: function(dataItem) {
+                template: function (dataItem) {
                     if (dataItem.age) {
                         return dataItem.age + ' 岁';
                     } else {
                         return '';
                     }
                 },
-                editor: function(container, options) {
+                editor: function (container, options) {
                     $('<input name="age" type="number" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoNumericTextBox({
@@ -255,21 +255,21 @@ $(function() {
                             decimals: 0,
                             min: 1,
                             max: 120,
-                            change: function() {
+                            change: function () {
                                 options.model.set('height', (1 + this.value() / 100).toFixed(2));
                             }
                         });
                 }
             },
             { field: 'height', title: '身高', width: '100px',
-                template: function(dataItem) {
+                template: function (dataItem) {
                     if (dataItem.height) {
                         return kendo.toString(dataItem.height, '0.00') + ' m';
                     } else {
                         return '';
                     }
                 },
-                editor: function(container, options) {
+                editor: function (container, options) {
                     $('<input name="height" type="number" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoNumericTextBox({
@@ -278,7 +278,7 @@ $(function() {
                             step: 0.01,
                             min: 1.01,
                             max: 3.00,
-                            change: function() {
+                            change: function () {
                                 options.model.set('age', ((this.value() - 1) * 100).toFixed(0));
                             }
                         });
@@ -292,7 +292,7 @@ $(function() {
                     { text: 'AB 型', value: '4' },
                     { text: '其他', value: '5' }
                 ],
-                editor: function(container, options) {
+                editor: function (container, options) {
                     $('<select name="bloodType" data-bind="value: '+ options.field +'"></select>')
                         .appendTo(container)
                         .kendoDropDownList({
@@ -312,7 +312,7 @@ $(function() {
                 }
             },
             { field: 'birthday', title: '生日', width: '140px',
-                editor: function(container, options) {
+                editor: function (container, options) {
                     $('<input name="birthday" type="date" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoDatePicker({
@@ -320,35 +320,35 @@ $(function() {
                             footer: '今天：#= kendo.toString(data, "yyyy年MM月dd日") #',
                             min: new Date(1920, 0, 1),
                             max: new Date(),
-                            change: function() {
+                            change: function () {
                                 options.model.set('mateBirthday', this.value());
                             }
                         });
                 }
             },
             { field: 'mateBirthday', title: '配偶生日', width: '110px',
-                editor: function(container, options) {
+                editor: function (container, options) {
                     $('<input name="mateBirthday" type="date" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoDateInput({
                             format: 'yyyy-MM-dd',
                             min: new Date(1920, 0, 1),
                             max: new Date(),
-                            change: function() {
+                            change: function () {
                                 options.model.set('birthday', this.value());
                             }
                         });
                 }
             },
             { field: 'creditCard', title: '银行卡', width: '170px',
-                template: function(dataItem) {
+                template: function (dataItem) {
                     if (dataItem.creditCard) {
                         return dataItem.creditCard.replace(dataItem.creditCard.substr(2, 12), '** **** **** **');
                     } else {
                         return '';
                     }
                 },
-                editor: function(container, options) {
+                editor: function (container, options) {
                     $('<input name="creditCard" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoMaskedTextBox({
@@ -358,7 +358,7 @@ $(function() {
             },
             { field: 'asset', title: '资产', width: '170px',
                 format: '{0:c}',
-                editor: function(container, options) {
+                editor: function (container, options) {
                     $('<input name="asset" type="number" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoNumericTextBox({
@@ -369,26 +369,26 @@ $(function() {
                 }
             },
             { field: 'nativePlace', title: '籍贯', width: '250px',
-                template: function(dataItem) {
+                template: function (dataItem) {
                     if (dataItem.nativePlace.provinceName && dataItem.nativePlace.cityName && dataItem.nativePlace.areaName) {
                         return dataItem.nativePlace.provinceName + ' - ' + dataItem.nativePlace.cityName + ' - ' + dataItem.nativePlace.areaName;
                     } else {
                         return '';
                     }
                 },
-                editor: function(container, options) {
+                editor: function (container, options) {
                     $('<select class="mb-2" id="provinceEdit" name="nativePlace" data-bind="value: '+ options.field +'"></select>')
                         .appendTo(container)
                         .kendoDropDownList({
                             dataSource: {
                                 transport: {
-                                    read: function(options) {
+                                    read: function (options) {
                                         $.fn.ajaxPost({
                                             ajaxUrl: 'json/province.json',
-                                            succeed: function(res) {
+                                            succeed: function (res) {
                                                 options.success(res);
                                             },
-                                            failed: function(res) {
+                                            failed: function (res) {
                                                 options.error(res);
                                             }
                                         });
@@ -408,13 +408,13 @@ $(function() {
                         .kendoDropDownList({
                             dataSource: {
                                 transport: {
-                                    read: function(options) {
+                                    read: function (options) {
                                         $.fn.ajaxPost({
                                             ajaxUrl: 'json/city.json',
-                                            succeed: function(res) {
+                                            succeed: function (res) {
                                                 options.success(res);
                                             },
-                                            failed: function(res) {
+                                            failed: function (res) {
                                                 options.error(res);
                                             }
                                         });
@@ -436,13 +436,13 @@ $(function() {
                         .kendoDropDownList({
                             dataSource: {
                                 transport: {
-                                    read: function(options) {
+                                    read: function (options) {
                                         $.fn.ajaxPost({
                                             ajaxUrl: 'json/area.json',
-                                            succeed: function(res) {
+                                            succeed: function (res) {
                                                 options.success(res);
                                             },
-                                            failed: function(res) {
+                                            failed: function (res) {
                                                 options.error(res);
                                             }
                                         });
@@ -463,19 +463,19 @@ $(function() {
             },
             { field: 'domicile', title: '居住地', width: '240px',
                 template: '#= domicile.name #',
-                editor: function(container, options) {
+                editor: function (container, options) {
                     $('<input name="domicile" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoDropDownTree({
                             dataSource: {
                                 transport: {
-                                    read: function(options) {
+                                    read: function (options) {
                                         $.fn.ajaxPost({
                                             ajaxUrl: 'json/select_hierarchical_data.json',
-                                            succeed: function(res) {
+                                            succeed: function (res) {
                                                 options.success(res);
                                             },
-                                            failed: function(res) {
+                                            failed: function (res) {
                                                 options.error(res);
                                             }
                                         });
@@ -497,19 +497,19 @@ $(function() {
             },
             { field: 'nation', title: '民族', width: '140px',
                 template: '#= nation.nationName #',
-                editor: function(container, options) {
+                editor: function (container, options) {
                     $('<input name="nation" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoComboBox({
                             dataSource: {
                                 transport: {
-                                    read: function(options) {
+                                    read: function (options) {
                                         $.fn.ajaxPost({
                                             ajaxUrl: 'json/nation.json',
-                                            succeed: function(res) {
+                                            succeed: function (res) {
                                                 options.success(res);
                                             },
-                                            failed: function(res) {
+                                            failed: function (res) {
                                                 options.error(res);
                                             }
                                         });
@@ -527,19 +527,19 @@ $(function() {
             },
             { field: 'zodiac', title: '生肖', width: '90px',
                 template: '#= zodiac.zodiacName #',
-                editor: function(container, options) {
+                editor: function (container, options) {
                     $('<input name="zodiac" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoMultiColumnComboBox({
                             dataSource: {
                                 transport: {
-                                    read: function(options) {
+                                    read: function (options) {
                                         $.fn.ajaxPost({
                                             ajaxUrl: 'json/zodiac.json',
-                                            succeed: function(res) {
+                                            succeed: function (res) {
                                                 options.success(res);
                                             },
-                                            failed: function(res) {
+                                            failed: function (res) {
                                                 options.error(res);
                                             }
                                         });
@@ -567,19 +567,19 @@ $(function() {
                 }
             },
             { field: 'language', title: '语言', width: '240px',
-                editor: function(container, options) {
+                editor: function (container, options) {
                     $('<input name="language" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoAutoComplete({
                             dataSource: {
                                 transport: {
-                                    read: function(options) {
+                                    read: function (options) {
                                         $.fn.ajaxPost({
                                             ajaxUrl: 'json/language.json',
-                                            succeed: function(res) {
+                                            succeed: function (res) {
                                                 options.success(res);
                                             },
-                                            failed: function(res) {
+                                            failed: function (res) {
                                                 options.error(res);
                                             }
                                         });
@@ -618,7 +618,7 @@ $(function() {
                             '其他&nbsp;' +
                         '# } #' +
                     '# } #',
-                editor: function(container, options) {
+                editor: function (container, options) {
                     $('<input class="k-checkbox" id="educationEdit1" name="education" type="checkbox" value="1" data-bind="checked: '+ options.field +'"><label class="k-checkbox-label" for="educationEdit1">小学</label>' +
                         '<input class="k-checkbox" id="educationEdit2" name="education" type="checkbox" value="2" data-bind="checked: '+ options.field +'"><label class="k-checkbox-label" for="educationEdit2">初中</label>' +
                         '<input class="k-checkbox" id="educationEdit3" name="education" type="checkbox" value="3" data-bind="checked: '+ options.field +'"><label class="k-checkbox-label" for="educationEdit3">高中</label>' +
@@ -632,7 +632,7 @@ $(function() {
                 }
             },
             { field: 'graduation', title: '毕业年份', width: '90px',
-                editor: function(container, options) {
+                editor: function (container, options) {
                     $('<input name="graduation" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoDatePicker({
@@ -644,7 +644,7 @@ $(function() {
                 }
             },
             { field: 'firstJob', title: '参加工作年月', width: '110px',
-                editor: function(container, options) {
+                editor: function (container, options) {
                     $('<input name="firstJob" type="month" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoDatePicker({
@@ -656,25 +656,25 @@ $(function() {
                 }
             },
             { field: 'mobile', title: '手机', width: '120px',
-                editor: function(container, options) {
+                editor: function (container, options) {
                     $('<input class="k-textbox" name="mobile" type="tel" data-bind="value: '+ options.field +'">')
                         .appendTo(container);
                 }
             },
             { field: 'email', title: '电子邮件', width: '180px',
-                editor: function(container, options) {
+                editor: function (container, options) {
                     $('<input class="k-textbox" name="email" type="email" data-bind="value: '+ options.field +'">')
                         .appendTo(container);
                 }
             },
             { field: 'homepage', title: '个人主页', width: '190px',
-                editor: function(container, options) {
+                editor: function (container, options) {
                     $('<input class="k-textbox" name="homepage" type="url" data-bind="value: '+ options.field +'">')
                         .appendTo(container);
                 }
             },
             { field: 'getUp', title: '起床时间', width: '90px',
-                editor: function(container, options) {
+                editor: function (container, options) {
                     $('<input name="getUp" type="time" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoTimePicker({
@@ -683,7 +683,7 @@ $(function() {
                 }
             },
             { field: 'importantMoment', title: '最有意义的时刻', width: '200px',
-                editor: function(container, options) {
+                editor: function (container, options) {
                     $('<input name="importantMoment" type="datetime" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoDateTimePicker({
@@ -706,7 +706,7 @@ $(function() {
                     { text: '非常内向', value: -8 },
                     { text: '超级内向', value: -10 }
                 ],
-                editor: function(container, options) {
+                editor: function (container, options) {
                     $('<input name="character" type="range" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoSlider({
@@ -747,7 +747,7 @@ $(function() {
             },
             { field: 'color', title: '颜色喜好', width: '90px',
                 template: '<span style="display: inline-block; width: 100%; height: 24px; background: #= color #; border: 1px solid \\#c5c5c5; border-radius: 4px; vertical-align: middle;"></span>',
-                editor: function(container, options) {
+                editor: function (container, options) {
                     $('<input name="color" data-bind="value: '+ options.field +'">')
                         .appendTo(container)
                         .kendoColorPicker({
@@ -785,7 +785,7 @@ $(function() {
                             '双鱼座&nbsp;' +
                         '# } #' +
                     '# } #',
-                editor: function(container, options) {
+                editor: function (container, options) {
                     $('<select name="constellation" multiple data-bind="value: '+ options.field +'"></select>')
                         .appendTo(container)
                         .kendoMultiSelect({
@@ -818,7 +818,7 @@ $(function() {
                     '# for (var i = 0; i < tourism.length; i++) { #' +
                         '#= tourism[i].name #&nbsp;' +
                     '# } #',
-                editor: function(container, options) {
+                editor: function (container, options) {
                     $('<select name="tourism" multiple data-bind="value: '+ options.field +'"></select>')
                         .appendTo(container)
                         .kendoDropDownTree({
@@ -842,21 +842,21 @@ $(function() {
                             filter: 'contains',
                             checkboxes: true,
                             autoClose: false,
-                            change: function() {
+                            change: function () {
                                 options.model.set('tourism', this._allCheckedItems);
                             }
                         });
                 }
             },
             { field: 'summary', title: '自我介绍', width: '310px',
-                editor: function(container, options) {
+                editor: function (container, options) {
                     $('<textarea class="k-textarea" name="summary" data-bind="value: '+ options.field +'"></textarea>')
                         .appendTo(container);
                 }
             },
             { field: 'photo', title: '头像', width: '320px',
                 template: '<a href="javascript:showBigPic(\'#= photo.url #\');"><img class="w-10 rounded-circle" src="#= photo.url #" alt="#= photo.name ##= photo.extension #"></a><small class="ml-2 text-muted">[#= kendo.toString(photo.size / 1024, "0.00") # KB]</small>',
-                editor: function(container, options) {
+                editor: function (container, options) {
                     $('<div class="media">' +
                             '<img class="img-thumbnail w-15 mr-2" id="photoShow" src="'+ options.model.photo.url +'" alt="'+ options.model.photo.name + options.model.photo.extension +'" title="'+ kendo.toString(options.model.photo.size / 1024, "0.00") +' KB">' +
                             '<div class="media-body">' +
@@ -882,7 +882,7 @@ $(function() {
                                 allowedExtensions: ['.jpg', '.png', '.gif', '.bmp'],
                                 maxFileSize: 10485760
                             },
-                            success: function(res) {
+                            success: function (res) {
                                 if (res.response.result === 'y') {
                                     if (res.operation === 'upload') {
                                         options.model.set('photo.url', res.response.data.url);
@@ -917,7 +917,7 @@ $(function() {
             },
             { field: 'sign', title: '签名', width: '600px',
                 template: '#= sign #',
-                editor: function(container, options) {
+                editor: function (container, options) {
                     $('<textarea name="sign" data-bind="value: '+ options.field +'"></textarea>')
                         .appendTo(container)
                         .kendoEditor({

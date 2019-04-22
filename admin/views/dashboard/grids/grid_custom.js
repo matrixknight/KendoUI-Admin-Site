@@ -1,5 +1,5 @@
 $.getScript(path + 'js/jszip.min.js');
-$(function() {
+$(function () {
     // 年龄
     numericRange($('#ageStart'), $('#ageEnd'), 'n0', 0, 1, 1, 120);
     // 身高
@@ -20,13 +20,13 @@ $(function() {
     $('#province').kendoDropDownList({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/province.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -44,13 +44,13 @@ $(function() {
     $('#city').kendoDropDownList({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/city.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -70,13 +70,13 @@ $(function() {
     $('#area').kendoDropDownList({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/area.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -97,13 +97,13 @@ $(function() {
     $('#domicile').kendoDropDownTree({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/select_hierarchical_data.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -126,13 +126,13 @@ $(function() {
     $('#nation').kendoComboBox({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/nation.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -150,13 +150,13 @@ $(function() {
     $('#zodiac').kendoMultiColumnComboBox({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/zodiac.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -185,13 +185,13 @@ $(function() {
     $('#language').kendoAutoComplete({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/language.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -282,10 +282,10 @@ $(function() {
         filter: 'contains',
         checkboxes: true,
         autoClose: false,
-        change: function() {
+        change: function () {
             var that = this;
             $(that.element).parent().find('[type=hidden]').remove();
-            $.each(that.value(), function(i, items) {
+            $.each(that.value(), function (i, items) {
                 $(that.element).parent().append('<input name="tourism" type="hidden" value="' + items + '">');
             });
         }
@@ -302,10 +302,10 @@ $(function() {
     $('#grid').kendoGrid({
         dataSource: {
             transport: {
-                create: function(options) { createItem(options, 'json/response.json') },
-                destroy: function(options) { destroyItem(options, 'json/response.json') },
-                update: function(options) { updateItem(options, 'json/response.json') },
-                read: function(options) { readItem(options, 'json/grid.json') }
+                create: function (options) { createItem(options, 'json/response.json') },
+                destroy: function (options) { destroyItem(options, 'json/response.json') },
+                update: function (options) { updateItem(options, 'json/response.json') },
+                read: function (options) { readItem(options, 'json/grid.json') }
             },
             schema: {
                 total: 'total',
@@ -317,7 +317,7 @@ $(function() {
                         realName: { type: 'string' },
                         nickName: { type: 'string',
                             validation: {
-                                nickName: function(input) {
+                                nickName: function (input) {
                                     if (!input.is('#editForm [name=nickName]')) {
                                         return true;
                                     }
@@ -328,13 +328,13 @@ $(function() {
                                         ajaxData: {
                                             'nickName': input.val()
                                         },
-                                        finished: function() {
+                                        finished: function () {
                                             input.next().hide();
                                         },
-                                        succeed: function() {
+                                        succeed: function () {
                                             unique = true;
                                         },
-                                        failed: function() {
+                                        failed: function () {
                                             unique = false;
                                         }
                                     });
@@ -346,7 +346,7 @@ $(function() {
                         password: { type: 'string' },
                         confirmPassword: { type: 'string',
                             validation: {
-                                matchPassword: function(input) {
+                                matchPassword: function (input) {
                                     if (!input.is('#editForm [name=confirmPassword]')) {
                                         return true;
                                     }
@@ -358,7 +358,7 @@ $(function() {
                         online: { type: 'boolean' },
                         gender: { type: 'string',
                             validation: {
-                                gender: function(input) {
+                                gender: function (input) {
                                     if (!input.is('#editForm [name=gender]')) {
                                         return true;
                                     }
@@ -376,11 +376,11 @@ $(function() {
                         bloodType: { type: 'string' },
                         birthday: { type: 'date',
                             defaultValue: null,
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd');
                             },
                             validation: {
-                                birthday: function(input) {
+                                birthday: function (input) {
                                     if (!input.is('#editForm [name=birthday]')) {
                                         return true;
                                     }
@@ -391,11 +391,11 @@ $(function() {
                         },
                         mateBirthday: { type: 'date',
                             defaultValue: null,
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd');
                             },
                             validation: {
-                                mateBirthday: function(input) {
+                                mateBirthday: function (input) {
                                     if (!input.is('#editForm [name=mateBirthday]')) {
                                         return true;
                                     }
@@ -405,7 +405,7 @@ $(function() {
                             }
                         },
                         creditCard: { type: 'string',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return e.replace(/\s*/g, '');
                             }
                         },
@@ -427,7 +427,7 @@ $(function() {
                                 code: '',
                                 name: ''
                             },
-                            parse: function(e) {
+                            parse: function (e) {
                                 var obj = {};
                                 obj.code = e.code;
                                 obj.name = e.name;
@@ -440,7 +440,7 @@ $(function() {
                                 nationName: ''
                             },
                             validation: {
-                                nation: function(input) {
+                                nation: function (input) {
                                     if (!input.is('#editForm [name=nation_input]')) {
                                         return true;
                                     }
@@ -454,14 +454,14 @@ $(function() {
                                 zodiac: '',
                                 zodiacName: ''
                             },
-                            parse: function(e) {
+                            parse: function (e) {
                                 var obj = {};
                                 obj.zodiac = e.zodiac;
                                 obj.zodiacName = e.zodiacName;
                                 return obj;
                             },
                             validation: {
-                                zodiac: function(input) {
+                                zodiac: function (input) {
                                     if (!input.is('#editForm [name=zodiac_input]')) {
                                         return true;
                                     }
@@ -471,14 +471,14 @@ $(function() {
                             }
                         },
                         language: { type: 'string',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return $.trim(e);
                             }
                         },
                         education: { type: 'object',
                             defaultValue: [],
                             validation: {
-                                education: function(input) {
+                                education: function (input) {
                                     if (!input.is('#editForm [name=education]')) {
                                         return true;
                                     }
@@ -489,11 +489,11 @@ $(function() {
                         },
                         graduation: { type: 'date',
                             defaultValue: null,
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(new Date(e), 'yyyy');
                             },
                             validation: {
-                                graduation: function(input) {
+                                graduation: function (input) {
                                     if (!input.is('#editForm [name=graduation]')) {
                                         return true;
                                     }
@@ -504,11 +504,11 @@ $(function() {
                         },
                         firstJob: { type: 'date',
                             defaultValue: null,
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(new Date(e), 'yyyy-MM');
                             },
                             validation: {
-                                firstJob: function(input) {
+                                firstJob: function (input) {
                                     if (!input.is('#editForm [name=firstJob]')) {
                                         return true;
                                     }
@@ -522,11 +522,11 @@ $(function() {
                         homepage: { type: 'string' },
                         getUp: { type: 'date',
                             defaultValue: null,
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(kendo.parseDate(e), 'HH:mm');
                             },
                             validation: {
-                                getUp: function(input) {
+                                getUp: function (input) {
                                     if (!input.is('#editForm [name=getUp]')) {
                                         return true;
                                     }
@@ -537,11 +537,11 @@ $(function() {
                         },
                         importantMoment: { type: 'date',
                             defaultValue: null,
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd HH:mm');
                             },
                             validation: {
-                                importantMoment: function(input) {
+                                importantMoment: function (input) {
                                     if (!input.is('#editForm [name=importantMoment]')) {
                                         return true;
                                     }
@@ -553,7 +553,7 @@ $(function() {
                         character: { type: 'number' },
                         color: {
                             defaultValue: '',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return 'rgba('+ kendo.parseColor(e).r +', '+ kendo.parseColor(e).g +', '+ kendo.parseColor(e).b +', '+ kendo.parseColor(e).a +')';
                             }
                         },
@@ -562,7 +562,7 @@ $(function() {
                         },
                         tourism: { type: 'object',
                             defaultValue: [],
-                            parse: function(e) {
+                            parse: function (e) {
                                 var arr = [];
                                 for (var i = 0; i < e.length; i++) {
                                     arr.push({
@@ -582,7 +582,7 @@ $(function() {
                                 size: 53284
                             },
                             validation: {
-                                photo: function(input) {
+                                photo: function (input) {
                                     if (!input.is('#editForm [name=photo]')) {
                                         return true;
                                     }
@@ -637,7 +637,7 @@ $(function() {
                             update: 'k-icon k-i-check',
                             cancel: 'k-icon k-i-cancel'
                         },
-                        visible: function(dataItem) {
+                        visible: function (dataItem) {
                             return dataItem.online;
                         }
                     },
@@ -648,14 +648,14 @@ $(function() {
             },
             { locked: true, field: 'userName', title: '用户名', width: '120px' },
             { field: 'realName', title: '姓名', width: '100px',
-                template: function(dataItem) {
+                template: function (dataItem) {
                     linkDetails(dataItem);
                     return '<a class="theme-m" href="javascript:;" data-uid="'+ dataItem.uid +'">'+ dataItem.realName +'</a>';
                 }
             },
             { field: 'nickName', title: '昵称', width: '110px' },
             { hidden: true, field: 'password', title: '密码', width: '100px',
-                template: function(dataItem) {
+                template: function (dataItem) {
                     return dataItem.password.replace(dataItem.password.substr(0), '******');
                 }
             },
@@ -691,7 +691,7 @@ $(function() {
             { field: 'birthday', title: '生日', width: '110px' },
             { field: 'mateBirthday', title: '配偶生日', width: '130px' },
             { field: 'creditCard', title: '银行卡', width: '150px',
-                template: function(dataItem) {
+                template: function (dataItem) {
                     return dataItem.creditCard.replace(dataItem.creditCard.substr(2, 12), '** **** **** **');
                 }
             },
@@ -831,7 +831,7 @@ $(function() {
             },
             template: kendo.template($("#editTemplate").html())
         },
-        edit: function(e) {
+        edit: function (e) {
             if (e.model.id === '') {
                 e.container.kendoWindow('title', '新增');
             } else {
@@ -889,13 +889,13 @@ $(function() {
             $('#provinceEdit').kendoDropDownList({
                 dataSource: {
                     transport: {
-                        read: function(options) {
+                        read: function (options) {
                             $.fn.ajaxPost({
                                 ajaxUrl: 'json/province.json',
-                                succeed: function(res) {
+                                succeed: function (res) {
                                     options.success(res);
                                 },
-                                failed: function(res) {
+                                failed: function (res) {
                                     options.error(res);
                                 }
                             });
@@ -913,13 +913,13 @@ $(function() {
             $('#cityEdit').kendoDropDownList({
                 dataSource: {
                     transport: {
-                        read: function(options) {
+                        read: function (options) {
                             $.fn.ajaxPost({
                                 ajaxUrl: 'json/city.json',
-                                succeed: function(res) {
+                                succeed: function (res) {
                                     options.success(res);
                                 },
-                                failed: function(res) {
+                                failed: function (res) {
                                     options.error(res);
                                 }
                             });
@@ -939,13 +939,13 @@ $(function() {
             $('#areaEdit').kendoDropDownList({
                 dataSource: {
                     transport: {
-                        read: function(options) {
+                        read: function (options) {
                             $.fn.ajaxPost({
                                 ajaxUrl: 'json/area.json',
-                                succeed: function(res) {
+                                succeed: function (res) {
                                     options.success(res);
                                 },
-                                failed: function(res) {
+                                failed: function (res) {
                                     options.error(res);
                                 }
                             });
@@ -966,13 +966,13 @@ $(function() {
             $('#domicileEdit').kendoDropDownTree({
                 dataSource: {
                     transport: {
-                        read: function(options) {
+                        read: function (options) {
                             $.fn.ajaxPost({
                                 ajaxUrl: 'json/select_hierarchical_data.json',
-                                succeed: function(res) {
+                                succeed: function (res) {
                                     options.success(res);
                                 },
-                                failed: function(res) {
+                                failed: function (res) {
                                     options.error(res);
                                 }
                             });
@@ -994,13 +994,13 @@ $(function() {
             $('#nationEdit').kendoComboBox({
                 dataSource: {
                     transport: {
-                        read: function(options) {
+                        read: function (options) {
                             $.fn.ajaxPost({
                                 ajaxUrl: 'json/nation.json',
-                                succeed: function(res) {
+                                succeed: function (res) {
                                     options.success(res);
                                 },
-                                failed: function(res) {
+                                failed: function (res) {
                                     options.error(res);
                                 }
                             });
@@ -1018,13 +1018,13 @@ $(function() {
             $('#zodiacEdit').kendoMultiColumnComboBox({
                 dataSource: {
                     transport: {
-                        read: function(options) {
+                        read: function (options) {
                             $.fn.ajaxPost({
                                 ajaxUrl: 'json/zodiac.json',
-                                succeed: function(res) {
+                                succeed: function (res) {
                                     options.success(res);
                                 },
-                                failed: function(res) {
+                                failed: function (res) {
                                     options.error(res);
                                 }
                             });
@@ -1053,13 +1053,13 @@ $(function() {
             $('#languageEdit').kendoAutoComplete({
                 dataSource: {
                     transport: {
-                        read: function(options) {
+                        read: function (options) {
                             $.fn.ajaxPost({
                                 ajaxUrl: 'json/language.json',
-                                succeed: function(res) {
+                                succeed: function (res) {
                                     options.success(res);
                                 },
-                                failed: function(res) {
+                                failed: function (res) {
                                     options.error(res);
                                 }
                             });
@@ -1164,14 +1164,14 @@ $(function() {
                 filter: 'contains',
                 checkboxes: true,
                 autoClose: false,
-                dataBound: function() {
+                dataBound: function () {
                     if (e.model.tourism.length > 0) {
                         $(this.element).prop('required', false);
                     } else {
                         $(this.element).prop('required', true);
                     }
                 },
-                change: function() {
+                change: function () {
                     if (this.value().length > 0) {
                         $(this.element).prop('required', false);
                     } else {
@@ -1198,7 +1198,7 @@ $(function() {
                     allowedExtensions: ['.jpg', '.png', '.gif', '.bmp'],
                     maxFileSize: 10485760
                 },
-                success: function(res) {
+                success: function (res) {
                     if (res.response.result === 'y') {
                         if (res.operation === 'upload') {
                             e.model.set('photo.url', res.response.data.url);
@@ -1274,7 +1274,7 @@ $(function() {
             $('#editForm').kendoValidator({
                 rules: {
                     // 昵称
-                    nickName: function(input) {
+                    nickName: function (input) {
                         if (!input.is('#editForm [name=nickName]')) {
                             return true;
                         }
@@ -1285,90 +1285,90 @@ $(function() {
                             ajaxData: {
                                 'nickName': input.val()
                             },
-                            finished: function() {
+                            finished: function () {
                                 input.next().hide();
                             },
-                            succeed: function() {
+                            succeed: function () {
                                 unique = true;
                             },
-                            failed: function() {
+                            failed: function () {
                                 unique = false;
                             }
                         });
                         return unique;
                     },
                     // 匹配密码
-                    matchPassword: function(input) {
+                    matchPassword: function (input) {
                         if (!input.is('#editForm [name=confirmPassword]')) {
                             return true;
                         }
                         return (input.val() === $('#editForm [name=password]').val());
                     },
                     // 性别
-                    gender: function(input) {
+                    gender: function (input) {
                         if (!input.is('#editForm [name=gender]')) {
                             return true;
                         }
                         return $('#editForm [name=gender]').is(':checked');
                     },
                     // 生日
-                    birthday: function(input) {
+                    birthday: function (input) {
                         if (!input.is('#editForm [name=birthday]')) {
                             return true;
                         }
                         return kendo.parseDate(input.val(), 'yyyy-MM-dd') instanceof Date;
                     },
                     // 配偶生日
-                    mateBirthday: function(input) {
+                    mateBirthday: function (input) {
                         if (!input.is('#editForm [name=mateBirthday]')) {
                             return true;
                         }
                         return kendo.parseDate(input.val(), 'yyyy-MM-dd') instanceof Date;
                     },
                     // 民族
-                    nation: function(input) {
+                    nation: function (input) {
                         if (!input.is('#editForm [name=nation_input]')) {
                             return true;
                         }
                         return input.val() === '' || input.val().match(/^[\u4E00-\u9FA5]+$/) !== null;
                     },
                     // 生肖
-                    zodiac: function(input) {
+                    zodiac: function (input) {
                         if (!input.is('#editForm [name=zodiac_input]')) {
                             return true;
                         }
                         return input.val() === '' || input.val().match(/^[鼠|牛|虎|兔|龙|蛇|马|羊|猴|鸡|狗|猪]{1}$/) !== null;
                     },
                     // 教育程度
-                    education: function(input) {
+                    education: function (input) {
                         if (!input.is('#editForm [name=education]')) {
                             return true;
                         }
                         return $('#editForm [name=education]').is(':checked');
                     },
                     // 毕业年份
-                    graduation: function(input) {
+                    graduation: function (input) {
                         if (!input.is('#editForm [name=graduation]')) {
                             return true;
                         }
                         return kendo.parseDate(input.val(), 'yyyy') instanceof Date;
                     },
                     // 参加工作年月
-                    firstJob: function(input) {
+                    firstJob: function (input) {
                         if (!input.is('#editForm [name=firstJob]')) {
                             return true;
                         }
                         return kendo.parseDate(input.val(), 'yyyy-MM') instanceof Date;
                     },
                     // 起床时间
-                    getUp: function(input) {
+                    getUp: function (input) {
                         if (!input.is('#editForm [name=getUp]')) {
                             return true;
                         }
                         return kendo.parseDate(input.val(), 'HH:mm') instanceof Date;
                     },
                     // 最有意义的时刻
-                    importantMoment: function(input) {
+                    importantMoment: function (input) {
                         if (!input.is('#editForm [name=importantMoment]')) {
                             return true;
                         }

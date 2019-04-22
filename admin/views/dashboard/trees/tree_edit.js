@@ -1,9 +1,9 @@
-$(function() {
+$(function () {
     // 获取数据源生成树形
     $('#treeView').kendoTreeView({
         dataSource: {
             transport: {
-                read: function(options) { readNode(options, 'json/tree.json') }
+                read: function (options) { readNode(options, 'json/tree.json') }
             },
             schema: {
                 data: 'data',
@@ -20,7 +20,7 @@ $(function() {
             '# } else { #' +
                 '<a class="k-link" href="javascript:editTree(#= node #);">#= item.text #</a>' +
             '# } #',
-        dataBound: function() {
+        dataBound: function () {
             if ($('#treeView a.k-state-selected').length === 1) {
                 location.href = $('#treeView a.k-state-selected').attr('href');
             } else if ($('#treeView span.k-state-selected').length === 1) {
@@ -49,7 +49,7 @@ function saveCreateTree() {
     if ($('#treeDetail form').kendoValidator().data('kendoValidator').validate()) {
         $.fn.ajaxPost({
             ajaxData: $('#treeDetail form').serializeObject(),
-            succeed: function() {
+            succeed: function () {
                 refreshTree();
             },
             isMsg: true
@@ -59,12 +59,12 @@ function saveCreateTree() {
 
 // 删
 function destroyTree(id, text) {
-    confirmMsg('删除确认', '你确定要删除<strong class="theme-m mx-1">' + text + '</strong>节点吗？', 'question', function() {
+    confirmMsg('删除确认', '你确定要删除<strong class="theme-m mx-1">' + text + '</strong>节点吗？', 'question', function () {
         $.fn.ajaxPost({
             ajaxData: {
                 'id': id
             },
-            succeed: function() {
+            succeed: function () {
                 refreshTree();
             },
             isMsg: true
@@ -86,7 +86,7 @@ function saveUpdateTree(id, dom) {
     if ($('#treeDetail form').kendoValidator().data('kendoValidator').validate()) {
         $.fn.ajaxPost({
             ajaxData: $('#treeDetail form').serializeObject(),
-            succeed: function() {
+            succeed: function () {
                 refreshTree();
             },
             isMsg: true
@@ -105,13 +105,13 @@ function cancelTree() {
 function viewDetails(id) {
     new kendo.data.DataSource({
         transport: {
-            read: function(options) {
+            read: function (options) {
                 $.fn.ajaxPost({
                     ajaxUrl: 'json/grid.json',
-                    succeed: function(res) {
+                    succeed: function (res) {
                         options.success(res);
                     },
-                    failed: function(res) {
+                    failed: function (res) {
                         options.error(res);
                     }
                 });
@@ -120,7 +120,7 @@ function viewDetails(id) {
         schema: {
             data: 'data'
         },
-        change: function() {
+        change: function () {
             $('#treeDetail').html(kendo.template($('#detailsTemplate').html())(this.get(id)));
         }
     }).read();

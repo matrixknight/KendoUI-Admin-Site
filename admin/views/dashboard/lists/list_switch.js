@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
     // 生成工具条
     $('#toolbar').kendoToolBar({
         resizable: false,
@@ -10,7 +10,7 @@ $(function() {
     // 定义数据源
     var dataSource = new kendo.data.DataSource({
         transport: {
-            read: function(options) { readItem(options, 'json/list.json') }
+            read: function (options) { readItem(options, 'json/list.json') }
         },
         schema: {
             total: 'total',
@@ -29,12 +29,12 @@ $(function() {
                     height: { type: 'number' },
                     bloodType: { type: 'string' },
                     birthday: { type: 'date',
-                        parse: function(e) {
+                        parse: function (e) {
                             return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd');
                         }
                     },
                     mateBirthday: { type: 'date',
-                        parse: function(e) {
+                        parse: function (e) {
                             return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd');
                         }
                     },
@@ -47,12 +47,12 @@ $(function() {
                     language: { type: 'string' },
                     education: { type: 'object' },
                     graduation: { type: 'date',
-                        parse: function(e) {
+                        parse: function (e) {
                             return kendo.toString(new Date(e), 'yyyy');
                         }
                     },
                     firstJob: { type: 'date',
-                        parse: function(e) {
+                        parse: function (e) {
                             return kendo.toString(new Date(e), 'yyyy-MM');
                         }
                     },
@@ -60,12 +60,12 @@ $(function() {
                     email: { type: 'string' },
                     homepage: { type: 'string' },
                     getUp: { type: 'date',
-                        parse: function(e) {
+                        parse: function (e) {
                             return kendo.toString(kendo.parseDate(e), 'HH:mm');
                         }
                     },
                     importantMoment: { type: 'date',
-                        parse: function(e) {
+                        parse: function (e) {
                             return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd HH:mm');
                         }
                     },

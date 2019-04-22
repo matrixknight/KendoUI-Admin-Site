@@ -1,7 +1,7 @@
 /* JS for All Kendo UI Components Simplified Chinese (zh-CHS) Language Pack | Written by IKKI | 2018-02-03 */
 
 /* Cultures ------------------------------ */
-(function( window, undefined ) {
+(function ( window, undefined ) {
 
     /* 简体 */
     kendo.cultures["zh-CHS"] = {

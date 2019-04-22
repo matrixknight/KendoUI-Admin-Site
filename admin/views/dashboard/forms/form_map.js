@@ -1,8 +1,8 @@
-$(function() {
+$(function () {
     // 提示
     noticeMsg('地理数据量大~ 请耐心等候~ 载入中……', 'info', 'center', 10000);
     // 地图点选
-    $('#inputBoxMapBtn').click(function() {
+    $('#inputBoxMapBtn').click(function () {
         var divWindow = $('<div class="window-map"></div>').kendoWindow({
             actions: ['Minimize', 'Maximize', 'Close'],
             animation: {open: {effects: 'fade:in'}, close: {effects: 'fade:out'}},
@@ -11,7 +11,7 @@ $(function() {
             height: '40%',
             modal: true,
             pinned: true,
-            activate: function() {
+            activate: function () {
                 $('#inputMap').kendoMap({
                     center: [51.51515, -0.126500],
                     minZoom: 2,
@@ -53,9 +53,9 @@ $(function() {
                             minZoom: 5
                         }
                     ],
-                    shapeFeatureCreated: function(e) {
+                    shapeFeatureCreated: function (e) {
                         if ($('#inputBoxMap').val() === e.dataItem.properties.name) {
-                            $.each(e.group.children, function(i, items) {
+                            $.each(e.group.children, function (i, items) {
                                 items.options.set('fill.color', accentColor);
                             });
                         }
@@ -64,29 +64,29 @@ $(function() {
                             position: 'cursor'
                         };
                     },
-                    shapeMouseEnter: function(e) {
+                    shapeMouseEnter: function (e) {
                         e.shape.options.set('fill.opacity', .5);
                     },
-                    shapeMouseLeave: function(e) {
+                    shapeMouseLeave: function (e) {
                         e.shape.options.set('fill.opacity', .8);
                     },
-                    shapeClick: function(e) {
+                    shapeClick: function (e) {
                         $('#inputBoxMap').val(e.shape.dataItem.properties.name);
                         e.layer.reset();
-                        setTimeout(function(){
+                        setTimeout(function (){
                             divWindow.close();
                         }, 500);
                     }
                 });
             },
-            close: function() {
+            close: function () {
                 divWindow.destroy();
             }
         }).data('kendoWindow');
         divWindow.content('<div class="position-absolute w-100 h-100" id="inputMap"></div>').center().open();
     });
     // 地图选择
-    $('#textBoxMapBtn').click(function() {
+    $('#textBoxMapBtn').click(function () {
         var divWindow = $('<div class="window-map"></div>').kendoWindow({
             actions: ['Minimize', 'Maximize', 'Close'],
             animation: {open: {effects: 'fade:in'}, close: {effects: 'fade:out'}},
@@ -95,7 +95,7 @@ $(function() {
             height: '40%',
             modal: true,
             pinned: true,
-            activate: function() {
+            activate: function () {
                 var tMap = $('#textMap').kendoMap({
                     center: [36.320666, 108.815888],
                     minZoom: 4,
@@ -151,10 +151,10 @@ $(function() {
                             minZoom: 6
                         }
                     ],
-                    shapeFeatureCreated: function(e) {
-                        $.each($('#textBoxMap').val().split(','), function(i, contents) {
+                    shapeFeatureCreated: function (e) {
+                        $.each($('#textBoxMap').val().split(','), function (i, contents) {
                             if (contents === e.dataItem.properties.name + '[' + e.dataItem.properties.id + ']' || contents === e.dataItem.properties.name + '[' + e.dataItem.id + ']') {
-                                $.each(e.group.children, function(k, items) {
+                                $.each(e.group.children, function (k, items) {
                                     items.options.set('fill.color', accentColor);
                                 });
                             }
@@ -164,13 +164,13 @@ $(function() {
                             position: 'cursor'
                         };
                     },
-                    shapeMouseEnter: function(e) {
+                    shapeMouseEnter: function (e) {
                         e.shape.options.set('fill.opacity', .5);
                     },
-                    shapeMouseLeave: function(e) {
+                    shapeMouseLeave: function (e) {
                         e.shape.options.set('fill.opacity', .8);
                     },
-                    shapeClick: function(e) {
+                    shapeClick: function (e) {
                         if (e.shape.dataItem.properties.id) {
                             var confirmDialog = $('<div class="dialog-box"></div>').kendoDialog({
                                 animation: {open: {effects: 'fade:in'}, close: {effects: 'fade:out'}},
@@ -182,14 +182,14 @@ $(function() {
                                     {
                                         text: '选择当前层级',
                                         primary: true,
-                                        action: function() {
+                                        action: function () {
                                             e.shape.options.set('fill.color', accentColor);
                                             var str = e.shape.dataItem.properties.name + '[' + e.shape.dataItem.properties.id + ']',
                                                 none = true;
                                             if ($('#textBoxMap').val() === '') {
                                                 $('#textBoxMap').val(str);
                                             } else {
-                                                $.each($('#textBoxMap').val().split(','), function(i, items) {
+                                                $.each($('#textBoxMap').val().split(','), function (i, items) {
                                                     if (items === str) {
                                                         none = false;
                                                     }
@@ -202,7 +202,7 @@ $(function() {
                                     },
                                     {
                                         text: '进入下一层级',
-                                        action: function() {
+                                        action: function () {
                                             tMap.layers[3].setDataSource({
                                                 type: 'geojson',
                                                 transport: {
@@ -216,7 +216,7 @@ $(function() {
                                         }
                                     }
                                 ],
-                                close: function() {
+                                close: function () {
                                     confirmDialog.destroy();
                                 }
                             }).data('kendoDialog');
@@ -228,7 +228,7 @@ $(function() {
                             if ($('#textBoxMap').val() === '') {
                                 $('#textBoxMap').val(str);
                             } else {
-                                $.each($('#textBoxMap').val().split(','), function(i, items) {
+                                $.each($('#textBoxMap').val().split(','), function (i, items) {
                                     if (items === str) {
                                         none = false;
                                     }
@@ -241,7 +241,7 @@ $(function() {
                     }
                 }).data('kendoMap');
             },
-            close: function() {
+            close: function () {
                 divWindow.destroy();
             }
         }).data('kendoWindow');
@@ -251,13 +251,13 @@ $(function() {
     var comboMap = $('#comboBoxMap').kendoComboBox({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/select_data.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -274,7 +274,7 @@ $(function() {
     }).data('kendoComboBox');
     $('#comboBoxMapBtn').kendoButton({
         icon: 'globe-outline',
-        click: function(e) {
+        click: function (e) {
             var divWindow = $('<div class="window-map"></div>').kendoWindow({
                 actions: ['Minimize', 'Maximize', 'Close'],
                 animation: {open: {effects: 'fade:in'}, close: {effects: 'fade:out'}},
@@ -283,7 +283,7 @@ $(function() {
                 height: '40%',
                 modal: true,
                 pinned: true,
-                activate: function() {
+                activate: function () {
                     var sMap = $('#singleMap').kendoMap({
                         center: [36.320666, 108.815888],
                         minZoom: 4,
@@ -339,9 +339,9 @@ $(function() {
                                 minZoom: 6
                             }
                         ],
-                        shapeFeatureCreated: function(e) {
+                        shapeFeatureCreated: function (e) {
                             if (comboMap.value() === e.dataItem.properties.id || comboMap.value() === e.dataItem.id) {
-                                $.each(e.group.children, function(i, items) {
+                                $.each(e.group.children, function (i, items) {
                                     items.options.set('fill.color', accentColor);
                                 });
                             }
@@ -350,13 +350,13 @@ $(function() {
                                 position: 'cursor'
                             };
                         },
-                        shapeMouseEnter: function(e) {
+                        shapeMouseEnter: function (e) {
                             e.shape.options.set('fill.opacity', .5);
                         },
-                        shapeMouseLeave: function(e) {
+                        shapeMouseLeave: function (e) {
                             e.shape.options.set('fill.opacity', .8);
                         },
-                        shapeClick: function(e) {
+                        shapeClick: function (e) {
                             if (e.shape.dataItem.properties.id) {
                                 var confirmDialog = $('<div class="dialog-box"></div>').kendoDialog({
                                     animation: {open: {effects: 'fade:in'}, close: {effects: 'fade:out'}},
@@ -368,17 +368,17 @@ $(function() {
                                         {
                                             text: '选择当前层级',
                                             primary: true,
-                                            action: function() {
+                                            action: function () {
                                                 comboMap.value(e.shape.dataItem.properties.id);
                                                 e.layer.reset();
-                                                setTimeout(function(){
+                                                setTimeout(function (){
                                                     divWindow.close();
                                                 }, 500);
                                             }
                                         },
                                         {
                                             text: '进入下一层级',
-                                            action: function() {
+                                            action: function () {
                                                 sMap.layers[3].setDataSource({
                                                     type: 'geojson',
                                                     transport: {
@@ -392,7 +392,7 @@ $(function() {
                                             }
                                         }
                                     ],
-                                    close: function() {
+                                    close: function () {
                                         confirmDialog.destroy();
                                     }
                                 }).data('kendoDialog');
@@ -400,14 +400,14 @@ $(function() {
                             } else {
                                 comboMap.value(e.shape.dataItem.id);
                                 e.layer.reset();
-                                setTimeout(function(){
+                                setTimeout(function (){
                                     divWindow.close();
                                 }, 500);
                             }
                         }
                     }).data('kendoMap');
                 },
-                close: function() {
+                close: function () {
                     divWindow.destroy();
                 }
             }).data('kendoWindow');
@@ -418,13 +418,13 @@ $(function() {
     var treeMap = $('#dropDownTreeMap').kendoDropDownTree({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/select_hierarchical_data.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -446,7 +446,7 @@ $(function() {
     }).data('kendoDropDownTree');
     $('#dropDownTreeMapBtn').kendoButton({
         icon: 'globe-outline',
-        click: function(e) {
+        click: function (e) {
             var divWindow = $('<div class="window-map"></div>').kendoWindow({
                 actions: ['Minimize', 'Maximize', 'Close'],
                 animation: {open: {effects: 'fade:in'}, close: {effects: 'fade:out'}},
@@ -455,7 +455,7 @@ $(function() {
                 height: '40%',
                 modal: true,
                 pinned: true,
-                activate: function() {
+                activate: function () {
                     var mMap = $('#multiMap').kendoMap({
                         center: [36.320666, 108.815888],
                         minZoom: 4,
@@ -520,7 +520,7 @@ $(function() {
                                 },
                                 // 标记点也显示省名称
                                 // tooltip: {
-                                //     content: function(e) {
+                                //     content: function (e) {
                                 //         return e.sender.marker.dataItem.name;
                                 //     }
                                 // },
@@ -531,10 +531,10 @@ $(function() {
                                 maxZoom: 5
                             }
                         ],
-                        shapeFeatureCreated: function(e) {
-                            $.each(treeMap.value(), function(i, contents) {
+                        shapeFeatureCreated: function (e) {
+                            $.each(treeMap.value(), function (i, contents) {
                                 if (contents === e.dataItem.properties.id || contents === e.dataItem.id) {
-                                    $.each(e.group.children, function(k, items) {
+                                    $.each(e.group.children, function (k, items) {
                                         items.options.set('fill.color', accentColor);
                                     });
                                 }
@@ -544,13 +544,13 @@ $(function() {
                                 position: 'cursor'
                             };
                         },
-                        shapeMouseEnter: function(e) {
+                        shapeMouseEnter: function (e) {
                             e.shape.options.set('fill.opacity', .5);
                         },
-                        shapeMouseLeave: function(e) {
+                        shapeMouseLeave: function (e) {
                             e.shape.options.set('fill.opacity', .8);
                         },
-                        shapeClick: function(e) {
+                        shapeClick: function (e) {
                             var arr = treeMap.value(),
                                 none = true;
                             if (e.shape.dataItem.properties.id) {
@@ -564,9 +564,9 @@ $(function() {
                                         {
                                             text: '选择当前层级',
                                             primary: true,
-                                            action: function() {
+                                            action: function () {
                                                 e.shape.options.set('fill.color', accentColor);
-                                                $.each(treeMap.value(), function(i, items) {
+                                                $.each(treeMap.value(), function (i, items) {
                                                     if (items === e.shape.dataItem.properties.id) {
                                                         none = false;
                                                     }
@@ -579,7 +579,7 @@ $(function() {
                                         },
                                         {
                                             text: '进入下一层级',
-                                            action: function() {
+                                            action: function () {
                                                 mMap.layers[3].setDataSource({
                                                     type: 'geojson',
                                                     transport: {
@@ -593,14 +593,14 @@ $(function() {
                                             }
                                         }
                                     ],
-                                    close: function() {
+                                    close: function () {
                                         confirmDialog.destroy();
                                     }
                                 }).data('kendoDialog');
                                 confirmDialog.open();
                             } else {
                                 e.shape.options.set('fill.color', accentColor);
-                                $.each(treeMap.value(), function(i, items) {
+                                $.each(treeMap.value(), function (i, items) {
                                     if (items === e.shape.dataItem.id) {
                                         none = false;
                                     }
@@ -613,7 +613,7 @@ $(function() {
                         }
                     }).data('kendoMap');
                 },
-                close: function() {
+                close: function () {
                     divWindow.destroy();
                 }
             }).data('kendoWindow');

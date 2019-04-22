@@ -1,10 +1,10 @@
 $.getScript(path + 'js/jszip.min.js');
-$(function() {
+$(function () {
     // 获取数据源生成表格
     $('#grid').kendoGrid({
         dataSource: {
             transport: {
-                read: function(options) { readItem(options, 'json/grid.json') }
+                read: function (options) { readItem(options, 'json/grid.json') }
             },
             schema: {
                 total: 'total',
@@ -16,71 +16,71 @@ $(function() {
                         realName: { type: 'string' },
                         nickName: { type: 'string' },
                         password: { type: 'string',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return e.replace(e.substr(0), '******');
                             }
                         },
                         confirmPassword: { type: 'string',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return e.replace(e.substr(0), '******');
                             }
                         },
                         online: { type: 'boolean' },
                         gender: { type: 'string' },
                         age: { type: 'number',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return e + ' 岁';
                             }
                         },
                         height: { type: 'number',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(e, '0.00') + ' m';
                             }
                         },
                         bloodType: { type: 'string' },
                         birthday: { type: 'date',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd');
                             }
                         },
                         mateBirthday: { type: 'date',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd');
                             }
                         },
                         creditCard: { type: 'string',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return e.replace(e.substr(2, 12), '** **** **** **');
                             }
                         },
                         asset: { type: 'number',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(e, 'c');
                             }
                         },
                         nativePlace: { type: 'string',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return e.provinceName + ' - ' + e.cityName + ' - ' + e.areaName;
                             }
                         },
                         domicile: { type: 'string',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return e.name;
                             }
                         },
                         nation: { type: 'string',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return e.nationName;
                             }
                         },
                         zodiac: { type: 'string',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return e.zodiacName;
                             }
                         },
                         language: { type: 'string' },
                         education: { type: 'string',
-                            parse: function(e) {
+                            parse: function (e) {
                                 var str = '';
                                 for (var i = 0; i < e.length; i++) {
                                     if (e[i] === '1') {
@@ -107,12 +107,12 @@ $(function() {
                             }
                         },
                         graduation: { type: 'date',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(new Date(e), 'yyyy');
                             }
                         },
                         firstJob: { type: 'date',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(new Date(e), 'yyyy-MM');
                             }
                         },
@@ -120,19 +120,19 @@ $(function() {
                         email: { type: 'string' },
                         homepage: { type: 'string' },
                         getUp: { type: 'date',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(kendo.parseDate(e), 'HH:mm');
                             }
                         },
                         importantMoment: { type: 'date',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd HH:mm');
                             }
                         },
                         character: { type: 'number' },
                         color: { type: 'string' },
                         constellation: { type: 'string',
-                            parse: function(e) {
+                            parse: function (e) {
                                 var str = '';
                                 for (var i = 0; i < e.length; i++) {
                                     if (e[i] === '1') {
@@ -165,7 +165,7 @@ $(function() {
                             }
                         },
                         tourism: { type: 'string',
-                            parse: function(e) {
+                            parse: function (e) {
                                 var str = '';
                                 for (var i = 0; i < e.length; i++) {
                                     str += e[i].name + ' ';
@@ -175,7 +175,7 @@ $(function() {
                         },
                         summary: { type: 'string' },
                         photo: { type: 'string',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return e.url + ':' + '[' + kendo.toString(e.size / 1024, '0.00') + ' KB]';
                             }
                         },
@@ -213,19 +213,19 @@ $(function() {
                 command: [
                     { name: 'set-admin', text: '设为管理员',
                         iconClass: 'fa fa-user mr-1',
-                        visible: function(dataItem) {
+                        visible: function (dataItem) {
                             return !(dataItem.admin);
                         },
-                        click: function(e) {
+                        click: function (e) {
                             e.preventDefault();
                             var dataItem = this.dataItem($(e.target).closest('tr'));
-                            confirmMsg('管理员设置', '你确定要把<strong class="theme-m mx-1">' + dataItem.realName + '</strong>设置为管理员吗？', 'question', function() {
+                            confirmMsg('管理员设置', '你确定要把<strong class="theme-m mx-1">' + dataItem.realName + '</strong>设置为管理员吗？', 'question', function () {
                                 $.fn.ajaxPost({
                                     ajaxData: {
                                         'id': dataItem.id,
                                         'admin': true
                                     },
-                                    succeed: function() {
+                                    succeed: function () {
                                         dataItem.set('admin', true);
                                     },
                                     isMsg: true
@@ -236,19 +236,19 @@ $(function() {
                     { name: 'cancel-admin', text: '取消管理员',
                         className: 'theme-m-box',
                         iconClass: 'fa fa-user-tie mr-1',
-                        visible: function(dataItem) {
+                        visible: function (dataItem) {
                             return dataItem.admin;
                         },
-                        click: function(e) {
+                        click: function (e) {
                             e.preventDefault();
                             var dataItem = this.dataItem($(e.target).closest('tr'));
-                            confirmMsg('管理员设置', '你确定要取消<strong class="theme-m mx-1">' + dataItem.realName + '</strong>的管理员权限吗？', 'question', function() {
+                            confirmMsg('管理员设置', '你确定要取消<strong class="theme-m mx-1">' + dataItem.realName + '</strong>的管理员权限吗？', 'question', function () {
                                 $.fn.ajaxPost({
                                     ajaxData: {
                                         'id': dataItem.id,
                                         'admin': false
                                     },
-                                    succeed: function() {
+                                    succeed: function () {
                                         dataItem.set('admin', false);
                                     },
                                     isMsg: true
@@ -258,7 +258,7 @@ $(function() {
                     },
                     { name: 'special', text: '特殊修改',
                         iconClass: 'fa fa-user-edit mr-1',
-                        click: function(e) {
+                        click: function (e) {
                             e.preventDefault();
                             var dataItem = this.dataItem($(e.target).closest('tr')),
                                 divWindow = $('<div class="window-box" id="specialEdit"></div>').kendoWindow({
@@ -268,7 +268,7 @@ $(function() {
                                     modal: true,
                                     pinned: true,
                                     resizable: false,
-                                    open: function() {
+                                    open: function () {
                                         $('#onlineEdit').kendoSwitch({
                                             messages: {
                                                 checked: '',
@@ -277,19 +277,19 @@ $(function() {
                                         });
                                         $('#specialEdit').kendoValidator({
                                             rules: {
-                                                nickNameRequired: function(input) {
+                                                nickNameRequired: function (input) {
                                                     if (!input.is('#specialEdit [name=nickName]')) {
                                                         return true;
                                                     }
                                                     return input.val() !== '';
                                                 },
-                                                nickNamePattern: function(input) {
+                                                nickNamePattern: function (input) {
                                                     if (!input.is('#specialEdit [name=nickName]')) {
                                                         return true;
                                                     }
                                                     return input.val().match(/^[A-Za-z0-9\s_\-\u4E00-\u9FA5]{2,20}$/) !== null;
                                                 },
-                                                nickNameUnique: function(input) {
+                                                nickNameUnique: function (input) {
                                                     if (!input.is('#specialEdit [name=nickName]')) {
                                                         return true;
                                                     }
@@ -300,13 +300,13 @@ $(function() {
                                                         ajaxData: {
                                                             'nickName': input.val()
                                                         },
-                                                        finished: function() {
+                                                        finished: function () {
                                                             input.next().hide();
                                                         },
-                                                        succeed: function() {
+                                                        succeed: function () {
                                                             unique = true;
                                                         },
-                                                        failed: function() {
+                                                        failed: function () {
                                                             unique = false;
                                                         }
                                                     });
@@ -319,7 +319,7 @@ $(function() {
                                                 nickNameUnique: "此昵称已存在，请重新输入！"
                                             }
                                         });
-                                        $('#specialEdit button.k-state-selected').unbind('click').click(function(){
+                                        $('#specialEdit button.k-state-selected').unbind('click').click(function (){
                                             if ($('#specialEdit').data('kendoValidator').validate()) {
                                                 $.fn.ajaxPost({
                                                     ajaxData: {
@@ -327,7 +327,7 @@ $(function() {
                                                         'nickName': $('#specialEdit [name=nickName]').val(),
                                                         'online': $('#onlineEdit').data('kendoSwitch').value()
                                                     },
-                                                    succeed: function(res) {
+                                                    succeed: function (res) {
                                                         dataItem.set('nickName', $('#specialEdit [name=nickName]').val());
                                                         dataItem.set('online', $('#onlineEdit').data('kendoSwitch').value());
                                                         divWindow.close();
@@ -337,7 +337,7 @@ $(function() {
                                             }
                                         });
                                     },
-                                    close: function() {
+                                    close: function () {
                                         divWindow.destroy();
                                     }
                                 }).data('kendoWindow'),
@@ -367,12 +367,12 @@ $(function() {
                     },
                     { name: 'group',
                         template: '<a class="k-button k-button-icontext k-grid-group" href="javascript:;"><span class="fa fa-users mr-1"></span>分组</a>',
-                        click: function(e) {
+                        click: function (e) {
                             e.preventDefault();
                             var dataItem = this.dataItem($(e.target).closest('tr'));
                             $.fn.ajaxPost({
                                 ajaxUrl: 'json/group.json',
-                                succeed: function(res) {
+                                succeed: function (res) {
                                     var divWindow = $('<div class="window-box" id="groupEdit"></div>').kendoWindow({
                                             animation: {open: {effects: 'fade:in'}, close: {effects: 'fade:out'}},
                                             title: '分组',
@@ -380,34 +380,34 @@ $(function() {
                                             modal: true,
                                             pinned: true,
                                             resizable: false,
-                                            open: function() {
+                                            open: function () {
                                                 $('#groupTabStrip').kendoTabStrip({
                                                     animation: false,
-                                                    select: function(e) {
+                                                    select: function (e) {
                                                         $(e.sender.wrapper[0]).parent().width('100%');
                                                     }
                                                 }).data('kendoTabStrip').select(0);
-                                                $.each(dataItem.group, function(i, checked) {
+                                                $.each(dataItem.group, function (i, checked) {
                                                     $('#group' + checked).prop('checked', true);
                                                 });
-                                                $('#groupEdit button.k-state-selected').unbind('click').click(function(){
+                                                $('#groupEdit button.k-state-selected').unbind('click').click(function (){
                                                     $.fn.ajaxPost({
                                                         ajaxData: $('#groupEdit form').serializeObject(),
-                                                        succeed: function(res) {
+                                                        succeed: function (res) {
                                                             dataItem.set('group', $('#groupEdit [name=group]').serializeObject().group);
                                                             divWindow.close();
                                                         },
                                                         isMsg: true
                                                     });
                                                 });
-                                                $('#groupEdit button.theme-m-box').unbind('click').click(function(){
+                                                $('#groupEdit button.theme-m-box').unbind('click').click(function (){
                                                     $('#groupEdit :checkbox').prop('checked', false);
-                                                    $.each(dataItem.group, function(i, checked) {
+                                                    $.each(dataItem.group, function (i, checked) {
                                                         $('#group' + checked).prop('checked', true);
                                                     });
                                                 });
                                             },
-                                            close: function() {
+                                            close: function () {
                                                 divWindow.destroy();
                                             }
                                         }).data('kendoWindow'),
@@ -416,14 +416,14 @@ $(function() {
                                                 '<input name="id" type="hidden" value="' + dataItem.id + '">' +
                                                 '<div id="groupTabStrip">' +
                                                     '<ul>';
-                                    $.each(res.data, function(i, groups) {
+                                    $.each(res.data, function (i, groups) {
                                         content +=      '<li>' + groups.text + '</li>';
                                     });
                                         content +=  '</ul>';
-                                    $.each(res.data, function(i, groups) {
+                                    $.each(res.data, function (i, groups) {
                                         content +=  '<div>' +
                                                         '<div class="row m-0">';
-                                        $.each(groups.items, function(k, group) {
+                                        $.each(groups.items, function (k, group) {
                                         content +=          '<div class="col-sm-6 col-md-4 col-lg-3">' +
                                                                 '<input class="k-checkbox" id="group' + group.id + '" name="group" type="checkbox" value="' + group.id + '"><label class="k-checkbox-label" for="group' + group.id + '">' + group.text + '</label>' +
                                                             '</div>';
@@ -445,15 +445,15 @@ $(function() {
                     },
                     { name: 'permission', text: '权限',
                         iconClass: 'fa fa-user-cog mr-1',
-                        visible: function(dataItem) {
+                        visible: function (dataItem) {
                             return dataItem.admin;
                         },
-                        click: function(e) {
+                        click: function (e) {
                             e.preventDefault();
                             var dataItem = this.dataItem($(e.target).closest('tr'));
                             $.fn.ajaxPost({
                                 ajaxUrl: 'json/nav.json',
-                                succeed: function(res) {
+                                succeed: function (res) {
                                     var divWindow = $('<div class="window-box" id="permissionEdit"></div>').kendoWindow({
                                             animation: {open: {effects: 'fade:in'}, close: {effects: 'fade:out'}},
                                             title: '权限',
@@ -462,41 +462,41 @@ $(function() {
                                             modal: true,
                                             pinned: true,
                                             resizable: false,
-                                            open: function() {
+                                            open: function () {
                                                 $('#permissionTreeView').kendoTreeView({
                                                     dataSource: res.data,
                                                     checkboxes: {
                                                         checkChildren: true,
                                                         template: '<input class="k-checkbox" id="permission#= item.id #" name="permission" type="checkbox" value="#= item.id #"><label class="k-checkbox-label" for="permission#= item.id #">#= item.text #</label>'
                                                     },
-                                                    template: function() {
+                                                    template: function () {
                                                         return ''
                                                     },
-                                                    dataBound: function() {
+                                                    dataBound: function () {
                                                         $('#permissionTreeView').find('.k-in').remove();
                                                     }
                                                 });
-                                                $.each(dataItem.permission, function(i, checked) {
+                                                $.each(dataItem.permission, function (i, checked) {
                                                     $('#permission' + checked).prop('checked', true);
                                                 });
-                                                $('#permissionEdit button.k-state-selected').unbind('click').click(function(){
+                                                $('#permissionEdit button.k-state-selected').unbind('click').click(function (){
                                                     $.fn.ajaxPost({
                                                         ajaxData: $('#permissionEdit form').serializeObject(),
-                                                        succeed: function(res) {
+                                                        succeed: function (res) {
                                                             dataItem.set('permission', $('#permissionEdit [name=permission]').serializeObject().permission);
                                                             divWindow.close();
                                                         },
                                                         isMsg: true
                                                     });
                                                 });
-                                                $('#permissionEdit button.theme-m-box').unbind('click').click(function(){
+                                                $('#permissionEdit button.theme-m-box').unbind('click').click(function (){
                                                     $('#permissionEdit :checkbox').prop('checked', false);
-                                                    $.each(dataItem.permission, function(i, checked) {
+                                                    $.each(dataItem.permission, function (i, checked) {
                                                         $('#permission' + checked).prop('checked', true);
                                                     });
                                                 });
                                             },
-                                            close: function() {
+                                            close: function () {
                                                 divWindow.destroy();
                                             }
                                         }).data('kendoWindow'),
@@ -644,7 +644,7 @@ function importTemp() {
         modal: true,
         pinned: true,
         resizable: false,
-        open: function() {
+        open: function () {
             numericRange($('#importStart'), $('#importEnd'), 'n0', 0, 1, 1, 10000);
             $('#importFile').kendoUpload({
                 multiple: false,
@@ -655,8 +655,8 @@ function importTemp() {
                 localization: {
                     select: '<span class="fa fa-upload mr-1"></span>选择导入文件'
                 },
-                select: function(e) {
-                    setTimeout(function(){
+                select: function (e) {
+                    setTimeout(function (){
                         if ($(e.sender.wrapper[0]).find('.k-file-invalid-icon').length < 1) {
                             $(e.sender.element[0]).prop('required', false);
                         } else {
@@ -664,29 +664,29 @@ function importTemp() {
                         }
                     }, 100);
                 },
-                remove: function(e) {
+                remove: function (e) {
                     $(e.sender.element[0]).prop('required', true);
                 }
             });
             $('#importForm').kendoValidator();
-            $('#importForm button.k-state-selected').unbind('click').click(function(){
+            $('#importForm button.k-state-selected').unbind('click').click(function (){
                 if ($('#importForm').data('kendoValidator').validate()) {
                     $('#importFile').prop('disabled', true);
                     $('#loading').show();
                     $.fn.ajaxPostBlob({
                         ajaxData: $('#importForm')[0],
-                        finished: function() {
+                        finished: function () {
                             $('#loading').hide();
                             $('#importFile').prop('disabled', false);
                         },
-                        succeed: function(res) {
+                        succeed: function (res) {
                             divWindow.close();
                         }
                     });
                 }
             });
         },
-        close: function() {
+        close: function () {
             divWindow.destroy();
         }
     }).data('kendoWindow'),
@@ -719,7 +719,7 @@ function importTemp() {
 function sendEmail() {
     if ($('#grid').data('kendoGrid').selectedKeyNames().length > 0) {
         var emails = '';
-        $.each($('#grid').data('kendoGrid').selectedKeyNames(), function(i, items) {
+        $.each($('#grid').data('kendoGrid').selectedKeyNames(), function (i, items) {
             emails += $('#grid').data('kendoGrid').dataSource.get(items).email + ';';
         });
         emails.substring(0, emails.length-1);
@@ -733,13 +733,13 @@ function sendEmail() {
 
 // 类型设置
 function setType(dom, id, type, msg, color) {
-    confirmMsgBtn('类型操作', '你确定要设置为<strong class="d-inline-block mx-1 px-2 py-1 k-notification-' + color + '">' + msg + '</strong>吗？', 'question', function() {
+    confirmMsgBtn('类型操作', '你确定要设置为<strong class="d-inline-block mx-1 px-2 py-1 k-notification-' + color + '">' + msg + '</strong>吗？', 'question', function () {
         $.fn.ajaxPost({
             ajaxData: {
                 'id': id,
                 'type': type
             },
-            succeed: function() {
+            succeed: function () {
                 $('#grid').data('kendoGrid').dataItem($(dom).closest('tr')).set('type', type);
             },
             isMsg: true

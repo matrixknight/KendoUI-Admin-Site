@@ -1,7 +1,7 @@
 /* JS for All Kendo UI Components French (fr-FR) Language Pack | Written by IKKI | 2018-02-03 */
 
 /* Cultures ------------------------------ */
-(function( window, undefined ) {
+(function ( window, undefined ) {
     kendo.cultures["fr-FR"] = {
         name: "fr-FR",
         numberFormat: {

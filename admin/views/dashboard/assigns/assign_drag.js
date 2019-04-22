@@ -1,11 +1,11 @@
 var dragFrom,
     dragTo;
-$(function() {
+$(function () {
     // 获取数据源生成树形
     dragFrom = $('#dragFrom').kendoTreeView({
         dataSource: {
             transport: {
-                read: function(options) { readNode(options, 'json/assigns.json') }
+                read: function (options) { readNode(options, 'json/assigns.json') }
             },
             schema: {
                 data: 'itemsFrom',
@@ -20,7 +20,7 @@ $(function() {
     dragTo = $('#dragTo').kendoTreeView({
         dataSource: {
             transport: {
-                read: function(options) { readNode(options, 'json/assigns.json') }
+                read: function (options) { readNode(options, 'json/assigns.json') }
             },
             schema: {
                 data: 'nodeTo',

@@ -1,7 +1,7 @@
 /* JS for All Kendo UI Components Korean (ko-KR) Language Pack | Written by IKKI | 2018-02-03 */
 
 /* Cultures ------------------------------ */
-(function( window, undefined ) {
+(function ( window, undefined ) {
     kendo.cultures["ko-KR"] = {
         name: "ko-KR",
         numberFormat: {

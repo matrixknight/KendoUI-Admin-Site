@@ -1,7 +1,7 @@
 /* JS for All Kendo UI Components Arabic (ar-SA) Language Pack | Written by IKKI | 2018-02-03 */
 
 /* Cultures ------------------------------ */
-(function( window, undefined ) {
+(function ( window, undefined ) {
     kendo.cultures["ar-SA"] = {
         name: "ar-SA",
         numberFormat: {

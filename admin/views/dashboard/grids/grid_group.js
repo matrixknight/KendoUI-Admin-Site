@@ -1,9 +1,9 @@
-$(function() {
+$(function () {
     // 获取数据源生成表格
     $('#grid').kendoGrid({
         dataSource: {
             transport: {
-                read: function(options) { readItem(options, 'json/grid.json') }
+                read: function (options) { readItem(options, 'json/grid.json') }
             },
             schema: {
                 total: 'total',
@@ -22,19 +22,19 @@ $(function() {
                         height: { type: 'number' },
                         bloodType: { type: 'string' },
                         birthday: { type: 'date',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd');
                             }
                         },
                         mateBirthday: { type: 'date',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd');
                             }
                         },
                         creditCard: { type: 'string' },
                         asset: { type: 'number' },
                         nativePlace: { type: 'string',
-                            parse: function(e) {
+                            parse: function (e) {
                                 if (typeof e === 'object') {
                                     if (typeof e.id === 'undefined') {
                                         return e.provinceName + ' - ' + e.cityName + ' - ' + e.areaName;
@@ -47,7 +47,7 @@ $(function() {
                             }
                         },
                         domicile: { type: 'string',
-                            parse: function(e) {
+                            parse: function (e) {
                                 if (typeof e === 'object') {
                                     if (typeof e.id === 'undefined') {
                                         return e.name;
@@ -60,7 +60,7 @@ $(function() {
                             }
                         },
                         nation: { type: 'string',
-                            parse: function(e) {
+                            parse: function (e) {
                                 if (typeof e === 'object') {
                                     if (typeof e.id === 'undefined') {
                                         return e.nationName;
@@ -73,7 +73,7 @@ $(function() {
                             }
                         },
                         zodiac: { type: 'string',
-                            parse: function(e) {
+                            parse: function (e) {
                                 if (typeof e === 'object') {
                                     if (typeof e.id === 'undefined') {
                                         return e.zodiacName;
@@ -87,7 +87,7 @@ $(function() {
                         },
                         language: { type: 'string' },
                         education: { type: 'string',
-                            parse: function(e) {
+                            parse: function (e) {
                                 if (typeof e === 'object') {
                                     if (typeof e.id === 'undefined') {
                                         var str = '';
@@ -122,12 +122,12 @@ $(function() {
                             }
                         },
                         graduation: { type: 'date',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(new Date(e), 'yyyy');
                             }
                         },
                         firstJob: { type: 'date',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(new Date(e), 'yyyy-MM');
                             }
                         },
@@ -135,19 +135,19 @@ $(function() {
                         email: { type: 'string' },
                         homepage: { type: 'string' },
                         getUp: { type: 'date',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(kendo.parseDate(e), 'HH:mm');
                             }
                         },
                         importantMoment: { type: 'date',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd HH:mm');
                             }
                         },
                         character: { type: 'number' },
                         color: { type: 'string' },
                         constellation: { type: 'string',
-                            parse: function(e) {
+                            parse: function (e) {
                                 if (typeof e === 'object') {
                                     if (typeof e.id === 'undefined') {
                                         var str = '';
@@ -188,7 +188,7 @@ $(function() {
                             }
                         },
                         tourism: { type: 'string',
-                            parse: function(e) {
+                            parse: function (e) {
                                 if (typeof e === 'object') {
                                     if (typeof e.id === 'undefined') {
                                         var str = '';
@@ -206,7 +206,7 @@ $(function() {
                         },
                         summary: { type: 'string' },
                         photo: { type: 'string',
-                            parse: function(e) {
+                            parse: function (e) {
                                 if (typeof e === 'object') {
                                     if (typeof e.id === 'undefined') {
                                         return '<a href="javascript:showBigPic(\'' + e.url + '\');"><img class="w-15 rounded-circle" src="' + e.url + '" alt="' + e.name + e.extension + '"></a><small class="ml-2 text-muted">[' + kendo.toString(e.size / 1024, '0.00') + ' KB]</small>';
@@ -219,7 +219,7 @@ $(function() {
                             }
                         },
                         sign: { type: 'string',
-                            parse: function(e) {
+                            parse: function (e) {
                                 if (typeof e === 'object') {
                                     return e.sign;
                                 } else {
@@ -310,7 +310,7 @@ $(function() {
             },
             { field: 'nickName', title: '昵称', width: '210px' },
             { hidden: true, field: 'password', title: '密码', width: '230px',
-                template: function(dataItem) {
+                template: function (dataItem) {
                     return dataItem.password.replace(dataItem.password.substr(0), '******');
                 }
             },
@@ -358,7 +358,7 @@ $(function() {
                 footerTemplate: '平均：#= kendo.toString(average, "n0") # 岁',
                 filterable: {
                     cell: {
-                        template: function(e) {
+                        template: function (e) {
                             e.element.kendoNumericTextBox({
                                 format: 'n0',
                                 decimals: 0
@@ -373,7 +373,7 @@ $(function() {
                 footerTemplate: '平均：#= kendo.toString(average, "0.00") # m',
                 filterable: {
                     cell: {
-                        template: function(e) {
+                        template: function (e) {
                             e.element.kendoNumericTextBox({
                                 format: '0.00 m',
                                 decimals: 2,
@@ -395,7 +395,7 @@ $(function() {
             { field: 'birthday', title: '生日', width: '210px',
                 filterable: {
                     cell: {
-                        template: function(e) {
+                        template: function (e) {
                             e.element.kendoDatePicker({
                                 format: 'yyyy-MM-dd',
                                 footer: '今天：#= kendo.toString(data, "yyyy年MM月dd日") #'
@@ -407,7 +407,7 @@ $(function() {
             { field: 'mateBirthday', title: '配偶生日', width: '210px',
                 filterable: {
                     cell: {
-                        template: function(e) {
+                        template: function (e) {
                             e.element.kendoDatePicker({
                                 format: 'yyyy-MM-dd',
                                 footer: '今天：#= kendo.toString(data, "yyyy年MM月dd日") #'
@@ -417,7 +417,7 @@ $(function() {
                 }
             },
             { field: 'creditCard', title: '银行卡', width: '260px',
-                template: function(dataItem) {
+                template: function (dataItem) {
                     return dataItem.creditCard.replace(dataItem.creditCard.substr(2, 12), '** **** **** **');
                 }
             },
@@ -428,7 +428,7 @@ $(function() {
                 footerTemplate: '总计：#= kendo.toString(sum, "c") #',
                 filterable: {
                     cell: {
-                        template: function(e) {
+                        template: function (e) {
                             e.element.kendoNumericTextBox({
                                 format: 'c',
                                 decimals: 2,
@@ -441,7 +441,7 @@ $(function() {
             { field: 'nativePlace', title: '籍贯', width: '350px',
                 filterable: {
                     cell: {
-                        template: function(e) {
+                        template: function (e) {
                             e.element.kendoAutoComplete({
                                 dataSource: e.dataSource,
                                 dataTextField: 'nativePlace'
@@ -453,7 +453,7 @@ $(function() {
             { field: 'domicile', title: '居住地', width: '200px',
                 filterable: {
                     cell: {
-                        template: function(e) {
+                        template: function (e) {
                             e.element.kendoAutoComplete({
                                 dataSource: e.dataSource,
                                 dataTextField: 'domicile'
@@ -465,7 +465,7 @@ $(function() {
             { field: 'nation', title: '民族', width: '200px',
                 filterable: {
                     cell: {
-                        template: function(e) {
+                        template: function (e) {
                             e.element.kendoAutoComplete({
                                 dataSource: e.dataSource,
                                 dataTextField: 'nation'
@@ -477,7 +477,7 @@ $(function() {
             { field: 'zodiac', title: '生肖', width: '140px',
                 filterable: {
                     cell: {
-                        template: function(e) {
+                        template: function (e) {
                             e.element.kendoAutoComplete({
                                 dataSource: e.dataSource,
                                 dataTextField: 'zodiac'
@@ -490,7 +490,7 @@ $(function() {
             { field: 'education', title: '教育程度', width: '220px',
                 filterable: {
                     cell: {
-                        template: function(e) {
+                        template: function (e) {
                             e.element.kendoAutoComplete({
                                 dataSource: e.dataSource,
                                 dataTextField: 'education'
@@ -502,7 +502,7 @@ $(function() {
             { field: 'graduation', title: '毕业年份', width: '160px',
                 filterable: {
                     cell: {
-                        template: function(e) {
+                        template: function (e) {
                             e.element.kendoDatePicker({
                                 start: 'decade',
                                 depth: 'decade',
@@ -516,7 +516,7 @@ $(function() {
             { field: 'firstJob', title: '参加工作年月', width: '190px',
                 filterable: {
                     cell: {
-                        template: function(e) {
+                        template: function (e) {
                             e.element.kendoDatePicker({
                                 start: 'year',
                                 depth: 'year',
@@ -533,7 +533,7 @@ $(function() {
             { field: 'getUp', title: '起床时间', width: '170px',
                 filterable: {
                     cell: {
-                        template: function(e) {
+                        template: function (e) {
                             e.element.kendoTimePicker({
                                 format: 'HH:mm'
                             });
@@ -544,7 +544,7 @@ $(function() {
             { field: 'importantMoment', title: '最有意义的时刻', width: '280px',
                 filterable: {
                     cell: {
-                        template: function(e) {
+                        template: function (e) {
                             e.element.kendoDateTimePicker({
                                 format: 'yyyy-MM-dd HH:mm',
                                 footer: '现在：#= kendo.toString(data, "yyyy年MM月dd日 HH:mm") #'
@@ -572,7 +572,7 @@ $(function() {
                 template: '<span style="display: inline-block; width: 100%; height: 24px; background: #= color #; border: 1px solid \\#c5c5c5; border-radius: 4px; vertical-align: middle;"></span>',
                 filterable: {
                     cell: {
-                        template: function(e) {
+                        template: function (e) {
                             e.element.kendoColorPicker({
                                 opacity: true,
                                 buttons: false
@@ -584,7 +584,7 @@ $(function() {
             { field: 'constellation', title: '相配的星座', width: '270px',
                 filterable: {
                     cell: {
-                        template: function(e) {
+                        template: function (e) {
                             e.element.kendoAutoComplete({
                                 dataSource: e.dataSource,
                                 dataTextField: 'constellation'
@@ -596,7 +596,7 @@ $(function() {
             { field: 'tourism', title: '旅游足迹', width: '300px',
                 filterable: {
                     cell: {
-                        template: function(e) {
+                        template: function (e) {
                             e.element.kendoAutoComplete({
                                 dataSource: e.dataSource,
                                 dataTextField: 'tourism'
@@ -610,11 +610,11 @@ $(function() {
                 template: '#= photo #',
                 filterable: {
                     cell: {
-                        template: function(e) {
+                        template: function (e) {
                             e.element.kendoAutoComplete({
                                 dataSource: e.dataSource,
                                 dataTextField: 'photo',
-                                template: function(dataItem) {
+                                template: function (dataItem) {
                                     return '<img class="w-25 rounded-circle" src="' + dataItem.photo.split('<')[2].split('=')[2].split('"')[1] + '" alt="' + dataItem.photo.split('<')[2].split('=')[2].split('"')[1].split('/')[2] + '"><small class="ml-2 text-muted">' + dataItem.photo.split('<')[4].split('>')[1] + '</small>';
                                 }
                             });
@@ -626,11 +626,11 @@ $(function() {
                 template: '#= sign #',
                 filterable: {
                     cell: {
-                        template: function(e) {
+                        template: function (e) {
                             e.element.kendoAutoComplete({
                                 dataSource: e.dataSource,
                                 dataTextField: 'sign',
-                                template: function(dataItem) {
+                                template: function (dataItem) {
                                     return dataItem.sign;
                                 }
                             });

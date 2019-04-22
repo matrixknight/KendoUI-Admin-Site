@@ -1,10 +1,10 @@
 $.getScript(path + 'js/countUp.min.js');
-$(function() {
+$(function () {
     // 首页统计数据获取
     $.fn.ajaxPost({
         ajaxUrl: 'json/home.json',
-        succeed: function(res) {
-            setTimeout(function() {
+        succeed: function (res) {
+            setTimeout(function () {
                 // 浏览量
                 new CountUp('pvCount', 0, res.count.pv_count).start();
                 // 访问次数
@@ -290,10 +290,10 @@ $(function() {
                             }
                         }
                     ],
-                    shapeFeatureCreated: function(e) {
-                        $.each(res.map.China, function(i, province) {
+                    shapeFeatureCreated: function (e) {
+                        $.each(res.map.China, function (i, province) {
                             if (province.id === e.dataItem.properties.id) {
-                                $.each(e.group.children, function(k, items) {
+                                $.each(e.group.children, function (k, items) {
                                     items.options.set('fill.color', accentColor);
                                 });
                                 e.group.options.tooltip = {
@@ -303,10 +303,10 @@ $(function() {
                             }
                         });
                     },
-                    shapeMouseEnter: function(e) {
+                    shapeMouseEnter: function (e) {
                         e.shape.options.set('fill.opacity', .5);
                     },
-                    shapeMouseLeave: function(e) {
+                    shapeMouseLeave: function (e) {
                         e.shape.options.set('fill.opacity', .8);
                     }
                 });
@@ -346,10 +346,10 @@ $(function() {
                             }
                         }
                     ],
-                    shapeFeatureCreated: function(e) {
-                        $.each(res.map.world, function(i, country) {
+                    shapeFeatureCreated: function (e) {
+                        $.each(res.map.world, function (i, country) {
                             if (country.id === e.dataItem.properties.name) {
-                                $.each(e.group.children, function(k, items) {
+                                $.each(e.group.children, function (k, items) {
                                     items.options.set('fill.color', accentColor);
                                 });
                                 e.group.options.tooltip = {
@@ -359,10 +359,10 @@ $(function() {
                             }
                         });
                     },
-                    shapeMouseEnter: function(e) {
+                    shapeMouseEnter: function (e) {
                         e.shape.options.set('fill.opacity', .5);
                     },
-                    shapeMouseLeave: function(e) {
+                    shapeMouseLeave: function (e) {
                         e.shape.options.set('fill.opacity', .8);
                     }
                 });
@@ -374,7 +374,7 @@ $(function() {
         type: 'get',
         url: 'https://api.github.com/repos/IKKI2000/KendoUI-Admin-Site/commits',
         dataType: 'json',
-        success: function(res) {
+        success: function (res) {
             $('#updatedLog').kendoListView({
                 dataSource: {
                     data: res,
@@ -390,7 +390,7 @@ $(function() {
                     },
                     pageSize: 10
                 },
-                template: function(dataItem) {
+                template: function (dataItem) {
                     return '<li><a class="mr-3" href="' + dataItem.committer.html_url + '" target="_blank"><img class="rounded-lg" src="' + dataItem.committer.avatar_url + '" alt="' + dataItem.committer.login + '"></a><time>' + kendo.toString(kendo.parseDate(dataItem.commit.committer.date), "yyyy-MM-dd HH:mm:ss") + '</time><p><a class="k-required" href="' + dataItem.html_url + '" target="_blank">' + dataItem.commit.message + '</a></p></li>';
                 }
             });
@@ -401,7 +401,7 @@ $(function() {
         type: 'get',
         url: 'https://api.github.com/repos/IKKI2000/KendoUI-Admin-Site',
         dataType: 'json',
-        success: function(res) {
+        success: function (res) {
             $('#stars').text(res.stargazers_count);
             $('#forks').text(res.forks_count);
             $('#watchs').text(res.subscribers_count);
@@ -422,7 +422,7 @@ $(function() {
         type: 'get',
         url: 'https://api.github.com/repos/IKKI2000/KendoUI-Admin-Site/languages',
         dataType: 'json',
-        success: function(res) {
+        success: function (res) {
             $('#languages').kendoChart({
                 theme: 'sass',
                 dataSource: {

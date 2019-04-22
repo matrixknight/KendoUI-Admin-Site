@@ -1,9 +1,9 @@
-$(function() {
+$(function () {
     // 获取数据源生成表格
     $('#grid').kendoGrid({
         dataSource: {
             transport: {
-                read: function(options) { readItem(options, 'json/grid.json') }
+                read: function (options) { readItem(options, 'json/grid.json') }
             },
             schema: {
                 total: 'total',
@@ -22,12 +22,12 @@ $(function() {
                         height: { type: 'number' },
                         bloodType: { type: 'string' },
                         birthday: { type: 'date',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd');
                             }
                         },
                         mateBirthday: { type: 'date',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd');
                             }
                         },
@@ -40,12 +40,12 @@ $(function() {
                         language: { type: 'string' },
                         education: { type: 'object' },
                         graduation: { type: 'date',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(new Date(e), 'yyyy');
                             }
                         },
                         firstJob: { type: 'date',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(new Date(e), 'yyyy-MM');
                             }
                         },
@@ -53,12 +53,12 @@ $(function() {
                         email: { type: 'string' },
                         homepage: { type: 'string' },
                         getUp: { type: 'date',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(kendo.parseDate(e), 'HH:mm');
                             }
                         },
                         importantMoment: { type: 'date',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd HH:mm');
                             }
                         },
@@ -92,7 +92,7 @@ $(function() {
             },
             { hidden: true, field: 'password', title: '密码', width: '70px',
                 headerAttributes: { 'class': 'align-middle' },
-                template: function(dataItem) {
+                template: function (dataItem) {
                     return dataItem.password.replace(dataItem.password.substr(0), '******');
                 }
             },
@@ -138,7 +138,7 @@ $(function() {
                 columns: [
                     { field: 'mateBirthday', title: '配偶生日', width: '110px' },
                     { field: 'creditCard', title: '银行卡', width: '150px',
-                        template: function(dataItem) {
+                        template: function (dataItem) {
                             return dataItem.creditCard.replace(dataItem.creditCard.substr(2, 12), '** **** **** **');
                         }
                     },
@@ -345,7 +345,7 @@ $(function() {
         },
         reorderable: true,
         resizable: true,
-        dataBound: function(e) {
+        dataBound: function (e) {
             $('td.merge-col').attr('rowspan', e.sender._data.length).not(':first').remove();
         }
     });

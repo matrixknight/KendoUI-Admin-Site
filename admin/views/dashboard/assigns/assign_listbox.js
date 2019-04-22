@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
     var position = 'right';
     if (window.outerWidth <= 991) {
         position = 'bottom';
@@ -7,7 +7,7 @@ $(function() {
     $('#listboxFrom').kendoListBox({
         dataSource: {
             transport: {
-                read: function(options) { readItem(options, 'json/assigns.json') }
+                read: function (options) { readItem(options, 'json/assigns.json') }
             },
             schema: {
                 data: 'itemFrom',
@@ -20,7 +20,7 @@ $(function() {
                         online: { type: 'boolean' },
                         gender: { type: 'string' },
                         birthday: { type: 'date',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd');
                             }
                         },
@@ -34,7 +34,7 @@ $(function() {
         template: kendo.template($('#listboxTemplate').html()),
         selectable: 'multiple',
         draggable: {
-            placeholder: function(draggedItem) {
+            placeholder: function (draggedItem) {
                 return draggedItem.clone().addClass('k-ghost').removeClass('d-none');
             }
         },
@@ -48,7 +48,7 @@ $(function() {
     $('#listboxTo').kendoListBox({
         dataSource: {
             transport: {
-                read: function(options) { readItem(options, 'json/assigns.json') }
+                read: function (options) { readItem(options, 'json/assigns.json') }
             },
             schema: {
                 data: 'itemTo',
@@ -61,7 +61,7 @@ $(function() {
                         online: { type: 'boolean' },
                         gender: { type: 'string' },
                         birthday: { type: 'date',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd');
                             }
                         },
@@ -75,7 +75,7 @@ $(function() {
         template: kendo.template($('#listboxTemplate').html()),
         selectable: 'multiple',
         draggable: {
-            placeholder: function(draggedItem) {
+            placeholder: function (draggedItem) {
                 return draggedItem.clone().addClass('k-ghost').removeClass('d-none');
             }
         },
@@ -83,9 +83,9 @@ $(function() {
         connectWith: 'listboxFrom'
     });
     // 提交 ID
-    $('#submitIdAssign').unbind('click').click(function() {
+    $('#submitIdAssign').unbind('click').click(function () {
         var ids = [];
-        $.each($('#listboxTo').data('kendoListBox').dataItems(), function() {
+        $.each($('#listboxTo').data('kendoListBox').dataItems(), function () {
             ids.push(this.id);
         });
         if (ids.length > 0) {
@@ -95,10 +95,10 @@ $(function() {
                     'ids': ids
                 },
                 ajaxUrl: 'json/response.json',
-                finished: function() {
+                finished: function () {
                     $('#loading').hide();
                 },
-                succeed: function(res) {
+                succeed: function (res) {
                     refresh();
                 },
                 isMsg: true
@@ -108,7 +108,7 @@ $(function() {
         }
     });
     // 提交数据
-    $('#submitDataAssign').unbind('click').click(function() {
+    $('#submitDataAssign').unbind('click').click(function () {
         var models = $('#listboxTo').data('kendoListBox').dataItems();
         if (models.length > 0) {
             $('#loading').show();
@@ -117,10 +117,10 @@ $(function() {
                     'models': models
                 },
                 ajaxUrl: 'json/response.json',
-                finished: function() {
+                finished: function () {
                     $('#loading').hide();
                 },
-                succeed: function(res) {
+                succeed: function (res) {
                     refresh();
                 },
                 isMsg: true
@@ -130,7 +130,7 @@ $(function() {
         }
     });
     // 重置
-    $('#refreshAssign').click(function() {
+    $('#refreshAssign').click(function () {
         refresh();
     });
 });

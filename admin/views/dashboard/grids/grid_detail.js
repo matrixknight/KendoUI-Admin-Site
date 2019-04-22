@@ -1,9 +1,9 @@
-$(function() {
+$(function () {
     // 获取数据源生成表格
     $('#grid').kendoGrid({
         dataSource: {
             transport: {
-                read: function(options) { readItem(options, 'json/grid.json') }
+                read: function (options) { readItem(options, 'json/grid.json') }
             },
             schema: {
                 total: 'total',
@@ -22,12 +22,12 @@ $(function() {
                         height: { type: 'number' },
                         bloodType: { type: 'string' },
                         birthday: { type: 'date',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd');
                             }
                         },
                         mateBirthday: { type: 'date',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd');
                             }
                         },
@@ -40,12 +40,12 @@ $(function() {
                         language: { type: 'string' },
                         education: { type: 'object' },
                         graduation: { type: 'date',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(new Date(e), 'yyyy');
                             }
                         },
                         firstJob: { type: 'date',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(new Date(e), 'yyyy-MM');
                             }
                         },
@@ -53,12 +53,12 @@ $(function() {
                         email: { type: 'string' },
                         homepage: { type: 'string' },
                         getUp: { type: 'date',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(kendo.parseDate(e), 'HH:mm');
                             }
                         },
                         importantMoment: { type: 'date',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd HH:mm');
                             }
                         },
@@ -80,7 +80,7 @@ $(function() {
             { field: 'realName', title: '姓名', width: '100px' },
             { field: 'nickName', title: '昵称', width: '110px' },
             { field: 'password', title: '密码', width: '70px',
-                template: function(dataItem) {
+                template: function (dataItem) {
                     return dataItem.password.replace(dataItem.password.substr(0), '******');
                 }
             },
@@ -116,7 +116,7 @@ $(function() {
             { field: 'birthday', title: '生日', width: '110px' },
             { field: 'mateBirthday', title: '配偶生日', width: '110px' },
             { field: 'creditCard', title: '银行卡', width: '150px',
-                template: function(dataItem) {
+                template: function (dataItem) {
                     return dataItem.creditCard.replace(dataItem.creditCard.substr(2, 12), '** **** **** **');
                 }
             },
@@ -233,7 +233,7 @@ $(function() {
             template: '<div class="text-center p-4">无相关数据</div>'
         },
         detailTemplate: kendo.template($('#detailsTemplate').html()),
-        detailInit: function(e) {
+        detailInit: function (e) {
             e.detailRow.find('.subTabstrip').kendoTabStrip({
                 animation: false
             });
@@ -241,16 +241,16 @@ $(function() {
             e.detailRow.find('.subGrid').kendoGrid({
                 dataSource: {
                     transport: {
-                        read: function(options) {
+                        read: function (options) {
                             $.fn.ajaxPost({
                                 ajaxData: {
                                     'id': e.data.id
                                 },
                                 ajaxUrl: 'json/grid.json',
-                                succeed: function(res) {
+                                succeed: function (res) {
                                     options.success(res);
                                 },
-                                failed: function(res) {
+                                failed: function (res) {
                                     options.error(res);
                                 }
                             });
@@ -273,12 +273,12 @@ $(function() {
                                 height: { type: 'number' },
                                 bloodType: { type: 'string' },
                                 birthday: { type: 'date',
-                                    parse: function(e) {
+                                    parse: function (e) {
                                         return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd');
                                     }
                                 },
                                 mateBirthday: { type: 'date',
-                                    parse: function(e) {
+                                    parse: function (e) {
                                         return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd');
                                     }
                                 },
@@ -291,12 +291,12 @@ $(function() {
                                 language: { type: 'string' },
                                 education: { type: 'object' },
                                 graduation: { type: 'date',
-                                    parse: function(e) {
+                                    parse: function (e) {
                                         return kendo.toString(new Date(e), 'yyyy');
                                     }
                                 },
                                 firstJob: { type: 'date',
-                                    parse: function(e) {
+                                    parse: function (e) {
                                         return kendo.toString(new Date(e), 'yyyy-MM');
                                     }
                                 },
@@ -304,12 +304,12 @@ $(function() {
                                 email: { type: 'string' },
                                 homepage: { type: 'string' },
                                 getUp: { type: 'date',
-                                    parse: function(e) {
+                                    parse: function (e) {
                                         return kendo.toString(kendo.parseDate(e), 'HH:mm');
                                     }
                                 },
                                 importantMoment: { type: 'date',
-                                    parse: function(e) {
+                                    parse: function (e) {
                                         return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd HH:mm');
                                     }
                                 },
@@ -331,7 +331,7 @@ $(function() {
                     { field: 'realName', title: '姓名', width: '100px' },
                     { field: 'nickName', title: '昵称', width: '110px' },
                     { hidden: true, field: 'password', title: '密码', width: '70px',
-                        template: function(dataItem) {
+                        template: function (dataItem) {
                             return dataItem.password.replace(dataItem.password.substr(0), '******');
                         }
                     },
@@ -367,7 +367,7 @@ $(function() {
                     { field: 'birthday', title: '生日', width: '110px' },
                     { field: 'mateBirthday', title: '配偶生日', width: '110px' },
                     { field: 'creditCard', title: '银行卡', width: '150px',
-                        template: function(dataItem) {
+                        template: function (dataItem) {
                             return dataItem.creditCard.replace(dataItem.creditCard.substr(2, 12), '** **** **** **');
                         }
                     },
@@ -503,7 +503,7 @@ $(function() {
         },
         reorderable: true,
         resizable: true,
-        dataBound: function() {
+        dataBound: function () {
             this.expandRow(this.tbody.find('tr.k-master-row').first());
         }
     });

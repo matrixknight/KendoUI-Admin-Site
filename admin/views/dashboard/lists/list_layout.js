@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
     // 年龄
     numericRange($('#ageStart'), $('#ageEnd'), 'n0', 0, 1, 1, 120);
     // 身高
@@ -19,13 +19,13 @@ $(function() {
     $('#province').kendoDropDownList({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/province.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -43,13 +43,13 @@ $(function() {
     $('#city').kendoDropDownList({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/city.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -69,13 +69,13 @@ $(function() {
     $('#area').kendoDropDownList({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/area.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -96,13 +96,13 @@ $(function() {
     $('#domicile').kendoDropDownTree({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/select_hierarchical_data.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -125,13 +125,13 @@ $(function() {
     $('#nation').kendoComboBox({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/nation.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -149,13 +149,13 @@ $(function() {
     $('#zodiac').kendoMultiColumnComboBox({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/zodiac.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -184,13 +184,13 @@ $(function() {
     $('#language').kendoAutoComplete({
         dataSource: {
             transport: {
-                read: function(options) {
+                read: function (options) {
                     $.fn.ajaxPost({
                         ajaxUrl: 'json/language.json',
-                        succeed: function(res) {
+                        succeed: function (res) {
                             options.success(res);
                         },
-                        failed: function(res) {
+                        failed: function (res) {
                             options.error(res);
                         }
                     });
@@ -281,10 +281,10 @@ $(function() {
         filter: 'contains',
         checkboxes: true,
         autoClose: false,
-        change: function() {
+        change: function () {
             var that = this;
             $(that.element).parent().find('[type=hidden]').remove();
-            $.each(that.value(), function(i, items) {
+            $.each(that.value(), function (i, items) {
                 $(that.element).parent().append('<input name="tourism" type="hidden" value="' + items + '">');
             });
         }
@@ -317,7 +317,7 @@ $(function() {
         optionLabel: "- 筛选 -",
         dataValueField: 'value',
         dataTextField: 'text',
-        change: function(e) {
+        change: function (e) {
             $('#listView').data('kendoListView').dataSource.filter({
                 field: 'gender',
                 operator: 'contains',
@@ -328,7 +328,7 @@ $(function() {
     // 定义数据源
     var dataSource = new kendo.data.DataSource({
         transport: {
-            read: function(options) { readItem(options, 'json/list.json') }
+            read: function (options) { readItem(options, 'json/list.json') }
         },
         schema: {
             total: 'total',
@@ -347,12 +347,12 @@ $(function() {
                     height: { type: 'number' },
                     bloodType: { type: 'string' },
                     birthday: { type: 'date',
-                        parse: function(e) {
+                        parse: function (e) {
                             return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd');
                         }
                     },
                     mateBirthday: { type: 'date',
-                        parse: function(e) {
+                        parse: function (e) {
                             return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd');
                         }
                     },
@@ -365,12 +365,12 @@ $(function() {
                     language: { type: 'string' },
                     education: { type: 'object' },
                     graduation: { type: 'date',
-                        parse: function(e) {
+                        parse: function (e) {
                             return kendo.toString(new Date(e), 'yyyy');
                         }
                     },
                     firstJob: { type: 'date',
-                        parse: function(e) {
+                        parse: function (e) {
                             return kendo.toString(new Date(e), 'yyyy-MM');
                         }
                     },
@@ -378,12 +378,12 @@ $(function() {
                     email: { type: 'string' },
                     homepage: { type: 'string' },
                     getUp: { type: 'date',
-                        parse: function(e) {
+                        parse: function (e) {
                             return kendo.toString(kendo.parseDate(e), 'HH:mm');
                         }
                     },
                     importantMoment: { type: 'date',
-                        parse: function(e) {
+                        parse: function (e) {
                             return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd HH:mm');
                         }
                     },
@@ -413,7 +413,7 @@ $(function() {
         refresh: true
     });
     // 搜索
-    $('#search').keyup(function() {
+    $('#search').keyup(function () {
         $('#listView').data('kendoListView').dataSource.filter({
             logic: 'or',
             filters: [

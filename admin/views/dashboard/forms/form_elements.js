@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
     // 月份
     $('#monthNormal, #monthReadonly, #monthDisabled').kendoDatePicker({
         start: 'year',

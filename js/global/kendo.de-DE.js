@@ -1,7 +1,7 @@
 /* JS for All Kendo UI Components German (de-DE) Language Pack | Written by IKKI | 2018-02-03 */
 
 /* Cultures ------------------------------ */
-(function( window, undefined ) {
+(function ( window, undefined ) {
     kendo.cultures["de-DE"] = {
         name: "de-DE",
         numberFormat: {

@@ -1,9 +1,9 @@
-$(function() {
+$(function () {
     // 获取数据源生成表格
     var gridFrom = $('#gridFrom').kendoGrid({
         dataSource: {
             transport: {
-                read: function(options) { readItem(options, 'json/assigns.json') }
+                read: function (options) { readItem(options, 'json/assigns.json') }
             },
             schema: {
                 data: 'itemFrom',
@@ -16,7 +16,7 @@ $(function() {
                         online: { type: 'boolean' },
                         gender: { type: 'string' },
                         birthday: { type: 'date',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd');
                             }
                         },
@@ -63,7 +63,7 @@ $(function() {
     var gridTo = $('#gridTo').kendoGrid({
         dataSource: {
             transport: {
-                read: function(options) { readItem(options, 'json/assigns.json') }
+                read: function (options) { readItem(options, 'json/assigns.json') }
             },
             schema: {
                 data: 'itemTo',
@@ -76,7 +76,7 @@ $(function() {
                         online: { type: 'boolean' },
                         gender: { type: 'string' },
                         birthday: { type: 'date',
-                            parse: function(e) {
+                            parse: function (e) {
                                 return kendo.toString(kendo.parseDate(e), 'yyyy-MM-dd');
                             }
                         },
@@ -121,7 +121,7 @@ $(function() {
         resizable: true
     }).data('kendoGrid');
     // 关键字搜索
-    $('input[name=keywords]').keyup(function() {
+    $('input[name=keywords]').keyup(function () {
         $(this).closest('.k-grid').data('kendoGrid').dataSource.filter({
             logic: 'or',
             filters: [
@@ -132,7 +132,7 @@ $(function() {
         });
     });
     // 双击添加
-    $('#gridFrom .k-grid-content').on('dblclick', 'tr', function(){
+    $('#gridFrom .k-grid-content').on('dblclick', 'tr', function (){
         var dataItem = gridFrom.dataItem($(this));
         gridFrom.dataSource.remove(dataItem);
         gridTo.dataSource.add(dataItem);
@@ -142,7 +142,7 @@ $(function() {
         });
     });
     // 双击删除
-    $('#gridTo .k-grid-content').on('dblclick', 'tr', function(){
+    $('#gridTo .k-grid-content').on('dblclick', 'tr', function (){
         var dataItem = gridTo.dataItem($(this));
         gridTo.dataSource.remove(dataItem);
         gridFrom.dataSource.add(dataItem);
@@ -152,10 +152,10 @@ $(function() {
         });
     });
     // 添加
-    $('#addItems').click(function() {
+    $('#addItems').click(function () {
         var ids = gridFrom.selectedKeyNames();
         if (ids.length > 0) {
-            $.each(ids, function() {
+            $.each(ids, function () {
                 var dataItem = gridFrom.dataSource.get(this);
                 gridFrom.dataSource.remove(dataItem);
                 gridTo.dataSource.add(dataItem);
@@ -169,10 +169,10 @@ $(function() {
         }
     });
     // 删除
-    $('#delItems').click(function() {
+    $('#delItems').click(function () {
         var ids = gridTo.selectedKeyNames();
         if (ids.length > 0) {
-            $.each(ids, function() {
+            $.each(ids, function () {
                 var dataItem = gridTo.dataSource.get(this);
                 gridTo.dataSource.remove(dataItem);
                 gridFrom.dataSource.add(dataItem);
@@ -186,7 +186,7 @@ $(function() {
         }
     });
     // 提交 ID
-    $('#submitIdAssign').unbind('click').click(function() {
+    $('#submitIdAssign').unbind('click').click(function () {
         $('#gridTo .k-grid-header').find(':checkbox').click();
         var ids = gridTo.selectedKeyNames();
         if (ids.length > 0) {
@@ -196,10 +196,10 @@ $(function() {
                     'ids': ids
                 },
                 ajaxUrl: 'json/response.json',
-                finished: function() {
+                finished: function () {
                     $('#loading').hide();
                 },
-                succeed: function(res) {
+                succeed: function (res) {
                     gridFrom.dataSource.read();
                     gridTo.dataSource.read();
                 },
@@ -210,7 +210,7 @@ $(function() {
         }
     });
     // 提交数据
-    $('#submitDataAssign').unbind('click').click(function() {
+    $('#submitDataAssign').unbind('click').click(function () {
         var models = gridTo.dataSource.data();
         if (models.length > 0) {
             $('#loading').show();
@@ -219,10 +219,10 @@ $(function() {
                     'models': models
                 },
                 ajaxUrl: 'json/response.json',
-                finished: function() {
+                finished: function () {
                     $('#loading').hide();
                 },
-                succeed: function(res) {
+                succeed: function (res) {
                     gridFrom.dataSource.read();
                     gridTo.dataSource.read();
                 },
@@ -233,7 +233,7 @@ $(function() {
         }
     });
     // 重置
-    $('#refreshAssign').click(function() {
+    $('#refreshAssign').click(function () {
         gridFrom.clearSelection();
         gridTo.clearSelection();
         gridFrom.dataSource.cancelChanges();

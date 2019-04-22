@@ -7,7 +7,7 @@
 /* JS for Splitter | Written by IKKI | 2018-02-03 */
 
 // 框架布局
-$(function() {
+$(function () {
     $('#body').kendoSplitter({
         orientation: 'vertical',
         panes: [

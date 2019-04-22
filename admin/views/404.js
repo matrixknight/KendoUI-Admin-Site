@@ -1,7 +1,7 @@
-$(function() {
+$(function () {
     // 返回首页
-    var sec = 5,
-        intervalID = setInterval(function() {
+    var sec = 3,
+        intervalID = setInterval(function () {
             if (sec > 1) {
                 sec = sec - 1;
                 $('time').text(sec);

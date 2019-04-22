@@ -10,7 +10,7 @@ $.getScript(path + 'js/global/kendo.es-ES.js');
 $.getScript(path + 'js/global/kendo.ar-SA.js');
 $.getScript(path + 'js/global/kendo.ja-JP.js');
 $.getScript(path + 'js/global/kendo.ko-KR.js');
-$(function() {
+$(function () {
     // 选择语言
     $('#langList').kendoDropDownList({
         dataSource: {
@@ -33,7 +33,7 @@ $(function() {
         dataTextField: 'text',
         template: '<i class="flag-icon flag-icon-#: id # shadow mr-2"></i>#: text #</span>',
         height: 330,
-        change: function() {
+        change: function () {
             kendo.culture(this.value());
             $('#numericTextBox').data('kendoNumericTextBox').value($('#numericTextBox').data('kendoNumericTextBox').value());
             $('#calendar').data('kendoCalendar').setOptions({

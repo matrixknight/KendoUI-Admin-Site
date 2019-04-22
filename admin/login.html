@@ -60,11 +60,11 @@
         <script src="js/jquery.particleground.js"></script>
         <script src="js/jquery.verify.js"></script>
         <script>
-            $(function() {
+            $(function () {
                 // 是否已登录
                 if (sessionStorage.getItem('logged')) {
                     $('#avatar').attr({'src': sessionStorage.getItem('avatar'), 'alt': sessionStorage.getItem('username')}).addClass('user-avatar').next().text(sessionStorage.getItem('username'));
-                    $('.form-group, .btn-primary').slideUp(800, function() {
+                    $('.form-group, .btn-primary').slideUp(800, function () {
                         location.href = $('base').attr('href') + $('base').attr('type');
                     });
                 }
@@ -84,8 +84,8 @@
                 var validator = $('form').kendoValidator().data('kendoValidator');
                 // 滑块验证
                 $('#verify').slideVerify({
-                    success: function(obj) {
-                        $('.btn-primary').prop('disabled', false).unbind('click').click(function() {
+                    success: function (obj) {
+                        $('.btn-primary').prop('disabled', false).unbind('click').click(function () {
                             // 表单验证成功
                             if (validator.validate()) {
                                 $('#loading').show();
@@ -93,10 +93,10 @@
                                 $.fn.ajaxPost({
                                     ajaxData: $('form').serializeObject(),
                                     ajaxUrl: 'json/login.json',
-                                    finished: function(res) {
+                                    finished: function (res) {
                                         $('#loading').hide();
                                     },
-                                    succeed: function(res) {
+                                    succeed: function (res) {
                                         // 记住密码
                                         if ($('#remember').prop('checked')) {
                                             localStorage.setItem('username', $('input[name="username"]').val());
@@ -117,11 +117,11 @@
                                         sessionStorage.removeItem('locked');
                                         // 头像动画及页面跳转
                                         $('#avatar').attr({'src': res.data.avatar, 'alt': res.data.username}).addClass('user-avatar').next().text(res.data.username);
-                                        $('.form-group, .btn-primary').slideUp(800, function() {
+                                        $('.form-group, .btn-primary').slideUp(800, function () {
                                             location.href = $('base').attr('href') + $('base').attr('type');
                                         });
                                     },
-                                    failed: function(res) {
+                                    failed: function (res) {
                                         obj.refresh();
                                     }
                                 });
