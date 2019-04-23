@@ -295,9 +295,16 @@ $(function () {
     $('#tourism').kendoDropDownTree({
         dataSource: {
             transport: {
-                read: {
-                    url: 'json/select_hierarchical_data.json',
-                    dataType: 'json'
+                read: function (options) {
+                    $.fn.ajaxPost({
+                        ajaxUrl: 'json/select_hierarchical_data.json',
+                        succeed: function (res) {
+                            options.success(res);
+                        },
+                        failed: function (res) {
+                            options.error(res);
+                        }
+                    });
                 }
             },
             schema: {

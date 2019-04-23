@@ -262,9 +262,16 @@ $(function () {
     $('#tourism').kendoDropDownTree({
         dataSource: {
             transport: {
-                read: {
-                    url: 'json/select_hierarchical_data.json',
-                    dataType: 'json'
+                read: function (options) {
+                    $.fn.ajaxPost({
+                        ajaxUrl: 'json/select_hierarchical_data.json',
+                        succeed: function (res) {
+                            options.success(res);
+                        },
+                        failed: function (res) {
+                            options.error(res);
+                        }
+                    });
                 }
             },
             schema: {
@@ -829,7 +836,7 @@ $(function () {
                 width: '80%',
                 height: '40%'
             },
-            template: kendo.template($("#editTemplate").html())
+            template: kendo.template($('#editTemplate').html())
         },
         edit: function (e) {
             if (e.model.id === '') {
@@ -1146,9 +1153,16 @@ $(function () {
             $('#tourismEdit').kendoDropDownTree({
                 dataSource: {
                     transport: {
-                        read: {
-                            url: 'json/select_hierarchical_data.json',
-                            dataType: 'json'
+                        read: function (options) {
+                            $.fn.ajaxPost({
+                                ajaxUrl: 'json/select_hierarchical_data.json',
+                                succeed: function (res) {
+                                    options.success(res);
+                                },
+                                failed: function (res) {
+                                    options.error(res);
+                                }
+                            });
                         }
                     },
                     schema: {
