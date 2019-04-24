@@ -1230,6 +1230,13 @@ h1 {
     height: 36px;
 }
 
+.k-button-group {
+    border-width: 0;
+    .k-button {
+        background-clip: border-box;
+    }
+}
+
 /* 表单 */
 form {
     label {

@@ -1014,6 +1014,11 @@ h1 {
   padding: 8px 30px;
   height: 36px; }
 
+.k-button-group {
+  border-width: 0; }
+  .k-button-group .k-button {
+    background-clip: border-box; }
+
 /* 表单 */
 form label .k-required {
   margin-right: .2em;
@@ -1365,5 +1370,3 @@ form .searchBtn.row {
 
 .venus {
   color: #ff96c0; }
-
-/*# sourceMappingURL=amikoko.admin.css.map */

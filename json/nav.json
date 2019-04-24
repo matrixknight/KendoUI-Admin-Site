@@ -281,14 +281,14 @@
                 },
                 {
                     "id": "0204",
-                    "text": "<i class='templatesIcon'></i>模版<small>Templates</small><sub class='theme-l'>\uD83D\uDD28</sub>",
+                    "text": "<i class='templatesIcon'></i>模版<small>Templates</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
                     "encoded": false,
                     "cssClass": "links-templates",
                     "url": "javascript:linkTo(\"/framework/\", \"templates\");"
                 },
                 {
                     "id": "0205",
-                    "text": "<i class='drawingIcon'></i>绘图<small>Drawing</small>",
+                    "text": "<i class='drawingIcon'></i>绘图<small>Drawing</small><sub class='theme-l'>\uD83D\uDD28</sub>",
                     "encoded": false,
                     "cssClass": "links-drawing",
                     "url": "javascript:linkTo(\"/framework/\", \"drawing\");"
