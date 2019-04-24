@@ -1,5 +1,5 @@
 $(function () {
-    // 创建
+    // 创建视图模型
     var viewModel = kendo.observable({
         // ID
         id: "uid005",
@@ -412,6 +412,6 @@ $(function () {
         sign: '\uD83C\uDF0C<strong><span style="color: rgb(0, 0, 0); background-color: rgb(255, 206, 84, .8);">我叫艾欧里亚！这里是我的自我介绍哦~</span></strong>'
     }),
         tab = '\u0020\u0020\u0020\u0020';
-    // 绑定
+    // 绑定视图模型
     kendo.bind($('#mvvm'), viewModel);
 });

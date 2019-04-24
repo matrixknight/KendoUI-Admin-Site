@@ -4,7 +4,7 @@
     "data": [
         {
             "id": "01",
-            "text": "<i class='fas fa-object-group'></i><sup></sup><abbr>综合<small>Dashboard</small><sub class='theme-l'>\uD83D\uDD25</sub></abbr>",
+            "text": "<i class='fas fa-object-group'></i><sup></sup><abbr>综合<small>Dashboard</small><sub class='theme-l'>\uD83C\uDF38</sub></abbr>",
             "encoded": false,
             "expanded": true,
             "items": [
@@ -255,33 +255,33 @@
         },
         {
             "id": "02",
-            "text": "<i class='fas fa-cubes'></i><sup></sup><abbr>框架<small>Framework</small><sub class='theme-l'>\uD83D\uDD54</sub></abbr>",
+            "text": "<i class='fas fa-cubes'></i><sup></sup><abbr>框架<small>Framework</small><sub class='theme-l'>\uD83C\uDFAF</sub></abbr>",
             "encoded": false,
             "items": [
                 {
                     "id": "0201",
-                    "text": "<i class='globalizationIcon'></i>全球化<small>Globalization</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
+                    "text": "<i class='globalizationIcon'></i>全球化<small>Globalization</small>",
                     "encoded": false,
                     "cssClass": "links-globalization",
                     "url": "javascript:linkTo(\"/framework/\", \"globalization\");"
                 },
                 {
                     "id": "0202",
-                    "text": "<i class='mvvmIcon'></i>视图模型<small>MVVM</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
+                    "text": "<i class='mvvmIcon'></i>视图模型<small>MVVM</small>",
                     "encoded": false,
                     "cssClass": "links-mvvm",
                     "url": "javascript:linkTo(\"/framework/\", \"mvvm\");"
                 },
                 {
                     "id": "0203",
-                    "text": "<i class='dataSourceIcon'></i>数据源<small>DataSource</small><sub class='theme-l'>\uD83D\uDD28</sub>",
+                    "text": "<i class='dataSourceIcon'></i>数据源<small>DataSource</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
                     "encoded": false,
                     "cssClass": "links-datasource",
                     "url": "javascript:linkTo(\"/framework/\", \"datasource\");"
                 },
                 {
                     "id": "0204",
-                    "text": "<i class='templatesIcon'></i>模版<small>Templates</small>",
+                    "text": "<i class='templatesIcon'></i>模版<small>Templates</small><sub class='theme-l'>\uD83D\uDD28</sub>",
                     "encoded": false,
                     "cssClass": "links-templates",
                     "url": "javascript:linkTo(\"/framework/\", \"templates\");"
@@ -325,7 +325,7 @@
         },
         {
             "id": "03",
-            "text": "<i class='fas fa-columns'></i><abbr>布局<small>Layout</small></abbr>",
+            "text": "<i class='fas fa-columns'></i><abbr>布局<small>Layout</small><sub class='theme-l'>\uD83D\uDD54</sub></abbr>",
             "encoded": false,
             "items": [
                 {
@@ -374,7 +374,7 @@
         },
         {
             "id": "04",
-            "text": "<i class='fas fa-map-signs'></i><abbr>导航<small>Navigation</small></abbr>",
+            "text": "<i class='fas fa-map-signs'></i><abbr>导航<small>Navigation</small><sub class='theme-l'>\uD83D\uDD54</sub></abbr>",
             "encoded": false,
             "items": [
                 {
@@ -430,7 +430,7 @@
         },
         {
             "id": "05",
-            "text": "<i class='fas fa-tasks'></i><abbr>表单<small>Forms</small></abbr>",
+            "text": "<i class='fas fa-tasks'></i><abbr>表单<small>Forms</small><sub class='theme-l'>\uD83D\uDD54</sub></abbr>",
             "encoded": false,
             "items": [
                 {
@@ -584,7 +584,7 @@
         },
         {
             "id": "06",
-            "text": "<i class='fas fa-database'></i><abbr>数据<small>Data</small></abbr>",
+            "text": "<i class='fas fa-database'></i><abbr>数据<small>Data</small><sub class='theme-l'>\uD83D\uDD54</sub></abbr>",
             "encoded": false,
             "items": [
                 {
@@ -626,7 +626,7 @@
         },
         {
             "id": "07",
-            "text": "<i class='fas fa-calendar-alt'></i><abbr>日程<small>Scheduling</small></abbr>",
+            "text": "<i class='fas fa-calendar-alt'></i><abbr>日程<small>Scheduling</small><sub class='theme-l'>\uD83D\uDD54</sub></abbr>",
             "encoded": false,
             "items": [
                 {
@@ -661,7 +661,7 @@
         },
         {
             "id": "08",
-            "text": "<i class='fas fa-comments'></i><abbr>会话<small>Conversational</small></abbr>",
+            "text": "<i class='fas fa-comments'></i><abbr>会话<small>Conversational</small><sub class='theme-l'>\uD83D\uDD54</sub></abbr>",
             "encoded": false,
             "items": [
                 {
@@ -675,7 +675,7 @@
         },
         {
             "id": "09",
-            "text": "<i class='fas fa-play-circle'></i><abbr>媒体<small>Media</small></abbr>",
+            "text": "<i class='fas fa-play-circle'></i><abbr>媒体<small>Media</small><sub class='theme-l'>\uD83D\uDD54</sub></abbr>",
             "encoded": false,
             "items": [
                 {
@@ -696,7 +696,7 @@
         },
         {
             "id": "10",
-            "text": "<i class='fas fa-hand-pointer'></i><abbr>交互<small>Interactivity</small></abbr>",
+            "text": "<i class='fas fa-hand-pointer'></i><abbr>交互<small>Interactivity</small><sub class='theme-l'>\uD83D\uDD54</sub></abbr>",
             "encoded": false,
             "items": [
                 {
@@ -738,7 +738,7 @@
         },
         {
             "id": "11",
-            "text": "<i class='fas fa-chart-bar'></i><abbr>图表<small>Charts</small></abbr>",
+            "text": "<i class='fas fa-chart-bar'></i><abbr>图表<small>Charts</small><sub class='theme-l'>\uD83D\uDD54</sub></abbr>",
             "encoded": false,
             "items": [
                 {
@@ -941,7 +941,7 @@
         },
         {
             "id": "12",
-            "text": "<i class='fas fa-mobile-alt'></i><abbr>移动端<small>Hybrid</small></abbr>",
+            "text": "<i class='fas fa-mobile-alt'></i><abbr>移动端<small>Hybrid</small><sub class='theme-l'>\uD83D\uDD54</sub></abbr>",
             "encoded": false,
             "items": [
                 {

@@ -31,7 +31,7 @@ $(function () {
         },
         dataValueField: 'value',
         dataTextField: 'text',
-        template: '<i class="flag-icon flag-icon-#: id # shadow mr-2"></i>#: text #</span>',
+        template: '<i class="flag-icon flag-icon-#: id # shadow mr-2"></i>#: text #',
         height: 330,
         change: function () {
             kendo.culture(this.value());
