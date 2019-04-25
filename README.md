@@ -427,67 +427,79 @@ ROOT/·····································�
 
 ## 📁 功能列表 <small>Function List</small>
 
+#### 基础功能 <small>[ Basic ]</small>
+
+* [登录 <small>[ Sign In ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/login.html) ✔️
+* 注册 <small>[ Register ]</small>
+* 忘记密码 <small>[ Forget Password ]</small>
+* [框架 <small>[ Admin Layout ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/index.html) ✔️
+* [主页 <small>[ Home ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/home) ✔️
+* 403页 <small>[ 403 ]</small>
+* [404页 <small>[ 404 ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/404) ✔️
+* 500页 <small>[ 500 ]</small>
+* 回到顶部 <small>[ Go Top ]</small> ✔️
+
 #### 顶部菜单 <small>[ Menu ]</small>
 
-* 导航折叠 <small>[ Navigation Drawer ]</small>
-* 面包屑 <small>[ Breadcrumb ]</small>
-* 刷新 <small>[ Refresh ]</small>
-* 全屏 <small>[ Full Screen ]</small>
-* 锁屏 <small>[ Lock Screen ]</small>
-* 配色 <small>[ Theme ]</small>
-* 语言 <small>[ Localization ]</small>
+* 导航折叠 <small>[ Navigation Drawer ]</small> ✔️
+* 面包屑 <small>[ Breadcrumb ]</small> ✔️
+* 刷新 <small>[ Refresh ]</small> ✔️
+* 全屏 <small>[ Full Screen ]</small> ✔️
+* 锁屏 <small>[ Lock Screen ]</small> ✔️
+* 配色 <small>[ Theme ]</small> ✔️
+* 语言 <small>[ Localization ]</small> ✔️
 * 消息 <small>[ Message ]</small>
 * 提醒 <small>[ Notice ]</small>
-* 用户名头像显示 <small>[ User Name & Avatar ]</small>
-* 前台切换 <small>[ Goto Website ]</small>
+* 用户名头像显示 <small>[ User Name & Avatar ]</small> ✔️
+* [前台切换 <small>[ Goto Website ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/site/index.html) ✔️
 * 用户中心 <small>[ User Center ]</small>
 * 修改密码 <small>[ Change Password ]</small>
 * 系统设置 <small>[ Setting ]</small>
-* 退出登录 <small>[ Sign Out ]</small>
+* 退出登录 <small>[ Sign Out ]</small> ✔️
 
 #### 左侧导航 <small>[ Navigation ]</small>
 
-* 综合 <small>[ Dashboard ]</small>
-    * 表单 <small>[ Forms ]</small>
-        * 基础表单元素
-        * 表单 Post 提交
-        * 表单 Ajax 提交
-        * 范围选择
-        * 下拉分组多选级联
-        * 地图联动选择
-    * 表格 <small>[ Grids ]</small>
-        * 全功能搜索及自定义编辑
-        * 弹出框带校验编辑
-        * 行内带校验编辑
-        * 单元格带校验编辑
-        * 复制新增及数据联动编辑
-        * 自定义功能按钮
-        * 自定义选择提交
-        * 分组合计排序筛选
-        * 子表详情及滚动翻页
-        * 合并表头及行内拆分
-    * 树形 <small>[ Trees ]</small>
-        * 全功能拖放及自定义编辑
-        * 节点选择编辑
-        * 自定义图标
-        * 复选框及半选提交
-    * 列表 <small>[ Lists ]</small>
-        * 全功能排版及自定义编辑
-        * 多模块自定义排版
-        * 大图列表切换
-        * 间隔项模版
-    * 分配 <small>[ Assigns ]</small>
-        * 表格搜索双击选择
-        * 树形直接拖放
-        * 树形同级双击选择
-        * 列表搜索双击选择
-        * 穿梭框拖放
+* 综合 <small>[ Dashboard ]</small> 💯
+    * 表单 <small>[ Forms ]</small> 💯
+        * [基础表单元素](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/forms/form_elements) ✔️
+        * [表单 Post 提交](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/forms/form_post) ✔️
+        * [表单 Ajax 提交](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/forms/form_ajax) ✔️
+        * [范围选择](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/forms/form_range) ✔️
+        * [下拉分组多选级联](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/forms/form_cascade) ✔️
+        * [地图联动选择](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/forms/form_map) ✔️
+    * 表格 <small>[ Grids ]</small> 💯
+        * [全功能搜索及自定义编辑](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/grids/grid_custom) ✔️
+        * [弹出框带校验编辑](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/grids/grid_popup) ✔️
+        * [行内带校验编辑](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/grids/grid_inline) ✔️
+        * [单元格带校验编辑](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/grids/grid_incell) ✔️
+        * [复制新增及数据联动编辑](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/grids/grid_copy) ✔️
+        * [自定义功能按钮](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/grids/grid_button) ✔️
+        * [自定义选择提交](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/grids/grid_select) ✔️
+        * [分组合计排序筛选](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/grids/grid_group) ✔️
+        * [子表详情及滚动翻页](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/grids/grid_detail) ✔️
+        * [合并表头及行内拆分](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/grids/grid_merge) ✔️
+    * 树形 <small>[ Trees ]</small> 💯
+        * [全功能拖放及自定义编辑](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/trees/tree_custom) ✔️
+        * [节点选择编辑](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/trees/tree_edit) ✔️
+        * [自定义图标](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/trees/tree_icon) ✔️
+        * [复选框及半选提交](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/trees/tree_checkbox) ✔️
+    * 列表 <small>[ Lists ]</small> 💯
+        * [全功能排版及自定义编辑](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/lists/list_custom) ✔️
+        * [多模块自定义排版](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/lists/list_layout) ✔️
+        * [大图列表切换](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/lists/list_switch) ✔️
+        * [间隔项模版](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/lists/list_alternate) ✔️
+    * 分配 <small>[ Assigns ]</small> 💯
+        * [表格搜索双击选择](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/assigns/assign_grid) ✔️
+        * [树形直接拖放](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/assigns/assign_drag) ✔️
+        * [树形同级双击选择](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/assigns/assign_tree) ✔️
+        * [列表搜索双击选择](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/assigns/assign_list) ✔️
+        * [穿梭框拖放](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/assigns/assign_listbox) ✔️
 * 框架 <small>[ Framework ]</small>
-    * 全球化 <small>[ Globalization ]</small>
-    * 视图模型 <small>[ MVVM ]</small>
-    * 数据源 <small>[ DataSource ]</small>
-    * 模版 <small>[ Templates ]</small>
-    * 绘图 <small>[ Drawing ]</small>
+    * [全球化 <small>[ Globalization ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/globalization) ✔️
+    * [视图模型 <small>[ MVVM ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/mvvm) ✔️
+    * [数据源 <small>[ DataSource ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/datasource) ✔️
+    * [模版 <small>[ Templates ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/templates) ✔️
+    * [绘图 <small>[ Drawing ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/drawing) ✔️
     * 单页应用 <small>[ SPA ]</small>
     * PDF导出 <small>[ PDF Export ]</small>
     * 触摸事件 <small>[ Touch Events ]</small>
