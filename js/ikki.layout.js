@@ -138,6 +138,7 @@ function showPath(hash) {
     $('#path').prepend('<a href="' + homePath + '"><i class="fas fa-home"></i>首页<span><small>Home</small></span></a>');
     // 展开导航并定位
     if ($('#navPanelBar').data('kendoPanelBar')) {
+        $('#navPanelBar .k-link').removeClass('k-state-selected');
         $('#navPanelBar').data('kendoPanelBar').expand($('.links-'+ hash).parents('.k-group').parent());
         $('.links-'+ hash).find('a.k-link').addClass('k-state-selected');
     }
