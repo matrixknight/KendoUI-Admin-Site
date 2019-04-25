@@ -288,14 +288,14 @@
                 },
                 {
                     "id": "0205",
-                    "text": "<i class='drawingIcon'></i>绘图<small>Drawing</small><sub class='theme-l'>\uD83D\uDD28</sub>",
+                    "text": "<i class='drawingIcon'></i>绘图<small>Drawing</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
                     "encoded": false,
                     "cssClass": "links-drawing",
                     "url": "javascript:linkTo(\"/framework/\", \"drawing\");"
                 },
                 {
                     "id": "0206",
-                    "text": "<i class='spaIcon'></i>单页应用<small>SPA</small>",
+                    "text": "<i class='spaIcon'></i>单页应用<small>SPA</small><sub class='theme-l'>\uD83D\uDD28</sub>",
                     "encoded": false,
                     "cssClass": "links-spa",
                     "url": "javascript:linkTo(\"/framework/\", \"spa\");"
