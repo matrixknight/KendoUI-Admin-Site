@@ -500,7 +500,7 @@ ROOT/·····································�
     * [数据源 <small>[ DataSource ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/datasource) ✔️
     * [模版 <small>[ Templates ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/templates) ✔️
     * [绘图 <small>[ Drawing ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/drawing) ✔️
-    * 单页应用 <small>[ SPA ]</small>
+    * [单页应用 <small>[ SPA ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/spa) ✔️
     * PDF导出 <small>[ PDF Export ]</small>
     * 触摸事件 <small>[ Touch Events ]</small>
     * 整合 <small>[ Integration ]</small>
