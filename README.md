@@ -494,7 +494,7 @@ ROOT/·····································�
         * [树形同级双击选择](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/assigns/assign_tree) ✔️
         * [列表搜索双击选择](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/assigns/assign_list) ✔️
         * [穿梭框拖放](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/assigns/assign_listbox) ✔️
-* 框架 <small>[ Framework ]</small>
+* 框架 <small>[ Framework ]</small> 💯
     * [全球化 <small>[ Globalization ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/globalization) ✔️
     * [视图模型 <small>[ MVVM ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/mvvm) ✔️
     * [数据源 <small>[ DataSource ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/datasource) ✔️
