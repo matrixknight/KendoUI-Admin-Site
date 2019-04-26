@@ -302,14 +302,14 @@
                 },
                 {
                     "id": "0207",
-                    "text": "<i class='pdfIcon'></i>PDF导出<small>PDF Export</small><sub class='theme-l'>\uD83D\uDD28</sub>",
+                    "text": "<i class='pdfIcon'></i>PDF导出<small>PDF Export</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
                     "encoded": false,
                     "cssClass": "links-pdf_export",
                     "url": "javascript:linkTo(\"/framework/\", \"pdf_export\");"
                 },
                 {
                     "id": "0208",
-                    "text": "<i class='mobileAppIcon'></i>触摸事件<small>Touch Events</small>",
+                    "text": "<i class='mobileAppIcon'></i>触摸事件<small>Touch Events</small><sub class='theme-l'>\uD83D\uDD28</sub>",
                     "encoded": false,
                     "cssClass": "links-touch_events",
                     "url": "javascript:linkTo(\"/framework/\", \"touch_events\");"
