@@ -503,7 +503,7 @@ ROOT/·····································�
     * [单页应用 <small>[ SPA ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/spa) ✔️
     * [PDF导出 <small>[ PDF Export ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/pdf_export) ✔️
     * [触摸事件 <small>[ Touch Events ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/touch_events) ✔️
-    * 整合 <small>[ Integration ]</small>
+    * [整合 <small>[ Integration ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/integration) ✔️
 * 布局 <small>[ Layout ]</small>
     * 页面布局 <small>[ Splitter ]</small>
     * 响应面板 <small>[ Responsive Panel ]</small>
