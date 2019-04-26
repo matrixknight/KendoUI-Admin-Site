@@ -305,6 +305,11 @@ $(function () {
         },
         checked: true
     });
+    // 定义 PDF 嵌入字体
+    kendo.pdf.defineFont({
+        'Microsoft YaHei': 'fonts/msyh.ttf',
+        'Microsoft YaHei|Bold': 'fonts/msyhbd.ttf'
+    });
     // 获取数据源生成表格
     $('#grid').kendoGrid({
         dataSource: {
