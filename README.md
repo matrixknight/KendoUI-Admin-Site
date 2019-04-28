@@ -505,7 +505,7 @@ ROOT/·····································�
     * [触摸事件 <small>[ Touch Events ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/touch_events) ✔️
     * [整合 <small>[ Integration ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/integration) ✔️
 * 布局 <small>[ Layout ]</small>
-    * 页面布局 <small>[ Splitter ]</small>
+    * [页面布局 <small>[ Splitter ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/layout/splitter) ✔️
     * 响应面板 <small>[ Responsive Panel ]</small>
     * 模态框 <small>[ Window ]</small>
     * 对话框 <small>[ Dialog ]</small>
