@@ -17,19 +17,29 @@ $(function () {
     });
     // 确认框小按钮
     $('#confirmMsgSuccess').click(function () {
-        confirmMsgBtn('成功信息', '这里是成功信息的内容~', 'success');
+        confirmMsgBtn('成功信息', '这里是成功信息的内容~', 'success', function () {
+            alertMsgNoBtn('你点了确定~', 'info');
+        });
     });
     $('#confirmMsgInfo').click(function () {
-        confirmMsgBtn('普通信息', '这里是普通信息的内容~', 'info');
+        confirmMsgBtn('普通信息', '这里是普通信息的内容~', 'info', function () {
+            alertMsgNoBtn('你点了确定~', 'info');
+        });
     });
     $('#confirmMsgQuestion').click(function () {
-        confirmMsgBtn('提问信息', '这里是提问信息的内容~', 'question');
+        confirmMsgBtn('提问信息', '这里是提问信息的内容~', 'question', function () {
+            alertMsgNoBtn('你点了确定~', 'info');
+        });
     });
     $('#confirmMsgWarning').click(function () {
-        confirmMsgBtn('警告信息', '这里是警告信息的内容~', 'warning');
+        confirmMsgBtn('警告信息', '这里是警告信息的内容~', 'warning', function () {
+            alertMsgNoBtn('你点了确定~', 'info');
+        });
     });
     $('#confirmMsgError').click(function () {
-        confirmMsgBtn('错误信息', '这里是错误信息的内容~', 'error');
+        confirmMsgBtn('错误信息', '这里是错误信息的内容~', 'error', function () {
+            alertMsgNoBtn('你点了确定~', 'info');
+        });
     });
     // 弹出层
     $('#divWindow').click(function () {

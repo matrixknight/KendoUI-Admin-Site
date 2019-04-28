@@ -508,7 +508,7 @@ ROOT/·····································�
     * [页面布局 <small>[ Splitter ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/layout/splitter) ✔️
     * [响应面板 <small>[ Responsive Panel ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/layout/responsive_panel) ✔️
     * [模态框 <small>[ Window ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/layout/window) ✔️
-    * 对话框 <small>[ Dialog ]</small>
+    * [对话框 <small>[ Dialog ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/layout/dialog) ✔️
     * 通知框 <small>[ Notification ]</small>
     * 提示框 <small>[ Tooltip ]</small>
 * 导航 <small>[ Navigation ]</small>

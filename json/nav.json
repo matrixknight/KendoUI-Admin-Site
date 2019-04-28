@@ -351,14 +351,14 @@
                 },
                 {
                     "id": "0304",
-                    "text": "<i class='dialogIcon'></i>对话框<small>Dialog</small><sub class='theme-l'>\uD83D\uDD28</sub>",
+                    "text": "<i class='dialogIcon'></i>对话框<small>Dialog</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
                     "encoded": false,
                     "cssClass": "links-dialog",
                     "url": "javascript:linkTo(\"/layout/\", \"dialog\");"
                 },
                 {
                     "id": "0305",
-                    "text": "<i class='notificationIcon'></i>通知框<small>Notification</small>",
+                    "text": "<i class='notificationIcon'></i>通知框<small>Notification</small><sub class='theme-l'>\uD83D\uDD28</sub>",
                     "encoded": false,
                     "cssClass": "links-notification",
                     "url": "javascript:linkTo(\"/layout/\", \"notification\");"
