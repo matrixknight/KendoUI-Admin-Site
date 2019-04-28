@@ -344,14 +344,14 @@
                 },
                 {
                     "id": "0303",
-                    "text": "<i class='windowIcon'></i>模态框<small>Window</small><sub class='theme-l'>\uD83D\uDD28</sub>",
+                    "text": "<i class='windowIcon'></i>模态框<small>Window</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
                     "encoded": false,
                     "cssClass": "links-window",
                     "url": "javascript:linkTo(\"/layout/\", \"window\");"
                 },
                 {
                     "id": "0304",
-                    "text": "<i class='dialogIcon'></i>对话框<small>Dialog</small>",
+                    "text": "<i class='dialogIcon'></i>对话框<small>Dialog</small><sub class='theme-l'>\uD83D\uDD28</sub>",
                     "encoded": false,
                     "cssClass": "links-dialog",
                     "url": "javascript:linkTo(\"/layout/\", \"dialog\");"
