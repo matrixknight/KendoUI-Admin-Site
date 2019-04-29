@@ -504,13 +504,13 @@ ROOT/·····································�
     * [PDF导出 <small>[ PDF Export ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/pdf_export) ✔️
     * [触摸事件 <small>[ Touch Events ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/touch_events) ✔️
     * [整合 <small>[ Integration ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/integration) ✔️
-* 布局 <small>[ Layout ]</small>
+* 布局 <small>[ Layout ]</small> 💯
     * [页面布局 <small>[ Splitter ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/layout/splitter) ✔️
     * [响应面板 <small>[ Responsive Panel ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/layout/responsive_panel) ✔️
     * [模态框 <small>[ Window ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/layout/window) ✔️
     * [对话框 <small>[ Dialog ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/layout/dialog) ✔️
     * [通知框 <small>[ Notification ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/layout/notification) ✔️
-    * 提示框 <small>[ Tooltip ]</small>
+    * [提示框 <small>[ Tooltip ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/layout/tooltip) ✔️
 * 导航 <small>[ Navigation ]</small>
     * 菜单 <small>[ Menu ]</small>
     * 折叠面板 <small>[ PanelBar ]</small>
