@@ -5,6 +5,10 @@
  * Released under the MIT License - https://ikki2000.github.io/KendoUI-Admin-Site/LICENSE
  */
 /* CSS for All Admin Pages | Written by Amikoko | 2018-02-03 */
+@font-face {
+  font-family: "Font Awesome";
+  src: url("../fonts/fa-solid-900.eot");
+  src: url("../fonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../fonts/fa-solid-900.woff2") format("woff2"), url("../fonts/fa-solid-900.woff") format("woff"), url("../fonts/fa-solid-900.ttf") format("truetype"), url("../fonts/fa-solid-900.svg#fontawesome") format("svg"); }
 /* 主体框架结构 ------------------------------ */
 html,
 body {
@@ -129,8 +133,8 @@ iframe#section {
       border-radius: 50%;
       width: 100%;
       height: 100%;
-      font-family: FontAwesome;
-      font-size: 60px;
+      font-family: "Font Awesome", sans-serif;
+      font-size: 48px;
       background: rgba(0, 0, 0, 0.5);
       content: "\f13e";
       cursor: pointer; }
@@ -1272,7 +1276,7 @@ form .searchBtn.row {
   display: none;
   margin-left: 5px; }
 .k-treeview .k-i-drag-and-drop:before {
-  font-family: 'WebComponentsIcons'; }
+  font-family: 'WebComponentsIcons', sans-serif; }
 .k-treeview .k-state-selected .k-required,
 .k-treeview .k-state-focused .k-required,
 .k-treeview .k-state-hover .k-required {
