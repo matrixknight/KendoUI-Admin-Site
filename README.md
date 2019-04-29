@@ -509,7 +509,7 @@ ROOT/·····································�
     * [响应面板 <small>[ Responsive Panel ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/layout/responsive_panel) ✔️
     * [模态框 <small>[ Window ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/layout/window) ✔️
     * [对话框 <small>[ Dialog ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/layout/dialog) ✔️
-    * 通知框 <small>[ Notification ]</small>
+    * [通知框 <small>[ Notification ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/layout/notification) ✔️
     * 提示框 <small>[ Tooltip ]</small>
 * 导航 <small>[ Navigation ]</small>
     * 菜单 <small>[ Menu ]</small>
