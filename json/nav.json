@@ -379,14 +379,14 @@
             "items": [
                 {
                     "id": "0401",
-                    "text": "<i class='menuIcon'></i>菜单<small>Menu</small><sub class='theme-l'>\uD83D\uDD28</sub>",
+                    "text": "<i class='menuIcon'></i>菜单<small>Menu</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
                     "encoded": false,
                     "cssClass": "links-menu",
                     "url": "javascript:linkTo(\"/navigation/\", \"menu\");"
                 },
                 {
                     "id": "0402",
-                    "text": "<i class='panelBarIcon'></i>折叠面板<small>PanelBar</small>",
+                    "text": "<i class='panelBarIcon'></i>折叠面板<small>PanelBar</small><sub class='theme-l'>\uD83D\uDD28</sub>",
                     "encoded": false,
                     "cssClass": "links-panelbar",
                     "url": "javascript:linkTo(\"/navigation/\", \"panelbar\");"
