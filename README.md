@@ -513,7 +513,7 @@ ROOT/·····································�
     * [提示框 <small>[ Tooltip ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/layout/tooltip) ✔️
 * 导航 <small>[ Navigation ]</small>
     * [菜单 <small>[ Menu ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/navigation/menu) ✔️
-    * 折叠面板 <small>[ PanelBar ]</small>
+    * [折叠面板 <small>[ PanelBar ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/navigation/panelbar) ✔️
     * 选项卡 <small>[ TabStrip ]</small>
     * 工具栏 <small>[ ToolBar ]</small>
     * 树形视图 <small>[ TreeView ]</small>

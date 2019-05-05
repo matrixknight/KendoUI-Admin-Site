@@ -344,28 +344,28 @@
                 },
                 {
                     "id": "0303",
-                    "text": "<i class='windowIcon'></i>模态框<small>Window</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
+                    "text": "<i class='windowIcon'></i>模态框<small>Window</small>",
                     "encoded": false,
                     "cssClass": "links-window",
                     "url": "javascript:linkTo(\"/layout/\", \"window\");"
                 },
                 {
                     "id": "0304",
-                    "text": "<i class='dialogIcon'></i>对话框<small>Dialog</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
+                    "text": "<i class='dialogIcon'></i>对话框<small>Dialog</small>",
                     "encoded": false,
                     "cssClass": "links-dialog",
                     "url": "javascript:linkTo(\"/layout/\", \"dialog\");"
                 },
                 {
                     "id": "0305",
-                    "text": "<i class='notificationIcon'></i>通知框<small>Notification</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
+                    "text": "<i class='notificationIcon'></i>通知框<small>Notification</small>",
                     "encoded": false,
                     "cssClass": "links-notification",
                     "url": "javascript:linkTo(\"/layout/\", \"notification\");"
                 },
                 {
                     "id": "0306",
-                    "text": "<i class='tooltipIcon'></i>提示框<small>Tooltip</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
+                    "text": "<i class='tooltipIcon'></i>提示框<small>Tooltip</small>",
                     "encoded": false,
                     "cssClass": "links-tooltip",
                     "url": "javascript:linkTo(\"/layout/\", \"tooltip\");"
@@ -386,14 +386,14 @@
                 },
                 {
                     "id": "0402",
-                    "text": "<i class='panelBarIcon'></i>折叠面板<small>PanelBar</small><sub class='theme-l'>\uD83D\uDD28</sub>",
+                    "text": "<i class='panelBarIcon'></i>折叠面板<small>PanelBar</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
                     "encoded": false,
                     "cssClass": "links-panelbar",
                     "url": "javascript:linkTo(\"/navigation/\", \"panelbar\");"
                 },
                 {
                     "id": "0403",
-                    "text": "<i class='tabStripIcon'></i>选项卡<small>TabStrip</small>",
+                    "text": "<i class='tabStripIcon'></i>选项卡<small>TabStrip</small><sub class='theme-l'>\uD83D\uDD28</sub>",
                     "encoded": false,
                     "cssClass": "links-tabstrip",
                     "url": "javascript:linkTo(\"/navigation/\", \"tabstrip\");"
