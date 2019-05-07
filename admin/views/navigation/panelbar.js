@@ -297,7 +297,7 @@ $(function () {
             },
             {
                 text: '添加内容链接',
-                contentUrl: 'admin/login.html'
+                contentUrl: 'resource/page.html'
             }
         ]
     });
