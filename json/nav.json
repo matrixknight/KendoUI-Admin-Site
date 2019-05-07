@@ -393,14 +393,14 @@
                 },
                 {
                     "id": "0403",
-                    "text": "<i class='tabStripIcon'></i>选项卡<small>TabStrip</small><sub class='theme-l'>\uD83D\uDD28</sub>",
+                    "text": "<i class='tabStripIcon'></i>选项卡<small>TabStrip</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
                     "encoded": false,
                     "cssClass": "links-tabstrip",
                     "url": "javascript:linkTo(\"/navigation/\", \"tabstrip\");"
                 },
                 {
                     "id": "0404",
-                    "text": "<i class='toolbarIcon'></i>工具栏<small>ToolBar</small>",
+                    "text": "<i class='toolbarIcon'></i>工具栏<small>ToolBar</small><sub class='theme-l'>\uD83D\uDD28</sub>",
                     "encoded": false,
                     "cssClass": "links-toolbar",
                     "url": "javascript:linkTo(\"/navigation/\", \"toolbar\");"

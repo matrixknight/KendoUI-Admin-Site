@@ -103,7 +103,7 @@ $(function () {
     });
     // 选项卡拖放排序
     $('#tab ul.k-tabstrip-items').kendoSortable({
-        container: 'ul.k-tabstrip-items',
+        container: '#tab ul.k-tabstrip-items',
         filter: 'li.k-item',
         axis: 'x',
         cursor: 'move',
