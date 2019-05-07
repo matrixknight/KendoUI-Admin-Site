@@ -710,6 +710,7 @@ h1 {
     text-align: center; }
   #tab .k-tabstrip-items .k-item,
   #hint .k-tabstrip-items .k-item {
+    margin-right: 5px;
     border-color: #ccc;
     border-radius: 4px;
     color: #999;
