@@ -379,14 +379,14 @@
             "items": [
                 {
                     "id": "0401",
-                    "text": "<i class='menuIcon'></i>菜单<small>Menu</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
+                    "text": "<i class='menuIcon'></i>菜单<small>Menu</small>",
                     "encoded": false,
                     "cssClass": "links-menu",
                     "url": "javascript:linkTo(\"/navigation/\", \"menu\");"
                 },
                 {
                     "id": "0402",
-                    "text": "<i class='panelBarIcon'></i>折叠面板<small>PanelBar</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
+                    "text": "<i class='panelBarIcon'></i>折叠面板<small>PanelBar</small>",
                     "encoded": false,
                     "cssClass": "links-panelbar",
                     "url": "javascript:linkTo(\"/navigation/\", \"panelbar\");"
@@ -400,14 +400,14 @@
                 },
                 {
                     "id": "0404",
-                    "text": "<i class='toolbarIcon'></i>工具栏<small>ToolBar</small><sub class='theme-l'>\uD83D\uDD28</sub>",
+                    "text": "<i class='toolbarIcon'></i>工具栏<small>ToolBar</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
                     "encoded": false,
                     "cssClass": "links-toolbar",
                     "url": "javascript:linkTo(\"/navigation/\", \"toolbar\");"
                 },
                 {
                     "id": "0405",
-                    "text": "<i class='treeViewIcon'></i>树形视图<small>TreeView</small>",
+                    "text": "<i class='treeViewIcon'></i>树形视图<small>TreeView</small><sub class='theme-l'>\uD83D\uDD28</sub>",
                     "encoded": false,
                     "cssClass": "links-treeview",
                     "url": "javascript:linkTo(\"/navigation/\", \"treeview\");"
