@@ -517,7 +517,7 @@ ROOT/·····································�
     * [选项卡 <small>[ TabStrip ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/navigation/tabstrip) ✔️
     * [工具栏 <small>[ ToolBar ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/navigation/toolbar) ✔️
     * [树形视图 <small>[ TreeView ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/navigation/treeview) ✔️
-    * 按钮 <small>[ Button ]</small>
+    * [按钮 <small>[ Button ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/navigation/button) ✔️
     * 按钮组 <small>[ ButtonGroup ]</small>
 * 表单 <small>[ Forms ]</small>
     * 转换框 <small>[ Switch ]</small>

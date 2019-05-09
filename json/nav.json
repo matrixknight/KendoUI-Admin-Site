@@ -393,7 +393,7 @@
                 },
                 {
                     "id": "0403",
-                    "text": "<i class='tabStripIcon'></i>选项卡<small>TabStrip</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
+                    "text": "<i class='tabStripIcon'></i>选项卡<small>TabStrip</small>",
                     "encoded": false,
                     "cssClass": "links-tabstrip",
                     "url": "javascript:linkTo(\"/navigation/\", \"tabstrip\");"
@@ -414,14 +414,14 @@
                 },
                 {
                     "id": "0406",
-                    "text": "<i class='buttonIcon'></i>按钮<small>Button</small><sub class='theme-l'>\uD83D\uDD28</sub>",
+                    "text": "<i class='buttonIcon'></i>按钮<small>Button</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
                     "encoded": false,
                     "cssClass": "links-button",
                     "url": "javascript:linkTo(\"/navigation/\", \"button\");"
                 },
                 {
                     "id": "0407",
-                    "text": "<i class='mobileButtonGroupIcon'></i>按钮组<small>ButtonGroup</small>",
+                    "text": "<i class='mobileButtonGroupIcon'></i>按钮组<small>ButtonGroup</small><sub class='theme-l'>\uD83D\uDD28</sub>",
                     "encoded": false,
                     "cssClass": "links-buttongroup",
                     "url": "javascript:linkTo(\"/navigation/\", \"buttongroup\");"
