@@ -374,7 +374,7 @@
         },
         {
             "id": "04",
-            "text": "<i class='fas fa-map-signs'></i><sup></sup><abbr>导航<small>Navigation</small><sub class='theme-l'>\uD83C\uDFAF</sub></abbr>",
+            "text": "<i class='fas fa-map-signs'></i><abbr>导航<small>Navigation</small><sub class='theme-l'>\uD83C\uDF0C</sub></abbr>",
             "encoded": false,
             "items": [
                 {
@@ -421,7 +421,7 @@
                 },
                 {
                     "id": "0407",
-                    "text": "<i class='mobileButtonGroupIcon'></i>按钮组<small>ButtonGroup</small><sub class='theme-l'>\uD83D\uDD28</sub>",
+                    "text": "<i class='mobileButtonGroupIcon'></i>按钮组<small>ButtonGroup</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
                     "encoded": false,
                     "cssClass": "links-buttongroup",
                     "url": "javascript:linkTo(\"/navigation/\", \"buttongroup\");"
@@ -430,12 +430,12 @@
         },
         {
             "id": "05",
-            "text": "<i class='fas fa-tasks'></i><abbr>表单<small>Forms</small><sub class='theme-l'>\uD83D\uDD54</sub></abbr>",
+            "text": "<i class='fas fa-tasks'></i><sup></sup><abbr>表单<small>Forms</small><sub class='theme-l'>\uD83C\uDFAF</sub></abbr>",
             "encoded": false,
             "items": [
                 {
                     "id": "0501",
-                    "text": "<i class='mobileSwitchIcon'></i>转换框<small>Switch</small>",
+                    "text": "<i class='mobileSwitchIcon'></i>转换框<small>Switch</small><sub class='theme-l'>\uD83D\uDD28</sub>",
                     "encoded": false,
                     "cssClass": "links-switch",
                     "url": "javascript:linkTo(\"/forms/\", \"switch\");"

@@ -8,7 +8,7 @@ $(function () {
         icon: 'star'
     });
     // 图片按钮
-    $('#imgButton').kendoButton({
+    $('#imageButton').kendoButton({
         imageUrl: 'img/IKKI.png'
     });
     // 禁用按钮

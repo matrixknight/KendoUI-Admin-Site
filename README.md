@@ -511,14 +511,14 @@ ROOT/·····································�
     * [对话框 <small>[ Dialog ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/layout/dialog) ✔️
     * [通知框 <small>[ Notification ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/layout/notification) ✔️
     * [提示框 <small>[ Tooltip ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/layout/tooltip) ✔️
-* 导航 <small>[ Navigation ]</small>
+* 导航 <small>[ Navigation ]</small> 💯
     * [菜单 <small>[ Menu ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/navigation/menu) ✔️
     * [折叠面板 <small>[ PanelBar ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/navigation/panelbar) ✔️
     * [选项卡 <small>[ TabStrip ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/navigation/tabstrip) ✔️
     * [工具栏 <small>[ ToolBar ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/navigation/toolbar) ✔️
     * [树形视图 <small>[ TreeView ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/navigation/treeview) ✔️
     * [按钮 <small>[ Button ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/navigation/button) ✔️
-    * 按钮组 <small>[ ButtonGroup ]</small>
+    * [按钮组 <small>[ ButtonGroup ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/navigation/buttongroup) ✔️
 * 表单 <small>[ Forms ]</small>
     * 转换框 <small>[ Switch ]</small>
     * 数字框 <small>[ NumericTextBox ]</small>
