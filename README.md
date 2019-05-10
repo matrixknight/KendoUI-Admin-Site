@@ -521,7 +521,7 @@ ROOT/·····································�
     * [按钮组 <small>[ ButtonGroup ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/navigation/buttongroup) ✔️
 * 表单 <small>[ Forms ]</small>
     * [转换框 <small>[ Switch ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/switch) ✔️
-    * 数字框 <small>[ NumericTextBox ]</small>
+    * [数字框 <small>[ NumericTextBox ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/numerictextbox) ✔️
     * 日期框 <small>[ DatePicker ]</small>
     * 日期范围框 <small>[ DateRangePicker ]</small>
     * 时间框 <small>[ TimePicker ]</small>

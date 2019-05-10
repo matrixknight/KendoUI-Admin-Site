@@ -400,28 +400,28 @@
                 },
                 {
                     "id": "0404",
-                    "text": "<i class='toolbarIcon'></i>工具栏<small>ToolBar</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
+                    "text": "<i class='toolbarIcon'></i>工具栏<small>ToolBar</small>",
                     "encoded": false,
                     "cssClass": "links-toolbar",
                     "url": "javascript:linkTo(\"/navigation/\", \"toolbar\");"
                 },
                 {
                     "id": "0405",
-                    "text": "<i class='treeViewIcon'></i>树形视图<small>TreeView</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
+                    "text": "<i class='treeViewIcon'></i>树形视图<small>TreeView</small>",
                     "encoded": false,
                     "cssClass": "links-treeview",
                     "url": "javascript:linkTo(\"/navigation/\", \"treeview\");"
                 },
                 {
                     "id": "0406",
-                    "text": "<i class='buttonIcon'></i>按钮<small>Button</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
+                    "text": "<i class='buttonIcon'></i>按钮<small>Button</small>",
                     "encoded": false,
                     "cssClass": "links-button",
                     "url": "javascript:linkTo(\"/navigation/\", \"button\");"
                 },
                 {
                     "id": "0407",
-                    "text": "<i class='mobileButtonGroupIcon'></i>按钮组<small>ButtonGroup</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
+                    "text": "<i class='mobileButtonGroupIcon'></i>按钮组<small>ButtonGroup</small>",
                     "encoded": false,
                     "cssClass": "links-buttongroup",
                     "url": "javascript:linkTo(\"/navigation/\", \"buttongroup\");"
@@ -442,14 +442,14 @@
                 },
                 {
                     "id": "0502",
-                    "text": "<i class='numericTextBoxIcon'></i>数字框<small>NumericTextBox</small><sub class='theme-l'>\uD83D\uDD28</sub>",
+                    "text": "<i class='numericTextBoxIcon'></i>数字框<small>NumericTextBox</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
                     "encoded": false,
                     "cssClass": "links-numerictextbox",
                     "url": "javascript:linkTo(\"/forms/\", \"numerictextbox\");"
                 },
                 {
                     "id": "0503",
-                    "text": "<i class='datePickerIcon'></i>日期框<small>DatePicker</small>",
+                    "text": "<i class='datePickerIcon'></i>日期框<small>DatePicker</small><sub class='theme-l'>\uD83D\uDD28</sub>",
                     "encoded": false,
                     "cssClass": "links-datepicker",
                     "url": "javascript:linkTo(\"/forms/\", \"datepicker\");"

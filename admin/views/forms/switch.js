@@ -13,14 +13,6 @@ $(function () {
             unchecked: ''
         }
     });
-    // 选中转换框
-    $('#checkedSwitch').kendoSwitch({
-        messages: {
-            checked: '',
-            unchecked: ''
-        },
-        checked: true
-    });
     // 只读转换框
     $('#readonlySwitch').kendoSwitch({
         messages: {
@@ -37,6 +29,14 @@ $(function () {
             unchecked: ''
         },
         enabled: false
+    });
+    // 默认值转换框
+    $('#defaultValueSwitch').kendoSwitch({
+        messages: {
+            checked: '',
+            unchecked: ''
+        },
+        checked: true
     });
     // 文字转换框
     $('#textSwitch').kendoSwitch({
