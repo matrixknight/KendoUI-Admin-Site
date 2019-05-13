@@ -124,11 +124,15 @@ $(function () {
                 '# var lunar = lunarData.solar2lunar(data.date.getFullYear(), (data.date.getMonth() + 1), data.date.getDate()) #' +
                 '<div class="d-flex flex-column">' +
                     '#= data.value #' +
-                    '# if (lunar.lunarDay === 1) { #' +
-                        '<small class="text-nowrap">#= lunar.lunarMonthCn #</small>' +
+                    '<small class="text-nowrap">' +
+                    '# if (lunar.isTerm) { #' +
+                        '<span class="text-success">#= lunar.term #</span>' +
+                    '# } else if (lunar.lunarDay === 1) { #' +
+                        '<span class="text-info">#= lunar.lunarMonthCn #</span>' +
                     '# } else { #' +
-                        '<small class="text-nowrap">#= lunar.lunarDayCn #</small>' +
+                        '#= lunar.lunarDayCn #</small>' +
                     '# } #' +
+                    '</small>' +
                 '</div>'
         },
         value: '1949-10-01'
