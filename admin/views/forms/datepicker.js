@@ -126,9 +126,9 @@ $(function () {
                     '#= data.value #' +
                     '<small class="text-nowrap">' +
                     '# if (lunar.isTerm) { #' +
-                        '<span class="text-success">#= lunar.term #</span>' +
+                        '<span class="theme-m-box rounded px-1">#= lunar.term #</span>' +
                     '# } else if (lunar.lunarDay === 1) { #' +
-                        '<span class="text-info">#= lunar.lunarMonthCn #</span>' +
+                        '<span class="theme-s-box rounded px-1">#= lunar.lunarMonthCn #</span>' +
                     '# } else { #' +
                         '#= lunar.lunarDayCn #</small>' +
                     '# } #' +
