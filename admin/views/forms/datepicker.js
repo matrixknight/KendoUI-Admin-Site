@@ -117,15 +117,18 @@ $(function () {
         format: 'yyyy-MM-dd',
         footer:
             '# var lunar = lunarData.solar2lunar(data.getFullYear(), (data.getMonth() + 1), data.getDate()) #' +
-            '#= kendo.toString(data, "yyyy年MM月dd日 dddd") #<br>' +
-            '今天：[#= lunar.zodiac #年] #= lunar.lunarMonthCn ##= lunar.lunarDayCn #<br>' +
-            '#= lunar.gzYear #年 #= lunar.gzMonth #月 #= lunar.gzDay #日',
+            '今天：#= kendo.toString(data, "yyyy年MM月dd日 dddd") #<br>' +
+            '农历：[#= lunar.zodiac #年] #= lunar.lunarMonthCn ##= lunar.lunarDayCn #（#= lunar.gzYear #年 #= lunar.gzMonth #月 #= lunar.gzDay #日）',
         month: {
             content:
                 '# var lunar = lunarData.solar2lunar(data.date.getFullYear(), (data.date.getMonth() + 1), data.date.getDate()) #' +
                 '<div class="d-flex flex-column">' +
                     '#= data.value #' +
-                    '<small class="text-nowrap">#= lunar.lunarDayCn #</small>' +
+                    '# if (lunar.lunarDay === 1) { #' +
+                        '<small class="text-nowrap">#= lunar.lunarMonthCn #</small>' +
+                    '# } else { #' +
+                        '<small class="text-nowrap">#= lunar.lunarDayCn #</small>' +
+                    '# } #' +
                 '</div>'
         },
         value: '1949-10-01'
