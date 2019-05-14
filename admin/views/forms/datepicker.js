@@ -126,7 +126,11 @@ $(function () {
                 '<div class="d-flex flex-column">' +
                     '#= data.value #' +
                     '<small class="text-nowrap">' +
-                    '# if (lunar.isTerm) { #' +
+                    '# if (lunar.lunarFestival) { #' +
+                        '<span class="festival rounded px-1">#= lunar.lunarFestival #</span>' +
+                    '# } else if (lunar.solarFestival) { #' +
+                        '<span class="festival rounded px-1">#= lunar.solarFestival #</span>' +
+                    '# } else if (lunar.isTerm) { #' +
                         '<span class="theme-m-box rounded px-1">#= lunar.term #</span>' +
                     '# } else if (lunar.lunarDay === 1) { #' +
                         '<span class="theme-s-box rounded px-1">#= lunar.lunarMonthCn #</span>' +
@@ -251,6 +255,40 @@ var lunarData = {
         '7f07e7f0e47f531b0723b0b6fb0721', '7f0e26665b66a449801e9808297c35', '665f67f0e37f1489801eb072297c35',
         '7ec967f0e37f14998082b0787b06bd', '7f07e7f0e47f531b0723b0b6fb0721', '7f0e27f1487f531b0b0bb0b6fb0722'
     ],
+    solarFestival: [
+        '0101 元旦',
+        '0214 情人节',
+        '0308 妇女节',
+        '0312 植树节',
+        '0401 愚人节',
+        '0501 劳动节',
+        '0504 青年节',
+        '0601 儿童节',
+        '0701 建党节',
+        '0801 建军节',
+        '0910 教师节',
+        '1001 国庆节',
+        '1101 万圣节',
+        '1213 国家公祭',
+        '1225 圣诞节',
+        '1226 主席诞辰'
+    ],
+    lunarFestival: [
+        '0101 春节',
+        '0115 元宵节',
+        '0202 龙抬头',
+        '0303 上巳节',
+        '0505 端午节',
+        '0707 七夕节',
+        '0715 中元节',
+        '0815 中秋节',
+        '0909 重阳节',
+        '1001 寒衣节',
+        '1015 下元节',
+        '1208 腊八节',
+        '1223 北小年',
+        '1224 南小年'
+    ],
     dayChina: ['日', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'],
     tenDayChina: ['初', '十', '廿', '卅'],
     monthChina: ['正', '二', '三', '四', '五', '六', '七', '八', '九', '十', '冬', '腊'],
@@ -271,13 +309,13 @@ var lunarData = {
         }
         return 0;
     },
-    monthDays: function (y, m) {
+    lunarMonthDays: function (y, m) {
         if (m > 12 || m < 1) {
             return -1;
         }
         return ((this.lunarInfo[y - 1900] & (0x10000 >> m)) ? 30 : 29 );
     },
-    solarDays: function (y, m) {
+    solarMonthDays: function (y, m) {
         if (m > 12 || m < 1) {
             return -1;
         }
@@ -376,6 +414,23 @@ var lunarData = {
         ];
         return parseInt(_calday[n - 1]);
     },
+    getFestival: function (y, m, d, type) {
+        var festival;
+        if (type === 'solar') {
+            festival = this.solarFestival;
+        } else if (type === 'lunar') {
+            festival = this.lunarFestival;
+            if (m === 12 && d === this.lunarMonthDays(y, m)) {
+                return '除夕';
+            }
+        }
+        for (var i = 0; i < festival.length; i++) {
+            if (m === parseInt(festival[i].substr(0, 2)) && d === parseInt(festival[i].substr(2, 2))) {
+                return festival[i].substr(5);
+            }
+        }
+        return null;
+    },
     solar2lunar: function (y, m, d) {
         if (y < 1900 || y > 2100) {
             return -1;
@@ -422,7 +477,7 @@ var lunarData = {
                 isLeap = true;
                 temp = this.leapDays(year);
             } else {
-                temp = this.monthDays(year, i);
+                temp = this.lunarMonthDays(year, i);
             }
             if (isLeap === true && i === (leap + 1)) {
                 isLeap = false;
@@ -464,6 +519,10 @@ var lunarData = {
         var dayCyclical = Date.UTC(y, sm, 1, 0, 0, 0, 0) / 86400000 + 25567 + 10;
         var gzD = this.toGanZhi(dayCyclical + d - 1);
         var constellation = this.toConstellation(m, d);
+        var isFestival = false;
+        if (this.getFestival(y, m, d, 'solar') || this.getFestival(year, month, day, 'lunar')) {
+            isFestival = true;
+        }
         return {
             'solarYear': y,
             'solarMonth': m,
@@ -483,7 +542,10 @@ var lunarData = {
             'isToday': isToday,
             'isLeap': isLeap,
             'isTerm': isTerm,
-            'term': Term
+            'term': Term,
+            'isFestival': isFestival,
+            'solarFestival': this.getFestival(y, m, d, 'solar'),
+            'lunarFestival': this.getFestival(year, month, day, 'lunar')
         };
     },
     lunar2solar: function (y, m, d, isLeapMonth) {
@@ -497,7 +559,7 @@ var lunarData = {
         if (y === 2100 && m === 12 && d > 1 || y === 1900 && m === 1 && d < 31) {
             return -1;
         }
-        var day = this.monthDays(y, m);
+        var day = this.lunarMonthDays(y, m);
         var _day = day;
         if (isLeapMonth) {
             _day = this.leapDays(y, m);
@@ -519,7 +581,7 @@ var lunarData = {
                     isAdd = true;
                 }
             }
-            offset += this.monthDays(y, i);
+            offset += this.lunarMonthDays(y, i);
         }
         if (isLeapMonth) {
             offset += day;
