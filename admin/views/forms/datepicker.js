@@ -26,7 +26,7 @@ $(function () {
         format: 'yyyy-MM-dd dddd',
         footer: '今天：#= kendo.toString(data, "yyyy年MM月dd日 dddd") #',
         month: {
-            weekNumber: '#= data.weekNumber #周'
+            weekNumber: '<small>#= data.weekNumber #周</small>'
         },
         value: '1949-10-01'
     });
