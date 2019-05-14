@@ -100,6 +100,7 @@ $(function () {
             new Date(2000, 6, 7),
             new Date(2000, 7, 1),
             new Date(2000, 7, 15),
+            new Date(2000, 8, 3),
             new Date(2000, 8, 10),
             new Date(2000, 9, 1),
             new Date(2000, 10, 1),
