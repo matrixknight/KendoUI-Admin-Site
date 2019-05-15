@@ -17,4 +17,8 @@ $(function () {
     dateRange($('#getUpStart'), $('#getUpEnd'), 'Time');
     // 日期时间范围
     dateRange($('#importantMomentStart'), $('#importantMomentEnd'), 'DateTime');
+    // 单组件日期范围
+    $('#dateRangePicker').kendoDateRangePicker({
+        format: 'yyyy-MM-dd'
+    });
 });
