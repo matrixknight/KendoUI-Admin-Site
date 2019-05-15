@@ -1,89 +1,60 @@
 $(function () {
-    // DOM 日期框
-    $('#domDatePicker').kendoDatePicker();
-    // 普通日期框
-    $('#generalDatePicker').kendoDatePicker({
+    // DOM 日期范围框
+    $('#domDateRangePicker').kendoDateRangePicker();
+    // 普通日期范围框
+    $('#generalDateRangePicker').kendoDateRangePicker({
         format: 'yyyy-MM-dd',
         footer: '今天：#= kendo.toString(data, "yyyy年MM月dd日") #',
         min: new Date(1949, 9, 1),
         max: new Date()
     });
-    // 只读日期框
-    $('#readonlyDatePicker').kendoDatePicker({
+    // 只读日期范围框
+    $('#readonlyDateRangePicker').kendoDateRangePicker({
         format: 'yyyy-MM-dd',
-        value: '1949-10-01'
-    }).data('kendoDatePicker').readonly();
-    // 禁用日期框
-    $('#disabledDatePicker').kendoDatePicker().data('kendoDatePicker').enable(false);
-    // 默认值日期框
-    $('#defaultValueDatePicker').kendoDatePicker({
+        range: {
+            start: '1949-10-01',
+            end: '1949-10-07'
+        }
+    }).data('kendoDateRangePicker').readonly();
+    // 禁用日期范围框
+    $('#disabledDateRangePicker').kendoDateRangePicker().data('kendoDateRangePicker').enable(false);
+    // 默认值日期范围框
+    $('#defaultValueDateRangePicker').kendoDateRangePicker({
         format: 'yyyy-MM-dd',
-        value: '1949-10-01'
+        range: {
+            start: new Date(1949, 9, 1),
+            end: new Date(1949, 9, 7)
+        }
     });
-    // 星期数日期框
-    $('#weekDatePicker').kendoDatePicker({
+    // 星期数日期范围框
+    $('#weekDateRangePicker').kendoDateRangePicker({
         weekNumber: true,
         format: 'yyyy-MM-dd dddd',
         footer: '今天：#= kendo.toString(data, "yyyy年MM月dd日 dddd") #',
         month: {
-            weekNumber: '<small>#= data.weekNumber #周</small>'
+            weekNumber: '# if (data.weekNumber !== "&nbsp;") { #<small>#= data.weekNumber #周</small># } #'
         },
-        value: '1949-10-01'
+        range: {
+            start: new Date(1949, 9, 1),
+            end: new Date(1949, 9, 7)
+        }
     });
-    // 月份日期框
-    $('#monthDatePicker').kendoDatePicker({
-        start: 'year',
-        depth: 'year',
-        format: 'yyyy-MM',
-        footer: '当月：#= kendo.toString(data, "yyyy年MM月") #',
-        value: '1949-10'
-    });
-    // 年份日期框
-    $('#yearDatePicker').kendoDatePicker({
-        start: 'decade',
-        depth: 'decade',
-        format: 'yyyy',
-        footer: '今年：#= kendo.toString(data, "yyyy年") #',
-        value: '1949'
-    });
-    // 世纪日期框
-    $('#centuryDatePicker').kendoDatePicker({
-        start: 'century',
-        depth: 'decade',
-        format: 'yyyy',
-        footer: '今年：#= kendo.toString(data, "yyyy年") #',
-        value: '1949'
-    });
-    // 掩码日期框
-    $('#maskedDatePicker').kendoDatePicker({
+    // 无标签日期范围框
+    $('#noLabelDateRangePicker').kendoDateRangePicker({
         format: 'yyyy-MM-dd',
-        dateInput: true
+        footer: '今天：#= kendo.toString(data, "yyyy年MM月dd日") #',
+        labels: false
     });
-    // 屏蔽日期框
-    $('#shieldDatePicker').kendoDatePicker({
+    // 屏蔽日期范围框
+    $('#shieldDateRangePicker').kendoDateRangePicker({
         format: 'yyyy-MM-dd',
         disableDates: [
             'sa',
             'su'
         ]
     });
-    // 格式转换日期框
-    $('#parseDatePicker').kendoDatePicker({
-        format: 'yyyy-MM-dd',
-        parseFormats: [
-            'M/d/yy',
-            'M/d/yyyy',
-            'MM/dd/yyyy',
-            'yy.M.d',
-            'yyyy.M.d',
-            'yyyy.MM.dd',
-            'yy年M月d日',
-            'yyyy年M月d日',
-            'yyyy年MM月dd日'
-        ]
-    });
-    // 节假日日期框
-    $('#holidayDatePicker').kendoDatePicker({
+    // 节假日日期范围框
+    $('#holidayDateRangePicker').kendoDateRangePicker({
         format: 'yyyy-MM-dd',
         dates: [
             new Date(2000, 0, 1),
@@ -111,21 +82,25 @@ $(function () {
         month: {
             content: '#= data.value #<i class="#= isHoliday(data.date, data.dates) ? \'fas fa-star\' : \'\' #"></i>'
         },
-        value: '1949-10-01'
+        range: {
+            start: new Date(1949, 9, 1),
+            end: new Date(1949, 9, 7)
+        }
     });
-    // 农历日期框
-    $('#lunarDatePicker').kendoDatePicker({
+    // 农历日期范围框
+    $('#lunarDateRangePicker').kendoDateRangePicker({
         format: 'yyyy-MM-dd',
         footer:
             '# var lunar = lunarData.solar2lunar(data.getFullYear(), (data.getMonth() + 1), data.getDate()) #' +
-            '今天：#= kendo.toString(data, "yyyy年MM月dd日 dddd") #<br>' +
+            '今天：#= kendo.toString(data, "yyyy年MM月dd日 dddd") #' +
+            '<span class="d-inline-block mx-3"></span>' +
             '农历：[#= lunar.zodiac #年] #= lunar.lunarMonthCn ##= lunar.lunarDayCn #（#= lunar.gzYear #年 #= lunar.gzMonth #月 #= lunar.gzDay #日）',
         month: {
             content:
                 '# var lunar = lunarData.solar2lunar(data.date.getFullYear(), (data.date.getMonth() + 1), data.date.getDate()) #' +
                 '<div class="d-flex flex-column">' +
                     '#= data.value #' +
-                    '<small class="text-nowrap">' +
+                    '<div class="text-nowrap">' +
                     '# if (lunar.lunarFestival) { #' +
                         '<span class="festival rounded px-1">#= lunar.lunarFestival #</span>' +
                     '# } else if (lunar.solarFestival) { #' +
@@ -137,13 +112,14 @@ $(function () {
                     '# } else { #' +
                         '#= lunar.lunarDayCn #' +
                     '# } #' +
-                    '</small>' +
+                    '</div>' +
                 '</div>'
         },
-        value: '1949-10-01'
+        range: {
+            start: new Date(1949, 9, 1),
+            end: new Date(1949, 9, 7)
+        }
     });
-    // 等宽日期框
-    $('#widthDatePicker').kendoDatePicker();
 });
 
 // 是否节假日
@@ -269,9 +245,9 @@ var lunarData = {
         '0910 教师节',
         '1001 国庆节',
         '1101 万圣节',
-        '1213 国家公祭',
+        '1213 国家公祭日',
         '1225 圣诞节',
-        '1226 主席诞辰'
+        '1226 毛主席诞辰'
     ],
     lunarFestival: [
         '0101 春节',
