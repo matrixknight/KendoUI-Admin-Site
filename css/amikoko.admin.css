@@ -1363,6 +1363,12 @@ form .searchBtn.row {
 .ml-p1 {
   margin-left: 1%; }
 
+.w-4 {
+  width: 4% !important; }
+
+.w-48 {
+  width: 48% !important; }
+
 .dot-color {
   display: inline-block;
   border: 1px solid;
@@ -1375,3 +1381,5 @@ form .searchBtn.row {
 
 .venus {
   color: #ff96c0; }
+
+/*# sourceMappingURL=amikoko.admin.css.map */
