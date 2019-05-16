@@ -599,7 +599,7 @@ ROOT/·····································�
 
 * [jQuery](https://github.com/jquery/jquery) ( v1.12.4 )
 * [Kendo UI for jQuery 官网](https://www.telerik.com/kendo-jquery-ui) ( v2019.2.514 )
-* [Kendo UI themes](https://github.com/telerik/kendo-themes) ( v3.3.1 )
+* [Kendo UI themes](https://github.com/telerik/kendo-themes) ( v3.6.1 )
 * [Bootstrap](https://github.com/twbs/bootstrap) ( v4.3.1 )
 * [Font Awesome](https://github.com/FortAwesome/Font-Awesome) ( v5.8.2 )
 * [Ant Design Colors](https://ant.design/docs/spec/colors-cn)
