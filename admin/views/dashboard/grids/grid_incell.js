@@ -283,18 +283,10 @@ $(function () {
         placeholder: '树形下拉多选框',
         dataValueField: 'code',
         dataTextField: 'name',
-        valuePrimitive: true,
         loadOnDemand: true,
         filter: 'contains',
         checkboxes: true,
-        autoClose: false,
-        change: function () {
-            var that = this;
-            $(that.element).parent().find('[type=hidden]').remove();
-            $.each(that.value(), function (i, items) {
-                $(that.element).parent().append('<input name="tourism" type="hidden" value="' + items + '">');
-            });
-        }
+        autoClose: false
     });
     // 是否在线
     $('#online').kendoSwitch({

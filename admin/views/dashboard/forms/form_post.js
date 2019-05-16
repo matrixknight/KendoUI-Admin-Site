@@ -263,22 +263,9 @@ $(function () {
         placeholder: '树形下拉多选框',
         dataValueField: 'code',
         dataTextField: 'name',
-        valuePrimitive: true,
         loadOnDemand: true,
         checkboxes: true,
-        autoClose: false,
-        change: function () {
-            var that = this;
-            if (that.value().length > 0) {
-                $(that.element).prop('required', false);
-            } else {
-                $(that.element).prop('required', true);
-            }
-            $(that.element).parent().find('[type=hidden]').remove();
-            $.each(that.value(), function (i, items) {
-                $(that.element).parent().append('<input name="tourism" type="hidden" value="' + items + '">');
-            });
-        }
+        autoClose: false
     });
     // 头像
     $('#photo').kendoUpload({
