@@ -4,6 +4,7 @@ $(function () {
         resizable: false,
         items: [
             { template: '<input class="k-checkbox" id="selectAllFrom" type="checkbox" title="全选"><label class="k-checkbox-label" for="selectAllFrom"></label>' },
+            { type: 'spacer' },
             { template: '<input class="k-textbox w-100" name="keywords" type="text" placeholder="关键字搜索">' }
         ]
     });
@@ -11,6 +12,7 @@ $(function () {
         resizable: false,
         items: [
             { template: '<input class="k-checkbox" id="selectAllTo" type="checkbox" title="全选"><label class="k-checkbox-label" for="selectAllTo"></label>' },
+            { type: 'spacer' },
             { template: '<input class="k-textbox w-100" name="keywords" type="text" placeholder="关键字搜索">' }
         ]
     });

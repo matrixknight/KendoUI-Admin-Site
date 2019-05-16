@@ -453,7 +453,7 @@ $(function () {
                 template: '<select class="w-100" id="filter"></select>'
             },
             {
-                type: 'separator'
+                type: 'spacer'
             },
             {
                 template: '<a class="k-button k-button-icontext k-state-selected" href="javascript:;"><span class="k-icon k-i-add"></span>新增</a>',

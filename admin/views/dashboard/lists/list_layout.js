@@ -308,6 +308,7 @@ $(function () {
     $('#toolbar').kendoToolBar({
         resizable: false,
         items: [
+            { type: 'spacer' },
             { template: '<a class="k-button k-button-icontext orderBtn" href="javascript:;" onclick="order(\'desc\');"><span class="k-icon k-i-sort-asc-sm"></span>升序</a><a class="k-button k-button-icontext orderBtn hide" href="javascript:;" onclick="order(\'asc\');"><span class="k-icon k-i-sort-desc-sm"></span>降序</a>' },
             { template: '<input class="k-textbox w-100" id="search" name="search" type="text" placeholder="搜索...">' },
             { template: '<select class="w-100" id="filter" name="filter"></select>' }

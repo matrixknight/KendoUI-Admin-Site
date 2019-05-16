@@ -3,6 +3,7 @@ $(function () {
     $('#toolbar').kendoToolBar({
         resizable: false,
         items: [
+            { type: 'spacer' },
             { template: '<a class="k-button k-button-icontext theme-m-box" href="javascript:;" onclick="switchView(\'pic\', this);"><span class="k-icon k-i-group"></span>大图</a>' },
             { template: '<a class="k-button k-button-icontext" href="javascript:;" onclick="switchView(\'list\', this)"><span class="k-icon k-i-grid-layout"></span>列表</a>' }
         ]

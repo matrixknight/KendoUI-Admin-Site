@@ -6,7 +6,7 @@ $(function () {
             { template: '<a class="k-button k-button-icontext k-state-selected k-add-button" href="javascript:;"><span class="k-icon k-i-add"></span>新增</a>' },
             { template: '<a class="k-button k-button-icontext theme-m-box k-save-button" href="javascript:;"><span class="k-icon k-i-check"></span>保存变更</a>' },
             { template: '<a class="k-button k-button-icontext k-cancel-button" href="javascript:;"><span class="k-icon k-i-cancel"></span>取消变更</a>' },
-            { type: 'separator' },
+            { type: 'spacer' },
             { template: '<a class="k-button k-button-icontext orderBtn" id="orderBtnAsc" href="javascript:;"><span class="k-icon k-i-sort-asc-sm"></span>升序</a><a class="k-button k-button-icontext orderBtn hide" id="orderBtnDesc" href="javascript:;"><span class="k-icon k-i-sort-desc-sm"></span>降序</a>' },
             { template: '<input class="k-textbox w-100" id="search" name="search" type="text" placeholder="搜索...">' },
             { template: '<select class="w-100" id="filter" name="filter"></select>' }

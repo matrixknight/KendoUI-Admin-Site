@@ -311,6 +311,7 @@ $(function () {
             { template: '<input class="k-checkbox" id="selectAll" type="checkbox" title="全选"><label class="k-checkbox-label" for="selectAll"></label>' },
             { template: '<a class="k-button k-button-icontext k-state-selected k-add-button" href="javascript:;"><span class="k-icon k-i-add"></span>新增</a>' },
             { template: '<a class="k-button k-button-icontext" href="javascript:;" onclick="batchSubmitId(\'json/response.json\')"><span class="k-icon k-i-x"></span>批量删除</a>' },
+            { type: 'spacer' },
             { template: '<a class="k-button k-button-icontext orderBtn" href="javascript:;" onclick="order(\'desc\');"><span class="k-icon k-i-sort-asc-sm"></span>升序</a><a class="k-button k-button-icontext orderBtn hide" href="javascript:;" onclick="order(\'asc\');"><span class="k-icon k-i-sort-desc-sm"></span>降序</a>' },
             { template: '<input class="k-textbox w-100" id="search" name="search" type="text" placeholder="搜索...">' },
             { template: '<select class="w-100" id="filter" name="filter"></select>' }
