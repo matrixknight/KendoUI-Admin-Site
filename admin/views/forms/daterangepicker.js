@@ -231,6 +231,22 @@ var lunarData = {
         '7f07e7f0e47f531b0723b0b6fb0721', '7f0e26665b66a449801e9808297c35', '665f67f0e37f1489801eb072297c35',
         '7ec967f0e37f14998082b0787b06bd', '7f07e7f0e47f531b0723b0b6fb0721', '7f0e27f1487f531b0b0bb0b6fb0722'
     ],
+    lunarFestival: [
+        '0101 春节',
+        '0115 元宵节',
+        '0202 龙头节',
+        '0303 上巳节',
+        '0505 端午节',
+        '0707 七夕节',
+        '0715 中元节',
+        '0815 中秋节',
+        '0909 重阳节',
+        '1001 寒衣节',
+        '1015 下元节',
+        '1208 腊八节',
+        '1223 北方小年',
+        '1224 南方小年'
+    ],
     solarFestival: [
         '0101 元旦',
         '0214 情人节',
@@ -248,22 +264,6 @@ var lunarData = {
         '1213 国家公祭日',
         '1225 圣诞节',
         '1226 毛主席诞辰'
-    ],
-    lunarFestival: [
-        '0101 春节',
-        '0115 元宵节',
-        '0202 龙抬头',
-        '0303 上巳节',
-        '0505 端午节',
-        '0707 七夕节',
-        '0715 中元节',
-        '0815 中秋节',
-        '0909 重阳节',
-        '1001 寒衣节',
-        '1015 下元节',
-        '1208 腊八节',
-        '1223 北小年',
-        '1224 南小年'
     ],
     dayChina: ['日', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'],
     tenDayChina: ['初', '十', '廿', '卅'],
@@ -288,6 +288,8 @@ var lunarData = {
     lunarMonthDays: function (y, m) {
         if (m > 12 || m < 1) {
             return -1;
+        } else if (y === 1899) {
+            return 30;
         }
         return ((this.lunarInfo[y - 1900] & (0x10000 >> m)) ? 30 : 29 );
     },
@@ -392,13 +394,13 @@ var lunarData = {
     },
     getFestival: function (y, m, d, type) {
         var festival;
-        if (type === 'solar') {
-            festival = this.solarFestival;
-        } else if (type === 'lunar') {
+        if (type === 'lunar') {
             festival = this.lunarFestival;
             if (m === 12 && d === this.lunarMonthDays(y, m)) {
                 return '除夕';
             }
+        } else if (type === 'solar') {
+            festival = this.solarFestival;
         }
         for (var i = 0; i < festival.length; i++) {
             if (m === parseInt(festival[i].substr(0, 2)) && d === parseInt(festival[i].substr(2, 2))) {
@@ -409,9 +411,6 @@ var lunarData = {
     },
     solar2lunar: function (y, m, d) {
         if (y < 1900 || y > 2100) {
-            return -1;
-        }
-        if (y === 1900 && m === 1 && d < 31) {
             return -1;
         }
         if (!y) {
@@ -425,7 +424,11 @@ var lunarData = {
         var y = objDate.getFullYear(),
             m = objDate.getMonth() + 1,
             d = objDate.getDate();
-        var offset = (Date.UTC(objDate.getFullYear(), objDate.getMonth(), objDate.getDate()) - Date.UTC(1900, 0, 31)) / 86400000;
+        if (y === 1900 && m === 1 && d < 31) {
+            var offset = (Date.UTC(objDate.getFullYear(), objDate.getMonth(), objDate.getDate()) - Date.UTC(1900, 0, 1)) / 86400000;
+        } else {
+            var offset = (Date.UTC(objDate.getFullYear(), objDate.getMonth(), objDate.getDate()) - Date.UTC(1900, 0, 31)) / 86400000;
+        }
         for (i = 1900; i < 2101 && offset > 0; i++) {
             temp = this.lunarYearDays(i);
             offset -= temp;
@@ -444,7 +447,11 @@ var lunarData = {
         if (nWeek === 0) {
             nWeek = 7;
         }
-        var year = i;
+        if (y === 1900 && m === 1 && d < 31) {
+            var year = 1899;
+        } else {
+            var year = i;
+        }
         var leap = this.leapMonth(i);
         var isLeap = false;
         for (i = 1; i < 13 && offset > 0; i++) {
@@ -472,8 +479,16 @@ var lunarData = {
             offset += temp;
             --i;
         }
-        var month = i;
-        var day = offset + 1;
+        if (y === 1900 && m === 1 && d < 31) {
+            var month = 12;
+        } else {
+            var month = i;
+        }
+        if (y === 1900 && m === 1 && d === 30) {
+            var day = 30;
+        } else {
+            var day = offset + 1;
+        }
         var sm = m - 1;
         var gzY = this.toGanZhiYear(year);
         var firstNode = this.getTerm(y, (m * 2 - 1));
@@ -520,8 +535,8 @@ var lunarData = {
             'isTerm': isTerm,
             'term': Term,
             'isFestival': isFestival,
-            'solarFestival': this.getFestival(y, m, d, 'solar'),
-            'lunarFestival': this.getFestival(year, month, day, 'lunar')
+            'lunarFestival': this.getFestival(year, month, day, 'lunar'),
+            'solarFestival': this.getFestival(y, m, d, 'solar')
         };
     },
     lunar2solar: function (y, m, d, isLeapMonth) {
