@@ -71,20 +71,14 @@ $(function () {
                 }
             }
         },
-        pageSize: 10
+        pageSize: 3
     });
     // 获取数据源生成列表
     $('#listView').kendoListView({
         dataSource: dataSource,
         template: kendo.template($('#listTemplate').html()),
-        altTemplate: kendo.template($('#altTemplate').html())
-    });
-    // 获取数据源并分页
-    $('#pager').kendoPager({
-        dataSource: dataSource,
-        buttonCount: 5,
-        input: true,
-        pageSizes: [5, 10, 15, 20, 25, 30, 50, 100, 'all'],
-        refresh: true
+        altTemplate: kendo.template($('#altTemplate').html()),
+        height: 600,
+        scrollable: 'endless'
     });
 });

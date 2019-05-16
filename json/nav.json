@@ -201,7 +201,7 @@
                         },
                         {
                             "id": "010404",
-                            "text": "<i class='fas fa-genderless'></i>间隔项模版",
+                            "text": "<i class='fas fa-genderless'></i>间隔项模版及滚动翻页",
                             "encoded": false,
                             "cssClass": "links-list_alternate",
                             "url": "javascript:linkTo(\"/dashboard/lists/\", \"list_alternate\");"

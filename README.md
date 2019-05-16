@@ -487,7 +487,7 @@ ROOT/·····································�
         * [全功能排版及自定义编辑](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/lists/list_custom) ✔️
         * [多模块自定义排版](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/lists/list_layout) ✔️
         * [大图列表切换](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/lists/list_switch) ✔️
-        * [间隔项模版](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/lists/list_alternate) ✔️
+        * [间隔项模版及滚动翻页](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/lists/list_alternate) ✔️
     * 分配 <small>[ Assigns ]</small> 💯
         * [表格搜索双击选择](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/assigns/assign_grid) ✔️
         * [树形直接拖放](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/dashboard/assigns/assign_drag) ✔️
