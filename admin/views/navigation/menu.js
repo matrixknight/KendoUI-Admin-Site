@@ -394,26 +394,26 @@ $(function () {
         target: '#contextMenuBox'
     });
     // Ajax 菜单
-    // $('#ajaxMenu').kendoMenu({
-    //     dataSource: {
-    //         transport: {
-    //             read: function (options) {
-    //                 $.fn.ajaxPost({
-    //                     ajaxUrl: menuUrl,
-    //                     succeed: function (res) {
-    //                         options.success(res);
-    //                     },
-    //                     failed: function (res) {
-    //                         options.error(res);
-    //                     }
-    //                 });
-    //             }
-    //         },
-    //         schema: {
-    //             data: 'data'
-    //         }
-    //     }
-    // });
+    $('#ajaxMenu').kendoMenu({
+        dataSource: {
+            transport: {
+                read: function (options) {
+                    $.fn.ajaxPost({
+                        ajaxUrl: menuUrl,
+                        succeed: function (res) {
+                            options.success(res);
+                        },
+                        failed: function (res) {
+                            options.error(res);
+                        }
+                    });
+                }
+            },
+            schema: {
+                data: 'data'
+            }
+        }
+    });
     // 菜单格式
     $('#dataTypeMenu').kendoMenu({
         dataSource: [
