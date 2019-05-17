@@ -463,14 +463,14 @@
                 },
                 {
                     "id": "0503",
-                    "text": "<i class='datePickerIcon'></i>日期框<small>DatePicker</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
+                    "text": "<i class='datePickerIcon'></i>日期框<small>DatePicker</small>",
                     "encoded": false,
                     "cssClass": "links-datepicker",
                     "url": "javascript:linkTo(\"/forms/\", \"datepicker\");"
                 },
                 {
                     "id": "0504",
-                    "text": "<i class='dateRangePickerIcon'></i>日期范围框<small>DateRangePicker</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
+                    "text": "<i class='dateRangePickerIcon'></i>日期范围框<small>DateRangePicker</small>",
                     "encoded": false,
                     "cssClass": "links-daterangepicker",
                     "url": "javascript:linkTo(\"/forms/\", \"daterangepicker\");"
@@ -484,14 +484,14 @@
                 },
                 {
                     "id": "0506",
-                    "text": "<i class='dateTimePickerIcon'></i>时日框<small>DateTimePicker</small><sub class='theme-l'>\uD83D\uDD28</sub>",
+                    "text": "<i class='dateTimePickerIcon'></i>时日框<small>DateTimePicker</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
                     "encoded": false,
                     "cssClass": "links-datetimepicker",
                     "url": "javascript:linkTo(\"/forms/\", \"datetimepicker\");"
                 },
                 {
                     "id": "0507",
-                    "text": "<i class='dateInputIcon'></i>时日掩码框<small>DateInput</small>",
+                    "text": "<i class='dateInputIcon'></i>时日掩码框<small>DateInput</small><sub class='theme-l'>\uD83D\uDD28</sub>",
                     "encoded": false,
                     "cssClass": "links-dateinput",
                     "url": "javascript:linkTo(\"/forms/\", \"dateinput\");"
