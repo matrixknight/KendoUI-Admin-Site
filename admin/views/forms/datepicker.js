@@ -50,9 +50,9 @@ $(function () {
     $('#centuryDatePicker').kendoDatePicker({
         start: 'century',
         depth: 'decade',
-        format: 'yyyy',
+        format: 'yyyy 年',
         footer: '今年：#= kendo.toString(data, "yyyy年") #',
-        value: '1949'
+        value: '1949 年'
     });
     // 掩码日期框
     $('#maskedDatePicker').kendoDatePicker({

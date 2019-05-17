@@ -524,7 +524,7 @@ ROOT/·····································�
     * [数字框 <small>[ NumericTextBox ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/numerictextbox) ✔️
     * [日期框 <small>[ DatePicker ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/datepicker) ✔️
     * [日期范围框 <small>[ DateRangePicker ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/daterangepicker) ✔️
-    * 时间框 <small>[ TimePicker ]</small>
+    * [时间框 <small>[ TimePicker ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/timepicker) ✔️
     * 时日框 <small>[ DateTimePicker ]</small>
     * 时日掩码框 <small>[ DateInput ]</small>
     * 掩码框 <small>[ MaskedTextBox ]</small>
