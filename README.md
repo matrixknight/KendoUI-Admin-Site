@@ -502,6 +502,7 @@ ROOT/·····································�
     * [绘图 <small>[ Drawing ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/drawing) ✔️
     * [单页应用 <small>[ SPA ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/spa) ✔️
     * [PDF导出 <small>[ PDF Export ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/pdf_export) ✔️
+    * PDF查看 <small>[ PDF Viewer ]</small>
     * [触摸事件 <small>[ Touch Events ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/touch_events) ✔️
     * [整合 <small>[ Integration ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/integration) ✔️
 * 布局 <small>[ Layout ]</small> 💯
@@ -514,6 +515,7 @@ ROOT/·····································�
 * 导航 <small>[ Navigation ]</small> 💯
     * [菜单 <small>[ Menu ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/navigation/menu) ✔️
     * [折叠面板 <small>[ PanelBar ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/navigation/panelbar) ✔️
+    * 抽屉 <small>[ Drawer ]</small>
     * [选项卡 <small>[ TabStrip ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/navigation/tabstrip) ✔️
     * [工具栏 <small>[ ToolBar ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/navigation/toolbar) ✔️
     * [树形视图 <small>[ TreeView ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/navigation/treeview) ✔️

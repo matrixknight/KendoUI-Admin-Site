@@ -309,13 +309,20 @@
                 },
                 {
                     "id": "0208",
+                    "text": "<i class='pdfIcon'></i>PDF查看<small>PDF Viewer</small><sub class='theme-l'>\uD83D\uDD54</sub>",
+                    "encoded": false,
+                    "cssClass": "links-pdf_viewer",
+                    "url": "javascript:linkTo(\"/framework/\", \"pdf_viewer\");"
+                },
+                {
+                    "id": "0209",
                     "text": "<i class='mobileAppIcon'></i>触摸事件<small>Touch Events</small>",
                     "encoded": false,
                     "cssClass": "links-touch_events",
                     "url": "javascript:linkTo(\"/framework/\", \"touch_events\");"
                 },
                 {
-                    "id": "0209",
+                    "id": "0210",
                     "text": "<i class='integrationIcon'></i>整合<small>Integration</small>",
                     "encoded": false,
                     "cssClass": "links-integration",
@@ -393,34 +400,41 @@
                 },
                 {
                     "id": "0403",
+                    "text": "<i class='responsivePanelIcon'></i>抽屉<small>Drawer</small><sub class='theme-l'>\uD83D\uDD54</sub>",
+                    "encoded": false,
+                    "cssClass": "links-drawer",
+                    "url": "javascript:linkTo(\"/navigation/\", \"drawer\");"
+                },
+                {
+                    "id": "0404",
                     "text": "<i class='tabStripIcon'></i>选项卡<small>TabStrip</small>",
                     "encoded": false,
                     "cssClass": "links-tabstrip",
                     "url": "javascript:linkTo(\"/navigation/\", \"tabstrip\");"
                 },
                 {
-                    "id": "0404",
+                    "id": "0405",
                     "text": "<i class='toolbarIcon'></i>工具栏<small>ToolBar</small>",
                     "encoded": false,
                     "cssClass": "links-toolbar",
                     "url": "javascript:linkTo(\"/navigation/\", \"toolbar\");"
                 },
                 {
-                    "id": "0405",
+                    "id": "0406",
                     "text": "<i class='treeViewIcon'></i>树形视图<small>TreeView</small>",
                     "encoded": false,
                     "cssClass": "links-treeview",
                     "url": "javascript:linkTo(\"/navigation/\", \"treeview\");"
                 },
                 {
-                    "id": "0406",
+                    "id": "0407",
                     "text": "<i class='buttonIcon'></i>按钮<small>Button</small>",
                     "encoded": false,
                     "cssClass": "links-button",
                     "url": "javascript:linkTo(\"/navigation/\", \"button\");"
                 },
                 {
-                    "id": "0407",
+                    "id": "0408",
                     "text": "<i class='mobileButtonGroupIcon'></i>按钮组<small>ButtonGroup</small>",
                     "encoded": false,
                     "cssClass": "links-buttongroup",
