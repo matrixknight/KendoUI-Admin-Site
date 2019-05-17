@@ -491,14 +491,14 @@
                 },
                 {
                     "id": "0507",
-                    "text": "<i class='dateInputIcon'></i>时日掩码框<small>DateInput</small><sub class='theme-l'>\uD83D\uDD28</sub>",
+                    "text": "<i class='dateInputIcon'></i>时日掩码框<small>DateInput</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
                     "encoded": false,
                     "cssClass": "links-dateinput",
                     "url": "javascript:linkTo(\"/forms/\", \"dateinput\");"
                 },
                 {
                     "id": "0508",
-                    "text": "<i class='maskedtextboxIcon'></i>掩码框<small>MaskedTextBox</small>",
+                    "text": "<i class='maskedtextboxIcon'></i>掩码框<small>MaskedTextBox</small><sub class='theme-l'>\uD83D\uDD28</sub>",
                     "encoded": false,
                     "cssClass": "links-maskedtextbox",
                     "url": "javascript:linkTo(\"/forms/\", \"maskedtextbox\");"

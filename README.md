@@ -528,7 +528,7 @@ ROOT/·····································�
     * [日期范围框 <small>[ DateRangePicker ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/daterangepicker) ✔️
     * [时间框 <small>[ TimePicker ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/timepicker) ✔️
     * [时日框 <small>[ DateTimePicker ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/datetimepicker) ✔️
-    * 时日掩码框 <small>[ DateInput ]</small>
+    * [时日掩码框 <small>[ DateInput ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/dateinput) ✔️
     * 掩码框 <small>[ MaskedTextBox ]</small>
     * 自动完成框 <small>[ AutoComplete ]</small>
     * 单选下拉框 <small>[ DropDownList ]</small>
