@@ -400,7 +400,7 @@
                 },
                 {
                     "id": "0403",
-                    "text": "<i class='responsivePanelIcon'></i>抽屉<small>Drawer</small><sub class='theme-l'>\uD83D\uDD28</sub>",
+                    "text": "<i class='responsivePanelIcon'></i>抽屉<small>Drawer</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
                     "encoded": false,
                     "cssClass": "links-drawer",
                     "url": "javascript:linkTo(\"/navigation/\", \"drawer\");"
@@ -505,7 +505,7 @@
                 },
                 {
                     "id": "0509",
-                    "text": "<i class='autoCompleteIcon'></i>自动完成框<small>AutoComplete</small>",
+                    "text": "<i class='autoCompleteIcon'></i>自动完成框<small>AutoComplete</small><sub class='theme-l'>\uD83D\uDD28</sub>",
                     "encoded": false,
                     "cssClass": "links-autocomplete",
                     "url": "javascript:linkTo(\"/forms/\", \"autocomplete\");"
