@@ -502,7 +502,7 @@ ROOT/·····································�
     * [绘图 <small>[ Drawing ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/drawing) ✔️
     * [单页应用 <small>[ SPA ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/spa) ✔️
     * [PDF导出 <small>[ PDF Export ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/pdf_export) ✔️
-    * PDF查看 <small>[ PDF Viewer ]</small>
+    * [PDF查看 <small>[ PDF Viewer ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/pdf_viewer) ✔️
     * [触摸事件 <small>[ Touch Events ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/touch_events) ✔️
     * [整合 <small>[ Integration ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/framework/integration) ✔️
 * 布局 <small>[ Layout ]</small> 💯
