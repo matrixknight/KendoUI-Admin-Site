@@ -1,4 +1,4 @@
-$.getScript(path + 'js/jszip.min.js');
+$.getScript('js/jszip.min.js');
 $(function () {
     // 年龄
     numericRange($('#ageStart'), $('#ageEnd'), 'n0', 0, 1, 1, 120);

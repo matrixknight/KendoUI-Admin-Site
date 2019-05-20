@@ -184,7 +184,7 @@ GitHub Demo: [https://ikki2000.github.io/KendoUI-Admin-Site/](https://ikki2000.g
     ```
 * 只应用于当前子页面模块的 JS 插件通过模块的 JS 文件引入
     ```js
-    $.getScript(path + 'js/plugin.min.js');
+    $.getScript('js/plugin.min.js');
     ```
 * 顶部菜单本地 Mock 数据位于 `json/menu.json` 其数据结构同左侧导航
 * 左侧导航本地 Mock 数据位于 `json/nav.json` 其中 `text` 键值说明如下：

@@ -1,15 +1,15 @@
-$.getScript(path + 'js/global/kendo.zh-CHS.js');
-$.getScript(path + 'js/global/kendo.zh-CHT.js');
-$.getScript(path + 'js/global/kendo.en-US.js');
-$.getScript(path + 'js/global/kendo.ru-RU.js');
-$.getScript(path + 'js/global/kendo.fr-FR.js');
-$.getScript(path + 'js/global/kendo.de-DE.js');
-$.getScript(path + 'js/global/kendo.it-IT.js');
-$.getScript(path + 'js/global/kendo.pt-PT.js');
-$.getScript(path + 'js/global/kendo.es-ES.js');
-$.getScript(path + 'js/global/kendo.ar-SA.js');
-$.getScript(path + 'js/global/kendo.ja-JP.js');
-$.getScript(path + 'js/global/kendo.ko-KR.js');
+$.getScript('js/global/kendo.zh-CHS.js');
+$.getScript('js/global/kendo.zh-CHT.js');
+$.getScript('js/global/kendo.en-US.js');
+$.getScript('js/global/kendo.ru-RU.js');
+$.getScript('js/global/kendo.fr-FR.js');
+$.getScript('js/global/kendo.de-DE.js');
+$.getScript('js/global/kendo.it-IT.js');
+$.getScript('js/global/kendo.pt-PT.js');
+$.getScript('js/global/kendo.es-ES.js');
+$.getScript('js/global/kendo.ar-SA.js');
+$.getScript('js/global/kendo.ja-JP.js');
+$.getScript('js/global/kendo.ko-KR.js');
 $(function () {
     // 选择语言
     $('#langList').kendoDropDownList({

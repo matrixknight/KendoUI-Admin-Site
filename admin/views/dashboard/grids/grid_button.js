@@ -1,4 +1,4 @@
-$.getScript(path + 'js/jszip.min.js');
+$.getScript('js/jszip.min.js');
 $(function () {
     // 获取数据源生成表格
     $('#grid').kendoGrid({

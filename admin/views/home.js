@@ -1,4 +1,4 @@
-$.getScript(path + 'js/countUp.min.js');
+$.getScript('js/countUp.min.js');
 $(function () {
     // 首页统计数据获取
     $.fn.ajaxPost({

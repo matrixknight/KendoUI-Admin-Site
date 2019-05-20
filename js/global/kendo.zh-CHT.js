@@ -1515,7 +1515,7 @@
                 "year": "年",
                 "month": "月",
                 "day": "日",
-                "weekday": "周",
+                "weekday": "星期",
                 "hour": "時",
                 "minute": "分",
                 "second": "秒",
