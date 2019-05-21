@@ -1527,9 +1527,13 @@
     if (kendo.ui.DropDownTree) {
         kendo.ui.DropDownTree.prototype.options.messages =
             $.extend(true, kendo.ui.DropDownTree.prototype.options.messages, {
-                clear: "清空",
-                deleteTag: "刪除",
-                singleTag: "項已選擇"
+                "clear": "清空",
+                "deleteTag": "刪除",
+                "singleTag": "項已選擇"
+            });
+        kendo.ui.DropDownTree.prototype.options =
+            $.extend(true, kendo.ui.DropDownTree.prototype.options,{
+                "noDataTemplate": "無相關資料"
             });
     }
 
@@ -1537,7 +1541,7 @@
     if (kendo.ui.Chat) {
         kendo.ui.Chat.prototype.options.messages =
             $.extend(true, kendo.ui.Chat.prototype.options.messages, {
-                placeholder: "請輸入..."
+                "placeholder": "請輸入..."
             });
     }
 
@@ -1547,6 +1551,62 @@
             $.extend(true, kendo.ui.Switch.prototype.options.messages,{
                 "checked": "開",
                 "unchecked": "關"
+            });
+    }
+
+    /* AutoComplete messages */
+    if (kendo.ui.AutoComplete) {
+        kendo.ui.AutoComplete.prototype.options.messages =
+            $.extend(true, kendo.ui.AutoComplete.prototype.options.messages,{
+                "clear": "清空"
+            });
+        kendo.ui.AutoComplete.prototype.options =
+            $.extend(true, kendo.ui.AutoComplete.prototype.options,{
+                "noDataTemplate": "無相關資料"
+            });
+    }
+
+    /* DropDownList messages */
+    if (kendo.ui.DropDownList) {
+        kendo.ui.DropDownList.prototype.options =
+            $.extend(true, kendo.ui.DropDownList.prototype.options,{
+                "noDataTemplate": "無相關資料"
+            });
+    }
+
+    /* ComboBox messages */
+    if (kendo.ui.ComboBox) {
+        kendo.ui.ComboBox.prototype.options.messages =
+            $.extend(true, kendo.ui.ComboBox.prototype.options.messages,{
+                "clear": "清空"
+            });
+        kendo.ui.ComboBox.prototype.options =
+            $.extend(true, kendo.ui.ComboBox.prototype.options,{
+                "noDataTemplate": "無相關資料"
+            });
+    }
+
+    /* MultiColumnComboBox messages */
+    if (kendo.ui.MultiColumnComboBox) {
+        kendo.ui.MultiColumnComboBox.prototype.options.messages =
+            $.extend(true, kendo.ui.MultiColumnComboBox.prototype.options.messages,{
+                "clear": "清空"
+            });
+        kendo.ui.MultiColumnComboBox.prototype.options =
+            $.extend(true, kendo.ui.MultiColumnComboBox.prototype.options,{
+                "noDataTemplate": "無相關資料"
+            });
+    }
+
+    /* MultiSelect messages */
+    if (kendo.ui.MultiSelect) {
+        kendo.ui.MultiSelect.prototype.options.messages =
+            $.extend(true, kendo.ui.MultiSelect.prototype.options.messages,{
+                "clear": "清空"
+            });
+        kendo.ui.MultiSelect.prototype.options =
+            $.extend(true, kendo.ui.MultiSelect.prototype.options,{
+                "noDataTemplate": "無相關資料"
             });
     }
 
