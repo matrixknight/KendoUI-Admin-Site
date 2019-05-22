@@ -1073,7 +1073,8 @@ form .searchBtn.row {
   display: none; }
 
 /* 下拉框 */
-.k-animation-container .k-list-container .k-list-optionlabel {
+.k-animation-container .k-list-container .k-list-optionlabel,
+.k-animation-container .k-list-container .k-group-header {
   padding: 0 8px;
   height: 20px; }
 
