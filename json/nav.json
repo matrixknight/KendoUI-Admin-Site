@@ -477,42 +477,42 @@
                 },
                 {
                     "id": "0505",
-                    "text": "<i class='timePickerIcon'></i>时间框<small>TimePicker</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
+                    "text": "<i class='timePickerIcon'></i>时间框<small>TimePicker</small>",
                     "encoded": false,
                     "cssClass": "links-timepicker",
                     "url": "javascript:linkTo(\"/forms/\", \"timepicker\");"
                 },
                 {
                     "id": "0506",
-                    "text": "<i class='dateTimePickerIcon'></i>时日框<small>DateTimePicker</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
+                    "text": "<i class='dateTimePickerIcon'></i>时日框<small>DateTimePicker</small>",
                     "encoded": false,
                     "cssClass": "links-datetimepicker",
                     "url": "javascript:linkTo(\"/forms/\", \"datetimepicker\");"
                 },
                 {
                     "id": "0507",
-                    "text": "<i class='dateInputIcon'></i>时日掩码框<small>DateInput</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
+                    "text": "<i class='dateInputIcon'></i>时日掩码框<small>DateInput</small>",
                     "encoded": false,
                     "cssClass": "links-dateinput",
                     "url": "javascript:linkTo(\"/forms/\", \"dateinput\");"
                 },
                 {
                     "id": "0508",
-                    "text": "<i class='maskedtextboxIcon'></i>掩码框<small>MaskedTextBox</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
+                    "text": "<i class='maskedtextboxIcon'></i>掩码框<small>MaskedTextBox</small>",
                     "encoded": false,
                     "cssClass": "links-maskedtextbox",
                     "url": "javascript:linkTo(\"/forms/\", \"maskedtextbox\");"
                 },
                 {
                     "id": "0509",
-                    "text": "<i class='autoCompleteIcon'></i>自动完成框<small>AutoComplete</small><sub class='theme-l'>\uD83D\uDD28</sub>",
+                    "text": "<i class='autoCompleteIcon'></i>自动完成框<small>AutoComplete</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
                     "encoded": false,
                     "cssClass": "links-autocomplete",
                     "url": "javascript:linkTo(\"/forms/\", \"autocomplete\");"
                 },
                 {
                     "id": "0510",
-                    "text": "<i class='dropDownListIcon'></i>单选下拉框<small>DropDownList</small>",
+                    "text": "<i class='dropDownListIcon'></i>单选下拉框<small>DropDownList</small><sub class='theme-l'>\uD83D\uDD28</sub>",
                     "encoded": false,
                     "cssClass": "links-dropdownlist",
                     "url": "javascript:linkTo(\"/forms/\", \"dropdownlist\");"

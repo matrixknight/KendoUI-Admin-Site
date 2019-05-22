@@ -530,7 +530,7 @@ ROOT/·····································�
     * [时日框 <small>[ DateTimePicker ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/datetimepicker) ✔️
     * [时日掩码框 <small>[ DateInput ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/dateinput) ✔️
     * [掩码框 <small>[ MaskedTextBox ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/maskedtextbox) ✔️
-    * 自动完成框 <small>[ AutoComplete ]</small>
+    * [自动完成框 <small>[ AutoComplete ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/autocomplete) ✔️
     * 单选下拉框 <small>[ DropDownList ]</small>
     * 输入下拉框 <small>[ ComboBox ]</small>
     * 表格下拉框 <small>[ MultiColumnComboBox ]</small>
