@@ -540,14 +540,14 @@
                 },
                 {
                     "id": "0514",
-                    "text": "<i class='dropDownTreeIcon'></i>树形下拉框<small>DropDownTree</small><sub class='theme-l'>\uD83D\uDD28</sub>",
+                    "text": "<i class='dropDownTreeIcon'></i>树形下拉框<small>DropDownTree</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
                     "encoded": false,
                     "cssClass": "links-dropdowntree",
                     "url": "javascript:linkTo(\"/forms/\", \"dropdowntree\");"
                 },
                 {
                     "id": "0515",
-                    "text": "<i class='colorPickerIcon'></i>颜色框<small>ColorPicker</small>",
+                    "text": "<i class='colorPickerIcon'></i>颜色框<small>ColorPicker</small><sub class='theme-l'>\uD83D\uDD28</sub>",
                     "encoded": false,
                     "cssClass": "links-colorpicker",
                     "url": "javascript:linkTo(\"/forms/\", \"colorpicker\");"
