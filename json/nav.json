@@ -309,7 +309,7 @@
                 },
                 {
                     "id": "0208",
-                    "text": "<i class='pdfIcon'></i>PDF查看<small>PDF Viewer</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
+                    "text": "<i class='pdfIcon'></i>PDF查看<small>PDF Viewer</small>",
                     "encoded": false,
                     "cssClass": "links-pdf_viewer",
                     "url": "javascript:linkTo(\"/framework/\", \"pdf_viewer\");"
@@ -400,7 +400,7 @@
                 },
                 {
                     "id": "0403",
-                    "text": "<i class='responsivePanelIcon'></i>抽屉<small>Drawer</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
+                    "text": "<i class='responsivePanelIcon'></i>抽屉<small>Drawer</small>",
                     "encoded": false,
                     "cssClass": "links-drawer",
                     "url": "javascript:linkTo(\"/navigation/\", \"drawer\");"
@@ -512,14 +512,14 @@
                 },
                 {
                     "id": "0510",
-                    "text": "<i class='dropDownListIcon'></i>单选下拉框<small>DropDownList</small><sub class='theme-l'>\uD83D\uDD28</sub>",
+                    "text": "<i class='dropDownListIcon'></i>单选下拉框<small>DropDownList</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
                     "encoded": false,
                     "cssClass": "links-dropdownlist",
                     "url": "javascript:linkTo(\"/forms/\", \"dropdownlist\");"
                 },
                 {
                     "id": "0511",
-                    "text": "<i class='comboBoxIcon'></i>输入下拉框<small>ComboBox</small>",
+                    "text": "<i class='comboBoxIcon'></i>输入下拉框<small>ComboBox</small><sub class='theme-l'>\uD83D\uDD28</sub>",
                     "encoded": false,
                     "cssClass": "links-combobox",
                     "url": "javascript:linkTo(\"/forms/\", \"combobox\");"
