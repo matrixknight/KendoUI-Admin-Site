@@ -526,14 +526,14 @@
                 },
                 {
                     "id": "0512",
-                    "text": "<i class='multiColumnComboBoxIcon'></i>表格下拉框<small>MultiColumnComboBox</small><sub class='theme-l'>\uD83D\uDD28</sub>",
+                    "text": "<i class='multiColumnComboBoxIcon'></i>表格下拉框<small>MultiColumnComboBox</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
                     "encoded": false,
                     "cssClass": "links-multicolumncombobox",
                     "url": "javascript:linkTo(\"/forms/\", \"multicolumncombobox\");"
                 },
                 {
                     "id": "0513",
-                    "text": "<i class='multiselectIcon'></i>多选下拉框<small>MultiSelect</small>",
+                    "text": "<i class='multiselectIcon'></i>多选下拉框<small>MultiSelect</small><sub class='theme-l'>\uD83D\uDD28</sub>",
                     "encoded": false,
                     "cssClass": "links-multiselect",
                     "url": "javascript:linkTo(\"/forms/\", \"multiselect\");"
