@@ -246,6 +246,7 @@ $(function () {
             }
         },
         dataTextField: 'name',
+        filter: 'contains',
         noDataTemplate: '<p>无相关数据</p><p>是否新增<strong class="theme-m font-weight-bold mx-1">#: instance.element.val() #</strong>？</p><button class="k-button theme-m-bg border-0 rounded" type="button" onclick="addNewItem(\'#: instance.element[0].id #\', \'#: instance.element.val() #\');">新增此项</button>'
     });
     // 自定义分隔符自动完成框
