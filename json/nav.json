@@ -533,14 +533,14 @@
                 },
                 {
                     "id": "0513",
-                    "text": "<i class='multiselectIcon'></i>多选下拉框<small>MultiSelect</small><sub class='theme-l'>\uD83D\uDD28</sub>",
+                    "text": "<i class='multiselectIcon'></i>多选下拉框<small>MultiSelect</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
                     "encoded": false,
                     "cssClass": "links-multiselect",
                     "url": "javascript:linkTo(\"/forms/\", \"multiselect\");"
                 },
                 {
                     "id": "0514",
-                    "text": "<i class='dropDownTreeIcon'></i>树形下拉框<small>DropDownTree</small>",
+                    "text": "<i class='dropDownTreeIcon'></i>树形下拉框<small>DropDownTree</small><sub class='theme-l'>\uD83D\uDD28</sub>",
                     "encoded": false,
                     "cssClass": "links-dropdowntree",
                     "url": "javascript:linkTo(\"/forms/\", \"dropdowntree\");"
