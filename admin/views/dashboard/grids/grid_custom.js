@@ -220,7 +220,7 @@ $(function () {
         min: -10,
         max: 10,
         smallStep: 2,
-        largeStep: 1,
+        largeStep: 0,
         tooltip: {
             template:
                 '# if (value === 10) { #' +
@@ -1107,7 +1107,7 @@ $(function () {
                 min: -10,
                 max: 10,
                 smallStep: 2,
-                largeStep: 1,
+                largeStep: 0,
                 tooltip: {
                     template:
                         '# if (value === 10) { #' +
