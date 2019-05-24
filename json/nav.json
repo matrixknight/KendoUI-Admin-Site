@@ -561,34 +561,27 @@
                 },
                 {
                     "id": "0517",
-                    "text": "<i class='progressBarIcon'></i>进度框<small>ProgressBar</small><sub class='theme-l'>\uD83D\uDD28</sub>",
-                    "encoded": false,
-                    "cssClass": "links-progressbar",
-                    "url": "javascript:linkTo(\"/forms/\", \"progressbar\");"
-                },
-                {
-                    "id": "0518",
-                    "text": "<i class='listBoxIcon'></i>穿梭框<small>ListBox</small>",
+                    "text": "<i class='listBoxIcon'></i>穿梭框<small>ListBox</small><sub class='theme-l'>\uD83D\uDD28</sub>",
                     "encoded": false,
                     "cssClass": "links-listbox",
                     "url": "javascript:linkTo(\"/forms/\", \"listbox\");"
                 },
                 {
-                    "id": "0519",
+                    "id": "0518",
                     "text": "<i class='editorIcon'></i>富文本框<small>Editor</small>",
                     "encoded": false,
                     "cssClass": "links-editor",
                     "url": "javascript:linkTo(\"/forms/\", \"editor\");"
                 },
                 {
-                    "id": "0520",
+                    "id": "0519",
                     "text": "<i class='uploadIcon'></i>上传框<small>Upload</small>",
                     "encoded": false,
                     "cssClass": "links-upload",
                     "url": "javascript:linkTo(\"/forms/\", \"upload\");"
                 },
                 {
-                    "id": "0521",
+                    "id": "0520",
                     "text": "<i class='validatorIcon'></i>验证<small>Validator</small>",
                     "encoded": false,
                     "cssClass": "links-validator",
@@ -729,20 +722,27 @@
                 },
                 {
                     "id": "1003",
+                    "text": "<i class='progressBarIcon'></i>进度条<small>ProgressBar</small>",
+                    "encoded": false,
+                    "cssClass": "links-progressbar",
+                    "url": "javascript:linkTo(\"/interactivity/\", \"progressbar\");"
+                },
+                {
+                    "id": "1004",
                     "text": "<i class='stylingIcon'></i>样式<small>Styling</small>",
                     "encoded": false,
                     "cssClass": "links-styling",
                     "url": "javascript:linkTo(\"/interactivity/\", \"styling\");"
                 },
                 {
-                    "id": "1004",
+                    "id": "1005",
                     "text": "<i class='effectsIcon'></i>特效<small>Effects</small>",
                     "encoded": false,
                     "cssClass": "links-effects",
                     "url": "javascript:linkTo(\"/interactivity/\", \"effects\");"
                 },
                 {
-                    "id": "1005",
+                    "id": "1006",
                     "text": "<i class='stylingIcon'></i>波纹效果<small>Ripple Container</small>",
                     "encoded": false,
                     "cssClass": "links-ripple_container",

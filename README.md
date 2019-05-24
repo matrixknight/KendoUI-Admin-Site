@@ -538,7 +538,6 @@ ROOT/·····································�
     * [树形下拉框 <small>[ DropDownTree ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/dropdowntree) ✔️
     * [颜色框 <small>[ ColorPicker ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/colorpicker) ✔️
     * [滑块框 <small>[ Slider ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/slider) ✔️
-    * 进度框 <small>[ ProgressBar ]</small>
     * 穿梭框 <small>[ ListBox ]</small>
     * 富文本框 <small>[ Editor ]</small>
     * 上传框 <small>[ Upload ]</small>
@@ -562,6 +561,7 @@ ROOT/·····································�
 * 交互 <small>[ Interactivity ]</small>
     * 拖放 <small>[ Drag and Drop ]</small>
     * 拖放排序 <small>[ Sortable ]</small>
+    * 进度条 <small>[ ProgressBar ]</small>
     * 样式 <small>[ Styling ]</small>
     * 特效 <small>[ Effects ]</small>
     * 波纹效果 <small>[ Ripple Container ]</small>
