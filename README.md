@@ -536,7 +536,7 @@ ROOT/·····································�
     * [表格下拉框 <small>[ MultiColumnComboBox ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/multicolumncombobox) ✔️
     * [多选下拉框 <small>[ MultiSelect ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/multiselect) ✔️
     * [树形下拉框 <small>[ DropDownTree ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/dropdowntree) ✔️
-    * 颜色框 <small>[ ColorPicker ]</small>
+    * [颜色框 <small>[ ColorPicker ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/colorpicker) ✔️
     * 滑块框 <small>[ Slider ]</small>
     * 进度框 <small>[ ProgressBar ]</small>
     * 穿梭框 <small>[ ListBox ]</small>
