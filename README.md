@@ -537,7 +537,7 @@ ROOT/·····································�
     * [多选下拉框 <small>[ MultiSelect ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/multiselect) ✔️
     * [树形下拉框 <small>[ DropDownTree ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/dropdowntree) ✔️
     * [颜色框 <small>[ ColorPicker ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/colorpicker) ✔️
-    * 滑块框 <small>[ Slider ]</small>
+    * [滑块框 <small>[ Slider ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/slider) ✔️
     * 进度框 <small>[ ProgressBar ]</small>
     * 穿梭框 <small>[ ListBox ]</small>
     * 富文本框 <small>[ Editor ]</small>

@@ -554,14 +554,14 @@
                 },
                 {
                     "id": "0516",
-                    "text": "<i class='sliderIcon'></i>滑块框<small>Slider</small><sub class='theme-l'>\uD83D\uDD28</sub>",
+                    "text": "<i class='sliderIcon'></i>滑块框<small>Slider</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
                     "encoded": false,
                     "cssClass": "links-slider",
                     "url": "javascript:linkTo(\"/forms/\", \"slider\");"
                 },
                 {
                     "id": "0517",
-                    "text": "<i class='progressBarIcon'></i>进度框<small>ProgressBar</small>",
+                    "text": "<i class='progressBarIcon'></i>进度框<small>ProgressBar</small><sub class='theme-l'>\uD83D\uDD28</sub>",
                     "encoded": false,
                     "cssClass": "links-progressbar",
                     "url": "javascript:linkTo(\"/forms/\", \"progressbar\");"
