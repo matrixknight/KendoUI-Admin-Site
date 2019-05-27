@@ -1399,6 +1399,37 @@ form {
     }
 }
 
+/* 穿梭框 */
+.k-listbox {
+    height: 258px;
+    &.k-listbox-toolbar-right {
+        .k-listbox-toolbar {
+            margin-left: 4px;
+        }
+    }
+    &.k-listbox-toolbar-left {
+        .k-listbox-toolbar {
+            margin-right: 4px;
+        }
+    }
+    &.k-listbox-toolbar-top {
+        .k-listbox-toolbar {
+            margin-bottom: 4px;
+        }
+        .k-list-scroller {
+            min-height: 225px;
+        }
+    }
+    &.k-listbox-toolbar-bottom {
+        .k-listbox-toolbar {
+            margin-top: 4px;
+        }
+        .k-list-scroller {
+            min-height: 225px;
+        }
+    }
+}
+
 /* 高级搜索 */
 .adv-search-btn {
     position: relative;

@@ -1134,6 +1134,22 @@ form .searchBtn.row {
 .k-switch[dir="rtl"].k-switch-off .k-switch-handle {
   left: calc(100% - 2em + 1px); }
 
+/* 穿梭框 */
+.k-listbox {
+  height: 258px; }
+  .k-listbox.k-listbox-toolbar-right .k-listbox-toolbar {
+    margin-left: 4px; }
+  .k-listbox.k-listbox-toolbar-left .k-listbox-toolbar {
+    margin-right: 4px; }
+  .k-listbox.k-listbox-toolbar-top .k-listbox-toolbar {
+    margin-bottom: 4px; }
+  .k-listbox.k-listbox-toolbar-top .k-list-scroller {
+    min-height: 225px; }
+  .k-listbox.k-listbox-toolbar-bottom .k-listbox-toolbar {
+    margin-top: 4px; }
+  .k-listbox.k-listbox-toolbar-bottom .k-list-scroller {
+    min-height: 225px; }
+
 /* 高级搜索 */
 .adv-search-btn {
   position: relative;
