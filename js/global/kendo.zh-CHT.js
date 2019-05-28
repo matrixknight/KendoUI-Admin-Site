@@ -330,7 +330,7 @@
                 "unlink": "刪除連結",
                 "insertImage": "插入圖片",
                 "insertFile": "插入文件",
-                "insertHtml": "插入HTML",
+                "insertHtml": "插入代碼塊",
                 "viewHtml": "原始程式碼編輯",
                 "fontName": "請選擇字體",
                 "fontNameInherit": "（預設字體）",
@@ -357,7 +357,8 @@
                 "imageWidth": "圖片寬度（單位px）",
                 "imageHeight": "圖片高度（單位px）",
                 "fileWebAddress": "檔連結位址",
-                "fileTitle": "文件標題",
+                "fileText": "檔顯示文字",
+                "fileTitle": "檔懸停文字",
                 "linkWebAddress": "連結位址",
                 "linkText": "連結文字",
                 "linkToolTip": "連結提示",
@@ -415,6 +416,24 @@
                 "selectAllCells": "選擇所有儲存格",
                 "exportAs": "匯出",
                 "import": "導入"
+            });
+    }
+
+    /* ImageBrowser messages */
+    if (kendo.ui.ImageBrowser) {
+        kendo.ui.ImageBrowser.prototype.options.messages =
+            $.extend(true, kendo.ui.ImageBrowser.prototype.options.messages,{
+                "uploadFile": "上傳圖片",
+                "orderBy": "排序方式",
+                "orderByName": "按名稱排序",
+                "orderBySize": "按大小排序",
+                "directoryNotFound": "資料夾未找到",
+                "emptyFolder": "資料夾為空",
+                "deleteFile": "你確定要刪除【{0}】這張圖片嗎？",
+                "invalidFileType": "你上傳的圖片格式 {0} 是無效的，支援的圖片類型為：{1}",
+                "overwriteFile": "當前資料夾已存在檔案名為【{0}】的圖片，是否覆蓋？",
+                "dropFilesHere": "將圖片拖拽到此處上傳",
+                "search": "搜索"
             });
     }
 

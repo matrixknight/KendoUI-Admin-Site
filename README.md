@@ -539,7 +539,7 @@ ROOT/·····································�
     * [颜色框 <small>[ ColorPicker ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/colorpicker) ✔️
     * [滑块框 <small>[ Slider ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/slider) ✔️
     * [穿梭框 <small>[ ListBox ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/listbox) ✔️
-    * 富文本框 <small>[ Editor ]</small>
+    * [富文本框 <small>[ Editor ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/editor) ✔️
     * 上传框 <small>[ Upload ]</small>
     * 验证 <small>[ Validator ]</small>
 * 数据 <small>[ Data ]</small>

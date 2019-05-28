@@ -204,7 +204,7 @@
                 "unlink": "删除链接",
                 "insertImage": "插入图片",
                 "insertFile": "插入文件",
-                "insertHtml": "插入HTML",
+                "insertHtml": "插入代码块",
                 "viewHtml": "源代码编辑",
                 "fontName": "请选择字体",
                 "fontNameInherit": "（默认字体）",
@@ -231,7 +231,8 @@
                 "imageWidth": "图片宽度（单位px）",
                 "imageHeight": "图片高度（单位px）",
                 "fileWebAddress": "文件链接地址",
-                "fileTitle": "文件标题",
+                "fileText": "文件显示文字",
+                "fileTitle": "文件悬停文字",
                 "linkWebAddress": "链接地址",
                 "linkText": "链接文字",
                 "linkToolTip": "链接提示",
@@ -289,6 +290,24 @@
                 "selectAllCells": "选择所有单元格",
                 "exportAs": "导出",
                 "import": "导入"
+            });
+    }
+
+    /* ImageBrowser messages */
+    if (kendo.ui.ImageBrowser) {
+        kendo.ui.ImageBrowser.prototype.options.messages =
+            $.extend(true, kendo.ui.ImageBrowser.prototype.options.messages,{
+                "uploadFile": "上传图片",
+                "orderBy": "排序方式",
+                "orderByName": "按名称排序",
+                "orderBySize": "按大小排序",
+                "directoryNotFound": "文件夹未找到",
+                "emptyFolder": "文件夹为空",
+                "deleteFile": "你确定要删除【{0}】这张图片吗？",
+                "invalidFileType": "你上传的图片格式 {0} 是无效的，支持的图片类型为：{1}",
+                "overwriteFile": "当前文件夹已存在文件名为【{0}】的图片，是否覆盖？",
+                "dropFilesHere": "将图片拖拽到此处上传",
+                "search": "搜索"
             });
     }
 

@@ -568,14 +568,14 @@
                 },
                 {
                     "id": "0518",
-                    "text": "<i class='editorIcon'></i>富文本框<small>Editor</small><sub class='theme-l'>\uD83D\uDD28</sub>",
+                    "text": "<i class='editorIcon'></i>富文本框<small>Editor</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
                     "encoded": false,
                     "cssClass": "links-editor",
                     "url": "javascript:linkTo(\"/forms/\", \"editor\");"
                 },
                 {
                     "id": "0519",
-                    "text": "<i class='uploadIcon'></i>上传框<small>Upload</small>",
+                    "text": "<i class='uploadIcon'></i>上传框<small>Upload</small><sub class='theme-l'>\uD83D\uDD28</sub>",
                     "encoded": false,
                     "cssClass": "links-upload",
                     "url": "javascript:linkTo(\"/forms/\", \"upload\");"
