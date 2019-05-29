@@ -547,14 +547,14 @@
                 },
                 {
                     "id": "0515",
-                    "text": "<i class='colorPickerIcon'></i>颜色框<small>ColorPicker</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
+                    "text": "<i class='colorPickerIcon'></i>颜色框<small>ColorPicker</small>",
                     "encoded": false,
                     "cssClass": "links-colorpicker",
                     "url": "javascript:linkTo(\"/forms/\", \"colorpicker\");"
                 },
                 {
                     "id": "0516",
-                    "text": "<i class='sliderIcon'></i>滑块框<small>Slider</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
+                    "text": "<i class='sliderIcon'></i>滑块框<small>Slider</small>",
                     "encoded": false,
                     "cssClass": "links-slider",
                     "url": "javascript:linkTo(\"/forms/\", \"slider\");"
@@ -575,14 +575,14 @@
                 },
                 {
                     "id": "0519",
-                    "text": "<i class='uploadIcon'></i>上传框<small>Upload</small><sub class='theme-l'>\uD83D\uDD28</sub>",
+                    "text": "<i class='uploadIcon'></i>上传框<small>Upload</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
                     "encoded": false,
                     "cssClass": "links-upload",
                     "url": "javascript:linkTo(\"/forms/\", \"upload\");"
                 },
                 {
                     "id": "0520",
-                    "text": "<i class='validatorIcon'></i>验证<small>Validator</small>",
+                    "text": "<i class='validatorIcon'></i>验证<small>Validator</small><sub class='theme-l'>\uD83D\uDD28</sub>",
                     "encoded": false,
                     "cssClass": "links-validator",
                     "url": "javascript:linkTo(\"/forms/\", \"validator\");"

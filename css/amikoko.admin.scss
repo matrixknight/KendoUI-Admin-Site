@@ -1433,6 +1433,24 @@ form {
     }
 }
 
+/* 上传框 */
+.k-upload {
+    .k-upload-files {
+        .k-file-extension-wrapper,
+        .k-file-invalid-extension-wrapper,
+        .k-multiple-files-extension-wrapper,
+        .k-multiple-files-invalid-extension-wrapper {
+            top: 5px;
+            border-color: #bababa;
+            width: 30px;
+            height: 40px;
+            &:before {
+                border-color: transparent transparent #bababa #bababa;
+            }
+        }
+    }
+}
+
 /* 高级搜索 */
 .adv-search-btn {
     position: relative;
