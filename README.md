@@ -543,7 +543,7 @@ ROOT/·····································�
     * [上传框 <small>[ Upload ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/upload) ✔️
     * [验证 <small>[ Validator ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/validator) ✔️
 * 数据 <small>[ Data ]</small>
-    * 表格 <small>[ Grid ]</small>
+    * [表格 <small>[ Grid ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/data/grid) ✔️
     * 树形列表 <small>[ TreeList ]</small>
     * 列表视图 <small>[ ListView ]</small>
     * 电子表格 <small>[ Spreadsheet ]</small>

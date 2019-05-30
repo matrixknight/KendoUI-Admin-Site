@@ -596,14 +596,14 @@
             "items": [
                 {
                     "id": "0601",
-                    "text": "<i class='gridIcon'></i>表格<small>Grid</small><sub class='theme-l'>\uD83D\uDD28</sub>",
+                    "text": "<i class='gridIcon'></i>表格<small>Grid</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
                     "encoded": false,
                     "cssClass": "links-grid",
                     "url": "javascript:linkTo(\"/data/\", \"grid\");"
                 },
                 {
                     "id": "0602",
-                    "text": "<i class='treeListIcon'></i>树形列表<small>TreeList</small>",
+                    "text": "<i class='treeListIcon'></i>树形列表<small>TreeList</small><sub class='theme-l'>\uD83D\uDD28</sub>",
                     "encoded": false,
                     "cssClass": "links-treelist",
                     "url": "javascript:linkTo(\"/data/\", \"treelist\");"
