@@ -521,7 +521,7 @@ ROOT/·····································�
     * [树形视图 <small>[ TreeView ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/navigation/treeview) ✔️
     * [按钮 <small>[ Button ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/navigation/button) ✔️
     * [按钮组 <small>[ ButtonGroup ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/navigation/buttongroup) ✔️
-* 表单 <small>[ Forms ]</small>
+* 表单 <small>[ Forms ]</small> 💯
     * [转换框 <small>[ Switch ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/switch) ✔️
     * [数字框 <small>[ NumericTextBox ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/numerictextbox) ✔️
     * [日期框 <small>[ DatePicker ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/datepicker) ✔️
@@ -541,7 +541,7 @@ ROOT/·····································�
     * [穿梭框 <small>[ ListBox ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/listbox) ✔️
     * [富文本框 <small>[ Editor ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/editor) ✔️
     * [上传框 <small>[ Upload ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/upload) ✔️
-    * 验证 <small>[ Validator ]</small>
+    * [验证 <small>[ Validator ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/validator) ✔️
 * 数据 <small>[ Data ]</small>
     * 表格 <small>[ Grid ]</small>
     * 树形列表 <small>[ TreeList ]</small>

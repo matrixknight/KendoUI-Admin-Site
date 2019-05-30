@@ -444,7 +444,7 @@
         },
         {
             "id": "05",
-            "text": "<i class='fas fa-tasks'></i><sup></sup><abbr>表单<small>Forms</small><sub class='theme-l'>\uD83C\uDFAF</sub></abbr>",
+            "text": "<i class='fas fa-tasks'></i><abbr>表单<small>Forms</small><sub class='theme-l'>\uD83C\uDF0C</sub></abbr>",
             "encoded": false,
             "items": [
                 {
@@ -561,7 +561,7 @@
                 },
                 {
                     "id": "0517",
-                    "text": "<i class='listBoxIcon'></i>穿梭框<small>ListBox</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
+                    "text": "<i class='listBoxIcon'></i>穿梭框<small>ListBox</small>",
                     "encoded": false,
                     "cssClass": "links-listbox",
                     "url": "javascript:linkTo(\"/forms/\", \"listbox\");"
@@ -582,7 +582,7 @@
                 },
                 {
                     "id": "0520",
-                    "text": "<i class='validatorIcon'></i>验证<small>Validator</small><sub class='theme-l'>\uD83D\uDD28</sub>",
+                    "text": "<i class='validatorIcon'></i>验证<small>Validator</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
                     "encoded": false,
                     "cssClass": "links-validator",
                     "url": "javascript:linkTo(\"/forms/\", \"validator\");"
@@ -591,12 +591,12 @@
         },
         {
             "id": "06",
-            "text": "<i class='fas fa-database'></i><abbr>数据<small>Data</small><sub class='theme-l'>\uD83D\uDD54</sub></abbr>",
+            "text": "<i class='fas fa-database'></i><sup></sup><abbr>数据<small>Data</small><sub class='theme-l'>\uD83C\uDFAF</sub></abbr>",
             "encoded": false,
             "items": [
                 {
                     "id": "0601",
-                    "text": "<i class='gridIcon'></i>表格<small>Grid</small>",
+                    "text": "<i class='gridIcon'></i>表格<small>Grid</small><sub class='theme-l'>\uD83D\uDD28</sub>",
                     "encoded": false,
                     "cssClass": "links-grid",
                     "url": "javascript:linkTo(\"/data/\", \"grid\");"
