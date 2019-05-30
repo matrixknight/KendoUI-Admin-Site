@@ -48,18 +48,16 @@ $(function () {
                 if (!input.is('#customValidator')) {
                     return true;
                 }
+                input.attr('data-required-msg', '请输入姓名！');
                 return input.val() !== '';
             },
             pattern: function (input) {
                 if (!input.is('#customValidator')) {
                     return true;
                 }
+                input.attr('data-pattern-msg', '请输入1-10个汉字！');
                 return input.val().match(/^[\u4E00-\u9FA5]{1,10}$/) !== null;
             }
-        },
-        messages: {
-            required: '请输入姓名！',
-            pattern: '请输入1-10个汉字！'
         },
         errorTemplate:
             '<div class="k-tooltip mt-2">' +
