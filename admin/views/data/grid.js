@@ -1,6 +1,11 @@
 $(function () {
     // DOM 表格
     $('#domGrid').kendoGrid();
+    // 定义 PDF 嵌入字体
+    kendo.pdf.defineFont({
+        'Microsoft YaHei': 'fonts/msyh.ttf',
+        'Microsoft YaHei|Bold': 'fonts/msyhbd.ttf'
+    });
     // Ajax 表格
     $('#ajaxGrid').kendoGrid({
         dataSource: {

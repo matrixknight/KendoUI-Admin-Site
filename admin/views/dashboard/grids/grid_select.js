@@ -249,6 +249,9 @@ $(function () {
         reorderable: true,
         resizable: true,
         selectable: 'multiple, row',
+        allowCopy: {
+            delimeter: '\n'
+        },
         change: function (e) {
             $('.k-grid-content .ids').prop('checked', false);
             this.select().find('.ids').prop('checked', true);
