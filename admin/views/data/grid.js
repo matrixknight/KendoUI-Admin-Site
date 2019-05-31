@@ -954,7 +954,6 @@ $(function () {
         allowCopy: {
             delimeter: '\n'
         },
-        mobile: true,
         editable: {
             mode: 'popup',
             window: {
