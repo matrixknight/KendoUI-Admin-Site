@@ -607,10 +607,10 @@ $(function () {
             pageSize: 10
         },
         toolbar: [
-            { name: 'create', text: '新增' },
+            { name: 'create' },
             { template: '<a class="k-button k-button-icontext" href="javascript:batchSubmitId(\'json/response.json\');"><span class="k-icon k-i-x"></span>批量删除</a>' },
-            { name: 'excel', text: '导出 Excel' },
-            { name: 'pdf', text: '导出 PDF' }
+            { name: 'excel' },
+            { name: 'pdf' }
         ],
         excel: {
             allPages: true,

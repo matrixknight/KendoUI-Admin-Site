@@ -909,7 +909,7 @@ $(function () {
             pageSize: 10
         },
         toolbar: [
-            { name: 'create', text: '新增' }
+            { name: 'create' }
         ],
         columns: [
             { locked: true, title: '操作', width: '230px',
@@ -1775,7 +1775,7 @@ $(function () {
             }
             $('.k-edit-form-container .k-edit-field strong.k-required').each(function (i, items) {
                 $(items).prependTo($(items).parent().prev().find('label'));
-            })
+            });
         }
     });
 });

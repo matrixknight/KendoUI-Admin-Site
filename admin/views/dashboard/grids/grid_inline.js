@@ -909,7 +909,7 @@ $(function () {
             pageSize: 10
         },
         toolbar: [
-            { name: 'create', text: '新增' }
+            { name: 'create' }
         ],
         columns: [
             { title: '操作', width: '230px',

@@ -169,9 +169,9 @@ $(function () {
             pageSize: 10
         },
         toolbar: [
-            { name: 'create', text: '新增' },
-            { name: 'excel', text: '导出 Excel' },
-            { name: 'pdf', text: '导出 PDF' }
+            { name: 'create' },
+            { name: 'excel' },
+            { name: 'pdf' }
         ],
         excel: {
             allPages: true,

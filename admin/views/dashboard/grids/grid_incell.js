@@ -909,7 +909,7 @@ $(function () {
             pageSize: 10
         },
         toolbar: [
-            { name: 'create', text: '新增' },
+            { name: 'create' },
             { name: 'save', text: '保存变更' },
             { name: 'cancel', text: '取消变更' },
             { template: '<a class="k-button k-button-icontext" href="javascript:batchSubmitId(\'json/response.json\');"><span class="k-icon k-i-x"></span>批量删除</a>' }
