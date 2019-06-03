@@ -729,6 +729,25 @@
             });
     }
 
+    /* TreeListPager messages */
+    if (kendo.ui.TreeListPager) {
+        kendo.ui.TreeListPager.prototype.options.messages =
+            $.extend(true, kendo.ui.TreeListPager.prototype.options.messages,{
+                "allPages": "全部",
+                "display": "{0} - {1} 條　共 {2} 條數據",
+                "empty": "無相關資料",
+                "page": "轉到第",
+                "of": "頁　共 {0} 頁",
+                "itemsPerPage": "條每頁",
+                "first": "首頁",
+                "previous": "上一頁",
+                "next": "下一頁",
+                "last": "末頁",
+                "refresh": "刷新",
+                "morePages": "更多..."
+            });
+    }
+
     /* PivotGrid messages */
     if (kendo.ui.PivotGrid) {
         kendo.ui.PivotGrid.prototype.options.messages =
@@ -1397,7 +1416,9 @@
                     "createchild": "新增子項",
                     "destroy": "刪除",
                     "excel": "匯出 Excel",
-                    "pdf": "匯出 PDF"
+                    "pdf": "匯出 PDF",
+                    "save": "保存",
+                    "cancel": "取消"
                 }
             });
     }

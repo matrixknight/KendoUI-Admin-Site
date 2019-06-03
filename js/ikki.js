@@ -797,6 +797,9 @@ function cudItem(options, data, url, succeed) {
             if ($('#listView').length > 0) {
                 refreshList();
             }
+            if ($('#treeList').length > 0) {
+                refreshTreeList();
+            }
             if (succeed) {
                 succeed(res);
             }
@@ -856,6 +859,11 @@ function refreshList() {
     $('#listView').data('kendoListView').dataSource.read();
 }
 
+// 刷新树形列表
+function refreshTreeList() {
+    $('#treeList').data('kendoTreeList').dataSource.read();
+}
+
 // 批量提交ID
 function batchSubmitId(url, succeed) {
     var ids = [];
@@ -895,6 +903,9 @@ function batchSubmitId(url, succeed) {
                 }
                 if ($('#listView').length > 0) {
                     refreshList();
+                }
+                if ($('#treeList').length > 0) {
+                    refreshTreeList();
                 }
                 if (succeed) {
                     succeed(res);
@@ -948,6 +959,9 @@ function batchSubmitData(url, succeed) {
                 }
                 if ($('#listView').length > 0) {
                     refreshList();
+                }
+                if ($('#treeList').length > 0) {
+                    refreshTreeList();
                 }
                 if (succeed) {
                     succeed(res);
