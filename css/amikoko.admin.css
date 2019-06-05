@@ -71,6 +71,11 @@ iframe#section {
 #container {
   position: relative;
   min-height: 96%; }
+  #container > .k-tabstrip-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; }
 
 #footer {
   padding-top: 12px;
@@ -725,9 +730,11 @@ iframe#section {
     background-color: #fff; }
 #tab .k-content,
 #hint .k-content {
-  padding: 0;
   border: none;
-  background: none; }
+  padding: 0;
+  height: 100%;
+  background: none;
+  overflow-y: auto; }
 
 #contextMenu i {
   width: 16px;

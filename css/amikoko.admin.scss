@@ -185,6 +185,12 @@ iframe#section {
 #container {
     position: relative;
     min-height: 96%;
+    > .k-tabstrip-wrapper {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
 }
 
 #footer {
@@ -873,9 +879,11 @@ iframe#section {
         }
     }
     .k-content {
-        padding: 0;
         border: none;
+        padding: 0;
+        height: 100%;
         background: none;
+        overflow-y: auto;
     }
 }
 
