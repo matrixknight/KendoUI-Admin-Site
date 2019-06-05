@@ -6,8 +6,8 @@ $(function () {
         'Microsoft YaHei': 'fonts/msyh.ttf',
         'Microsoft YaHei|Bold': 'fonts/msyhbd.ttf'
     });
-    // Ajax 表格
-    $('#ajaxGrid').kendoGrid({
+    // 普通表格
+    $('#generalGrid').kendoGrid({
         dataSource: {
             transport: {
                 create: function (options) { createItem(options, 'json/response.json') },

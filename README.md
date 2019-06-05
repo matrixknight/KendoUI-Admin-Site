@@ -545,7 +545,7 @@ ROOT/·····································�
 * 数据 <small>[ Data ]</small>
     * [表格 <small>[ Grid ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/data/grid) ✔️
     * [树形列表 <small>[ TreeList ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/data/treelist) ✔️
-    * 列表视图 <small>[ ListView ]</small>
+    * [列表视图 <small>[ ListView ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/data/listview) ✔️
     * 电子表格 <small>[ Spreadsheet ]</small>
     * 透视表格 <small>[ PivotGrid ]</small>
 * 日程 <small>[ Scheduling ]</small>
