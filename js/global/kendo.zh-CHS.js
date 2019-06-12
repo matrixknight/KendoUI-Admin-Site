@@ -1079,6 +1079,18 @@
                         "url": "链接地址",
                         "removeLink": "移除链接"
                     }
+                },
+                "insertCommentDialog": {
+                    "title": "插入注释",
+                    "labels": {
+                        "comment": "注释",
+                        "removeComment": "移除注释"
+                    }
+                },
+                "insertImageDialog": {
+                    "title": "插入图片",
+                    "info": "将图片拖到此处或点击选择",
+                    "typeError": "请选择一个JPG、PNG或GIF格式的图片"
                 }
             });
     }
@@ -1191,6 +1203,8 @@
                     "freezeColumns": "冻结左侧列",
                     "unfreeze": "取消冻结"
                 },
+                "insertComment": "插入注释",
+                "insertImage": "插入图片",
                 "italic": "斜体",
                 "merge": "合并单元格",
                 "mergeButtons": {
@@ -1245,6 +1259,22 @@
                     "insert": "插入",
                     "data": "数据"
                 }
+            });
+    }
+
+    if (kendo.spreadsheet && kendo.spreadsheet.messages.menus) {
+        kendo.spreadsheet.messages.menus =
+            $.extend(true, kendo.spreadsheet.messages.menus,{
+                "cut": "剪切",
+                "copy": "复制",
+                "paste": "粘贴",
+                "merge": "合并单元格",
+                "unmerge": "取消合并",
+                "delete": "删除",
+                "hide": "隐藏",
+                "unhide": "取消隐藏",
+                "bringToFront": "置于顶层",
+                "sendToBack": "置于底层"
             });
     }
 
