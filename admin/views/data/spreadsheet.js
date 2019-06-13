@@ -118,7 +118,7 @@ $(function () {
                                 fontSize: 14,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: '身高(cm)'
+                                value: '身高(m)'
                             },
                             {
                                 index: 5,
@@ -203,25 +203,65 @@ $(function () {
                                 index: 3,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: 13
+                                value: 13,
+                                validation: {
+                                    type: 'reject',
+                                    dataType: 'number',
+                                    from: '1',
+                                    to: '120',
+                                    comparerType: 'between',
+                                    allowNulls: true,
+                                    titleTemplate: '年龄格式不正确！',
+                                    messageTemplate: '年龄必须在 {0}岁 到 {1}岁 之间！'
+                                }
                             },
                             {
                                 index: 4,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: 165
+                                value: 1.65,
+                                validation: {
+                                    dataType: 'number',
+                                    from: '1.01',
+                                    to: '3.00',
+                                    comparerType: 'between',
+                                    allowNulls: true,
+                                    titleTemplate: '身高格式不正确',
+                                    messageTemplate: '身高必须在 {0}m 到 {1}m 之间！'
+                                }
                             },
                             {
                                 index: 5,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: 53
+                                value: 53,
+                                validation: {
+                                    dataType: 'number',
+                                    from: '10',
+                                    to: '200',
+                                    comparerType: 'between',
+                                    allowNulls: true,
+                                    titleTemplate: '体重格式不正确',
+                                    messageTemplate: '体重必须在 {0}kg 到 {1}kg 之间！'
+                                }
                             },
                             {
                                 index: 6,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: '12月1日'
+                                value: '12月1日',
+                                format: 'M月d日',
+                                validation: {
+                                    type: 'reject',
+                                    dataType: 'date',
+                                    showButton: true,
+                                    from: 'DATEVALUE("1920-01-01")',
+                                    to: 'DATEVALUE("2020-12-31")',
+                                    comparerType: 'between',
+                                    allowNulls: true,
+                                    titleTemplate: '生日格式不正确',
+                                    messageTemplate: '生日必须在 1920年 到 2020年 之间！'
+                                }
                             },
                             {
                                 index: 7,
@@ -234,7 +274,15 @@ $(function () {
                                 index: 8,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: 'B型'
+                                value: 'B型',
+                                validation: {
+                                    type: 'reject',
+                                    dataType: 'list',
+                                    showButton: true,
+                                    from: '"A型, B型, O型, AB型"',
+                                    comparerType: 'list',
+                                    allowNulls: true
+                                }
                             },
                             {
                                 index: 9,
@@ -277,25 +325,65 @@ $(function () {
                                 index: 3,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: 14
+                                value: 14,
+                                validation: {
+                                    type: 'reject',
+                                    dataType: 'number',
+                                    from: '1',
+                                    to: '120',
+                                    comparerType: 'between',
+                                    allowNulls: true,
+                                    titleTemplate: '年龄格式不正确！',
+                                    messageTemplate: '年龄必须在 {0}岁 到 {1}岁 之间！'
+                                }
                             },
                             {
                                 index: 4,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: 172
+                                value: 1.72,
+                                validation: {
+                                    dataType: 'number',
+                                    from: '1.01',
+                                    to: '3.00',
+                                    comparerType: 'between',
+                                    allowNulls: true,
+                                    titleTemplate: '身高格式不正确',
+                                    messageTemplate: '身高必须在 {0}m 到 {1}m 之间！'
+                                }
                             },
                             {
                                 index: 5,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: 53
+                                value: 53,
+                                validation: {
+                                    dataType: 'number',
+                                    from: '10',
+                                    to: '200',
+                                    comparerType: 'between',
+                                    allowNulls: true,
+                                    titleTemplate: '体重格式不正确',
+                                    messageTemplate: '体重必须在 {0}kg 到 {1}kg 之间！'
+                                }
                             },
                             {
                                 index: 6,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: '10月4日'
+                                value: '10月4日',
+                                format: 'M月d日',
+                                validation: {
+                                    type: 'reject',
+                                    dataType: 'date',
+                                    showButton: true,
+                                    from: 'DATEVALUE("1920-01-01")',
+                                    to: 'DATEVALUE("2020-12-31")',
+                                    comparerType: 'between',
+                                    allowNulls: true,
+                                    titleTemplate: '生日格式不正确',
+                                    messageTemplate: '生日必须在 1920年 到 2020年 之间！'
+                                }
                             },
                             {
                                 index: 7,
@@ -308,7 +396,15 @@ $(function () {
                                 index: 8,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: 'A型'
+                                value: 'A型',
+                                validation: {
+                                    type: 'reject',
+                                    dataType: 'list',
+                                    showButton: true,
+                                    from: '"A型, B型, O型, AB型"',
+                                    comparerType: 'list',
+                                    allowNulls: true
+                                }
                             },
                             {
                                 index: 9,
@@ -351,25 +447,65 @@ $(function () {
                                 index: 3,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: 14
+                                value: 14,
+                                validation: {
+                                    type: 'reject',
+                                    dataType: 'number',
+                                    from: '1',
+                                    to: '120',
+                                    comparerType: 'between',
+                                    allowNulls: true,
+                                    titleTemplate: '年龄格式不正确！',
+                                    messageTemplate: '年龄必须在 {0}岁 到 {1}岁 之间！'
+                                }
                             },
                             {
                                 index: 4,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: 173
+                                value: 1.73,
+                                validation: {
+                                    dataType: 'number',
+                                    from: '1.01',
+                                    to: '3.00',
+                                    comparerType: 'between',
+                                    allowNulls: true,
+                                    titleTemplate: '身高格式不正确',
+                                    messageTemplate: '身高必须在 {0}m 到 {1}m 之间！'
+                                }
                             },
                             {
                                 index: 5,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: 60
+                                value: 60,
+                                validation: {
+                                    dataType: 'number',
+                                    from: '10',
+                                    to: '200',
+                                    comparerType: 'between',
+                                    allowNulls: true,
+                                    titleTemplate: '体重格式不正确',
+                                    messageTemplate: '体重必须在 {0}kg 到 {1}kg 之间！'
+                                }
                             },
                             {
                                 index: 6,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: '1月23日'
+                                value: '1月23日',
+                                format: 'M月d日',
+                                validation: {
+                                    type: 'reject',
+                                    dataType: 'date',
+                                    showButton: true,
+                                    from: 'DATEVALUE("1920-01-01")',
+                                    to: 'DATEVALUE("2020-12-31")',
+                                    comparerType: 'between',
+                                    allowNulls: true,
+                                    titleTemplate: '生日格式不正确',
+                                    messageTemplate: '生日必须在 1920年 到 2020年 之间！'
+                                }
                             },
                             {
                                 index: 7,
@@ -382,7 +518,15 @@ $(function () {
                                 index: 8,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: 'O型'
+                                value: 'O型',
+                                validation: {
+                                    type: 'reject',
+                                    dataType: 'list',
+                                    showButton: true,
+                                    from: '"A型, B型, O型, AB型"',
+                                    comparerType: 'list',
+                                    allowNulls: true
+                                }
                             },
                             {
                                 index: 9,
@@ -425,25 +569,65 @@ $(function () {
                                 index: 3,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: 13
+                                value: 13,
+                                validation: {
+                                    type: 'reject',
+                                    dataType: 'number',
+                                    from: '1',
+                                    to: '120',
+                                    comparerType: 'between',
+                                    allowNulls: true,
+                                    titleTemplate: '年龄格式不正确！',
+                                    messageTemplate: '年龄必须在 {0}岁 到 {1}岁 之间！'
+                                }
                             },
                             {
                                 index: 4,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: 165
+                                value: 1.65,
+                                validation: {
+                                    dataType: 'number',
+                                    from: '1.01',
+                                    to: '3.00',
+                                    comparerType: 'between',
+                                    allowNulls: true,
+                                    titleTemplate: '身高格式不正确',
+                                    messageTemplate: '身高必须在 {0}m 到 {1}m 之间！'
+                                }
                             },
                             {
                                 index: 5,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: 51
+                                value: 51,
+                                validation: {
+                                    dataType: 'number',
+                                    from: '10',
+                                    to: '200',
+                                    comparerType: 'between',
+                                    allowNulls: true,
+                                    titleTemplate: '体重格式不正确',
+                                    messageTemplate: '体重必须在 {0}kg 到 {1}kg 之间！'
+                                }
                             },
                             {
                                 index: 6,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: '9月9日'
+                                value: '9月9日',
+                                format: 'M月d日',
+                                validation: {
+                                    type: 'reject',
+                                    dataType: 'date',
+                                    showButton: true,
+                                    from: 'DATEVALUE("1920-01-01")',
+                                    to: 'DATEVALUE("2020-12-31")',
+                                    comparerType: 'between',
+                                    allowNulls: true,
+                                    titleTemplate: '生日格式不正确',
+                                    messageTemplate: '生日必须在 1920年 到 2020年 之间！'
+                                }
                             },
                             {
                                 index: 7,
@@ -456,7 +640,15 @@ $(function () {
                                 index: 8,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: 'A型'
+                                value: 'A型',
+                                validation: {
+                                    type: 'reject',
+                                    dataType: 'list',
+                                    showButton: true,
+                                    from: '"A型, B型, O型, AB型"',
+                                    comparerType: 'list',
+                                    allowNulls: true
+                                }
                             },
                             {
                                 index: 9,
@@ -499,25 +691,65 @@ $(function () {
                                 index: 3,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: 15
+                                value: 15,
+                                validation: {
+                                    type: 'reject',
+                                    dataType: 'number',
+                                    from: '1',
+                                    to: '120',
+                                    comparerType: 'between',
+                                    allowNulls: true,
+                                    titleTemplate: '年龄格式不正确！',
+                                    messageTemplate: '年龄必须在 {0}岁 到 {1}岁 之间！'
+                                }
                             },
                             {
                                 index: 4,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: 175
+                                value: 1.75,
+                                validation: {
+                                    dataType: 'number',
+                                    from: '1.01',
+                                    to: '3.00',
+                                    comparerType: 'between',
+                                    allowNulls: true,
+                                    titleTemplate: '身高格式不正确',
+                                    messageTemplate: '身高必须在 {0}m 到 {1}m 之间！'
+                                }
                             },
                             {
                                 index: 5,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: 62
+                                value: 62,
+                                validation: {
+                                    dataType: 'number',
+                                    from: '10',
+                                    to: '200',
+                                    comparerType: 'between',
+                                    allowNulls: true,
+                                    titleTemplate: '体重格式不正确',
+                                    messageTemplate: '体重必须在 {0}kg 到 {1}kg 之间！'
+                                }
                             },
                             {
                                 index: 6,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: '8月15日'
+                                value: '8月15日',
+                                format: 'M月d日',
+                                validation: {
+                                    type: 'reject',
+                                    dataType: 'date',
+                                    showButton: true,
+                                    from: 'DATEVALUE("1920-01-01")',
+                                    to: 'DATEVALUE("2020-12-31")',
+                                    comparerType: 'between',
+                                    allowNulls: true,
+                                    titleTemplate: '生日格式不正确',
+                                    messageTemplate: '生日必须在 1920年 到 2020年 之间！'
+                                }
                             },
                             {
                                 index: 7,
@@ -530,7 +762,15 @@ $(function () {
                                 index: 8,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: 'AB型'
+                                value: 'AB型',
+                                validation: {
+                                    type: 'reject',
+                                    dataType: 'list',
+                                    showButton: true,
+                                    from: '"A型, B型, O型, AB型"',
+                                    comparerType: 'list',
+                                    allowNulls: true
+                                }
                             },
                             {
                                 index: 9,
