@@ -29,7 +29,7 @@ $(function () {
         columnWidth: 72,
         headerWidth: 36,
         rows: 100,
-        rowHeight: 24,
+        rowHeight: 28,
         images: {
             Pegasus: 'img/temp/Pegasus.png',
             Dragon: 'img/temp/Dragon.png',
@@ -109,7 +109,7 @@ $(function () {
                                 fontSize: 14,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: '年龄(岁)'
+                                value: '年龄'
                             },
                             {
                                 index: 4,
@@ -118,7 +118,7 @@ $(function () {
                                 fontSize: 14,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: '身高(m)'
+                                value: '身高'
                             },
                             {
                                 index: 5,
@@ -127,7 +127,7 @@ $(function () {
                                 fontSize: 14,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: '体重(kg)'
+                                value: '体重'
                             },
                             {
                                 index: 6,
@@ -193,8 +193,7 @@ $(function () {
                             },
                             {
                                 index: 2,
-                                background: '#007bff',
-                                color: '#fff',
+                                color: '#007bff',
                                 textAlign: 'center',
                                 verticalAlign: 'center',
                                 value: 'SEIYA'
@@ -204,6 +203,7 @@ $(function () {
                                 textAlign: 'center',
                                 verticalAlign: 'center',
                                 value: 13,
+                                format: '0 "岁"',
                                 validation: {
                                     type: 'reject',
                                     dataType: 'number',
@@ -220,6 +220,7 @@ $(function () {
                                 textAlign: 'center',
                                 verticalAlign: 'center',
                                 value: 1.65,
+                                format: '0.00 "m"',
                                 validation: {
                                     dataType: 'number',
                                     from: '1.01',
@@ -235,6 +236,7 @@ $(function () {
                                 textAlign: 'center',
                                 verticalAlign: 'center',
                                 value: 53,
+                                format: '0 "kg"',
                                 validation: {
                                     dataType: 'number',
                                     from: '10',
@@ -315,8 +317,7 @@ $(function () {
                             },
                             {
                                 index: 2,
-                                background: '#28a745',
-                                color: '#fff',
+                                color: '#28a745',
                                 textAlign: 'center',
                                 verticalAlign: 'center',
                                 value: 'SHIRYU'
@@ -326,6 +327,7 @@ $(function () {
                                 textAlign: 'center',
                                 verticalAlign: 'center',
                                 value: 14,
+                                format: '0 "岁"',
                                 validation: {
                                     type: 'reject',
                                     dataType: 'number',
@@ -342,6 +344,7 @@ $(function () {
                                 textAlign: 'center',
                                 verticalAlign: 'center',
                                 value: 1.72,
+                                format: '0.00 "m"',
                                 validation: {
                                     dataType: 'number',
                                     from: '1.01',
@@ -357,6 +360,7 @@ $(function () {
                                 textAlign: 'center',
                                 verticalAlign: 'center',
                                 value: 53,
+                                format: '0 "kg"',
                                 validation: {
                                     dataType: 'number',
                                     from: '10',
@@ -437,8 +441,7 @@ $(function () {
                             },
                             {
                                 index: 2,
-                                background: '#17a2b8',
-                                color: '#fff',
+                                color: '#17a2b8',
                                 textAlign: 'center',
                                 verticalAlign: 'center',
                                 value: 'HYOGA'
@@ -448,6 +451,7 @@ $(function () {
                                 textAlign: 'center',
                                 verticalAlign: 'center',
                                 value: 14,
+                                format: '0 "岁"',
                                 validation: {
                                     type: 'reject',
                                     dataType: 'number',
@@ -464,6 +468,7 @@ $(function () {
                                 textAlign: 'center',
                                 verticalAlign: 'center',
                                 value: 1.73,
+                                format: '0.00 "m"',
                                 validation: {
                                     dataType: 'number',
                                     from: '1.01',
@@ -479,6 +484,7 @@ $(function () {
                                 textAlign: 'center',
                                 verticalAlign: 'center',
                                 value: 60,
+                                format: '0 "kg"',
                                 validation: {
                                     dataType: 'number',
                                     from: '10',
@@ -559,8 +565,7 @@ $(function () {
                             },
                             {
                                 index: 2,
-                                background: '#dc3545',
-                                color: '#fff',
+                                color: '#dc3545',
                                 textAlign: 'center',
                                 verticalAlign: 'center',
                                 value: 'SHUN'
@@ -570,6 +575,7 @@ $(function () {
                                 textAlign: 'center',
                                 verticalAlign: 'center',
                                 value: 13,
+                                format: '0 "岁"',
                                 validation: {
                                     type: 'reject',
                                     dataType: 'number',
@@ -586,6 +592,7 @@ $(function () {
                                 textAlign: 'center',
                                 verticalAlign: 'center',
                                 value: 1.65,
+                                format: '0.00 "m"',
                                 validation: {
                                     dataType: 'number',
                                     from: '1.01',
@@ -601,6 +608,7 @@ $(function () {
                                 textAlign: 'center',
                                 verticalAlign: 'center',
                                 value: 51,
+                                format: '0 "kg"',
                                 validation: {
                                     dataType: 'number',
                                     from: '10',
@@ -681,8 +689,7 @@ $(function () {
                             },
                             {
                                 index: 2,
-                                background: '#ffc107',
-                                color: '#000',
+                                color: '#ffc107',
                                 textAlign: 'center',
                                 verticalAlign: 'center',
                                 value: 'IKKI'
@@ -692,6 +699,7 @@ $(function () {
                                 textAlign: 'center',
                                 verticalAlign: 'center',
                                 value: 15,
+                                format: '0 "岁"',
                                 validation: {
                                     type: 'reject',
                                     dataType: 'number',
@@ -708,6 +716,7 @@ $(function () {
                                 textAlign: 'center',
                                 verticalAlign: 'center',
                                 value: 1.75,
+                                format: '0.00 "m"',
                                 validation: {
                                     dataType: 'number',
                                     from: '1.01',
@@ -723,6 +732,7 @@ $(function () {
                                 textAlign: 'center',
                                 verticalAlign: 'center',
                                 value: 62,
+                                format: '0 "kg"',
                                 validation: {
                                     dataType: 'number',
                                     from: '10',
@@ -788,7 +798,6 @@ $(function () {
                     },
                     {
                         index: 7,
-                        height: 28,
                         cells: [
                             {
                                 index: 0,
@@ -805,6 +814,7 @@ $(function () {
                                 color: accentColor,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
+                                format: '0 "岁"',
                                 formula: 'AVERAGE(D3:D7)'
                             },
                             {
@@ -814,6 +824,7 @@ $(function () {
                                 color: accentColor,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
+                                format: '0.00 "m"',
                                 formula: 'AVERAGE(E3:E7)'
                             },
                             {
@@ -823,6 +834,7 @@ $(function () {
                                 color: accentColor,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
+                                format: '0.0 "kg"',
                                 formula: 'AVERAGE(F3:F7)'
                             }
                         ]
@@ -910,10 +922,9 @@ $(function () {
                 name: '黄金圣斗士',
                 dataSource: {
                     transport: {
-                        read: function (options) { readItem(options, 'json/list.json') }
+                        read: function (options) { readItem(options, 'json/spreadsheet.json') }
                     },
                     schema: {
-                        total: 'total',
                         data: 'data',
                         model: {
                             id: 'id',
@@ -949,11 +960,7 @@ $(function () {
                                         }
                                     }
                                 },
-                                age: { type: 'number',
-                                    parse: function (e) {
-                                        return e + ' 岁';
-                                    }
-                                },
+                                age: { type: 'number' },
                                 height: { type: 'number' },
                                 bloodType: { type: 'string',
                                     parse: function (e) {
@@ -1130,10 +1137,14 @@ $(function () {
                                 summary: { type: 'string' },
                                 photo: { type: 'string',
                                     parse: function (e) {
-                                        return '　　' + e.url;
+                                        return '　　' + e.name + e.extension + ' [' + kendo.toString(e.size / 1024, '0.00') + ' KB]';
                                     }
                                 },
-                                sign: { type: 'string' }
+                                sign: { type: 'string',
+                                    parse: function (e) {
+                                        return e.replace(/<[^>]+>/g, '');
+                                    }
+                                }
                             }
                         }
                     }
@@ -1404,8 +1415,24 @@ $(function () {
                                 enable: false
                             },
                             {
+                                index: 2,
+                                link: 'javascript:showBigPic("img/temp/Aries.png");'
+                            },
+                            {
                                 index: 6,
                                 color: '#809507'
+                            },
+                            {
+                                index: 8,
+                                format: '0 "岁"'
+                            },
+                            {
+                                index: 9,
+                                format: '0.00 "m"'
+                            },
+                            {
+                                index: 14,
+                                format: '¥ #,###.00'
                             },
                             {
                                 index: 29,
@@ -1413,12 +1440,9 @@ $(function () {
                                 color: '#fff'
                             },
                             {
-                                index: 33,
-                                link: 'javascript:showBigPic("img/temp/Aries.png");'
-                            },
-                            {
                                 index: 34,
-                                background: 'rgba(217, 182, 172, .8)'
+                                background: 'rgba(217, 182, 172, .8)',
+                                color: '#000'
                             }
                         ]
                     },
@@ -1430,8 +1454,24 @@ $(function () {
                                 enable: false
                             },
                             {
+                                index: 2,
+                                link: 'javascript:showBigPic("img/temp/Taurus.png");'
+                            },
+                            {
                                 index: 6,
                                 color: '#809507'
+                            },
+                            {
+                                index: 8,
+                                format: '0 "岁"'
+                            },
+                            {
+                                index: 9,
+                                format: '0.00 "m"'
+                            },
+                            {
+                                index: 14,
+                                format: '¥ #,###.00'
                             },
                             {
                                 index: 29,
@@ -1439,12 +1479,9 @@ $(function () {
                                 color: '#fff'
                             },
                             {
-                                index: 33,
-                                link: 'javascript:showBigPic("img/temp/Taurus.png");'
-                            },
-                            {
                                 index: 34,
-                                background: 'rgba(236, 135, 192, .8)'
+                                background: 'rgba(236, 135, 192, .8)',
+                                color: '#000'
                             }
                         ]
                     },
@@ -1456,8 +1493,24 @@ $(function () {
                                 enable: false
                             },
                             {
+                                index: 2,
+                                link: 'javascript:showBigPic("img/temp/Gemini.png");'
+                            },
+                            {
                                 index: 6,
                                 color: '#a64515'
+                            },
+                            {
+                                index: 8,
+                                format: '0 "岁"'
+                            },
+                            {
+                                index: 9,
+                                format: '0.00 "m"'
+                            },
+                            {
+                                index: 14,
+                                format: '¥ #,###.00'
                             },
                             {
                                 index: 29,
@@ -1465,12 +1518,9 @@ $(function () {
                                 color: '#fff'
                             },
                             {
-                                index: 33,
-                                link: 'javascript:showBigPic("img/temp/Gemini.png");'
-                            },
-                            {
                                 index: 34,
-                                background: 'rgba(237, 85, 101, .8)'
+                                background: 'rgba(237, 85, 101, .8)',
+                                color: '#000'
                             }
                         ]
                     },
@@ -1482,8 +1532,24 @@ $(function () {
                                 enable: false
                             },
                             {
+                                index: 2,
+                                link: 'javascript:showBigPic("img/temp/Cancer.png");'
+                            },
+                            {
                                 index: 6,
                                 color: '#a64515'
+                            },
+                            {
+                                index: 8,
+                                format: '0 "岁"'
+                            },
+                            {
+                                index: 9,
+                                format: '0.00 "m"'
+                            },
+                            {
+                                index: 14,
+                                format: '¥ #,###.00'
                             },
                             {
                                 index: 29,
@@ -1491,12 +1557,9 @@ $(function () {
                                 color: '#fff'
                             },
                             {
-                                index: 33,
-                                link: 'javascript:showBigPic("img/temp/Cancer.png");'
-                            },
-                            {
                                 index: 34,
-                                background: 'rgba(255, 183, 77, .8)'
+                                background: 'rgba(255, 183, 77, .8)',
+                                color: '#000'
                             }
                         ]
                     },
@@ -1508,8 +1571,24 @@ $(function () {
                                 enable: false
                             },
                             {
+                                index: 2,
+                                link: 'javascript:showBigPic("img/temp/Leo.png");'
+                            },
+                            {
                                 index: 6,
                                 color: '#809507'
+                            },
+                            {
+                                index: 8,
+                                format: '0 "岁"'
+                            },
+                            {
+                                index: 9,
+                                format: '0.00 "m"'
+                            },
+                            {
+                                index: 14,
+                                format: '¥ #,###.00'
                             },
                             {
                                 index: 29,
@@ -1517,12 +1596,9 @@ $(function () {
                                 color: '#fff'
                             },
                             {
-                                index: 33,
-                                link: 'javascript:showBigPic("img/temp/Leo.png");'
-                            },
-                            {
                                 index: 34,
-                                background: 'rgba(255, 206, 84, .8)'
+                                background: 'rgba(255, 206, 84, .8)',
+                                color: '#000'
                             }
                         ]
                     },
@@ -1534,8 +1610,24 @@ $(function () {
                                 enable: false
                             },
                             {
+                                index: 2,
+                                link: 'javascript:showBigPic("img/temp/Virgo.png");'
+                            },
+                            {
                                 index: 6,
                                 color: '#809507'
+                            },
+                            {
+                                index: 8,
+                                format: '0 "岁"'
+                            },
+                            {
+                                index: 9,
+                                format: '0.00 "m"'
+                            },
+                            {
+                                index: 14,
+                                format: '¥ #,###.00'
                             },
                             {
                                 index: 29,
@@ -1543,12 +1635,9 @@ $(function () {
                                 color: '#fff'
                             },
                             {
-                                index: 33,
-                                link: 'javascript:showBigPic("img/temp/Virgo.png");'
-                            },
-                            {
                                 index: 34,
-                                background: 'rgba(160, 212, 104, .8)'
+                                background: 'rgba(160, 212, 104, .8)',
+                                color: '#000'
                             }
                         ]
                     },
@@ -1560,8 +1649,24 @@ $(function () {
                                 enable: false
                             },
                             {
+                                index: 2,
+                                link: 'javascript:showBigPic("img/temp/Libra.png");'
+                            },
+                            {
                                 index: 6,
                                 color: '#809507'
+                            },
+                            {
+                                index: 8,
+                                format: '0 "岁"'
+                            },
+                            {
+                                index: 9,
+                                format: '0.00 "m"'
+                            },
+                            {
+                                index: 14,
+                                format: '¥ #,###.00'
                             },
                             {
                                 index: 29,
@@ -1569,12 +1674,9 @@ $(function () {
                                 color: '#fff'
                             },
                             {
-                                index: 33,
-                                link: 'javascript:showBigPic("img/temp/Libra.png");'
-                            },
-                            {
                                 index: 34,
-                                background: 'rgba(72, 207, 173, .8)'
+                                background: 'rgba(72, 207, 173, .8)',
+                                color: '#000'
                             }
                         ]
                     },
@@ -1586,8 +1688,24 @@ $(function () {
                                 enable: false
                             },
                             {
+                                index: 2,
+                                link: 'javascript:showBigPic("img/temp/Scorpion.png");'
+                            },
+                            {
                                 index: 6,
                                 color: '#809507'
+                            },
+                            {
+                                index: 8,
+                                format: '0 "岁"'
+                            },
+                            {
+                                index: 9,
+                                format: '0.00 "m"'
+                            },
+                            {
+                                index: 14,
+                                format: '¥ #,###.00'
                             },
                             {
                                 index: 29,
@@ -1595,12 +1713,9 @@ $(function () {
                                 color: '#fff'
                             },
                             {
-                                index: 33,
-                                link: 'javascript:showBigPic("img/temp/Scorpion.png");'
-                            },
-                            {
                                 index: 34,
-                                background: 'rgba(79, 193, 233, .8)'
+                                background: 'rgba(79, 193, 233, .8)',
+                                color: '#000'
                             }
                         ]
                     },
@@ -1612,8 +1727,24 @@ $(function () {
                                 enable: false
                             },
                             {
+                                index: 2,
+                                link: 'javascript:showBigPic("img/temp/Sagittarius.png");'
+                            },
+                            {
                                 index: 6,
                                 color: '#809507'
+                            },
+                            {
+                                index: 8,
+                                format: '0 "岁"'
+                            },
+                            {
+                                index: 9,
+                                format: '0.00 "m"'
+                            },
+                            {
+                                index: 14,
+                                format: '¥ #,###.00'
                             },
                             {
                                 index: 29,
@@ -1621,12 +1752,9 @@ $(function () {
                                 color: '#fff'
                             },
                             {
-                                index: 33,
-                                link: 'javascript:showBigPic("img/temp/Sagittarius.png");'
-                            },
-                            {
                                 index: 34,
-                                background: 'rgba(93, 156, 236, .8)'
+                                background: 'rgba(93, 156, 236, .8)',
+                                color: '#000'
                             }
                         ]
                     },
@@ -1638,8 +1766,24 @@ $(function () {
                                 enable: false
                             },
                             {
+                                index: 2,
+                                link: 'javascript:showBigPic("img/temp/Capricorn.png");'
+                            },
+                            {
                                 index: 6,
                                 color: '#a64515'
+                            },
+                            {
+                                index: 8,
+                                format: '0 "岁"'
+                            },
+                            {
+                                index: 9,
+                                format: '0.00 "m"'
+                            },
+                            {
+                                index: 14,
+                                format: '¥ #,###.00'
                             },
                             {
                                 index: 29,
@@ -1647,12 +1791,9 @@ $(function () {
                                 color: '#fff'
                             },
                             {
-                                index: 33,
-                                link: 'javascript:showBigPic("img/temp/Capricorn.png");'
-                            },
-                            {
                                 index: 34,
-                                background: 'rgba(172, 146, 236, .8)'
+                                background: 'rgba(172, 146, 236, .8)',
+                                color: '#000'
                             }
                         ]
                     },
@@ -1664,8 +1805,24 @@ $(function () {
                                 enable: false
                             },
                             {
+                                index: 2,
+                                link: 'javascript:showBigPic("img/temp/Aquarius.png");'
+                            },
+                            {
                                 index: 6,
                                 color: '#a64515'
+                            },
+                            {
+                                index: 8,
+                                format: '0 "岁"'
+                            },
+                            {
+                                index: 9,
+                                format: '0.00 "m"'
+                            },
+                            {
+                                index: 14,
+                                format: '¥ #,###.00'
                             },
                             {
                                 index: 29,
@@ -1673,12 +1830,9 @@ $(function () {
                                 color: '#fff'
                             },
                             {
-                                index: 33,
-                                link: 'javascript:showBigPic("img/temp/Aquarius.png");'
-                            },
-                            {
                                 index: 34,
-                                background: 'rgba(101, 109, 120, .8)'
+                                background: 'rgba(101, 109, 120, .8)',
+                                color: '#000'
                             }
                         ]
                     },
@@ -1690,8 +1844,24 @@ $(function () {
                                 enable: false
                             },
                             {
+                                index: 2,
+                                link: 'javascript:showBigPic("img/temp/Picses.png");'
+                            },
+                            {
                                 index: 6,
                                 color: '#a64515'
+                            },
+                            {
+                                index: 8,
+                                format: '0 "岁"'
+                            },
+                            {
+                                index: 9,
+                                format: '0.00 "m"'
+                            },
+                            {
+                                index: 14,
+                                format: '¥ #,###.00'
                             },
                             {
                                 index: 29,
@@ -1699,12 +1869,9 @@ $(function () {
                                 color: '#fff'
                             },
                             {
-                                index: 33,
-                                link: 'javascript:showBigPic("img/temp/Picses.png");'
-                            },
-                            {
                                 index: 34,
-                                background: 'rgba(204, 209, 217, .8)'
+                                background: 'rgba(204, 209, 217, .8)',
+                                color: '#000'
                             }
                         ]
                     },
@@ -1713,17 +1880,30 @@ $(function () {
                         height: 30,
                         cells: [
                             {
+                                index: 8,
+                                bold: true,
+                                fontSize: 15,
+                                color: accentColor,
+                                verticalAlign: 'center',
+                                format: '"平均："0 "岁"',
+                                formula: 'AVERAGE(I2:I13)'
+                            },
+                            {
                                 index: 9,
                                 bold: true,
-                                fontSize: 16,
+                                fontSize: 15,
                                 color: accentColor,
+                                verticalAlign: 'center',
+                                format: '"平均："0.00 "m"',
                                 formula: 'AVERAGE(J2:J13)'
                             },
                             {
                                 index: 14,
                                 bold: true,
-                                fontSize: 16,
+                                fontSize: 15,
                                 color: accentColor,
+                                verticalAlign: 'center',
+                                format: '"总资产："¥ #,###.00',
                                 formula: 'SUM(O2:O13)'
                             }
                         ]
@@ -1731,109 +1911,144 @@ $(function () {
                 ],
                 columns: [
                     {
+                        index: 0,
                         width: 45
                     },
                     {
+                        index: 1,
                         width: 85
                     },
                     {
+                        index: 2,
                         width: 80
                     },
                     {
+                        index: 3,
                         width: 80
                     },
                     {
+                        index: 4,
                         width: 80
                     },
                     {
+                        index: 5,
                         width: 125
                     },
                     {
+                        index: 6,
                         width: 60
                     },
                     {
+                        index: 7,
                         width: 65
                     },
                     {
-                        width: 45
+                        index: 8,
+                        width: 90
                     },
                     {
-                        width: 60
-                    },
-                    {
-                        width: 85
-                    },
-                    {
-                        width: 75
-                    },
-                    {
+                        index: 9,
                         width: 100
                     },
                     {
-                        width: 105
+                        index: 10,
+                        width: 85
                     },
                     {
-                        width: 90
-                    },
-                    {
-                        width: 200
-                    },
-                    {
+                        index: 11,
                         width: 75
                     },
                     {
+                        index: 12,
+                        width: 100
+                    },
+                    {
+                        index: 13,
+                        width: 105
+                    },
+                    {
+                        index: 14,
+                        width: 185
+                    },
+                    {
+                        index: 15,
+                        width: 200
+                    },
+                    {
+                        index: 16,
+                        width: 75
+                    },
+                    {
+                        index: 17,
                         width: 70
                     },
                     {
+                        index: 18,
                         width: 65
                     },
                     {
+                        index: 19,
                         width: 165
                     },
                     {
+                        index: 20,
                         width: 90
                     },
                     {
+                        index: 21,
                         width: 85
                     },
                     {
+                        index: 22,
                         width: 70
                     },
                     {
+                        index: 23,
                         width: 85
                     },
                     {
+                        index: 24,
                         width: 130
                     },
                     {
+                        index: 25,
                         width: 135
                     },
                     {
+                        index: 26,
                         width: 60
                     },
                     {
+                        index: 27,
                         width: 125
                     },
                     {
+                        index: 28,
                         width: 80
                     },
                     {
+                        index: 29,
                         width: 130
                     },
                     {
+                        index: 30,
                         width: 125
                     },
                     {
+                        index: 31,
                         width: 150
                     },
                     {
+                        index: 32,
                         width: 250
                     },
                     {
-                        width: 165
+                        index: 33,
+                        width: 175
                     },
                     {
-                        width: 780
+                        index: 34,
+                        width: 250
                     }
                 ],
                 drawings: [
