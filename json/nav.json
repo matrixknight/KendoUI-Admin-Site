@@ -591,26 +591,26 @@
         },
         {
             "id": "06",
-            "text": "<i class='fas fa-database'></i><sup></sup><abbr>数据<small>Data</small><sub class='theme-l'>\uD83C\uDFAF</sub></abbr>",
+            "text": "<i class='fas fa-database'></i><abbr>数据<small>Data</small><sub class='theme-l'>\uD83C\uDF0C</sub></abbr>",
             "encoded": false,
             "items": [
                 {
                     "id": "0601",
-                    "text": "<i class='gridIcon'></i>表格<small>Grid</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
+                    "text": "<i class='gridIcon'></i>表格<small>Grid</small>",
                     "encoded": false,
                     "cssClass": "links-grid",
                     "url": "javascript:linkTo(\"/data/\", \"grid\");"
                 },
                 {
                     "id": "0602",
-                    "text": "<i class='treeListIcon'></i>树形列表<small>TreeList</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
+                    "text": "<i class='treeListIcon'></i>树形列表<small>TreeList</small>",
                     "encoded": false,
                     "cssClass": "links-treelist",
                     "url": "javascript:linkTo(\"/data/\", \"treelist\");"
                 },
                 {
                     "id": "0603",
-                    "text": "<i class='listViewIcon'></i>列表视图<small>ListView</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
+                    "text": "<i class='listViewIcon'></i>列表视图<small>ListView</small>",
                     "encoded": false,
                     "cssClass": "links-listview",
                     "url": "javascript:linkTo(\"/data/\", \"listview\");"
@@ -624,7 +624,7 @@
                 },
                 {
                     "id": "0605",
-                    "text": "<i class='pivotGridIcon'></i>透视表格<small>PivotGrid</small><sub class='theme-l'>\uD83D\uDD28</sub>",
+                    "text": "<i class='pivotGridIcon'></i>透视表格<small>PivotGrid</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
                     "encoded": false,
                     "cssClass": "links-pivotgrid",
                     "url": "javascript:linkTo(\"/data/\", \"pivotgrid\");"
@@ -633,12 +633,12 @@
         },
         {
             "id": "07",
-            "text": "<i class='fas fa-calendar-alt'></i><abbr>日程<small>Scheduling</small><sub class='theme-l'>\uD83D\uDD54</sub></abbr>",
+            "text": "<i class='fas fa-calendar-alt'></i><sup></sup><abbr>日程<small>Scheduling</small><sub class='theme-l'>\uD83C\uDFAF</sub></abbr>",
             "encoded": false,
             "items": [
                 {
                     "id": "0701",
-                    "text": "<i class='calendarIcon'></i>日历<small>Calendar</small>",
+                    "text": "<i class='calendarIcon'></i>日历<small>Calendar</small><sub class='theme-l'>\uD83D\uDD28</sub>",
                     "encoded": false,
                     "cssClass": "links-calendar",
                     "url": "javascript:linkTo(\"/scheduling/\", \"calendar\");"

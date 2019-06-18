@@ -626,7 +626,7 @@
     if (kendo.ui.PivotGrid) {
         kendo.ui.PivotGrid.prototype.options.messages =
             $.extend(true, kendo.ui.PivotGrid.prototype.options.messages,{
-                "measureFields": "拖拽数据字段到此处",
+                "measureFields": "拖拽值字段到此处",
                 "columnFields": "拖拽列字段到此处",
                 "rowFields": "拖拽行字段到此处"
             });
@@ -669,10 +669,10 @@
     if (kendo.ui.PivotConfigurator) {
         kendo.ui.PivotConfigurator.prototype.options.messages =
             $.extend(true, kendo.ui.PivotConfigurator.prototype.options.messages,{
-                "measures": "拖拽数据字段到此处",
+                "measures": "拖拽值字段到此处",
                 "columns": "拖拽列字段到此处",
                 "rows": "拖拽行字段到此处",
-                "measuresLabel": "量",
+                "measuresLabel": "值",
                 "columnsLabel": "列",
                 "rowsLabel": "行",
                 "fieldsLabel": "字段"

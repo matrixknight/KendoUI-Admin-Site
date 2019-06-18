@@ -542,12 +542,12 @@ ROOT/·····································�
     * [富文本框 <small>[ Editor ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/editor) ✔️
     * [上传框 <small>[ Upload ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/upload) ✔️
     * [验证 <small>[ Validator ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/forms/validator) ✔️
-* 数据 <small>[ Data ]</small>
+* 数据 <small>[ Data ]</small> 💯
     * [表格 <small>[ Grid ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/data/grid) ✔️
     * [树形列表 <small>[ TreeList ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/data/treelist) ✔️
     * [列表视图 <small>[ ListView ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/data/listview) ✔️
     * [电子表格 <small>[ Spreadsheet ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/data/spreadsheet) ✔️
-    * 透视表格 <small>[ PivotGrid ]</small>
+    * [透视表格 <small>[ PivotGrid ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/data/pivotgrid) ✔️
 * 日程 <small>[ Scheduling ]</small>
     * 日历 <small>[ Calendar ]</small>
     * 多重日历 <small>[ MultiViewCalendar ]</small>
