@@ -549,7 +549,7 @@ ROOT/·····································�
     * [电子表格 <small>[ Spreadsheet ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/data/spreadsheet) ✔️
     * [透视表格 <small>[ PivotGrid ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/data/pivotgrid) ✔️
 * 日程 <small>[ Scheduling ]</small>
-    * 日历 <small>[ Calendar ]</small>
+    * [日历 <small>[ Calendar ]</small>](https://ikki2000.github.io/KendoUI-Admin-Site/admin/#/scheduling/calendar) ✔️
     * 多重日历 <small>[ MultiViewCalendar ]</small>
     * 日程表 <small>[ Scheduler ]</small>
     * 甘特图 <small>[ Gantt ]</small>

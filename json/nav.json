@@ -638,14 +638,14 @@
             "items": [
                 {
                     "id": "0701",
-                    "text": "<i class='calendarIcon'></i>日历<small>Calendar</small><sub class='theme-l'>\uD83D\uDD28</sub>",
+                    "text": "<i class='calendarIcon'></i>日历<small>Calendar</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
                     "encoded": false,
                     "cssClass": "links-calendar",
                     "url": "javascript:linkTo(\"/scheduling/\", \"calendar\");"
                 },
                 {
                     "id": "0702",
-                    "text": "<i class='multiViewCalendarIcon'></i>多重日历<small>MultiViewCalendar</small>",
+                    "text": "<i class='multiViewCalendarIcon'></i>多重日历<small>MultiViewCalendar</small><sub class='theme-l'>\uD83D\uDD28</sub>",
                     "encoded": false,
                     "cssClass": "links-multiviewcalendar",
                     "url": "javascript:linkTo(\"/scheduling/\", \"multiviewcalendar\");"
