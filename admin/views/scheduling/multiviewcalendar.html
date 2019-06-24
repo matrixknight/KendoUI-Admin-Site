@@ -1,0 +1,97 @@
+<script id="multiviewcalendarTemp" type="text/x-kendo-template">
+    <div class="row">
+        <div class="col-xl-6">
+            <div class="card mb-3">
+                <h5 class="card-header">普通多重日历</h5>
+                <div class="card-body">
+                    <div id="generalMultiViewCalendar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6">
+            <div class="card mb-3">
+                <h5 class="card-header">星期多重日历</h5>
+                <div class="card-body">
+                    <div id="weekMultiViewCalendar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6">
+            <div class="card mb-3">
+                <h5 class="card-header">月份多重日历</h5>
+                <div class="card-body">
+                    <div id="monthMultiViewCalendar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6">
+            <div class="card mb-3">
+                <h5 class="card-header">年份多重日历</h5>
+                <div class="card-body">
+                    <div id="yearMultiViewCalendar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6">
+            <div class="card mb-3">
+                <h5 class="card-header">世纪多重日历</h5>
+                <div class="card-body">
+                    <div id="centuryMultiViewCalendar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6">
+            <div class="card mb-3">
+                <h5 class="card-header">节假日多重日历</h5>
+                <div class="card-body">
+                    <div id="holidayMultiViewCalendar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="card mb-3">
+                <h5 class="card-header">农历多重日历</h5>
+                <div class="card-body">
+                    <div id="lunarMultiViewCalendar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="card mb-3">
+                <h5 class="card-header">自定义多重日历</h5>
+                <div class="card-body">
+                    <div id="customMultiViewCalendar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style scoped>
+        .k-calendar .fa-star {
+            color: #f35800;
+        }
+        .festival {
+            border-color: #f35800;
+            background-color: #fff;
+            color: #f35800;
+        }
+        .k-calendar.k-calendar-range,
+        .k-calendar.k-calendar-range .k-calendar-view .k-link {
+            width: 100%;
+        }
+        .k-calendar.k-calendar-range .k-calendar-view {
+            height: 17em;
+        }
+        #lunarMultiViewCalendar .k-calendar-view {
+            height: 24em;
+        }
+        .k-calendar.k-calendar-range .k-calendar-view > table,
+        #lunarMultiViewCalendar .k-calendar-view .k-link {
+            height: 100%;
+        }
+        #lunarMultiViewCalendar .k-calendar-view .k-century .k-link {
+            font-size: 12px;
+            text-align: center;
+            white-space: nowrap;
+        }
+    </style>
+</script>
