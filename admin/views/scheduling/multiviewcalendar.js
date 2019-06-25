@@ -554,6 +554,35 @@ $(function () {
         views: 4,
         value: new Date()
     });
+    // 中国年历多重日历
+    $('#chinaMultiViewCalendar').kendoMultiViewCalendar({
+        showViewHeader: true,
+        footer: false,
+        month: {
+            content:
+                '# var lunar = lunarData.solar2lunar(data.date.getFullYear(), (data.date.getMonth() + 1), data.date.getDate()) #' +
+                '<div class="d-flex flex-column">' +
+                    '#= data.value #' +
+                    '<small class="text-nowrap">' +
+                    '# if (lunar.lunarFestival) { #' +
+                        '<span class="festival rounded px-1">#= lunar.lunarFestival #</span>' +
+                    '# } else if (lunar.solarFestival) { #' +
+                        '<span class="festival rounded px-1">#= lunar.solarFestival #</span>' +
+                    '# } else if (lunar.isTerm) { #' +
+                        '<span class="theme-m-box rounded px-1">#= lunar.term #</span>' +
+                    '# } else if (lunar.lunarDay === 1) { #' +
+                        '<span class="theme-s-box rounded px-1">#= lunar.lunarMonthCn #</span>' +
+                    '# } else { #' +
+                        '#= lunar.lunarDayCn #' +
+                    '# } #' +
+                    '</small>' +
+                '</div>'
+        },
+        views: 12,
+        min: new Date(2019, 0, 1),
+        max: new Date(2019, 11, 31),
+        value: new Date()
+    });
 });
 
 // 是否节假日

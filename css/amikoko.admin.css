@@ -1348,6 +1348,10 @@ form .searchBtn.row {
   .k-listview > div.k-edit-item {
     background: #f5f5f5; }
 
+/* 多重日历 */
+.k-calendar-range caption {
+  caption-side: top; }
+
 /* 自定义 Kendo UI 组件 ------------------------------ */
 /* 时间轴 */
 .k-timeaxis {
