@@ -67,10 +67,11 @@ $(function () {
     });
     // 面包屑导航
     setTimeout(function () {
+        showPath(location.hash.split('#')[1].split('/')[location.hash.split('#')[1].split('/').length - 1]);
         $(window).resize(function () {
             showPath(location.hash.split('#')[1].split('/')[location.hash.split('#')[1].split('/').length - 1]);
         }).resize();
-    }, 8);
+    }, 200);
     // 全屏
     $('#header').on('click', '.fullscreen', function () {
         var fullscreenEnabled = document.fullscreenEnabled       ||
