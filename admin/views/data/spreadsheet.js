@@ -296,7 +296,7 @@ $(function () {
                                 index: 10,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: '希腊圣域'
+                                value: '希腊 · 圣域'
                             }
                         ]
                     },
@@ -420,7 +420,7 @@ $(function () {
                                 index: 10,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: '中国庐山五老峰'
+                                value: '中国 · 庐山五老峰'
                             }
                         ]
                     },
@@ -517,7 +517,7 @@ $(function () {
                                 index: 7,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: '白鸟座 Cygnus',
+                                value: '天鹅座 Cygnus',
                                 wrap: true
                             },
                             {
@@ -544,7 +544,7 @@ $(function () {
                                 index: 10,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: '西伯利亚'
+                                value: '东西伯利亚'
                             }
                         ]
                     },
@@ -792,7 +792,7 @@ $(function () {
                                 index: 10,
                                 textAlign: 'center',
                                 verticalAlign: 'center',
-                                value: '南太平洋死亡皇后岛'
+                                value: '南太平洋 · 死亡皇后岛'
                             }
                         ]
                     },
@@ -872,7 +872,7 @@ $(function () {
                         width: 80
                     },
                     {
-                        width: 128
+                        width: 136
                     }
                 ],
                 drawings: [
