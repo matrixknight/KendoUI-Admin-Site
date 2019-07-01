@@ -886,6 +886,33 @@
             });
     }
 
+    if (kendo.ui.TimelineWeekView) {
+        kendo.ui.TimelineWeekView.prototype.options.messages =
+            $.extend(true, kendo.ui.TimelineWeekView.prototype.options.messages,{
+                "defaultRowText": "全部事件",
+                "showFullDay": "显示全天",
+                "showWorkDay": "显示工作时间"
+            });
+    }
+
+    if (kendo.ui.TimelineWorkWeekView) {
+        kendo.ui.TimelineWorkWeekView.prototype.options.messages =
+            $.extend(true, kendo.ui.TimelineWorkWeekView.prototype.options.messages,{
+                "defaultRowText": "全部事件",
+                "showFullDay": "显示全天",
+                "showWorkDay": "显示工作时间"
+            });
+    }
+
+    if (kendo.ui.TimelineMonthView) {
+        kendo.ui.TimelineMonthView.prototype.options.messages =
+            $.extend(true, kendo.ui.TimelineMonthView.prototype.options.messages,{
+                "defaultRowText": "全部事件",
+                "showFullDay": "显示全天",
+                "showWorkDay": "显示工作时间"
+            });
+    }
+
     /* Spreadsheet messages */
     if (kendo.spreadsheet && kendo.spreadsheet.messages.borderPalette) {
         kendo.spreadsheet.messages.borderPalette =
