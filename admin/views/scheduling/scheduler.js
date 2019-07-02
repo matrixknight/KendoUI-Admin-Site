@@ -453,6 +453,11 @@ var lunarData = {
 };
 
 $(function () {
+    // 定义 PDF 嵌入字体
+    kendo.pdf.defineFont({
+        'Microsoft YaHei': 'fonts/msyh.ttf',
+        'Microsoft YaHei|Bold': 'fonts/msyhbd.ttf'
+    });
     // 普通日程表
     $('#generalScheduler').kendoScheduler({
         dataSource: {
