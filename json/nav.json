@@ -638,28 +638,28 @@
             "items": [
                 {
                     "id": "0701",
-                    "text": "<i class='calendarIcon'></i>日历<small>Calendar</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
+                    "text": "<i class='calendarIcon'></i>日历<small>Calendar</small>",
                     "encoded": false,
                     "cssClass": "links-calendar",
                     "url": "javascript:linkTo(\"/scheduling/\", \"calendar\");"
                 },
                 {
                     "id": "0702",
-                    "text": "<i class='multiViewCalendarIcon'></i>多重日历<small>MultiViewCalendar</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
+                    "text": "<i class='multiViewCalendarIcon'></i>多重日历<small>MultiViewCalendar</small>",
                     "encoded": false,
                     "cssClass": "links-multiviewcalendar",
                     "url": "javascript:linkTo(\"/scheduling/\", \"multiviewcalendar\");"
                 },
                 {
                     "id": "0703",
-                    "text": "<i class='schedulerIcon'></i>日程表<small>Scheduler</small><sub class='theme-l'>\uD83D\uDD28</sub>",
+                    "text": "<i class='schedulerIcon'></i>日程表<small>Scheduler</small><sub class='theme-l'>\uD83C\uDF1F</sub>",
                     "encoded": false,
                     "cssClass": "links-scheduler",
                     "url": "javascript:linkTo(\"/scheduling/\", \"scheduler\");"
                 },
                 {
                     "id": "0704",
-                    "text": "<i class='ganttIcon'></i>甘特图<small>Gantt</small>",
+                    "text": "<i class='ganttIcon'></i>甘特图<small>Gantt</small><sub class='theme-l'>\uD83D\uDD28</sub>",
                     "encoded": false,
                     "cssClass": "links-gantt",
                     "url": "javascript:linkTo(\"/scheduling/\", \"gantt\");"

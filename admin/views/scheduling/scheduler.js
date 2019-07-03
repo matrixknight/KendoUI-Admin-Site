@@ -531,7 +531,6 @@ $(function () {
                 }
             },
             schema: {
-                total: 'total',
                 data: 'data',
                 model: {
                     id: 'taskId',
@@ -540,6 +539,7 @@ $(function () {
                         ownerId: { from: 'OwnerID',
                             defaultValue: 'saint'
                         },
+                        avatar: { from: 'Avatar' },
                         title: { from: 'Title',
                             defaultValue: '无标题',
                             validation: {
@@ -573,24 +573,24 @@ $(function () {
                 name: 'saint',
                 title: '圣斗士',
                 dataSource: [
-                    { text: '穆', value: 'gold_01', color: '#c39b8f' },
-                    { text: '阿鲁迪巴', value: 'gold_02', color: '#d770ad' },
-                    { text: '撒加', value: 'gold_03', color: '#da4453' },
-                    { text: '迪斯马斯克', value: 'gold_04', color: '#ff9800' },
-                    { text: '艾欧里亚', value: 'gold_05', color: '#f6bb42' },
-                    { text: '沙加', value: 'gold_06', color: '#8cc152' },
-                    { text: '童虎', value: 'gold_07', color: '#37bc9b' },
-                    { text: '米罗', value: 'gold_08', color: '#3bafda' },
-                    { text: '艾俄洛斯', value: 'gold_09', color: '#4a89dc' },
-                    { text: '修罗', value: 'gold_10', color: '#967adc' },
-                    { text: '卡妙', value: 'gold_11', color: '#434a54' },
-                    { text: '阿布罗狄', value: 'gold_12', color: '#aab2bd' },
-                    { text: '星矢', value: 'bronze_01', color: '#007bff' },
-                    { text: '紫龙', value: 'bronze_02', color: '#28a745' },
-                    { text: '冰河', value: 'bronze_03', color: '#17a2b8' },
-                    { text: '瞬', value: 'bronze_04', color: '#dc3545' },
-                    { text: '一辉', value: 'bronze_05', color: '#ffc107' },
-                    { text: '雅典娜', value: 'goddess', color: '#6c757d' }
+                    { text: '穆', value: 'Aries', color: '#c39b8f' },
+                    { text: '阿鲁迪巴', value: 'Taurus', color: '#d770ad' },
+                    { text: '撒加', value: 'Gemini', color: '#da4453' },
+                    { text: '迪斯马斯克', value: 'Cancer', color: '#ff9800' },
+                    { text: '艾欧里亚', value: 'Leo', color: '#f6bb42' },
+                    { text: '沙加', value: 'Virgo', color: '#8cc152' },
+                    { text: '童虎', value: 'Libra', color: '#37bc9b' },
+                    { text: '米罗', value: 'Scorpion', color: '#3bafda' },
+                    { text: '艾俄洛斯', value: 'Sagittarius', color: '#4a89dc' },
+                    { text: '修罗', value: 'Capricorn', color: '#967adc' },
+                    { text: '卡妙', value: 'Aquarius', color: '#434a54' },
+                    { text: '阿布罗狄', value: 'Picses', color: '#aab2bd' },
+                    { text: '星矢', value: 'Pegasus', color: '#007bff' },
+                    { text: '紫龙', value: 'Dragon', color: '#28a745' },
+                    { text: '冰河', value: 'Cygnus', color: '#17a2b8' },
+                    { text: '瞬', value: 'Andromeda', color: '#dc3545' },
+                    { text: '一辉', value: 'Phoenix', color: '#ffc107' },
+                    { text: '雅典娜', value: 'Goddess', color: '#6c757d' }
                 ]
             }
         ],
@@ -605,10 +605,15 @@ $(function () {
                 dateHeaderTemplate:
                     '# var lunar = lunarData.solar2lunar(date.getFullYear(), (date.getMonth() + 1), date.getDate()) #' +
                     '<strong>公历：#= kendo.toString(date, "yyyy年MM月dd日 dddd") # —— 农历：[#= lunar.zodiac #年] #= lunar.lunarMonthCn ##= lunar.lunarDayCn #（#= lunar.gzYear #年 #= lunar.gzMonth #月 #= lunar.gzDay #日）</strong>',
-                allDaySlotTemplate: '<span class="d-block text-center">无</span>'
+                allDaySlotTemplate: '<span class="d-block text-center">无</span>',
+                eventTemplate: '<img class="img-s mt-1" src="#: avatar #" alt="#: ownerId #"><p class="mb-0 pl-2"><small>#: title #</small></p>'
             },
-            { type: 'week' },
-            { type: 'workWeek' },
+            { type: 'week',
+                eventTemplate: '<img class="img-s mt-1 ml-2" src="#: avatar #" alt="#: ownerId #"><p class="mb-0 pl-2"><small>#: title #</small></p>'
+            },
+            { type: 'workWeek',
+                eventTemplate: '<img class="img-s mt-1 ml-2" src="#: avatar #" alt="#: ownerId #"><p class="mb-0 pl-2"><small>#: title #</small></p>'
+            },
             { type: 'month',
                 eventHeight: 24,
                 dayTemplate:
@@ -631,7 +636,8 @@ $(function () {
                         '# if (lunar.isTerm) { #' +
                             '<span class="theme-m text-left">#= lunar.term #</span>' +
                         '# } #' +
-                    '</div>'
+                    '</div>',
+                eventTemplate: '<img class="img-s mr-2" src="#: avatar #" alt="#: ownerId #"><small>#: title #</small>'
             },
             { type: 'agenda',
                 eventDateTemplate:
@@ -656,23 +662,30 @@ $(function () {
                         '<span class="theme-m">全天</span>' +
                     '# } else { #' +
                         '#= kendo.toString(start, "HH:mm") # 至 #= kendo.toString(end, "HH:mm") #' +
-                    '# } #'
+                    '# } #',
+                eventTemplate: '<img class="img-m ml-2 mr-3" src="#: avatar #" alt="#: ownerId #">#: title #'
             },
             { type: 'timeline',
                 group: {
                     resources: ['saint'],
                     date: true,
                     orientation: 'vertical'
-                }
+                },
+                eventTemplate: '<img class="img-s mr-2" src="#: avatar #" alt="#: ownerId #"><small>#: title #</small>'
             },
-            { type: 'timelineWeek' },
-            { type: 'timelineWorkWeek' },
+            { type: 'timelineWeek',
+                eventTemplate: '<img class="img-s mr-2" src="#: avatar #" alt="#: ownerId #"><small>#: title #</small>'
+            },
+            { type: 'timelineWorkWeek',
+                eventTemplate: '<img class="img-s mr-2" src="#: avatar #" alt="#: ownerId #"><small>#: title #</small>'
+            },
             { type: 'timelineMonth',
                 columnWidth: 128,
                 group: {
                     resources: ['saint'],
                     orientation: 'vertical'
-                }
+                },
+                eventTemplate: '<img class="img-s mr-2" src="#: avatar #" alt="#: ownerId #"><small>#: title #</small>'
             }
         ],
         pdf: {
@@ -694,9 +707,8 @@ $(function () {
         showWorkHours: true,
         dateHeaderTemplate: '<strong>#= kendo.toString(date, "MM月dd日 dddd") #</strong>',
         groupHeaderTemplate: '<strong style="color: #= color #">#= text #</strong>',
-        allDayEventTemplate: '<p class="mb-0 px-2"><small><strong>任务：</strong>#: title #<br><strong>描述：</strong>#: description #</small></p>',
-        majorTimeHeaderTemplate: '<strong>#= kendo.toString(date, "HH:mm") #</strong>',
-        eventTemplate: '<p class="mb-0 px-2"><small>#: title #</small></p>'
+        allDayEventTemplate: '<img class="img-s mt-1" src="#: avatar #" alt="#: ownerId #"><p class="mb-0 pl-2"><small>#: title #<br>#: description #</small></p>',
+        majorTimeHeaderTemplate: '<strong>#= kendo.toString(date, "HH:mm") #</strong>'
     });
     // 联动显示
     $('#saint :checkbox').change(function (e) {

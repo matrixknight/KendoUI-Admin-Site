@@ -1,11 +1,11 @@
 {
     "result": "y",
     "msg": "数据获取错误，请重试！",
-    "total": 12,
     "data": [
         {
             "TaskID": 1,
-            "OwnerID": "goddess",
+            "OwnerID": "Goddess",
+            "Avatar": "img/temp/Goddess.png",
             "Title": "拯救雅典娜",
             "Description": "纱织中箭~ 必须在十二小时之内突破十二宫到达教皇殿请教皇拔箭！",
             "Start": "2019-08-15 11:00",
@@ -19,7 +19,8 @@
         },
         {
             "TaskID": 2,
-            "OwnerID": "bronze_01",
+            "OwnerID": "Pegasus",
+            "Avatar": "img/temp/Pegasus.png",
             "Title": "等待修复圣衣",
             "Description": "天马座青铜圣衣修复中！",
             "Start": "2019-08-15 11:00",
@@ -33,7 +34,8 @@
         },
         {
             "TaskID": 3,
-            "OwnerID": "bronze_02",
+            "OwnerID": "Dragon",
+            "Avatar": "img/temp/Dragon.png",
             "Title": "等待修复圣衣",
             "Description": "天龙座青铜圣衣修复中！",
             "Start": "2019-08-15 11:00",
@@ -47,7 +49,8 @@
         },
         {
             "TaskID": 4,
-            "OwnerID": "bronze_03",
+            "OwnerID": "Cygnus",
+            "Avatar": "img/temp/Cygnus.png",
             "Title": "等待修复圣衣",
             "Description": "天鹅座青铜圣衣修复中！",
             "Start": "2019-08-15 11:00",
@@ -61,7 +64,8 @@
         },
         {
             "TaskID": 5,
-            "OwnerID": "bronze_04",
+            "OwnerID": "Andromeda",
+            "Avatar": "img/temp/Andromeda.png",
             "Title": "等待修复圣衣",
             "Description": "仙女座青铜圣衣修复中！",
             "Start": "2019-08-15 11:00",
@@ -75,7 +79,8 @@
         },
         {
             "TaskID": 6,
-            "OwnerID": "gold_01",
+            "OwnerID": "Aries",
+            "Avatar": "img/temp/Aries.png",
             "Title": "修复四件青铜圣衣",
             "Description": "修复天马座、天龙座、天鹅座、仙女座四件青铜圣衣！",
             "Start": "2019-08-15 11:00",
@@ -89,7 +94,8 @@
         },
         {
             "TaskID": 7,
-            "OwnerID": "bronze_01",
+            "OwnerID": "Pegasus",
+            "Avatar": "img/temp/Pegasus.png",
             "Title": "突破金牛宫",
             "Description": "跟金牛座黄金圣斗士阿鲁迪巴战斗！",
             "Start": "2019-08-15 12:00",
@@ -103,7 +109,8 @@
         },
         {
             "TaskID": 8,
-            "OwnerID": "bronze_02",
+            "OwnerID": "Dragon",
+            "Avatar": "img/temp/Dragon.png",
             "Title": "被击晕",
             "Description": "被金牛座黄金圣斗士阿鲁迪巴击晕！",
             "Start": "2019-08-15 12:00",
@@ -117,7 +124,8 @@
         },
         {
             "TaskID": 9,
-            "OwnerID": "bronze_03",
+            "OwnerID": "Cygnus",
+            "Avatar": "img/temp/Cygnus.png",
             "Title": "被击晕",
             "Description": "被金牛座黄金圣斗士阿鲁迪巴击晕！",
             "Start": "2019-08-15 12:00",
@@ -131,7 +139,8 @@
         },
         {
             "TaskID": 10,
-            "OwnerID": "bronze_04",
+            "OwnerID": "Andromeda",
+            "Avatar": "img/temp/Andromeda.png",
             "Title": "被击晕",
             "Description": "被金牛座黄金圣斗士阿鲁迪巴击晕！",
             "Start": "2019-08-15 12:00",
@@ -145,7 +154,8 @@
         },
         {
             "TaskID": 11,
-            "OwnerID": "gold_02",
+            "OwnerID": "Taurus",
+            "Avatar": "img/temp/Taurus.png",
             "Title": "守卫金牛宫",
             "Description": "跟天马座青铜圣斗士星矢战斗！",
             "Start": "2019-08-15 12:00",
@@ -159,7 +169,8 @@
         },
         {
             "TaskID": 12,
-            "OwnerID": "bronze_01",
+            "OwnerID": "Pegasus",
+            "Avatar": "img/temp/Pegasus.png",
             "Title": "通过双子宫",
             "Description": "直接通过双子宫！",
             "Start": "2019-08-15 13:00",
@@ -173,7 +184,8 @@
         },
         {
             "TaskID": 13,
-            "OwnerID": "bronze_02",
+            "OwnerID": "Dragon",
+            "Avatar": "img/temp/Dragon.png",
             "Title": "通过双子宫",
             "Description": "直接通过双子宫！",
             "Start": "2019-08-15 13:00",
@@ -187,7 +199,8 @@
         },
         {
             "TaskID": 14,
-            "OwnerID": "bronze_03",
+            "OwnerID": "Cygnus",
+            "Avatar": "img/temp/Cygnus.png",
             "Title": "闯双子宫",
             "Description": "跟双子座黄金圣斗士撒加战斗！",
             "Start": "2019-08-15 13:00",
@@ -201,7 +214,8 @@
         },
         {
             "TaskID": 15,
-            "OwnerID": "bronze_04",
+            "OwnerID": "Andromeda",
+            "Avatar": "img/temp/Andromeda.png",
             "Title": "突破双子宫",
             "Description": "跟双子座黄金圣斗士撒加战斗！",
             "Start": "2019-08-15 13:00",
@@ -215,7 +229,8 @@
         },
         {
             "TaskID": 16,
-            "OwnerID": "bronze_03",
+            "OwnerID": "Cygnus",
+            "Avatar": "img/temp/Cygnus.png",
             "Title": "被冰封",
             "Description": "被水瓶座黄金圣斗士卡妙冰封！",
             "Start": "2019-08-15 14:00",
@@ -229,7 +244,8 @@
         },
         {
             "TaskID": 17,
-            "OwnerID": "gold_03",
+            "OwnerID": "Gemini",
+            "Avatar": "img/temp/Gemini.png",
             "Title": "遥控双子宫",
             "Description": "跟仙女座青铜圣斗士瞬战斗！",
             "Start": "2019-08-15 13:00",
@@ -243,7 +259,8 @@
         },
         {
             "TaskID": 18,
-            "OwnerID": "bronze_01",
+            "OwnerID": "Pegasus",
+            "Avatar": "img/temp/Pegasus.png",
             "Title": "通过巨蟹宫",
             "Description": "直接通过巨蟹宫！",
             "Start": "2019-08-15 13:30",
@@ -257,7 +274,8 @@
         },
         {
             "TaskID": 19,
-            "OwnerID": "bronze_02",
+            "OwnerID": "Dragon",
+            "Avatar": "img/temp/Dragon.png",
             "Title": "突破巨蟹宫",
             "Description": "跟巨蟹座黄金圣斗士迪斯马斯克战斗！",
             "Start": "2019-08-15 13:30",
@@ -271,7 +289,8 @@
         },
         {
             "TaskID": 20,
-            "OwnerID": "bronze_04",
+            "OwnerID": "Andromeda",
+            "Avatar": "img/temp/Andromeda.png",
             "Title": "通过巨蟹宫",
             "Description": "直接通过巨蟹宫！",
             "Start": "2019-08-15 14:00",
@@ -285,7 +304,8 @@
         },
         {
             "TaskID": 21,
-            "OwnerID": "gold_04",
+            "OwnerID": "Cancer",
+            "Avatar": "img/temp/Cancer.png",
             "Title": "守卫巨蟹宫",
             "Description": "跟天龙座青铜圣斗士紫龙战斗！",
             "Start": "2019-08-15 14:00",
@@ -299,7 +319,8 @@
         },
         {
             "TaskID": 22,
-            "OwnerID": "bronze_01",
+            "OwnerID": "Pegasus",
+            "Avatar": "img/temp/Pegasus.png",
             "Title": "突破狮子宫",
             "Description": "跟狮子座黄金圣斗士艾欧里亚战斗！",
             "Start": "2019-08-15 14:30",
@@ -313,7 +334,8 @@
         },
         {
             "TaskID": 23,
-            "OwnerID": "bronze_02",
+            "OwnerID": "Dragon",
+            "Avatar": "img/temp/Dragon.png",
             "Title": "通过狮子宫",
             "Description": "直接通过狮子宫！",
             "Start": "2019-08-15 15:00",
@@ -327,7 +349,8 @@
         },
         {
             "TaskID": 24,
-            "OwnerID": "bronze_04",
+            "OwnerID": "Andromeda",
+            "Avatar": "img/temp/Andromeda.png",
             "Title": "通过狮子宫",
             "Description": "直接通过狮子宫！",
             "Start": "2019-08-15 15:00",
@@ -341,7 +364,8 @@
         },
         {
             "TaskID": 25,
-            "OwnerID": "gold_05",
+            "OwnerID": "Leo",
+            "Avatar": "img/temp/Leo.png",
             "Title": "守卫狮子宫",
             "Description": "跟天马座青铜圣斗士星矢战斗！",
             "Start": "2019-08-15 15:00",
@@ -355,7 +379,8 @@
         },
         {
             "TaskID": 26,
-            "OwnerID": "bronze_01",
+            "OwnerID": "Pegasus",
+            "Avatar": "img/temp/Pegasus.png",
             "Title": "被击晕",
             "Description": "被处女座黄金圣斗士沙加击晕！",
             "Start": "2019-08-15 16:00",
@@ -369,7 +394,8 @@
         },
         {
             "TaskID": 27,
-            "OwnerID": "bronze_02",
+            "OwnerID": "Dragon",
+            "Avatar": "img/temp/Dragon.png",
             "Title": "被击晕",
             "Description": "被处女座黄金圣斗士沙加击晕！",
             "Start": "2019-08-15 16:00",
@@ -383,7 +409,8 @@
         },
         {
             "TaskID": 28,
-            "OwnerID": "bronze_04",
+            "OwnerID": "Andromeda",
+            "Avatar": "img/temp/Andromeda.png",
             "Title": "被击晕",
             "Description": "被处女座黄金圣斗士沙加击晕！",
             "Start": "2019-08-15 16:00",
@@ -397,7 +424,8 @@
         },
         {
             "TaskID": 29,
-            "OwnerID": "bronze_05",
+            "OwnerID": "Phoenix",
+            "Avatar": "img/temp/Phoenix.png",
             "Title": "突破处女宫",
             "Description": "跟处女座黄金圣斗士沙加战斗！",
             "Start": "2019-08-15 16:00",
@@ -411,7 +439,8 @@
         },
         {
             "TaskID": 30,
-            "OwnerID": "gold_06",
+            "OwnerID": "Virgo",
+            "Avatar": "img/temp/Virgo.png",
             "Title": "守卫处女宫",
             "Description": "跟凤凰座青铜圣斗士一辉战斗！",
             "Start": "2019-08-15 16:00",
@@ -425,7 +454,8 @@
         },
         {
             "TaskID": 31,
-            "OwnerID": "bronze_01",
+            "OwnerID": "Pegasus",
+            "Avatar": "img/temp/Pegasus.png",
             "Title": "通过天秤宫",
             "Description": "劈开冰棺后直接通过天秤宫！",
             "Start": "2019-08-15 17:00",
@@ -439,7 +469,8 @@
         },
         {
             "TaskID": 32,
-            "OwnerID": "bronze_02",
+            "OwnerID": "Dragon",
+            "Avatar": "img/temp/Dragon.png",
             "Title": "通过天秤宫",
             "Description": "劈开冰棺后直接通过天秤宫！",
             "Start": "2019-08-15 17:00",
@@ -453,7 +484,8 @@
         },
         {
             "TaskID": 33,
-            "OwnerID": "bronze_04",
+            "OwnerID": "Andromeda",
+            "Avatar": "img/temp/Andromeda.png",
             "Title": "通过天秤宫",
             "Description": "劈开冰棺后直接通过天秤宫！",
             "Start": "2019-08-15 17:00",
@@ -467,7 +499,8 @@
         },
         {
             "TaskID": 34,
-            "OwnerID": "bronze_05",
+            "OwnerID": "Phoenix",
+            "Avatar": "img/temp/Phoenix.png",
             "Title": "时空缝隙",
             "Description": "昏迷在时空缝隙！",
             "Start": "2019-08-15 17:00",
@@ -481,7 +514,8 @@
         },
         {
             "TaskID": 35,
-            "OwnerID": "gold_07",
+            "OwnerID": "Libra",
+            "Avatar": "img/temp/Libra.png",
             "Title": "出借黄金圣衣",
             "Description": "天秤座黄金圣斗士童虎将黄金圣衣借给青铜圣斗士们救活冰河！",
             "Start": "2019-08-15 17:00",
@@ -495,7 +529,8 @@
         },
         {
             "TaskID": 36,
-            "OwnerID": "bronze_01",
+            "OwnerID": "Pegasus",
+            "Avatar": "img/temp/Pegasus.png",
             "Title": "通过天蝎宫",
             "Description": "直接通过天蝎宫！",
             "Start": "2019-08-15 18:00",
@@ -509,7 +544,8 @@
         },
         {
             "TaskID": 37,
-            "OwnerID": "bronze_02",
+            "OwnerID": "Dragon",
+            "Avatar": "img/temp/Dragon.png",
             "Title": "通过天蝎宫",
             "Description": "直接通过天蝎宫！",
             "Start": "2019-08-15 18:00",
@@ -523,7 +559,8 @@
         },
         {
             "TaskID": 38,
-            "OwnerID": "bronze_03",
+            "OwnerID": "Cygnus",
+            "Avatar": "img/temp/Cygnus.png",
             "Title": "突破天蝎宫",
             "Description": "跟天蝎座黄金圣斗士米罗战斗！",
             "Start": "2019-08-15 18:00",
@@ -537,7 +574,8 @@
         },
         {
             "TaskID": 39,
-            "OwnerID": "bronze_04",
+            "OwnerID": "Andromeda",
+            "Avatar": "img/temp/Andromeda.png",
             "Title": "通过天蝎宫",
             "Description": "直接通过天蝎宫！",
             "Start": "2019-08-15 18:00",
@@ -551,7 +589,8 @@
         },
         {
             "TaskID": 40,
-            "OwnerID": "gold_08",
+            "OwnerID": "Scorpion",
+            "Avatar": "img/temp/Scorpion.png",
             "Title": "守卫天蝎宫",
             "Description": "跟天鹅座青铜圣斗士冰河战斗！",
             "Start": "2019-08-15 18:00",
@@ -565,7 +604,8 @@
         },
         {
             "TaskID": 41,
-            "OwnerID": "bronze_01",
+            "OwnerID": "Pegasus",
+            "Avatar": "img/temp/Pegasus.png",
             "Title": "通过射手宫",
             "Description": "直接通过射手宫！",
             "Start": "2019-08-15 19:00",
@@ -579,7 +619,8 @@
         },
         {
             "TaskID": 42,
-            "OwnerID": "bronze_02",
+            "OwnerID": "Dragon",
+            "Avatar": "img/temp/Dragon.png",
             "Title": "通过射手宫",
             "Description": "直接通过射手宫！",
             "Start": "2019-08-15 19:00",
@@ -593,7 +634,8 @@
         },
         {
             "TaskID": 43,
-            "OwnerID": "bronze_03",
+            "OwnerID": "Cygnus",
+            "Avatar": "img/temp/Cygnus.png",
             "Title": "通过射手宫",
             "Description": "直接通过射手宫！",
             "Start": "2019-08-15 19:00",
@@ -607,7 +649,8 @@
         },
         {
             "TaskID": 44,
-            "OwnerID": "bronze_04",
+            "OwnerID": "Andromeda",
+            "Avatar": "img/temp/Andromeda.png",
             "Title": "通过射手宫",
             "Description": "直接通过射手宫！",
             "Start": "2019-08-15 19:00",
@@ -621,7 +664,8 @@
         },
         {
             "TaskID": 45,
-            "OwnerID": "gold_09",
+            "OwnerID": "Sagittarius",
+            "Avatar": "img/temp/Sagittarius.png",
             "Title": "守护射手宫",
             "Description": "将雅典娜托付给青铜圣斗士们！",
             "Start": "2019-08-15 19:00",
@@ -635,7 +679,8 @@
         },
         {
             "TaskID": 46,
-            "OwnerID": "bronze_01",
+            "OwnerID": "Pegasus",
+            "Avatar": "img/temp/Pegasus.png",
             "Title": "通过山羊宫",
             "Description": "直接通过山羊宫！",
             "Start": "2019-08-15 20:00",
@@ -649,7 +694,8 @@
         },
         {
             "TaskID": 47,
-            "OwnerID": "bronze_02",
+            "OwnerID": "Dragon",
+            "Avatar": "img/temp/Dragon.png",
             "Title": "突破山羊宫",
             "Description": "跟山羊座黄金圣斗士修罗战斗！",
             "Start": "2019-08-15 20:00",
@@ -663,7 +709,8 @@
         },
         {
             "TaskID": 48,
-            "OwnerID": "bronze_03",
+            "OwnerID": "Cygnus",
+            "Avatar": "img/temp/Cygnus.png",
             "Title": "通过山羊宫",
             "Description": "直接通过山羊宫！",
             "Start": "2019-08-15 20:00",
@@ -677,7 +724,8 @@
         },
         {
             "TaskID": 49,
-            "OwnerID": "bronze_04",
+            "OwnerID": "Andromeda",
+            "Avatar": "img/temp/Andromeda.png",
             "Title": "通过山羊宫",
             "Description": "直接通过山羊宫！",
             "Start": "2019-08-15 20:00",
@@ -691,7 +739,8 @@
         },
         {
             "TaskID": 50,
-            "OwnerID": "gold_10",
+            "OwnerID": "Capricorn",
+            "Avatar": "img/temp/Capricorn.png",
             "Title": "守卫山羊宫",
             "Description": "跟天龙座青铜圣斗士紫龙战斗！",
             "Start": "2019-08-15 20:00",
@@ -705,7 +754,8 @@
         },
         {
             "TaskID": 51,
-            "OwnerID": "bronze_01",
+            "OwnerID": "Pegasus",
+            "Avatar": "img/temp/Pegasus.png",
             "Title": "通过水瓶宫",
             "Description": "直接通过水瓶宫！",
             "Start": "2019-08-15 21:00",
@@ -719,7 +769,8 @@
         },
         {
             "TaskID": 52,
-            "OwnerID": "bronze_03",
+            "OwnerID": "Cygnus",
+            "Avatar": "img/temp/Cygnus.png",
             "Title": "突破水瓶宫",
             "Description": "跟水瓶座黄金圣斗士卡妙战斗！",
             "Start": "2019-08-15 21:00",
@@ -733,7 +784,8 @@
         },
         {
             "TaskID": 53,
-            "OwnerID": "bronze_04",
+            "OwnerID": "Andromeda",
+            "Avatar": "img/temp/Andromeda.png",
             "Title": "通过水瓶宫",
             "Description": "直接通过水瓶宫！",
             "Start": "2019-08-15 21:00",
@@ -747,7 +799,8 @@
         },
         {
             "TaskID": 54,
-            "OwnerID": "gold_11",
+            "OwnerID": "Aquarius",
+            "Avatar": "img/temp/Aquarius.png",
             "Title": "守卫水瓶宫",
             "Description": "跟天鹅座青铜圣斗士冰河战斗！",
             "Start": "2019-08-15 21:00",
@@ -761,7 +814,8 @@
         },
         {
             "TaskID": 55,
-            "OwnerID": "bronze_01",
+            "OwnerID": "Pegasus",
+            "Avatar": "img/temp/Pegasus.png",
             "Title": "通过双鱼宫",
             "Description": "直接通过双鱼宫！",
             "Start": "2019-08-15 22:00",
@@ -775,7 +829,8 @@
         },
         {
             "TaskID": 56,
-            "OwnerID": "bronze_04",
+            "OwnerID": "Andromeda",
+            "Avatar": "img/temp/Andromeda.png",
             "Title": "突破双鱼宫",
             "Description": "跟双鱼座黄金圣斗士阿布罗狄战斗！",
             "Start": "2019-08-15 22:00",
@@ -789,7 +844,8 @@
         },
         {
             "TaskID": 54,
-            "OwnerID": "gold_12",
+            "OwnerID": "Picses",
+            "Avatar": "img/temp/Picses.png",
             "Title": "守卫双鱼宫",
             "Description": "跟仙女座青铜圣斗士瞬战斗！",
             "Start": "2019-08-15 22:00",
@@ -803,7 +859,8 @@
         },
         {
             "TaskID": 55,
-            "OwnerID": "bronze_01",
+            "OwnerID": "Pegasus",
+            "Avatar": "img/temp/Pegasus.png",
             "Title": "突破教皇殿",
             "Description": "跟双子座黄金圣斗士撒加战斗！",
             "Start": "2019-08-15 22:30",
@@ -817,7 +874,8 @@
         },
         {
             "TaskID": 56,
-            "OwnerID": "bronze_05",
+            "OwnerID": "Phoenix",
+            "Avatar": "img/temp/Phoenix.png",
             "Title": "闯教皇殿",
             "Description": "跟双子座黄金圣斗士撒加战斗！",
             "Start": "2019-08-15 22:30",
@@ -831,7 +889,8 @@
         },
         {
             "TaskID": 57,
-            "OwnerID": "gold_03",
+            "OwnerID": "Gemini",
+            "Avatar": "img/temp/Gemini.png",
             "Title": "大决战",
             "Description": "跟天马座青铜圣斗士星矢、凤凰座青铜圣斗士一辉战斗！",
             "Start": "2019-08-15 22:30",
@@ -845,7 +904,8 @@
         },
         {
             "TaskID": 58,
-            "OwnerID": "goddess",
+            "OwnerID": "Goddess",
+            "Avatar": "img/temp/Goddess.png",
             "Title": "雅典娜获救",
             "Description": "经过青铜圣斗士们的努力~ 纱织终于获救~ 并获得残存黄金圣斗士们的认可~ 开始作为雅典娜执掌圣域！",
             "Start": "2019-08-15 23:00",
