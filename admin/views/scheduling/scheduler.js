@@ -473,7 +473,7 @@ $(function () {
                         },
                         succeed: function (res) {
                             options.success(res);
-                            $('#generalScheduler').data('kendoScheduler').dataSource.read();
+                            $('#generalScheduler').data('kendoScheduler').refresh();
                         },
                         failed: function (res) {
                             options.error(res);
@@ -491,7 +491,7 @@ $(function () {
                         },
                         succeed: function (res) {
                             options.success(res);
-                            $('#generalScheduler').data('kendoScheduler').dataSource.read();
+                            $('#generalScheduler').data('kendoScheduler').refresh();
                         },
                         failed: function (res) {
                             options.error(res);
@@ -509,7 +509,7 @@ $(function () {
                         },
                         succeed: function (res) {
                             options.success(res);
-                            $('#generalScheduler').data('kendoScheduler').dataSource.read();
+                            $('#generalScheduler').data('kendoScheduler').refresh();
                         },
                         failed: function (res) {
                             options.error(res);
