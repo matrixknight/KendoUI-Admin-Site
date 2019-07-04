@@ -461,7 +461,6 @@ $(function () {
     // 普通日程表
     $('#generalScheduler').kendoScheduler({
         dataSource: {
-            batch: true,
             transport: {
                 create: function (options) {
                     $('#loading').show();
@@ -473,6 +472,7 @@ $(function () {
                         },
                         succeed: function (res) {
                             options.success(res);
+                            // $('#generalScheduler').data('kendoScheduler').dataSource.read();
                             $('#generalScheduler').data('kendoScheduler').refresh();
                         },
                         failed: function (res) {
@@ -491,6 +491,7 @@ $(function () {
                         },
                         succeed: function (res) {
                             options.success(res);
+                            // $('#generalScheduler').data('kendoScheduler').dataSource.read();
                             $('#generalScheduler').data('kendoScheduler').refresh();
                         },
                         failed: function (res) {
@@ -509,6 +510,7 @@ $(function () {
                         },
                         succeed: function (res) {
                             options.success(res);
+                            // $('#generalScheduler').data('kendoScheduler').dataSource.read();
                             $('#generalScheduler').data('kendoScheduler').refresh();
                         },
                         failed: function (res) {
@@ -539,7 +541,9 @@ $(function () {
                         ownerId: { from: 'OwnerID',
                             defaultValue: 'saint'
                         },
-                        avatar: { from: 'Avatar' },
+                        avatar: { from: 'Avatar',
+                            defaultValue: 'img/avatar.png'
+                        },
                         title: { from: 'Title',
                             defaultValue: '无标题',
                             validation: {
@@ -708,7 +712,67 @@ $(function () {
         dateHeaderTemplate: '<strong>#= kendo.toString(date, "MM月dd日 dddd") #</strong>',
         groupHeaderTemplate: '<strong style="color: #= color #">#= text #</strong>',
         allDayEventTemplate: '<img class="img-s mt-1" src="#: avatar #" alt="#: ownerId #"><p class="mb-0 pl-2"><small>#: title #<br>#: description #</small></p>',
-        majorTimeHeaderTemplate: '<strong>#= kendo.toString(date, "HH:mm") #</strong>'
+        majorTimeHeaderTemplate: '<strong>#= kendo.toString(date, "HH:mm") #</strong>',
+        editable: {
+            template: kendo.template($('#editTemplate').html())
+        },
+        edit: function (e) {
+            // 开始时间
+            $('#startEdit').kendoDateTimePicker({
+                format: 'yyyy-MM-dd HH:mm'
+            });
+            // 结束时间
+            $('#endEdit').kendoDateTimePicker({
+                format: 'yyyy-MM-dd HH:mm'
+            });
+            // 重复
+            $('#recurrenceRuleEdit').kendoDropDownList({
+                dataSource: {
+                    data: [
+                        { text: '每天', value: 'FREQ=DAILY' },
+                        { text: '每周', value: 'FREQ=WEEKLY' },
+                        { text: '每月', value: 'FREQ=MONTHLY' },
+                        { text: '每年', value: 'FREQ=YEARLY' }
+                    ]
+                },
+                optionLabel: '从不',
+                dataValueField: 'value',
+                dataTextField: 'text'
+            });
+            // 圣斗士
+            $('#ownerIdEdit').kendoDropDownList({
+                dataSource: {
+                    data: [
+                        { text: '穆', value: 'Aries', url: 'img/temp/Aries.png', color: '#c39b8f' },
+                        { text: '阿鲁迪巴', value: 'Taurus', url: 'img/temp/Taurus.png', color: '#d770ad' },
+                        { text: '撒加', value: 'Gemini', url: 'img/temp/Gemini.png', color: '#da4453' },
+                        { text: '迪斯马斯克', value: 'Cancer', url: 'img/temp/Cancer.png', color: '#ff9800' },
+                        { text: '艾欧里亚', value: 'Leo', url: 'img/temp/Leo.png', color: '#f6bb42' },
+                        { text: '沙加', value: 'Virgo', url: 'img/temp/Virgo.png', color: '#8cc152' },
+                        { text: '童虎', value: 'Libra', url: 'img/temp/Libra.png', color: '#37bc9b' },
+                        { text: '米罗', value: 'Scorpion', url: 'img/temp/Scorpion.png', color: '#3bafda' },
+                        { text: '艾俄洛斯', value: 'Sagittarius', url: 'img/temp/Sagittarius.png', color: '#4a89dc' },
+                        { text: '修罗', value: 'Capricorn', url: 'img/temp/Capricorn.png', color: '#967adc' },
+                        { text: '卡妙', value: 'Aquarius', url: 'img/temp/Aquarius.png', color: '#434a54' },
+                        { text: '阿布罗狄', value: 'Picses', url: 'img/temp/Picses.png', color: '#aab2bd' },
+                        { text: '星矢', value: 'Pegasus', url: 'img/temp/Pegasus.png', color: '#007bff' },
+                        { text: '紫龙', value: 'Dragon', url: 'img/temp/Dragon.png', color: '#28a745' },
+                        { text: '冰河', value: 'Cygnus', url: 'img/temp/Cygnus.png', color: '#17a2b8' },
+                        { text: '瞬', value: 'Andromeda', url: 'img/temp/Andromeda.png', color: '#dc3545' },
+                        { text: '一辉', value: 'Phoenix', url: 'img/temp/Phoenix.png', color: '#ffc107' },
+                        { text: '雅典娜', value: 'Goddess', url: 'img/temp/Goddess.png', color: '#6c757d' }
+                    ]
+                },
+                dataValueField: 'value',
+                dataTextField: 'text',
+                height: 520,
+                template: '<span class="dot-color" style="background: #: color #;"></span><img class="w-5 rounded-circle mx-2" src="#: url #" alt="#: value #">#: text #',
+                valueTemplate: '<span class="dot-color" style="background: #: color #;"></span><img class="w-5 border rounded-circle mx-2" src="#: url #" alt="#: value #">#: text #'
+            });
+        },
+        save: function (e) {
+            e.event.set('avatar', 'img/temp/' + e.event.ownerId + '.png');
+        }
     });
     // 联动显示
     $('#saint :checkbox').change(function (e) {
