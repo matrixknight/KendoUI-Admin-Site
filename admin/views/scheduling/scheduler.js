@@ -685,6 +685,7 @@ $(function () {
             },
             { type: 'timelineMonth',
                 columnWidth: 128,
+                eventHeight: 50,
                 group: {
                     resources: ['saint'],
                     orientation: 'vertical'
